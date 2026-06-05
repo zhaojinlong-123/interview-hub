@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>面经共创站</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">Interview Hub</a>
+      <nav>
+        <a href="#write">发布</a>
+        <a href="#browse">浏览</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Interview Knowledge Base</p>
+        <h1>面试经验与题目共享平台</h1>
+        <p class="lead">记录真实面试流程、题目、复盘和岗位信息。提交后，所有访问这个服务的用户都可以看到。</p>
+        <div class="hero-stats">
+          <div><strong id="totalCount">0</strong><span>条内容</span></div>
+          <div><strong id="questionCount">0</strong><span>面试题</span></div>
+          <div><strong id="experienceCount">0</strong><span>面经</span></div>
+        </div>
+      </section>
+
+      <section id="write" class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Write</p>
+          <h2>发布内容</h2>
+        </div>
+        <form id="postForm" class="form-grid">
+          <label>
+            类型
+            <select name="type">
+              <option value="experience">面试经验</option>
+              <option value="question">面试题目</option>
+            </select>
+          </label>
+          <label>
+            难度
+            <select name="difficulty">
+              <option>综合</option>
+              <option>入门</option>
+              <option>中等</option>
+              <option>困难</option>
+            </select>
+          </label>
+          <label>
+            公司
+            <input name="company" placeholder="例如：字节跳动 / NVIDIA / 麻袋科技" maxlength="60" required />
+          </label>
+          <label>
+            岗位
+            <input name="role" placeholder="例如：算法工程师 / 机器人实习生" maxlength="60" required />
+          </label>
+          <label class="wide">
+            标题
+            <input name="title" placeholder="例如：VLA 方向算法岗一面复盘" maxlength="120" required />
+          </label>
+          <label class="wide">
+            标签
+            <input name="tags" placeholder="例如：大模型, 具身智能, Python, 系统设计" maxlength="160" />
+          </label>
+          <label class="wide">
+            内容
+            <textarea name="content" placeholder="写面试流程、题目、回答思路、踩坑点、复盘建议..." maxlength="5000" required></textarea>
+          </label>
+          <div class="form-actions wide">
+            <button class="primary-button" type="submit">发布给大家看</button>
+            <p id="formMessage" class="message"></p>
+          </div>
+        </form>
+      </section>
+
+      <section id="browse" class="browse-grid">
+        <aside class="filters">
+          <p class="eyebrow">Search</p>
+          <h2>检索</h2>
+          <label>
+            关键词
+            <input id="keyword" placeholder="题目、公司、技术栈..." />
+          </label>
+          <label>
+            公司
+            <input id="companyFilter" placeholder="公司名" />
+          </label>
+          <label>
+            岗位
+            <input id="roleFilter" placeholder="岗位名" />
+          </label>
+          <label>
+            类型
+            <select id="typeFilter">
+              <option value="all">全部</option>
+              <option value="experience">面试经验</option>
+              <option value="question">面试题目</option>
+            </select>
+          </label>
+          <button id="clearFilters" type="button">清空筛选</button>
+        </aside>
+
+        <section class="feed">
+          <div class="section-heading compact">
+            <p class="eyebrow">Browse</p>
+            <h2>最新内容</h2>
+          </div>
+          <div id="posts" class="post-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="postTemplate">
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="type-pill"></span>
+          <span class="difficulty"></span>
+          <span class="date"></span>
+        </div>
+        <h3></h3>
+        <p class="company-role"></p>
+        <p class="content"></p>
+        <div class="tags"></div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

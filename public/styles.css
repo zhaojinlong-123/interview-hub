@@ -364,6 +364,50 @@ input:focus, select:focus, textarea:focus {
 
 .section-heading { margin-bottom: 20px; }
 .section-heading.compact { margin-bottom: 14px; }
+
+.platform-panel {
+  max-width: none;
+}
+
+.platform-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.platform-group {
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid rgba(102, 228, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(7, 14, 22, 0.42);
+}
+
+.platform-group h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 16px;
+}
+
+.platform-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.platform-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(102, 228, 255, 0.22);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(102, 228, 255, 0.06);
+  font-size: 13px;
+  font-weight: 900;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -428,7 +472,7 @@ button, .primary-button {
 
 @media (max-width: 900px) {
   .topbar { align-items: flex-start; flex-direction: column; }
-  .hero-stats, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid { grid-template-columns: 1fr; }
+  .hero-stats, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid, .platform-groups { grid-template-columns: 1fr; }
   .filters { position: static; }
   .date-grid { grid-template-columns: 1fr; }
   .feed-heading { display: grid; }

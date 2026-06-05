@@ -369,39 +369,62 @@ input:focus, select:focus, textarea:focus {
   max-width: none;
 }
 
-.platform-groups {
+.platform-form {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
-.platform-group {
-  min-height: 150px;
+.platform-list-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.platform-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
   padding: 16px;
   border: 1px solid rgba(102, 228, 255, 0.16);
   border-radius: 8px;
   background: rgba(7, 14, 22, 0.42);
 }
 
-.platform-group h3 {
+.platform-info h3 {
   margin: 0 0 12px;
   color: var(--green);
   font-size: 16px;
 }
 
-.platform-list {
+.platform-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.platform-url {
+  overflow: hidden;
+  margin-top: 6px !important;
+  color: var(--cyan) !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.platform-list span {
+.platform-actions button {
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
+  min-height: 34px;
+  padding: 0 11px;
   border: 1px solid rgba(102, 228, 255, 0.22);
-  border-radius: 999px;
+  border-radius: 6px;
   color: var(--text);
   background: rgba(102, 228, 255, 0.06);
   font-size: 13px;
@@ -472,7 +495,7 @@ button, .primary-button {
 
 @media (max-width: 900px) {
   .topbar { align-items: flex-start; flex-direction: column; }
-  .hero-stats, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid, .platform-groups { grid-template-columns: 1fr; }
+  .hero-stats, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid, .platform-form, .platform-row { grid-template-columns: 1fr; }
   .filters { position: static; }
   .date-grid { grid-template-columns: 1fr; }
   .feed-heading { display: grid; }

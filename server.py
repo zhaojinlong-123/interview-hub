@@ -12,6 +12,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_DIR = os.path.join(ROOT, "public")
 DATA_DIR = os.path.join(ROOT, "data")
 POSTS_FILE = os.path.join(DATA_DIR, "posts.json")
+PLATFORMS_FILE = os.path.join(DATA_DIR, "platforms.json")
 
 HOST = "0.0.0.0"
 PORT = int(os.environ.get("PORT", "8088"))
@@ -38,6 +39,13 @@ def ensure_data_file():
             json.dump([], file, ensure_ascii=False, indent=2)
 
 
+def ensure_platforms_file():
+    os.makedirs(DATA_DIR, exist_ok=True)
+    if not os.path.exists(PLATFORMS_FILE):
+        with open(PLATFORMS_FILE, "w", encoding="utf-8") as file:
+            json.dump([], file, ensure_ascii=False, indent=2)
+
+
 def read_posts():
     ensure_data_file()
     with open(POSTS_FILE, "r", encoding="utf-8") as file:
@@ -50,6 +58,59 @@ def write_posts(posts):
     with open(tmp_file, "w", encoding="utf-8") as file:
         json.dump(posts, file, ensure_ascii=False, indent=2)
     os.replace(tmp_file, POSTS_FILE)
+
+
+def read_platforms():
+    ensure_platforms_file()
+    with open(PLATFORMS_FILE, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def write_platforms(platforms):
+    ensure_platforms_file()
+    tmp_file = PLATFORMS_FILE + ".tmp"
+    with open(tmp_file, "w", encoding="utf-8") as file:
+        json.dump(platforms, file, ensure_ascii=False, indent=2)
+    os.replace(tmp_file, PLATFORMS_FILE)
+
+
+def clean_bool(value):
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.lower() not in ["false", "0", "off", "no"]
+    return bool(value)
+
+
+def make_platform(payload):
+    name = clean_text(payload.get("name"), 40)
+    platform_type = clean_text(payload.get("type"), 20) or "public"
+    search_url = clean_text(payload.get("searchUrl"), 500)
+    enabled = clean_bool(payload.get("enabled", True))
+    domains = payload.get("matchDomains", [])
+    if isinstance(domains, str):
+        domains = domains.replace("，", ",").split(",")
+    match_domains = []
+    for domain in domains:
+        text = clean_text(domain, 80)
+        if text and text not in match_domains:
+            match_domains.append(text)
+
+    if platform_type not in ["login", "public", "manual"]:
+        platform_type = "public"
+    if not name:
+        raise ValueError("请填写平台名称")
+    if platform_type != "manual" and not search_url:
+        raise ValueError("公开或登录平台需要填写搜索链接")
+
+    return {
+        "id": clean_text(payload.get("id"), 80) or str(uuid.uuid4()),
+        "name": name,
+        "type": platform_type,
+        "enabled": enabled,
+        "searchUrl": search_url,
+        "matchDomains": match_domains,
+    }
 
 
 def clean_text(value, limit):
@@ -227,10 +288,32 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/api/meta":
             self.send_json(200, meta_from_posts(read_posts()))
             return
+        if parsed.path == "/api/platforms":
+            self.send_json(200, {"platforms": read_platforms()})
+            return
         self.serve_static(parsed.path)
 
     def do_POST(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/platforms":
+            try:
+                length = int(self.headers.get("Content-Length", "0"))
+                raw = self.rfile.read(length).decode("utf-8")
+                payload = json.loads(raw or "{}")
+                platform = make_platform(payload)
+                platforms = read_platforms()
+                if any(item.get("name") == platform["name"] for item in platforms):
+                    self.send_json(409, {"error": "平台已存在"})
+                    return
+                platforms.append(platform)
+                write_platforms(platforms)
+                self.send_json(201, {"platform": platform})
+            except ValueError as error:
+                self.send_json(400, {"error": str(error)})
+            except Exception:
+                self.send_json(500, {"error": "保存平台失败，请稍后再试"})
+            return
+
         if parsed.path != "/api/posts":
             self.send_json(404, {"error": "接口不存在"})
             return
@@ -248,6 +331,49 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(400, {"error": str(error)})
         except Exception:
             self.send_json(500, {"error": "保存失败，请稍后再试"})
+
+    def do_PATCH(self):
+        parsed = urlparse(self.path)
+        if parsed.path != "/api/platforms":
+            self.send_json(404, {"error": "接口不存在"})
+            return
+
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+            raw = self.rfile.read(length).decode("utf-8")
+            payload = json.loads(raw or "{}")
+            platform_id = clean_text(payload.get("id"), 80)
+            platforms = read_platforms()
+            for index, item in enumerate(platforms):
+                if item.get("id") != platform_id:
+                    continue
+                updated = {**item}
+                if "enabled" in payload:
+                    updated["enabled"] = clean_bool(payload.get("enabled"))
+                if "searchUrl" in payload:
+                    updated["searchUrl"] = clean_text(payload.get("searchUrl"), 500)
+                platforms[index] = updated
+                write_platforms(platforms)
+                self.send_json(200, {"platform": updated})
+                return
+            self.send_json(404, {"error": "平台不存在"})
+        except Exception:
+            self.send_json(500, {"error": "更新平台失败，请稍后再试"})
+
+    def do_DELETE(self):
+        parsed = urlparse(self.path)
+        if parsed.path != "/api/platforms":
+            self.send_json(404, {"error": "接口不存在"})
+            return
+
+        platform_id = query_value(parse_qs(parsed.query), "id")
+        platforms = read_platforms()
+        next_platforms = [item for item in platforms if item.get("id") != platform_id]
+        if len(next_platforms) == len(platforms):
+            self.send_json(404, {"error": "平台不存在"})
+            return
+        write_platforms(next_platforms)
+        self.send_json(200, {"ok": True})
 
     def serve_static(self, request_path):
         path = unquote(request_path)
@@ -282,6 +408,7 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     ensure_data_file()
+    ensure_platforms_file()
     server = HTTPServer((HOST, PORT), Handler)
     print("Interview Hub running at http://127.0.0.1:%s" % PORT)
     print("LAN users can visit http://<your-ip>:%s after firewall allows the port." % PORT)

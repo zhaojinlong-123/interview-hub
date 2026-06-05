@@ -8,6 +8,9 @@ const collectionForm = document.querySelector("#collectionForm");
 const collectionName = document.querySelector("#collectionName");
 const exportCollectionsButton = document.querySelector("#exportCollections");
 const collectionExport = document.querySelector("#collectionExport");
+const platformForm = document.querySelector("#platformForm");
+const platformList = document.querySelector("#platformList");
+const platformMessage = document.querySelector("#platformMessage");
 
 const filters = {
   keyword: document.querySelector("#keyword"),
@@ -46,6 +49,7 @@ const defaultCollection = "默认收藏";
 let allPosts = [];
 let catalogPosts = [];
 let meta = {};
+let searchPlatforms = [];
 
 function readJson(key, fallback) {
   try {
@@ -206,6 +210,91 @@ function renderRankList(root, entries) {
     row.innerHTML = `<span>${label}</span><strong>${count}</strong>`;
     root.appendChild(row);
   });
+}
+
+function platformTypeLabel(type) {
+  const labels = {
+    login: "已登录",
+    public: "公开检索",
+    manual: "人工处理",
+  };
+  return labels[type] || "公开检索";
+}
+
+function renderPlatforms() {
+  if (!platformList) return;
+  platformList.innerHTML = "";
+  if (!searchPlatforms.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "还没有检索平台，可以先添加一个公开搜索链接。";
+    platformList.appendChild(empty);
+    return;
+  }
+
+  searchPlatforms.forEach((platform) => {
+    const row = document.createElement("article");
+    row.className = "platform-row";
+
+    const info = document.createElement("div");
+    info.className = "platform-info";
+    const title = document.createElement("h3");
+    title.textContent = platform.name;
+    const metaLine = document.createElement("p");
+    const domains = (platform.matchDomains || []).join(", ") || "未设置域名匹配";
+    metaLine.textContent = `${platformTypeLabel(platform.type)} · ${platform.enabled ? "已启用" : "已停用"} · ${domains}`;
+    const url = document.createElement("p");
+    url.className = "platform-url";
+    url.textContent = platform.searchUrl || "无自动搜索链接";
+    info.appendChild(title);
+    info.appendChild(metaLine);
+    info.appendChild(url);
+
+    const actions = document.createElement("div");
+    actions.className = "platform-actions";
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.textContent = platform.enabled ? "停用" : "启用";
+    toggle.addEventListener("click", () => updatePlatform(platform.id, { enabled: !platform.enabled }));
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.textContent = "删除";
+    remove.addEventListener("click", () => deletePlatform(platform.id));
+    actions.appendChild(toggle);
+    actions.appendChild(remove);
+
+    row.appendChild(info);
+    row.appendChild(actions);
+    platformList.appendChild(row);
+  });
+}
+
+async function loadPlatforms() {
+  if (!platformList) return;
+  const response = await fetch("/api/platforms");
+  const payload = await response.json();
+  searchPlatforms = payload.platforms || [];
+  renderPlatforms();
+}
+
+async function updatePlatform(id, patch) {
+  platformMessage.textContent = "正在更新平台...";
+  const response = await fetch("/api/platforms", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id, ...patch }),
+  });
+  const payload = await response.json();
+  platformMessage.textContent = response.ok ? "平台已更新。" : payload.error || "更新失败";
+  await loadPlatforms();
+}
+
+async function deletePlatform(id) {
+  platformMessage.textContent = "正在删除平台...";
+  const response = await fetch(`/api/platforms?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+  const payload = await response.json();
+  platformMessage.textContent = response.ok ? "平台已删除。" : payload.error || "删除失败";
+  await loadPlatforms();
 }
 
 function renderDashboard() {
@@ -528,6 +617,33 @@ form.addEventListener("submit", async (event) => {
   await loadPosts();
 });
 
+if (platformForm) {
+  platformForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    platformMessage.textContent = "正在添加平台...";
+    const data = Object.fromEntries(new FormData(platformForm).entries());
+    data.enabled = true;
+    data.matchDomains = (data.matchDomains || "")
+      .split(/[，,]/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    const response = await fetch("/api/platforms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    if (!response.ok) {
+      platformMessage.textContent = payload.error || "添加失败";
+      return;
+    }
+    platformForm.reset();
+    platformMessage.textContent = "平台已添加，下次自动检索会使用最新配置。";
+    await loadPlatforms();
+  });
+}
+
 collectionForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = collectionName.value.trim();
@@ -569,4 +685,4 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
 });
 
 ensureDefaultCollection();
-Promise.all([loadMeta(), loadCatalog()]).then(loadPosts);
+Promise.all([loadMeta(), loadCatalog(), loadPlatforms()]).then(loadPosts);

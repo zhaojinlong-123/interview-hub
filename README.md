@@ -21,6 +21,8 @@
 
 自动脚本只保存摘要和复习问题，不大段复制原帖正文。
 
+检索平台配置保存在 `data/platforms.json`。通过本地或服务器版网页的“当前检索平台”面板添加、停用、启用或删除平台后，下一次 `scripts/update-interviews.mjs` 会读取最新配置进行检索。GitHub Pages 是静态页面，不能直接写入这个配置文件；需要运行 `python server.py` 或部署后端服务后才能持久化修改。
+
 ## 本地运行
 
 ```powershell

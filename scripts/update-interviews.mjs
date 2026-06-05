@@ -5,20 +5,11 @@ import { execFileSync } from "node:child_process";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
 const DATA_FILE = path.join(ROOT, "data", "posts.json");
+const PLATFORMS_FILE = path.join(ROOT, "data", "platforms.json");
 const LOG_DIR = path.join(ROOT, "logs");
 const TODAY = new Date().toISOString().slice(0, 10);
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
-
-const SEARCH_URLS = [
-  ["B站", "https://search.bilibili.com/all?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F"],
-  ["CSDN", "https://so.csdn.net/so/search?q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&t=all"],
-  ["掘金", "https://juejin.cn/search?query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&type=0"],
-  ["51CTO", "https://so.51cto.com/?keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F"],
-  ["微信公众号搜狗", "https://weixin.sogou.com/weixin?type=2&query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F"],
-  ["OfferShow", "https://www.offershow.cn/"],
-  ["GitHub", "https://github.com/search?q=LLM+interview+questions+OR+%E5%A4%A7%E6%A8%A1%E5%9E%8B+%E9%9D%A2%E7%BB%8F&type=repositories"],
-];
 
 const KEYWORDS = [
   "大模型", "LLM", "Agent", "RAG", "VLA", "多模态", "面经", "面试",
@@ -121,6 +112,15 @@ function makePost(candidate) {
 
 async function readPosts() {
   return JSON.parse(await fs.readFile(DATA_FILE, "utf8"));
+}
+
+async function readPlatforms() {
+  try {
+    const platforms = JSON.parse(await fs.readFile(PLATFORMS_FILE, "utf8"));
+    return platforms.filter((platform) => platform.enabled !== false);
+  } catch {
+    return [];
+  }
 }
 
 async function writePosts(posts) {
@@ -262,7 +262,7 @@ function rankCandidate(candidate) {
 
 function commitAndPush(addedCount) {
   if (!SHOULD_PUSH || addedCount === 0) return;
-  execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "add", "data/posts.json", "logs"], { cwd: ROOT, stdio: "inherit" });
+  execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "add", "data/posts.json", "data/platforms.json", "logs"], { cwd: ROOT, stdio: "inherit" });
   execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "commit", "-m", `Auto update interview posts (${TODAY})`], { cwd: ROOT, stdio: "inherit" });
   execFileSync("git", [
     "-c", "safe.directory=E:/workshop/interview-hub",
@@ -275,26 +275,21 @@ function commitAndPush(addedCount) {
 async function main() {
   await fs.mkdir(LOG_DIR, { recursive: true });
   const posts = await readPosts();
+  const platforms = await readPlatforms();
   const allCandidates = [];
   const browserWs = await getBrowserWs();
 
   const existingTabs = (await listTabs()).filter((tab) => tab.type === "page");
   for (const tab of existingTabs) {
-    const platform = tab.url.includes("xiaohongshu") ? "小红书"
-      : tab.url.includes("zhihu") ? "知乎"
-      : tab.url.includes("maimai") ? "脉脉"
-      : tab.url.includes("nowcoder") ? "牛客"
-      : tab.url.includes("github") ? "GitHub"
-      : tab.url.includes("leetcode") ? "力扣中文"
-      : tab.url.includes("cnblogs") ? "博客园"
-      : tab.url.includes("zsxq") ? "知识星球"
-      : "";
-    if (platform) allCandidates.push(...await extractFromTab(tab, platform).catch(() => []));
+    const platform = platforms.find((item) =>
+      (item.matchDomains || []).some((domain) => tab.url.includes(domain))
+    );
+    if (platform) allCandidates.push(...await extractFromTab(tab, platform.name).catch(() => []));
   }
 
-  for (const [platform, url] of SEARCH_URLS) {
-    const { targetId, tab } = await createTab(browserWs, url);
-    allCandidates.push(...await extractFromTab(tab, platform).catch(() => []));
+  for (const platform of platforms.filter((item) => item.searchUrl)) {
+    const { targetId, tab } = await createTab(browserWs, platform.searchUrl);
+    allCandidates.push(...await extractFromTab(tab, platform.name).catch(() => []));
     await closeTab(browserWs, targetId);
   }
 
@@ -308,6 +303,7 @@ async function main() {
 
   const log = {
     date: new Date().toISOString(),
+    platforms: platforms.map((platform) => platform.name),
     scannedCandidates: allCandidates.length,
     rankedCandidates: candidates.length,
     added: newPosts.length,

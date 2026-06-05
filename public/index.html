@@ -88,41 +88,26 @@
         <div class="section-heading compact">
           <p class="eyebrow">Sources</p>
           <h2>当前检索平台</h2>
-          <p>自动更新脚本会优先读取已登录的可控 Chrome 标签页；公开平台会临时打开搜索页抓取候选，完成后自动关闭。</p>
+          <p>这里维护的启用平台会被周更脚本读取。公开平台会按搜索链接打开；登录平台会优先读取已登录的可控 Chrome 标签页。</p>
         </div>
-        <div class="platform-groups">
-          <article class="platform-group">
-            <h3>已登录 / 需要登录</h3>
-            <div class="platform-list">
-              <span>知乎</span>
-              <span>小红书</span>
-              <span>脉脉</span>
-              <span>知识星球</span>
-              <span>力扣中文</span>
-            </div>
-          </article>
-          <article class="platform-group">
-            <h3>公开检索</h3>
-            <div class="platform-list">
-              <span>牛客</span>
-              <span>GitHub</span>
-              <span>B站</span>
-              <span>CSDN</span>
-              <span>掘金</span>
-              <span>51CTO</span>
-              <span>微信公众号搜狗</span>
-              <span>OfferShow</span>
-            </div>
-          </article>
-          <article class="platform-group">
-            <h3>需人工处理</h3>
-            <div class="platform-list">
-              <span>博客园人机验证</span>
-              <span>登录态过期平台</span>
-              <span>私密社群链接</span>
-            </div>
-          </article>
-        </div>
+        <form id="platformForm" class="platform-form">
+          <label>平台名称<input name="name" placeholder="例如：牛客 / GitHub / 知识星球" maxlength="40" required /></label>
+          <label>
+            类型
+            <select name="type">
+              <option value="public">公开检索</option>
+              <option value="login">已登录平台</option>
+              <option value="manual">人工处理</option>
+            </select>
+          </label>
+          <label class="wide">搜索链接<input name="searchUrl" placeholder="https://example.com/search?q=大模型 面经" maxlength="500" /></label>
+          <label class="wide">匹配域名<input name="matchDomains" placeholder="多个用逗号分隔，例如：zhihu.com, zhuanlan.zhihu.com" maxlength="240" /></label>
+          <div class="form-actions wide">
+            <button class="primary-button" type="submit">添加平台</button>
+            <p id="platformMessage" class="message"></p>
+          </div>
+        </form>
+        <div id="platformList" class="platform-list-editor"></div>
       </section>
 
       <section class="focus-band">

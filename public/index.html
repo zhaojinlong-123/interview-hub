@@ -3,42 +3,129 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>面经共创站</title>
+    <title>大模型面经学习站</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="/">Interview Hub</a>
       <nav>
+        <a href="#browse">面经库</a>
+        <a href="#collections">收藏夹</a>
         <a href="#write">发布</a>
-        <a href="#browse">浏览</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <p class="eyebrow">Interview Knowledge Base</p>
-        <h1>面试经验与题目共享平台</h1>
-        <p class="lead">记录真实面试流程、题目、复盘和岗位信息。提交后，所有访问这个服务的用户都可以看到。</p>
+        <p class="eyebrow">LLM / VLA / Embodied AI</p>
+        <h1>大模型与具身智能面经学习站</h1>
+        <p class="lead">整理最近 3 个月多模态大模型、VLA/具身智能、视频理解、自动驾驶数据闭环、Agent/RAG 和推理优化相关面经。</p>
         <div class="hero-stats">
-          <div><strong id="totalCount">0</strong><span>条内容</span></div>
-          <div><strong id="questionCount">0</strong><span>面试题</span></div>
-          <div><strong id="experienceCount">0</strong><span>面经</span></div>
+          <div><strong id="totalCount">0</strong><span>当前结果</span></div>
+          <div><strong id="questionCount">0</strong><span>题目/题型</span></div>
+          <div><strong id="experienceCount">0</strong><span>面经/复盘</span></div>
+          <div><strong id="collectionCount">0</strong><span>收藏夹</span></div>
         </div>
+      </section>
+
+      <section id="browse" class="browse-grid">
+        <aside class="filters">
+          <p class="eyebrow">Filters</p>
+          <h2>筛选</h2>
+          <label>
+            关键词
+            <input id="keyword" placeholder="公司、岗位、技术栈、题目..." />
+          </label>
+          <label>
+            大分类
+            <select id="categoryFilter"></select>
+          </label>
+          <label>
+            来源平台
+            <select id="platformFilter"></select>
+          </label>
+          <label>
+            难度
+            <select id="difficultyFilter"></select>
+          </label>
+          <label>
+            类型
+            <select id="typeFilter">
+              <option value="all">全部</option>
+              <option value="experience">面经</option>
+              <option value="question">题目</option>
+              <option value="video">视频复盘</option>
+              <option value="collection">题库合集</option>
+            </select>
+          </label>
+          <label>
+            标签
+            <select id="tagFilter"></select>
+          </label>
+          <label>
+            公司
+            <input id="companyFilter" placeholder="例如：字节、腾讯、百度" />
+          </label>
+          <label>
+            岗位
+            <input id="roleFilter" placeholder="例如：多模态、机器人、自动驾驶" />
+          </label>
+          <div class="date-grid">
+            <label>
+              开始日期
+              <input id="startDate" type="date" />
+            </label>
+            <label>
+              结束日期
+              <input id="endDate" type="date" />
+            </label>
+          </div>
+          <button id="clearFilters" type="button">清空筛选</button>
+        </aside>
+
+        <section class="feed">
+          <div class="section-heading compact">
+            <p class="eyebrow">Latest</p>
+            <h2>面经与题目</h2>
+          </div>
+          <div id="categoryChips" class="chip-row"></div>
+          <div id="posts" class="post-list"></div>
+        </section>
+      </section>
+
+      <section id="collections" class="panel collections-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Collections</p>
+          <h2>我的收藏夹</h2>
+          <p>收藏夹保存在当前浏览器本地。后续如果加入登录和数据库，就可以跨设备同步。</p>
+        </div>
+        <form id="collectionForm" class="collection-form">
+          <input id="collectionName" placeholder="新建收藏夹，例如：字节面试、VLA重点题、自动驾驶数据闭环" />
+          <button type="submit">新建收藏夹</button>
+        </form>
+        <div id="collectionsRoot" class="collections-grid"></div>
       </section>
 
       <section id="write" class="panel">
         <div class="section-heading">
           <p class="eyebrow">Write</p>
           <h2>发布内容</h2>
+          <p>这里发布的是共享内容。正式上线后建议增加登录、审核、去重和来源校验。</p>
         </div>
         <form id="postForm" class="form-grid">
           <label>
             类型
             <select name="type">
-              <option value="experience">面试经验</option>
-              <option value="question">面试题目</option>
+              <option value="experience">面经</option>
+              <option value="question">题目</option>
+              <option value="video">视频复盘</option>
+              <option value="collection">题库合集</option>
             </select>
+          </label>
+          <label>
+            大分类
+            <select name="category" id="formCategory"></select>
           </label>
           <label>
             难度
@@ -50,66 +137,50 @@
             </select>
           </label>
           <label>
+            来源平台
+            <input name="sourcePlatform" placeholder="牛客 / 小红书 / 脉脉 / 知乎 / B站" maxlength="40" />
+          </label>
+          <label>
             公司
-            <input name="company" placeholder="例如：字节跳动 / NVIDIA / 麻袋科技" maxlength="60" required />
+            <input name="company" placeholder="例如：字节跳动 / NVIDIA / Momenta" maxlength="60" required />
           </label>
           <label>
             岗位
-            <input name="role" placeholder="例如：算法工程师 / 机器人实习生" maxlength="60" required />
+            <input name="role" placeholder="例如：多模态算法 / 机器人算法 / 自动驾驶感知" maxlength="60" required />
+          </label>
+          <label>
+            方向
+            <input name="direction" placeholder="例如：VLA / 视频理解 / RAG" maxlength="80" />
+          </label>
+          <label>
+            领域
+            <input name="domain" placeholder="例如：机器人数据 / 推理优化 / 数据闭环" maxlength="80" />
           </label>
           <label class="wide">
             标题
-            <input name="title" placeholder="例如：VLA 方向算法岗一面复盘" maxlength="120" required />
+            <input name="title" placeholder="例如：字节多模态大模型一面复盘" maxlength="120" required />
+          </label>
+          <label class="wide">
+            来源链接
+            <input name="sourceUrl" placeholder="https://..." maxlength="400" />
           </label>
           <label class="wide">
             标签
-            <input name="tags" placeholder="例如：大模型, 具身智能, Python, 系统设计" maxlength="160" />
+            <input name="tags" placeholder="3-8 个标签，例如：字节跳动, VLA, 视频理解, Transformer" maxlength="240" />
           </label>
           <label class="wide">
             内容
-            <textarea name="content" placeholder="写面试流程、题目、回答思路、踩坑点、复盘建议..." maxlength="5000" required></textarea>
+            <textarea name="content" placeholder="整理面试流程、题目、回答思路、复盘建议..." maxlength="6000" required></textarea>
+          </label>
+          <label class="wide">
+            准备建议
+            <textarea name="prepTips" placeholder="可以写复习重点、相关论文、需要补的知识点..." maxlength="1000"></textarea>
           </label>
           <div class="form-actions wide">
             <button class="primary-button" type="submit">发布给大家看</button>
             <p id="formMessage" class="message"></p>
           </div>
         </form>
-      </section>
-
-      <section id="browse" class="browse-grid">
-        <aside class="filters">
-          <p class="eyebrow">Search</p>
-          <h2>检索</h2>
-          <label>
-            关键词
-            <input id="keyword" placeholder="题目、公司、技术栈..." />
-          </label>
-          <label>
-            公司
-            <input id="companyFilter" placeholder="公司名" />
-          </label>
-          <label>
-            岗位
-            <input id="roleFilter" placeholder="岗位名" />
-          </label>
-          <label>
-            类型
-            <select id="typeFilter">
-              <option value="all">全部</option>
-              <option value="experience">面试经验</option>
-              <option value="question">面试题目</option>
-            </select>
-          </label>
-          <button id="clearFilters" type="button">清空筛选</button>
-        </aside>
-
-        <section class="feed">
-          <div class="section-heading compact">
-            <p class="eyebrow">Browse</p>
-            <h2>最新内容</h2>
-          </div>
-          <div id="posts" class="post-list"></div>
-        </section>
       </section>
     </main>
 
@@ -118,12 +189,20 @@
         <div class="post-meta">
           <span class="type-pill"></span>
           <span class="difficulty"></span>
+          <span class="category"></span>
           <span class="date"></span>
         </div>
         <h3></h3>
         <p class="company-role"></p>
+        <p class="domain-line"></p>
         <p class="content"></p>
+        <div class="question-block"></div>
+        <p class="prep-tips"></p>
         <div class="tags"></div>
+        <div class="card-actions">
+          <a class="source-link" target="_blank" rel="noreferrer">来源</a>
+          <button class="favorite-button" type="button">收藏</button>
+        </div>
       </article>
     </template>
 

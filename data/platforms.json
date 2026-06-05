@@ -1,0 +1,142 @@
+[
+  {
+    "id": "zhihu",
+    "name": "知乎",
+    "type": "login",
+    "enabled": true,
+    "searchUrl": "https://www.zhihu.com/search?type=content&q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "matchDomains": [
+      "zhihu.com"
+    ]
+  },
+  {
+    "id": "xiaohongshu",
+    "name": "小红书",
+    "type": "login",
+    "enabled": true,
+    "searchUrl": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "matchDomains": [
+      "xiaohongshu.com"
+    ]
+  },
+  {
+    "id": "maimai",
+    "name": "脉脉",
+    "type": "login",
+    "enabled": true,
+    "searchUrl": "https://maimai.cn/",
+    "matchDomains": [
+      "maimai.cn"
+    ]
+  },
+  {
+    "id": "nowcoder",
+    "name": "牛客",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://www.nowcoder.com/search?query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&type=post",
+    "matchDomains": [
+      "nowcoder.com"
+    ]
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://github.com/search?q=LLM+interview+questions+OR+%E5%A4%A7%E6%A8%A1%E5%9E%8B+%E9%9D%A2%E7%BB%8F&type=repositories",
+    "matchDomains": [
+      "github.com"
+    ]
+  },
+  {
+    "id": "bilibili",
+    "name": "B站",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://search.bilibili.com/all?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "matchDomains": [
+      "bilibili.com"
+    ]
+  },
+  {
+    "id": "csdn",
+    "name": "CSDN",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://so.csdn.net/so/search?q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&t=all",
+    "matchDomains": [
+      "csdn.net"
+    ]
+  },
+  {
+    "id": "juejin",
+    "name": "掘金",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://juejin.cn/search?query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&type=0",
+    "matchDomains": [
+      "juejin.cn"
+    ]
+  },
+  {
+    "id": "51cto",
+    "name": "51CTO",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://so.51cto.com/?keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "matchDomains": [
+      "51cto.com"
+    ]
+  },
+  {
+    "id": "weixin-sogou",
+    "name": "微信公众号搜狗",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://weixin.sogou.com/weixin?type=2&query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "matchDomains": [
+      "sogou.com"
+    ]
+  },
+  {
+    "id": "offershow",
+    "name": "OfferShow",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://www.offershow.cn/",
+    "matchDomains": [
+      "offershow.cn"
+    ]
+  },
+  {
+    "id": "zsxq",
+    "name": "知识星球",
+    "type": "manual",
+    "enabled": false,
+    "searchUrl": "",
+    "matchDomains": [
+      "zsxq.com"
+    ]
+  },
+  {
+    "id": "leetcode-cn",
+    "name": "力扣中文",
+    "type": "manual",
+    "enabled": false,
+    "searchUrl": "",
+    "matchDomains": [
+      "leetcode.cn"
+    ]
+  },
+  {
+    "id": "cnblogs",
+    "name": "博客园",
+    "type": "manual",
+    "enabled": false,
+    "searchUrl": "",
+    "matchDomains": [
+      "cnblogs.com"
+    ]
+  }
+]

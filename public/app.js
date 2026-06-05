@@ -51,6 +51,82 @@ let catalogPosts = [];
 let meta = {};
 let searchPlatforms = [];
 
+const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
+
+function isStaticHost() {
+  return location.hostname.endsWith("github.io") || location.protocol === "file:";
+}
+
+function uniqueValues(posts, key) {
+  return [...new Set(posts.map((post) => post[key]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "zh-CN"));
+}
+
+function buildMetaFromPosts(posts) {
+  const tags = [...new Set(posts.flatMap((post) => post.tags || []))].sort((a, b) => a.localeCompare(b, "zh-CN"));
+  return {
+    categories: [
+      "多模态大模型",
+      "VLA / 具身智能",
+      "视频 / 视觉理解",
+      "世界模型",
+      "自动驾驶 / 数据闭环",
+      "Agent / RAG / 大模型应用",
+      "推理优化 / 模型压缩",
+      "强化学习 / 对齐训练",
+    ],
+    companies: uniqueValues(posts, "company"),
+    platforms: uniqueValues(posts, "sourcePlatform"),
+    difficulties: ["入门", "中等", "困难", "综合"],
+    tags,
+  };
+}
+
+async function readStaticPosts() {
+  const response = await fetch(`${staticDataPrefix}/data/posts.json`);
+  const posts = await response.json();
+  return { posts, meta: buildMetaFromPosts(posts) };
+}
+
+function filterStaticPosts(posts) {
+  const query = new URLSearchParams(buildServerQuery());
+  let result = [...posts];
+  const q = (query.get("q") || "").toLowerCase();
+  const company = (query.get("company") || "").toLowerCase();
+  const role = (query.get("role") || "").toLowerCase();
+  const exactFilters = ["type", "category", "platform", "difficulty", "tag"];
+
+  if (q) result = result.filter((post) => postTextForStatic(post).includes(q));
+  if (company) result = result.filter((post) => (post.company || "").toLowerCase().includes(company));
+  if (role) result = result.filter((post) => (post.role || "").toLowerCase().includes(role));
+  exactFilters.forEach((key) => {
+    const value = query.get(key);
+    if (!value || value === "all") return;
+    if (key === "platform") result = result.filter((post) => post.sourcePlatform === value);
+    else if (key === "tag") result = result.filter((post) => (post.tags || []).includes(value));
+    else result = result.filter((post) => post[key] === value);
+  });
+  if (query.get("startDate")) result = result.filter((post) => (post.sourceDate || "") >= query.get("startDate"));
+  if (query.get("endDate")) result = result.filter((post) => (post.sourceDate || "") <= query.get("endDate"));
+  return result;
+}
+
+function postTextForStatic(post) {
+  return [
+    post.title,
+    post.company,
+    post.role,
+    post.direction,
+    post.domain,
+    post.category,
+    post.difficulty,
+    post.sourcePlatform,
+    post.content,
+    post.prepTips,
+    ...(post.tags || []),
+    ...(post.questions || []),
+  ].filter(Boolean).join(" ").toLowerCase();
+}
+
 function readJson(key, fallback) {
   try {
     return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
@@ -271,6 +347,12 @@ function renderPlatforms() {
 
 async function loadPlatforms() {
   if (!platformList) return;
+  if (isStaticHost()) {
+    const response = await fetch(`${staticDataPrefix}/data/platforms.json`);
+    searchPlatforms = await response.json();
+    renderPlatforms();
+    return;
+  }
   const response = await fetch("/api/platforms");
   const payload = await response.json();
   searchPlatforms = payload.platforms || [];
@@ -278,6 +360,10 @@ async function loadPlatforms() {
 }
 
 async function updatePlatform(id, patch) {
+  if (isStaticHost()) {
+    platformMessage.textContent = "GitHub Pages 是静态页面，平台配置修改需要在本地或服务器后端中进行。";
+    return;
+  }
   platformMessage.textContent = "正在更新平台...";
   const response = await fetch("/api/platforms", {
     method: "PATCH",
@@ -290,6 +376,10 @@ async function updatePlatform(id, patch) {
 }
 
 async function deletePlatform(id) {
+  if (isStaticHost()) {
+    platformMessage.textContent = "GitHub Pages 是静态页面，平台配置删除需要在本地或服务器后端中进行。";
+    return;
+  }
   platformMessage.textContent = "正在删除平台...";
   const response = await fetch(`/api/platforms?id=${encodeURIComponent(id)}`, { method: "DELETE" });
   const payload = await response.json();
@@ -570,6 +660,13 @@ function applyPreset(preset) {
 }
 
 async function loadCatalog() {
+  if (isStaticHost()) {
+    const payload = await readStaticPosts();
+    catalogPosts = payload.posts || [];
+    meta = payload.meta || meta;
+    renderDashboard();
+    return;
+  }
   const response = await fetch("/api/posts");
   const payload = await response.json();
   catalogPosts = payload.posts || [];
@@ -577,6 +674,13 @@ async function loadCatalog() {
 }
 
 async function loadPosts() {
+  if (isStaticHost()) {
+    const payload = await readStaticPosts();
+    meta = payload.meta || meta;
+    renderPosts(applyClientFilters(filterStaticPosts(payload.posts || [])));
+    renderCollections();
+    return;
+  }
   const query = buildServerQuery();
   const response = await fetch(`/api/posts${query ? `?${query}` : ""}`);
   const payload = await response.json();
@@ -586,6 +690,17 @@ async function loadPosts() {
 }
 
 async function loadMeta() {
+  if (isStaticHost()) {
+    const payload = await readStaticPosts();
+    meta = payload.meta;
+    setOptions(filters.category, meta.categories || [], "全部分类");
+    setOptions(filters.platform, meta.platforms || [], "全部平台");
+    setOptions(filters.difficulty, meta.difficulties || [], "全部难度");
+    setOptions(filters.tag, meta.tags || [], "全部标签");
+    setFormCategories(meta.categories || []);
+    renderCategoryChips(meta.categories || []);
+    return;
+  }
   const response = await fetch("/api/meta");
   meta = await response.json();
   setOptions(filters.category, meta.categories || [], "全部分类");
@@ -598,6 +713,10 @@ async function loadMeta() {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (isStaticHost()) {
+    formMessage.textContent = "GitHub Pages 是静态页面，发布内容需要在本地或服务器后端中进行。";
+    return;
+  }
   formMessage.textContent = "正在发布...";
   const data = Object.fromEntries(new FormData(form).entries());
   const response = await fetch("/api/posts", {
@@ -620,6 +739,10 @@ form.addEventListener("submit", async (event) => {
 if (platformForm) {
   platformForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (isStaticHost()) {
+      platformMessage.textContent = "GitHub Pages 是静态页面，添加平台需要在本地或服务器后端中进行。";
+      return;
+    }
     platformMessage.textContent = "正在添加平台...";
     const data = Object.fromEntries(new FormData(platformForm).entries());
     data.enabled = true;

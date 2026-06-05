@@ -20,6 +20,7 @@ const filters = {
   tag: document.querySelector("#tagFilter"),
   status: document.querySelector("#statusFilter"),
   sort: document.querySelector("#sortMode"),
+  questionOnly: document.querySelector("#questionOnly"),
   startDate: document.querySelector("#startDate"),
   endDate: document.querySelector("#endDate"),
 };
@@ -29,7 +30,14 @@ const totalCount = document.querySelector("#totalCount");
 const questionCount = document.querySelector("#questionCount");
 const experienceCount = document.querySelector("#experienceCount");
 const collectionCount = document.querySelector("#collectionCount");
+const focusCount = document.querySelector("#focusCount");
+const reviewCount = document.querySelector("#reviewCount");
+const sourceCount = document.querySelector("#sourceCount");
+const avgQuestionCount = document.querySelector("#avgQuestionCount");
 const resultSummary = document.querySelector("#resultSummary");
+const sourceBreakdown = document.querySelector("#sourceBreakdown");
+const categoryBreakdown = document.querySelector("#categoryBreakdown");
+const hotTags = document.querySelector("#hotTags");
 
 const collectionKey = "interview-hub-collections";
 const statusKey = "interview-hub-statuses";
@@ -75,10 +83,6 @@ function ensureDefaultCollection() {
   }
 }
 
-function formatDate(value) {
-  return value || "未知时间";
-}
-
 function typeLabel(type) {
   const labels = {
     experience: "面经",
@@ -102,6 +106,20 @@ function statusLabel(status) {
 function difficultyRank(value) {
   const ranks = { 困难: 4, 综合: 3, 中等: 2, 入门: 1 };
   return ranks[value] || 0;
+}
+
+function countBy(items, getter) {
+  return items.reduce((acc, item) => {
+    const key = getter(item) || "未标注";
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+function topEntries(record, limit = 6) {
+  return Object.entries(record)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "zh-CN"))
+    .slice(0, limit);
 }
 
 function setOptions(select, values, allLabel = "全部") {
@@ -146,14 +164,19 @@ function buildServerQuery() {
 function applyClientFilters(posts) {
   const statuses = readStatuses();
   let result = [...posts];
+
   if (filters.status.value !== "all") {
     result = result.filter((post) => (statuses[post.id] || "unread") === filters.status.value);
+  }
+  if (filters.questionOnly.checked) {
+    result = result.filter((post) => (post.questions || []).length > 0);
   }
 
   const sorters = {
     "date-desc": (a, b) => (b.sourceDate || "").localeCompare(a.sourceDate || ""),
     "date-asc": (a, b) => (a.sourceDate || "").localeCompare(b.sourceDate || ""),
     "difficulty-desc": (a, b) => difficultyRank(b.difficulty) - difficultyRank(a.difficulty),
+    "question-desc": (a, b) => (b.questions || []).length - (a.questions || []).length,
     "company-asc": (a, b) => (a.company || "").localeCompare(b.company || "", "zh-CN"),
   };
   result.sort(sorters[filters.sort.value] || sorters["date-desc"]);
@@ -161,10 +184,55 @@ function applyClientFilters(posts) {
 }
 
 function updateStats(posts) {
+  const collections = readCollections();
+  const statuses = readStatuses();
   totalCount.textContent = posts.length;
   questionCount.textContent = posts.filter((post) => post.type === "question" || post.type === "collection").length;
   experienceCount.textContent = posts.filter((post) => post.type === "experience" || post.type === "video").length;
-  collectionCount.textContent = Object.keys(readCollections()).length;
+  collectionCount.textContent = Object.keys(collections).length;
+  focusCount.textContent = Object.values(statuses).filter((status) => status === "focus").length;
+  reviewCount.textContent = Object.values(statuses).filter((status) => status === "review").length;
+  sourceCount.textContent = new Set(catalogPosts.map((post) => post.sourcePlatform).filter(Boolean)).size;
+  const totalQuestions = posts.reduce((sum, post) => sum + (post.questions || []).length, 0);
+  avgQuestionCount.textContent = posts.length ? (totalQuestions / posts.length).toFixed(1) : "0";
+}
+
+function renderRankList(root, entries) {
+  root.innerHTML = "";
+  entries.forEach(([label, count]) => {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "rank-row";
+    row.innerHTML = `<span>${label}</span><strong>${count}</strong>`;
+    root.appendChild(row);
+  });
+}
+
+function renderDashboard() {
+  const sourceEntries = topEntries(countBy(catalogPosts, (post) => post.sourcePlatform));
+  const categoryEntries = topEntries(countBy(catalogPosts, (post) => post.category));
+  const tagCounts = {};
+  catalogPosts.forEach((post) => {
+    (post.tags || []).forEach((tag) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+
+  renderRankList(sourceBreakdown, sourceEntries);
+  renderRankList(categoryBreakdown, categoryEntries);
+  hotTags.innerHTML = "";
+  topEntries(tagCounts, 14).forEach(([tag, count]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tag hot-tag";
+    button.textContent = `${tag} ${count}`;
+    button.addEventListener("click", () => {
+      filters.tag.value = tag;
+      loadPosts();
+      document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
+    });
+    hotTags.appendChild(button);
+  });
 }
 
 function updateResultSummary(posts) {
@@ -174,6 +242,7 @@ function updateResultSummary(posts) {
   if (filters.platform.value !== "all") active.push(filters.platform.value);
   if (filters.difficulty.value !== "all") active.push(filters.difficulty.value);
   if (filters.status.value !== "all") active.push(statusLabel(filters.status.value));
+  if (filters.questionOnly.checked) active.push("带高频问题");
   resultSummary.textContent = active.length
     ? `${posts.length} 条结果，筛选：${active.join(" / ")}`
     : `${posts.length} 条结果，显示全部内容`;
@@ -239,6 +308,7 @@ function buildReviewCard(post) {
     `方向：${post.direction || "未标注"} / ${post.domain || "未标注"}`,
     `岗位：${post.role}`,
     `难度：${post.difficulty}`,
+    `来源：${post.sourcePlatform || "未知"} ${post.sourceDate || ""}`,
     `标签：${(post.tags || []).join(", ")}`,
     "",
     "## 摘要",
@@ -282,7 +352,7 @@ function renderPosts(posts) {
     card.querySelector(".type-pill").textContent = typeLabel(post.type);
     card.querySelector(".difficulty").textContent = post.difficulty;
     card.querySelector(".category").textContent = post.category || "未分类";
-    card.querySelector(".date").textContent = formatDate(post.sourceDate);
+    card.querySelector(".date").textContent = post.sourceDate || "未知时间";
     card.querySelector(".status-pill").textContent = statusLabel(status);
     card.querySelector(".status-pill").dataset.status = status;
     card.querySelector("h3").textContent = post.title;
@@ -293,7 +363,7 @@ function renderPosts(posts) {
     const questionBlock = card.querySelector(".question-block");
     if (post.questions && post.questions.length) {
       const title = document.createElement("strong");
-      title.textContent = "高频问题";
+      title.textContent = `高频问题 (${post.questions.length})`;
       const list = document.createElement("ul");
       post.questions.forEach((question) => {
         const item = document.createElement("li");
@@ -394,10 +464,27 @@ function exportCollections() {
   collectionExport.textContent = JSON.stringify(payload, null, 2);
 }
 
+function applyPreset(preset) {
+  const presets = {
+    agent: { category: "Agent / RAG / 大模型应用", keyword: "" },
+    vla: { category: "VLA / 具身智能", keyword: "" },
+    multimodal: { category: "多模态大模型", keyword: "" },
+    training: { category: "all", keyword: "训练框架 DeepSpeed Megatron" },
+  };
+  const config = presets[preset];
+  if (!config) return;
+  filters.category.value = config.category;
+  filters.keyword.value = config.keyword;
+  filters.questionOnly.checked = true;
+  loadPosts();
+  document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
+}
+
 async function loadCatalog() {
   const response = await fetch("/api/posts");
   const payload = await response.json();
   catalogPosts = payload.posts || [];
+  renderDashboard();
 }
 
 async function loadPosts() {
@@ -460,6 +547,10 @@ Object.values(filters).forEach((input) => {
   input.addEventListener("change", loadPosts);
 });
 
+document.querySelectorAll(".preset-button").forEach((button) => {
+  button.addEventListener("click", () => applyPreset(button.dataset.preset));
+});
+
 document.querySelector("#clearFilters").addEventListener("click", () => {
   filters.keyword.value = "";
   filters.company.value = "";
@@ -471,6 +562,7 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
   filters.tag.value = "all";
   filters.status.value = "all";
   filters.sort.value = "date-desc";
+  filters.questionOnly.checked = false;
   filters.startDate.value = "";
   filters.endDate.value = "";
   loadPosts();

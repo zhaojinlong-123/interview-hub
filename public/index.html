@@ -10,6 +10,7 @@
     <header class="topbar">
       <a class="brand" href="/">Interview Hub</a>
       <nav>
+        <a href="#dashboard">学习看板</a>
         <a href="#browse">面经库</a>
         <a href="#collections">收藏夹</a>
         <a href="#write">发布</a>
@@ -20,16 +21,69 @@
       <section class="hero">
         <p class="eyebrow">LLM / VLA / Embodied AI</p>
         <h1>大模型与具身智能面经学习站</h1>
-        <p class="lead">整理最近 3 个月多模态大模型、VLA/具身智能、视频理解、自动驾驶数据闭环、Agent/RAG 和推理优化相关面经，支持筛选、收藏、学习状态标记和复习卡片复制。</p>
+        <p class="lead">把知乎、小红书、脉脉、GitHub 等来源里的大模型面经整理成可检索、可收藏、可复习的学习资料库，重点覆盖多模态、VLA/具身智能、Agent/RAG、训练框架和推理部署。</p>
         <div class="hero-stats">
           <div><strong id="totalCount">0</strong><span>当前结果</span></div>
-          <div><strong id="questionCount">0</strong><span>题目/题型</span></div>
+          <div><strong id="questionCount">0</strong><span>题目/题库</span></div>
           <div><strong id="experienceCount">0</strong><span>面经/复盘</span></div>
           <div><strong id="collectionCount">0</strong><span>收藏夹</span></div>
         </div>
       </section>
 
-      <section class="insight-panel">
+      <section id="dashboard" class="dashboard">
+        <div class="section-heading">
+          <p class="eyebrow">Dashboard</p>
+          <h2>本周学习看板</h2>
+          <p>优先看高频方向，再用状态标记把内容变成自己的复习队列。</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="metric-card">
+            <span>重点内容</span>
+            <strong id="focusCount">0</strong>
+            <p>已标记为重点的面经</p>
+          </article>
+          <article class="metric-card">
+            <span>待复习</span>
+            <strong id="reviewCount">0</strong>
+            <p>建议下次优先回看</p>
+          </article>
+          <article class="metric-card">
+            <span>来源覆盖</span>
+            <strong id="sourceCount">0</strong>
+            <p>平台与资料来源数量</p>
+          </article>
+          <article class="metric-card">
+            <span>平均题量</span>
+            <strong id="avgQuestionCount">0</strong>
+            <p>每条记录的高频问题数</p>
+          </article>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>快捷方向</h3>
+            <div class="preset-row">
+              <button class="preset-button" data-preset="agent" type="button">Agent / RAG</button>
+              <button class="preset-button" data-preset="vla" type="button">VLA 具身</button>
+              <button class="preset-button" data-preset="multimodal" type="button">多模态</button>
+              <button class="preset-button" data-preset="training" type="button">训练框架</button>
+            </div>
+          </article>
+          <article class="insight-card">
+            <h3>来源分布</h3>
+            <div id="sourceBreakdown" class="rank-list"></div>
+          </article>
+          <article class="insight-card">
+            <h3>分类分布</h3>
+            <div id="categoryBreakdown" class="rank-list"></div>
+          </article>
+          <article class="insight-card">
+            <h3>热点标签</h3>
+            <div id="hotTags" class="tag-cloud"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="focus-band">
         <div>
           <p class="eyebrow">Study Focus</p>
           <h2>建议优先复习</h2>
@@ -38,7 +92,7 @@
           <span>多模态结构与视觉语言对齐</span>
           <span>VLA 动作表示与机器人数据</span>
           <span>RAG / Agent 工程落地</span>
-          <span>自动驾驶数据闭环与仿真</span>
+          <span>训练框架、显存优化与推理部署</span>
         </div>
       </section>
 
@@ -92,8 +146,13 @@
               <option value="date-desc">最新优先</option>
               <option value="date-asc">最早优先</option>
               <option value="difficulty-desc">困难优先</option>
+              <option value="question-desc">题量优先</option>
               <option value="company-asc">公司 A-Z</option>
             </select>
+          </label>
+          <label class="check-line">
+            <input id="questionOnly" type="checkbox" />
+            只看带高频问题的内容
           </label>
           <label>
             公司
@@ -136,7 +195,7 @@
           <p>收藏夹和学习状态保存在当前浏览器本地。后续加入登录和数据库后，可跨设备同步。</p>
         </div>
         <form id="collectionForm" class="collection-form">
-          <input id="collectionName" placeholder="新建收藏夹，例如：字节面试、VLA重点题、自动驾驶数据闭环" />
+          <input id="collectionName" placeholder="新建收藏夹，例如：字节面试、VLA重点题、训练框架" />
           <button type="submit">新建收藏夹</button>
           <button id="exportCollections" type="button">导出收藏</button>
         </form>
@@ -175,7 +234,7 @@
           </label>
           <label>
             来源平台
-            <input name="sourcePlatform" placeholder="牛客 / 小红书 / 脉脉 / 知乎 / B站 / GitHub" maxlength="40" />
+            <input name="sourcePlatform" placeholder="牛客 / 小红书 / 脉脉 / 知乎 / GitHub" maxlength="40" />
           </label>
           <label>
             公司
@@ -183,7 +242,7 @@
           </label>
           <label>
             岗位
-            <input name="role" placeholder="例如：多模态算法 / 机器人算法 / 自动驾驶感知" maxlength="60" required />
+            <input name="role" placeholder="例如：多模态算法 / 机器人算法 / 大模型训练工程" maxlength="60" required />
           </label>
           <label>
             方向

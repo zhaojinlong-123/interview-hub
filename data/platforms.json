@@ -4,7 +4,7 @@
     "name": "知乎",
     "type": "login",
     "enabled": true,
-    "searchUrl": "https://www.zhihu.com/search?type=content&q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://www.zhihu.com/search?type=content&q={query}",
     "matchDomains": [
       "zhihu.com"
     ]
@@ -14,7 +14,7 @@
     "name": "小红书",
     "type": "login",
     "enabled": true,
-    "searchUrl": "https://www.xiaohongshu.com/search_result?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://www.xiaohongshu.com/search_result?keyword={query}&type=51",
     "matchDomains": [
       "xiaohongshu.com"
     ]
@@ -34,7 +34,7 @@
     "name": "牛客",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://www.nowcoder.com/search?query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&type=post",
+    "searchUrl": "https://www.nowcoder.com/search?query={query}&type=post",
     "matchDomains": [
       "nowcoder.com"
     ]
@@ -44,7 +44,7 @@
     "name": "GitHub",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://github.com/search?q=LLM+interview+questions+OR+%E5%A4%A7%E6%A8%A1%E5%9E%8B+%E9%9D%A2%E7%BB%8F&type=repositories",
+    "searchUrl": "https://github.com/search?q={query}&type=repositories",
     "matchDomains": [
       "github.com"
     ]
@@ -54,7 +54,7 @@
     "name": "B站",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://search.bilibili.com/all?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://search.bilibili.com/all?keyword={query}",
     "matchDomains": [
       "bilibili.com"
     ]
@@ -64,7 +64,7 @@
     "name": "CSDN",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://so.csdn.net/so/search?q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&t=all",
+    "searchUrl": "https://so.csdn.net/so/search?q={query}&t=all",
     "matchDomains": [
       "csdn.net"
     ]
@@ -74,7 +74,7 @@
     "name": "掘金",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://juejin.cn/search?query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F&type=0",
+    "searchUrl": "https://juejin.cn/search?query={query}&type=0",
     "matchDomains": [
       "juejin.cn"
     ]
@@ -84,7 +84,7 @@
     "name": "51CTO",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://so.51cto.com/?keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://so.51cto.com/?keywords={query}",
     "matchDomains": [
       "51cto.com"
     ]
@@ -114,7 +114,7 @@
     "name": "力扣中文",
     "type": "login",
     "enabled": true,
-    "searchUrl": "https://leetcode.cn/search/?q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://leetcode.cn/search/?q={query}",
     "matchDomains": [
       "leetcode.cn"
     ]
@@ -124,7 +124,7 @@
     "name": "博客园",
     "type": "public",
     "enabled": true,
-    "searchUrl": "https://zzk.cnblogs.com/s/blogpost?w=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "searchUrl": "https://zzk.cnblogs.com/s/blogpost?w={query}",
     "matchDomains": [
       "cnblogs.com"
     ]

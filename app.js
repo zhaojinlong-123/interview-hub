@@ -57,7 +57,7 @@ let currentPage = 1;
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
-const staticAssetVersion = "20260606-daily-readable";
+const staticAssetVersion = "20260606-platform-templates";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
@@ -70,6 +70,13 @@ function safeHttpUrl(value) {
   } catch {
     return "";
   }
+}
+
+function platformPreviewUrl(searchUrl, query = "大模型 面经") {
+  const encoded = encodeURIComponent(query);
+  return String(searchUrl || "")
+    .replaceAll("{query}", encoded)
+    .replaceAll("{keyword}", encoded);
 }
 
 function staticUrl(path) {
@@ -349,7 +356,20 @@ function renderPlatforms() {
     metaLine.textContent = `${platformTypeLabel(platform.type)} · ${platform.enabled ? "已启用" : "已停用"} · ${domains}`;
     const url = document.createElement("p");
     url.className = "platform-url";
-    url.textContent = platform.searchUrl || "无自动搜索链接";
+    if (platform.searchUrl) {
+      const previewUrl = safeHttpUrl(platformPreviewUrl(platform.searchUrl));
+      const link = document.createElement("a");
+      link.textContent = platform.searchUrl;
+      link.title = "打开示例关键词：大模型 面经";
+      if (previewUrl) {
+        link.href = previewUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      url.appendChild(link);
+    } else {
+      url.textContent = "无自动搜索链接";
+    }
     info.appendChild(title);
     info.appendChild(metaLine);
     info.appendChild(url);

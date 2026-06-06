@@ -11,5 +11,13 @@
   ],
   "publishTarget": "xiaohongshu",
   "autoPublish": false,
-  "notes": "当前策略生成小红书草稿并记录发布队列；自动发帖需要额外浏览器登录态和人工授权。"
+  "notes": "当前策略生成小红书草稿并记录发布队列；自动发帖需要额外浏览器登录态和人工授权。",
+  "searchQueries": [
+    "多模态大模型 面经",
+    "VLA 具身智能 面经",
+    "视频理解 面试题",
+    "训练框架 DeepSpeed Megatron 面经",
+    "推理部署 KV cache 量化 面经",
+    "自动驾驶 数据闭环 世界模型 面经"
+  ]
 }

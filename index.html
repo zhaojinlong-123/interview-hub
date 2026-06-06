@@ -138,7 +138,7 @@
         <div class="section-heading compact">
           <p class="eyebrow">Sources</p>
           <h2>当前检索平台</h2>
-          <p>这里维护的启用平台会被周更脚本读取。公开平台会按搜索链接打开；登录平台会优先读取已登录的可控 Chrome 标签页。</p>
+          <p>这里维护的启用平台会被周更脚本读取。搜索模板支持 {query} 占位符，每周会按最新重点方向生成多组关键词并多次检索。</p>
         </div>
         <form id="platformForm" class="platform-form">
           <label>平台名称<input name="name" placeholder="例如：牛客 / GitHub / 知识星球" maxlength="40" required /></label>
@@ -150,7 +150,7 @@
               <option value="manual">人工处理</option>
             </select>
           </label>
-          <label class="wide">搜索链接<input name="searchUrl" placeholder="https://example.com/search?q=大模型 面经" maxlength="500" /></label>
+          <label class="wide">搜索链接模板<input name="searchUrl" placeholder="https://example.com/search?q={query}" maxlength="500" /></label>
           <label class="wide">匹配域名<input name="matchDomains" placeholder="多个用逗号分隔，例如：zhihu.com, zhuanlan.zhihu.com" maxlength="240" /></label>
           <div class="form-actions wide">
             <button class="primary-button" type="submit">添加平台</button>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小红书待发布 - Interview Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./">Interview Hub</a>
+      <nav>
+        <a href="./#daily">每日精选</a>
+        <a href="./publish-queue.html">待发布</a>
+      </nav>
+    </header>
+
+    <main class="reader-shell">
+      <section class="reader-article publish-queue-page">
+        <p class="eyebrow">Xiaohongshu Queue</p>
+        <h1>小红书待发布队列</h1>
+        <p class="reader-intro">自动发布失败或需要手机确认时，文案会出现在这里。每条都包含引用来源，复制后可直接发到小红书。</p>
+        <div id="publishQueueRoot" class="publish-queue-list"></div>
+      </section>
+    </main>
+
+    <script src="./publish-queue.js"></script>
+  </body>
+</html>

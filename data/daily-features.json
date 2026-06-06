@@ -16,7 +16,9 @@
     "sourceUrl": "https://zhuanlan.zhihu.com/p/1998500372969443453",
     "articlePath": "content/xiaohongshu-drafts/2026-06-06-c7fca9e91989.md",
     "target": "xiaohongshu",
-    "publishStatus": "draft_ready",
-    "autoPublish": false
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "没有找到标题或正文输入框，可能需要上传图片/视频后才能编辑",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish"
   }
 ]

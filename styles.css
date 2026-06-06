@@ -671,6 +671,101 @@ input:focus, select:focus, textarea:focus {
   margin-top: 30px;
 }
 
+.reader-intro {
+  max-width: 780px;
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.publish-queue-list {
+  display: grid;
+  gap: 18px;
+}
+
+.publish-queue-card {
+  padding: 20px;
+  border: 1px solid rgba(102, 228, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(7, 14, 22, 0.58);
+}
+
+.publish-queue-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border: 1px solid rgba(102, 228, 255, 0.2);
+  border-radius: 999px;
+  color: var(--cyan);
+  background: rgba(102, 228, 255, 0.06);
+}
+
+.status-pill.published {
+  color: var(--green);
+}
+
+.publish-queue-card h2 {
+  margin: 14px 0 8px;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.queue-reason {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.xhs-cover-preview {
+  display: grid;
+  gap: 8px;
+  max-width: 420px;
+  min-height: 180px;
+  margin: 0 0 16px;
+  padding: 24px;
+  align-content: center;
+  border: 1px solid rgba(102, 228, 255, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(102, 228, 255, 0.16), rgba(92, 255, 194, 0.08)),
+    rgba(4, 12, 18, 0.86);
+}
+
+.xhs-cover-preview strong {
+  color: var(--text);
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.xhs-cover-preview span {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.publish-queue-card pre {
+  overflow: auto;
+  max-height: 520px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgba(102, 228, 255, 0.14);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(4, 12, 18, 0.62);
+  font: 14px/1.75 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  white-space: pre-wrap;
+}
+
 .platform-panel {
   max-width: none;
 }

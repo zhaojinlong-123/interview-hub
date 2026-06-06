@@ -19,20 +19,22 @@
       "面经"
     ],
     "questions": [
-      "RLHF、PPO、DPO、GRPO 的训练目标和适用场景有什么区别？"
+      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+      "对齐训练如何评估 helpfulness、harmlessness、truthfulness 和复杂任务通过率？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2026最新字节大模型岗面经汇总(多平台整理) PolarisT：包括数据，怎么训练奖励模型，每个模型的损失什么样子的？ PPO 的奖励函数设计对最终模型表现有什么影响？ PPO...阅读全文​ ​ 赞同 31​ ​ 5 条评论 04-19",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备 RLHF/DPO/GRPO/PPO、reward model、偏好数据构造和对齐评估指标。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-c9675710eb04",
     "title": "小红书：字节飞书大模型算法面经",
     "company": "字节",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -46,20 +48,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节飞书大模型算法面经 汤圆脑袋 05-09 169",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-dae3f77b4663",
     "title": "小红书：字节大模型算法实习面经",
     "company": "字节",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -73,12 +77,14 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节大模型算法实习面经 leek 1小时前 1",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-8ef44c1bc208",
@@ -103,20 +109,22 @@
       "面试"
     ],
     "questions": [
-      "多模态模型如何做视觉语言对齐和长上下文理解？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 微信公众号搜狗 搜索到的近期面经候选。摘要：【清华团队】字节多模态大模型面经一面 为什么3.大模型结构有哪些变化4.你认为训LLM最大的困难是什么5.场景题6.反问字节面试效率挺高的,基本上三天左右就会收到面试结... 古希腊掌管代码的神2026-4-1",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-b3c4233ccad8",
     "title": "微信公众号搜狗：终于:字节跳动大模型开发面经!强度拉满了",
     "company": "字节",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -131,20 +139,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 微信公众号搜狗 搜索到的近期面经候选。摘要：终于:字节跳动大模型开发面经!强度拉满了 终于:字节跳动大模型开发面经!强度拉满了#大模型面经 AI大模型面试资料 打包好了领取方式1. 点赞+关注2. 私信 【 大模型 】 即可... 程序员说2026-3-12",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-6ee3764e5a06",
     "title": "知乎：美团大模型实习面经",
     "company": "美团",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -158,20 +168,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：美团大模型实习面经",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-7b750bea37e5",
     "title": "知乎：字节大模型算法实习一二面",
     "company": "字节",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "困难",
@@ -184,12 +196,14 @@
       "大模型"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：字节大模型算法实习一二面",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-422bd2e92920",
@@ -212,20 +226,22 @@
       "面经"
     ],
     "questions": [
-      "多模态模型如何做视觉语言对齐和长上下文理解？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：小红书多模态大模型日常实习面经",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-adeab96f46d0",
     "title": "知乎：阿里夸克大模型校招面经",
     "company": "阿里",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -239,20 +255,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：阿里夸克-校招大模型面经分享",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-46772d588066",
     "title": "知乎：大模型面经",
     "company": "腾讯",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -266,20 +284,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：大模型面经 - 腾讯混元",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-4d988bf74318",
     "title": "知乎：腾讯大模型算法日常实习面经",
     "company": "腾讯",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -293,20 +313,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：腾讯大模型算法日常实习面经",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-b0e106d6ba2c",
     "title": "知乎：算法面经：百度大模型一二面",
     "company": "百度",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "困难",
@@ -320,20 +342,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：算法面经：百度大模型一二面",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-a7f36d846f4a",
     "title": "知乎：2025 字节大模型算法面经",
     "company": "字节",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -347,20 +371,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2025 字节大模型算法面经",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-d8f005bdec2e",
     "title": "知乎：昨天面试官问我：一个 Prompt 进入大模型后，内部到底发生了什么？",
     "company": "综合",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "question",
     "difficulty": "中等",
@@ -373,20 +399,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：昨天面试官问我：一个 Prompt 进入大模型后，内部到底发生了什么？",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-c6aa7c5154e7",
     "title": "知乎：算法面经：美团大模型日常实习",
     "company": "美团",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -400,20 +428,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：算法面经：美团大模型日常实习",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-0074809a0f24",
     "title": "知乎：快手大模型算法岗面试，问的巨细。。。",
     "company": "快手",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "question",
     "difficulty": "中等",
@@ -427,12 +457,14 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：快手大模型算法岗面试，问的巨细。。。",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-170f94ad2c5a",
@@ -454,21 +486,23 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+      "座舱多模态大模型如何融合语音、视觉、车控状态和用户上下文，并保证安全边界？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：蔚来大模型算法面经 汤圆脑袋 2025-09-03 235",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备 BEV/occupancy、数据闭环、长尾场景挖掘、仿真评测和座舱多模态安全。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-7e3348c36425",
     "title": "小红书：赛力斯座舱大模型算法面经",
     "company": "综合",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
-    "category": "多模态大模型",
+    "direction": "自动驾驶 / 世界模型",
+    "domain": "数据闭环 / 仿真",
+    "category": "自动驾驶 / 数据闭环",
     "type": "experience",
     "difficulty": "中等",
     "sourcePlatform": "小红书",
@@ -480,20 +514,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+      "座舱多模态大模型如何融合语音、视觉、车控状态和用户上下文，并保证安全边界？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：赛力斯座舱大模型算法面经 皓明 2025-06-10 13",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备 BEV/occupancy、数据闭环、长尾场景挖掘、仿真评测和座舱多模态安全。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-0beb0e49133a",
     "title": "B站：AI大模型面试实战 · 7小时前",
     "company": "综合",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -506,20 +542,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：AI大模型面试实战 · 7小时前",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-0d72f3076550",
     "title": "CSDN：2026年AI大模型岗面试面经｜常见面试题130道",
     "company": "综合",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "question",
     "difficulty": "中等",
@@ -533,20 +571,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2026年AI大模型岗面试面经｜常见面试题130道",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-33fe7574bf6e",
     "title": "CSDN：大模型面试面经｜入职字节大模型岗面试分享（附答案），最后提醒一下大模型面试肚子里没墨水的人",
     "company": "字节",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -561,20 +601,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试面经｜入职字节大模型岗面试分享（附答案），最后提醒一下大模型面试肚子里没墨水的人",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-49202271d8bb",
     "title": "CSDN：【2026大模型算法社招面经】大模型算法工程师面试通关秘籍：项目经验+技术问答+手撕代码全攻略（建议收藏）",
     "company": "综合",
     "role": "大模型相关岗位",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "collection",
     "difficulty": "中等",
@@ -588,20 +630,22 @@
       "面试"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【2026大模型算法社招面经】大模型算法工程师面试通关秘籍：项目经验+技术问答+手撕代码全攻略（建议收藏）",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-4a7589079b1a",
     "title": "CSDN：字节大模型面经",
     "company": "字节",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -615,20 +659,22 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：字节大模型面经",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-eb8d013b387e",
     "title": "CSDN：大模型面经",
     "company": "腾讯",
     "role": "AI / 算法候选人",
-    "direction": "大模型面经",
-    "domain": "综合",
+    "direction": "多模态大模型",
+    "domain": "视觉语言对齐",
     "category": "多模态大模型",
     "type": "experience",
     "difficulty": "中等",
@@ -642,12 +688,14 @@
       "面经"
     ],
     "questions": [
-      "项目经历、模型原理、应用实现和评估指标分别如何回答？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面经 - 腾讯混元",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "auto-20260605-142a7512e68c",
@@ -671,12 +719,14 @@
       "面试"
     ],
     "questions": [
-      "多模态模型如何做视觉语言对齐和长上下文理解？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：居然JuRan 9月前 人工智能 阿里云多模态大模型岗三面面经 阿里云智能多模态大模型岗三面面经（详细问题+感受）最近面试了 阿里云智能集团 - 多模态大模型岗位，三轮技术面，整体体验还不错。问题整体偏常规，但对项目的追问比较细致。这里整理一下完整面经，供准备类似岗...",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
-    "updatedAt": 1780673886
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-zhihu-bytedance-vlm-20260605",
@@ -685,7 +735,7 @@
     "role": "多模态算法实习生",
     "direction": "多模态大模型",
     "domain": "视觉语言对齐",
-    "category": "多模态大模型",
+    "category": "推理优化 / 模型压缩",
     "type": "experience",
     "difficulty": "困难",
     "sourcePlatform": "知乎",
@@ -699,23 +749,23 @@
       "视觉语言对齐"
     ],
     "questions": [
-      "视觉 encoder 和 LLM 如何连接？",
-      "图文对齐数据如何构造？",
-      "多模态项目如何讲清楚？"
+      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+      "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？"
     ],
     "content": "知乎搜索结果中的字节多模态一面候选，适合补齐视觉语言模型结构和项目追问。",
-    "prepTips": "准备 CLIP、BLIP、Q-Former、视觉 token 压缩和多模态指令微调。",
+    "prepTips": "重点准备 KV cache、PagedAttention、continuous batching、量化压缩和线上延迟吞吐权衡。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-maimai-baidu-aidu-20260605",
     "title": "脉脉：百度 AIDU 大模型算法面经",
     "company": "百度",
     "role": "大模型算法",
-    "direction": "大模型算法",
-    "domain": "项目 / 论文 / 模型基础",
-    "category": "多模态大模型",
+    "direction": "推理优化 / 模型压缩",
+    "domain": "部署 / 量化 / KV Cache",
+    "category": "推理优化 / 模型压缩",
     "type": "experience",
     "difficulty": "困难",
     "sourcePlatform": "脉脉",
@@ -729,15 +779,14 @@
       "论文追问"
     ],
     "questions": [
-      "自我介绍和项目如何展开？",
-      "大模型预测 token 的损失如何计算？",
-      "思维链技术如何理解？",
-      "BERT 和 GPT 的区别是什么？"
+      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+      "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？"
     ],
     "content": "已登录脉脉搜索结果中出现的百度 AIDU 面经摘要，显示面试会深入项目、论文和模型基础。",
-    "prepTips": "准备项目论文细节、token-level loss、CoT、BERT/GPT 区别和 LoRA 矩阵分解。",
+    "prepTips": "重点准备 KV cache、PagedAttention、continuous batching、量化压缩和线上延迟吞吐权衡。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-maimai-kuaishou-rec-llm-20260605",
@@ -760,15 +809,14 @@
       "多模态推荐"
     ],
     "questions": [
-      "合成数据的优缺点是什么？",
-      "LLM 评估如何区分人工和自动化？",
-      "离线指标和线上指标有什么区别？",
-      "推荐系统如何结合 LLM？"
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
     ],
     "content": "脉脉搜索结果中的快手推荐大模型三面，覆盖数据流程、合成数据、LLM 评估和推荐系统结合 LLM。",
-    "prepTips": "准备推荐召回/精排、LLM 自动评估、多模态推荐、合成数据质量和基础算法题。",
+    "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-maimai-training-framework-20260605",
@@ -791,14 +839,14 @@
       "分布式训练"
     ],
     "questions": [
-      "训练框架面经该准备哪些点？",
-      "数据并行、张量并行、流水并行如何区分？",
-      "显存和通信瓶颈如何定位？"
+      "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+      "大模型训练中显存占用如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+      "混合精度、gradient checkpointing、FlashAttention 和通信重叠如何影响吞吐与稳定性？"
     ],
     "content": "脉脉搜索结果中有人专门询问训练框架面经，说明该方向资料相对稀缺但需求明确。",
-    "prepTips": "建议单独建立训练框架专题，覆盖并行策略、通信、checkpoint、容错和 profiling。",
+    "prepTips": "重点准备 ZeRO、张量并行、流水并行、显存拆解、通信瓶颈和训练稳定性排查。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-maimai-audio-llm-job-20260605",
@@ -807,7 +855,7 @@
     "role": "语音音频大模型算法",
     "direction": "音频大模型",
     "domain": "ASR / TTS / 音视频多模态",
-    "category": "多模态大模型",
+    "category": "视频 / 视觉理解",
     "type": "question",
     "difficulty": "中等",
     "sourcePlatform": "脉脉",
@@ -822,14 +870,14 @@
       "多模态"
     ],
     "questions": [
-      "语音对话和音频理解如何建模？",
-      "音频大模型后训练如何做？",
-      "音视频多模态如何评估？"
+      "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
+      "视频模型如何建模动作、因果关系、事件边界和跨镜头一致性？",
+      "视频问答/视频生成如何评估时序一致性、物理合理性、身份保持和指令遵循？"
     ],
     "content": "脉脉结果中出现语音/音频大模型岗位信息，提到通义、小红书、Seed、混元等团队，可作为面试方向补充。",
-    "prepTips": "准备 ASR、TTS、音频 caption、音视频对话、强化学习和产品落地评估。",
+    "prepTips": "重点准备帧采样、时序建模、视频 token 压缩、事件理解和时序一致性评估。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-zhihu-llm-leetcode-20260409",
@@ -838,7 +886,7 @@
     "role": "大模型算法候选人",
     "direction": "大模型基础题库",
     "domain": "Transformer / 训练 / 推理",
-    "category": "多模态大模型",
+    "category": "推理优化 / 模型压缩",
     "type": "collection",
     "difficulty": "综合",
     "sourcePlatform": "知乎",
@@ -852,14 +900,14 @@
       "Softmax"
     ],
     "questions": [
-      "Softmax 如何稳定计算？",
-      "LayerNorm 为什么常用于 Transformer？",
-      "注意力复杂度如何优化？"
+      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+      "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？"
     ],
     "content": "知乎搜索结果显示该题库覆盖大量高频考点，可作为基础题库入口。",
-    "prepTips": "按数学基础、Transformer、训练策略、推理部署四组刷题。",
+    "prepTips": "重点准备 KV cache、PagedAttention、continuous batching、量化压缩和线上延迟吞吐权衡。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   },
   {
     "id": "browser-zhihu-llm-rl-50-20260106",
@@ -883,13 +931,13 @@
       "强化学习"
     ],
     "questions": [
-      "RLHF-PPO 需要几个模型？",
-      "Reward model 如何设计？",
-      "PPO 和 DPO 有什么区别？"
+      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+      "对齐训练如何评估 helpfulness、harmlessness、truthfulness 和复杂任务通过率？"
     ],
     "content": "该入口聚焦 LLM 与强化学习面试问题，适合作为对齐训练专项复习。",
-    "prepTips": "重点掌握 reward model、KL 约束、偏好数据和离线/在线评估。",
+    "prepTips": "重点准备 RLHF/DPO/GRPO/PPO、reward model、偏好数据构造和对齐评估指标。",
     "createdAt": 1780672728,
-    "updatedAt": 1780672728
+    "updatedAt": 1780738115
   }
 ]

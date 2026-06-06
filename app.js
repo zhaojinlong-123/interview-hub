@@ -57,7 +57,7 @@ let currentPage = 1;
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
-const staticAssetVersion = "20260606-xhs-links";
+const staticAssetVersion = "20260606-professional-questions";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";

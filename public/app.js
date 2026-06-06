@@ -644,16 +644,31 @@ function buildReviewCard(post) {
   ].join("\n");
 }
 
-function sourceExcerpt(text, limit = 150) {
-  const clean = String(text || "").replace(/\s+/g, " ").trim();
-  if (!clean) return "";
-  return clean.length > limit ? `${clean.slice(0, limit)}...` : clean;
-}
-
 function questionFocusLine(post) {
   const parts = [post.category, post.direction, post.domain].filter(Boolean);
   const unique = [...new Set(parts)].slice(0, 3);
   return unique.length ? `考点概览：${unique.join(" / ")}` : "考点概览：综合面试题";
+}
+
+function answerHint(question) {
+  const rules = [
+    [/Vision encoder|LLM token|Q-Former|projector|cross-attention/i, "核心是把视觉特征压缩/投影到 LLM 可消费的 token 空间；比较 projector 简单高效、Q-Former 查询压缩、cross-attention 保留交互但成本更高。"],
+    [/grounding|OCR|空间关系|幻觉/i, "按任务拆指标：grounding 看定位，OCR 看文字识别，空间关系看关系推理，幻觉看无依据生成；人工集、自动指标和负样本压力测试结合。"],
+    [/指令微调|数据|噪声|偏见|泄漏/i, "先讲数据来源和配比，再讲清洗、去重、OCR/答案泄漏过滤、难例构造和评测集隔离，最后说明线上反馈如何回流。"],
+    [/action token|连续动作|diffusion policy/i, "离散 action token 适合语言式规划，连续回归适合低延迟控制，diffusion policy 更适合多峰动作分布和复杂操作轨迹。"],
+    [/遥操作|时间同步|轨迹切分|失败样本/i, "重点是多传感器时间戳对齐、episode 切分、成功/失败标签、异常轨迹过滤，以及用失败样本提升鲁棒性。"],
+    [/帧采样|temporal token|long-context/i, "回答维度是信息量、成本和时序覆盖：均匀/关键帧采样降成本，temporal token 压缩保留动态，长上下文 attention 处理长程依赖。"],
+    [/时序一致性|动作理解|事件边界|身份保持/i, "评估要覆盖动作类别、事件起止、跨帧身份一致和因果顺序；视频生成还要看物理合理性和主体漂移。"],
+    [/DeepSpeed|ZeRO|Megatron|张量并行|流水并行|数据并行/i, "数据并行扩 batch，张量并行切矩阵计算，流水并行切层，ZeRO 切优化器/梯度/参数状态；核心权衡是通信和负载均衡。"],
+    [/显存|参数|梯度|优化器|激活值|KV cache/i, "显存拆成参数、梯度、优化器状态、激活值和 KV cache；优化手段包括 ZeRO、checkpoint、混合精度、FlashAttention 和量化。"],
+    [/KV cache|PagedAttention|continuous batching|speculative decoding/i, "KV cache 避免重复算历史 token，PagedAttention 管理碎片，continuous batching 提升吞吐，speculative decoding 用小模型草稿降延迟。"],
+    [/INT8|INT4|AWQ|GPTQ|LoRA|蒸馏/i, "INT8/INT4 降显存和带宽，AWQ/GPTQ 偏离线量化，LoRA 合并减少推理额外开销，蒸馏用小模型换成本和速度。"],
+    [/BEV|occupancy|轨迹预测|仿真闭环|世界模型/i, "世界模型要学习环境状态和未来演化；BEV/occupancy 表示空间，轨迹预测建模交互，仿真闭环验证策略泛化。"],
+    [/场景挖掘|长尾样本|自动标注|仿真评测/i, "数据闭环链路是线上触发、长尾挖掘、自动/人工标注、训练回流、仿真和实车评测，关键是覆盖率和安全收益。"],
+    [/RLHF|DPO|GRPO|PPO|优化目标/i, "PPO 依赖 reward model 做在线式策略优化，DPO 直接用偏好对优化，GRPO 减少 value model 依赖；比较目标、稳定性和成本。"],
+    [/Reward model|reward hacking|长度偏置|分布外/i, "Reward model 要控制偏好数据质量、长度偏置和分布外泛化；用对抗样本、校准集和人工复核降低 reward hacking。"],
+  ];
+  return rules.find(([pattern]) => pattern.test(question))?.[1] || "先回答核心机制，再补关键取舍、常见失败模式和可量化评估指标。";
 }
 
 async function copyReviewCard(post) {
@@ -696,9 +711,9 @@ function renderPosts(posts) {
     card.querySelector("h3").textContent = post.title;
     card.querySelector(".company-role").textContent = `${post.company} · ${post.role}`;
     card.querySelector(".domain-line").textContent = `${post.direction || "未标方向"} · ${post.domain || "未标领域"} · ${post.sourcePlatform || "未知来源"}`;
-    card.querySelector(".content").textContent = sourceExcerpt(post.content);
-
     const questions = post.questions || [];
+    const answerHints = card.querySelector(".answer-hints");
+    answerHints.hidden = !questions.length;
     const questionSummary = card.querySelector(".question-summary");
     if (questions.length) {
       const title = document.createElement("strong");
@@ -715,6 +730,20 @@ function renderPosts(posts) {
       questionSummary.appendChild(title);
       questionSummary.appendChild(focus);
       questionSummary.appendChild(list);
+      const answerTitle = document.createElement("strong");
+      answerTitle.textContent = "简答提示";
+      const answerList = document.createElement("ul");
+      questions.slice(0, 4).forEach((question) => {
+        const item = document.createElement("li");
+        const questionText = document.createElement("span");
+        questionText.className = "answer-question";
+        questionText.textContent = question;
+        const answerText = document.createElement("p");
+        answerText.textContent = answerHint(question);
+        item.append(questionText, answerText);
+        answerList.appendChild(item);
+      });
+      answerHints.append(answerTitle, answerList);
       if (questions.length > 4) {
         const more = document.createElement("p");
         more.className = "question-more";

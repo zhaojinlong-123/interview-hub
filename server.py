@@ -10,6 +10,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_DIR = os.path.join(ROOT, "public")
+CONTENT_DIR = os.path.join(ROOT, "content")
 DATA_DIR = os.path.join(ROOT, "data")
 POSTS_FILE = os.path.join(DATA_DIR, "posts.json")
 PLATFORMS_FILE = os.path.join(DATA_DIR, "platforms.json")
@@ -476,8 +477,17 @@ class Handler(BaseHTTPRequestHandler):
             path = "/index.html"
 
         normalized = posixpath.normpath(path).lstrip("/")
-        file_path = os.path.abspath(os.path.join(PUBLIC_DIR, normalized))
-        if not file_path.startswith(os.path.abspath(PUBLIC_DIR)):
+        if normalized.startswith("content/"):
+            relative = normalized[len("content/"):]
+            file_path = os.path.abspath(os.path.join(CONTENT_DIR, relative))
+            allowed_root = os.path.abspath(CONTENT_DIR)
+            if not file_path.endswith(".md"):
+                self.send_error(403)
+                return
+        else:
+            file_path = os.path.abspath(os.path.join(PUBLIC_DIR, normalized))
+            allowed_root = os.path.abspath(PUBLIC_DIR)
+        if not file_path.startswith(allowed_root):
             self.send_error(403)
             return
         if not os.path.exists(file_path) or os.path.isdir(file_path):

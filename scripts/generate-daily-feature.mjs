@@ -138,11 +138,19 @@ function buildArticle(post, score, reasons, settings) {
   const tags = [...new Set([...(post.tags || []), post.company, post.direction, "大模型面试", "AI学习"])].filter(Boolean).slice(0, 10);
 
   return [
-    `# 每日大模型面经精读：${post.company}｜${post.direction || post.category}`,
+    `# 每日精选分析：${post.company}｜${post.direction || post.category}`,
     "",
     `今天选这条：${post.title}`,
     "",
-    `为什么值得看：这条面经价值分是 ${score}。它覆盖了 ${post.direction || post.category}，来源是 ${post.sourcePlatform}，适合用来检查自己是否真的能把专业考点、技术取舍和评估指标讲清楚。`,
+    "## 今日结论",
+    `这条面经覆盖 ${post.direction || post.category}，价值分是 ${score}。它适合用来检查自己是否能把专业考点、技术取舍、评估指标和真实项目链路讲清楚。`,
+    "",
+    "## 为什么值得看",
+    bulletList([
+      `方向匹配：${post.direction || post.category}`,
+      `来源平台：${post.sourcePlatform} ${post.sourceDate || ""}`,
+      "可以延伸到模型结构、训练数据、评估指标和线上部署追问。",
+    ]),
     "",
     "## 面经信息",
     `公司：${post.company}`,
@@ -176,7 +184,7 @@ function buildArticle(post, score, reasons, settings) {
       "RLHF、DPO、GRPO 与偏好对齐",
     ]),
     "",
-    "## 高频考点",
+    "## 核心考点",
     bulletList(questions),
     "",
     "## 今日复习动作",

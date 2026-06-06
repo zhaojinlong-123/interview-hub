@@ -57,7 +57,7 @@ let currentPage = 1;
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
-const staticAssetVersion = "20260606-professional-questions";
+const staticAssetVersion = "20260606-daily-readable";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
@@ -452,6 +452,48 @@ function excerptMarkdown(markdown) {
     .join(" ");
 }
 
+function stripMarkdown(line) {
+  return String(line || "")
+    .replace(/^#+\s*/, "")
+    .replace(/^[-*]\s*/, "")
+    .replace(/\*\*/g, "")
+    .trim();
+}
+
+function markdownTitle(markdown) {
+  return stripMarkdown(markdown.split(/\n/).find((line) => line.startsWith("# ")) || "");
+}
+
+function markdownSection(markdown, heading, limit = 5) {
+  const lines = markdown.split(/\r?\n/);
+  const start = lines.findIndex((line) => stripMarkdown(line) === heading);
+  if (start < 0) return [];
+  const out = [];
+  for (let index = start + 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (/^#{2,}\s+/.test(line)) break;
+    const clean = stripMarkdown(line);
+    if (clean) out.push(clean);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+function makeDailyList(titleText, items, className = "daily-list") {
+  const box = document.createElement("div");
+  box.className = className;
+  const title = document.createElement("strong");
+  title.textContent = titleText;
+  const list = document.createElement("ul");
+  items.forEach((item) => {
+    const node = document.createElement("li");
+    node.textContent = item;
+    list.appendChild(node);
+  });
+  box.append(title, list);
+  return box;
+}
+
 async function loadDailyArticle(feature) {
   if (!feature.articlePath) return "";
   try {
@@ -478,19 +520,49 @@ async function renderDailyPanel() {
   for (const feature of features) {
     const card = document.createElement("article");
     card.className = "daily-card";
-    const title = document.createElement("h3");
-    title.textContent = `${feature.date} · ${feature.company} · ${feature.direction}`;
-    const score = document.createElement("p");
-    score.textContent = `价值分：${feature.score}；状态：${feature.publishStatus || "draft_ready"}`;
     const article = await loadDailyArticle(feature);
+    const titleText = markdownTitle(article) || `${feature.company}｜${feature.direction}`;
+    const conclusion = markdownSection(article, "今日结论", 1)[0] || excerptMarkdown(article) || feature.title;
+    const reasons = markdownSection(article, "为什么值得看", 3);
+    const keyPoints = markdownSection(article, "核心考点", 4);
+
+    const header = document.createElement("div");
+    header.className = "daily-card-header";
+    const badge = document.createElement("span");
+    badge.className = "daily-badge";
+    badge.textContent = "今日精选";
+    const title = document.createElement("h3");
+    title.textContent = titleText;
+    header.append(badge, title);
+
+    const meta = document.createElement("div");
+    meta.className = "daily-meta";
+    [
+      ["日期", feature.date],
+      ["公司", feature.company],
+      ["方向", feature.direction],
+      ["价值分", String(feature.score || "-")],
+    ].forEach(([label, value]) => {
+      const item = document.createElement("span");
+      item.textContent = `${label}：${value || "-"}`;
+      meta.appendChild(item);
+    });
+
     const summary = document.createElement("p");
-    summary.textContent = excerptMarkdown(article) || feature.title;
+    summary.className = "daily-summary";
+    summary.textContent = conclusion;
+
+    const body = document.createElement("div");
+    body.className = "daily-readable";
+    if (keyPoints.length) body.appendChild(makeDailyList("核心考点", keyPoints.slice(0, 4), "daily-list daily-keypoints"));
+    if (reasons.length) body.appendChild(makeDailyList("为什么值得读", reasons.slice(0, 3)));
+
     const actions = document.createElement("div");
     actions.className = "card-actions";
     const doc = document.createElement("a");
-    doc.className = "source-link";
-    doc.textContent = "查看分析文档";
-    doc.href = feature.articlePath || "#";
+    doc.className = "source-link primary-doc-link";
+    doc.textContent = "阅读全文";
+    doc.href = `daily.html?id=${encodeURIComponent(feature.id)}`;
     doc.target = "_blank";
     doc.rel = "noopener noreferrer nofollow";
     doc.referrerPolicy = "no-referrer";
@@ -503,7 +575,7 @@ async function renderDailyPanel() {
     source.referrerPolicy = "no-referrer";
     if (!source.href) source.hidden = true;
     actions.append(doc, source);
-    card.append(title, score, summary, actions);
+    card.append(header, meta, summary, body, actions);
     dailyFeatureRoot.appendChild(card);
   }
 }

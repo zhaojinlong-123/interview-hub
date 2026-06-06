@@ -5,17 +5,13 @@
     "postId": "browser-zhihu-bytedance-vlm-20260605",
     "title": "知乎：字节多模态大模型一面",
     "company": "字节跳动",
-    "direction": "多模态大模型",
+    "direction": "多模态大模型 / 视觉语言对齐",
     "score": 79,
     "reasons": [
-      "近期性 +22",
-      "重点方向 多模态大模型 +6",
-      "大厂/重点机构 +14",
-      "稀缺方向 多模态 +4",
-      "高频问题 3 个 +15",
-      "有来源链接 +6",
-      "困难题/高压面 +8",
-      "标签信息完整 +4"
+      "近期面经，适合跟踪一线算法岗考点",
+      "覆盖视觉编码器、LLM 连接层和图文对齐数据",
+      "来自大厂多模态岗位，项目追问价值高",
+      "可延伸到 VLM 评估、幻觉控制和推理部署"
     ],
     "sourceUrl": "https://zhuanlan.zhihu.com/p/1998500372969443453",
     "articlePath": "content/xiaohongshu-drafts/2026-06-06-c7fca9e91989.md",

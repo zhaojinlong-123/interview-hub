@@ -38,7 +38,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/69fed8db000000002003bfcb",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/69fed8db000000002003bfcb?xsec_token=AB2bi5tqxdMMr-2Kby0-m4JdozNYoEhOchBbyqDI4lL4o=&xsec_source=pc_search",
     "tags": [
       "小红书",
       "字节",
@@ -65,7 +65,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6a22cca8000000002202759e",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a22cca8000000002202759e?xsec_token=ABTdR9WrbcsLyVaaffOsg6IokG2lZdpy3MiOPaRFh3J7A=&xsec_source=pc_search",
     "tags": [
       "小红书",
       "字节",
@@ -446,7 +446,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/68b7ef74000000001b030950",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/68b7ef74000000001b030950?xsec_token=ABmNiAbZMsocld6zx5LpZoLGkaSkO3HkDKM_ppMt2vISE=&xsec_source=pc_search",
     "tags": [
       "小红书",
       "蔚来",
@@ -473,7 +473,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6847b6c600000000030398e6",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6847b6c600000000030398e6?xsec_token=ABfpamDiru8prIgxAnRhmK4gzNRrjum6zDH5fNn5OCLDA=&xsec_source=pc_search",
     "tags": [
       "小红书",
       "大模型",
@@ -828,66 +828,6 @@
     ],
     "content": "脉脉结果中出现语音/音频大模型岗位信息，提到通义、小红书、Seed、混元等团队，可作为面试方向补充。",
     "prepTips": "准备 ASR、TTS、音频 caption、音视频对话、强化学习和产品落地评估。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-llm-bagua-20260530",
-    "title": "小红书：大模型算法面试八股总结",
-    "company": "综合",
-    "role": "大模型算法候选人",
-    "direction": "大模型八股",
-    "domain": "Transformer / 训练 / 推理",
-    "category": "多模态大模型",
-    "type": "collection",
-    "difficulty": "综合",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-05-30",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6a1ac5900000000035026578",
-    "tags": [
-      "小红书",
-      "大模型",
-      "八股",
-      "算法岗",
-      "近一周"
-    ],
-    "questions": [
-      "Transformer 结构如何讲清楚？",
-      "训练和推理高频八股有哪些？",
-      "项目题如何和基础题串起来？"
-    ],
-    "content": "已登录小红书搜索页抓取到的近一周高相关结果，适合作为大模型算法八股复习入口。",
-    "prepTips": "按基础结构、训练方法、推理部署、项目追问拆分成清单。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-zhiyuan-vla-20260416",
-    "title": "小红书：智元 VLA 一面面试经验",
-    "company": "智元机器人",
-    "role": "VLA / 具身智能算法",
-    "direction": "VLA / 具身智能",
-    "domain": "机器人动作模型",
-    "category": "VLA / 具身智能",
-    "type": "experience",
-    "difficulty": "困难",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-04-16",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/69e09511000000001b022652",
-    "tags": [
-      "小红书",
-      "智元",
-      "VLA",
-      "具身智能",
-      "机器人"
-    ],
-    "questions": [
-      "VLA 如何建模动作？",
-      "机器人数据如何采集和标注？",
-      "仿真和真机评估如何衔接？"
-    ],
-    "content": "小红书搜索结果中的智元 VLA 一面，和具身智能方向高度相关。",
-    "prepTips": "准备 OpenVLA、RT-2、动作 token、遥操作数据和 sim2real。",
     "createdAt": 1780672728,
     "updatedAt": 1780672728
   },

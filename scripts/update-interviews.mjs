@@ -6,6 +6,7 @@ import { execFileSync } from "node:child_process";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
 const DATA_FILE = path.join(ROOT, "data", "posts.json");
 const PLATFORMS_FILE = path.join(ROOT, "data", "platforms.json");
+const SETTINGS_FILE = path.join(ROOT, "data", "daily-settings.json");
 const LOG_DIR = path.join(ROOT, "logs");
 const TODAY = new Date().toISOString().slice(0, 10);
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
@@ -120,6 +121,14 @@ async function readPlatforms() {
     return platforms.filter((platform) => platform.enabled !== false);
   } catch {
     return [];
+  }
+}
+
+async function readDailySettings() {
+  try {
+    return JSON.parse(await fs.readFile(SETTINGS_FILE, "utf8"));
+  } catch {
+    return { focusDirections: [] };
   }
 }
 
@@ -249,13 +258,16 @@ function filterNew(posts, candidates) {
   });
 }
 
-function rankCandidate(candidate) {
+function rankCandidate(candidate, settings = {}) {
   const text = `${candidate.title} ${candidate.snippet}`;
   let score = 0;
   if (/面经|面试|一面|二面|三面|题|八股/.test(text)) score += 8;
   if (/大模型|LLM|Agent|RAG|VLA|多模态|具身|训练框架|DeepSpeed|Megatron/.test(text)) score += 6;
   if (COMPANY_KEYWORDS.some((company) => text.includes(company))) score += 3;
   if (/今天|昨天|小时前|分钟前|06-|05-|2026/.test(text)) score += 3;
+  const focusDirections = settings.focusDirections || [];
+  const focusHits = focusDirections.filter((keyword) => text.toLowerCase().includes(String(keyword).toLowerCase()));
+  score += Math.min(12, focusHits.length * 4);
   if (/登录|注册|首页|隐私|协议|广告/.test(text)) score -= 8;
   return score;
 }
@@ -276,6 +288,7 @@ async function main() {
   await fs.mkdir(LOG_DIR, { recursive: true });
   const posts = await readPosts();
   const platforms = await readPlatforms();
+  const settings = await readDailySettings();
   const allCandidates = [];
   const browserWs = await getBrowserWs();
 
@@ -294,8 +307,8 @@ async function main() {
   }
 
   const candidates = dedupeCandidates(allCandidates)
-    .filter((candidate) => rankCandidate(candidate) > 5)
-    .sort((a, b) => rankCandidate(b) - rankCandidate(a));
+    .filter((candidate) => rankCandidate(candidate, settings) > 5)
+    .sort((a, b) => rankCandidate(b, settings) - rankCandidate(a, settings));
   const fresh = filterNew(posts, candidates).slice(0, 40);
   const newPosts = fresh.map(makePost);
   const updatedPosts = [...newPosts, ...posts].sort((a, b) => (b.sourceDate || "").localeCompare(a.sourceDate || ""));
@@ -304,6 +317,7 @@ async function main() {
   const log = {
     date: new Date().toISOString(),
     platforms: platforms.map((platform) => platform.name),
+    focusDirections: settings.focusDirections || [],
     scannedCandidates: allCandidates.length,
     rankedCandidates: candidates.length,
     added: newPosts.length,

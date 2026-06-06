@@ -11,6 +11,7 @@
       <a class="brand" href="/">Interview Hub</a>
       <nav>
         <a href="#dashboard">学习看板</a>
+        <a href="#daily">每日精选</a>
         <a href="#platforms">检索平台</a>
         <a href="#browse">面经库</a>
         <a href="#collections">收藏夹</a>
@@ -82,6 +83,23 @@
             <div id="hotTags" class="tag-cloud"></div>
           </article>
         </div>
+      </section>
+
+      <section id="daily" class="panel daily-panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Daily Study</p>
+          <h2>每日大模型学习精选</h2>
+          <p>每天从面经库里挑选一条最值得精读的内容，生成深度分析和小红书草稿。已精选过的面经不会重复选择。</p>
+        </div>
+        <form id="dailySettingsForm" class="daily-settings-form">
+          <label>发布时间<input name="publishTime" type="time" value="09:30" /></label>
+          <label class="wide">下次重点方向<input name="focusDirections" placeholder="VLA, 具身智能, Agent, RAG, 训练框架" /></label>
+          <div class="form-actions wide">
+            <button class="primary-button" type="submit">保存每日设置</button>
+            <p id="dailyMessage" class="message"></p>
+          </div>
+        </form>
+        <div id="dailyFeatureRoot" class="daily-feature-root"></div>
       </section>
 
       <section id="platforms" class="panel platform-panel">

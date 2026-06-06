@@ -100,6 +100,33 @@ powershell -ExecutionPolicy Bypass -File scripts\register-weekly-task.ps1 -Time 
 - 自动任务会运行 `node scripts\update-interviews.mjs --push`，有新增内容时自动推送到 GitHub。
 - 最近一次任务日志在 `logs/weekly-task-last.log`。
 
+## 每日精选与小红书草稿
+
+每日精选配置保存在 `data/daily-settings.json`，包含发布时间、重点检索方向和发布目标。网页里的“每日大模型学习精选”面板可以在本地/服务器后端模式下修改这些配置；GitHub Pages 静态页面只能展示，不能持久化保存。
+
+生成每日精选草稿：
+
+```powershell
+cd E:\workshop\interview-hub
+node scripts\generate-daily-feature.mjs
+```
+
+生成后自动提交并推送：
+
+```powershell
+node scripts\generate-daily-feature.mjs --push
+```
+
+注册每天 9:30 的 Windows 任务：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\register-daily-feature-task.ps1 -Time "09:30"
+```
+
+评分体系会综合近期性、重点方向匹配、大厂/重点机构、稀缺方向、高频问题数量、来源链接、难度和摘要信息量。已精选过的面经会记录在 `data/daily-features.json`，后续不会重复选择。生成的小红书草稿保存在 `content/xiaohongshu-drafts/`。
+
+当前没有把小红书账号、密码或 Cookie 写入代码，也不会无授权自动发帖。自动发帖需要额外的浏览器登录态和人工授权；默认策略是生成待发布草稿。
+
 ## 公网部署
 
 这个项目有后端和共享数据，不能只用 GitHub Pages。可选方案：

@@ -90,16 +90,6 @@
     ]
   },
   {
-    "id": "weixin-sogou",
-    "name": "微信公众号搜狗",
-    "type": "public",
-    "enabled": true,
-    "searchUrl": "https://weixin.sogou.com/weixin?type=2&query=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
-    "matchDomains": [
-      "sogou.com"
-    ]
-  },
-  {
     "id": "offershow",
     "name": "OfferShow",
     "type": "public",
@@ -112,8 +102,8 @@
   {
     "id": "zsxq",
     "name": "知识星球",
-    "type": "manual",
-    "enabled": false,
+    "type": "login",
+    "enabled": true,
     "searchUrl": "",
     "matchDomains": [
       "zsxq.com"
@@ -122,9 +112,9 @@
   {
     "id": "leetcode-cn",
     "name": "力扣中文",
-    "type": "manual",
-    "enabled": false,
-    "searchUrl": "",
+    "type": "login",
+    "enabled": true,
+    "searchUrl": "https://leetcode.cn/search/?q=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
     "matchDomains": [
       "leetcode.cn"
     ]
@@ -132,9 +122,9 @@
   {
     "id": "cnblogs",
     "name": "博客园",
-    "type": "manual",
-    "enabled": false,
-    "searchUrl": "",
+    "type": "public",
+    "enabled": true,
+    "searchUrl": "https://zzk.cnblogs.com/s/blogpost?w=%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
     "matchDomains": [
       "cnblogs.com"
     ]

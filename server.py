@@ -13,6 +13,8 @@ PUBLIC_DIR = os.path.join(ROOT, "public")
 DATA_DIR = os.path.join(ROOT, "data")
 POSTS_FILE = os.path.join(DATA_DIR, "posts.json")
 PLATFORMS_FILE = os.path.join(DATA_DIR, "platforms.json")
+DAILY_SETTINGS_FILE = os.path.join(DATA_DIR, "daily-settings.json")
+DAILY_FEATURES_FILE = os.path.join(DATA_DIR, "daily-features.json")
 
 HOST = "0.0.0.0"
 PORT = int(os.environ.get("PORT", "8088"))
@@ -46,6 +48,16 @@ def ensure_platforms_file():
             json.dump([], file, ensure_ascii=False, indent=2)
 
 
+def ensure_daily_files():
+    os.makedirs(DATA_DIR, exist_ok=True)
+    if not os.path.exists(DAILY_SETTINGS_FILE):
+        with open(DAILY_SETTINGS_FILE, "w", encoding="utf-8") as file:
+            json.dump({"publishTime": "09:30", "timezone": "Asia/Shanghai", "focusDirections": []}, file, ensure_ascii=False, indent=2)
+    if not os.path.exists(DAILY_FEATURES_FILE):
+        with open(DAILY_FEATURES_FILE, "w", encoding="utf-8") as file:
+            json.dump([], file, ensure_ascii=False, indent=2)
+
+
 def read_posts():
     ensure_data_file()
     with open(POSTS_FILE, "r", encoding="utf-8") as file:
@@ -74,6 +86,26 @@ def write_platforms(platforms):
     os.replace(tmp_file, PLATFORMS_FILE)
 
 
+def read_daily_settings():
+    ensure_daily_files()
+    with open(DAILY_SETTINGS_FILE, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def write_daily_settings(settings):
+    ensure_daily_files()
+    tmp_file = DAILY_SETTINGS_FILE + ".tmp"
+    with open(tmp_file, "w", encoding="utf-8") as file:
+        json.dump(settings, file, ensure_ascii=False, indent=2)
+    os.replace(tmp_file, DAILY_SETTINGS_FILE)
+
+
+def read_daily_features():
+    ensure_daily_files()
+    with open(DAILY_FEATURES_FILE, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
 def clean_bool(value):
     if isinstance(value, bool):
         return value
@@ -85,7 +117,7 @@ def clean_bool(value):
 def make_platform(payload):
     name = clean_text(payload.get("name"), 40)
     platform_type = clean_text(payload.get("type"), 20) or "public"
-    search_url = clean_text(payload.get("searchUrl"), 500)
+    search_url = clean_url(payload.get("searchUrl"), 500)
     enabled = clean_bool(payload.get("enabled", True))
     domains = payload.get("matchDomains", [])
     if isinstance(domains, str):
@@ -119,6 +151,16 @@ def clean_text(value, limit):
     return value.strip()[:limit]
 
 
+def clean_url(value, limit=500):
+    text = clean_text(value, limit)
+    if not text:
+        return ""
+    parsed = urlparse(text)
+    if parsed.scheme not in ["http", "https"]:
+        return ""
+    return text
+
+
 def clean_tags(value):
     if isinstance(value, list):
         raw_tags = value
@@ -143,7 +185,7 @@ def make_post(payload):
     direction = clean_text(payload.get("direction"), 80)
     domain = clean_text(payload.get("domain"), 80)
     source_platform = clean_text(payload.get("sourcePlatform"), 40)
-    source_url = clean_text(payload.get("sourceUrl"), 400)
+    source_url = clean_url(payload.get("sourceUrl"), 400)
 
     if post_type not in POST_TYPES:
         post_type = "experience"
@@ -291,6 +333,12 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/api/platforms":
             self.send_json(200, {"platforms": read_platforms()})
             return
+        if parsed.path == "/api/daily-settings":
+            self.send_json(200, read_daily_settings())
+            return
+        if parsed.path == "/api/daily-features":
+            self.send_json(200, {"features": read_daily_features()})
+            return
         self.serve_static(parsed.path)
 
     def do_POST(self):
@@ -334,6 +382,25 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_PATCH(self):
         parsed = urlparse(self.path)
+        if parsed.path == "/api/daily-settings":
+            try:
+                length = int(self.headers.get("Content-Length", "0"))
+                raw = self.rfile.read(length).decode("utf-8")
+                payload = json.loads(raw or "{}")
+                settings = read_daily_settings()
+                if "publishTime" in payload:
+                    settings["publishTime"] = clean_text(payload.get("publishTime"), 10) or "09:30"
+                if "focusDirections" in payload:
+                    directions = payload.get("focusDirections")
+                    if isinstance(directions, str):
+                        directions = directions.replace("，", ",").split(",")
+                    settings["focusDirections"] = [clean_text(item, 40) for item in directions if clean_text(item, 40)][:12]
+                write_daily_settings(settings)
+                self.send_json(200, settings)
+            except Exception:
+                self.send_json(500, {"error": "更新每日设置失败，请稍后再试"})
+            return
+
         if parsed.path != "/api/platforms":
             self.send_json(404, {"error": "接口不存在"})
             return
@@ -351,7 +418,7 @@ class Handler(BaseHTTPRequestHandler):
                 if "enabled" in payload:
                     updated["enabled"] = clean_bool(payload.get("enabled"))
                 if "searchUrl" in payload:
-                    updated["searchUrl"] = clean_text(payload.get("searchUrl"), 500)
+                    updated["searchUrl"] = clean_url(payload.get("searchUrl"), 500)
                 platforms[index] = updated
                 write_platforms(platforms)
                 self.send_json(200, {"platform": updated})
@@ -409,6 +476,7 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     ensure_data_file()
     ensure_platforms_file()
+    ensure_daily_files()
     server = HTTPServer((HOST, PORT), Handler)
     print("Interview Hub running at http://127.0.0.1:%s" % PORT)
     print("LAN users can visit http://<your-ip>:%s after firewall allows the port." % PORT)

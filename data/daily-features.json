@@ -1,0 +1,26 @@
+[
+  {
+    "id": "daily-2026-06-06-c7fca9e91989",
+    "date": "2026-06-06",
+    "postId": "browser-zhihu-bytedance-vlm-20260605",
+    "title": "知乎：字节多模态大模型一面",
+    "company": "字节跳动",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 3 个 +15",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1998500372969443453",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-06-c7fca9e91989.md",
+    "target": "xiaohongshu",
+    "publishStatus": "draft_ready",
+    "autoPublish": false
+  }
+]

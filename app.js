@@ -1,6 +1,7 @@
 const form = document.querySelector("#postForm");
 const formMessage = document.querySelector("#formMessage");
 const postsRoot = document.querySelector("#posts");
+const paginationRoot = document.querySelector("#pagination");
 const template = document.querySelector("#postTemplate");
 const categoryChips = document.querySelector("#categoryChips");
 const collectionsRoot = document.querySelector("#collectionsRoot");
@@ -11,9 +12,7 @@ const collectionExport = document.querySelector("#collectionExport");
 const platformForm = document.querySelector("#platformForm");
 const platformList = document.querySelector("#platformList");
 const platformMessage = document.querySelector("#platformMessage");
-const dailySettingsForm = document.querySelector("#dailySettingsForm");
 const dailyFeatureRoot = document.querySelector("#dailyFeatureRoot");
-const dailyMessage = document.querySelector("#dailyMessage");
 
 const filters = {
   keyword: document.querySelector("#keyword"),
@@ -53,8 +52,9 @@ let allPosts = [];
 let catalogPosts = [];
 let meta = {};
 let searchPlatforms = [];
-let dailySettings = {};
 let dailyFeatures = [];
+let currentPage = 1;
+const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
 
@@ -84,7 +84,6 @@ function buildMetaFromPosts(posts) {
       "视频 / 视觉理解",
       "世界模型",
       "自动驾驶 / 数据闭环",
-      "Agent / RAG / 大模型应用",
       "推理优化 / 模型压缩",
       "强化学习 / 对齐训练",
     ],
@@ -99,11 +98,6 @@ async function readStaticPosts() {
   const response = await fetch(`${staticDataPrefix}/data/posts.json`);
   const posts = await response.json();
   return { posts, meta: buildMetaFromPosts(posts) };
-}
-
-async function readStaticDailySettings() {
-  const response = await fetch(`${staticDataPrefix}/data/daily-settings.json`);
-  return response.json();
 }
 
 async function readStaticDailyFeatures() {
@@ -435,6 +429,7 @@ function renderDashboard() {
     button.textContent = `${tag} ${count}`;
     button.addEventListener("click", () => {
       filters.tag.value = tag;
+      resetPage();
       loadPosts();
       document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
     });
@@ -442,74 +437,79 @@ function renderDashboard() {
   });
 }
 
-function renderDailyPanel() {
-  if (!dailyFeatureRoot || !dailySettingsForm) return;
-  dailySettingsForm.elements.publishTime.value = dailySettings.publishTime || "09:30";
-  dailySettingsForm.elements.focusDirections.value = (dailySettings.focusDirections || []).join(", ");
+function excerptMarkdown(markdown) {
+  return markdown
+    .split(/\n+/)
+    .map((line) => line.replace(/^#+\s*/, "").trim())
+    .filter((line) => line && !line.startsWith("- ") && !line.startsWith("#"))
+    .slice(0, 5)
+    .join(" ");
+}
+
+async function loadDailyArticle(feature) {
+  if (!feature.articlePath) return "";
+  try {
+    const response = await fetch(`${staticDataPrefix}/${feature.articlePath}`);
+    if (!response.ok) return "";
+    return response.text();
+  } catch {
+    return "";
+  }
+}
+
+async function renderDailyPanel() {
+  if (!dailyFeatureRoot) return;
   dailyFeatureRoot.innerHTML = "";
-
-  const summary = document.createElement("article");
-  summary.className = "daily-card";
-  const summaryTitle = document.createElement("h3");
-  summaryTitle.textContent = "当前策略";
-  const summaryTime = document.createElement("p");
-  summaryTime.textContent = `发布时间：${dailySettings.publishTime || "09:30"} (${dailySettings.timezone || "Asia/Shanghai"})`;
-  const summaryFocus = document.createElement("p");
-  summaryFocus.textContent = `重点方向：${(dailySettings.focusDirections || []).join(" / ") || "未设置"}`;
-  const summaryTarget = document.createElement("p");
-  summaryTarget.textContent = `发布目标：${dailySettings.publishTarget || "xiaohongshu"}；当前为草稿生成模式，自动发帖需额外授权。`;
-  summary.append(summaryTitle, summaryTime, summaryFocus, summaryTarget);
-  dailyFeatureRoot.appendChild(summary);
-
-  const latest = dailyFeatures.slice(0, 5);
-  if (!latest.length) {
+  const features = dailyFeatures.slice(0, 6);
+  if (!features.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "还没有每日精选记录。运行 scripts/generate-daily-feature.mjs 后会生成第一篇草稿。";
+    empty.textContent = "还没有每日精选分析文档。后台脚本生成后会显示在这里。";
     dailyFeatureRoot.appendChild(empty);
     return;
   }
 
-  latest.forEach((feature) => {
+  for (const feature of features) {
     const card = document.createElement("article");
     card.className = "daily-card";
     const title = document.createElement("h3");
     title.textContent = `${feature.date} · ${feature.company} · ${feature.direction}`;
-    const description = document.createElement("p");
-    description.textContent = feature.title;
     const score = document.createElement("p");
     score.textContent = `价值分：${feature.score}；状态：${feature.publishStatus || "draft_ready"}`;
-    const draft = document.createElement("p");
-    draft.textContent = `草稿：${feature.articlePath || "未生成"}`;
-    const link = document.createElement("a");
-    link.className = "source-link";
-    link.target = "_blank";
-    link.rel = "noreferrer";
-    link.textContent = "来源链接";
-    const href = safeHttpUrl(feature.sourceUrl);
-    if (href) link.href = href;
-    else link.hidden = true;
-    card.append(title, description, score, draft, link);
+    const article = await loadDailyArticle(feature);
+    const summary = document.createElement("p");
+    summary.textContent = excerptMarkdown(article) || feature.title;
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+    const doc = document.createElement("a");
+    doc.className = "source-link";
+    doc.textContent = "查看分析文档";
+    doc.href = feature.articlePath || "#";
+    doc.target = "_blank";
+    doc.rel = "noreferrer";
+    const source = document.createElement("a");
+    source.className = "source-link";
+    source.textContent = "来源链接";
+    source.href = safeHttpUrl(feature.sourceUrl);
+    source.target = "_blank";
+    source.rel = "noreferrer";
+    if (!source.href) source.hidden = true;
+    actions.append(doc, source);
+    card.append(title, score, summary, actions);
     dailyFeatureRoot.appendChild(card);
-  });
+  }
 }
 
 async function loadDaily() {
   if (!dailyFeatureRoot) return;
   if (isStaticHost()) {
-    dailySettings = await readStaticDailySettings();
     dailyFeatures = await readStaticDailyFeatures();
-    renderDailyPanel();
-    return;
+  } else {
+    const response = await fetch("/api/daily-features");
+    const payload = await response.json();
+    dailyFeatures = payload.features || [];
   }
-  const [settingsResponse, featuresResponse] = await Promise.all([
-    fetch("/api/daily-settings"),
-    fetch("/api/daily-features"),
-  ]);
-  dailySettings = await settingsResponse.json();
-  const payload = await featuresResponse.json();
-  dailyFeatures = payload.features || [];
-  renderDailyPanel();
+  await renderDailyPanel();
 }
 
 function updateResultSummary(posts) {
@@ -534,10 +534,47 @@ function renderCategoryChips(categories) {
     button.textContent = category;
     button.addEventListener("click", () => {
       filters.category.value = category;
+      resetPage();
       loadPosts();
     });
     categoryChips.appendChild(button);
   });
+}
+
+function renderPagination(total) {
+  if (!paginationRoot) return;
+  paginationRoot.innerHTML = "";
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
+  if (totalPages <= 1) return;
+
+  const prev = document.createElement("button");
+  prev.type = "button";
+  prev.textContent = "上一页";
+  prev.disabled = currentPage === 1;
+  prev.addEventListener("click", () => {
+    currentPage = Math.max(1, currentPage - 1);
+    renderPosts(allPosts);
+    document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
+  });
+
+  const info = document.createElement("span");
+  info.textContent = `第 ${currentPage} / ${totalPages} 页`;
+
+  const next = document.createElement("button");
+  next.type = "button";
+  next.textContent = "下一页";
+  next.disabled = currentPage === totalPages;
+  next.addEventListener("click", () => {
+    currentPage = Math.min(totalPages, currentPage + 1);
+    renderPosts(allPosts);
+    document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
+  });
+
+  paginationRoot.append(prev, info, next);
+}
+
+function resetPage() {
+  currentPage = 1;
 }
 
 function makeCollectionPicker(postId) {
@@ -614,16 +651,20 @@ function renderPosts(posts) {
   const statuses = readStatuses();
   updateStats(posts);
   updateResultSummary(posts);
+  const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
+  currentPage = Math.min(Math.max(1, currentPage), totalPages);
+  const pagePosts = posts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   if (!posts.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
     empty.textContent = "没有匹配内容，换个关键词或清空筛选试试。";
     postsRoot.appendChild(empty);
+    renderPagination(0);
     return;
   }
 
-  posts.forEach((post) => {
+  pagePosts.forEach((post) => {
     const card = template.content.cloneNode(true);
     const status = statuses[post.id] || "unread";
     card.querySelector(".type-pill").textContent = typeLabel(post.type);
@@ -668,6 +709,7 @@ function renderPosts(posts) {
       node.textContent = tag;
       node.addEventListener("click", () => {
         filters.tag.value = tag;
+        resetPage();
         loadPosts();
       });
       tags.appendChild(node);
@@ -690,6 +732,7 @@ function renderPosts(posts) {
 
     postsRoot.appendChild(card);
   });
+  renderPagination(posts.length);
 }
 
 function renderCollections() {
@@ -744,7 +787,6 @@ function exportCollections() {
 
 function applyPreset(preset) {
   const presets = {
-    agent: { category: "Agent / RAG / 大模型应用", keyword: "" },
     vla: { category: "VLA / 具身智能", keyword: "" },
     multimodal: { category: "多模态大模型", keyword: "" },
     training: { category: "all", keyword: "训练框架 DeepSpeed Megatron" },
@@ -754,6 +796,7 @@ function applyPreset(preset) {
   filters.category.value = config.category;
   filters.keyword.value = config.keyword;
   filters.questionOnly.checked = true;
+  resetPage();
   loadPosts();
   document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
 }
@@ -866,35 +909,6 @@ if (platformForm) {
   });
 }
 
-if (dailySettingsForm) {
-  dailySettingsForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (isStaticHost()) {
-      dailyMessage.textContent = "GitHub Pages 是静态页面，每日设置需要在本地或服务器后端中保存。";
-      return;
-    }
-    const data = Object.fromEntries(new FormData(dailySettingsForm).entries());
-    data.focusDirections = (data.focusDirections || "")
-      .split(/[，,]/)
-      .map((item) => item.trim())
-      .filter(Boolean);
-    dailyMessage.textContent = "正在保存每日设置...";
-    const response = await fetch("/api/daily-settings", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    const payload = await response.json();
-    if (!response.ok) {
-      dailyMessage.textContent = payload.error || "保存失败";
-      return;
-    }
-    dailySettings = payload;
-    dailyMessage.textContent = "每日设置已保存，下次精选会按新方向打分。";
-    renderDailyPanel();
-  });
-}
-
 collectionForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = collectionName.value.trim();
@@ -910,8 +924,14 @@ collectionForm.addEventListener("submit", (event) => {
 exportCollectionsButton.addEventListener("click", exportCollections);
 
 Object.values(filters).forEach((input) => {
-  input.addEventListener("input", loadPosts);
-  input.addEventListener("change", loadPosts);
+  input.addEventListener("input", () => {
+    resetPage();
+    loadPosts();
+  });
+  input.addEventListener("change", () => {
+    resetPage();
+    loadPosts();
+  });
 });
 
 document.querySelectorAll(".preset-button").forEach((button) => {
@@ -932,6 +952,7 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
   filters.questionOnly.checked = false;
   filters.startDate.value = "";
   filters.endDate.value = "";
+  resetPage();
   loadPosts();
 });
 

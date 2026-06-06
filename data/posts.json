@@ -38,7 +38,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69fed8db000000002003bfcb",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69fed8db000000002003bfcb",
     "tags": [
       "小红书",
       "字节",
@@ -65,7 +65,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a22cca8000000002202759e",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a22cca8000000002202759e",
     "tags": [
       "小红书",
       "字节",
@@ -446,7 +446,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/68b7ef74000000001b030950",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/68b7ef74000000001b030950",
     "tags": [
       "小红书",
       "蔚来",
@@ -457,33 +457,6 @@
       "项目经历、模型原理、工程落地和评估指标分别如何回答？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：蔚来大模型算法面经 汤圆脑袋 2025-09-03 235",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
-    "createdAt": 1780673886,
-    "updatedAt": 1780673886
-  },
-  {
-    "id": "auto-20260605-159c41a2421b",
-    "title": "小红书：面试腾讯大模型应用开发岗，强度还是有！",
-    "company": "腾讯",
-    "role": "AI / 算法候选人",
-    "direction": "Agent / RAG",
-    "domain": "工程落地 / 工具调用",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "experience",
-    "difficulty": "中等",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6868e84d000000000b01e76f",
-    "tags": [
-      "小红书",
-      "腾讯",
-      "大模型",
-      "面试"
-    ],
-    "questions": [
-      "项目经历、模型原理、工程落地和评估指标分别如何回答？"
-    ],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：面试腾讯大模型应用开发岗，强度还是有！ 天才小猫 2025-07-05 133",
     "prepTips": "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
     "createdAt": 1780673886,
     "updatedAt": 1780673886
@@ -500,7 +473,7 @@
     "difficulty": "中等",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-05",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6847b6c600000000030398e6",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6847b6c600000000030398e6",
     "tags": [
       "小红书",
       "大模型",
@@ -677,35 +650,6 @@
     "updatedAt": 1780673886
   },
   {
-    "id": "auto-20260605-2a2bb144ade8",
-    "title": "掘金：字节豆包大模型岗三轮技术面经",
-    "company": "字节",
-    "role": "大模型相关岗位",
-    "direction": "Agent / RAG",
-    "domain": "工程落地 / 工具调用",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "question",
-    "difficulty": "中等",
-    "sourcePlatform": "掘金",
-    "sourceDate": "2026-06-05",
-    "sourceUrl": "https://juejin.cn/post/7595232643464134690?searchId=20260605233737E667210FAFF428A188F6",
-    "tags": [
-      "掘金",
-      "字节",
-      "大模型",
-      "RAG",
-      "面经",
-      "面试"
-    ],
-    "questions": [
-      "RAG / Agent 的核心链路、失败兜底和评估指标是什么？"
-    ],
-    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：居然JuRan 4月前 人工智能 面字节豆包大模型岗，三轮技术面都问了啥？ 算法面经｜字节豆包大模型方向，三轮技术面复盘一共三轮技术面，整体从 模型与推理优化 → 训练与对齐 → RAG 与产品思考 逐步深入，面试官风格偏理性讨论，问题非常贴近真实大模型研发流程。这里简单整理一下面经...",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
-    "createdAt": 1780673886,
-    "updatedAt": 1780673886
-  },
-  {
     "id": "auto-20260605-142a7512e68c",
     "title": "掘金：阿里云多模态大模型岗三面面经",
     "company": "阿里",
@@ -730,35 +674,6 @@
       "多模态模型如何做视觉语言对齐和长上下文理解？"
     ],
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：居然JuRan 9月前 人工智能 阿里云多模态大模型岗三面面经 阿里云智能多模态大模型岗三面面经（详细问题+感受）最近面试了 阿里云智能集团 - 多模态大模型岗位，三轮技术面，整体体验还不错。问题整体偏常规，但对项目的追问比较细致。这里整理一下完整面经，供准备类似岗...",
-    "prepTips": "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
-    "createdAt": 1780673886,
-    "updatedAt": 1780673886
-  },
-  {
-    "id": "auto-20260605-9ba295ab06f3",
-    "title": "掘金：大模型应用开发面经（多家公司）",
-    "company": "字节",
-    "role": "AI / 算法候选人",
-    "direction": "Agent / RAG",
-    "domain": "工程落地 / 工具调用",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "experience",
-    "difficulty": "中等",
-    "sourcePlatform": "掘金",
-    "sourceDate": "2026-06-05",
-    "sourceUrl": "https://juejin.cn/post/7571258854900842539?searchId=20260605233737E667210FAFF428A188F6",
-    "tags": [
-      "掘金",
-      "字节",
-      "大模型",
-      "LLM",
-      "面经",
-      "腾讯"
-    ],
-    "questions": [
-      "项目经历、模型原理、工程落地和评估指标分别如何回答？"
-    ],
-    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：LLM大模型 6月前 人工智能 大模型应用开发面经 （5年经验） 大模型应用开发面经 （5年经验）时间范围：近半年实际面过的公司：阿里、腾讯、美团、字节、快手、同程、京东、360、keep、滴滴、印象笔记、作业帮、彩云科技、蓝色光标、江城互娱、Aviagames、Hungry Stdios、深...",
     "prepTips": "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
     "createdAt": 1780673886,
     "updatedAt": 1780673886
@@ -928,7 +843,7 @@
     "difficulty": "综合",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-05-30",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a1ac5900000000035026578",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a1ac5900000000035026578",
     "tags": [
       "小红书",
       "大模型",
@@ -958,7 +873,7 @@
     "difficulty": "困难",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-04-16",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69e09511000000001b022652",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e09511000000001b022652",
     "tags": [
       "小红书",
       "智元",
@@ -973,36 +888,6 @@
     ],
     "content": "小红书搜索结果中的智元 VLA 一面，和具身智能方向高度相关。",
     "prepTips": "准备 OpenVLA、RT-2、动作 token、遥操作数据和 sim2real。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-tencent-ai-app-20260411",
-    "title": "小红书：腾讯 AI 应用开发一面",
-    "company": "腾讯",
-    "role": "AI 应用开发工程师",
-    "direction": "大模型应用",
-    "domain": "Agent / RAG / 工程落地",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "experience",
-    "difficulty": "中等",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-04-11",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69d9d3c8000000001a021c89",
-    "tags": [
-      "小红书",
-      "腾讯",
-      "AI应用开发",
-      "Agent",
-      "RAG"
-    ],
-    "questions": [
-      "RAG 应用如何设计？",
-      "工具调用失败如何兜底？",
-      "业务场景中如何评估大模型效果？"
-    ],
-    "content": "小红书搜索结果中的腾讯 AI 应用开发一面，适合补充工程落地和业务指标问题。",
-    "prepTips": "准备 RAG 链路、函数调用、权限控制、日志评估和线上监控。",
     "createdAt": 1780672728,
     "updatedAt": 1780672728
   },
@@ -1033,126 +918,6 @@
     ],
     "content": "知乎搜索结果显示该题库覆盖大量高频考点，可作为基础题库入口。",
     "prepTips": "按数学基础、Transformer、训练策略、推理部署四组刷题。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-ant-app-20260408",
-    "title": "小红书：蚂蚁大模型应用岗一面面试题",
-    "company": "蚂蚁集团",
-    "role": "大模型应用算法",
-    "direction": "大模型应用",
-    "domain": "RAG / Agent / 业务落地",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "question",
-    "difficulty": "中等",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-04-08",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69d61f00000000001d01bd03",
-    "tags": [
-      "小红书",
-      "蚂蚁",
-      "大模型应用",
-      "RAG",
-      "业务落地"
-    ],
-    "questions": [
-      "应用岗如何解释业务价值？",
-      "RAG 召回失败如何处理？",
-      "线上大模型如何做安全和监控？"
-    ],
-    "content": "小红书搜索结果中的蚂蚁大模型应用岗一面，适合复习应用算法和工程稳定性。",
-    "prepTips": "准备业务指标、召回评估、拒答策略、灰度发布和成本优化。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-taotian-agent-20260327",
-    "title": "小红书：淘天大模型 Agent 校招面经",
-    "company": "淘天集团",
-    "role": "大模型 Agent 校招",
-    "direction": "Agent / 大模型应用",
-    "domain": "电商场景 / 工具调用",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "experience",
-    "difficulty": "中等",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-03-27",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69c637a3000000001a036941",
-    "tags": [
-      "小红书",
-      "淘天",
-      "Agent",
-      "校招",
-      "电商"
-    ],
-    "questions": [
-      "电商 Agent 如何规划任务？",
-      "工具调用如何接入业务系统？",
-      "用户意图不清晰时如何澄清？"
-    ],
-    "content": "小红书搜索结果中的淘天 Agent 校招面经，适合准备电商大模型应用场景。",
-    "prepTips": "准备电商搜索、推荐、客服、工具调用和安全边界。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-agent-down-20260314",
-    "title": "小红书：2026 大模型 Agent 面试全攻略（下）",
-    "company": "综合",
-    "role": "Agent / 大模型应用候选人",
-    "direction": "Agent",
-    "domain": "评估 / 安全 / 工程化",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "collection",
-    "difficulty": "综合",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-03-14",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69b4f22b000000002300777d",
-    "tags": [
-      "小红书",
-      "Agent",
-      "评估",
-      "安全",
-      "工程化"
-    ],
-    "questions": [
-      "Agent 如何评估成功率？",
-      "如何防止工具误调用？",
-      "长任务如何做日志和恢复？"
-    ],
-    "content": "小红书搜索结果中的 Agent 面试攻略下篇，可与上篇组合成完整专题。",
-    "prepTips": "补齐 Agent evaluation、guardrail、trace、成本控制。",
-    "createdAt": 1780672728,
-    "updatedAt": 1780672728
-  },
-  {
-    "id": "browser-xhs-agent-up-20260308",
-    "title": "小红书：2026 大模型 Agent 面试全攻略（上）",
-    "company": "综合",
-    "role": "Agent / 大模型应用候选人",
-    "direction": "Agent",
-    "domain": "工具调用 / 规划 / 记忆",
-    "category": "Agent / RAG / 大模型应用",
-    "type": "collection",
-    "difficulty": "综合",
-    "sourcePlatform": "小红书",
-    "sourceDate": "2026-03-08",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69ad4bb9000000000d00a454",
-    "tags": [
-      "小红书",
-      "Agent",
-      "工具调用",
-      "规划",
-      "记忆"
-    ],
-    "questions": [
-      "Agent 的核心模块有哪些？",
-      "工具调用失败怎么处理？",
-      "多轮任务如何保存状态？"
-    ],
-    "content": "小红书搜索结果中的 Agent 面试攻略上篇，适合做 Agent 专项复习。",
-    "prepTips": "按规划、工具、记忆、反思、评估五个模块整理。",
     "createdAt": 1780672728,
     "updatedAt": 1780672728
   },

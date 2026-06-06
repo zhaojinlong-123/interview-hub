@@ -7,10 +7,11 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace
 const POSTS_FILE = path.join(ROOT, "data", "posts.json");
 const FEATURES_FILE = path.join(ROOT, "data", "daily-features.json");
 const QUEUE_FILE = path.join(ROOT, "data", "publish-queue.json");
+const ASSET_DIR = path.join(ROOT, "content", "xiaohongshu-assets");
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
 const SHOULD_OPEN_ONLY = process.argv.includes("--open-only");
-const CREATOR_URL = process.env.XHS_CREATOR_URL || "https://creator.xiaohongshu.com/publish/publish";
+const CREATOR_URL = process.env.XHS_CREATOR_URL || "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image";
 
 async function readJson(file, fallback) {
   try {
@@ -91,13 +92,13 @@ function buildXhsPayload(feature, post, markdown) {
     "说明：本文为基于公开面经整理的学习笔记，用于个人复习与知识归纳。",
     "",
     tags.map((tag) => `#${String(tag).replace(/\s+/g, "")}`).join(" "),
-  ].filter((line) => line !== undefined).join("\n");
+  ].filter((line) => line !== undefined).join("\n").slice(0, 980);
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
     title: titleForXhs(feature, post),
     coverTitle: `${feature.company || post?.company || "大模型"}面经复盘`,
-    coverSubtitle: `${feature.direction || post?.direction || "AI 面试"}｜高频考点`,
+    coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} · 高频考点`,
     body,
     sourcePlatform,
     sourceDate,
@@ -115,108 +116,230 @@ async function getJson(url) {
   return response.json();
 }
 
-function wsRequest(wsUrl, messages, timeout = 30000) {
-  return new Promise((resolve, reject) => {
-    const ws = new WebSocket(wsUrl);
-    let nextId = 1;
-    const pending = new Map();
-    const results = [];
-    const timer = setTimeout(() => reject(new Error("CDP timeout")), timeout);
-    ws.onopen = () => {
-      for (const msg of messages) {
-        const id = nextId++;
-        pending.set(id, msg.method);
-        ws.send(JSON.stringify({ id, ...msg }));
-      }
-    };
-    ws.onmessage = (event) => {
+function escapePs(value) {
+  return String(value || "").replace(/`/g, "``").replace(/"/g, '`"');
+}
+
+async function ensureCoverImage(payload) {
+  await fs.mkdir(ASSET_DIR, { recursive: true });
+  const file = path.join(ASSET_DIR, `${payload.id}-cover.png`);
+  try {
+    await fs.access(file);
+    return file;
+  } catch {
+    // Continue and render the cover.
+  }
+
+  const title = escapePs(payload.coverTitle);
+  const subtitle = escapePs(payload.coverSubtitle);
+  const ps = `
+Add-Type -AssemblyName System.Drawing
+$path = "${escapePs(file)}"
+$bmp = New-Object System.Drawing.Bitmap 1080, 1440
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+$g.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
+$bg = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
+  (New-Object System.Drawing.Rectangle 0,0,1080,1440),
+  [System.Drawing.Color]::FromArgb(6,14,28),
+  [System.Drawing.Color]::FromArgb(14,43,55),
+  45
+)
+$g.FillRectangle($bg, 0, 0, 1080, 1440)
+$pen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(80, 99, 255, 218)), 2
+for ($i = 0; $i -lt 9; $i++) {
+  $y = 180 + $i * 120
+  $g.DrawLine($pen, 90, $y, 990, $y + 28)
+}
+$accent = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(100, 255, 90, 95))
+$cyan = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 92, 255, 229))
+$white = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(245, 246, 250, 255))
+$muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(210, 175, 211, 232))
+$fontSmall = New-Object System.Drawing.Font "Microsoft YaHei UI", 34, ([System.Drawing.FontStyle]::Bold)
+$fontTitle = New-Object System.Drawing.Font "Microsoft YaHei UI", 78, ([System.Drawing.FontStyle]::Bold)
+$fontSub = New-Object System.Drawing.Font "Microsoft YaHei UI", 42, ([System.Drawing.FontStyle]::Regular)
+$fontBody = New-Object System.Drawing.Font "Microsoft YaHei UI", 34, ([System.Drawing.FontStyle]::Regular)
+$g.FillRectangle($accent, 0, 0, 1080, 18)
+$g.DrawString("每日面经复盘", $fontSmall, $cyan, 90, 120)
+$g.DrawString("${title}", $fontTitle, $white, 90, 250)
+$g.DrawString("${subtitle}", $fontSub, $muted, 90, 450)
+$g.DrawString("核心机制 -> 工程取舍 -> 常见坑 -> 评估指标", $fontBody, $white, 90, 610)
+$g.DrawString("引用来源：公开面经", $fontBody, $muted, 90, 730)
+$g.DrawString("Interview Hub", $fontSmall, $cyan, 90, 1240)
+$g.Dispose()
+$bmp.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
+$bmp.Dispose()
+`;
+  execFileSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps], { stdio: "inherit" });
+  return file;
+}
+
+class CdpSession {
+  constructor(wsUrl) {
+    this.wsUrl = wsUrl;
+    this.nextId = 1;
+    this.pending = new Map();
+  }
+
+  async open() {
+    this.ws = new WebSocket(this.wsUrl);
+    await new Promise((resolve, reject) => {
+      this.ws.onopen = resolve;
+      this.ws.onerror = reject;
+    });
+    this.ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
       if (!data.id) return;
-      results.push({ method: pending.get(data.id), data });
-      pending.delete(data.id);
-      if (!pending.size) {
-        clearTimeout(timer);
-        ws.close();
-        resolve(results);
-      }
+      const pending = this.pending.get(data.id);
+      if (!pending) return;
+      this.pending.delete(data.id);
+      if (data.error) pending.reject(new Error(data.error.message));
+      else pending.resolve(data.result);
     };
-    ws.onerror = reject;
-  });
+    return this;
+  }
+
+  send(method, params = {}) {
+    return new Promise((resolve, reject) => {
+      const id = this.nextId++;
+      this.pending.set(id, { resolve, reject });
+      this.ws.send(JSON.stringify({ id, method, params }));
+    });
+  }
+
+  close() {
+    this.ws?.close();
+  }
 }
 
 async function createPublishTab() {
   const version = await getJson(`${CDP}/json/version`);
-  const browserWs = version.webSocketDebuggerUrl;
-  const created = await wsRequest(browserWs, [{ method: "Target.createTarget", params: { url: CREATOR_URL } }]);
-  const targetId = created[0].data.result.targetId;
-  await new Promise((resolve) => setTimeout(resolve, 8000));
-  const tabs = await getJson(`${CDP}/json/list`);
-  const tab = tabs.find((item) => item.id === targetId) || tabs.find((item) => item.url.includes("xiaohongshu.com"));
-  if (!tab) throw new Error("未找到小红书发布页标签");
-  return tab;
+  const browser = await new CdpSession(version.webSocketDebuggerUrl).open();
+  try {
+    const created = await browser.send("Target.createTarget", { url: CREATOR_URL });
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    const tabs = await getJson(`${CDP}/json/list`);
+    const tab = tabs.find((item) => item.id === created.targetId) || tabs.find((item) => item.url.includes("creator.xiaohongshu.com"));
+    if (!tab) throw new Error("未找到小红书发布页标签");
+    return tab;
+  } finally {
+    browser.close();
+  }
 }
 
-async function tryPublish(payload) {
+async function waitFor(send, expression, timeoutMs = 30000) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    const result = await send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true });
+    if (result.result?.value) return result.result.value;
+    await new Promise((resolve) => setTimeout(resolve, 800));
+  }
+  return null;
+}
+
+async function uploadCover(send, coverPath) {
+  await send("DOM.enable");
+  const root = await send("DOM.getDocument", { depth: -1, pierce: true });
+  const input = await send("DOM.querySelector", { nodeId: root.root.nodeId, selector: "input[type=file]" });
+  if (!input.nodeId) throw new Error("未找到小红书图片上传控件");
+  await send("DOM.setFileInputFiles", { nodeId: input.nodeId, files: [coverPath] });
+}
+
+async function tryPublish(payload, coverPath) {
   const tab = await createPublishTab();
-  const expression = `(async () => {
-    const payload = ${JSON.stringify(payload)};
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    const textOf = el => (el?.innerText || el?.textContent || el?.value || "").trim();
-    const visible = el => {
-      const rect = el.getBoundingClientRect();
-      const style = getComputedStyle(el);
-      return rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && style.display !== "none";
-    };
-    const setValue = (el, value) => {
-      el.focus();
-      if (el.isContentEditable) {
-        el.textContent = value;
-      } else {
-        const setter = Object.getOwnPropertyDescriptor(el.__proto__, "value")?.set;
-        if (setter) setter.call(el, value);
-        else el.value = value;
-      }
-      el.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertText", data: value }));
-      el.dispatchEvent(new Event("change", { bubbles: true }));
-    };
-    await sleep(3000);
-    const bodyText = document.body.innerText || "";
-    if (/登录|验证码|安全验证|扫码|手机号/.test(bodyText) && !/发布|笔记|正文/.test(bodyText)) {
-      return { ok: false, reason: "小红书需要登录或安全验证", url: location.href };
+  const page = await new CdpSession(tab.webSocketDebuggerUrl).open();
+  const send = page.send.bind(page);
+  try {
+    await send("Runtime.evaluate", { expression: "document.body.innerText", returnByValue: true });
+    await uploadCover(send, coverPath);
+
+    const editorReady = await waitFor(send, `(() => {
+      const visible = el => {
+        const r = el.getBoundingClientRect();
+        const s = getComputedStyle(el);
+        return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none";
+      };
+      const inputs = Array.from(document.querySelectorAll("input, textarea, [contenteditable='true']")).filter(visible);
+      return inputs.length >= 2;
+    })()`, 45000);
+    if (!editorReady) {
+      return { ok: false, reason: "已上传封面，但未等到标题/正文编辑区，可能需要登录或安全验证", url: tab.url };
     }
-    const inputs = Array.from(document.querySelectorAll("input, textarea, [contenteditable='true']")).filter(visible);
-    const titleInput = inputs.find(el => /标题|title/i.test(el.placeholder || el.getAttribute("aria-label") || "")) || inputs[0];
-    const contentInput = inputs.find(el => /正文|内容|描述|caption|content/i.test(el.placeholder || el.getAttribute("aria-label") || "")) || inputs.find(el => el !== titleInput && (el.isContentEditable || el.tagName === "TEXTAREA")) || inputs[1];
-    if (!titleInput || !contentInput) {
-      return { ok: false, reason: "没有找到标题或正文输入框，可能需要上传图片/视频后才能编辑", url: location.href };
+
+    const fillResult = await send("Runtime.evaluate", {
+      expression: `(async () => {
+        const payload = ${JSON.stringify(payload)};
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+        const visible = el => {
+          const r = el.getBoundingClientRect();
+          const s = getComputedStyle(el);
+          return r.width > 0 && r.height > 0 && s.visibility !== "hidden" && s.display !== "none";
+        };
+        const setValue = (el, value) => {
+          el.focus();
+          if (el.isContentEditable) {
+            el.textContent = value;
+          } else {
+            const setter = Object.getOwnPropertyDescriptor(el.__proto__, "value")?.set;
+            if (setter) setter.call(el, value);
+            else el.value = value;
+          }
+          el.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertText", data: value }));
+          el.dispatchEvent(new Event("change", { bubbles: true }));
+        };
+        const inputs = Array.from(document.querySelectorAll("input, textarea, [contenteditable='true']")).filter(visible);
+        const titleInput = inputs.find(el => /标题|title/i.test(el.placeholder || el.getAttribute("aria-label") || "")) || inputs.find(el => el.tagName === "INPUT");
+        const contentInput = inputs.find(el => el.isContentEditable) || inputs.find(el => el !== titleInput && el.tagName === "TEXTAREA");
+        if (!titleInput || !contentInput) return { ok: false, reason: "没有找到标题或正文输入框", url: location.href };
+        setValue(titleInput, payload.title);
+        await sleep(600);
+        setValue(contentInput, payload.body);
+        await sleep(1200);
+        document.querySelector(".publish-page")?.scrollTo(0, document.querySelector(".publish-page").scrollHeight);
+        await sleep(800);
+        return { ok: true, url: location.href };
+      })()`,
+      returnByValue: true,
+      awaitPromise: true,
+    });
+    const filled = fillResult.result?.value;
+    if (!filled?.ok) return filled || { ok: false, reason: "填充发布内容失败", url: tab.url };
+    if (SHOULD_OPEN_ONLY) {
+      return { ok: false, reason: "已上传封面并填好内容，按 open-only 参数保留为人工发布", url: filled.url };
     }
-    setValue(titleInput, payload.title);
-    await sleep(800);
-    setValue(contentInput, payload.body);
-    await sleep(1200);
-    if (${SHOULD_OPEN_ONLY ? "true" : "false"}) {
-      return { ok: false, reason: "已填入发布页，按 open-only 参数保留为人工发布", url: location.href };
+
+    const buttonRect = await waitFor(send, `(() => {
+      const el = document.querySelector("xhs-publish-btn");
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { x: r.x, y: r.y, w: r.width, h: r.height };
+    })()`, 15000);
+    if (!buttonRect) {
+      return { ok: false, reason: "已填好内容，但没有找到小红书发布按钮组件", url: filled.url };
     }
-    const buttons = Array.from(document.querySelectorAll("button, [role='button']")).filter(visible);
-    const publishButton = buttons.find(el => /发布|提交|立即发布/.test(textOf(el)) && !/定时|设置/.test(textOf(el)));
-    if (!publishButton) {
-      return { ok: false, reason: "已填入内容，但没有找到发布按钮，可能需要上传封面或通过安全验证", url: location.href };
+
+    const x = buttonRect.x + buttonRect.w * 0.61;
+    const y = buttonRect.y + buttonRect.h * 0.62;
+    await send("Input.dispatchMouseEvent", { type: "mouseMoved", x, y, button: "none" });
+    await send("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", clickCount: 1 });
+    await send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1 });
+    await new Promise((resolve) => setTimeout(resolve, 12000));
+
+    const status = await send("Runtime.evaluate", {
+      expression: `(() => ({ url: location.href, text: document.body.innerText || "" }))()`,
+      returnByValue: true,
+    });
+    const value = status.result?.value || {};
+    if (String(value.url || "").includes("published=true") || /发布成功|审核中|已发布/.test(value.text || "")) {
+      return { ok: true, reason: "已提交小红书发布，可能进入平台审核", url: value.url || filled.url };
     }
-    publishButton.click();
-    await sleep(6000);
-    const afterText = document.body.innerText || "";
-    if (/发布成功|发布完成|审核中|已发布/.test(afterText)) {
-      return { ok: true, reason: "发布成功或进入审核", url: location.href };
+    if (/登录|验证码|安全验证|扫码|手机号/.test(value.text || "")) {
+      return { ok: false, reason: "小红书需要登录或安全验证", url: value.url || filled.url };
     }
-    if (/验证码|安全验证|上传|图片|视频|失败|错误/.test(afterText)) {
-      return { ok: false, reason: "已尝试点击发布，但页面要求额外验证或素材", url: location.href };
-    }
-    return { ok: false, reason: "已尝试发布，未检测到成功提示，请人工确认", url: location.href };
-  })()`;
-  const result = await wsRequest(tab.webSocketDebuggerUrl, [
-    { method: "Runtime.evaluate", params: { expression, returnByValue: true, awaitPromise: true } },
-  ], 45000);
-  return result[0].data.result?.result?.value || { ok: false, reason: "发布脚本没有返回结果" };
+    return { ok: false, reason: "已点击发布，但未检测到成功标记，请人工确认", url: value.url || filled.url };
+  } finally {
+    page.close();
+  }
 }
 
 async function updateQueue(payload, status, reason, url) {
@@ -240,14 +363,19 @@ async function updateFeature(featureId, patch) {
   const index = features.findIndex((item) => item.id === featureId);
   if (index >= 0) {
     features[index] = { ...features[index], ...patch };
+    if (patch.publishStatus === "published") delete features[index].publishFailureReason;
     await writeJson(FEATURES_FILE, features);
   }
 }
 
 function commitAndPush() {
   if (!SHOULD_PUSH) return;
-  execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "add", "data/daily-features.json", "data/publish-queue.json"], { cwd: ROOT, stdio: "inherit" });
-  execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "commit", "-m", "Update Xiaohongshu publish status"], { cwd: ROOT, stdio: "inherit" });
+  execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "add", "data/daily-features.json", "data/publish-queue.json", "content/xiaohongshu-assets"], { cwd: ROOT, stdio: "inherit" });
+  try {
+    execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "commit", "-m", "Update Xiaohongshu publish status"], { cwd: ROOT, stdio: "inherit" });
+  } catch {
+    return;
+  }
   execFileSync("git", [
     "-c", "safe.directory=E:/workshop/interview-hub",
     "-c", "http.proxy=http://127.0.0.1:10809",
@@ -266,10 +394,11 @@ async function main() {
   const articlePath = path.join(ROOT, feature.articlePath || "");
   const markdown = await fs.readFile(articlePath, "utf8");
   const payload = buildXhsPayload(feature, post, markdown);
+  const coverPath = await ensureCoverImage(payload);
 
   let result;
   try {
-    result = await tryPublish(payload);
+    result = await tryPublish(payload, coverPath);
   } catch (error) {
     result = { ok: false, reason: error.message || "自动发布失败" };
   }
@@ -292,7 +421,7 @@ async function main() {
     });
   }
 
-  console.log(JSON.stringify({ featureId: feature.id, ok: result.ok, reason: result.reason, url: result.url || "" }, null, 2));
+  console.log(JSON.stringify({ featureId: feature.id, ok: result.ok, reason: result.reason, url: result.url || "", coverPath }, null, 2));
   commitAndPush();
 }
 

@@ -127,6 +127,10 @@ function bulletList(items) {
   return items.map((item) => `- ${item}`).join("\n");
 }
 
+function numberedList(items) {
+  return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
+}
+
 function buildArticle(post, score, reasons, settings) {
   const questions = post.questions && post.questions.length
     ? post.questions
@@ -136,41 +140,57 @@ function buildArticle(post, score, reasons, settings) {
       ];
   const focus = (settings.focusDirections || []).slice(0, 6).join(" / ");
   const tags = [...new Set([...(post.tags || []), post.company, post.direction, "大模型面试", "AI学习"])].filter(Boolean).slice(0, 10);
+  const direction = post.direction || post.category;
+  const firstQuestion = questions[0] || `${direction} 的核心技术链路如何拆解？`;
 
   return [
-    `# 每日精选分析：${post.company}｜${post.direction || post.category}`,
+    `# 每日精选面试题精讲：${post.company}｜${direction}`,
     "",
-    `今天选这条：${post.title}`,
+    `> 今日重点：先看面试题目，再看详细解答与分析，最后补充可能追问。`,
     "",
-    "## 今日结论",
-    `这条面经覆盖 ${post.direction || post.category}，价值分是 ${score}。它适合用来检查自己是否能把专业考点、技术取舍、评估指标和真实项目链路讲清楚。`,
+    "## 面试题目",
+    numberedList(questions.slice(0, 5)),
     "",
-    "## 为什么值得看",
+    "## 详细解答与分析",
+    `这组题的主线不是背概念，而是判断候选人能否把 ${direction} 拆成可解释、可实现、可评估的工程链路。以「${firstQuestion}」为例，回答时建议先给出整体结构，再说明每个模块的取舍，最后落到项目中的指标和失败案例。`,
+    "",
+    "**回答结构：**",
     bulletList([
-      `方向匹配：${post.direction || post.category}`,
-      `来源平台：${post.sourcePlatform} ${post.sourceDate || ""}`,
-      "可以延伸到模型结构、训练数据、评估指标和线上部署追问。",
+      "核心机制：先解释输入、表示、模型模块、训练目标和输出形式。",
+      "工程取舍：说明为什么选这个结构，而不是另一个更重或更简单的方案。",
+      "常见问题：主动讲清楚数据噪声、幻觉、延迟、显存、评估偏差或长尾失败。",
+      "验证方法：给出离线指标、人工评测、线上反馈和数据回流方式。",
+    ]),
+    "",
+    "**简洁回答模板：**",
+    `我会先把 ${direction} 看成一条链路：数据输入 -> 表示学习 -> 模型连接/训练目标 -> 推理部署 -> 评估反馈。面试时不要只说模型名，要把“为什么这样设计、哪里容易失败、怎么验证有效”讲完整。`,
+    "",
+    "## 可能追问方向",
+    bulletList([
+      `如果 ${direction} 的效果不稳定，如何定位是数据、结构、训练还是推理问题？`,
+      "如果上线后延迟或成本超标，优先压缩哪一部分，代价是什么？",
+      "如果 benchmark 分数高但真实业务表现差，你会怎样重新设计评估？",
+      "如何把一次失败样本转化为下一轮数据回流和模型改进？",
     ]),
     "",
     "## 面经信息",
-    `公司：${post.company}`,
-    `岗位：${post.role}`,
-    `方向：${post.direction || post.category}`,
-    `领域：${post.domain || "未标注"}`,
-    `难度：${post.difficulty}`,
-    `来源：${post.sourcePlatform} ${post.sourceDate || ""}`,
-    `原始链接：${post.sourceUrl}`,
+    bulletList([
+      `公司：${post.company}`,
+      `岗位：${post.role}`,
+      `方向：${direction}`,
+      `领域：${post.domain || "未标注"}`,
+      `难度：${post.difficulty}`,
+      `来源：${post.sourcePlatform} ${post.sourceDate || ""}`,
+      `原始链接：${post.sourceUrl}`,
+    ]),
     "",
     "## 价值打分依据",
     bulletList(reasons),
     "",
-    "## 一句话总结",
-    `${post.company} 的这条内容不只是“背题”，更像是在考察候选人能不能把 ${post.direction || post.category} 放进真实业务和工程链路里解释清楚。`,
-    "",
-    "## 建议重点拆解",
+    "## 复习建议",
     bulletList([
       "先把自己的项目讲成一条闭环：目标、数据、模型、训练/推理、评估、线上效果。",
-      `围绕 ${post.direction || post.category} 准备 2-3 个能深入追问的技术细节。`,
+      `围绕 ${direction} 准备 2-3 个能深入追问的技术细节。`,
       "把每个高频问题都准备成：直觉解释、公式/结构、工程取舍、常见坑。",
       "如果涉及应用落地，补充延迟、成本、鲁棒性、安全边界和评估指标。",
     ]),
@@ -184,22 +204,20 @@ function buildArticle(post, score, reasons, settings) {
       "RLHF、DPO、GRPO 与偏好对齐",
     ]),
     "",
-    "## 核心考点",
+    "## 核心考点速记",
     bulletList(questions),
     "",
     "## 今日复习动作",
     "拿 20 分钟，把上面每个问题写成 3 层答案：30 秒概括、2 分钟展开、5 分钟项目追问。能写出来，面试时才有稳定输出。",
     "",
     "## 小红书发布文案",
-    `今天的面经精读：${post.company}｜${post.direction || post.category}`,
+    `今天的面试题精讲：${post.company}｜${direction}`,
     "",
     `这条我会优先看，因为它命中了最近重点方向：${focus || "大模型基础与应用实现"}。`,
     "",
-    "复习时不要只背答案，建议按这 4 步拆：",
-    "1. 这个问题到底在考什么",
-    "2. 我的项目里哪里能对应上",
-    "3. 有哪些工程取舍和失败案例",
-    "4. 面试官继续追问时我怎么展开",
+    "今天按两块复习：",
+    "1. 面试题目：先能用 30 秒说清楚题目在考什么。",
+    "2. 详细解答与分析：再展开核心机制、工程取舍、常见坑和评估指标。",
     "",
     "今天重点问题：",
     bulletList(questions.slice(0, 4)),

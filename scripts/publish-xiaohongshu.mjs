@@ -11,6 +11,7 @@ const ASSET_DIR = path.join(ROOT, "content", "xiaohongshu-assets");
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
 const SHOULD_OPEN_ONLY = process.argv.includes("--open-only");
+const SHOULD_RENDER_COVER_ONLY = process.argv.includes("--render-cover-only");
 const CREATOR_URL = process.env.XHS_CREATOR_URL || "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image";
 
 async function readJson(file, fallback) {
@@ -58,6 +59,9 @@ function buildXhsPayload(feature, post, markdown) {
   const questions = Array.isArray(post?.questions) && post.questions.length
     ? post.questions.slice(0, 4)
     : listFromSection(markdown, "核心考点", 4);
+  const detailedAnalysis = section(markdown, "详细解答与分析")
+    || section(markdown, "今日结论")
+    || section(markdown, "一句话总结");
   const conclusion = section(markdown, "今日结论") || `${feature.title}，适合作为今天的大模型面试复习材料。`;
   const sourcePlatform = feature.sourcePlatform || post?.sourcePlatform || "公开来源";
   const sourceDate = feature.sourceDate || post?.sourceDate || feature.date || "";
@@ -71,19 +75,19 @@ function buildXhsPayload(feature, post, markdown) {
   ])].filter(Boolean).slice(0, 10);
 
   const body = [
-    `今天复盘一条${feature.company || post?.company || ""}的${feature.direction || post?.direction || "大模型"}面经。`,
+    `【每日精选】${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}面经。`,
     "",
-    "01 为什么值得看",
-    conclusion,
+    "【面试题目】",
+    ...questions.slice(0, 3).map((item, index) => `${index + 1}. ${item}`),
     "",
-    "02 面试高频考点",
-    ...questions.map((item, index) => `${index + 1}. ${item}`),
+    "【详细解答与分析】",
+    detailedAnalysis || conclusion,
     "",
-    "03 复习方法",
-    "不要只背答案。建议每个问题都按「核心机制 -> 工程取舍 -> 常见坑 -> 评估指标」四层准备。",
+    "【回答框架】",
+    "按「核心机制 -> 工程取舍 -> 常见坑 -> 评估指标」组织，不要只背名词。",
     "",
-    "04 今天要记住",
-    "面试官真正想看的是：你能不能把模型结构、数据、训练、推理和业务落地讲成一条完整链路。",
+    "【今天要记住】",
+    "面试官想看的是：你能不能把模型结构、数据、训练、推理和业务落地讲成一条完整链路。",
     "",
     "引用 / 来源",
     `来源平台：${sourcePlatform}`,
@@ -97,8 +101,8 @@ function buildXhsPayload(feature, post, markdown) {
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
     title: titleForXhs(feature, post),
-    coverTitle: `${feature.company || post?.company || "大模型"}面经复盘`,
-    coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} · 高频考点`,
+    coverTitle: `${feature.company || post?.company || "大模型"}面试题精讲`,
+    coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
     body,
     sourcePlatform,
     sourceDate,
@@ -122,13 +126,7 @@ function escapePs(value) {
 
 async function ensureCoverImage(payload) {
   await fs.mkdir(ASSET_DIR, { recursive: true });
-  const file = path.join(ASSET_DIR, `${payload.id}-cover.png`);
-  try {
-    await fs.access(file);
-    return file;
-  } catch {
-    // Continue and render the cover.
-  }
+  const file = path.join(ASSET_DIR, `${payload.id}-cover-v2.png`);
 
   const title = escapePs(payload.coverTitle);
   const subtitle = escapePs(payload.coverSubtitle);
@@ -156,16 +154,27 @@ $cyan = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(2
 $white = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(245, 246, 250, 255))
 $muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(210, 175, 211, 232))
 $fontSmall = New-Object System.Drawing.Font "Microsoft YaHei UI", 34, ([System.Drawing.FontStyle]::Bold)
-$fontTitle = New-Object System.Drawing.Font "Microsoft YaHei UI", 78, ([System.Drawing.FontStyle]::Bold)
-$fontSub = New-Object System.Drawing.Font "Microsoft YaHei UI", 42, ([System.Drawing.FontStyle]::Regular)
-$fontBody = New-Object System.Drawing.Font "Microsoft YaHei UI", 34, ([System.Drawing.FontStyle]::Regular)
+$fontTitle = New-Object System.Drawing.Font "Microsoft YaHei UI", 58, ([System.Drawing.FontStyle]::Bold)
+$fontSub = New-Object System.Drawing.Font "Microsoft YaHei UI", 34, ([System.Drawing.FontStyle]::Bold)
+$fontBody = New-Object System.Drawing.Font "Microsoft YaHei UI", 32, ([System.Drawing.FontStyle]::Regular)
+$fontBadge = New-Object System.Drawing.Font "Microsoft YaHei UI", 30, ([System.Drawing.FontStyle]::Bold)
+$fmt = New-Object System.Drawing.StringFormat
+$fmt.Alignment = [System.Drawing.StringAlignment]::Near
+$fmt.LineAlignment = [System.Drawing.StringAlignment]::Near
+$fmt.Trimming = [System.Drawing.StringTrimming]::EllipsisWord
 $g.FillRectangle($accent, 0, 0, 1080, 18)
-$g.DrawString("每日面经复盘", $fontSmall, $cyan, 90, 120)
-$g.DrawString("${title}", $fontTitle, $white, 90, 250)
-$g.DrawString("${subtitle}", $fontSub, $muted, 90, 450)
-$g.DrawString("核心机制 -> 工程取舍 -> 常见坑 -> 评估指标", $fontBody, $white, 90, 610)
-$g.DrawString("引用来源：公开面经", $fontBody, $muted, 90, 730)
-$g.DrawString("Interview Hub", $fontSmall, $cyan, 90, 1240)
+$safe = New-Object System.Drawing.RectangleF 120,180,840,940
+$badgeBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(42, 255, 90, 95))
+$badgePen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(210, 92, 255, 229)), 2
+$g.FillRectangle($badgeBrush, 120, 170, 330, 76)
+$g.DrawRectangle($badgePen, 120, 170, 330, 76)
+$g.DrawString("每日面试题", $fontBadge, $cyan, 150, 187)
+$g.DrawString("${title}", $fontTitle, $white, (New-Object System.Drawing.RectangleF 120, 310, 900, 220), $fmt)
+$g.DrawString("${subtitle}", $fontSub, $cyan, (New-Object System.Drawing.RectangleF 120, 560, 900, 110), $fmt)
+$g.DrawString("重点拆解", $fontSmall, $white, 120, 760)
+$g.DrawString("面试题目 / 详细解答 / 追问方向", $fontBody, $muted, (New-Object System.Drawing.RectangleF 120, 835, 840, 100), $fmt)
+$g.DrawString("Interview Hub", $fontSmall, $cyan, 120, 1120)
+$g.DrawString("引用来源：公开面经整理", $fontBody, $muted, 120, 1185)
 $g.Dispose()
 $bmp.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp.Dispose()
@@ -395,6 +404,10 @@ async function main() {
   const markdown = await fs.readFile(articlePath, "utf8");
   const payload = buildXhsPayload(feature, post, markdown);
   const coverPath = await ensureCoverImage(payload);
+  if (SHOULD_RENDER_COVER_ONLY) {
+    console.log(JSON.stringify({ featureId: feature.id, coverPath }, null, 2));
+    return;
+  }
 
   let result;
   try {

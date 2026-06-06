@@ -1,5 +1,5 @@
 const queueRoot = document.querySelector("#publishQueueRoot");
-const staticAssetVersion = "20260606-xhs-publish";
+const staticAssetVersion = "20260606-xhs-cover-v2";
 
 function staticUrl(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -46,11 +46,18 @@ function renderRecord(record) {
 
   const cover = document.createElement("div");
   cover.className = "xhs-cover-preview";
-  const coverTitle = document.createElement("strong");
-  coverTitle.textContent = record.coverTitle || record.title;
-  const coverSubtitle = document.createElement("span");
-  coverSubtitle.textContent = record.coverSubtitle || "每日精选学习笔记";
-  cover.append(coverTitle, coverSubtitle);
+  if (record.coverImage) {
+    const img = document.createElement("img");
+    img.src = staticUrl(record.coverImage);
+    img.alt = record.coverTitle || record.title || "小红书封面";
+    cover.appendChild(img);
+  } else {
+    const coverTitle = document.createElement("strong");
+    coverTitle.textContent = record.coverTitle || record.title;
+    const coverSubtitle = document.createElement("span");
+    coverSubtitle.textContent = record.coverSubtitle || "每日精选学习笔记";
+    cover.append(coverTitle, coverSubtitle);
+  }
 
   const body = document.createElement("pre");
   body.textContent = record.body;

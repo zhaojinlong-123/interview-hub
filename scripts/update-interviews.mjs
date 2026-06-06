@@ -32,8 +32,13 @@ function normalizeUrl(url) {
   if (!url) return "";
   try {
     const parsed = new URL(url);
+    const isXiaohongshu = /xiaohongshu\.com$/i.test(parsed.hostname) || /\.xiaohongshu\.com$/i.test(parsed.hostname);
     for (const key of [...parsed.searchParams.keys()]) {
-      if (/token|xsec|utm|spm|source|from|fr|share/i.test(key)) parsed.searchParams.delete(key);
+      if (isXiaohongshu && /^xsec_/i.test(key)) continue;
+      if (/token|utm|spm|source|from|fr|share/i.test(key)) parsed.searchParams.delete(key);
+    }
+    if (isXiaohongshu && parsed.pathname.startsWith("/search_result/") && !parsed.searchParams.get("xsec_source")) {
+      parsed.searchParams.set("xsec_source", "pc_search");
     }
     parsed.hash = "";
     return parsed.toString();

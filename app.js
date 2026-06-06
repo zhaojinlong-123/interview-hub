@@ -492,13 +492,15 @@ async function renderDailyPanel() {
     doc.textContent = "查看分析文档";
     doc.href = feature.articlePath || "#";
     doc.target = "_blank";
-    doc.rel = "noreferrer";
+    doc.rel = "noopener noreferrer nofollow";
+    doc.referrerPolicy = "no-referrer";
     const source = document.createElement("a");
     source.className = "source-link";
     source.textContent = "来源链接";
     source.href = safeHttpUrl(feature.sourceUrl);
     source.target = "_blank";
-    source.rel = "noreferrer";
+    source.rel = "noopener noreferrer nofollow";
+    source.referrerPolicy = "no-referrer";
     if (!source.href) source.hidden = true;
     actions.append(doc, source);
     card.append(title, score, summary, actions);

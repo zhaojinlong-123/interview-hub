@@ -72,13 +72,51 @@ function guessType(text) {
 }
 
 function makeQuestions(text) {
-  const questions = [];
-  if (/VLA|具身|机器人/.test(text)) questions.push("VLA 如何表示动作，机器人数据如何采集、清洗和评估？");
-  if (/DeepSpeed|Megatron|训练框架|显存/.test(text)) questions.push("训练框架中的并行策略、显存瓶颈和通信开销如何定位？");
-  if (/多模态|视觉|视频|VLM|CLIP/.test(text)) questions.push("多模态模型如何做视觉语言对齐和长上下文理解？");
-  if (/RLHF|PPO|DPO|GRPO/.test(text)) questions.push("RLHF、PPO、DPO、GRPO 的训练目标和适用场景有什么区别？");
-  if (!questions.length) questions.push("项目经历、模型原理、应用实现和评估指标分别如何回答？");
-  return questions.slice(0, 4);
+  const banks = [];
+  if (/VLA|具身|机器人|智元|动作|遥操作|轨迹/.test(text)) {
+    banks.push(
+      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
+    );
+  }
+  if (/视频|音视频|Video|时序|帧|视觉理解|事件/.test(text)) {
+    banks.push(
+      "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
+      "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？"
+    );
+  }
+  if (/DeepSpeed|Megatron|训练框架|显存|ZeRO|并行|checkpoint|FlashAttention/.test(text)) {
+    banks.push(
+      "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+      "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？"
+    );
+  }
+  if (/推理|部署|量化|压缩|KV Cache|KV cache|PagedAttention|吞吐|延迟|LoRA/.test(text)) {
+    banks.push(
+      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？"
+    );
+  }
+  if (/自动驾驶|世界模型|BEV|occupancy|座舱|蔚来|赛力斯|Momenta|数据闭环|仿真/.test(text)) {
+    banks.push(
+      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？"
+    );
+  }
+  if (/RLHF|PPO|DPO|GRPO|强化学习|对齐|Reward/.test(text)) {
+    banks.push(
+      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？"
+    );
+  }
+  if (!banks.length) {
+    banks.push(
+      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
+    );
+  }
+  return [...new Set(banks)].slice(0, 4);
 }
 
 function makePost(candidate) {

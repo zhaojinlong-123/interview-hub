@@ -130,7 +130,10 @@ function bulletList(items) {
 function buildArticle(post, score, reasons, settings) {
   const questions = post.questions && post.questions.length
     ? post.questions
-    : ["项目经历、模型原理、应用实现和评估指标分别如何回答？"];
+    : [
+        "Vision encoder 输出如何与 LLM token 空间对齐？",
+        "多模态模型如何评估 grounding、OCR、空间关系和幻觉？",
+      ];
   const focus = (settings.focusDirections || []).slice(0, 6).join(" / ");
   const tags = [...new Set([...(post.tags || []), post.company, post.direction, "大模型面试", "AI学习"])].filter(Boolean).slice(0, 10);
 
@@ -139,7 +142,7 @@ function buildArticle(post, score, reasons, settings) {
     "",
     `今天选这条：${post.title}`,
     "",
-    `为什么值得看：这条面经价值分是 ${score}。它覆盖了 ${post.direction || post.category}，来源是 ${post.sourcePlatform}，适合用来检查自己是否真的能把项目、原理和应用实现讲清楚。`,
+    `为什么值得看：这条面经价值分是 ${score}。它覆盖了 ${post.direction || post.category}，来源是 ${post.sourcePlatform}，适合用来检查自己是否真的能把专业考点、技术取舍和评估指标讲清楚。`,
     "",
     "## 面经信息",
     `公司：${post.company}`,

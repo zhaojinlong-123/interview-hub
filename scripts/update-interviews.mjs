@@ -29,6 +29,48 @@ const DEFAULT_SEARCH_QUERIES = [
   "自动驾驶 数据闭环 世界模型 面经",
 ];
 
+const FOCUS_QUERY_TOPICS = [
+  {
+    direction: "多模态大模型",
+    topics: ["VLM", "视觉语言对齐", "CLIP", "Q-Former", "OCR", "grounding", "多图理解"],
+  },
+  {
+    direction: "VLA 具身智能",
+    topics: ["VLA", "机器人", "action token", "diffusion policy", "遥操作", "轨迹数据", "sim-to-real"],
+  },
+  {
+    direction: "视频理解",
+    topics: ["视频理解", "temporal token", "长视频", "时序建模", "视频问答", "事件边界"],
+  },
+  {
+    direction: "训练框架",
+    topics: ["DeepSpeed", "Megatron", "ZeRO", "张量并行", "流水并行", "FlashAttention", "显存优化"],
+  },
+  {
+    direction: "推理部署",
+    topics: ["KV cache", "PagedAttention", "vLLM", "量化", "speculative decoding", "continuous batching"],
+  },
+  {
+    direction: "自动驾驶数据",
+    topics: ["自动驾驶", "数据闭环", "BEV", "occupancy", "世界模型", "仿真评测", "长尾场景"],
+  },
+];
+
+const SEARCH_SUFFIXES = ["面经", "面试题", "一面", "实习 面经"];
+const SEARCH_COMPANY_GROUPS = [
+  "",
+  "字节",
+  "腾讯",
+  "百度",
+  "阿里",
+  "华为",
+  "NVIDIA",
+  "Google",
+  "Momenta",
+  "小鹏",
+  "蔚来",
+];
+
 function clean(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
 }
@@ -190,7 +232,14 @@ function buildSearchQueries(settings) {
   const configured = Array.isArray(settings.searchQueries) ? settings.searchQueries : [];
   const focusDirections = Array.isArray(settings.focusDirections) ? settings.focusDirections : [];
   const focusQueries = focusDirections.map((item) => `${item} 面经`);
-  return uniqueList([...configured, ...focusQueries, ...DEFAULT_SEARCH_QUERIES]);
+  const topicQueries = FOCUS_QUERY_TOPICS.flatMap((group) =>
+    group.topics.flatMap((topic) =>
+      SEARCH_SUFFIXES.flatMap((suffix) =>
+        SEARCH_COMPANY_GROUPS.map((company) => clean(`${company} ${topic} ${suffix}`))
+      )
+    )
+  );
+  return uniqueList([...configured, ...focusQueries, ...DEFAULT_SEARCH_QUERIES, ...topicQueries]);
 }
 
 function replaceQueryInUrl(searchUrl, query) {
@@ -408,7 +457,8 @@ async function main() {
     date: new Date().toISOString(),
     platforms: platforms.map((platform) => platform.name),
     focusDirections: settings.focusDirections || [],
-    searchQueries,
+    searchQueryCount: searchQueries.length,
+    searchQuerySamples: searchQueries.slice(0, 30),
     scannedCandidates: allCandidates.length,
     rankedCandidates: candidates.length,
     added: newPosts.length,

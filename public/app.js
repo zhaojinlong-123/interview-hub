@@ -57,7 +57,7 @@ let currentPage = 1;
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
-const staticAssetVersion = "20260606-platform-templates";
+const staticAssetVersion = "20260606-question-bank";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
@@ -759,6 +759,22 @@ function answerHint(question) {
     [/场景挖掘|长尾样本|自动标注|仿真评测/i, "数据闭环链路是线上触发、长尾挖掘、自动/人工标注、训练回流、仿真和实车评测，关键是覆盖率和安全收益。"],
     [/RLHF|DPO|GRPO|PPO|优化目标/i, "PPO 依赖 reward model 做在线式策略优化，DPO 直接用偏好对优化，GRPO 减少 value model 依赖；比较目标、稳定性和成本。"],
     [/Reward model|reward hacking|长度偏置|分布外/i, "Reward model 要控制偏好数据质量、长度偏置和分布外泛化；用对抗样本、校准集和人工复核降低 reward hacking。"],
+    [/CLIP|对比学习|视觉语义对齐/i, "CLIP 用图文对比学习把视觉和文本拉到同一语义空间，优点是迁移强，局限是细粒度定位、OCR 和复杂推理能力不足。"],
+    [/高分辨率|patch|动态分辨率|局部裁剪/i, "高分辨率要权衡 token 数和细节保留；常见做法是动态分辨率、局部裁剪、token 压缩和按任务选择视觉尺度。"],
+    [/多图理解|图间关系|跨图实体/i, "多图理解关键是跨图实体绑定、图间顺序和关系推理；可以用位置标识、图级 separator、跨图 attention 和专门评测集约束。"],
+    [/hierarchical policy|skill library|低层控制|语言规划/i, "长程具身任务通常用高层语言规划拆子目标，低层 skill 或 policy 执行动作；重点回答接口、失败恢复和安全约束。"],
+    [/Sim-to-real|域随机化|动力学随机化/i, "sim-to-real 主要处理视觉域差、动力学差和传感器噪声；域随机化、真实数据微调和在线校正通常组合使用。"],
+    [/均匀采样|关键帧采样|运动感知采样/i, "帧采样按信息密度和成本取舍：均匀采样覆盖全局，关键帧省 token，运动感知更关注动作变化，自适应采样更灵活但复杂。"],
+    [/视频 grounding|时空定位/i, "视频 grounding 比图像多了时间边界，需要同时评估时间定位、空间定位和跨帧一致性，指标常看 tIoU、spatio-temporal IoU 和召回。"],
+    [/数据并行|张量并行|流水并行|序列并行|专家并行/i, "并行策略按瓶颈选择：数据并行扩 batch，张量/序列并行拆计算和激活，流水并行拆层，专家并行服务 MoE。"],
+    [/ZeRO-1|ZeRO-2|ZeRO-3|切分/i, "ZeRO-1 切优化器状态，ZeRO-2 再切梯度，ZeRO-3 连参数也切；显存越省，通信和实现复杂度越高。"],
+    [/loss spike|梯度溢出|通信 hang|数据异常/i, "训练异常先分层定位：数据批次、数值精度、学习率/梯度、通信拓扑、checkpoint 恢复；保留日志和最小复现很关键。"],
+    [/continuous batching|调度公平|单请求延迟/i, "continuous batching 用动态合批提升吞吐，但会引入队列调度问题；要同时看 TTFT、TPOT、吞吐和尾延迟。"],
+    [/speculative decoding|draft model|接受率/i, "投机解码收益取决于 draft model 成本和 token 接受率；小模型太弱接受率低，太强又抵消加速收益。"],
+    [/LoRA 多租户|adapter|热切换/i, "LoRA 多租户要处理 adapter 加载、缓存、隔离和调度；常见方案是热加载、批内按 adapter 分组或合并高频 adapter。"],
+    [/数据闭环|长尾场景|自动标注|训练回流/i, "数据闭环核心是从线上挖长尾和失败样本，自动/人工标注后回流训练，再用离线和仿真评测验证收益。"],
+    [/BEV|occupancy|轨迹预测|端到端规划/i, "BEV/occupancy 提供空间状态表示，轨迹预测建模动态交互，规划输出可执行行为；世界模型尝试把这些统一进可预测环境动态。"],
+    [/仿真评测|场景真实性|覆盖率/i, "仿真评测要关注场景分布、交互真实性、长尾覆盖、指标可解释性和 sim-real gap，不能只看单一通过率。"],
   ];
   return rules.find(([pattern]) => pattern.test(question))?.[1] || "先回答核心机制，再补关键取舍、常见失败模式和可量化评估指标。";
 }

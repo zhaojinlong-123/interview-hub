@@ -630,15 +630,29 @@ input:focus, select:focus, textarea:focus {
 }
 
 .markdown-body h2 {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 10px;
   margin: 22px 0 2px;
+  border-left: 3px solid var(--green);
+  border-radius: 6px;
   color: var(--green);
+  background: rgba(102, 255, 194, 0.08);
   font-size: 22px;
+  font-weight: 900;
 }
 
 .markdown-body h3 {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 8px;
   margin: 12px 0 0;
+  border: 1px solid rgba(102, 228, 255, 0.18);
+  border-radius: 6px;
   color: var(--cyan);
+  background: rgba(102, 228, 255, 0.07);
   font-size: 17px;
+  font-weight: 900;
 }
 
 .markdown-body p {
@@ -647,6 +661,17 @@ input:focus, select:focus, textarea:focus {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.85;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--cyan);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(102, 228, 255, 0.08);
+  font-weight: 800;
+  line-height: 1.8;
 }
 
 .markdown-body ul {
@@ -730,6 +755,7 @@ input:focus, select:focus, textarea:focus {
 .xhs-cover-preview {
   display: grid;
   gap: 8px;
+  justify-items: start;
   max-width: 420px;
   min-height: 180px;
   margin: 0 0 16px;
@@ -740,6 +766,15 @@ input:focus, select:focus, textarea:focus {
   background:
     linear-gradient(135deg, rgba(102, 228, 255, 0.16), rgba(92, 255, 194, 0.08)),
     rgba(4, 12, 18, 0.86);
+}
+
+.xhs-cover-preview img {
+  width: min(280px, 100%);
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  border: 1px solid rgba(102, 228, 255, 0.18);
+  border-radius: 8px;
+  background: #06101c;
 }
 
 .xhs-cover-preview strong {

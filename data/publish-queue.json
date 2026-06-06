@@ -1,8 +1,8 @@
 [
   {
     "id": "xhs-daily-2026-06-06-c7fca9e91989",
-    "title": "字节跳动多模态大模型面经复盘",
-    "body": "今天复盘一条字节跳动的多模态大模型 / 视觉语言对齐面经。\n\n01 为什么值得看\n这条面经的核心不是“讲一个项目”，而是考察候选人是否真正理解多模态大模型从视觉输入到语言输出的完整链路：视觉编码、token 对齐、指令微调、评估指标、幻觉控制，以及线上推理时的成本与稳定性。\n\n02 面试高频考点\n1. 视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？\n2. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？\n3. 多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？\n\n03 复习方法\n不要只背答案。建议每个问题都按「核心机制 -> 工程取舍 -> 常见坑 -> 评估指标」四层准备。\n\n04 今天要记住\n面试官真正想看的是：你能不能把模型结构、数据、训练、推理和业务落地讲成一条完整链路。\n\n引用 / 来源\n来源平台：知乎\n原帖日期：2026-06-05\n原始链接：https://zhuanlan.zhihu.com/p/1998500372969443453\n说明：本文为基于公开面经整理的学习笔记，用于个人复习与知识归纳。\n\n#知乎 #字节跳动 #多模态 #VLM #视觉语言对齐 #多模态大模型/视觉语言对齐 #大模型面试 #AI学习",
+    "title": "字节跳动多模态面试题精讲",
+    "body": "今天的面试题精讲：字节跳动｜多模态大模型 / 视觉语言对齐\n\n这条我会优先看，因为它命中了最近重点方向：多模态、VLM、视觉语言对齐。\n\n今天按两块复习：\n\n1. 面试题目：先能用 30 秒说清楚题目在考什么。\n2. 详细解答与分析：再展开核心机制、工程取舍、常见坑和评估指标。\n\n今天重点问题：\n\n- 视觉 encoder 输出如何对齐到 LLM token 空间？\n- 图文/视频指令微调数据如何构造？\n- 多模态模型如何评估 grounding、OCR、空间关系和幻觉？\n\n来源链接：https://zhuanlan.zhihu.com/p/1998500372969443453\n\n#知乎 #字节跳动 #多模态 #VLM #视觉语言对齐 #大模型面试 #AI学习",
     "sourcePlatform": "知乎",
     "sourceDate": "2026-06-05",
     "sourceUrl": "https://zhuanlan.zhihu.com/p/1998500372969443453",
@@ -13,8 +13,9 @@
     "status": "published",
     "reason": "已自动上传封面并提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-06T15:18:01.158Z",
-    "coverTitle": "字节跳动面经复盘",
-    "coverSubtitle": "多模态大模型 / 视觉语言对齐｜高频考点"
+    "updatedAt": "2026-06-06T15:29:23.094Z",
+    "coverTitle": "字节跳动面试题精讲",
+    "coverSubtitle": "多模态大模型 / 视觉语言对齐 高频题",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989-cover-v2.png"
   }
 ]

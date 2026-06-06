@@ -254,10 +254,12 @@ async function main() {
     score: winner.score,
     reasons: winner.reasons,
     sourceUrl: winner.post.sourceUrl,
+    sourcePlatform: winner.post.sourcePlatform,
+    sourceDate: winner.post.sourceDate,
     articlePath: path.relative(ROOT, articlePath).replaceAll("\\", "/"),
     target: settings.publishTarget || "xiaohongshu",
     publishStatus: "draft_ready",
-    autoPublish: false,
+    autoPublish: Boolean(settings.autoPublish),
   };
   const nextHistory = [record, ...history];
   await writeJson(FEATURES_FILE, nextHistory);

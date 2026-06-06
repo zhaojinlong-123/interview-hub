@@ -197,7 +197,7 @@ function makePost(candidate) {
     tags,
     questions: makeQuestions(text),
     content: `自动更新脚本从 ${sourcePlatform} 搜索到的近期面经候选。摘要：${clean(candidate.snippet || title).slice(0, 260)}`,
-    prepTips: "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
+    prepTips: "",
     createdAt: Math.floor(Date.now() / 1000),
     updatedAt: Math.floor(Date.now() / 1000),
   };

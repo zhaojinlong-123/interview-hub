@@ -57,6 +57,7 @@ let currentPage = 1;
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
+const staticAssetVersion = "20260606-xhs-links";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
@@ -69,6 +70,11 @@ function safeHttpUrl(value) {
   } catch {
     return "";
   }
+}
+
+function staticUrl(path) {
+  const separator = path.includes("?") ? "&" : "?";
+  return `${staticDataPrefix}/${path}${separator}v=${staticAssetVersion}`;
 }
 
 function uniqueValues(posts, key) {
@@ -95,13 +101,13 @@ function buildMetaFromPosts(posts) {
 }
 
 async function readStaticPosts() {
-  const response = await fetch(`${staticDataPrefix}/data/posts.json`);
+  const response = await fetch(staticUrl("data/posts.json"));
   const posts = await response.json();
   return { posts, meta: buildMetaFromPosts(posts) };
 }
 
 async function readStaticDailyFeatures() {
-  const response = await fetch(`${staticDataPrefix}/data/daily-features.json`);
+  const response = await fetch(staticUrl("data/daily-features.json"));
   return response.json();
 }
 
@@ -370,7 +376,7 @@ function renderPlatforms() {
 async function loadPlatforms() {
   if (!platformList) return;
   if (isStaticHost()) {
-    const response = await fetch(`${staticDataPrefix}/data/platforms.json`);
+    const response = await fetch(staticUrl("data/platforms.json"));
     searchPlatforms = await response.json();
     renderPlatforms();
     return;
@@ -449,7 +455,7 @@ function excerptMarkdown(markdown) {
 async function loadDailyArticle(feature) {
   if (!feature.articlePath) return "";
   try {
-    const response = await fetch(`${staticDataPrefix}/${feature.articlePath}`);
+    const response = await fetch(staticUrl(feature.articlePath));
     if (!response.ok) return "";
     return response.text();
   } catch {

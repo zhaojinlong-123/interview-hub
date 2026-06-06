@@ -72,7 +72,7 @@ function makeQuestions(text) {
   if (/DeepSpeed|Megatron|训练框架|显存/.test(text)) questions.push("训练框架中的并行策略、显存瓶颈和通信开销如何定位？");
   if (/多模态|视觉|视频|VLM|CLIP/.test(text)) questions.push("多模态模型如何做视觉语言对齐和长上下文理解？");
   if (/RLHF|PPO|DPO|GRPO/.test(text)) questions.push("RLHF、PPO、DPO、GRPO 的训练目标和适用场景有什么区别？");
-  if (!questions.length) questions.push("项目经历、模型原理、工程落地和评估指标分别如何回答？");
+  if (!questions.length) questions.push("项目经历、模型原理、应用实现和评估指标分别如何回答？");
   return questions.slice(0, 4);
 }
 
@@ -103,7 +103,7 @@ function makePost(candidate) {
     tags,
     questions: makeQuestions(text),
     content: `自动更新脚本从 ${sourcePlatform} 搜索到的近期面经候选。摘要：${clean(candidate.snippet || title).slice(0, 260)}`,
-    prepTips: "先确认原帖细节，再按基础原理、项目追问、工程落地、评估指标四块整理复习。",
+    prepTips: "先确认原帖细节，再按基础原理、项目追问、应用实现、评估指标四块整理复习。",
     createdAt: Math.floor(Date.now() / 1000),
     updatedAt: Math.floor(Date.now() / 1000),
   };

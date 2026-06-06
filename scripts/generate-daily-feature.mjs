@@ -130,7 +130,7 @@ function bulletList(items) {
 function buildArticle(post, score, reasons, settings) {
   const questions = post.questions && post.questions.length
     ? post.questions
-    : ["项目经历、模型原理、工程落地和评估指标分别如何回答？"];
+    : ["项目经历、模型原理、应用实现和评估指标分别如何回答？"];
   const focus = (settings.focusDirections || []).slice(0, 6).join(" / ");
   const tags = [...new Set([...(post.tags || []), post.company, post.direction, "大模型面试", "AI学习"])].filter(Boolean).slice(0, 10);
 
@@ -139,7 +139,7 @@ function buildArticle(post, score, reasons, settings) {
     "",
     `今天选这条：${post.title}`,
     "",
-    `为什么值得看：这条面经价值分是 ${score}。它覆盖了 ${post.direction || post.category}，来源是 ${post.sourcePlatform}，适合用来检查自己是否真的能把项目、原理和工程落地讲清楚。`,
+    `为什么值得看：这条面经价值分是 ${score}。它覆盖了 ${post.direction || post.category}，来源是 ${post.sourcePlatform}，适合用来检查自己是否真的能把项目、原理和应用实现讲清楚。`,
     "",
     "## 面经信息",
     `公司：${post.company}`,
@@ -182,7 +182,7 @@ function buildArticle(post, score, reasons, settings) {
     "## 小红书发布文案",
     `今天的面经精读：${post.company}｜${post.direction || post.category}`,
     "",
-    `这条我会优先看，因为它命中了最近重点方向：${focus || "大模型基础与工程落地"}。`,
+    `这条我会优先看，因为它命中了最近重点方向：${focus || "大模型基础与应用实现"}。`,
     "",
     "复习时不要只背答案，建议按这 4 步拆：",
     "1. 这个问题到底在考什么",

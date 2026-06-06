@@ -11,6 +11,9 @@ const collectionExport = document.querySelector("#collectionExport");
 const platformForm = document.querySelector("#platformForm");
 const platformList = document.querySelector("#platformList");
 const platformMessage = document.querySelector("#platformMessage");
+const dailySettingsForm = document.querySelector("#dailySettingsForm");
+const dailyFeatureRoot = document.querySelector("#dailyFeatureRoot");
+const dailyMessage = document.querySelector("#dailyMessage");
 
 const filters = {
   keyword: document.querySelector("#keyword"),
@@ -50,11 +53,22 @@ let allPosts = [];
 let catalogPosts = [];
 let meta = {};
 let searchPlatforms = [];
+let dailySettings = {};
+let dailyFeatures = [];
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
+}
+
+function safeHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:" ? url.toString() : "";
+  } catch {
+    return "";
+  }
 }
 
 function uniqueValues(posts, key) {
@@ -85,6 +99,16 @@ async function readStaticPosts() {
   const response = await fetch(`${staticDataPrefix}/data/posts.json`);
   const posts = await response.json();
   return { posts, meta: buildMetaFromPosts(posts) };
+}
+
+async function readStaticDailySettings() {
+  const response = await fetch(`${staticDataPrefix}/data/daily-settings.json`);
+  return response.json();
+}
+
+async function readStaticDailyFeatures() {
+  const response = await fetch(`${staticDataPrefix}/data/daily-features.json`);
+  return response.json();
 }
 
 function filterStaticPosts(posts) {
@@ -283,7 +307,11 @@ function renderRankList(root, entries) {
     const row = document.createElement("button");
     row.type = "button";
     row.className = "rank-row";
-    row.innerHTML = `<span>${label}</span><strong>${count}</strong>`;
+    const text = document.createElement("span");
+    text.textContent = label;
+    const value = document.createElement("strong");
+    value.textContent = count;
+    row.append(text, value);
     root.appendChild(row);
   });
 }
@@ -412,6 +440,76 @@ function renderDashboard() {
     });
     hotTags.appendChild(button);
   });
+}
+
+function renderDailyPanel() {
+  if (!dailyFeatureRoot || !dailySettingsForm) return;
+  dailySettingsForm.elements.publishTime.value = dailySettings.publishTime || "09:30";
+  dailySettingsForm.elements.focusDirections.value = (dailySettings.focusDirections || []).join(", ");
+  dailyFeatureRoot.innerHTML = "";
+
+  const summary = document.createElement("article");
+  summary.className = "daily-card";
+  const summaryTitle = document.createElement("h3");
+  summaryTitle.textContent = "当前策略";
+  const summaryTime = document.createElement("p");
+  summaryTime.textContent = `发布时间：${dailySettings.publishTime || "09:30"} (${dailySettings.timezone || "Asia/Shanghai"})`;
+  const summaryFocus = document.createElement("p");
+  summaryFocus.textContent = `重点方向：${(dailySettings.focusDirections || []).join(" / ") || "未设置"}`;
+  const summaryTarget = document.createElement("p");
+  summaryTarget.textContent = `发布目标：${dailySettings.publishTarget || "xiaohongshu"}；当前为草稿生成模式，自动发帖需额外授权。`;
+  summary.append(summaryTitle, summaryTime, summaryFocus, summaryTarget);
+  dailyFeatureRoot.appendChild(summary);
+
+  const latest = dailyFeatures.slice(0, 5);
+  if (!latest.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "还没有每日精选记录。运行 scripts/generate-daily-feature.mjs 后会生成第一篇草稿。";
+    dailyFeatureRoot.appendChild(empty);
+    return;
+  }
+
+  latest.forEach((feature) => {
+    const card = document.createElement("article");
+    card.className = "daily-card";
+    const title = document.createElement("h3");
+    title.textContent = `${feature.date} · ${feature.company} · ${feature.direction}`;
+    const description = document.createElement("p");
+    description.textContent = feature.title;
+    const score = document.createElement("p");
+    score.textContent = `价值分：${feature.score}；状态：${feature.publishStatus || "draft_ready"}`;
+    const draft = document.createElement("p");
+    draft.textContent = `草稿：${feature.articlePath || "未生成"}`;
+    const link = document.createElement("a");
+    link.className = "source-link";
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.textContent = "来源链接";
+    const href = safeHttpUrl(feature.sourceUrl);
+    if (href) link.href = href;
+    else link.hidden = true;
+    card.append(title, description, score, draft, link);
+    dailyFeatureRoot.appendChild(card);
+  });
+}
+
+async function loadDaily() {
+  if (!dailyFeatureRoot) return;
+  if (isStaticHost()) {
+    dailySettings = await readStaticDailySettings();
+    dailyFeatures = await readStaticDailyFeatures();
+    renderDailyPanel();
+    return;
+  }
+  const [settingsResponse, featuresResponse] = await Promise.all([
+    fetch("/api/daily-settings"),
+    fetch("/api/daily-features"),
+  ]);
+  dailySettings = await settingsResponse.json();
+  const payload = await featuresResponse.json();
+  dailyFeatures = payload.features || [];
+  renderDailyPanel();
 }
 
 function updateResultSummary(posts) {
@@ -576,8 +674,9 @@ function renderPosts(posts) {
     });
 
     const source = card.querySelector(".source-link");
-    if (post.sourceUrl) {
-      source.href = post.sourceUrl;
+    const sourceUrl = safeHttpUrl(post.sourceUrl);
+    if (sourceUrl) {
+      source.href = sourceUrl;
     } else {
       source.hidden = true;
     }
@@ -767,6 +866,35 @@ if (platformForm) {
   });
 }
 
+if (dailySettingsForm) {
+  dailySettingsForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (isStaticHost()) {
+      dailyMessage.textContent = "GitHub Pages 是静态页面，每日设置需要在本地或服务器后端中保存。";
+      return;
+    }
+    const data = Object.fromEntries(new FormData(dailySettingsForm).entries());
+    data.focusDirections = (data.focusDirections || "")
+      .split(/[，,]/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+    dailyMessage.textContent = "正在保存每日设置...";
+    const response = await fetch("/api/daily-settings", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const payload = await response.json();
+    if (!response.ok) {
+      dailyMessage.textContent = payload.error || "保存失败";
+      return;
+    }
+    dailySettings = payload;
+    dailyMessage.textContent = "每日设置已保存，下次精选会按新方向打分。";
+    renderDailyPanel();
+  });
+}
+
 collectionForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = collectionName.value.trim();
@@ -808,4 +936,4 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
 });
 
 ensureDefaultCollection();
-Promise.all([loadMeta(), loadCatalog(), loadPlatforms()]).then(loadPosts);
+Promise.all([loadMeta(), loadCatalog(), loadPlatforms(), loadDaily()]).then(loadPosts);

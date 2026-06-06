@@ -1,0 +1,17 @@
+{
+  "publishTime": "09:30",
+  "timezone": "Asia/Shanghai",
+  "focusDirections": [
+    "VLA",
+    "具身智能",
+    "多模态大模型",
+    "Agent",
+    "RAG",
+    "训练框架",
+    "推理优化",
+    "自动驾驶数据"
+  ],
+  "publishTarget": "xiaohongshu",
+  "autoPublish": false,
+  "notes": "当前策略生成小红书草稿并记录发布队列；自动发帖需要额外浏览器登录态和人工授权。"
+}

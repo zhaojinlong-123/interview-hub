@@ -644,6 +644,18 @@ function buildReviewCard(post) {
   ].join("\n");
 }
 
+function sourceExcerpt(text, limit = 150) {
+  const clean = String(text || "").replace(/\s+/g, " ").trim();
+  if (!clean) return "";
+  return clean.length > limit ? `${clean.slice(0, limit)}...` : clean;
+}
+
+function questionFocusLine(post) {
+  const parts = [post.category, post.direction, post.domain].filter(Boolean);
+  const unique = [...new Set(parts)].slice(0, 3);
+  return unique.length ? `考点概览：${unique.join(" / ")}` : "考点概览：综合面试题";
+}
+
 async function copyReviewCard(post) {
   const text = buildReviewCard(post);
   if (navigator.clipboard) {
@@ -684,14 +696,41 @@ function renderPosts(posts) {
     card.querySelector("h3").textContent = post.title;
     card.querySelector(".company-role").textContent = `${post.company} · ${post.role}`;
     card.querySelector(".domain-line").textContent = `${post.direction || "未标方向"} · ${post.domain || "未标领域"} · ${post.sourcePlatform || "未知来源"}`;
-    card.querySelector(".content").textContent = post.content;
+    card.querySelector(".content").textContent = sourceExcerpt(post.content);
+
+    const questions = post.questions || [];
+    const questionSummary = card.querySelector(".question-summary");
+    if (questions.length) {
+      const title = document.createElement("strong");
+      title.textContent = `题目摘要 (${questions.length})`;
+      const focus = document.createElement("p");
+      focus.className = "question-focus";
+      focus.textContent = questionFocusLine(post);
+      const list = document.createElement("ol");
+      questions.slice(0, 4).forEach((question) => {
+        const item = document.createElement("li");
+        item.textContent = question;
+        list.appendChild(item);
+      });
+      questionSummary.appendChild(title);
+      questionSummary.appendChild(focus);
+      questionSummary.appendChild(list);
+      if (questions.length > 4) {
+        const more = document.createElement("p");
+        more.className = "question-more";
+        more.textContent = `另有 ${questions.length - 4} 个问题，可复制复习卡查看完整内容。`;
+        questionSummary.appendChild(more);
+      }
+    } else {
+      questionSummary.hidden = true;
+    }
 
     const questionBlock = card.querySelector(".question-block");
-    if (post.questions && post.questions.length) {
+    if (questions.length > 4) {
       const title = document.createElement("strong");
-      title.textContent = `高频问题 (${post.questions.length})`;
+      title.textContent = `完整问题 (${questions.length})`;
       const list = document.createElement("ul");
-      post.questions.forEach((question) => {
+      questions.forEach((question) => {
         const item = document.createElement("li");
         item.textContent = question;
         list.appendChild(item);

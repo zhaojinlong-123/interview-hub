@@ -16,8 +16,10 @@ PLATFORMS_FILE = os.path.join(DATA_DIR, "platforms.json")
 DAILY_SETTINGS_FILE = os.path.join(DATA_DIR, "daily-settings.json")
 DAILY_FEATURES_FILE = os.path.join(DATA_DIR, "daily-features.json")
 
-HOST = "0.0.0.0"
+HOST = os.environ.get("HOST", "127.0.0.1")
 PORT = int(os.environ.get("PORT", "8088"))
+ADMIN_TOKEN = os.environ.get("INTERVIEW_HUB_ADMIN_TOKEN", "")
+READONLY = os.environ.get("INTERVIEW_HUB_READONLY", "0").lower() in ["1", "true", "yes", "on"]
 
 CATEGORIES = [
     "多模态大模型",
@@ -316,9 +318,30 @@ class Handler(BaseHTTPRequestHandler):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_security_headers()
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
+
+    def send_security_headers(self):
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
+        self.send_header("Referrer-Policy", "no-referrer")
+        self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
+
+    def has_write_access(self):
+        if READONLY:
+            self.send_json(403, {"error": "服务当前为只读模式，不能修改数据"})
+            return False
+        if not ADMIN_TOKEN:
+            return True
+        header_token = self.headers.get("X-Admin-Token", "")
+        auth = self.headers.get("Authorization", "")
+        bearer = auth[7:].strip() if auth.lower().startswith("bearer ") else ""
+        if header_token == ADMIN_TOKEN or bearer == ADMIN_TOKEN:
+            return True
+        self.send_json(401, {"error": "需要管理员授权"})
+        return False
 
     def do_GET(self):
         parsed = urlparse(self.path)
@@ -341,6 +364,8 @@ class Handler(BaseHTTPRequestHandler):
         self.serve_static(parsed.path)
 
     def do_POST(self):
+        if not self.has_write_access():
+            return
         parsed = urlparse(self.path)
         if parsed.path == "/api/platforms":
             try:
@@ -380,6 +405,8 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(500, {"error": "保存失败，请稍后再试"})
 
     def do_PATCH(self):
+        if not self.has_write_access():
+            return
         parsed = urlparse(self.path)
         if parsed.path == "/api/daily-settings":
             try:
@@ -427,6 +454,8 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(500, {"error": "更新平台失败，请稍后再试"})
 
     def do_DELETE(self):
+        if not self.has_write_access():
+            return
         parsed = urlparse(self.path)
         if parsed.path != "/api/platforms":
             self.send_json(404, {"error": "接口不存在"})
@@ -467,6 +496,7 @@ class Handler(BaseHTTPRequestHandler):
             body = file.read()
         self.send_response(200)
         self.send_header("Content-Type", content_type)
+        self.send_security_headers()
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)

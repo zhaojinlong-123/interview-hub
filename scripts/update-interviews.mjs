@@ -11,6 +11,7 @@ const LOG_DIR = path.join(ROOT, "logs");
 const TODAY = new Date().toISOString().slice(0, 10);
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
+const SEARCHES_PER_PLATFORM = Number(process.env.SEARCHES_PER_PLATFORM || 6);
 
 const KEYWORDS = [
   "大模型", "LLM", "VLA", "多模态", "面经", "面试",
@@ -19,6 +20,14 @@ const KEYWORDS = [
 ];
 
 const COMPANY_KEYWORDS = ["字节", "腾讯", "百度", "阿里", "蚂蚁", "快手", "小红书", "智元", "淘天", "华为", "美团", "蔚来", "小鹏", "Momenta", "NVIDIA", "Google", "DeepSeek", "Qwen", "Seed"];
+const DEFAULT_SEARCH_QUERIES = [
+  "多模态大模型 面经",
+  "VLA 具身智能 面经",
+  "视频理解 面试题",
+  "训练框架 DeepSpeed Megatron 面经",
+  "推理部署 KV cache 量化 面经",
+  "自动驾驶 数据闭环 世界模型 面经",
+];
 
 function clean(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
@@ -171,6 +180,42 @@ async function readDailySettings() {
   } catch {
     return { focusDirections: [] };
   }
+}
+
+function uniqueList(items) {
+  return [...new Set(items.map((item) => clean(item)).filter(Boolean))];
+}
+
+function buildSearchQueries(settings) {
+  const configured = Array.isArray(settings.searchQueries) ? settings.searchQueries : [];
+  const focusDirections = Array.isArray(settings.focusDirections) ? settings.focusDirections : [];
+  const focusQueries = focusDirections.map((item) => `${item} 面经`);
+  return uniqueList([...configured, ...focusQueries, ...DEFAULT_SEARCH_QUERIES]);
+}
+
+function replaceQueryInUrl(searchUrl, query) {
+  const encoded = encodeURIComponent(query);
+  const raw = String(searchUrl || "");
+  if (!raw) return "";
+  if (raw.includes("{query}") || raw.includes("{keyword}")) {
+    return raw.replaceAll("{query}", encoded).replaceAll("{keyword}", encoded);
+  }
+  try {
+    const url = new URL(raw);
+    const queryKeys = ["q", "query", "keyword", "keywords", "w"];
+    const key = queryKeys.find((item) => url.searchParams.has(item));
+    if (!key) return raw;
+    url.searchParams.set(key, query);
+    return url.toString();
+  } catch {
+    return raw;
+  }
+}
+
+function buildSearchUrls(platform, queries) {
+  if (!platform.searchUrl) return [];
+  const urls = queries.map((query) => replaceQueryInUrl(platform.searchUrl, query));
+  return uniqueList(urls).slice(0, SEARCHES_PER_PLATFORM);
 }
 
 async function writePosts(posts) {
@@ -331,6 +376,7 @@ async function main() {
   const posts = await readPosts();
   const platforms = await readPlatforms();
   const settings = await readDailySettings();
+  const searchQueries = buildSearchQueries(settings);
   const allCandidates = [];
   const browserWs = await getBrowserWs();
 
@@ -343,9 +389,11 @@ async function main() {
   }
 
   for (const platform of platforms.filter((item) => item.searchUrl)) {
-    const { targetId, tab } = await createTab(browserWs, platform.searchUrl);
-    allCandidates.push(...await extractFromTab(tab, platform.name).catch(() => []));
-    await closeTab(browserWs, targetId);
+    for (const searchUrl of buildSearchUrls(platform, searchQueries)) {
+      const { targetId, tab } = await createTab(browserWs, searchUrl);
+      allCandidates.push(...await extractFromTab(tab, platform.name).catch(() => []));
+      await closeTab(browserWs, targetId);
+    }
   }
 
   const candidates = dedupeCandidates(allCandidates)
@@ -360,6 +408,7 @@ async function main() {
     date: new Date().toISOString(),
     platforms: platforms.map((platform) => platform.name),
     focusDirections: settings.focusDirections || [],
+    searchQueries,
     scannedCandidates: allCandidates.length,
     rankedCandidates: candidates.length,
     added: newPosts.length,

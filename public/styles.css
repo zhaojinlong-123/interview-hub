@@ -718,6 +718,15 @@ input:focus, select:focus, textarea:focus {
   white-space: nowrap;
 }
 
+.platform-url a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.platform-url a:hover {
+  text-decoration: underline;
+}
+
 .platform-actions {
   display: flex;
   flex-wrap: wrap;

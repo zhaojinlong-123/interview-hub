@@ -21,7 +21,7 @@
 
 自动脚本只保存摘要和复习问题，不大段复制原帖正文。
 
-检索平台配置保存在 `data/platforms.json`。通过本地或服务器版网页的“当前检索平台”面板添加、停用、启用或删除平台后，下一次 `scripts/update-interviews.mjs` 会读取最新配置进行检索。GitHub Pages 是静态页面，不能直接写入这个配置文件；需要运行 `python server.py` 或部署后端服务后才能持久化修改。
+检索平台配置保存在 `data/platforms.json`。`searchUrl` 建议写成搜索模板，例如 `https://example.com/search?q={query}`；下一次 `scripts/update-interviews.mjs` 会把 `data/daily-settings.json` 里的 `searchQueries` 和重点方向展开成多组关键词，对每个平台多次检索。通过本地或服务器版网页的“当前检索平台”面板添加、停用、启用或删除平台后，下一次脚本会读取最新配置。GitHub Pages 是静态页面，不能直接写入这个配置文件；需要运行 `python server.py` 或部署后端服务后才能持久化修改。
 
 ## 本地运行
 
@@ -102,7 +102,7 @@ powershell -ExecutionPolicy Bypass -File scripts\register-weekly-task.ps1 -Time 
 
 ## 每日精选与小红书草稿
 
-每日精选配置保存在 `data/daily-settings.json`，包含发布时间、重点检索方向和发布目标。网页里的“每日大模型学习精选”面板可以在本地/服务器后端模式下修改这些配置；GitHub Pages 静态页面只能展示，不能持久化保存。
+每日精选配置保存在 `data/daily-settings.json`，包含发布时间、重点检索方向、每周检索关键词 `searchQueries` 和发布目标。网页里的“每日大模型学习精选”面板可以在本地/服务器后端模式下修改这些配置；GitHub Pages 静态页面只能展示，不能持久化保存。
 
 生成每日精选草稿：
 

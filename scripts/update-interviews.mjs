@@ -13,7 +13,7 @@ const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
 
 const KEYWORDS = [
-  "大模型", "LLM", "Agent", "RAG", "VLA", "多模态", "面经", "面试",
+  "大模型", "LLM", "VLA", "多模态", "面经", "面试",
   "具身", "机器人", "世界模型", "自动驾驶", "训练框架", "DeepSpeed", "Megatron",
   "字节", "腾讯", "百度", "阿里", "蚂蚁", "快手", "小红书", "智元", "淘天",
 ];
@@ -50,7 +50,6 @@ function includesKeyword(text) {
 function classify(text) {
   if (/VLA|具身|机器人|智元|遥操|动作/.test(text)) return ["VLA / 具身智能", "VLA / 具身智能", "机器人数据 / 动作模型"];
   if (/自动驾驶|世界模型|BEV|仿真|小鹏|蔚来|Momenta/.test(text)) return ["自动驾驶 / 数据闭环", "自动驾驶 / 世界模型", "数据闭环 / 仿真"];
-  if (/RAG|Agent|工具调用|应用开发|电商/.test(text)) return ["Agent / RAG / 大模型应用", "Agent / RAG", "工程落地 / 工具调用"];
   if (/DeepSpeed|Megatron|训练框架|显存|分布式|推理|量化/.test(text)) return ["推理优化 / 模型压缩", "训练框架 / 推理优化", "分布式训练 / 部署"];
   if (/RLHF|PPO|DPO|GRPO|强化学习|对齐/.test(text)) return ["强化学习 / 对齐训练", "强化学习 / 对齐训练", "偏好优化"];
   if (/视频|视觉|多模态|CLIP|VLM|图文/.test(text)) return ["多模态大模型", "多模态大模型", "视觉语言理解"];
@@ -69,7 +68,6 @@ function guessType(text) {
 
 function makeQuestions(text) {
   const questions = [];
-  if (/RAG|Agent/.test(text)) questions.push("RAG / Agent 的核心链路、失败兜底和评估指标是什么？");
   if (/VLA|具身|机器人/.test(text)) questions.push("VLA 如何表示动作，机器人数据如何采集、清洗和评估？");
   if (/DeepSpeed|Megatron|训练框架|显存/.test(text)) questions.push("训练框架中的并行策略、显存瓶颈和通信开销如何定位？");
   if (/多模态|视觉|视频|VLM|CLIP/.test(text)) questions.push("多模态模型如何做视觉语言对齐和长上下文理解？");
@@ -93,7 +91,7 @@ function makePost(candidate) {
     id: `auto-${TODAY.replaceAll("-", "")}-${hash(`${sourcePlatform}|${title}|${sourceUrl}`)}`,
     title: `${sourcePlatform}：${title}`.slice(0, 120),
     company,
-    role: /算法|训练|推理|Agent|VLA|多模态/.test(text) ? "大模型相关岗位" : "AI / 算法候选人",
+    role: /算法|训练|推理|VLA|多模态/.test(text) ? "大模型相关岗位" : "AI / 算法候选人",
     direction,
     domain,
     category,
@@ -233,9 +231,10 @@ function dedupeCandidates(candidates) {
     const combined = `${title} ${snippet}`;
     if (!title || /登录|注册|首页|消息|发布|广告|隐私|协议|稍后再看/.test(title)) continue;
     if (/^[\d\s:.万+-]+$/.test(title)) continue;
-    if (!/大模型|LLM|Agent|RAG|VLA|多模态|具身|机器人|世界模型|自动驾驶|训练框架|DeepSpeed|Megatron|Qwen|DeepSeek/i.test(combined)) continue;
+    if (/RAG|Agent/i.test(combined)) continue;
+    if (!/大模型|LLM|VLA|多模态|具身|机器人|世界模型|自动驾驶|训练框架|DeepSpeed|Megatron|Qwen|DeepSeek/i.test(combined)) continue;
     if (!/面经|面试|一面|二面|三面|题|八股|岗位|实习|社招|校招|offer|项目|训练|推理/i.test(combined)) continue;
-    if (/前端社招|JavaScript|金三银四|安卓开发|婚恋|加班情况/.test(combined) && !/大模型|LLM|Agent|RAG|VLA|多模态|具身/i.test(title)) continue;
+    if (/前端社招|JavaScript|金三银四|安卓开发|婚恋|加班情况/.test(combined) && !/大模型|LLM|VLA|多模态|具身/i.test(title)) continue;
     const key = normalizeUrl(item.url) || `${item.platform}|${title}`;
     const titleKey = `${item.platform}|${title}`;
     if (seen.has(key) || seen.has(titleKey)) continue;
@@ -262,7 +261,7 @@ function rankCandidate(candidate, settings = {}) {
   const text = `${candidate.title} ${candidate.snippet}`;
   let score = 0;
   if (/面经|面试|一面|二面|三面|题|八股/.test(text)) score += 8;
-  if (/大模型|LLM|Agent|RAG|VLA|多模态|具身|训练框架|DeepSpeed|Megatron/.test(text)) score += 6;
+  if (/大模型|LLM|VLA|多模态|具身|训练框架|DeepSpeed|Megatron/.test(text)) score += 6;
   if (COMPANY_KEYWORDS.some((company) => text.includes(company))) score += 3;
   if (/今天|昨天|小时前|分钟前|06-|05-|2026/.test(text)) score += 3;
   const focusDirections = settings.focusDirections || [];

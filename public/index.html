@@ -10,11 +10,11 @@
     <header class="topbar">
       <a class="brand" href="/">Interview Hub</a>
       <nav>
-        <a href="#dashboard">学习看板</a>
+        <a href="#browse">面经库</a>
         <a href="#daily">每日精选</a>
         <a href="#platforms">检索平台</a>
-        <a href="#browse">面经库</a>
         <a href="#collections">收藏夹</a>
+        <a href="#dashboard">学习看板</a>
         <a href="#write">发布</a>
       </nav>
     </header>
@@ -23,121 +23,12 @@
       <section class="hero">
         <p class="eyebrow">LLM / VLA / Embodied AI</p>
         <h1>大模型与具身智能面经学习站</h1>
-        <p class="lead">把知乎、小红书、脉脉、GitHub 等来源里的大模型面经整理成可检索、可收藏、可复习的学习资料库，重点覆盖多模态、VLA/具身智能、Agent/RAG、训练框架和推理部署。</p>
+        <p class="lead">把知乎、小红书、脉脉、GitHub 等来源里的大模型面经整理成可检索、可收藏、可复习的学习资料库，重点覆盖多模态、VLA/具身智能、视频理解、训练框架和推理部署。</p>
         <div class="hero-stats">
           <div><strong id="totalCount">0</strong><span>当前结果</span></div>
           <div><strong id="questionCount">0</strong><span>题目/题库</span></div>
           <div><strong id="experienceCount">0</strong><span>面经/复盘</span></div>
           <div><strong id="collectionCount">0</strong><span>收藏夹</span></div>
-        </div>
-      </section>
-
-      <section id="dashboard" class="dashboard">
-        <div class="section-heading">
-          <p class="eyebrow">Dashboard</p>
-          <h2>本周学习看板</h2>
-          <p>优先看高频方向，再用状态标记把内容变成自己的复习队列。</p>
-        </div>
-        <div class="dashboard-grid">
-          <article class="metric-card">
-            <span>重点内容</span>
-            <strong id="focusCount">0</strong>
-            <p>已标记为重点的面经</p>
-          </article>
-          <article class="metric-card">
-            <span>待复习</span>
-            <strong id="reviewCount">0</strong>
-            <p>建议下次优先回看</p>
-          </article>
-          <article class="metric-card">
-            <span>来源覆盖</span>
-            <strong id="sourceCount">0</strong>
-            <p>平台与资料来源数量</p>
-          </article>
-          <article class="metric-card">
-            <span>平均题量</span>
-            <strong id="avgQuestionCount">0</strong>
-            <p>每条记录的高频问题数</p>
-          </article>
-        </div>
-        <div class="insight-grid">
-          <article class="insight-card">
-            <h3>快捷方向</h3>
-            <div class="preset-row">
-              <button class="preset-button" data-preset="agent" type="button">Agent / RAG</button>
-              <button class="preset-button" data-preset="vla" type="button">VLA 具身</button>
-              <button class="preset-button" data-preset="multimodal" type="button">多模态</button>
-              <button class="preset-button" data-preset="training" type="button">训练框架</button>
-            </div>
-          </article>
-          <article class="insight-card">
-            <h3>来源分布</h3>
-            <div id="sourceBreakdown" class="rank-list"></div>
-          </article>
-          <article class="insight-card">
-            <h3>分类分布</h3>
-            <div id="categoryBreakdown" class="rank-list"></div>
-          </article>
-          <article class="insight-card">
-            <h3>热点标签</h3>
-            <div id="hotTags" class="tag-cloud"></div>
-          </article>
-        </div>
-      </section>
-
-      <section id="daily" class="panel daily-panel">
-        <div class="section-heading compact">
-          <p class="eyebrow">Daily Study</p>
-          <h2>每日大模型学习精选</h2>
-          <p>每天从面经库里挑选一条最值得精读的内容，生成深度分析和小红书草稿。已精选过的面经不会重复选择。</p>
-        </div>
-        <form id="dailySettingsForm" class="daily-settings-form">
-          <label>发布时间<input name="publishTime" type="time" value="09:30" /></label>
-          <label class="wide">下次重点方向<input name="focusDirections" placeholder="VLA, 具身智能, Agent, RAG, 训练框架" /></label>
-          <div class="form-actions wide">
-            <button class="primary-button" type="submit">保存每日设置</button>
-            <p id="dailyMessage" class="message"></p>
-          </div>
-        </form>
-        <div id="dailyFeatureRoot" class="daily-feature-root"></div>
-      </section>
-
-      <section id="platforms" class="panel platform-panel">
-        <div class="section-heading compact">
-          <p class="eyebrow">Sources</p>
-          <h2>当前检索平台</h2>
-          <p>这里维护的启用平台会被周更脚本读取。公开平台会按搜索链接打开；登录平台会优先读取已登录的可控 Chrome 标签页。</p>
-        </div>
-        <form id="platformForm" class="platform-form">
-          <label>平台名称<input name="name" placeholder="例如：牛客 / GitHub / 知识星球" maxlength="40" required /></label>
-          <label>
-            类型
-            <select name="type">
-              <option value="public">公开检索</option>
-              <option value="login">已登录平台</option>
-              <option value="manual">人工处理</option>
-            </select>
-          </label>
-          <label class="wide">搜索链接<input name="searchUrl" placeholder="https://example.com/search?q=大模型 面经" maxlength="500" /></label>
-          <label class="wide">匹配域名<input name="matchDomains" placeholder="多个用逗号分隔，例如：zhihu.com, zhuanlan.zhihu.com" maxlength="240" /></label>
-          <div class="form-actions wide">
-            <button class="primary-button" type="submit">添加平台</button>
-            <p id="platformMessage" class="message"></p>
-          </div>
-        </form>
-        <div id="platformList" class="platform-list-editor"></div>
-      </section>
-
-      <section class="focus-band">
-        <div>
-          <p class="eyebrow">Study Focus</p>
-          <h2>建议优先复习</h2>
-        </div>
-        <div class="focus-grid">
-          <span>多模态结构与视觉语言对齐</span>
-          <span>VLA 动作表示与机器人数据</span>
-          <span>RAG / Agent 工程落地</span>
-          <span>训练框架、显存优化与推理部署</span>
         </div>
       </section>
 
@@ -230,7 +121,43 @@
           </div>
           <div id="categoryChips" class="chip-row"></div>
           <div id="posts" class="post-list"></div>
+          <div id="pagination" class="pagination"></div>
         </section>
+      </section>
+
+      <section id="daily" class="panel daily-panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Daily Study</p>
+          <h2>每日精选分析</h2>
+          <p>这里展示自动精选面经后的详细分析文档，包含面经总结、衍生知识点和可能考点。</p>
+        </div>
+        <div id="dailyFeatureRoot" class="daily-feature-root"></div>
+      </section>
+
+      <section id="platforms" class="panel platform-panel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Sources</p>
+          <h2>当前检索平台</h2>
+          <p>这里维护的启用平台会被周更脚本读取。公开平台会按搜索链接打开；登录平台会优先读取已登录的可控 Chrome 标签页。</p>
+        </div>
+        <form id="platformForm" class="platform-form">
+          <label>平台名称<input name="name" placeholder="例如：牛客 / GitHub / 知识星球" maxlength="40" required /></label>
+          <label>
+            类型
+            <select name="type">
+              <option value="public">公开检索</option>
+              <option value="login">已登录平台</option>
+              <option value="manual">人工处理</option>
+            </select>
+          </label>
+          <label class="wide">搜索链接<input name="searchUrl" placeholder="https://example.com/search?q=大模型 面经" maxlength="500" /></label>
+          <label class="wide">匹配域名<input name="matchDomains" placeholder="多个用逗号分隔，例如：zhihu.com, zhuanlan.zhihu.com" maxlength="240" /></label>
+          <div class="form-actions wide">
+            <button class="primary-button" type="submit">添加平台</button>
+            <p id="platformMessage" class="message"></p>
+          </div>
+        </form>
+        <div id="platformList" class="platform-list-editor"></div>
       </section>
 
       <section id="collections" class="panel collections-panel">
@@ -291,7 +218,7 @@
           </label>
           <label>
             方向
-            <input name="direction" placeholder="例如：VLA / 视频理解 / RAG" maxlength="80" />
+            <input name="direction" placeholder="例如：VLA / 视频理解 / 训练框架" maxlength="80" />
           </label>
           <label>
             领域
@@ -322,6 +249,58 @@
             <p id="formMessage" class="message"></p>
           </div>
         </form>
+      </section>
+
+      <section id="dashboard" class="dashboard">
+        <div class="section-heading">
+          <p class="eyebrow">Dashboard</p>
+          <h2>本周学习看板</h2>
+          <p>题目汇总、热点方向和来源分布放在这里，方便完成检索后再复盘。</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="metric-card">
+            <span>重点内容</span>
+            <strong id="focusCount">0</strong>
+            <p>已标记为重点的面经</p>
+          </article>
+          <article class="metric-card">
+            <span>待复习</span>
+            <strong id="reviewCount">0</strong>
+            <p>建议下次优先回看</p>
+          </article>
+          <article class="metric-card">
+            <span>来源覆盖</span>
+            <strong id="sourceCount">0</strong>
+            <p>平台与资料来源数量</p>
+          </article>
+          <article class="metric-card">
+            <span>平均题量</span>
+            <strong id="avgQuestionCount">0</strong>
+            <p>每条记录的高频问题数</p>
+          </article>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>快捷方向</h3>
+            <div class="preset-row">
+              <button class="preset-button" data-preset="vla" type="button">VLA 具身</button>
+              <button class="preset-button" data-preset="multimodal" type="button">多模态</button>
+              <button class="preset-button" data-preset="training" type="button">训练框架</button>
+            </div>
+          </article>
+          <article class="insight-card">
+            <h3>来源分布</h3>
+            <div id="sourceBreakdown" class="rank-list"></div>
+          </article>
+          <article class="insight-card">
+            <h3>分类分布</h3>
+            <div id="categoryBreakdown" class="rank-list"></div>
+          </article>
+          <article class="insight-card">
+            <h3>题目汇总</h3>
+            <div id="hotTags" class="tag-cloud"></div>
+          </article>
+        </div>
       </section>
     </main>
 

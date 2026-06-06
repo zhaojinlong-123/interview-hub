@@ -61,6 +61,9 @@ function textOf(post) {
 
 function scorePost(post, settings) {
   const text = textOf(post);
+  if (/RAG|Agent/i.test(text)) {
+    return { score: -999, reasons: ["已按策略排除 RAG / Agent"] };
+  }
   const reasons = [];
   let score = 0;
 
@@ -164,7 +167,6 @@ function buildArticle(post, score, reasons, settings) {
     "## 可能衍生知识点",
     bulletList([
       "Transformer / Attention / KV Cache / 长上下文",
-      "RAG、Agent、工具调用、失败兜底和评估",
       "多模态对齐、视觉 token 压缩、图文/视频理解",
       "VLA 动作表示、机器人数据、仿真到真机迁移",
       "分布式训练、显存优化、量化和推理部署",
@@ -214,7 +216,7 @@ async function main() {
   const settings = await readJson(SETTINGS_FILE, {});
   const history = await readJson(FEATURES_FILE, []);
   const usedIds = new Set(history.map((item) => item.postId));
-  const candidates = posts.filter((post) => post.sourceUrl && !usedIds.has(post.id));
+  const candidates = posts.filter((post) => post.sourceUrl && !usedIds.has(post.id) && !/RAG|Agent/i.test(textOf(post)));
 
   if (!candidates.length) {
     throw new Error("没有可选面经：所有带来源链接的面经都已经精选过。");

@@ -836,6 +836,33 @@ input:focus, select:focus, textarea:focus {
   background: #06101c;
 }
 
+.xhs-card-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 240px);
+  gap: 14px;
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.xhs-card-rail figure {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.xhs-card-rail img {
+  width: 100%;
+  max-width: none;
+}
+
+.xhs-card-rail figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .xhs-cover-preview strong {
   color: var(--text);
   font-size: 30px;

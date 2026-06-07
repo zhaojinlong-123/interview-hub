@@ -1,10 +1,10 @@
 [
   {
     "id": "xhs-daily-2026-06-07-f819e557a306",
-    "title": "字节训练框架/推理优化面经复盘",
+    "title": "字节训练框架推理优化图卡",
     "coverTitle": "字节面试题精讲",
     "coverSubtitle": "训练框架 / 推理优化 高频题",
-    "body": "【每日精选】字节 训练框架 / 推理优化面经。\n\n【面试题目】\n1. DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？\n2. 大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？\n3. KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？\n\n【详细解答与分析】\n这组题的主线不是背概念，而是判断候选人能否把 训练框架 / 推理优化 拆成可解释、可实现、可评估的工程链路。以「DeepSpeed\n\n【回答框架】\n按「核心机制 -> 工程取舍 -> 常见坑 -> 评估指标」组织，不要只背名词。\n\n【今天要记住】\n面试官想看的是：你能不能把模型结构、数据、训练、推理和业务落地讲成一条完整链路。\n\n引用 / 来源\n来源平台：CSDN\n原帖日期：2026-06-06\n原始链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=76db6aa4fa690f4df47af86fbf40481f&biz_id=0\n说明：本文为基于公开面经整理的学习笔记，用于个人复习与知识归纳。\n\n#CSDN #字节 #大模型 #多模态 #面经 #DeepSpeed #训练框架/推理优化 #大模型面试 #AI学习",
+    "body": "每日精选：字节｜训练框架 / 推理优化 题目精讲\n\n今天这条适合复习大模型训练和推理部署，尤其是 DeepSpeed、显存拆解、KV cache、量化和 LoRA。\n\n内容已经整理成图卡：面试题目、详细解答、追问方向都在图片里。\n\n引用来源：CSDN 2026-06-06\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=76db6aa4fa690f4df47af86fbf40481f&biz_id=0\n\n#CSDN #字节 #大模型 #多模态 #面经 #DeepSpeed #训练框架推理优化 #大模型面试 #AI学习",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-06",
     "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=76db6aa4fa690f4df47af86fbf40481f&biz_id=0",
@@ -13,10 +13,18 @@
     "postId": "auto-20260606-98fb728d55bc",
     "createdAt": "2026-06-07T03:45:23.489Z",
     "status": "published",
-    "reason": "已提交小红书发布，可能进入平台审核",
+    "reason": "已按图卡模式提交小红书发布，正文保留短导读和引用",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-07T03:46:46.159Z",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306-cover-v2.png"
+    "updatedAt": "2026-06-07T04:10:00.000Z",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/01-cover.png",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/06-source.png"
+    ]
   },
   {
     "id": "xhs-daily-2026-06-06-c7fca9e91989",

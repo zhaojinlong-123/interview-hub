@@ -40,6 +40,11 @@ function section(markdown, title) {
   return cleanLine(markdown.match(pattern)?.[1] || "");
 }
 
+function rawSection(markdown, title) {
+  const pattern = new RegExp(`^##\\s+${title}\\s*$([\\s\\S]*?)(?=^##\\s+|\\Z)`, "m");
+  return String(markdown.match(pattern)?.[1] || "").trim();
+}
+
 function listFromSection(markdown, title, limit = 4) {
   const raw = markdown.match(new RegExp(`^##\\s+${title}\\s*$([\\s\\S]*?)(?=^##\\s+|\\Z)`, "m"))?.[1] || "";
   return raw
@@ -52,7 +57,109 @@ function listFromSection(markdown, title, limit = 4) {
 function titleForXhs(feature, post) {
   const direction = post?.direction || feature.direction || "大模型";
   const company = post?.company || feature.company || "今日";
-  return `${company}${direction}面经复盘`.replace(/\s+/g, "").slice(0, 20);
+  return `${company}${direction}题目精讲`.replace(/\s+/g, "").slice(0, 20);
+}
+
+function sourceHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function compactTags(tags) {
+  return tags
+    .map((tag) => `#${String(tag).replace(/\s+/g, "").replace(/[|/｜]/g, "")}`)
+    .join(" ");
+}
+
+function fitXhsBody(lines, maxLength = 930) {
+  const result = [];
+  for (const line of lines) {
+    const next = [...result, line].join("\n");
+    if (next.length > maxLength) break;
+    result.push(line);
+  }
+  return result.join("\n");
+}
+
+function compactMarkdownLine(line) {
+  return cleanLine(String(line || "")
+    .replace(/^[-*]\s+/, "")
+    .replace(/^\d+\.\s+/, "")
+    .replace(/\*\*/g, ""));
+}
+
+function extractQuestionAnswers(markdown, fallbackQuestions) {
+  const blocks = [];
+  const pattern = /^###\s+题目\s*(\d+)：(.+)$/gm;
+  const matches = [...markdown.matchAll(pattern)];
+  for (let i = 0; i < matches.length; i++) {
+    const start = matches[i].index + matches[i][0].length;
+    const end = i + 1 < matches.length ? matches[i + 1].index : markdown.indexOf("\n## ", start);
+    const raw = markdown.slice(start, end > -1 ? end : undefined);
+    const body = raw
+      .split(/\r?\n/)
+      .map(compactMarkdownLine)
+      .filter(Boolean)
+      .filter((line) => !/^详细回答：$|^面试展开：$/.test(line))
+      .join("\n");
+    blocks.push({
+      question: compactMarkdownLine(matches[i][2]),
+      answer: body,
+    });
+  }
+  if (blocks.length) return blocks.slice(0, 4);
+  return fallbackQuestions.slice(0, 4).map((question) => ({
+    question,
+    answer: "先讲核心机制，再讲工程取舍、常见坑和评估指标，最后落到自己的项目经验。",
+  }));
+}
+
+function cardText(text, limit) {
+  const value = cleanLine(text);
+  return value.length > limit ? `${value.slice(0, limit - 1)}…` : value;
+}
+
+function buildImageCards(payload, questions, qaBlocks) {
+  const cards = [
+    {
+      kind: "cover",
+      kicker: "每日精选",
+      title: payload.coverTitle,
+      body: `${payload.coverSubtitle}\n面试题目 / 详细解答 / 追问方向`,
+      footer: "Interview Hub",
+    },
+    {
+      kind: "questions",
+      kicker: "面试题目",
+      title: "今天重点看这几题",
+      body: questions.slice(0, 4).map((item, index) => `${index + 1}. ${item}`).join("\n\n"),
+      footer: "先能 30 秒讲清楚，再展开细节",
+    },
+  ];
+  qaBlocks.slice(0, 3).forEach((item, index) => {
+    cards.push({
+      kind: "answer",
+      kicker: `详细解答 ${index + 1}`,
+      title: cardText(item.question, 54),
+      body: cardText(item.answer, 220),
+      footer: "机制 -> 取舍 -> 坑 -> 指标",
+    });
+  });
+  cards.push({
+    kind: "source",
+    kicker: "引用来源",
+    title: payload.sourcePlatform || "公开来源",
+    body: [
+      payload.sourceDate ? `原帖日期：${payload.sourceDate}` : "",
+      payload.sourceUrl ? `原文链接：${payload.sourceUrl}` : "",
+      "本文为公开面经学习整理，用于复习与知识归纳。",
+    ].filter(Boolean).join("\n\n"),
+    footer: "保存后按图卡顺序复习",
+  });
+  return cards.slice(0, 6);
 }
 
 function buildXhsPayload(feature, post, markdown) {
@@ -66,37 +173,33 @@ function buildXhsPayload(feature, post, markdown) {
   const sourcePlatform = feature.sourcePlatform || post?.sourcePlatform || "公开来源";
   const sourceDate = feature.sourceDate || post?.sourceDate || feature.date || "";
   const sourceUrl = feature.sourceUrl || post?.sourceUrl || "";
+  const host = sourceHost(sourceUrl);
   const tags = [...new Set([
     ...(post?.tags || []),
     feature.company,
     feature.direction,
     "大模型面试",
     "AI学习",
-  ])].filter(Boolean).slice(0, 10);
+  ])].filter(Boolean).slice(0, 8);
+  const xhsDraft = rawSection(markdown, "小红书发布文案");
+  const qaBlocks = extractQuestionAnswers(markdown, questions);
 
-  const body = [
-    `【每日精选】${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}面经。`,
+  const body = xhsDraft
+    ? fitXhsBody([
+      xhsDraft.replace(/\n{3,}/g, "\n\n").trim(),
+      "",
+      `引用来源：${sourcePlatform}${sourceDate ? `，${sourceDate}` : ""}${host ? `，${host}` : ""}`,
+      "完整整理见图卡。",
+      compactTags(tags),
+    ].filter(Boolean), 980)
+    : fitXhsBody([
+    `每日精选：${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}题目精讲`,
     "",
-    "【面试题目】",
-    ...questions.slice(0, 3).map((item, index) => `${index + 1}. ${item}`),
+    "今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。",
     "",
-    "【详细解答与分析】",
-    detailedAnalysis || conclusion,
-    "",
-    "【回答框架】",
-    "按「核心机制 -> 工程取舍 -> 常见坑 -> 评估指标」组织，不要只背名词。",
-    "",
-    "【今天要记住】",
-    "面试官想看的是：你能不能把模型结构、数据、训练、推理和业务落地讲成一条完整链路。",
-    "",
-    "引用 / 来源",
-    `来源平台：${sourcePlatform}`,
-    `原帖日期：${sourceDate || "未标注"}`,
-    `原始链接：${sourceUrl || "未提供"}`,
-    "说明：本文为基于公开面经整理的学习笔记，用于个人复习与知识归纳。",
-    "",
-    tags.map((tag) => `#${String(tag).replace(/\s+/g, "")}`).join(" "),
-  ].filter((line) => line !== undefined).join("\n").slice(0, 980);
+    `引用来源：${sourcePlatform}${sourceDate ? `，${sourceDate}` : ""}${host ? `，${host}` : ""}`,
+    compactTags(tags),
+  ].filter(Boolean), 980);
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
@@ -111,6 +214,13 @@ function buildXhsPayload(feature, post, markdown) {
     featureId: feature.id,
     postId: feature.postId,
     coverImage: `content/xiaohongshu-assets/xhs-${feature.id || hash(feature.articlePath || feature.title)}-cover-v2.png`,
+    imageCards: buildImageCards({
+      coverTitle: `${feature.company || post?.company || "大模型"}面试题精讲`,
+      coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
+      sourcePlatform,
+      sourceDate,
+      sourceUrl,
+    }, questions, qaBlocks),
     createdAt: new Date().toISOString(),
   };
 }
@@ -184,6 +294,75 @@ $bmp.Dispose()
   return file;
 }
 
+function relativeAsset(file) {
+  return path.relative(ROOT, file).replaceAll("\\", "/");
+}
+
+async function ensureXhsImages(payload) {
+  await fs.mkdir(ASSET_DIR, { recursive: true });
+  const dir = path.join(ASSET_DIR, payload.id);
+  await fs.mkdir(dir, { recursive: true });
+  const cards = (payload.imageCards || []).map((card, index) => ({
+    ...card,
+    index: index + 1,
+    total: payload.imageCards.length,
+    file: path.join(dir, `${String(index + 1).padStart(2, "0")}-${card.kind || "card"}.png`),
+  }));
+  const jsonFile = path.join(dir, "cards.json");
+  await fs.writeFile(jsonFile, JSON.stringify(cards, null, 2), "utf8");
+
+  const ps = `
+Add-Type -AssemblyName System.Drawing
+$jsonPath = "${escapePs(jsonFile)}"
+$cards = Get-Content -LiteralPath $jsonPath -Encoding UTF8 | ConvertFrom-Json
+function Draw-Card($card) {
+  $bmp = New-Object System.Drawing.Bitmap 1080, 1440
+  $g = [System.Drawing.Graphics]::FromImage($bmp)
+  $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+  $g.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
+  $bg = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
+    (New-Object System.Drawing.Rectangle 0,0,1080,1440),
+    [System.Drawing.Color]::FromArgb(6,14,28),
+    [System.Drawing.Color]::FromArgb(12,38,48),
+    45
+  )
+  $g.FillRectangle($bg, 0, 0, 1080, 1440)
+  $linePen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(72, 92, 255, 229)), 2
+  for ($i = 0; $i -lt 9; $i++) {
+    $y = 180 + $i * 125
+    $g.DrawLine($linePen, 90, $y, 990, $y + 26)
+  }
+  $cyan = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 92, 255, 229))
+  $green = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 102, 255, 194))
+  $white = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(246, 246, 250, 255))
+  $muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(220, 181, 211, 232))
+  $panel = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(78, 7, 18, 28))
+  $accent = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(215, 92, 255, 229)), 3
+  $fontKicker = New-Object System.Drawing.Font "Microsoft YaHei UI", 32, ([System.Drawing.FontStyle]::Bold)
+  $fontTitle = New-Object System.Drawing.Font "Microsoft YaHei UI", 42, ([System.Drawing.FontStyle]::Bold)
+  $fontBody = New-Object System.Drawing.Font "Microsoft YaHei UI", 28, ([System.Drawing.FontStyle]::Regular)
+  $fontFooter = New-Object System.Drawing.Font "Microsoft YaHei UI", 24, ([System.Drawing.FontStyle]::Bold)
+  $fmt = New-Object System.Drawing.StringFormat
+  $fmt.Alignment = [System.Drawing.StringAlignment]::Near
+  $fmt.LineAlignment = [System.Drawing.StringAlignment]::Near
+  $fmt.Trimming = [System.Drawing.StringTrimming]::EllipsisWord
+  $g.FillRectangle($panel, 90, 150, 900, 1060)
+  $g.DrawRectangle($accent, 90, 150, 900, 1060)
+  $g.DrawString([string]$card.kicker, $fontKicker, $cyan, (New-Object System.Drawing.RectangleF 130, 200, 820, 70), $fmt)
+  $g.DrawString([string]$card.title, $fontTitle, $white, (New-Object System.Drawing.RectangleF 130, 310, 820, 220), $fmt)
+  $g.DrawString([string]$card.body, $fontBody, $muted, (New-Object System.Drawing.RectangleF 130, 575, 820, 585), $fmt)
+  $g.DrawString([string]$card.footer, $fontFooter, $green, (New-Object System.Drawing.RectangleF 130, 1230, 650, 72), $fmt)
+  $g.DrawString(("{0}/{1}" -f $card.index, $card.total), $fontFooter, $cyan, (New-Object System.Drawing.RectangleF 840, 1235, 120, 60), $fmt)
+  $g.Dispose()
+  $bmp.Save([string]$card.file, [System.Drawing.Imaging.ImageFormat]::Png)
+  $bmp.Dispose()
+}
+foreach ($card in $cards) { Draw-Card $card }
+`;
+  execFileSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps], { stdio: "inherit" });
+  return cards.map((card) => card.file);
+}
+
 class CdpSession {
   constructor(wsUrl) {
     this.wsUrl = wsUrl;
@@ -247,21 +426,21 @@ async function waitFor(send, expression, timeoutMs = 30000) {
   return null;
 }
 
-async function uploadCover(send, coverPath) {
+async function uploadImages(send, imagePaths) {
   await send("DOM.enable");
   const root = await send("DOM.getDocument", { depth: -1, pierce: true });
   const input = await send("DOM.querySelector", { nodeId: root.root.nodeId, selector: "input[type=file]" });
   if (!input.nodeId) throw new Error("未找到小红书图片上传控件");
-  await send("DOM.setFileInputFiles", { nodeId: input.nodeId, files: [coverPath] });
+  await send("DOM.setFileInputFiles", { nodeId: input.nodeId, files: imagePaths });
 }
 
-async function tryPublish(payload, coverPath) {
+async function tryPublish(payload, imagePaths) {
   const tab = await createPublishTab();
   const page = await new CdpSession(tab.webSocketDebuggerUrl).open();
   const send = page.send.bind(page);
   try {
     await send("Runtime.evaluate", { expression: "document.body.innerText", returnByValue: true });
-    await uploadCover(send, coverPath);
+    await uploadImages(send, imagePaths);
 
     const editorReady = await waitFor(send, `(() => {
       const visible = el => {
@@ -404,15 +583,17 @@ async function main() {
   const articlePath = path.join(ROOT, feature.articlePath || "");
   const markdown = await fs.readFile(articlePath, "utf8");
   const payload = buildXhsPayload(feature, post, markdown);
-  const coverPath = await ensureCoverImage(payload);
+  const imagePaths = await ensureXhsImages(payload);
+  payload.coverImage = relativeAsset(imagePaths[0]);
+  payload.imageCardFiles = imagePaths.map(relativeAsset);
   if (SHOULD_RENDER_COVER_ONLY) {
-    console.log(JSON.stringify({ featureId: feature.id, coverPath }, null, 2));
+    console.log(JSON.stringify({ featureId: feature.id, imagePaths }, null, 2));
     return;
   }
 
   let result;
   try {
-    result = await tryPublish(payload, coverPath);
+    result = await tryPublish(payload, imagePaths);
   } catch (error) {
     result = { ok: false, reason: error.message || "自动发布失败" };
   }
@@ -435,7 +616,7 @@ async function main() {
     });
   }
 
-  console.log(JSON.stringify({ featureId: feature.id, ok: result.ok, reason: result.reason, url: result.url || "", coverPath }, null, 2));
+  console.log(JSON.stringify({ featureId: feature.id, ok: result.ok, reason: result.reason, url: result.url || "", imagePaths }, null, 2));
   commitAndPush();
 }
 

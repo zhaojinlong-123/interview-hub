@@ -1,5 +1,5 @@
 const queueRoot = document.querySelector("#publishQueueRoot");
-const staticAssetVersion = "20260606-xhs-cover-v2";
+const staticAssetVersion = "20260607-xhs-image-cards";
 
 function staticUrl(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -46,11 +46,23 @@ function renderRecord(record) {
 
   const cover = document.createElement("div");
   cover.className = "xhs-cover-preview";
-  if (record.coverImage) {
-    const img = document.createElement("img");
-    img.src = staticUrl(record.coverImage);
-    img.alt = record.coverTitle || record.title || "小红书封面";
-    cover.appendChild(img);
+  const cardFiles = Array.isArray(record.imageCardFiles) && record.imageCardFiles.length
+    ? record.imageCardFiles
+    : (record.coverImage ? [record.coverImage] : []);
+  if (cardFiles.length) {
+    const rail = document.createElement("div");
+    rail.className = "xhs-card-rail";
+    cardFiles.forEach((file, index) => {
+      const figure = document.createElement("figure");
+      const img = document.createElement("img");
+      img.src = staticUrl(file);
+      img.alt = `${record.title || "小红书图卡"} ${index + 1}`;
+      const caption = document.createElement("figcaption");
+      caption.textContent = `图 ${index + 1}`;
+      figure.append(img, caption);
+      rail.appendChild(figure);
+    });
+    cover.appendChild(rail);
   } else {
     const coverTitle = document.createElement("strong");
     coverTitle.textContent = record.coverTitle || record.title;

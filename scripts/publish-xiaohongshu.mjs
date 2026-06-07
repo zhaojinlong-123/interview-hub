@@ -110,6 +110,7 @@ function buildXhsPayload(feature, post, markdown) {
     articlePath: feature.articlePath,
     featureId: feature.id,
     postId: feature.postId,
+    coverImage: `content/xiaohongshu-assets/xhs-${feature.id || hash(feature.articlePath || feature.title)}-cover-v2.png`,
     createdAt: new Date().toISOString(),
   };
 }

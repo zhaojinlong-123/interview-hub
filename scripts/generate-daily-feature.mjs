@@ -131,6 +131,71 @@ function numberedList(items) {
   return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
 }
 
+function answerForQuestion(question) {
+  const q = String(question || "");
+  if (/DeepSpeed|ZeRO|Megatron|张量并行|流水并行|数据并行/i.test(q)) {
+    return "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。";
+  }
+  if (/显存|参数|梯度|优化器|激活值|KV cache/i.test(q)) {
+    return "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。";
+  }
+  if (/PagedAttention|continuous batching|speculative decoding|KV cache/i.test(q)) {
+    return "KV cache 避免每次生成都重复计算历史 token 的 K/V；PagedAttention 把 KV cache 像分页内存一样管理，减少碎片并提升并发；continuous batching 让不同请求动态进入 batch，减少空等；speculative decoding 用小模型先草拟、大模型验证，降低每个 token 的平均延迟。回答时要说明这些方法主要优化吞吐和延迟，但会带来调度复杂度、显存管理和一致性验证成本。";
+  }
+  if (/INT8|INT4|量化|AWQ|GPTQ|LoRA|蒸馏/i.test(q)) {
+    return "INT8/INT4 量化通过降低权重或激活精度减少显存和带宽压力；GPTQ 偏离线权重量化，适合部署前压缩；AWQ 保护重要通道，通常更关注推理质量；LoRA 合并适合把微调增量融入基座模型，减少在线额外分支；蒸馏适合把大模型能力迁移到小模型。面试要强调取舍：量化可能伤害长尾能力，蒸馏依赖 teacher 数据质量，LoRA 合并后切换任务不如 adapter 灵活。";
+  }
+  if (/视觉|encoder|LLM|token|Q-Former|cross-attention|projector/i.test(q)) {
+    return "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。";
+  }
+  if (/数据|指令微调|OCR|噪声|偏见/i.test(q)) {
+    return "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。";
+  }
+  if (/grounding|空间关系|幻觉|多轮/i.test(q)) {
+    return "评估要按能力拆开：grounding 看回答是否能落到正确区域，OCR 看文字识别和理解，空间关系看相对位置与计数，幻觉看图中没有但模型编出来的内容，多轮对话看上下文一致性。工程上应结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。";
+  }
+  return "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。";
+}
+
+function expansionForQuestion(question) {
+  const q = String(question || "");
+  if (/DeepSpeed|ZeRO|Megatron|张量并行|流水并行|数据并行/i.test(q)) {
+    return "面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行切层，ZeRO 切训练状态。然后补一句真实系统通常是混合并行，不是单选题。最后给出权衡：显存省了多少、通信增加多少、吞吐是否被 bubble 或 all-reduce 拖慢。";
+  }
+  if (/显存|参数|梯度|优化器|激活值|KV cache/i.test(q)) {
+    return "面试展开时，最好能做数量级估算：参数量、精度、优化器状态倍数、batch size、sequence length 都会影响显存。回答不要停在“用 ZeRO”或“用 checkpointing”，要说明分别减少哪一块显存，以及代价是 CPU/NVMe offload、重复前向计算还是吞吐下降。";
+  }
+  if (/PagedAttention|continuous batching|speculative decoding|KV cache/i.test(q)) {
+    return "面试展开时，把 prefill 和 decode 分开讲会更专业：prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 解决 cache 管理，continuous batching 解决请求调度，speculative decoding 解决解码步数。";
+  }
+  if (/INT8|INT4|量化|AWQ|GPTQ|LoRA|蒸馏/i.test(q)) {
+    return "面试展开时，可以用部署场景回答：显存紧张先考虑量化，特定任务微调用 LoRA，稳定小模型上线考虑蒸馏。再补质量验证：量化前后要比较困惑度、核心任务准确率、长上下文、代码/数学和安全拒答表现，不能只看平均分。";
+  }
+  if (/视觉|encoder|LLM|token|Q-Former|cross-attention|projector/i.test(q)) {
+    return "面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector -> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。";
+  }
+  if (/数据|指令微调|OCR|噪声|偏见/i.test(q)) {
+    return "面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图文不匹配和训练集污染评测集。";
+  }
+  if (/grounding|空间关系|幻觉|多轮/i.test(q)) {
+    return "面试展开时，建议把评估拆成自动评测和人工评测。自动评测覆盖 OCR、定位、计数、属性识别；人工评测覆盖幻觉、安全、复杂指令和真实业务可用性。线上还要接 badcase 聚类，找出数据缺口和模型系统性弱点。";
+  }
+  return "面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。";
+}
+
+function answerBlocks(questions) {
+  return questions.slice(0, 5).flatMap((question, index) => [
+    `### 题目 ${index + 1}：${question}`,
+    "",
+    "**详细回答：**",
+    answerForQuestion(question),
+    "",
+    "**面试展开：**",
+    expansionForQuestion(question),
+    "",
+  ]);
+}
+
 function buildArticle(post, score, reasons, settings) {
   const questions = post.questions && post.questions.length
     ? post.questions
@@ -165,6 +230,8 @@ function buildArticle(post, score, reasons, settings) {
     "**简洁回答模板：**",
     `我会先把 ${direction} 看成一条链路：数据输入 -> 表示学习 -> 模型连接/训练目标 -> 推理部署 -> 评估反馈。面试时不要只说模型名，要把“为什么这样设计、哪里容易失败、怎么验证有效”讲完整。`,
     "",
+    "## 逐题解答",
+    ...answerBlocks(questions),
     "## 可能追问方向",
     bulletList([
       `如果 ${direction} 的效果不稳定，如何定位是数据、结构、训练还是推理问题？`,

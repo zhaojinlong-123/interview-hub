@@ -1,5 +1,5 @@
 const readerRoot = document.querySelector("#dailyReader");
-const staticAssetVersion = "20260606-daily-readable";
+const staticAssetVersion = "20260607-daily-readable-v2";
 
 function staticUrl(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -18,6 +18,23 @@ function appendTextBlock(parent, tag, text, className) {
   const node = document.createElement(tag);
   if (className) node.className = className;
   node.textContent = text;
+  parent.appendChild(node);
+  return node;
+}
+
+function appendRichTextBlock(parent, tag, text, className) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  const parts = String(text || "").split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  parts.forEach((part) => {
+    if (/^\*\*[^*]+\*\*$/.test(part)) {
+      const strong = document.createElement("strong");
+      strong.textContent = part.slice(2, -2);
+      node.appendChild(strong);
+    } else {
+      node.appendChild(document.createTextNode(part));
+    }
+  });
   parent.appendChild(node);
   return node;
 }
@@ -41,11 +58,13 @@ function renderMarkdown(markdown, feature) {
   const body = document.createElement("div");
   body.className = "markdown-body";
   let currentList = null;
+  let currentListType = "";
 
   markdown.split(/\r?\n/).forEach((rawLine) => {
     const line = cleanLine(rawLine);
     if (!line) {
       currentList = null;
+      currentListType = "";
       return;
     }
 
@@ -58,27 +77,49 @@ function renderMarkdown(markdown, feature) {
 
     if (line.startsWith("## ")) {
       currentList = null;
+      currentListType = "";
       appendTextBlock(body, "h2", line.replace(/^##\s+/, ""));
       return;
     }
 
     if (line.startsWith("### ")) {
       currentList = null;
-      appendTextBlock(body, "h3", line.replace(/^###\s+/, ""));
+      currentListType = "";
+      const title = line.replace(/^###\s+/, "");
+      appendTextBlock(body, "h3", title, /^题目\s*\d+/.test(title) ? "question-heading" : "");
+      return;
+    }
+
+    if (line.startsWith(">")) {
+      currentList = null;
+      currentListType = "";
+      appendRichTextBlock(body, "blockquote", line.replace(/^>\s?/, ""));
       return;
     }
 
     if (/^[-*]\s+/.test(line)) {
-      if (!currentList) {
+      if (!currentList || currentListType !== "ul") {
         currentList = document.createElement("ul");
+        currentListType = "ul";
         body.appendChild(currentList);
       }
-      appendTextBlock(currentList, "li", line.replace(/^[-*]\s+/, ""));
+      appendRichTextBlock(currentList, "li", line.replace(/^[-*]\s+/, ""));
+      return;
+    }
+
+    if (/^\d+\.\s+/.test(line)) {
+      if (!currentList || currentListType !== "ol") {
+        currentList = document.createElement("ol");
+        currentListType = "ol";
+        body.appendChild(currentList);
+      }
+      appendRichTextBlock(currentList, "li", line.replace(/^\d+\.\s+/, ""));
       return;
     }
 
     currentList = null;
-    appendTextBlock(body, "p", line);
+    currentListType = "";
+    appendRichTextBlock(body, "p", line);
   });
 
   const actions = document.createElement("div");

@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-06-07-f819e557a306",
+    "date": "2026-06-07",
+    "postId": "auto-20260606-98fb728d55bc",
+    "title": "CSDN：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
+    "company": "字节",
+    "direction": "训练框架 / 推理优化",
+    "score": 99,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 / 训练框架 / 推理优化 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 训练框架 / 推理优化 / 多模态 +12",
+      "高频问题 4 个 +15",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=76db6aa4fa690f4df47af86fbf40481f&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-06",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-07-f819e557a306.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-07T03:45:47.650Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-06-c7fca9e91989",
     "date": "2026-06-06",
     "postId": "browser-zhihu-bytedance-vlm-20260605",

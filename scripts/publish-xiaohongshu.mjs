@@ -57,7 +57,14 @@ function listFromSection(markdown, title, limit = 4) {
 function titleForXhs(feature, post) {
   const direction = post?.direction || feature.direction || "大模型";
   const company = post?.company || feature.company || "今日";
-  return `${company}${direction}题目精讲`.replace(/\s+/g, "").slice(0, 20);
+  const subject = company === "综合" ? direction : `${company}${direction}`;
+  return `${subject}题目精讲`.replace(/\s+/g, "").replace(/[|/｜]/g, "").slice(0, 20);
+}
+
+function subjectForCover(feature, post) {
+  const direction = post?.direction || feature.direction || "大模型";
+  const company = post?.company || feature.company || "";
+  return company && company !== "综合" ? company : direction.replace(/\s+/g, "").replace(/[|/｜]/g, "");
 }
 
 function sourceHost(url) {
@@ -204,7 +211,7 @@ function buildXhsPayload(feature, post, markdown) {
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
     title: titleForXhs(feature, post),
-    coverTitle: `${feature.company || post?.company || "大模型"}面试题精讲`,
+    coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
     coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
     body,
     sourcePlatform,
@@ -215,7 +222,7 @@ function buildXhsPayload(feature, post, markdown) {
     postId: feature.postId,
     coverImage: `content/xiaohongshu-assets/xhs-${feature.id || hash(feature.articlePath || feature.title)}-cover-v2.png`,
     imageCards: buildImageCards({
-      coverTitle: `${feature.company || post?.company || "大模型"}面试题精讲`,
+      coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
       coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
       sourcePlatform,
       sourceDate,
@@ -226,7 +233,15 @@ function buildXhsPayload(feature, post, markdown) {
 }
 
 async function getJson(url) {
-  const response = await fetch(url);
+  let response;
+  try {
+    response = await fetch(url);
+  } catch (error) {
+    if (String(url).includes("127.0.0.1:9222")) {
+      throw new Error("Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome");
+    }
+    throw error;
+  }
   if (!response.ok) throw new Error(`${url} ${response.status}`);
   return response.json();
 }
@@ -543,6 +558,7 @@ async function updateQueue(payload, status, reason, url) {
   const index = queue.findIndex((item) => item.id === record.id);
   if (index >= 0) queue[index] = { ...queue[index], ...record };
   else queue.unshift(record);
+  queue.sort((a, b) => String(b.featureId || b.id || "").localeCompare(String(a.featureId || a.id || "")));
   await writeJson(QUEUE_FILE, queue);
   return record;
 }

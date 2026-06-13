@@ -1,10 +1,10 @@
 [
   {
     "kind": "cover",
-    "kicker": "每日精选",
-    "title": "VLA具身智能面试题精讲",
-    "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-    "footer": "Interview Hub",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "footer": "Interview Hub · 面试题精讲",
     "index": 1,
     "total": 5,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-176a8d789a4e\\01-cover.png"

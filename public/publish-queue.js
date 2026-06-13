@@ -1,5 +1,5 @@
 const queueRoot = document.querySelector("#publishQueueRoot");
-const staticAssetVersion = "20260607-xhs-image-cards";
+const staticAssetVersion = "20260613-xhs-cover-dedupe";
 
 function staticUrl(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -31,8 +31,13 @@ function renderRecord(record) {
   const header = document.createElement("div");
   header.className = "publish-queue-header";
   const status = document.createElement("span");
-  status.className = `status-pill ${record.status === "published" ? "published" : "manual"}`;
-  status.textContent = record.status === "published" ? "已发布/审核中" : "待手机确认";
+  const statusClass = record.status === "published" ? "published" : "manual";
+  status.className = `status-pill ${statusClass}`;
+  status.textContent = record.status === "published"
+    ? "已发布/审核中"
+    : record.status === "skipped_duplicate"
+      ? "已跳过重复"
+      : "待手机确认";
   const time = document.createElement("span");
   time.textContent = record.updatedAt ? new Date(record.updatedAt).toLocaleString("zh-CN") : "";
   header.append(status, time);

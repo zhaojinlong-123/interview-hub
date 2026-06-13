@@ -129,14 +129,30 @@ function cardText(text, limit) {
   return value.length > limit ? `${value.slice(0, limit - 1)}…` : value;
 }
 
+function topicFromQuestion(question) {
+  const q = cleanLine(question);
+  const rules = [
+    [/KV cache|PagedAttention|continuous batching|speculative decoding/i, "KV Cache / 推理加速"],
+    [/DeepSpeed|ZeRO|Megatron|并行|显存/i, "训练框架 / 显存优化"],
+    [/LoRA|量化|INT4|INT8|AWQ|GPTQ|蒸馏/i, "量化压缩 / 微调部署"],
+    [/VLA|action token|diffusion policy|机器人|遥操作/i, "VLA / 机器人动作"],
+    [/世界模型|BEV|occupancy|轨迹|仿真/i, "世界模型 / 自动驾驶"],
+    [/多模态|VLM|vision encoder|Q-Former|grounding|OCR/i, "多模态理解"],
+  ];
+  return rules.find(([pattern]) => pattern.test(q))?.[1] || cardText(q.replace(/[？?].*$/, ""), 14) || "核心考点";
+}
+
 function buildImageCards(payload, questions, qaBlocks) {
+  const primaryQuestion = payload.primaryQuestion || questions[0] || "本篇核心面试题";
+  const company = payload.company || "综合";
+  const direction = payload.direction || "AI 面试";
   const cards = [
     {
       kind: "cover",
-      kicker: "每日精选",
-      title: payload.coverTitle,
-      body: `${payload.coverSubtitle}\n面试题目 / 详细解答 / 追问方向`,
-      footer: "Interview Hub",
+      kicker: "本篇速览",
+      title: `${company}｜${direction}`,
+      body: `公司：${company}\n方向：${direction}\n题目：${primaryQuestion}`,
+      footer: "Interview Hub · 面试题精讲",
     },
     {
       kind: "questions",
@@ -190,6 +206,10 @@ function buildXhsPayload(feature, post, markdown) {
   ])].filter(Boolean).slice(0, 8);
   const xhsDraft = rawSection(markdown, "小红书发布文案");
   const qaBlocks = extractQuestionAnswers(markdown, questions);
+  const company = feature.company || post?.company || "综合";
+  const direction = feature.direction || post?.direction || "AI 面试";
+  const primaryQuestion = questions[0] || "本篇核心面试题";
+  const topic = topicFromQuestion(primaryQuestion);
 
   const body = xhsDraft
     ? fitXhsBody([
@@ -210,9 +230,13 @@ function buildXhsPayload(feature, post, markdown) {
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
-    title: titleForXhs(feature, post),
+    title: `${company === "综合" ? "" : company}${topic}题目精讲`.replace(/\s+/g, "").slice(0, 20),
     coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
-    coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
+    coverSubtitle: `${direction} 高频题`,
+    company,
+    direction,
+    primaryQuestion,
+    topic,
     body,
     sourcePlatform,
     sourceDate,
@@ -223,7 +247,10 @@ function buildXhsPayload(feature, post, markdown) {
     coverImage: `content/xiaohongshu-assets/xhs-${feature.id || hash(feature.articlePath || feature.title)}-cover-v2.png`,
     imageCards: buildImageCards({
       coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
-      coverSubtitle: `${feature.direction || post?.direction || "AI 面试"} 高频题`,
+      coverSubtitle: `${direction} 高频题`,
+      company,
+      direction,
+      primaryQuestion,
       sourcePlatform,
       sourceDate,
       sourceUrl,
@@ -563,6 +590,29 @@ async function updateQueue(payload, status, reason, url) {
   return record;
 }
 
+function duplicateKey(record) {
+  const direction = cleanLine(record.direction || record.coverSubtitle || "");
+  const question = cleanLine(
+    record.primaryQuestion
+      || record.imageCards?.find((card) => card.kind === "questions")?.body?.split(/\r?\n/).find(Boolean)
+      || record.imageCards?.find((card) => card.kind === "cover")?.body?.split(/\r?\n/).find((line) => /^题目[:：]/.test(line))?.replace(/^题目[:：]\s*/, "")
+      || ""
+  );
+  const topic = cleanLine(record.topic || topicFromQuestion(question));
+  return `${direction}|${topic}|${question}`.toLowerCase().replace(/\s+/g, "");
+}
+
+async function findDuplicatePublished(payload) {
+  const key = duplicateKey(payload);
+  if (!key || key.endsWith("||")) return null;
+  const queue = await readJson(QUEUE_FILE, []);
+  return queue.find((item) =>
+    item.id !== payload.id
+    && ["published", "manual_required"].includes(item.status)
+    && duplicateKey(item) === key
+  ) || null;
+}
+
 async function updateFeature(featureId, patch) {
   const features = await readJson(FEATURES_FILE, []);
   const index = features.findIndex((item) => item.id === featureId);
@@ -599,6 +649,19 @@ async function main() {
   const articlePath = path.join(ROOT, feature.articlePath || "");
   const markdown = await fs.readFile(articlePath, "utf8");
   const payload = buildXhsPayload(feature, post, markdown);
+  const duplicate = await findDuplicatePublished(payload);
+  if (duplicate) {
+    const reason = `疑似重复：已存在 ${duplicate.title || duplicate.id}`;
+    await updateQueue(payload, "skipped_duplicate", reason, duplicate.publishUrl || "");
+    await updateFeature(feature.id, {
+      publishStatus: "skipped_duplicate",
+      autoPublish: true,
+      publishFailureReason: reason,
+      publishUrl: duplicate.publishUrl || "",
+    });
+    console.log(JSON.stringify({ featureId: feature.id, ok: false, skipped: true, reason, duplicateId: duplicate.id }, null, 2));
+    return;
+  }
   const imagePaths = await ensureXhsImages(payload);
   payload.coverImage = relativeAsset(imagePaths[0]);
   payload.imageCardFiles = imagePaths.map(relativeAsset);

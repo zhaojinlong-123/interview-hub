@@ -5,11 +5,24 @@ Set-Location "E:\workshop\interview-hub"
 $logDir = "E:\workshop\interview-hub\logs"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 
-$stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-"[$stamp] Daily feature started" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
+$mutex = New-Object System.Threading.Mutex($false, "Global\InterviewHubDailyFeatureRunner")
+if (-not $mutex.WaitOne(0, $false)) {
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  "[$stamp] Daily feature skipped: another runner is already active" |
+    Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+  exit 0
+}
 
-node scripts\generate-daily-feature.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
-node scripts\publish-xiaohongshu.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+try {
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  "[$stamp] Daily feature started" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
 
-$stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-"[$stamp] Daily feature finished" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+  node scripts\generate-daily-feature.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+  node scripts\publish-xiaohongshu.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  "[$stamp] Daily feature finished" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+} finally {
+  $mutex.ReleaseMutex()
+  $mutex.Dispose()
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节跳动｜多模态大模型 / 视觉语言对齐",
+    "body": "公司：字节跳动\n方向：多模态大模型 / 视觉语言对齐\n题目：视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-06-c7fca9e91989\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？\n\n2. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？\n\n3. 多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-06-c7fca9e91989\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Fo…",
+    "body": "先讲核心机制，再讲工程取舍、常见坑和评估指标，最后落到自己的项目经验。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-06-c7fca9e91989\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+    "body": "先讲核心机制，再讲工程取舍、常见坑和评估指标，最后落到自己的项目经验。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-06-c7fca9e91989\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 3",
+    "title": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+    "body": "先讲核心机制，再讲工程取舍、常见坑和评估指标，最后落到自己的项目经验。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 5,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-06-c7fca9e91989\\05-answer.png"
+  }
+]

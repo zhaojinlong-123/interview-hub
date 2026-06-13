@@ -1,12 +1,12 @@
 [
   {
     "kind": "cover",
-    "kicker": "每日精选",
-    "title": "字节面试题精讲",
-    "body": "训练框架 / 推理优化 高频题\n面试题目 / 详细解答 / 追问方向",
-    "footer": "Interview Hub",
+    "kicker": "本篇速览",
+    "title": "字节｜训练框架 / 推理优化",
+    "body": "公司：字节\n方向：训练框架 / 推理优化\n题目：DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+    "footer": "Interview Hub · 面试题精讲",
     "index": 1,
-    "total": 6,
+    "total": 10,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\01-cover.png"
   },
   {
@@ -16,47 +16,87 @@
     "body": "1. DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？\n\n2. 大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？\n\n3. KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？\n\n4. INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
     "footer": "先能 30 秒讲清楚，再展开细节",
     "index": 2,
-    "total": 6,
+    "total": 10,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\02-questions.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 1",
+    "kicker": "详细解答 1-1",
     "title": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
-    "body": "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。 面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行…",
+    "body": "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。 面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行切层，ZeRO 切训练状态。然后补一句真实系统通常是混合并行，不是单选题。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 3,
-    "total": 6,
+    "total": 10,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\03-answer.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 2",
-    "title": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
-    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+    "kicker": "详细解答 1-2",
+    "title": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+    "body": "最后给出权衡：显存省了多少、通信增加多少、吞吐是否被 bubble 或 all-reduce 拖慢。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 4,
-    "total": 6,
+    "total": 10,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\04-answer.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 3",
-    "title": "KV cache、PagedAttention、continuous batching 和 specula…",
-    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+    "kicker": "详细解答 2-1",
+    "title": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参数量、精度、优化器状态倍数、batch size、sequence length",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 5,
-    "total": 6,
+    "total": 10,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\05-answer.png"
   },
   {
-    "kind": "source",
-    "kicker": "引用来源",
-    "title": "CSDN",
-    "body": "原帖日期：2026-06-13\n\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=cafa27a19a503bd35aadd60336c1c02d&biz_id=0\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-    "footer": "保存后按图卡顺序复习",
+    "kind": "answer",
+    "kicker": "详细解答 2-2",
+    "title": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+    "body": "都会影响显存。回答不要停在“用 ZeRO”或“用 checkpointing”，要说明分别减少哪一块显存，以及代价是 CPU/NVMe offload、重复前向计算还是吞吐下降。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 6,
-    "total": 6,
-    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\06-source.png"
+    "total": 10,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\06-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 3-1",
+    "title": "KV cache、PagedAttention、continuous batching 和 specula…",
+    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参数量、精度、优化器状态倍数、batch size、sequence length",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 7,
+    "total": 10,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\07-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 3-2",
+    "title": "KV cache、PagedAttention、continuous batching 和 specula…",
+    "body": "都会影响显存。回答不要停在“用 ZeRO”或“用 checkpointing”，要说明分别减少哪一块显存，以及代价是 CPU/NVMe offload、重复前向计算还是吞吐下降。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 8,
+    "total": 10,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\08-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 4-1",
+    "title": "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "body": "INT8/INT4 量化通过降低权重或激活精度减少显存和带宽压力；GPTQ 偏离线权重量化，适合部署前压缩；AWQ 保护重要通道，通常更关注推理质量；LoRA 合并适合把微调增量融入基座模型，减少在线额外分支；蒸馏适合把大模型能力迁移到小模型。面试要强调取舍：量化可能伤害长尾能力，蒸馏依赖 teacher 数据质量，LoRA 合并后切换任务不如 adapter 灵活。 面试展开时，可以用部署场景回答：显存紧张先考虑量化，特定任务微调用 LoRA，稳定小模型上线考虑蒸馏。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 9,
+    "total": 10,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\09-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 4-2",
+    "title": "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "body": "再补质量验证：量化前后要比较困惑度、核心任务准确率、长上下文、代码/数学和安全拒答表现，不能只看平均分。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 10,
+    "total": 10,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-9d3c283ef28d\\10-answer.png"
   }
 ]

@@ -1,12 +1,12 @@
 [
   {
     "kind": "cover",
-    "kicker": "每日精选",
-    "title": "蔚来面试题精讲",
-    "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-    "footer": "Interview Hub",
+    "kicker": "本篇速览",
+    "title": "蔚来｜VLA / 具身智能",
+    "body": "公司：蔚来\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "footer": "Interview Hub · 面试题精讲",
     "index": 1,
-    "total": 6,
+    "total": 7,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\01-cover.png"
   },
   {
@@ -16,28 +16,38 @@
     "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n4. 驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
     "footer": "先能 30 秒讲清楚，再展开细节",
     "index": 2,
-    "total": 6,
+    "total": 7,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\02-questions.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 1",
+    "kicker": "详细解答 1-1",
     "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-    "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+    "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 3,
-    "total": 6,
+    "total": 7,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+    "body": "-> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\04-answer.png"
   },
   {
     "kind": "answer",
     "kicker": "详细解答 2",
     "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-    "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+    "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图文不匹配和训练集污染评测集。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
-    "index": 4,
-    "total": 6,
-    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\04-answer.png"
+    "index": 5,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\05-answer.png"
   },
   {
     "kind": "answer",
@@ -45,18 +55,18 @@
     "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
     "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
-    "index": 5,
-    "total": 6,
-    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\05-answer.png"
+    "index": 6,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\06-answer.png"
   },
   {
-    "kind": "source",
-    "kicker": "引用来源",
-    "title": "小红书",
-    "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-    "footer": "保存后按图卡顺序复习",
-    "index": 6,
-    "total": 6,
-    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\06-source.png"
+    "kind": "answer",
+    "kicker": "详细解答 4",
+    "title": "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+    "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图文不匹配和训练集污染评测集。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 7,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-d8f0889f10e1\\07-answer.png"
   }
 ]

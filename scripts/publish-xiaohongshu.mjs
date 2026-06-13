@@ -91,6 +91,46 @@ function fitXhsBody(lines, maxLength = 930) {
   return result.join("\n");
 }
 
+function fitText(text, maxLength) {
+  const value = cleanLine(text);
+  return value.length > maxLength ? `${value.slice(0, maxLength - 1)}…` : value;
+}
+
+function splitTextForCards(text, maxLength = 260) {
+  const value = cleanLine(text);
+  if (!value) return [];
+  const chunks = [];
+  let rest = value;
+  while (rest.length > maxLength) {
+    let cut = Math.max(
+      rest.lastIndexOf("。", maxLength),
+      rest.lastIndexOf("；", maxLength),
+      rest.lastIndexOf("，", maxLength),
+      rest.lastIndexOf(" ", maxLength),
+    );
+    if (cut < Math.floor(maxLength * 0.55)) cut = maxLength;
+    chunks.push(rest.slice(0, cut + 1).trim());
+    rest = rest.slice(cut + 1).trim();
+  }
+  if (rest) chunks.push(rest);
+  return chunks;
+}
+
+function buildRequiredXhsBody({ intro, xhsDraft, sourcePlatform, sourceDate, sourceUrl, tags }) {
+  const required = [
+    `引用来源：${sourcePlatform}${sourceDate ? `，${sourceDate}` : ""}`,
+    sourceUrl ? `原文链接：${sourceUrl}` : "",
+    "完整回答已拆成图卡，建议按顺序复习。",
+    compactTags(tags),
+  ].filter(Boolean);
+  const requiredText = required.join("\n");
+  const maxLength = 980;
+  const available = Math.max(120, maxLength - requiredText.length - 4);
+  const lead = cleanLine(xhsDraft || intro);
+  const trimmedLead = lead.length > available ? `${lead.slice(0, available - 1)}…` : lead;
+  return [trimmedLead, "", requiredText].filter(Boolean).join("\n");
+}
+
 function compactMarkdownLine(line) {
   return cleanLine(String(line || "")
     .replace(/^[-*]\s+/, "")
@@ -162,27 +202,19 @@ function buildImageCards(payload, questions, qaBlocks) {
       footer: "先能 30 秒讲清楚，再展开细节",
     },
   ];
-  qaBlocks.slice(0, 3).forEach((item, index) => {
-    cards.push({
-      kind: "answer",
-      kicker: `详细解答 ${index + 1}`,
-      title: cardText(item.question, 54),
-      body: cardText(item.answer, 220),
-      footer: "机制 -> 取舍 -> 坑 -> 指标",
+  qaBlocks.slice(0, 4).forEach((item, index) => {
+    const chunks = splitTextForCards(item.answer, 260);
+    chunks.forEach((chunk, chunkIndex) => {
+      cards.push({
+        kind: "answer",
+        kicker: chunks.length > 1 ? `详细解答 ${index + 1}-${chunkIndex + 1}` : `详细解答 ${index + 1}`,
+        title: fitText(item.question, 54),
+        body: chunk,
+        footer: "机制 -> 取舍 -> 坑 -> 指标",
+      });
     });
   });
-  cards.push({
-    kind: "source",
-    kicker: "引用来源",
-    title: payload.sourcePlatform || "公开来源",
-    body: [
-      payload.sourceDate ? `原帖日期：${payload.sourceDate}` : "",
-      payload.sourceUrl ? `原文链接：${payload.sourceUrl}` : "",
-      "本文为公开面经学习整理，用于复习与知识归纳。",
-    ].filter(Boolean).join("\n\n"),
-    footer: "保存后按图卡顺序复习",
-  });
-  return cards.slice(0, 6);
+  return cards.slice(0, 18);
 }
 
 function buildXhsPayload(feature, post, markdown) {
@@ -211,22 +243,14 @@ function buildXhsPayload(feature, post, markdown) {
   const primaryQuestion = questions[0] || "本篇核心面试题";
   const topic = topicFromQuestion(primaryQuestion);
 
-  const body = xhsDraft
-    ? fitXhsBody([
-      xhsDraft.replace(/\n{3,}/g, "\n\n").trim(),
-      "",
-      `引用来源：${sourcePlatform}${sourceDate ? `，${sourceDate}` : ""}${host ? `，${host}` : ""}`,
-      "完整整理见图卡。",
-      compactTags(tags),
-    ].filter(Boolean), 980)
-    : fitXhsBody([
-    `每日精选：${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}题目精讲`,
-    "",
-    "今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。",
-    "",
-    `引用来源：${sourcePlatform}${sourceDate ? `，${sourceDate}` : ""}${host ? `，${host}` : ""}`,
-    compactTags(tags),
-  ].filter(Boolean), 980);
+  const body = buildRequiredXhsBody({
+    intro: `每日精选：${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。`,
+    xhsDraft: xhsDraft ? xhsDraft.replace(/\n{3,}/g, "\n\n").trim() : "",
+    sourcePlatform,
+    sourceDate,
+    sourceUrl,
+    tags,
+  });
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,

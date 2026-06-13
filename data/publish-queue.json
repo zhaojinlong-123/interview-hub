@@ -40,13 +40,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "牛客",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.nowcoder.com/discuss/778009111140016128\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:08:29.582Z",
@@ -54,8 +47,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/04-answer.png"
     ],
     "status": "manual_required",
     "reason": "已点击发布，但未检测到成功标记，请人工确认",
@@ -110,13 +102,6 @@
         "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
         "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:05:52.054Z",
@@ -125,8 +110,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -174,13 +158,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.xiaohongshu.com/search_result/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:08:07.109Z",
@@ -188,8 +165,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -244,13 +220,6 @@
         "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "掘金",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://juejin.cn/post/7546495958554755098?searchId=20260613114514BAF850FAEA9651B85182\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:07:44.517Z",
@@ -259,8 +228,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -308,13 +276,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:09:11.270Z",
@@ -322,8 +283,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -378,13 +338,6 @@
         "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
         "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "牛客",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.nowcoder.com/subject/index/e699689bb01441b9a4b97566c3aa2b25\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:06:14.445Z",
@@ -393,8 +346,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -449,13 +401,6 @@
         "title": "KV cache、PagedAttention、continuous batching 和 specula…",
         "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "CSDN",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=cafa27a19a503bd35aadd60336c1c02d&biz_id=0\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T03:50:39.407Z",
@@ -464,8 +409,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -520,13 +464,6 @@
         "title": "KV cache、PagedAttention、continuous batching 和 specula…",
         "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "知乎",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.zhihu.com/search?type=content&q=%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%20KV%20cache%20%E9%87%8F%E5%8C%96%20%E9%9D%A2%E7%BB%8F\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:06:59.360Z",
@@ -535,8 +472,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -584,13 +520,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:07:21.923Z",
@@ -598,8 +527,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -647,13 +575,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:10:02.012Z",
@@ -661,8 +582,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -717,13 +637,6 @@
         "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
         "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "牛客",
-        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.nowcoder.com/subject/index/eb05ef0c3aad4981af85e1f84c8d3db3\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:06:36.757Z",
@@ -732,8 +645,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -788,13 +700,6 @@
         "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "知乎",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.zhihu.com/search?type=content&q=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:14:25.415Z",
@@ -803,8 +708,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -852,13 +756,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.xiaohongshu.com/search_result/?keyword=VLA+%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD+%E9%9D%A2%E7%BB%8F&type=51&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:14:48.016Z",
@@ -866,8 +763,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -915,13 +811,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.xiaohongshu.com/search_result/69e4e968000000002301cbbc?xsec_token=AB3YspA-f6sRpK6KjjqiWwuiC5Uo7O0Op9Pg3AfQR7JP4%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:15:11.419Z",
@@ -929,8 +818,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -978,13 +866,6 @@
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
         "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "小红书",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.xiaohongshu.com/search_result/69f2fd3f00000000370343bb?xsec_token=ABza3oJsRcEFvAlXn9CTj2agGcbNCiSaq_4XvgEY-JDOs%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:15:33.762Z",
@@ -992,8 +873,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/05-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/04-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
@@ -1048,13 +928,6 @@
         "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
         "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
-      },
-      {
-        "kind": "source",
-        "kicker": "引用来源",
-        "title": "51CTO",
-        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.51cto.com/article/821686.html\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-        "footer": "保存后按图卡顺序复习"
       }
     ],
     "createdAt": "2026-06-13T04:15:56.219Z",
@@ -1063,8 +936,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/05-answer.png"
     ],
     "status": "manual_required",
     "reason": "已点击发布，但未检测到成功标记，请人工确认",
@@ -1094,8 +966,7 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/06-source.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/05-answer.png"
     ]
   },
   {

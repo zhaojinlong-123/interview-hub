@@ -1,0 +1,171 @@
+{
+  "generatedAt": "2026-06-13T04:30:33.688Z",
+  "groups": [
+    [
+      {
+        "id": "xhs-daily-2026-06-13-eeee8e7e0263",
+        "featureId": "daily-2026-06-13-eeee8e7e0263",
+        "title": "腾讯VLA具身智能题目精讲",
+        "status": "manual_required",
+        "updatedAt": "2026-06-13T04:09:11.076Z",
+        "reason": "已点击发布，但未检测到成功标记，请人工确认",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-d8f0889f10e1",
+        "featureId": "daily-2026-06-13-d8f0889f10e1",
+        "title": "蔚来VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:06:14.233Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
+        "featureId": "daily-2026-06-13-d6e5e8fb2a41",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:08:29.373Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-acef07a226aa",
+        "featureId": "daily-2026-06-13-acef07a226aa",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:09:33.638Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-a866a4919061",
+        "featureId": "daily-2026-06-13-a866a4919061",
+        "title": "蔚来VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:06:36.550Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-2d55b23ddce6",
+        "featureId": "daily-2026-06-13-2d55b23ddce6",
+        "title": "字节VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:07:44.281Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-176a8d789a4e",
+        "featureId": "daily-2026-06-13-176a8d789a4e",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:10:24.429Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-08551c35562c",
+        "featureId": "daily-2026-06-13-08551c35562c",
+        "title": "蔚来VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:06:59.155Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-11-f733da88ddaa",
+        "featureId": "daily-2026-06-11-f733da88ddaa",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:15:11.309Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-10-d4b25fa7e460",
+        "featureId": "daily-2026-06-10-d4b25fa7e460",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:15:33.646Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-09-bfb99c10afae",
+        "featureId": "daily-2026-06-09-bfb99c10afae",
+        "title": "VLA具身智能题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:15:56.102Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-08-da7740600601",
+        "featureId": "daily-2026-06-08-da7740600601",
+        "title": "NVIDIAVLA具身智能题目精讲",
+        "status": "manual_required",
+        "updatedAt": "2026-06-13T04:17:09.102Z",
+        "reason": "已点击发布，但未检测到成功标记，请人工确认",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+        "primaryQuestion": ""
+      }
+    ],
+    [
+      {
+        "id": "xhs-daily-2026-06-13-c026b29d4659",
+        "featureId": "daily-2026-06-13-c026b29d4659",
+        "title": "阿里多模态大模型题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:08:06.907Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-12-362a59bc5046",
+        "featureId": "daily-2026-06-12-362a59bc5046",
+        "title": "字节多模态大模型题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:14:47.852Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      }
+    ],
+    [
+      {
+        "id": "xhs-daily-2026-06-13-9d3c283ef28d",
+        "featureId": "daily-2026-06-13-9d3c283ef28d",
+        "title": "字节训练框架推理优化题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T03:51:03.907Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      },
+      {
+        "id": "xhs-daily-2026-06-13-8d384a7c194b",
+        "featureId": "daily-2026-06-13-8d384a7c194b",
+        "title": "字节训练框架推理优化题目精讲",
+        "status": "published",
+        "updatedAt": "2026-06-13T04:07:21.718Z",
+        "reason": "已提交小红书发布，可能进入平台审核",
+        "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+        "primaryQuestion": ""
+      }
+    ]
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "每日精选",
+    "title": "字节面试题精讲",
+    "body": "训练框架 / 推理优化 高频题\n面试题目 / 详细解答 / 追问方向",
+    "footer": "Interview Hub",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？\n\n2. 大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？\n\n3. KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？\n\n4. INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+    "body": "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。 面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行…",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 3",
+    "title": "KV cache、PagedAttention、continuous batching 和 specula…",
+    "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\05-answer.png"
+  },
+  {
+    "kind": "source",
+    "kicker": "引用来源",
+    "title": "知乎",
+    "body": "原帖日期：2026-06-13\n\n原文链接：https://www.zhihu.com/search?type=content&q=%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%20KV%20cache%20%E9%87%8F%E5%8C%96%20%E9%9D%A2%E7%BB%8F\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+    "footer": "保存后按图卡顺序复习",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-8d384a7c194b\\06-source.png"
+  }
+]

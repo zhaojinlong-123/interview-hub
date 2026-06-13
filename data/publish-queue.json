@@ -1,5 +1,407 @@
 [
   {
+    "id": "xhs-daily-2026-06-13-eeee8e7e0263",
+    "title": "腾讯VLA具身智能题目精讲",
+    "coverTitle": "腾讯面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：腾讯 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：牛客，2026-06-06，nowcoder.com\n#牛客 #腾讯 #面经 #具身 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-06-06",
+    "sourceUrl": "https://www.nowcoder.com/discuss/778009111140016128",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-eeee8e7e0263.md",
+    "featureId": "daily-2026-06-13-eeee8e7e0263",
+    "postId": "auto-20260606-40073afa56ef",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "腾讯面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "牛客",
+        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.nowcoder.com/discuss/778009111140016128\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:08:29.582Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/05-source.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-13T04:09:11.076Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-d8f0889f10e1",
+    "title": "蔚来VLA具身智能题目精讲",
+    "coverTitle": "蔚来面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：蔚来｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n一句话答案\n视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、\n\n面试展开\n面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector -> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。\n\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3Gl\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #蔚来 #大模型 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-d8f0889f10e1.md",
+    "featureId": "daily-2026-06-13-d8f0889f10e1",
+    "postId": "auto-20260613-5567a52c6128",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "蔚来面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n4. 驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+        "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "小红书",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:05:52.054Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:06:14.233Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
+    "title": "VLA具身智能题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面经 #具身 #机器人 #综合 #VLA具身智能 #大模型面试",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-06",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-d6e5e8fb2a41.md",
+    "featureId": "daily-2026-06-13-d6e5e8fb2a41",
+    "postId": "auto-20260606-566028bd9c5c",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "VLA具身智能面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "小红书",
+        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.xiaohongshu.com/search_result/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:08:07.109Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/05-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:08:29.373Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-c026b29d4659",
+    "title": "阿里多模态大模型题目精讲",
+    "coverTitle": "阿里面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "body": "每日精选：阿里 多模态大模型题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：掘金，2026-06-13，juejin.cn\n#掘金 #阿里 #大模型 #多模态 #面经 #面试 #多模态大模型 #大模型面试",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://juejin.cn/post/7546495958554755098?searchId=20260613114514BAF850FAEA9651B85182",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-c026b29d4659.md",
+    "featureId": "daily-2026-06-13-c026b29d4659",
+    "postId": "auto-20260613-d78d3d3c4b7b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "阿里面试题精讲",
+        "body": "多模态大模型 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？\n\n2. 多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？\n\n3. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "掘金",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://juejin.cn/post/7546495958554755098?searchId=20260613114514BAF850FAEA9651B85182\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:07:44.517Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:08:06.907Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-acef07a226aa",
+    "title": "VLA具身智能题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-13，xiaohongshu.com\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-acef07a226aa.md",
+    "featureId": "daily-2026-06-13-acef07a226aa",
+    "postId": "auto-20260613-3ba92dd70118",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "VLA具身智能面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "小红书",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:09:11.270Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/05-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:09:33.638Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-a866a4919061",
+    "title": "蔚来VLA具身智能题目精讲",
+    "coverTitle": "蔚来面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：蔚来 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：牛客，2026-06-13，nowcoder.com\n#牛客 #蔚来 #VLA #面经 #面试 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.nowcoder.com/subject/index/e699689bb01441b9a4b97566c3aa2b25",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-a866a4919061.md",
+    "featureId": "daily-2026-06-13-a866a4919061",
+    "postId": "auto-20260613-0c2cc169e0f9",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "蔚来面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n4. 驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+        "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "牛客",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.nowcoder.com/subject/index/e699689bb01441b9a4b97566c3aa2b25\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:06:14.445Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:06:36.550Z"
+  },
+  {
     "id": "xhs-daily-2026-06-13-9d3c283ef28d",
     "title": "字节训练框架推理优化题目精讲",
     "coverTitle": "字节面试题精讲",
@@ -69,6 +471,274 @@
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "updatedAt": "2026-06-13T03:51:03.907Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-8d384a7c194b",
+    "title": "字节训练框架推理优化题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "训练框架 / 推理优化 高频题",
+    "body": "每日精选：字节｜训练框架 / 推理优化 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. DeepSpeed\n引用来源：知乎，2026-06-13，zhihu.com\n完整整理见图卡。\n#知乎 #字节 #大模型 #面经 #训练框架推理优化 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%20KV%20cache%20%E9%87%8F%E5%8C%96%20%E9%9D%A2%E7%BB%8F",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-8d384a7c194b.md",
+    "featureId": "daily-2026-06-13-8d384a7c194b",
+    "postId": "auto-20260613-140359c87c55",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "字节面试题精讲",
+        "body": "训练框架 / 推理优化 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？\n\n2. 大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？\n\n3. KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？\n\n4. INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+        "body": "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。 面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+        "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "KV cache、PagedAttention、continuous batching 和 specula…",
+        "body": "训练显存通常拆成参数、梯度、优化器状态、激活值和临时 buffer。Adam 优化器状态常常比参数本身更占空间；长序列训练时激活值会随 batch、序列长度、层数增长；推理时重点从梯度和优化器状态转到 KV cache。面试里最好能说出优化手段：混合精度、gradient checkpointing、ZeRO/offload、序列并行、FlashAttention、KV cache 量化或分页管理。 面试展开时，最好能做数量级估算：参…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "知乎",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.zhihu.com/search?type=content&q=%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%20KV%20cache%20%E9%87%8F%E5%8C%96%20%E9%9D%A2%E7%BB%8F\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:06:59.360Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:07:21.718Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-2d55b23ddce6",
+    "title": "字节VLA具身智能题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：字节 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-13，xiaohongshu.com\n#小红书 #字节 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-2d55b23ddce6.md",
+    "featureId": "daily-2026-06-13-2d55b23ddce6",
+    "postId": "auto-20260613-21818fae62dc",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "字节面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "小红书",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:07:21.923Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/05-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:07:44.281Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-176a8d789a4e",
+    "title": "VLA具身智能题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：综合｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n一句话答案\n视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、\n\n面试展开\n面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector -> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。\n\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGN\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-176a8d789a4e.md",
+    "featureId": "daily-2026-06-13-176a8d789a4e",
+    "postId": "auto-20260613-9d9a46d8887a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "VLA具身智能面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "小红书",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:10:02.012Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/05-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:10:24.429Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-13-08551c35562c",
+    "title": "蔚来VLA具身智能题目精讲",
+    "coverTitle": "蔚来面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "body": "每日精选：蔚来 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：牛客，2026-06-13，nowcoder.com\n#牛客 #蔚来 #VLA #面经 #面试 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.nowcoder.com/subject/index/eb05ef0c3aad4981af85e1f84c8d3db3",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-13-08551c35562c.md",
+    "featureId": "daily-2026-06-13-08551c35562c",
+    "postId": "auto-20260613-cce05ef92811",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "蔚来面试题精讲",
+        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n4. 驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+        "body": "回答这类题要避免只背概念。建议先给出核心机制，再讲工程取舍，然后补充常见失败模式和评估指标。最好能把答案落到自己的项目：数据怎么来、模型怎么训、线上怎么评估、失败样本如何回流。 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "牛客",
+        "body": "原帖日期：2026-06-13\n\n原文链接：https://www.nowcoder.com/subject/index/eb05ef0c3aad4981af85e1f84c8d3db3\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:06:36.757Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:06:59.155Z"
   },
   {
     "id": "xhs-daily-2026-06-11-f733da88ddaa",

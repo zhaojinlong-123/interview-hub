@@ -330,8 +330,10 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-12-362a59bc5046.md",
     "target": "xiaohongshu",
-    "publishStatus": "draft_ready",
-    "autoPublish": true
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-13T04:14:47.866Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
   },
   {
     "id": "daily-2026-06-11-f733da88ddaa",
@@ -356,10 +358,10 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-11-f733da88ddaa.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": ""
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-06-13T04:15:11.319Z"
   },
   {
     "id": "daily-2026-06-10-d4b25fa7e460",
@@ -384,10 +386,10 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-10-d4b25fa7e460.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": ""
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-06-13T04:15:33.661Z"
   },
   {
     "id": "daily-2026-06-09-bfb99c10afae",
@@ -412,10 +414,10 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-09-bfb99c10afae.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": ""
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-06-13T04:15:56.117Z"
   },
   {
     "id": "daily-2026-06-08-da7740600601",
@@ -442,8 +444,8 @@
     "target": "xiaohongshu",
     "publishStatus": "manual_required",
     "autoPublish": true,
-    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": ""
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
   },
   {
     "id": "daily-2026-06-07-f819e557a306",

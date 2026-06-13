@@ -741,6 +741,77 @@
     "updatedAt": "2026-06-13T04:06:59.155Z"
   },
   {
+    "id": "xhs-daily-2026-06-12-362a59bc5046",
+    "title": "字节多模态大模型题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "body": "每日精选：字节 多模态大模型题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：知乎，2026-06-06，zhihu.com\n#知乎 #字节 #大模型 #多模态 #面经 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-06",
+    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-12-362a59bc5046.md",
+    "featureId": "daily-2026-06-12-362a59bc5046",
+    "postId": "auto-20260606-4b438e6d70ba",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "每日精选",
+        "title": "字节面试题精讲",
+        "body": "多模态大模型 高频题\n面试题目 / 详细解答 / 追问方向",
+        "footer": "Interview Hub"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？\n\n2. 多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？\n\n3. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 3",
+        "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "source",
+        "kicker": "引用来源",
+        "title": "知乎",
+        "body": "原帖日期：2026-06-06\n\n原文链接：https://www.zhihu.com/search?type=content&q=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F\n\n本文为公开面经学习整理，用于复习与知识归纳。",
+        "footer": "保存后按图卡顺序复习"
+      }
+    ],
+    "createdAt": "2026-06-13T04:14:25.415Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/06-source.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:14:47.852Z"
+  },
+  {
     "id": "xhs-daily-2026-06-11-f733da88ddaa",
     "title": "VLA具身智能题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",
@@ -790,7 +861,7 @@
         "footer": "保存后按图卡顺序复习"
       }
     ],
-    "createdAt": "2026-06-11T12:50:39.788Z",
+    "createdAt": "2026-06-13T04:14:48.016Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/02-questions.png",
@@ -798,10 +869,10 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/04-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/05-source.png"
     ],
-    "status": "manual_required",
-    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": "",
-    "updatedAt": "2026-06-11T12:50:41.276Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:15:11.309Z"
   },
   {
     "id": "xhs-daily-2026-06-10-d4b25fa7e460",
@@ -853,7 +924,7 @@
         "footer": "保存后按图卡顺序复习"
       }
     ],
-    "createdAt": "2026-06-11T12:50:39.821Z",
+    "createdAt": "2026-06-13T04:15:11.419Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/02-questions.png",
@@ -861,10 +932,10 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/04-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/05-source.png"
     ],
-    "status": "manual_required",
-    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": "",
-    "updatedAt": "2026-06-11T12:50:41.308Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:15:33.646Z"
   },
   {
     "id": "xhs-daily-2026-06-09-bfb99c10afae",
@@ -916,7 +987,7 @@
         "footer": "保存后按图卡顺序复习"
       }
     ],
-    "createdAt": "2026-06-11T12:50:39.882Z",
+    "createdAt": "2026-06-13T04:15:33.762Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/02-questions.png",
@@ -924,10 +995,10 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/04-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/05-source.png"
     ],
-    "status": "manual_required",
-    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": "",
-    "updatedAt": "2026-06-11T12:50:41.372Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-13T04:15:56.102Z"
   },
   {
     "id": "xhs-daily-2026-06-08-da7740600601",
@@ -986,7 +1057,7 @@
         "footer": "保存后按图卡顺序复习"
       }
     ],
-    "createdAt": "2026-06-11T12:50:45.425Z",
+    "createdAt": "2026-06-13T04:15:56.219Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/02-questions.png",
@@ -996,9 +1067,9 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/06-source.png"
     ],
     "status": "manual_required",
-    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
-    "publishUrl": "",
-    "updatedAt": "2026-06-11T12:50:46.817Z"
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-13T04:17:09.102Z"
   },
   {
     "id": "xhs-daily-2026-06-07-f819e557a306",

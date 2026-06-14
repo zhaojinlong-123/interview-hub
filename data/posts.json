@@ -972,7 +972,79 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型，多模态大模型面试问题记录【时序，Qformer，卷积，感受野,ControlNet，IP-adapter】",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781434457,
-    "updatedAt": 1781434475
+    "updatedAt": 1781434475,
+    "questionAnswers": [
+      {
+        "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
+        "question": "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.451Z"
+      },
+      {
+        "key": "general:视频模型如何评估时序一致性动作理解事件边界和身份保持",
+        "question": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.452Z"
+      },
+      {
+        "key": "general:视频理解中均匀采样关键帧采样运动感知采样和自适应采样分别适合什么场景",
+        "question": "视频理解中，均匀采样、关键帧采样、运动感知采样和自适应采样分别适合什么场景？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.452Z"
+      },
+      {
+        "key": "general:temporaltoken压缩如何保留动作变化和事件顺序相比长上下文attention有什么取舍",
+        "question": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.453Z"
+      },
+      {
+        "key": "general:视频问答如何评估动作理解事件边界因果关系和跨镜头一致性",
+        "question": "视频问答如何评估动作理解、事件边界、因果关系和跨镜头一致性？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.453Z"
+      },
+      {
+        "key": "general:长视频理解中记忆压缩片段检索滑窗推理和跨片段融合如何组合",
+        "question": "长视频理解中，记忆压缩、片段检索、滑窗推理和跨片段融合如何组合？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.453Z"
+      },
+      {
+        "key": "general:视频生成模型的时序一致性身份保持物理合理性和指令遵循如何评估",
+        "question": "视频生成模型的时序一致性、身份保持、物理合理性和指令遵循如何评估？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.453Z"
+      },
+      {
+        "key": "vlm_eval:7068dfc49757",
+        "question": "视频 grounding 与图像 grounding 的主要差异是什么，时空定位指标怎么设计？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "data:5d6d01500371",
+        "question": "多模态视频数据清洗时，字幕、ASR、画面内容和问答之间如何做一致性校验？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:1084f4f2b9eb",
+        "question": "在线视频理解服务如何控制帧抽取成本、encoder 缓存和响应延迟？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-6ab03ad9bfe5",
@@ -3838,7 +3910,23 @@
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：CLIP衍生进阶模型；检索场景模型适配改造思路 3. Transformer各类Decoder结构 4. 大模型通用预训练流程；电商垂域预训练必要性及原因 5. ...GRPO公式推导；PPO四大组成模型 手撕：多头注意力MHA代码 2️⃣二面 1. LoRA落地 ... 查看更多",
     "prepTips": "",
     "createdAt": 1781434457,
-    "updatedAt": 1781434457
+    "updatedAt": 1781434457,
+    "questionAnswers": [
+      {
+        "key": "rl:646818b91c8e",
+        "question": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "answer": "RLHF、DPO、PPO、GRPO 的核心差异在优化目标和训练稳定性。PPO 属于在线策略优化，需要 reward model 和采样，灵活但成本高；DPO 直接用偏好对优化策略，工程简单稳定，但强依赖偏好数据质量；GRPO 常用于降低 value model 依赖，通过组内相对奖励优化。面试时要讲清楚数据来源、奖励设计、稳定性、过优化和评估指标。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:rewardmodel如何构造偏好数据如何处理rewardhacking长度偏置和分布外回答",
+        "question": "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-a54ceb5d9359",
@@ -7342,7 +7430,23 @@
     "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：1573 0 06:46 机器人中间件要学到什么程度才能和面试官对线？感知/决策与规划/控制/视觉/NLP/ROS/运动规划/PID/自动驾驶 机器人研究员DeepMeet · 2025-09-09",
     "prepTips": "",
     "createdAt": 1781434457,
-    "updatedAt": 1781434457
+    "updatedAt": 1781434457,
+    "questionAnswers": [
+      {
+        "key": "world_model:ba26d04ed19c",
+        "question": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:0ec912cf2480",
+        "question": "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-90714d0c3cc8",
@@ -8204,7 +8308,72 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节VLA具身智能题目精讲 噜噜噜 昨天 19:36 6",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781419797
+    "updatedAt": 1781419797,
+    "questionAnswers": [
+      {
+        "key": "vla_action:7a635fa24952",
+        "question": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+        "answer": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "robot_data:5c6e23bce94e",
+        "question": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "answer": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vla_action:7485012a6b6c",
+        "question": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控制场景？",
+        "answer": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "robot_data:2dde2d9a5453",
+        "question": "机器人遥操作数据采集时，如何同步多相机、机械臂状态、力控信号和语言指令？",
+        "answer": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "data:0bde71b89500",
+        "question": "具身智能任务中，episode 如何切分，成功、失败、中断和人为接管如何标注？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "rl:005f655d4d6f",
+        "question": "VLA 系统如何从 imitation learning 过渡到在线强化学习并控制安全风险？",
+        "answer": "RLHF、DPO、PPO、GRPO 的核心差异在优化目标和训练稳定性。PPO 属于在线策略优化，需要 reward model 和采样，灵活但成本高；DPO 直接用偏好对优化策略，工程简单稳定，但强依赖偏好数据质量；GRPO 常用于降低 value model 依赖，通过组内相对奖励优化。面试时要讲清楚数据来源、奖励设计、稳定性、过优化和评估指标。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:simtoreal中视觉随机化动力学随机化和真实少样本微调分别解决什么问题",
+        "question": "sim-to-real 中，视觉随机化、动力学随机化和真实少样本微调分别解决什么问题？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:长程具身任务如何处理记忆子目标分解环境变化和动作不可逆错误",
+        "question": "长程具身任务如何处理记忆、子目标分解、环境变化和动作不可逆错误？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:具身智能评估为什么不能只看成功率还需要哪些安全性和泛化指标",
+        "question": "具身智能评估为什么不能只看成功率，还需要哪些安全性和泛化指标？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-4207340a5efc",
@@ -8289,7 +8458,86 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节训练框架推理优化题目精讲 噜噜噜 1天前 9",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781419797
+    "updatedAt": 1781419797,
+    "questionAnswers": [
+      {
+        "key": "distributed_training:4c0c4c13e759",
+        "question": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:33f66bf553cc",
+        "question": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:3768f843ba28",
+        "question": "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "compression:16ac82ea05c9",
+        "question": "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+        "answer": "量化、LoRA 和蒸馏解决的问题不同。INT8/INT4 量化降低权重或激活精度，减少显存和带宽压力；GPTQ 偏离线权重量化，AWQ 通过保护重要通道提高质量；LoRA 用低秩增量适配任务，适合低成本微调；蒸馏把大模型能力迁移到小模型。面试要强调代价：量化可能伤害长尾能力，蒸馏依赖 teacher 和数据质量，LoRA 合并后没有多 adapter 切换灵活。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "distributed_training:b6c16a244b36",
+        "question": "数据并行、张量并行、流水线并行、序列并行和专家并行分别解决什么瓶颈？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "distributed_training:01475f9e9104",
+        "question": "DeepSpeed ZeRO-1/2/3 分别切分哪些状态，显存节省和通信开销如何变化？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "distributed_training:3f4a9b2477aa",
+        "question": "Megatron 的 tensor parallel 为什么需要行切分、列切分和 collective 通信配合？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:24b4b2a7586a",
+        "question": "大模型训练显存如何拆成参数、梯度、优化器状态、激活值和临时 buffer？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:96148951f5ba",
+        "question": "gradient checkpointing、FlashAttention 和 activation offload 分别如何影响显存和吞吐？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:fp16bf16fp8在数值稳定性硬件收益和训练风险上有什么差异",
+        "question": "FP16、BF16、FP8 在数值稳定性、硬件收益和训练风险上有什么差异？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:globalbatchmicrobatchpipelinebubble和通信重叠如何联动调参",
+        "question": "global batch、micro batch、pipeline bubble 和通信重叠如何联动调参？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-b56a20102f26",
@@ -8426,7 +8674,72 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：【清华代码熊】字节面试官：多模态大模型动态分辨率原理？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781419797
+    "updatedAt": 1781419797,
+    "questionAnswers": [
+      {
+        "key": "vlm_connector:f3d838cdb143",
+        "question": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+        "answer": "多模态连接层的作用是把视觉 encoder 输出映射到 LLM 可理解的 token 空间。Linear projector 简单高效但表达能力有限；Q-Former 用可学习 query 压缩视觉信息，适合减少 token；cross-attention 交互更充分但计算更贵。回答时要补训练目标和评估方式：图文对齐、指令微调、grounding、OCR、空间关系和幻觉率，不能只背模块名字。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_eval:f6c1765e0520",
+        "question": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_eval:92d0f41c6f60",
+        "question": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_connector:40a4b141d21d",
+        "question": "多模态大模型中，vision encoder 输出如何通过 projector、Q-Former 或 cross-attention 接入 LLM？",
+        "answer": "多模态连接层的作用是把视觉 encoder 输出映射到 LLM 可理解的 token 空间。Linear projector 简单高效但表达能力有限；Q-Former 用可学习 query 压缩视觉信息，适合减少 token；cross-attention 交互更充分但计算更贵。回答时要补训练目标和评估方式：图文对齐、指令微调、grounding、OCR、空间关系和幻觉率，不能只背模块名字。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "data:12ce2c72d2de",
+        "question": "VLM 训练中图文对齐、指令微调和偏好对齐分别解决什么问题？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:高分辨率图片输入时动态分辨率tile切分和token压缩如何取舍",
+        "question": "高分辨率图片输入时，动态分辨率、tile 切分和 token 压缩如何取舍？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_eval:c5e06ea550a5",
+        "question": "OCR、grounding、计数、空间关系这四类能力分别应该如何设计评估集？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:多图理解任务中如何保证跨图实体一致性顺序理解和比较推理能力",
+        "question": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_eval:87ff9a3b4964",
+        "question": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-4f9e2452a681",
@@ -8478,7 +8791,23 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：理想多模态大模型一面面经 春春春的夏天 2025-05-30 47",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781434475
+    "updatedAt": 1781434475,
+    "questionAnswers": [
+      {
+        "key": "data:b378dce22851",
+        "question": "图像 caption 数据、VQA 数据和合成指令数据在多模态训练中的作用有什么差异？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:c5fc681c45b4",
+        "question": "多模态模型线上服务如何优化图片预处理、vision encoder 复用和首 token 延迟？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-7a107f48c2b0",
@@ -8509,7 +8838,37 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：小鹏汽车多模态大模型算法面经 momo 2025-12-05 96",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781434475
+    "updatedAt": 1781434475,
+    "questionAnswers": [
+      {
+        "key": "world_model:58a07b0a32f8",
+        "question": "世界模型和传统感知、预测、规划模块相比，优势、风险和可解释性问题是什么？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:344009deb760",
+        "question": "驾驶数据闭环中，长尾场景挖掘、自动标注、训练回流和仿真评测如何形成闭环？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:多传感器数据中相机激光雷达毫米波雷达定位和车控状态如何时空对齐",
+        "question": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何时空对齐？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:45f4cf70ff23",
+        "question": "端到端自动驾驶模型如何处理安全边界、法规约束、分布外场景和可解释性？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-cc1d3a65919a",
@@ -8847,7 +9206,51 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：【清华代码熊】面试官：多模态大模型视觉Token压缩方法？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781434475
+    "updatedAt": 1781434475,
+    "questionAnswers": [
+      {
+        "key": "memory:cbc9def292ab",
+        "question": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:aaaf9b827539",
+        "question": "PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:52c114c54c1b",
+        "question": "continuous batching 如何提升吞吐，为什么可能影响单请求延迟和调度公平性？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:436c52b59bb6",
+        "question": "speculative decoding 的收益取决于哪些因素，draft model 接受率如何影响加速比？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "compression:3847ab9349fe",
+        "question": "INT8、INT4、AWQ、GPTQ、SmoothQuant 分别适合哪些量化和部署场景？",
+        "answer": "量化、LoRA 和蒸馏解决的问题不同。INT8/INT4 量化降低权重或激活精度，减少显存和带宽压力；GPTQ 偏离线权重量化，AWQ 通过保护重要通道提高质量；LoRA 用低秩增量适配任务，适合低成本微调；蒸馏把大模型能力迁移到小模型。面试要强调代价：量化可能伤害长尾能力，蒸馏依赖 teacher 和数据质量，LoRA 合并后没有多 adapter 切换灵活。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:长上下文推理中ropescalingkvevictionprefixcache分别解决什么问题",
+        "question": "长上下文推理中，RoPE scaling、KV eviction、prefix cache 分别解决什么问题？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "auto-20260614-9cf972f9a5ba",
@@ -11209,7 +11612,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "world_model:352a5feeabd5",
+        "question": "自动驾驶数据闭环中，长尾场景挖掘、自动标注、训练回流和仿真评测如何形成闭环？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:2dda6ffc9ee5",
+        "question": "BEV、occupancy、轨迹预测和端到端规划分别在世界模型中承担什么表示角色？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:a4cb5eb49d4c",
+        "question": "世界模型如何学习环境动态，和传统感知预测规划模块相比优势和风险是什么？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:多传感器数据中相机激光雷达毫米波雷达定位和车控状态如何做时间空间对齐",
+        "question": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:仿真评测如何保证场景真实性交互合理性覆盖率和指标可解释性",
+        "question": "仿真评测如何保证场景真实性、交互合理性、覆盖率和指标可解释性？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:2a677e719a61",
+        "question": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "world_model:021bd486cbf7",
+        "question": "端到端自动驾驶模型如何处理可解释性、安全边界、法规约束和分布外场景？",
+        "answer": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:座舱多模态大模型如何融合语音视觉车辆状态和用户上下文同时保证安全策略",
+        "question": "座舱多模态大模型如何融合语音、视觉、车辆状态和用户上下文，同时保证安全策略？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "bank-inference-deployment-202606",
@@ -11247,7 +11708,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "memory:3a0029f1cd3a",
+        "question": "KV cache 的显存占用如何随 batch size、序列长度、层数、head 数和 hidden size 增长？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:a3e1b0b3d020",
+        "question": "PagedAttention 为什么能提高显存利用率，它和传统连续 KV cache 分配有什么区别？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:4fdf770a77a0",
+        "question": "continuous batching 如何提高吞吐，为什么会影响单请求延迟和调度公平性？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:af50588adbc6",
+        "question": "speculative decoding 的收益取决于哪些因素，draft model 接受率和额外计算如何权衡？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "compression:34bccc87f404",
+        "question": "INT8、INT4、AWQ、GPTQ、SmoothQuant 分别适合权重量化、激活量化还是离线压缩？",
+        "answer": "量化、LoRA 和蒸馏解决的问题不同。INT8/INT4 量化降低权重或激活精度，减少显存和带宽压力；GPTQ 偏离线权重量化，AWQ 通过保护重要通道提高质量；LoRA 用低秩增量适配任务，适合低成本微调；蒸馏把大模型能力迁移到小模型。面试要强调代价：量化可能伤害长尾能力，蒸馏依赖 teacher 和数据质量，LoRA 合并后没有多 adapter 切换灵活。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:长上下文推理中ropescalingkvevictionprefixcache和检索增强分别解决什么问题",
+        "question": "长上下文推理中，RoPE scaling、KV eviction、prefix cache 和检索增强分别解决什么问题？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:30b312abd7a7",
+        "question": "线上推理如何同时监控 TTFT、TPOT、吞吐、显存水位、失败率和队列等待时间？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "compression:f07059e45ad6",
+        "question": "LoRA 多租户服务中，adapter 热切换、权重合并、缓存复用和隔离性如何设计？",
+        "answer": "量化、LoRA 和蒸馏解决的问题不同。INT8/INT4 量化降低权重或激活精度，减少显存和带宽压力；GPTQ 偏离线权重量化，AWQ 通过保护重要通道提高质量；LoRA 用低秩增量适配任务，适合低成本微调；蒸馏把大模型能力迁移到小模型。面试要强调代价：量化可能伤害长尾能力，蒸馏依赖 teacher 和数据质量，LoRA 合并后没有多 adapter 切换灵活。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "bank-training-framework-202606",
@@ -11285,7 +11804,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "distributed_training:a3e90d569a58",
+        "question": "数据并行、张量并行、流水并行、序列并行和专家并行分别解决什么瓶颈？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "distributed_training:dac487769824",
+        "question": "DeepSpeed ZeRO-1/2/3 分别切分哪些状态，通信量、显存节省和实现复杂度如何变化？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "distributed_training:dcb89aa8acc2",
+        "question": "Megatron 中 tensor parallel 的列切分和行切分为什么要配合 collective 通信？",
+        "answer": "分布式训练要先说清楚切分对象。数据并行切 batch，简单但每步要同步梯度；张量并行切单层矩阵计算，适合单层很宽的大模型；流水并行切层，适合层数很深但会产生 pipeline bubble；ZeRO 切优化器状态、梯度和参数，主要解决显存放不下。真实系统通常是混合并行，回答时要同时讲显存节省、通信开销、吞吐和调度复杂度。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:c2b47bb79315",
+        "question": "训练显存如何拆解为参数、梯度、优化器状态、激活值、临时 buffer 和通信 buffer？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:64419aeeaeae",
+        "question": "gradient checkpointing、FlashAttention、activation offload 分别如何影响显存、吞吐和稳定性？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "memory:ebbc379cefef",
+        "question": "大规模训练中 loss spike、梯度溢出、数据异常和通信 hang 应该如何定位？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:混合精度训练中fp16bf16fp8的数值稳定性和硬件收益如何比较",
+        "question": "混合精度训练中 FP16、BF16、FP8 的数值稳定性和硬件收益如何比较？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:a1eaab00df7f",
+        "question": "训练吞吐优化时，global batch、micro batch、pipeline bubble 和通信重叠如何联动调参？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "bank-video-understanding-202606",
@@ -11322,7 +11899,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "general:视频理解中均匀采样关键帧采样运动感知采样和自适应采样分别适合哪些场景",
+        "question": "视频理解中均匀采样、关键帧采样、运动感知采样和自适应采样分别适合哪些场景？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:temporaltoken压缩如何保留动作变化和事件顺序和直接长上下文attention相比有什么取舍",
+        "question": "temporal token 压缩如何保留动作变化和事件顺序，和直接长上下文 attention 相比有什么取舍？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:视频问答如何评估动作理解事件边界因果关系跨镜头一致性和细粒度属性识别",
+        "question": "视频问答如何评估动作理解、事件边界、因果关系、跨镜头一致性和细粒度属性识别？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:长视频理解中如何处理记忆压缩片段检索滑窗推理和跨片段信息融合",
+        "question": "长视频理解中如何处理记忆压缩、片段检索、滑窗推理和跨片段信息融合？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "general:视频生成模型的时序一致性身份保持物理合理性和指令遵循分别如何设计评估",
+        "question": "视频生成模型的时序一致性、身份保持、物理合理性和指令遵循分别如何设计评估？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "data:90b8641e07e5",
+        "question": "多模态视频数据清洗时，字幕、ASR、画面内容和问题答案之间如何做一致性校验？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "vlm_eval:cf29f7794796",
+        "question": "视频 grounding 和图像 grounding 的主要差异是什么，时空定位指标应该怎么看？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      },
+      {
+        "key": "inference:92e038dec333",
+        "question": "在线视频理解服务如何控制帧抽取成本、encoder 复用、缓存和响应延迟？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.464Z"
+      }
+    ]
   },
   {
     "id": "bank-vla-embodied-control-202606",
@@ -11360,7 +11995,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "vla_action:9953d4374072",
+        "question": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合哪些控制粒度和任务场景？",
+        "answer": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "robot_data:469a960478d4",
+        "question": "机器人遥操作数据采集时，如何处理多相机、机械臂状态、力控信号和语言指令的时间同步？",
+        "answer": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "data:84a9e6d74027",
+        "question": "轨迹数据如何切分 episode，如何标注成功、失败、中断、重试和人为接管？",
+        "answer": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "robot_data:9da9a0c3f2bc",
+        "question": "从 imitation learning 到 online RL，VLA 系统如何设计安全探索和失败样本回流？",
+        "answer": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:语言规划和低层控制之间如何分层什么时候需要skilllibrary或hierarchicalpolicy",
+        "question": "语言规划和低层控制之间如何分层，什么时候需要 skill library 或 hierarchical policy？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:simtoreal迁移中视觉域随机化动力学随机化和真实数据少样本微调各自解决什么问题",
+        "question": "Sim-to-real 迁移中，视觉域随机化、动力学随机化和真实数据少样本微调各自解决什么问题？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:具身任务评估为什么不能只看成功率还需要哪些鲁棒性安全性和泛化指标",
+        "question": "具身任务评估为什么不能只看成功率，还需要哪些鲁棒性、安全性和泛化指标？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:长程任务中vla如何处理记忆子目标分解环境变化和动作不可逆错误",
+        "question": "长程任务中，VLA 如何处理记忆、子目标分解、环境变化和动作不可逆错误？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "bank-multimodal-vlm-alignment-202606",
@@ -11398,7 +12091,65 @@
     "sourceDate": "2026-06-06",
     "sourceUrl": "",
     "createdAt": 1780755363,
-    "updatedAt": 1780755363
+    "updatedAt": 1780755363,
+    "questionAnswers": [
+      {
+        "key": "general:clip预训练中的对比学习目标如何影响后续vlm的视觉语义对齐能力",
+        "question": "CLIP 预训练中的对比学习目标如何影响后续 VLM 的视觉语义对齐能力？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "inference:46b587128164",
+        "question": "Linear projector、MLP projector、Q-Former 和 cross-attention adapter 在信息保留、训练成本、推理延迟上如何取舍？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "vlm_eval:ae83f05bfc2b",
+        "question": "多模态指令微调数据如何避免 OCR 泄漏、答案模板化、负样本不足和评测集污染？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "vlm_eval:68f79d7d4bc5",
+        "question": "视觉 grounding 能力应该如何评估，bbox、指代表达、区域问答和 hallucination rate 分别看什么？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:多图理解任务中图间关系时间顺序和跨图实体一致性如何建模",
+        "question": "多图理解任务中图间关系、时间顺序和跨图实体一致性如何建模？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "vlm_eval:5e7c01680bfd",
+        "question": "为什么 VLM 容易出现视觉幻觉，如何从数据、模型结构、解码和评测四个层面缓解？",
+        "answer": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:高分辨率图像输入时patch数量token压缩局部裁剪和动态分辨率策略如何选择",
+        "question": "高分辨率图像输入时，patch 数量、token 压缩、局部裁剪和动态分辨率策略如何选择？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "inference:086befdc328b",
+        "question": "VLM 线上服务中如何平衡图像预处理延迟、视觉 encoder 复用、batching 和首 token 延迟？",
+        "answer": "推理优化要把 prefill 和 decode 分开。prefill 更像大矩阵并行计算，decode 更容易受 KV cache、batch 调度和单 token 延迟影响。PagedAttention 像分页内存一样管理 KV cache，减少碎片；continuous batching 让不同请求动态进入 batch，提高吞吐；speculative decoding 用小模型草拟、大模型验证，降低平均解码成本。最终要用吞吐、首 token 延迟、总延迟、显存和稳定性一起评估。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "browser-zhihu-bytedance-vlm-20260605",
@@ -11426,7 +12177,16 @@
     "content": "知乎搜索结果中的字节多模态一面候选，适合补齐视觉语言模型结构和项目追问。",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780672728,
-    "updatedAt": 1780755503
+    "updatedAt": 1780755503,
+    "questionAnswers": [
+      {
+        "key": "vlm_connector:c32428084469",
+        "question": "视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？",
+        "answer": "多模态连接层的作用是把视觉 encoder 输出映射到 LLM 可理解的 token 空间。Linear projector 简单高效但表达能力有限；Q-Former 用可学习 query 压缩视觉信息，适合减少 token；cross-attention 交互更充分但计算更贵。回答时要补训练目标和评估方式：图文对齐、指令微调、grounding、OCR、空间关系和幻觉率，不能只背模块名字。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "auto-20260605-edde1cf1d280",
@@ -11453,7 +12213,16 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2026最新字节大模型岗面经汇总(多平台整理) PolarisT：包括数据，怎么训练奖励模型，每个模型的损失什么样子的？ PPO 的奖励函数设计对最终模型表现有什么影响？ PPO...阅读全文​ ​ 赞同 31​ ​ 5 条评论 04-19",
     "prepTips": "重点准备 RLHF/DPO/GRPO/PPO、reward model、偏好数据构造和对齐评估指标。",
     "createdAt": 1780673886,
-    "updatedAt": 1780738115
+    "updatedAt": 1780738115,
+    "questionAnswers": [
+      {
+        "key": "general:对齐训练如何评估helpfulnessharmlessnesstruthfulness和复杂任务通过率",
+        "question": "对齐训练如何评估 helpfulness、harmlessness、truthfulness 和复杂任务通过率？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "auto-20260605-c9675710eb04",
@@ -11858,7 +12627,16 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：蔚来大模型算法面经 汤圆脑袋 2025-09-03 235",
     "prepTips": "重点准备 BEV/occupancy、数据闭环、长尾场景挖掘、仿真评测和座舱多模态安全。",
     "createdAt": 1780673886,
-    "updatedAt": 1780738115
+    "updatedAt": 1780738115,
+    "questionAnswers": [
+      {
+        "key": "general:座舱多模态大模型如何融合语音视觉车控状态和用户上下文并保证安全边界",
+        "question": "座舱多模态大模型如何融合语音、视觉、车控状态和用户上下文，并保证安全边界？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "auto-20260605-7e3348c36425",
@@ -12087,7 +12865,16 @@
     "content": "已登录脉脉搜索结果中出现的百度 AIDU 面经摘要，显示面试会深入项目、论文和模型基础。",
     "prepTips": "重点准备 KV cache、PagedAttention、continuous batching、量化压缩和线上延迟吞吐权衡。",
     "createdAt": 1780672728,
-    "updatedAt": 1780738115
+    "updatedAt": 1780738115,
+    "questionAnswers": [
+      {
+        "key": "memory:c3c3afadc446",
+        "question": "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "browser-maimai-kuaishou-rec-llm-20260605",
@@ -12142,7 +12929,23 @@
     "content": "脉脉搜索结果中有人专门询问训练框架面经，说明该方向资料相对稀缺但需求明确。",
     "prepTips": "重点准备 ZeRO、张量并行、流水并行、显存拆解、通信瓶颈和训练稳定性排查。",
     "createdAt": 1780672728,
-    "updatedAt": 1780738115
+    "updatedAt": 1780738115,
+    "questionAnswers": [
+      {
+        "key": "memory:00a72b63aa6f",
+        "question": "大模型训练中显存占用如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "memory:df0ef95e1444",
+        "question": "混合精度、gradient checkpointing、FlashAttention 和通信重叠如何影响吞吐与稳定性？",
+        "answer": "训练显存通常由参数、梯度、优化器状态、激活值和临时 buffer 组成。Adam 的优化器状态常常比参数本身更占空间，长序列训练时激活值会随 batch、序列长度和层数增长；推理时重点从梯度和优化器状态转向 KV cache。常用优化包括混合精度、gradient checkpointing、ZeRO/offload、FlashAttention、序列并行、KV cache 量化和分页管理。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "browser-maimai-audio-llm-job-20260605",
@@ -12172,7 +12975,23 @@
     "content": "脉脉结果中出现语音/音频大模型岗位信息，提到通义、小红书、Seed、混元等团队，可作为面试方向补充。",
     "prepTips": "重点准备帧采样、时序建模、视频 token 压缩、事件理解和时序一致性评估。",
     "createdAt": 1780672728,
-    "updatedAt": 1780738115
+    "updatedAt": 1780738115,
+    "questionAnswers": [
+      {
+        "key": "general:视频模型如何建模动作因果关系事件边界和跨镜头一致性",
+        "question": "视频模型如何建模动作、因果关系、事件边界和跨镜头一致性？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      },
+      {
+        "key": "general:视频问答视频生成如何评估时序一致性物理合理性身份保持和指令遵循",
+        "question": "视频问答/视频生成如何评估时序一致性、物理合理性、身份保持和指令遵循？",
+        "answer": "回答这类题要避免只背概念。建议按四层组织：先解释核心机制，再讲工程取舍，然后补常见失败模式，最后落到评估指标和项目经验。如果题目来自真实面经，还要把公司、方向、题目和来源链接对应起来，避免题目与来源或答案错位。",
+        "answerStatus": "generated",
+        "updatedAt": "2026-06-14T16:24:29.465Z"
+      }
+    ]
   },
   {
     "id": "browser-zhihu-llm-leetcode-20260409",

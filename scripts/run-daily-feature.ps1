@@ -48,6 +48,11 @@ try {
   "[$stamp] Daily feature started: slot=$Slot publishTime=$PublishTime" |
     Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
 
+  $auditBeforeExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\audit-xhs-publish.mjs", "--fix", "--fail-on-risk") -LogFile "$logDir\daily-feature-last.log"
+  if ($auditBeforeExit -ne 0) {
+    throw "pre-generate audit-xhs-publish exited with code $auditBeforeExit"
+  }
+
   $generateArgs = @("scripts\generate-daily-feature.mjs", "--slot=$Slot")
   if ($PublishTime) {
     $generateArgs += "--publish-time=$PublishTime"
@@ -63,12 +68,18 @@ try {
     throw "publish-xiaohongshu exited with code $publishExit"
   }
 
+  $auditAfterExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\audit-xhs-publish.mjs", "--fix", "--fail-on-risk") -LogFile "$logDir\daily-feature-last.log"
+  if ($auditAfterExit -ne 0) {
+    throw "post-publish audit-xhs-publish exited with code $auditAfterExit"
+  }
+
   $today = Get-Date -Format "yyyy-MM-dd"
   $gitAddExit = Invoke-LoggedCommand -FilePath "git" -Arguments @(
     "-c", "safe.directory=E:/workshop/interview-hub",
     "add",
     "data/daily-features.json",
     "data/publish-queue.json",
+    "data/published-question-registry.json",
     "content/xiaohongshu-drafts",
     "content/xiaohongshu-assets"
   ) -LogFile "$logDir\daily-feature-last.log"

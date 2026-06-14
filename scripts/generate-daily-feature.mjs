@@ -7,6 +7,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace
 const POSTS_FILE = path.join(ROOT, "data", "posts.json");
 const SETTINGS_FILE = path.join(ROOT, "data", "daily-settings.json");
 const FEATURES_FILE = path.join(ROOT, "data", "daily-features.json");
+const PUBLISHED_QUESTION_REGISTRY_FILE = path.join(ROOT, "data", "published-question-registry.json");
 const DRAFT_DIR = path.join(ROOT, "content", "xiaohongshu-drafts");
 const TODAY = new Date().toISOString().slice(0, 10);
 const SHOULD_PUSH = process.argv.includes("--push");
@@ -404,6 +405,7 @@ async function main() {
   const posts = await readJson(POSTS_FILE, []);
   const settings = await readJson(SETTINGS_FILE, {});
   const history = await readJson(FEATURES_FILE, []);
+  const publishedQuestionRegistry = await readJson(PUBLISHED_QUESTION_REGISTRY_FILE, []);
   const usedIds = new Set(history.map((item) => item.postId));
   const postsById = new Map(posts.map((post) => [post.id, post]));
   const usedQuestionKeys = new Set();
@@ -414,6 +416,10 @@ async function main() {
       questionKeysForPost(historicalPost).forEach((key) => usedQuestionKeys.add(key));
       usedTitleKeys.add(titleKey(historicalPost));
     }
+  }
+  for (const item of publishedQuestionRegistry) {
+    if (item?.key) usedQuestionKeys.add(item.key);
+    if (item?.question) usedQuestionKeys.add(questionKey(item.question));
   }
   const todayUsedDirections = new Set(history
     .filter((item) => item.date === TODAY && item.slot !== SLOT)

@@ -43,7 +43,12 @@ try {
     throw "dedupe-post-questions exited with code $LASTEXITCODE"
   }
 
-  git -c safe.directory=E:/workshop/interview-hub add data/posts.json logs 2>&1 | Tee-Object -FilePath $logFile -Append
+  node scripts\audit-xhs-publish.mjs --fix 2>&1 | Tee-Object -FilePath $logFile -Append
+  if ($LASTEXITCODE -ne 0) {
+    throw "audit-xhs-publish exited with code $LASTEXITCODE"
+  }
+
+  git -c safe.directory=E:/workshop/interview-hub add data/posts.json data/published-question-registry.json logs 2>&1 | Tee-Object -FilePath $logFile -Append
   $changes = git -c safe.directory=E:/workshop/interview-hub diff --cached --name-only
   if ($changes) {
     git -c safe.directory=E:/workshop/interview-hub commit -m "Weekly interview question update ($today)" 2>&1 |

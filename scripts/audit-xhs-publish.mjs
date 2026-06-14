@@ -295,10 +295,24 @@ async function main() {
   }
   const registry = collectPublishedRegistry(queue);
   const issues = auditQueue(queue);
+  const missingAnswerCount = answeredPosts.reduce((sum, post) => {
+    const answers = new Map((Array.isArray(post.questionAnswers) ? post.questionAnswers : [])
+      .map((item) => [questionKey(item.question), item.answer]));
+    const missing = (Array.isArray(post.questions) ? post.questions : [])
+      .filter((question) => !answers.get(questionKey(question))).length;
+    return sum + missing;
+  }, 0);
+  const answerMismatchCount = issues.filter((item) => item.type === "answer_mismatch").length;
+  const duplicatePublishedQuestionCount = issues.filter((item) => item.type === "duplicate_published_question").length;
+  const sourceCheckCount = issues.filter((item) => item.type === "xhs_source_needs_note_check").length;
   const report = {
     generatedAt: new Date().toISOString(),
     postCount: posts.length,
     questionCount: posts.reduce((sum, post) => sum + (Array.isArray(post.questions) ? post.questions.length : 0), 0),
+    missingAnswerCount,
+    answerMismatchCount,
+    duplicatePublishedQuestionCount,
+    sourceCheckCount,
     generatedAnswerCount: added,
     repairedQueueCount,
     publishedQuestionCount: registry.length,

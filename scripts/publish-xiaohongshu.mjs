@@ -7,6 +7,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace
 const POSTS_FILE = path.join(ROOT, "data", "posts.json");
 const FEATURES_FILE = path.join(ROOT, "data", "daily-features.json");
 const QUEUE_FILE = path.join(ROOT, "data", "publish-queue.json");
+const REGISTRY_FILE = path.join(ROOT, "data", "published-question-registry.json");
 const ASSET_DIR = path.join(ROOT, "content", "xiaohongshu-assets");
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
@@ -639,15 +640,46 @@ function duplicateKey(record) {
   return `${direction}|${topic}|${question}`.toLowerCase().replace(/\s+/g, "");
 }
 
+function normalizeQuestion(value) {
+  return cleanLine(value)
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
+function questionsFromPayload(payload) {
+  const questionCard = payload.imageCards?.find((card) => card.kind === "questions");
+  const fromCard = String(questionCard?.body || "")
+    .split(/\r?\n/)
+    .map((line) => cleanLine(line).replace(/^\d+[.、]\s*/, ""))
+    .filter(Boolean);
+  return [...new Set([payload.primaryQuestion, ...fromCard].filter(Boolean))];
+}
+
 async function findDuplicatePublished(payload) {
   const key = duplicateKey(payload);
   if (!key || key.endsWith("||")) return null;
   const queue = await readJson(QUEUE_FILE, []);
-  return queue.find((item) =>
+  const queueDuplicate = queue.find((item) =>
     item.id !== payload.id
     && ["published", "manual_required"].includes(item.status)
     && duplicateKey(item) === key
   ) || null;
+  if (queueDuplicate) return queueDuplicate;
+
+  const registry = await readJson(REGISTRY_FILE, []);
+  const publishedQuestions = new Set(
+    registry
+      .map((item) => normalizeQuestion(item.question))
+      .filter(Boolean)
+  );
+  const matchedQuestion = questionsFromPayload(payload)
+    .find((question) => publishedQuestions.has(normalizeQuestion(question)));
+  if (!matchedQuestion) return null;
+  return {
+    id: "published-question-registry",
+    title: "published question registry",
+    question: matchedQuestion,
+  };
 }
 
 async function updateFeature(featureId, patch) {
@@ -686,6 +718,15 @@ function assertPayloadAlignment(payload) {
       const hit = genericDataSignals.find((signal) => body.includes(signal));
       if (hit) throw new Error(`Answer alignment check failed: robot data card contains ${hit}`);
     }
+  }
+  if (!payload.sourcePlatform || !payload.sourceUrl) {
+    throw new Error("Source alignment check failed: source platform and source URL are required");
+  }
+  if (!String(payload.body || "").includes(String(payload.sourceUrl))) {
+    throw new Error("Source alignment check failed: body must include the source URL");
+  }
+  if (!String(payload.body || "").includes(String(payload.sourcePlatform))) {
+    throw new Error("Source alignment check failed: body must include the source platform");
   }
 }
 

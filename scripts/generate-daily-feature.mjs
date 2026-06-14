@@ -398,7 +398,14 @@ async function main() {
     }
   }
   const candidates = posts
-    .filter((post) => post.sourceUrl && !usedIds.has(post.id) && !usedTitleKeys.has(titleKey(post)) && !/RAG|Agent/i.test(textOf(post)))
+    .filter((post) =>
+      post.sourceUrl
+      && Array.isArray(post.questions)
+      && post.questions.length > 0
+      && !usedIds.has(post.id)
+      && !usedTitleKeys.has(titleKey(post))
+      && !/RAG|Agent/i.test(textOf(post))
+    )
     .map((post) => freshenPostQuestions(post, usedQuestionKeys))
     .filter(Boolean);
 

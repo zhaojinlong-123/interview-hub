@@ -17,10 +17,7 @@
       "腾讯",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯具身智能一面(贼难) 程序员offer助手 05-26 7",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -76,10 +73,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：具身智能 & VLA 面试题库 保顺：/ 深入 一、VLA 模型（Vision-Language-Action） Q1 VLA 模型是什么？它和普通的阅读全文​ ​ 赞同 7​ ​ 添加评论 03-24",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -106,10 +100,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：具身智能算法工程师面经【300题版】 Finalchemist：VLA与多模态策略（Vision-Language-Action） 1. 为什么纯LLM架构无法直接解决机器人控制...阅读全文​ ​ 赞同 30​ ​ 2 条评论 03-14",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -133,10 +124,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：#牛客在线求职答疑中心#具身智能vla面经",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -161,10 +149,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：基础认知与 VLA 框架(一)",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -189,10 +174,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：经典 VLA 模型与动作生成范式(二)",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -217,11 +199,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：北京智源人工智能研究院多模态大模型组面经 Lcarus 2025-06-05 109",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -247,11 +225,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：二面面经✅字节跳动多模态大模型 清华代码熊AI学院 03-19 53",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -275,10 +249,7 @@
       "百度",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：百度一面，简历上写上「精通具身智能」，当场给了offer。。。",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -303,10 +274,7 @@
       "VLA",
       "面经"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA / WM / EAI 研究实习面经（字节，小米 Cris 02-02 294",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -330,10 +298,7 @@
       "VLA",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA 算法工程师岗高频面试题已复盘！ 杰克学长聊offer 05-26 7",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -358,10 +323,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯Robotics X 具身智能算法一面（贼难 程序员面试 02-23 898",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -385,10 +347,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：2026 | 8家具身智能公司面试经验 干掉人类（实习上岸版） 04-12 408",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -412,10 +371,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能面经分享1 Dev.E 05-02 148",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -439,10 +395,7 @@
       "VLA",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试题：频率不匹配问题 学姐定新丸 昨天 15:10 9",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -467,10 +420,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节seed具身智能方向面经拆解 深蓝大师兄 02-06 23",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -494,10 +444,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能面试day1 阿仓 06-03 24",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -521,10 +468,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身感知算法技术面经100题，高频面经答案 具身智能老兵 05-29 13",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -549,10 +493,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯Robotics X 具身智能算法一面（贼难 程序员面试 02-23 898",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -578,12 +519,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：已拒 offer [喝可乐] #软件开发笔面经##蔚来#...答曰机械臂 + VLA 🙌面试体验：#牛客AI配图神器# 还行吧，如果有准备的话强度不算特别大。",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -609,12 +545,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：已拒 offer [喝可乐] #软件开发笔面经##蔚来#...答曰机械臂 + VLA 🙌面试体验：#牛客AI配图神器# 还行吧，如果有准备的话强度不算特别大。",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -641,12 +572,7 @@
       "面经",
       "DeepSpeed"
     ],
-    "questions": [
-      "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
-      "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
-      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
-      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -673,10 +599,7 @@
       "具身",
       "机器人"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：智元机器人（Agibot）技术面试复盘 | 大模型与具身智能的深度对话VIP",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -702,10 +625,7 @@
       "具身",
       "机器人"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：从面试失败看具身智能人才需求：拆解智元机器人(Agibot)的3个隐性招聘标准VIP",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -732,10 +652,7 @@
       "具身",
       "机器人"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：智元机器人（Agibot）技术面经全解析 | 大模型与具身智能的实战考察",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -789,10 +706,7 @@
       "51CTO",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：什么是具身智能？这个概念是如何发展而来的？对于具身智能未来发展，又有哪些看法？ 在人工智能的浪潮席卷全球的今天，我们越来越习惯于将“智能”理解为一种抽象的、脱离物理世界的认知活动。我们为能下围棋的程序喝彩，为能写诗的算法惊叹，为能绘画的模型叫好。.....问题的核心也许正是在于：我们误解了智能的本质。智能... 2025-05-17 17:09:24 人工智能 建模 认知科学",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -817,11 +731,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2026最新字节大模型岗面经汇总(多平台整理)",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -846,11 +756,7 @@
       "大模型",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节大模型面试高频Coding题top10（2026） 秃头续命 04-23 925",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -905,11 +811,7 @@
       "大模型",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯混元大模型面试，强度直接拉满了... AI大模型-Lino 2025-06-13 10",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -934,11 +836,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2026最新字节大模型岗面经汇总(多平台整理)",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -963,11 +861,7 @@
       "多模态",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：多模态大模型面试题解析（基础篇更新中）",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -992,11 +886,7 @@
       "多模态",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：多模态大模型面试题",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -1021,11 +911,7 @@
       "多模态",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：多模态大模型面试技巧",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -1050,11 +936,7 @@
       "多模态",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：多模态大模型面试经验",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -1079,11 +961,7 @@
       "多模态",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：拼多多 多模态大模型算法工程师 面试",
     "prepTips": "",
     "createdAt": 1781322502,
@@ -1112,8 +990,6 @@
       "面试"
     ],
     "questions": [
-      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
-      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
       "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
       "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？"
     ],
@@ -1141,10 +1017,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：具身智能 & VLA 面试题库",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1169,12 +1042,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：具身智能算法工程师面经【300题版】 Finalchemist：在需要精确力控的任务中各有什么局限？ 14. 如何设计VLA架构来处理多摄像头输入的时空对齐问题？ 15. VLA...阅读全文​ ​ 赞同 30​ ​ 2 条评论 03-14",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1199,10 +1067,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA技术面高频面经及答案汇总 具身智能AI就业咨询 04-30 130",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1227,10 +1092,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA面试经验介绍（小鸡毛限定版） 小鸡毛的具身之旅 04-19 135",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1254,10 +1116,7 @@
       "VLA",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA八股文 布朗先生 03-13 269",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1282,10 +1141,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA技术面高频面经及答案汇总 具身智能AI就业咨询 04-30 130",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1310,10 +1166,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：具身智能VLA面经分享",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1339,10 +1192,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：继续来分享下最近的面经~欢迎友好讨论，信息共享 1.实习拷打 2.了解大模型吗讲一讲RNNLSTMTransform的区别各自特点Transform计算方式 3.现在主流的模型架构了解多少你们具身智能公司...VLA之类的都了解吗展开讲讲 4.讲 ... 查看更多",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1367,10 +1217,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：基础认知与 VLA 框架(一)",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1395,10 +1242,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：经典 VLA 模型与动作生成范式(二)",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1422,12 +1266,7 @@
       "VLA",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：具身VLA后训练：TeleAI提出潜空间引导的VLA跨本体泛化方法转载 中国电信人工智能研究院(TeleAl)具身智能团队提出了一种“对齐引导泛化”（AlignthenSteer,ATE）的VLA跨本体泛化框架，破解了VLA后训练难题。 2025-09-09 09:13:00 AI 模型 数据",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1451,10 +1290,7 @@
       "VLA",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA 面试八股文学习 动作空间设计 12 昨天 14:25 23",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1478,10 +1314,7 @@
       "VLA",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA 面试八股文学习 动作空间设计 12 昨天 14:25 23",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1535,11 +1368,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：百度多模态大模型日常实习面经",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1565,11 +1394,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：字节多模态大模型面经一面 momo：最长公共子序列 二面 1.自我介绍 2.拷打项目(多模态是如何训练的?如何将prompt和微调结合?怎么从特别多的prompt验证...阅读全文​ ​ 赞同 306​ ​ 17 条评论 01-24",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1594,10 +1419,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：腾讯-光子工作室群-客户端开发（具身智能方向）一面面经",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1623,11 +1445,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：二面面经✅字节跳动多模态大模型 清华代码熊AI学院 03-19 53",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1653,11 +1471,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节跳动 抖音电商多模态大模型面经 長長 03-19 193",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1683,11 +1497,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：小鹏汽车多模态大模型算法面经 momo 2025-12-05 96",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1713,11 +1523,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节（剪映）多模态大模型日常实习面经 向北向北 04-10 193",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1742,11 +1548,7 @@
       "大模型",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：快手多模态大模型三面全过程 大模型-瓦力 2025-09-05 189",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1772,10 +1574,7 @@
       "具身",
       "机器人"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：普渡机器人具身VLA面经 今天毕业了吗（毕业版） 2025-11-06 125",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1799,10 +1598,7 @@
       "VLA",
       "面试"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试题：简述正向运动学与逆 一面通关题库 8小时前 5",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1826,10 +1622,7 @@
       "面试",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：2026 | 8家具身智能公司面试经验 干掉人类（实习上岸版） 04-12 403",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1852,10 +1645,7 @@
       "小红书",
       "VLA"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA 实习八股指南 (2) Zxx 05-17 222",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1881,11 +1671,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：字节跳动抖音电商多模态大模型面经",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1910,11 +1696,7 @@
       "大模型",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：字节实习 多模态大模型算法一面 55m",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1939,11 +1721,7 @@
       "大模型",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：淘天多模态大模型 搜推事业部春招一面",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1968,10 +1746,7 @@
       "面经",
       "具身"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：腾讯实习-光子工作室群-客户端开发（具身智能方向）一面+二面+HR面面经 已oc",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -1995,10 +1770,7 @@
       "具身",
       "机器人"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：302 0 01:07:21 2026睿抗-CAIM-AGI具身智能服务机器人-一步步拆解智慧养老组+智能助盲组任务真机演示+赛题拆解 工创汇创新加速器 · 05-31",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2025,12 +1797,7 @@
       "面经",
       "DeepSpeed"
     ],
-    "questions": [
-      "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
-      "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
-      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
-      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2056,11 +1823,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：阿里云智能多模态大模型岗三面面经",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2087,11 +1850,7 @@
       "面经",
       "淘天"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：阿里淘天多模态大模型面经分享",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2118,11 +1877,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【AIGC面试面经第七期】多模态大模型Qwen-Vl系列面试问题汇总",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2148,11 +1903,7 @@
       "LLM",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：字节跳动技术团队 1年前 LLM 【Paper Reading】多模态大模型Cambrain-1理解 同时也交待了paper & 做好MLLM要关注的6大问题问题讨论LLMLLM是MLLM模型的基础，LLM可以基于prompt和visual encoder的输出，完成复杂的多模态任务。近期有很多工作是通过强化LLM，进而优化MLLM的性能。但是这也... 7",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2176,11 +1927,7 @@
       "大模型",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：多模态大模型 架构 多模态创作 目录导读背景方法实验局限性总结论文链接：https:arxiv.orgpdf2212.08045.pdf代码链接：https:github.comgoogleresearchbigvision论文标题：ImageandLanguageUnderstandingfromPixelsOnly导读这篇论文讨论了一种称为CLIPPixelsOnly（CL 2025-06-23 19:43:02 多模态大模型 架构 transformer 深度学习 计算机视觉 模态",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2204,11 +1951,7 @@
       "大模型",
       "多模态"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：AIGC 多模态大模型 AIGC多模态大模型的描述在当前的人工智能技术背景下，AIGC（AIGeneratedContent）多模态大模型正在成为一种热门趋势。.....这类模型的目标是通过整合文本、图像、音频等多种信息形式，为用户生成高质量的内容。然而，构建这样的模型面临多种挑战，特别是在数据融合、模型训练和资源调度等方面。.....本博文将详细记录我在解决“AIGC多模态大模型”问题过程中的思考和... 2026-01-22 07:16:53 模态 数据预处理 python",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2235,12 +1978,7 @@
       "机器人",
       "自动驾驶"
     ],
-    "questions": [
-      "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-      "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：火山引擎具身智能闭门研讨会：大模型驱动具身智能产业新未来转载 近日，由火山引擎主办、NVIDIA作为特别合作方的具身智能行业闭门研讨会在上海成功举行。.....本次研讨会以\"创变·智启具身\"为主题，聚焦大模型驱动下的具身智能产业发展新机遇，吸引了来自智能制造、自动驾驶、服务机器人等领域的50余位企业高管、技术专家和产业投资人参会，共同探讨物理AI时代的技术演进路径与商业落地策略 2025-07-29 17:53:19",
     "prepTips": "",
     "createdAt": 1780755744,
@@ -2494,9 +2232,7 @@
       "视觉语言对齐"
     ],
     "questions": [
-      "视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
+      "视觉 encoder 输出如何对齐到 LLM token 空间，Linear projector、Q-Former 和 cross-attention adapter 有什么取舍？"
     ],
     "content": "知乎搜索结果中的字节多模态一面候选，适合补齐视觉语言模型结构和项目追问。",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
@@ -2523,8 +2259,6 @@
       "面经"
     ],
     "questions": [
-      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
       "对齐训练如何评估 helpfulness、harmlessness、truthfulness 和复杂任务通过率？"
     ],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2026最新字节大模型岗面经汇总(多平台整理) PolarisT：包括数据，怎么训练奖励模型，每个模型的损失什么样子的？ PPO 的奖励函数设计对最终模型表现有什么影响？ PPO...阅读全文​ ​ 赞同 31​ ​ 5 条评论 04-19",
@@ -2551,11 +2285,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节飞书大模型算法面经 汤圆脑袋 05-09 169",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2580,11 +2310,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节大模型算法实习面经 leek 1小时前 1",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2612,11 +2338,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 微信公众号搜狗 搜索到的近期面经候选。摘要：【清华团队】字节多模态大模型面经一面 为什么3.大模型结构有哪些变化4.你认为训LLM最大的困难是什么5.场景题6.反问字节面试效率挺高的,基本上三天左右就会收到面试结... 古希腊掌管代码的神2026-4-1",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2642,11 +2364,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 微信公众号搜狗 搜索到的近期面经候选。摘要：终于:字节跳动大模型开发面经!强度拉满了 终于:字节跳动大模型开发面经!强度拉满了#大模型面经 AI大模型面试资料 打包好了领取方式1. 点赞+关注2. 私信 【 大模型 】 即可... 程序员说2026-3-12",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2671,11 +2389,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：美团大模型实习面经",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2699,11 +2413,7 @@
       "字节",
       "大模型"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：字节大模型算法实习一二面",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2729,11 +2439,7 @@
       "多模态",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：小红书多模态大模型日常实习面经",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2758,11 +2464,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：阿里夸克-校招大模型面经分享",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2787,11 +2489,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：大模型面经 - 腾讯混元",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2816,11 +2514,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：腾讯大模型算法日常实习面经",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2845,11 +2539,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：算法面经：百度大模型一二面",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2874,11 +2564,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：2025 字节大模型算法面经",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2902,11 +2588,7 @@
       "大模型",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：昨天面试官问我：一个 Prompt 进入大模型后，内部到底发生了什么？",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2931,11 +2613,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：算法面经：美团大模型日常实习",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2960,11 +2638,7 @@
       "大模型",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：快手大模型算法岗面试，问的巨细。。。",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -2990,8 +2664,6 @@
       "面经"
     ],
     "questions": [
-      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
       "座舱多模态大模型如何融合语音、视觉、车控状态和用户上下文，并保证安全边界？"
     ],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：蔚来大模型算法面经 汤圆脑袋 2025-09-03 235",
@@ -3017,11 +2689,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-      "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
-      "座舱多模态大模型如何融合语音、视觉、车控状态和用户上下文，并保证安全边界？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：赛力斯座舱大模型算法面经 皓明 2025-06-10 13",
     "prepTips": "重点准备 BEV/occupancy、数据闭环、长尾场景挖掘、仿真评测和座舱多模态安全。",
     "createdAt": 1780673886,
@@ -3045,11 +2713,7 @@
       "大模型",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：AI大模型面试实战 · 7小时前",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3074,11 +2738,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2026年AI大模型岗面试面经｜常见面试题130道",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3104,11 +2764,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试面经｜入职字节大模型岗面试分享（附答案），最后提醒一下大模型面试肚子里没墨水的人",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3133,11 +2789,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【2026大模型算法社招面经】大模型算法工程师面试通关秘籍：项目经验+技术问答+手撕代码全攻略（建议收藏）",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3162,11 +2814,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：字节大模型面经",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3191,11 +2839,7 @@
       "大模型",
       "面经"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面经 - 腾讯混元",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3222,11 +2866,7 @@
       "面经",
       "面试"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：居然JuRan 9月前 人工智能 阿里云多模态大模型岗三面面经 阿里云智能多模态大模型岗三面面经（详细问题+感受）最近面试了 阿里云智能集团 - 多模态大模型岗位，三轮技术面，整体体验还不错。问题整体偏常规，但对项目的追问比较细致。这里整理一下完整面经，供准备类似岗...",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780673886,
@@ -3253,8 +2893,6 @@
       "论文追问"
     ],
     "questions": [
-      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
-      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
       "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？"
     ],
     "content": "已登录脉脉搜索结果中出现的百度 AIDU 面经摘要，显示面试会深入项目、论文和模型基础。",
@@ -3282,11 +2920,7 @@
       "LLM评估",
       "多模态推荐"
     ],
-    "questions": [
-      "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
-      "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-      "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？"
-    ],
+    "questions": [],
     "content": "脉脉搜索结果中的快手推荐大模型三面，覆盖数据流程、合成数据、LLM 评估和推荐系统结合 LLM。",
     "prepTips": "重点准备视觉编码器、projector/Q-Former、图文/视频指令数据、多模态评估和幻觉控制。",
     "createdAt": 1780672728,
@@ -3313,7 +2947,6 @@
       "分布式训练"
     ],
     "questions": [
-      "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
       "大模型训练中显存占用如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
       "混合精度、gradient checkpointing、FlashAttention 和通信重叠如何影响吞吐与稳定性？"
     ],
@@ -3344,7 +2977,6 @@
       "多模态"
     ],
     "questions": [
-      "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
       "视频模型如何建模动作、因果关系、事件边界和跨镜头一致性？",
       "视频问答/视频生成如何评估时序一致性、物理合理性、身份保持和指令遵循？"
     ],
@@ -3373,11 +3005,7 @@
       "LayerNorm",
       "Softmax"
     ],
-    "questions": [
-      "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
-      "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
-      "线上推理如何权衡首 token 延迟、吞吐、显存、上下文长度和服务稳定性？"
-    ],
+    "questions": [],
     "content": "知乎搜索结果显示该题库覆盖大量高频考点，可作为基础题库入口。",
     "prepTips": "重点准备 KV cache、PagedAttention、continuous batching、量化压缩和线上延迟吞吐权衡。",
     "createdAt": 1780672728,
@@ -3404,11 +3032,7 @@
       "DPO",
       "强化学习"
     ],
-    "questions": [
-      "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-      "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
-      "对齐训练如何评估 helpfulness、harmlessness、truthfulness 和复杂任务通过率？"
-    ],
+    "questions": [],
     "content": "该入口聚焦 LLM 与强化学习面试问题，适合作为对齐训练专项复习。",
     "prepTips": "重点准备 RLHF/DPO/GRPO/PPO、reward model、偏好数据构造和对齐评估指标。",
     "createdAt": 1780672728,

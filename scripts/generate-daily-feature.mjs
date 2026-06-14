@@ -206,6 +206,12 @@ function numberedList(items) {
 
 function answerForQuestion(question) {
   const q = String(question || "");
+  if (/action\s*token|diffusion\s*policy|连续动作|动作回归|动作表示/i.test(q)) {
+    return "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。";
+  }
+  if (/遥操作|时间同步|轨迹切分|失败样本|机器人数据|具身数据/i.test(q)) {
+    return "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。";
+  }
   if (/DeepSpeed|ZeRO|Megatron|张量并行|流水并行|数据并行/i.test(q)) {
     return "ZeRO 主要切分优化器状态、梯度和参数，解决单卡显存放不下的问题；张量并行把单层矩阵计算拆到多卡，解决单层过宽；流水并行把不同层放到不同卡，解决层数很深；数据并行复制模型、切 batch，提升吞吐但显存冗余高。回答时要补充通信代价：数据并行看 all-reduce，张量并行看层内通信，流水并行看 bubble 和 micro-batch 调度。";
   }
@@ -232,6 +238,12 @@ function answerForQuestion(question) {
 
 function expansionForQuestion(question) {
   const q = String(question || "");
+  if (/action\s*token|diffusion\s*policy|连续动作|动作回归|动作表示/i.test(q)) {
+    return "面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。";
+  }
+  if (/遥操作|时间同步|轨迹切分|失败样本|机器人数据|具身数据/i.test(q)) {
+    return "面试展开时，可以按 episode 数据结构讲清楚：每条样本包含初始观察、语言指令、观测序列、动作序列、终止状态和成功/失败标签。相机 30Hz、机械臂状态 200Hz 时，常以图像帧为主时间轴，取最近状态或插值对齐动作。切分时要把失败、重试、人工接管分开标注，不能把失败后重试成功的长轨迹混成一条成功样本。最后强调质检：时间戳错乱、丢帧、相机动作错位、遥操作抖动和重复空操作都要过滤。";
+  }
   if (/DeepSpeed|ZeRO|Megatron|张量并行|流水并行|数据并行/i.test(q)) {
     return "面试展开时，可以按“并行对象”组织：数据并行切 batch，张量并行切单层计算，流水并行切层，ZeRO 切训练状态。然后补一句真实系统通常是混合并行，不是单选题。最后给出权衡：显存省了多少、通信增加多少、吞吐是否被 bubble 或 all-reduce 拖慢。";
   }

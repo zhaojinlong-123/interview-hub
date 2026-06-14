@@ -49,8 +49,19 @@ function listFromSection(markdown, title, limit = 4) {
   const raw = markdown.match(new RegExp(`^##\\s+${title}\\s*$([\\s\\S]*?)(?=^##\\s+|\\Z)`, "m"))?.[1] || "";
   return raw
     .split(/\r?\n/)
-    .map((line) => line.replace(/^[-*]\s+/, "").trim())
+    .map((line) => line.replace(/^[-*]\s+/, "").replace(/^\d+[.、)]\s*/, "").trim())
     .filter(Boolean)
+    .slice(0, limit);
+}
+
+function questionsFromMarkdown(markdown, limit = 4) {
+  return [
+    ...listFromSection(markdown, "面试题目", limit),
+    ...listFromSection(markdown, "核心考点速记", limit),
+    ...listFromSection(markdown, "核心考点", limit),
+  ]
+    .filter(Boolean)
+    .filter((item, index, items) => items.indexOf(item) === index)
     .slice(0, limit);
 }
 
@@ -218,9 +229,11 @@ function buildImageCards(payload, questions, qaBlocks) {
 }
 
 function buildXhsPayload(feature, post, markdown) {
-  const questions = Array.isArray(post?.questions) && post.questions.length
+  const markdownQuestions = questionsFromMarkdown(markdown, 4);
+  const postQuestions = Array.isArray(post?.questions) && post.questions.length
     ? post.questions.slice(0, 4)
-    : listFromSection(markdown, "核心考点", 4);
+    : [];
+  const questions = markdownQuestions.length ? markdownQuestions : postQuestions;
   const detailedAnalysis = section(markdown, "详细解答与分析")
     || section(markdown, "今日结论")
     || section(markdown, "一句话总结");
@@ -647,6 +660,35 @@ async function updateFeature(featureId, patch) {
   }
 }
 
+function assertPayloadAlignment(payload) {
+  const robotTitle = "\u673a\u5668\u4eba\u6570\u636e";
+  const genericVisionSignals = [
+    "\u89c6\u89c9 encoder",
+    "Q-Former",
+    "Linear projector",
+    "cross-attention",
+    "VLM \u6570\u636e\u6d41",
+  ];
+  const genericDataSignals = [
+    "\u56fe\u6587/\u89c6\u9891\u6307\u4ee4",
+    "caption",
+    "OCR \u6cc4\u6f0f",
+  ];
+
+  for (const card of payload.imageCards || []) {
+    const title = String(card.title || "");
+    const body = String(card.body || "");
+    if (title.includes("action token") && title.includes("diffusion policy")) {
+      const hit = genericVisionSignals.find((signal) => body.includes(signal));
+      if (hit) throw new Error(`Answer alignment check failed: VLA action card contains ${hit}`);
+    }
+    if (title.includes(robotTitle)) {
+      const hit = genericDataSignals.find((signal) => body.includes(signal));
+      if (hit) throw new Error(`Answer alignment check failed: robot data card contains ${hit}`);
+    }
+  }
+}
+
 function commitAndPush() {
   if (!SHOULD_PUSH) return;
   execFileSync("git", ["-c", "safe.directory=E:/workshop/interview-hub", "add", "data/daily-features.json", "data/publish-queue.json", "content/xiaohongshu-assets"], { cwd: ROOT, stdio: "inherit" });
@@ -673,7 +715,8 @@ async function main() {
   const articlePath = path.join(ROOT, feature.articlePath || "");
   const markdown = await fs.readFile(articlePath, "utf8");
   const payload = buildXhsPayload(feature, post, markdown);
-  const duplicate = await findDuplicatePublished(payload);
+  assertPayloadAlignment(payload);
+  const duplicate = SHOULD_RENDER_COVER_ONLY ? null : await findDuplicatePublished(payload);
   if (duplicate) {
     const reason = `疑似重复：已存在 ${duplicate.title || duplicate.id}`;
     await updateQueue(payload, "skipped_duplicate", reason, duplicate.publishUrl || "");

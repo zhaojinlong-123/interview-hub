@@ -35,21 +35,21 @@
         "kind": "answer",
         "kicker": "详细解答 1-1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 1-2",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "-> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。",
+        "body": "面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图文不匹配和训练集污染评测集。",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -59,12 +59,13 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T02:34:23.508Z"
+    "updatedAt": "2026-06-14T15:40:54.481Z"
   },
   {
     "id": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -205,14 +206,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -221,19 +222,21 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-eeee8e7e0263/06-answer.png"
     ],
     "status": "manual_required",
     "reason": "已点击发布，但未检测到成功标记，请人工确认",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-06-13T04:09:11.076Z"
+    "updatedAt": "2026-06-14T15:40:54.483Z"
   },
   {
     "id": "xhs-daily-2026-06-13-d8f0889f10e1",
     "title": "蔚来VLA具身智能题目精讲",
     "coverTitle": "蔚来面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：蔚来｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n一句话答案\n视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、\n\n面试展开\n面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector -> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。\n\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3Gl\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #蔚来 #大模型 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
+    "body": "每日精选：蔚来｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3Gl\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #蔚来 #大模型 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search",
@@ -260,14 +263,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
@@ -284,12 +287,15 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/08-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:06:14.233Z"
+    "updatedAt": "2026-06-14T15:40:54.483Z"
   },
   {
     "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
@@ -323,14 +329,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -339,12 +345,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d6e5e8fb2a41/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:08:29.373Z"
+    "updatedAt": "2026-06-14T15:40:54.483Z"
   },
   {
     "id": "xhs-daily-2026-06-13-c026b29d4659",
@@ -402,12 +410,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-c026b29d4659/07-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:08:06.907Z"
+    "updatedAt": "2026-06-14T15:40:54.483Z"
   },
   {
     "id": "xhs-daily-2026-06-13-acef07a226aa",
@@ -441,14 +451,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -457,12 +467,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-acef07a226aa/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:09:33.638Z"
+    "updatedAt": "2026-06-14T15:40:54.484Z"
   },
   {
     "id": "xhs-daily-2026-06-13-a866a4919061",
@@ -496,14 +508,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
@@ -520,12 +532,15 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-a866a4919061/08-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:06:36.550Z"
+    "updatedAt": "2026-06-14T15:40:54.484Z"
   },
   {
     "id": "xhs-daily-2026-06-13-9d3c283ef28d",
@@ -583,12 +598,17 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/08-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/09-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-9d3c283ef28d/10-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T03:51:03.907Z"
+    "updatedAt": "2026-06-14T15:40:54.484Z"
   },
   {
     "id": "xhs-daily-2026-06-13-8d384a7c194b",
@@ -646,33 +666,38 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/08-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/09-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-8d384a7c194b/10-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:07:21.718Z"
+    "updatedAt": "2026-06-14T15:40:54.484Z"
   },
   {
     "id": "xhs-daily-2026-06-13-2d55b23ddce6",
-    "title": "字节VLA具身智能题目精讲",
+    "title": "字节VLA/机器人动作题目精讲",
     "coverTitle": "字节面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：字节 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-13，xiaohongshu.com\n#小红书 #字节 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
+    "body": "每日精选：字节 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：小红书，2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #字节 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-2d55b23ddce6.md",
     "featureId": "daily-2026-06-13-2d55b23ddce6",
     "postId": "auto-20260613-21818fae62dc",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/01-cover.png",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6-cover-v2.png",
     "imageCards": [
       {
         "kind": "cover",
-        "kicker": "每日精选",
-        "title": "字节面试题精讲",
-        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-        "footer": "Interview Hub"
+        "kicker": "本篇速览",
+        "title": "字节｜VLA / 具身智能",
+        "body": "公司：字节\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+        "footer": "Interview Hub · 面试题精讲"
       },
       {
         "kind": "questions",
@@ -683,37 +708,56 @@
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 1",
+        "kicker": "详细解答 1-1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 2",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2-1",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2-2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "面试展开时，可以按 episode 数据结构讲清楚：每条样本包含初始观察、语言指令、观测序列、动作序列、终止状态和成功/失败标签。相机 30Hz、机械臂状态 200Hz 时，常以图像帧为主时间轴，取最近状态或插值对齐动作。切分时要把失败、重试、人工接管分开标注，不能把失败后重试成功的长轨迹混成一条成功样本。最后强调质检：时间戳错乱、丢帧、相机动作错位、遥操作抖动和重复空操作都要过滤。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
-    "createdAt": "2026-06-13T04:07:21.923Z",
+    "createdAt": "2026-06-14T15:28:59.219Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-2d55b23ddce6/06-answer.png"
     ],
     "status": "published",
-    "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:07:44.281Z"
+    "updatedAt": "2026-06-14T15:35:35.081Z",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "topic": "VLA / 机器人动作"
   },
   {
     "id": "xhs-daily-2026-06-13-176a8d789a4e",
     "title": "VLA具身智能题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：综合｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n一句话答案\n视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、\n\n面试展开\n面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector -> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。\n\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGN\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "body": "每日精选：综合｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGN\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo%3D&xsec_source=pc_search",
@@ -740,14 +784,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -756,12 +800,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:10:24.429Z"
+    "updatedAt": "2026-06-14T15:40:54.485Z"
   },
   {
     "id": "xhs-daily-2026-06-13-08551c35562c",
@@ -795,14 +841,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
@@ -819,12 +865,15 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-13-08551c35562c/08-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:06:59.155Z"
+    "updatedAt": "2026-06-14T15:40:54.485Z"
   },
   {
     "id": "xhs-daily-2026-06-12-362a59bc5046",
@@ -882,12 +931,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/07-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:14:47.852Z"
+    "updatedAt": "2026-06-14T15:40:54.485Z"
   },
   {
     "id": "xhs-daily-2026-06-11-f733da88ddaa",
@@ -921,14 +972,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -937,12 +988,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-11-f733da88ddaa/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:15:11.309Z"
+    "updatedAt": "2026-06-14T15:40:54.485Z"
   },
   {
     "id": "xhs-daily-2026-06-10-d4b25fa7e460",
@@ -976,14 +1029,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -992,12 +1045,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-10-d4b25fa7e460/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:15:33.646Z"
+    "updatedAt": "2026-06-14T15:40:54.485Z"
   },
   {
     "id": "xhs-daily-2026-06-09-bfb99c10afae",
@@ -1031,14 +1086,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
@@ -1047,12 +1102,14 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/04-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-09-bfb99c10afae/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-13T04:15:56.102Z"
+    "updatedAt": "2026-06-14T15:40:54.486Z"
   },
   {
     "id": "xhs-daily-2026-06-08-da7740600601",
@@ -1086,14 +1143,14 @@
         "kind": "answer",
         "kicker": "详细解答 1",
         "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
         "kind": "answer",
         "kicker": "详细解答 2",
         "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       },
       {
@@ -1110,12 +1167,15 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-08-da7740600601/08-answer.png"
     ],
     "status": "manual_required",
     "reason": "已点击发布，但未检测到成功标记，请人工确认",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-06-13T04:17:09.102Z"
+    "updatedAt": "2026-06-14T15:40:54.486Z"
   },
   {
     "id": "xhs-daily-2026-06-07-f819e557a306",
@@ -1133,14 +1193,17 @@
     "status": "published",
     "reason": "已按图卡模式提交小红书发布，正文保留短导读和引用",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-07T04:10:00.000Z",
+    "updatedAt": "2026-06-14T15:40:54.486Z",
     "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/01-cover.png",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/05-answer.png"
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/05-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/06-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/07-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-07-f819e557a306/08-answer.png"
     ]
   },
   {
@@ -1157,9 +1220,16 @@
     "status": "published",
     "reason": "已自动上传封面并提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-06T15:29:23.094Z",
+    "updatedAt": "2026-06-14T15:40:54.486Z",
     "coverTitle": "字节跳动面试题精讲",
     "coverSubtitle": "多模态大模型 / 视觉语言对齐 高频题",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989-cover-v2.png"
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/01-cover.png",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-06-c7fca9e91989/05-answer.png"
+    ]
   }
 ]

@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-06-14-ef7ca72d79bc",
+    "date": "2026-06-14",
+    "postId": "auto-20260613-ce5f69daa751",
+    "title": "知乎：具身智能算法工程师面经【300题版】 Finalchemist：VLA与多模态策略（Vision",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "稀缺方向 VLA / 具身智能 / 多模态 +12",
+      "高频问题 2 个 +10",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20%E9%9D%A2%E7%BB%8F",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-13",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-14-ef7ca72d79bc.md",
+    "target": "xiaohongshu",
+    "publishStatus": "draft_ready",
+    "autoPublish": true
+  },
+  {
     "id": "daily-2026-06-13-176a8d789a4e",
     "date": "2026-06-13",
     "postId": "auto-20260613-9d9a46d8887a",

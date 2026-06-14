@@ -1,5 +1,32 @@
 [
   {
+    "id": "daily-2026-06-14-8ded06a9a5b9",
+    "date": "2026-06-14",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260614-ea039a63cf1d",
+    "title": "小红书：字节训练框架推理优化题目精讲",
+    "company": "字节",
+    "direction": "训练框架 / 推理优化",
+    "score": 85,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 训练框架 / 推理优化 +12",
+      "大厂/重点机构 +14",
+      "稀缺方向 训练框架 / 推理优化 +8",
+      "高频问题 6 个 +15",
+      "有来源链接 +6",
+      "困难题/高压面 +8"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd39c000000001503c862?xsec_token=ABph78W1r_ZHk8bqDtoizWXIM5-_ErHrykT5k6uiUMg5Y%3D&xsec_source=pc_search",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-14",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-14-8ded06a9a5b9.md",
+    "target": "xiaohongshu",
+    "publishStatus": "draft_ready",
+    "autoPublish": true
+  },
+  {
     "id": "daily-2026-06-14-ef7ca72d79bc",
     "date": "2026-06-14",
     "postId": "auto-20260613-ce5f69daa751",

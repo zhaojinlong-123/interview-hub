@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-06-14T16:30:17.318Z",
+  "policy": {
+    "answerAlignment": "所有小红书图卡必须先按题目生成完整回答，再渲染图片；发布前审计发现 VLA/机器人等题答错配会阻断发布。",
+    "sourceAlignment": "帖子正文必须包含来源平台和原文链接；小红书 search_result 链接需要在登录态浏览器中核验是否能打开到对应公司和题目。",
+    "duplicateHandling": "同一核心题目只保留高浏览或高互动帖子；低浏览重复帖不删除，改为编辑替换成未发布过的新题。",
+    "futureSelection": "每日精选生成前读取 data/published-question-registry.json，已发布题目不再进入候选。"
+  },
+  "keep": [
+    {
+      "title": "字节VLA具身智能题目精讲",
+      "date": "2026-06-13 12:07",
+      "reason": "当前 VLA 重复题中浏览和互动最高，保留作为主帖。",
+      "views": 629,
+      "likes": 30,
+      "collects": 60
+    },
+    {
+      "title": "字节训练框架推理优化题目精讲",
+      "date": "2026-06-13 11:50",
+      "reason": "训练框架/推理优化主题互动较高，暂保留。",
+      "views": 100,
+      "likes": 9,
+      "collects": 8
+    }
+  ],
+  "replaceLowViewDuplicates": [
+    {
+      "title": "VLA/机器人动作题目精讲",
+      "date": "2026-06-14 10:34",
+      "views": 8,
+      "currentProblem": "与高浏览 VLA 主帖重复 action token / 机器人数据题。",
+      "targetDirection": "视频理解 / 视觉理解",
+      "targetQuestion": "视频理解中如何建模时序关系、事件边界和跨帧目标一致性？"
+    },
+    {
+      "title": "VLA具身智能题目精讲",
+      "date": "2026-06-13 12:10",
+      "views": 73,
+      "currentProblem": "与高浏览 VLA 主帖重复 action token / 机器人数据题。",
+      "targetDirection": "世界模型",
+      "targetQuestion": "世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？"
+    },
+    {
+      "title": "蔚来VLA具身智能题目精讲",
+      "date": "2026-06-13 12:06",
+      "views": 81,
+      "currentProblem": "与其他蔚来/VLA 帖重复自动驾驶世界模型和数据闭环题。",
+      "targetDirection": "自动驾驶数据闭环",
+      "targetQuestion": "自动驾驶长尾场景如何做挖掘、聚类、自动标注、仿真回放和线上回流？"
+    },
+    {
+      "title": "字节多模态大模型题目精讲",
+      "date": "2026-06-13 12:14",
+      "views": 11,
+      "currentProblem": "与多模态基础题可能重复，且浏览较低。",
+      "targetDirection": "多模态大模型",
+      "targetQuestion": "多图、多轮视觉问答中如何处理上下文记忆、图像引用和幻觉抑制？"
+    }
+  ],
+  "sourceCheckRequired": [
+    "所有 sourceUrl 包含 xiaohongshu.com/search_result 的记录，需要登录态核验能否直接打开到对应帖子，并确认标题/公司/题目一致。",
+    "如果 search_result 链接跳安全限制或搜索页，优先替换为能直接打开的帖子链接；拿不到直接链接时，在正文说明来源为平台搜索候选并保留原平台检索链接。"
+  ]
+}

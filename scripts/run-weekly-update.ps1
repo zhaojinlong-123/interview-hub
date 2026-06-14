@@ -28,7 +28,7 @@ try {
   Write-Step "Weekly interview update started"
 
   $env:CHROME_CDP = "http://127.0.0.1:9222"
-  node scripts\update-interviews.mjs 2>&1 | Tee-Object -FilePath $logFile -Append
+  node scripts\update-interviews.mjs --max-new=1000 2>&1 | Tee-Object -FilePath $logFile -Append
   if ($LASTEXITCODE -ne 0) {
     throw "update-interviews exited with code $LASTEXITCODE"
   }

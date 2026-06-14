@@ -12,6 +12,8 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
 const SEARCHES_PER_PLATFORM = Number(process.env.SEARCHES_PER_PLATFORM || 6);
+const maxNewArg = process.argv.find((arg) => arg.startsWith("--max-new="));
+const MAX_NEW_POSTS = Number(maxNewArg?.split("=")[1] || process.env.MAX_NEW_POSTS || 40);
 
 const KEYWORDS = [
   "大模型", "LLM", "VLA", "多模态", "面经", "面试",
@@ -73,6 +75,43 @@ const SEARCH_COMPANY_GROUPS = [
 
 function clean(text) {
   return String(text || "").replace(/\s+/g, " ").trim();
+}
+
+function normalizeQuestionText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[，。！？、；：“”‘’（）()[\]{}<>《》/\\\-_:,.!?;\s]/g, "")
+    .replace(/visionlanguageaction/g, "vla")
+    .replace(/keyvaluecache/g, "kvcache")
+    .trim();
+}
+
+function questionKey(question) {
+  return normalizeQuestionText(question).slice(0, 120);
+}
+
+function existingQuestionKeys(posts) {
+  const keys = new Set();
+  for (const post of posts) {
+    for (const question of post.questions || []) {
+      const key = questionKey(question);
+      if (key) keys.add(key);
+    }
+  }
+  return keys;
+}
+
+function removeRepeatedQuestions(post, usedQuestionKeys) {
+  const freshQuestions = [];
+  const localSeen = new Set();
+  for (const question of post.questions || []) {
+    const key = questionKey(question);
+    if (!key || usedQuestionKeys.has(key) || localSeen.has(key)) continue;
+    localSeen.add(key);
+    usedQuestionKeys.add(key);
+    freshQuestions.push(question);
+  }
+  return { ...post, questions: freshQuestions };
 }
 
 function hash(text) {
@@ -448,8 +487,9 @@ async function main() {
   const candidates = dedupeCandidates(allCandidates)
     .filter((candidate) => rankCandidate(candidate, settings) > 5)
     .sort((a, b) => rankCandidate(b, settings) - rankCandidate(a, settings));
-  const fresh = filterNew(posts, candidates).slice(0, 40);
-  const newPosts = fresh.map(makePost);
+  const fresh = filterNew(posts, candidates).slice(0, MAX_NEW_POSTS);
+  const usedQuestionKeys = existingQuestionKeys(posts);
+  const newPosts = fresh.map(makePost).map((post) => removeRepeatedQuestions(post, usedQuestionKeys));
   const updatedPosts = [...newPosts, ...posts].sort((a, b) => (b.sourceDate || "").localeCompare(a.sourceDate || ""));
   await writePosts(updatedPosts);
 
@@ -461,8 +501,15 @@ async function main() {
     searchQuerySamples: searchQueries.slice(0, 30),
     scannedCandidates: allCandidates.length,
     rankedCandidates: candidates.length,
+    maxNewPosts: MAX_NEW_POSTS,
     added: newPosts.length,
     addedTitles: newPosts.map((post) => post.title),
+    rankedCandidateSamples: candidates.slice(0, 500).map((candidate) => ({
+      platform: candidate.platform,
+      title: candidate.title,
+      url: normalizeUrl(candidate.url),
+      score: rankCandidate(candidate, settings),
+    })),
   };
   await fs.writeFile(path.join(LOG_DIR, `update-${TODAY}.json`), `${JSON.stringify(log, null, 2)}\n`, "utf8");
   console.log(JSON.stringify(log, null, 2));

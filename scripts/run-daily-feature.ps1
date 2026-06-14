@@ -20,24 +20,82 @@ if (-not $mutex.WaitOne(0, $false)) {
   exit 0
 }
 
+function Invoke-LoggedCommand {
+  param(
+    [string]$FilePath,
+    [string[]]$Arguments,
+    [string]$LogFile
+  )
+  $tempLog = Join-Path $logDir ("native-" + [Guid]::NewGuid().ToString("N") + ".log")
+  $previousErrorAction = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = "Continue"
+    & $FilePath @Arguments *> $tempLog
+    $exitCode = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousErrorAction
+  }
+  if (Test-Path $tempLog) {
+    Get-Content -Path $tempLog -Encoding UTF8 -ErrorAction SilentlyContinue |
+      Out-File -FilePath $LogFile -Encoding utf8 -Append
+    Remove-Item -Path $tempLog -Force -ErrorAction SilentlyContinue
+  }
+  return $exitCode
+}
+
 try {
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
   "[$stamp] Daily feature started: slot=$Slot publishTime=$PublishTime" |
     Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
 
-  $generateArgs = @("scripts\generate-daily-feature.mjs", "--slot=$Slot", "--push")
+  $generateArgs = @("scripts\generate-daily-feature.mjs", "--slot=$Slot")
   if ($PublishTime) {
     $generateArgs += "--publish-time=$PublishTime"
   }
 
-  node @generateArgs 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
-  if ($LASTEXITCODE -ne 0) {
-    throw "generate-daily-feature exited with code $LASTEXITCODE"
+  $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile "$logDir\daily-feature-last.log"
+  if ($generateExit -ne 0) {
+    throw "generate-daily-feature exited with code $generateExit"
   }
 
-  node scripts\publish-xiaohongshu.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
-  if ($LASTEXITCODE -ne 0) {
-    throw "publish-xiaohongshu exited with code $LASTEXITCODE"
+  $publishExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\publish-xiaohongshu.mjs") -LogFile "$logDir\daily-feature-last.log"
+  if ($publishExit -ne 0) {
+    throw "publish-xiaohongshu exited with code $publishExit"
+  }
+
+  $today = Get-Date -Format "yyyy-MM-dd"
+  $gitAddExit = Invoke-LoggedCommand -FilePath "git" -Arguments @(
+    "-c", "safe.directory=E:/workshop/interview-hub",
+    "add",
+    "data/daily-features.json",
+    "data/publish-queue.json",
+    "content/xiaohongshu-drafts",
+    "content/xiaohongshu-assets"
+  ) -LogFile "$logDir\daily-feature-last.log"
+  if ($gitAddExit -ne 0) {
+    throw "git add exited with code $gitAddExit"
+  }
+
+  $changes = git -c safe.directory=E:/workshop/interview-hub diff --cached --name-only
+  if ($changes) {
+    $commitExit = Invoke-LoggedCommand -FilePath "git" -Arguments @(
+      "-c", "safe.directory=E:/workshop/interview-hub",
+      "commit",
+      "-m", "Daily Xiaohongshu publish ($today $Slot)"
+    ) -LogFile "$logDir\daily-feature-last.log"
+    if ($commitExit -ne 0) {
+      throw "git commit exited with code $commitExit"
+    }
+
+    $pushExit = Invoke-LoggedCommand -FilePath "git" -Arguments @(
+      "-c", "safe.directory=E:/workshop/interview-hub",
+      "-c", "http.proxy=http://127.0.0.1:10809",
+      "-c", "https.proxy=http://127.0.0.1:10809",
+      "push"
+    ) -LogFile "$logDir\daily-feature-last.log"
+    if ($pushExit -ne 0) {
+      throw "git push exited with code $pushExit"
+    }
   }
 
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"

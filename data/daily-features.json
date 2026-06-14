@@ -22,8 +22,10 @@
     "sourceDate": "2026-06-13",
     "articlePath": "content/xiaohongshu-drafts/2026-06-14-ef7ca72d79bc.md",
     "target": "xiaohongshu",
-    "publishStatus": "draft_ready",
-    "autoPublish": true
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-14T02:34:23.535Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
   },
   {
     "id": "daily-2026-06-13-176a8d789a4e",

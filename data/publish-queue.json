@@ -1,5 +1,72 @@
 [
   {
+    "id": "xhs-daily-2026-06-14-ef7ca72d79bc",
+    "title": "VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-06-13\n原文链接：https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20%E9%9D%A2%E7%BB%8F\n完整回答已拆成图卡，建议按顺序复习。\n#知乎 #LLM #VLA #多模态 #面经 #具身 #综合 #VLA具身智能",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-13",
+    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20%E9%9D%A2%E7%BB%8F",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-14-ef7ca72d79bc.md",
+    "featureId": "daily-2026-06-14-ef7ca72d79bc",
+    "postId": "auto-20260613-ce5f69daa751",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：image/video -> vision encoder -> connector",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+        "body": "-> LLM -> answer/action。再比较 token 数量、训练成本、表达能力和推理延迟。最后落到评估：OCR、grounding、空间关系、幻觉率、多轮一致性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 2",
+        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图文不匹配和训练集污染评测集。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-14T02:33:52.821Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/05-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-14T02:34:23.508Z"
+  },
+  {
     "id": "xhs-daily-2026-06-13-eeee8e7e0263",
     "title": "腾讯VLA具身智能题目精讲",
     "coverTitle": "腾讯面试题精讲",

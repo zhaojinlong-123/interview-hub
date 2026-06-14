@@ -17,8 +17,21 @@ try {
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
   "[$stamp] Daily feature started" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
 
-  node scripts\generate-daily-feature.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+  try {
+    node scripts\generate-daily-feature.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+    if ($LASTEXITCODE -ne 0) {
+      throw "generate-daily-feature exited with code $LASTEXITCODE"
+    }
+  } catch {
+    $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    "[$stamp] Daily feature generation failed, continuing to publish latest draft: $($_.Exception.Message)" |
+      Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+  }
+
   node scripts\publish-xiaohongshu.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+  if ($LASTEXITCODE -ne 0) {
+    throw "publish-xiaohongshu exited with code $LASTEXITCODE"
+  }
 
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
   "[$stamp] Daily feature finished" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append

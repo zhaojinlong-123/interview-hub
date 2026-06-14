@@ -1,3 +1,8 @@
+param(
+  [string]$Slot = "morning",
+  [string]$PublishTime = ""
+)
+
 $ErrorActionPreference = "Stop"
 $OutputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -17,17 +22,17 @@ if (-not $mutex.WaitOne(0, $false)) {
 
 try {
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-  "[$stamp] Daily feature started" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
+  "[$stamp] Daily feature started: slot=$Slot publishTime=$PublishTime" |
+    Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8
 
-  try {
-    node scripts\generate-daily-feature.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
-    if ($LASTEXITCODE -ne 0) {
-      throw "generate-daily-feature exited with code $LASTEXITCODE"
-    }
-  } catch {
-    $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    "[$stamp] Daily feature generation failed, continuing to publish latest draft: $($_.Exception.Message)" |
-      Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+  $generateArgs = @("scripts\generate-daily-feature.mjs", "--slot=$Slot", "--push")
+  if ($PublishTime) {
+    $generateArgs += "--publish-time=$PublishTime"
+  }
+
+  node @generateArgs 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append
+  if ($LASTEXITCODE -ne 0) {
+    throw "generate-daily-feature exited with code $LASTEXITCODE"
   }
 
   node scripts\publish-xiaohongshu.mjs --push 2>&1 | Tee-Object -FilePath "$logDir\daily-feature-last.log" -Append

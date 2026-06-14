@@ -11,6 +11,8 @@ const DRAFT_DIR = path.join(ROOT, "content", "xiaohongshu-drafts");
 const TODAY = new Date().toISOString().slice(0, 10);
 const SHOULD_PUSH = process.argv.includes("--push");
 const SHOULD_DRY_RUN = process.argv.includes("--dry-run");
+const SLOT = process.argv.find((arg) => arg.startsWith("--slot="))?.split("=")[1] || process.env.DAILY_FEATURE_SLOT || "morning";
+const PUBLISH_TIME = process.argv.find((arg) => arg.startsWith("--publish-time="))?.split("=")[1] || process.env.DAILY_FEATURE_PUBLISH_TIME || "";
 
 const STRATEGIC_COMPANIES = [
   "字节", "字节跳动", "阿里", "腾讯", "百度", "快手", "美团", "小红书",
@@ -98,6 +100,10 @@ function titleKey(post) {
     post.direction || post.category,
     post.title,
   ].filter(Boolean).join("|")).slice(0, 120);
+}
+
+function directionKey(post) {
+  return normalizeText(post.direction || post.category || "");
 }
 
 function questionKeysForPost(post) {
@@ -397,6 +403,10 @@ async function main() {
       usedTitleKeys.add(titleKey(historicalPost));
     }
   }
+  const todayUsedDirections = new Set(history
+    .filter((item) => item.date === TODAY && item.slot !== SLOT)
+    .map((item) => normalizeText(item.direction || ""))
+    .filter(Boolean));
   const candidates = posts
     .filter((post) =>
       post.sourceUrl
@@ -404,6 +414,7 @@ async function main() {
       && post.questions.length > 0
       && !usedIds.has(post.id)
       && !usedTitleKeys.has(titleKey(post))
+      && !todayUsedDirections.has(directionKey(post))
       && !/RAG|Agent/i.test(textOf(post))
     )
     .map((post) => freshenPostQuestions(post, usedQuestionKeys))
@@ -425,6 +436,8 @@ async function main() {
   const record = {
     id: `daily-${TODAY}-${hash(winner.post.id)}`,
     date: TODAY,
+    slot: SLOT,
+    publishTime: PUBLISH_TIME,
     postId: winner.post.id,
     title: winner.post.title,
     company: winner.post.company,

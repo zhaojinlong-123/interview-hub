@@ -10,6 +10,7 @@ const FEATURES_FILE = path.join(ROOT, "data", "daily-features.json");
 const DRAFT_DIR = path.join(ROOT, "content", "xiaohongshu-drafts");
 const TODAY = new Date().toISOString().slice(0, 10);
 const SHOULD_PUSH = process.argv.includes("--push");
+const SHOULD_DRY_RUN = process.argv.includes("--dry-run");
 
 const STRATEGIC_COMPANIES = [
   "字节", "字节跳动", "阿里", "腾讯", "百度", "快手", "美团", "小红书",
@@ -57,6 +58,72 @@ function textOf(post) {
     ...(post.tags || []),
     ...(post.questions || []),
   ].filter(Boolean).join(" ");
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[，。！？、；：“”‘’（）()[\]{}<>《》|/\\\-—_:：,.!?;\s]/g, "")
+    .replace(/visionlanguageaction/g, "vla")
+    .replace(/keyvaluecache/g, "kvcache")
+    .replace(/机器人/g, "具身")
+    .trim();
+}
+
+const QUESTION_PATTERNS = [
+  [/action\s*token|diffusion\s*policy|连续动作|动作回归|动作表示/i, "vla_action_representation"],
+  [/遥操作|时间同步|轨迹切分|失败样本|机器人数据|具身数据/i, "robot_data_pipeline"],
+  [/世界模型|occupancy|bev|轨迹预测|仿真闭环|数据闭环/i, "world_model_autodrive"],
+  [/deepspeed|zero|megatron|张量并行|流水并行|数据并行/i, "distributed_training"],
+  [/显存|优化器状态|激活值|gradient\s*checkpoint|checkpointing/i, "training_memory"],
+  [/kv\s*cache|pagedattention|continuous\s*batching|speculative\s*decoding/i, "llm_inference"],
+  [/int4|int8|量化|awq|gptq|lora|蒸馏/i, "compression_finetune"],
+  [/vision\s*encoder|q-former|projector|cross-attention|视觉.*llm|token.*对齐/i, "vlm_connector"],
+  [/grounding|ocr|空间关系|幻觉|多轮/i, "vlm_evaluation"],
+  [/指令微调|数据构造|caption|vqa|负样本|评测集/i, "multimodal_data"],
+];
+
+function questionKey(question) {
+  const raw = String(question || "");
+  const normalized = normalizeText(raw);
+  if (!normalized) return "";
+  const matched = QUESTION_PATTERNS.find(([pattern]) => pattern.test(raw) || pattern.test(normalized));
+  if (matched) return matched[1];
+  return normalized.slice(0, 80);
+}
+
+function titleKey(post) {
+  return normalizeText([
+    post.company,
+    post.direction || post.category,
+    post.title,
+  ].filter(Boolean).join("|")).slice(0, 120);
+}
+
+function questionKeysForPost(post) {
+  return (post.questions || [])
+    .map(questionKey)
+    .filter(Boolean);
+}
+
+function freshenPostQuestions(post, usedQuestionKeys) {
+  const questions = Array.isArray(post.questions) ? post.questions : [];
+  if (!questions.length) return post;
+  const freshQuestions = [];
+  const seen = new Set();
+  for (const question of questions) {
+    const key = questionKey(question);
+    if (!key || usedQuestionKeys.has(key) || seen.has(key)) continue;
+    seen.add(key);
+    freshQuestions.push(question);
+  }
+  if (!freshQuestions.length) return null;
+  if (freshQuestions.length === questions.length) return post;
+  return {
+    ...post,
+    questions: freshQuestions,
+    content: `${post.content || ""} 已过滤历史重复题目，保留本次未精选过的问题。`.trim(),
+  };
 }
 
 function scorePost(post, settings) {
@@ -320,10 +387,23 @@ async function main() {
   const settings = await readJson(SETTINGS_FILE, {});
   const history = await readJson(FEATURES_FILE, []);
   const usedIds = new Set(history.map((item) => item.postId));
-  const candidates = posts.filter((post) => post.sourceUrl && !usedIds.has(post.id) && !/RAG|Agent/i.test(textOf(post)));
+  const postsById = new Map(posts.map((post) => [post.id, post]));
+  const usedQuestionKeys = new Set();
+  const usedTitleKeys = new Set();
+  for (const item of history) {
+    const historicalPost = postsById.get(item.postId);
+    if (historicalPost) {
+      questionKeysForPost(historicalPost).forEach((key) => usedQuestionKeys.add(key));
+      usedTitleKeys.add(titleKey(historicalPost));
+    }
+  }
+  const candidates = posts
+    .filter((post) => post.sourceUrl && !usedIds.has(post.id) && !usedTitleKeys.has(titleKey(post)) && !/RAG|Agent/i.test(textOf(post)))
+    .map((post) => freshenPostQuestions(post, usedQuestionKeys))
+    .filter(Boolean);
 
   if (!candidates.length) {
-    throw new Error("没有可选面经：所有带来源链接的面经都已经精选过。");
+    throw new Error("没有可选面经：所有带来源链接且题目不重复的面经都已经精选过。");
   }
 
   const ranked = candidates
@@ -331,11 +411,9 @@ async function main() {
     .sort((a, b) => b.score - a.score || (b.post.sourceDate || "").localeCompare(a.post.sourceDate || ""));
 
   const winner = ranked[0];
-  await fs.mkdir(DRAFT_DIR, { recursive: true });
   const article = buildArticle(winner.post, winner.score, winner.reasons, settings);
   const fileName = `${TODAY}-${hash(winner.post.id)}.md`;
   const articlePath = path.join(DRAFT_DIR, fileName);
-  await fs.writeFile(articlePath, `${article}\n`, "utf8");
 
   const record = {
     id: `daily-${TODAY}-${hash(winner.post.id)}`,
@@ -354,6 +432,17 @@ async function main() {
     publishStatus: "draft_ready",
     autoPublish: Boolean(settings.autoPublish),
   };
+  if (SHOULD_DRY_RUN) {
+    console.log(JSON.stringify({
+      ...record,
+      dryRun: true,
+      selectedQuestions: winner.post.questions || [],
+      filteredDuplicateQuestionKeys: [...usedQuestionKeys],
+    }, null, 2));
+    return;
+  }
+  await fs.mkdir(DRAFT_DIR, { recursive: true });
+  await fs.writeFile(articlePath, `${article}\n`, "utf8");
   const nextHistory = [record, ...history];
   await writeJson(FEATURES_FILE, nextHistory);
   console.log(JSON.stringify(record, null, 2));

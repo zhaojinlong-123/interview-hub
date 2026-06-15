@@ -1,0 +1,20 @@
+{
+  "id": "compliance-ali-multimodal-20260615",
+  "title": "多模态连接层题目精讲",
+  "onlineTitle": "阿里多模态大模型题目精讲",
+  "body": "每日精选：阿里｜多模态大模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：掘金\n原文链接：https://juejin.cn/post/7546495958554755098\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/05-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-ali-multimodal-20260615/06-answer.png"
+  ],
+  "sourcePlatform": "掘金",
+  "sourceUrl": "https://juejin.cn/post/7546495958554755098",
+  "questions": [
+    "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+    "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？"
+  ]
+}

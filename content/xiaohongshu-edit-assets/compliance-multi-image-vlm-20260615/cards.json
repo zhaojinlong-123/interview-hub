@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "多图多轮视觉问答题目精讲",
+    "body": "公司：综合\n方向：多模态大模型\n题目：多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？\n\n2. VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+    "body": "多图理解不是把几张图简单拼接，而是要让模型知道每张图的身份、顺序和引用关系。输入侧可以给每张图增加 image id、位置标记或时间顺序标记；表示侧使用共享 vision encoder，再通过 cross-attention、多图 memory 或图间关系模块融合；推理侧要显式处理比较、变化检测、跨图指代和多轮上下文。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+    "body": "评估时要单独看跨图实体一致性、图间顺序理解、差异比较、引用定位和多轮追问稳定性，否则模型很容易把不同图片里的对象混在一起。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+    "body": "VLM 幻觉常来自四层：数据侧图文不匹配、caption 模板化、OCR 泄漏或评测集污染；模型侧视觉 token 被过度压缩，LLM 语言先验压过视觉证据；训练侧指令微调偏向迎合用户，缺少拒答和不确定性样本；解码侧温度过高或没有视觉一致性约束。缓解也要分层：数据清洗和困难负样本、区域级 grounding、加入不确定性表达、降低解码温度、要求引用视觉证据，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+    "body": "并用 hallucination rate、grounding accuracy、OCR 准确率和人工 badcase 复测来验证。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-multi-image-vlm-20260615\\06-answer.png"
+  }
+]

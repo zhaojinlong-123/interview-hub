@@ -150,7 +150,7 @@ function answerRisk(question, answer) {
 
 function collectPublishedRegistry(queue) {
   const entries = [];
-  const publishedStatuses = new Set(["published", "manual_required"]);
+  const publishedStatuses = new Set(["published", "source_invalid_after_publish"]);
   for (const record of queue) {
     if (!publishedStatuses.has(record.status)) continue;
     for (const question of extractQuestionsFromCard(record)) {
@@ -234,7 +234,7 @@ function auditQueue(queue) {
   }
 
   for (const [key, list] of byQuestion) {
-    const published = list.filter((item) => ["published", "manual_required"].includes(item.status));
+    const published = list.filter((item) => ["published", "source_invalid_after_publish"].includes(item.status));
     if (published.length > 1) {
       issues.push({ type: "duplicate_published_question", key, records: published });
     }

@@ -1,0 +1,52 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "世界模型规划题目精讲",
+    "body": "公司：综合\n方向：世界模型\n题目：世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-world-model-planning-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？\n\n2. 世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-world-model-planning-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "body": "latent dynamics 决定模型在隐空间里如何预测下一步状态，既要压缩又不能丢掉和控制相关的几何、速度、接触和物体关系。reward model 决定什么轨迹算好，如果 reward 太短视会贪心，太稀疏会让长程规划不稳定。rollout horizon 决定向未来展开多远：短 horizon 稳但容易短视，长 horizon 能看长期收益但误差会累积。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-world-model-planning-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "body": "工程上通常用多步预测损失、latent consistency、不确定性估计和闭环评测约束世界模型，而不是只看生成画面质量。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-world-model-planning-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2",
+    "title": "世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？",
+    "body": "传统链路把感知、预测和规划拆开优化，边界清楚、可解释性强；世界模型试图学习环境随动作和时间变化的统一表示，能做反事实推演和闭环策略搜索。优势是更适合长程交互、仿真 rollout 和数据增强；风险是模型误差沿时间累积，分布外场景可能生成看似合理但错误的未来，规划器还可能利用 reward 漏洞。面试回答要强调安全兜底：不确定性估计、失败检测、真实闭环评测和规则约束缺一不可。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 5,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-world-model-planning-20260615\\05-answer.png"
+  }
+]

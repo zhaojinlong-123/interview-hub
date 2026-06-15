@@ -194,6 +194,26 @@ async function submit(send) {
     return true;
   })()`);
   await sleep(1000);
+  const direct = await evaluate(send, `(() => {
+    const target = document.querySelector("xhs-publish-btn");
+    if (!target) return { ok: false, reason: "submit element not found" };
+    const innerButton = target._app?._container?.querySelector?.("button.ce-btn");
+    if (innerButton) {
+      innerButton.click();
+      return { ok: true, method: "inner-button" };
+    }
+    if (typeof target._onPublish === "function") {
+      target._onPublish();
+      return { ok: true, method: "_onPublish" };
+    }
+    target.dispatchEvent(new CustomEvent("publish", { bubbles: true, composed: true }));
+    return { ok: true, method: "publish-event" };
+  })()`);
+  await sleep(12000);
+  const directState = await evaluate(send, `(() => ({ url: location.href, text: (document.body.innerText || "").slice(0, 1200) }))()`);
+  if (/成功|审核中|已发布|published=true/.test(`${directState.url}\n${directState.text}`)) {
+    return { ok: true, direct, state: directState };
+  }
   const rect = await evaluate(send, `(() => {
     const target = document.querySelector("xhs-publish-btn");
     if (!target) return null;

@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "VLA动作表示题目精讲",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. VLA 系统如何在语言规划、视觉 grounding 和低层控制之间分层？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "body": "action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑和模仿学习数据分布复杂的任务。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "body": "核心取舍是：token 更利于统一建模和长程推理，回归更实时，diffusion 更能表达多峰动作但推理成本更高。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "VLA 系统如何在语言规划、视觉 grounding 和低层控制之间分层？",
+    "body": "VLA 系统通常可以分成三层：语言规划层理解任务目标并拆成子目标；视觉 grounding 层把语言中的对象、位置和状态落到图像或场景表示上；低层控制层把目标转成可执行动作。分层的好处是可解释、可调试，也便于在不同层加入安全约束；风险是层间误差会传递，例如 grounding 错了会导致控制再精准也执行错对象。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "VLA 系统如何在语言规划、视觉 grounding 和低层控制之间分层？",
+    "body": "面试时要讲清楚每层输入输出、失败模式和评估指标：语言成功率、grounding accuracy、动作成功率、碰撞率和接管率。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-openvla-action-20260615\\06-answer.png"
+  }
+]

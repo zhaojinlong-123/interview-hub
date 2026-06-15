@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "具身数据标注题目精讲",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 训练数据中，语言指令、视觉观测和动作轨迹如何组织成可训练样本？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 训练数据中，语言指令、视觉观测和动作轨迹如何组织成可训练样本？\n\n2. 机器人数据为什么要标注成功、失败、接管和终止原因？这些标签分别服务哪些模型能力？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "VLA 训练数据中，语言指令、视觉观测和动作轨迹如何组织成可训练样本？",
+    "body": "VLA 样本通常要把任务语言、视觉观测和动作序列放在同一个时间轴上。语言指令描述目标，视觉观测提供 RGB/RGB-D、腕部相机或多视角上下文，动作轨迹记录末端位姿、关节角、速度、夹爪状态或离散动作 token。训练时可以做行为克隆、动作预测或多步轨迹预测，但核心是保证观测和动作严格对齐：图像帧、机器人本体状态和动作命令要按 timestamp 对齐，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "VLA 训练数据中，语言指令、视觉观测和动作轨迹如何组织成可训练样本？",
+    "body": "不能把失败后的重试轨迹混成一条成功样本。工程上还要保存 episode id、任务阶段、起止时间和采集设备版本，方便后续做去重、质检和失败样本回流。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "机器人数据为什么要标注成功、失败、接管和终止原因？这些标签分别服务哪些模型能力？",
+    "body": "成功/失败/接管/终止原因不是简单统计字段，而是训练闭环的重要监督信号。成功标签用于衡量策略是否真正达成目标；失败标签能训练失败检测、恢复策略和 hard negative；接管标签记录模型在什么状态下不可靠，可用于偏好学习、安全策略和人工接管预测；终止原因区分任务完成、超时、碰撞、传感器异常、用户中断和安全规则触发。没有这些标签，模型只能学到平均动作，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "机器人数据为什么要标注成功、失败、接管和终止原因？这些标签分别服务哪些模型能力？",
+    "body": "难以知道哪些动作危险、哪些失败可恢复，也无法把线上 badcase 精确回流到数据和 reward/critic 训练中。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-embodied-data-20260615\\06-answer.png"
+  }
+]

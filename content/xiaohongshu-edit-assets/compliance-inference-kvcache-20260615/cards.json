@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "推理部署KVCache题目精讲",
+    "body": "公司：综合\n方向：推理部署 / 模型压缩\n题目：KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？\n\n2. INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+    "body": "KV cache 避免每次生成都重复计算历史 token 的 K/V，是自回归推理的基础优化；PagedAttention 像分页内存一样管理 KV cache，减少碎片并提高并发；continuous batching 让不同请求动态进入 batch，降低空等并提高吞吐；speculative decoding 用小模型先草拟、大模型验证，减少平均解码成本。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
+    "body": "面试回答要区分 prefill 和 decode：prefill 更像大矩阵并行计算，decode 更受 KV cache、调度和单 token 延迟影响。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "body": "INT8/INT4 量化降低权重或激活精度，减少显存和带宽压力；GPTQ 偏离线权重量化，适合部署前压缩；AWQ 保护重要通道，通常更关注推理质量；LoRA 合并适合把微调增量合入基座模型，减少线上 adapter 分支；蒸馏适合把大模型能力迁移到小模型，降低成本和延迟。取舍是：量化可能损伤长尾能力，蒸馏依赖 teacher 和数据质量，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "INT8/INT4 量化、AWQ/GPTQ、LoRA 合并和蒸馏分别适合哪些部署场景？",
+    "body": "LoRA 合并后不如多 adapter 灵活。上线前要对核心任务、长上下文、代码数学和安全拒答做回归测试。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-inference-kvcache-20260615\\06-answer.png"
+  }
+]

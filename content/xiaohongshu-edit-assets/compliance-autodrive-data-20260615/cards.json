@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "自动驾驶数据闭环题目精讲",
+    "body": "公司：综合\n方向：自动驾驶 / 世界模型\n题目：自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？\n\n2. 多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+    "body": "自动驾驶数据筛选不是随机抽样，而是围绕高价值片段做闭环。corner case 可以从感知低置信度、预测分歧、规划急刹、规则冲突、罕见天气和异常交通参与者中挖掘；near miss 看 TTC、最小距离、急刹、接管前后轨迹和安全员干预；接管片段要标出接管原因、接管前模型输出、人工修正动作和是否可恢复；",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+    "body": "标注不确定样本来自多标注员分歧、模型 ensemble 分歧、遮挡严重和传感器缺失。最后要聚类去重、人工复核并回流训练。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+    "body": "多传感器对齐要同时处理时间对齐和空间标定。时间上，每路传感器都有 timestamp，常以主相机或融合时间轴为基准，对点云、雷达目标、定位姿态、车速和控制信号做插值或最近邻匹配，高速运动场景还要做运动补偿。空间上，需要外参把不同传感器统一到车体坐标系或世界坐标系，再投影到 BEV 或图像平面。难点包括时钟漂移、丢帧、曝光延迟、外参松动和定位跳变，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+    "body": "必须用重投影误差、动态目标一致性和线上 badcase 持续校验。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-autodrive-data-20260615\\06-answer.png"
+  }
+]

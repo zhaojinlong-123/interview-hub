@@ -1,0 +1,20 @@
+{
+  "id": "compliance-training-memory-20260615",
+  "title": "训练显存优化题目精讲",
+  "onlineTitle": "字节训练框架/显存优化题目精讲",
+  "body": "每日精选：综合｜训练框架 / 显存优化题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：CSDN\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/05-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-training-memory-20260615/06-answer.png"
+  ],
+  "sourcePlatform": "CSDN",
+  "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779",
+  "questions": [
+    "大模型训练显存如何拆解到参数、梯度、优化器状态、激活值和临时 buffer？",
+    "ZeRO、gradient checkpointing、混合精度和 offload 分别减少哪一部分显存？"
+  ]
+}

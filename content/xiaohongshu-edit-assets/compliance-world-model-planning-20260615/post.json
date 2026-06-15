@@ -1,0 +1,19 @@
+{
+  "id": "compliance-world-model-planning-20260615",
+  "title": "世界模型规划题目精讲",
+  "onlineTitle": "世界模型规划题目精讲",
+  "body": "每日精选：综合｜世界模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/820298.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/05-answer.png"
+  ],
+  "sourcePlatform": "51CTO",
+  "sourceUrl": "https://www.51cto.com/article/820298.html",
+  "questions": [
+    "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？"
+  ]
+}

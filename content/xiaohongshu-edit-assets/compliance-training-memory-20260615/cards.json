@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "训练显存优化题目精讲",
+    "body": "公司：综合\n方向：训练框架 / 显存优化\n题目：大模型训练显存如何拆解到参数、梯度、优化器状态、激活值和临时 buffer？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 大模型训练显存如何拆解到参数、梯度、优化器状态、激活值和临时 buffer？\n\n2. ZeRO、gradient checkpointing、混合精度和 offload 分别减少哪一部分显存？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "大模型训练显存如何拆解到参数、梯度、优化器状态、激活值和临时 buffer？",
+    "body": "训练显存一般可以拆成五块：参数、梯度、优化器状态、激活值和临时 buffer。参数显存和模型规模、精度直接相关；梯度通常与参数同量级；Adam 优化器会保存一阶和二阶矩，显存经常比参数本身还大；激活值随 batch size、序列长度和层数增长，在长上下文训练中很容易成为瓶颈；临时 buffer 来自 attention、中间矩阵和通信缓存。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "大模型训练显存如何拆解到参数、梯度、优化器状态、激活值和临时 buffer？",
+    "body": "面试时最好不要只说“显存不够用 ZeRO”，而要先说明是哪一块显存爆了，再选择对应手段。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "ZeRO、gradient checkpointing、混合精度和 offload 分别减少哪一部分显存？",
+    "body": "ZeRO 主要切分优化器状态、梯度和参数，让这些状态分布在多卡上；gradient checkpointing 不保存全部激活值，通过反向时重算前向来省激活显存，代价是训练时间增加；混合精度把部分参数、激活和梯度从 FP32 降到 BF16/FP16，降低显存和带宽压力，但要处理数值稳定；offload 把优化器状态或参数迁移到 CPU/NVMe，适合显存极紧张场景，",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "ZeRO、gradient checkpointing、混合精度和 offload 分别减少哪一部分显存？",
+    "body": "代价是通信和 IO 延迟。好的回答要把节省对象、代价和适用场景一一对应。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-training-memory-20260615\\06-answer.png"
+  }
+]

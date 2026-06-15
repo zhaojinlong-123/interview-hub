@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "多模态连接层题目精讲",
+    "body": "公司：阿里\n方向：多模态大模型\n题目：Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？\n\n2. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+    "body": "视觉 encoder 先把图像或视频变成视觉 token，连接层再把这些 token 映射到 LLM 能理解的语义空间。Linear projector 简单高效，适合视觉 token 和语言空间差距不大、追求低成本的场景；Q-Former 用少量可学习 query 从视觉特征中抽取信息，能压缩 token，但可能丢细节；",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+    "body": "cross-attention adapter 交互更充分，适合复杂 grounding 和多轮视觉任务，但计算更贵。回答时要补充训练目标：图文对齐、指令微调、grounding、OCR 和幻觉评估。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+    "body": "图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令。构造时要先覆盖任务类型，再控制质量：去重、过滤模板化答案、隔离评测集、加入困难负样本，并检查图文是否匹配。OCR 泄漏会让模型通过文字捷径答题，低质量 caption 会让模型学到套话，标注偏见会放大错误关联。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
+    "body": "工程闭环要包含来源、清洗、标注、质量打分、负样本、评测隔离和线上 badcase 回流。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\compliance-ali-multimodal-20260615\\06-answer.png"
+  }
+]

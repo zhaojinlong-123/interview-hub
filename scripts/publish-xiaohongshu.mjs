@@ -69,7 +69,7 @@ function questionsFromMarkdown(markdown, limit = 4) {
 function titleForXhs(feature, post) {
   const direction = post?.direction || feature.direction || "大模型";
   const company = post?.company || feature.company || "今日";
-  const subject = company === "综合" ? direction : `${company}${direction}`;
+  const subject = `${company}${direction}`;
   return `${subject}题目精讲`.replace(/\s+/g, "").replace(/[|/｜]/g, "").slice(0, 20);
 }
 
@@ -300,7 +300,7 @@ function buildXhsPayload(feature, post, markdown) {
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
-    title: `${company === "综合" ? "" : company}${topic}题目精讲`.replace(/\s+/g, "").slice(0, 20),
+    title: `${company}${topic}题目精讲`.replace(/\s+/g, "").slice(0, 20),
     coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
     coverSubtitle: `${direction} 高频题`,
     company,

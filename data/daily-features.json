@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-06-15-680ffa613f61",
+    "date": "2026-06-15",
+    "slot": "morning",
+    "publishTime": "",
+    "postId": "auto-20260614-94c21883b138",
+    "title": "小红书：字节VLA具身智能题目精讲",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "score": 93,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "大厂/重点机构 +14",
+      "稀缺方向 VLA / 具身智能 / 强化学习 +12",
+      "高频问题 5 个 +15",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-14",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-15-680ffa613f61.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-15T01:30:25.419Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-14-8ded06a9a5b9",
     "date": "2026-06-14",
     "slot": "afternoon",

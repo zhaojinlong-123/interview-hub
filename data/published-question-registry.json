@@ -15,6 +15,21 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "data:0bde71b89500",
+    "question": "具身智能任务中，episode 如何切分，成功、失败、中断和人为接管如何标注？",
+    "queueId": "xhs-daily-2026-06-15-680ffa613f61",
+    "featureId": "daily-2026-06-15-680ffa613f61",
+    "postId": "auto-20260614-94c21883b138",
+    "title": "字节具身智能任务中，episo…题目精讲",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-15T01:30:25.392Z"
+  },
+  {
     "key": "data:92d0f41c6f60",
     "question": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
     "queueId": "xhs-daily-2026-06-13-c026b29d4659",
@@ -41,6 +56,36 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "general:长程具身任务如何处理记忆子目标分解环境变化和动作不可逆错误",
+    "question": "长程具身任务如何处理记忆、子目标分解、环境变化和动作不可逆错误？",
+    "queueId": "xhs-daily-2026-06-15-680ffa613f61",
+    "featureId": "daily-2026-06-15-680ffa613f61",
+    "postId": "auto-20260614-94c21883b138",
+    "title": "字节具身智能任务中，episo…题目精讲",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-15T01:30:25.392Z"
+  },
+  {
+    "key": "general:simtoreal中视觉随机化动力学随机化和真实少样本微调分别解决什么问题",
+    "question": "sim-to-real 中，视觉随机化、动力学随机化和真实少样本微调分别解决什么问题？",
+    "queueId": "xhs-daily-2026-06-15-680ffa613f61",
+    "featureId": "daily-2026-06-15-680ffa613f61",
+    "postId": "auto-20260614-94c21883b138",
+    "title": "字节具身智能任务中，episo…题目精讲",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-15T01:30:25.392Z"
   },
   {
     "key": "inference:3768f843ba28",
@@ -71,6 +116,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "rl:005f655d4d6f",
+    "question": "VLA 系统如何从 imitation learning 过渡到在线强化学习并控制安全风险？",
+    "queueId": "xhs-daily-2026-06-15-680ffa613f61",
+    "featureId": "daily-2026-06-15-680ffa613f61",
+    "postId": "auto-20260614-94c21883b138",
+    "title": "字节具身智能任务中，episo…题目精讲",
+    "company": "字节",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-15T01:30:25.392Z"
   },
   {
     "key": "robot_data:5c6e23bce94e",

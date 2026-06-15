@@ -113,6 +113,64 @@ function questionKeysForPost(post) {
     .filter(Boolean);
 }
 
+const SELF_SOURCE_URL_PATTERNS = [
+  "creator.xiaohongshu.com",
+  "zhaojinlong-123.github.io/interview-hub",
+  "xiaohongshu.com/explore/6a2cd7840000000015024480",
+  "xiaohongshu.com/explore/6a2f55a50000000017028b54",
+];
+
+const GENERIC_ANSWER_PATTERNS = [
+  "回答这类题要避免只背概念",
+  "建议按四层组织",
+  "如果题目来自真实面经",
+  "先解释核心机制，再讲工程取舍",
+  "先讲核心机制，再讲工程取舍",
+];
+
+function isGenericAnswer(answer) {
+  const value = String(answer || "");
+  return GENERIC_ANSWER_PATTERNS.some((pattern) => value.includes(pattern));
+}
+
+function isPublishableSourceUrl(post) {
+  const sourceUrl = String(post.sourceUrl || "");
+  if (!post.sourcePlatform || !sourceUrl) return false;
+  if (SELF_SOURCE_URL_PATTERNS.some((pattern) => sourceUrl.includes(pattern))) return false;
+  if (String(post.sourcePlatform).includes("小红书") && !/xiaohongshu\.com\/explore\/[A-Za-z0-9]+/.test(sourceUrl)) return false;
+  return true;
+}
+
+function answerMapForPost(post) {
+  const map = new Map();
+  for (const item of post.questionAnswers || []) {
+    const status = String(item.answerStatus || "");
+    if (!["verified", "model_answered"].includes(status)) continue;
+    if (!item.answer || isGenericAnswer(item.answer)) continue;
+    map.set(questionKey(item.question), item.answer);
+  }
+  return map;
+}
+
+function sourceBacksQuestions(post) {
+  const sourceText = normalizeText([post.title, post.content, post.prepTips].filter(Boolean).join(" "));
+  const questions = Array.isArray(post.questions) ? post.questions : [];
+  if (!questions.length) return false;
+  return questions.every((question) => {
+    const q = normalizeText(question);
+    if (!q) return false;
+    if (sourceText.includes(q.slice(0, Math.min(24, q.length)))) return true;
+    const keyTokens = q.match(/[a-z0-9]{3,}|[\u4e00-\u9fa5]{2,}/g) || [];
+    const hits = keyTokens.filter((token) => sourceText.includes(token)).length;
+    return hits >= Math.min(4, Math.max(2, Math.ceil(keyTokens.length * 0.45)));
+  });
+}
+
+function hasVerifiedAnswersForAllQuestions(post) {
+  const answerMap = answerMapForPost(post);
+  return (post.questions || []).every((question) => answerMap.has(questionKey(question)));
+}
+
 function freshenPostQuestions(post, usedQuestionKeys) {
   const questions = Array.isArray(post.questions) ? post.questions : [];
   if (!questions.length) return post;
@@ -269,12 +327,12 @@ function expansionForQuestion(question) {
   return "面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。";
 }
 
-function answerBlocks(questions) {
+function answerBlocks(questions, answerMap) {
   return questions.slice(0, 5).flatMap((question, index) => [
     `### 题目 ${index + 1}：${question}`,
     "",
     "**详细回答：**",
-    answerForQuestion(question),
+    answerMap.get(questionKey(question)),
     "",
     "**面试展开：**",
     expansionForQuestion(question),
@@ -283,12 +341,16 @@ function answerBlocks(questions) {
 }
 
 function buildArticle(post, score, reasons, settings) {
+  const answerMap = answerMapForPost(post);
   const questions = post.questions && post.questions.length
-    ? post.questions
+    ? post.questions.filter((question) => answerMap.has(questionKey(question)))
     : [
         "Vision encoder 输出如何与 LLM token 空间对齐？",
         "多模态模型如何评估 grounding、OCR、空间关系和幻觉？",
       ];
+  if (!questions.length || questions.some((question) => !answerMap.has(questionKey(question)))) {
+    throw new Error("Daily feature generation refused: selected post has no verified/model_answered answer for every question");
+  }
   const focus = (settings.focusDirections || []).slice(0, 6).join(" / ");
   const tags = [...new Set([...(post.tags || []), post.company, post.direction, "大模型面试", "AI学习"])].filter(Boolean).slice(0, 10);
   const direction = post.direction || post.category;
@@ -317,7 +379,7 @@ function buildArticle(post, score, reasons, settings) {
     `我会先把 ${direction} 看成一条链路：数据输入 -> 表示学习 -> 模型连接/训练目标 -> 推理部署 -> 评估反馈。面试时不要只说模型名，要把“为什么这样设计、哪里容易失败、怎么验证有效”讲完整。`,
     "",
     "## 逐题解答",
-    ...answerBlocks(questions),
+    ...answerBlocks(questions, answerMap),
     "## 可能追问方向",
     bulletList([
       `如果 ${direction} 的效果不稳定，如何定位是数据、结构、训练还是推理问题？`,
@@ -372,7 +434,7 @@ function buildArticle(post, score, reasons, settings) {
     numberedList(questions.slice(0, 3)),
     "",
     "一句话答案",
-    answerForQuestion(questions[0]).slice(0, 180),
+    answerMap.get(questionKey(questions[0])).slice(0, 180),
     "",
     "面试展开",
     expansionForQuestion(questions[0]).slice(0, 160),
@@ -428,6 +490,9 @@ async function main() {
   const candidates = posts
     .filter((post) =>
       post.sourceUrl
+      && isPublishableSourceUrl(post)
+      && sourceBacksQuestions(post)
+      && hasVerifiedAnswersForAllQuestions(post)
       && Array.isArray(post.questions)
       && post.questions.length > 0
       && !usedIds.has(post.id)

@@ -91,10 +91,13 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-15-680ffa613f61/06-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-15-680ffa613f61/07-answer.png"
     ],
-    "status": "published",
+    "status": "source_invalid_after_publish",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-15T04:01:46.616Z"
+    "updatedAt": "2026-06-15T10:34:57.986Z",
+    "sourceValidationStatus": "invalid_self_source",
+    "publishStatus": "source_invalid",
+    "publishFailureReason": "Source URL points to a self-published Xiaohongshu note; original non-self source containing the questions is required."
   },
   {
     "id": "xhs-daily-2026-06-14-ef7ca72d79bc",

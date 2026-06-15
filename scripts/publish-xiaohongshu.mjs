@@ -87,6 +87,42 @@ function sourceHost(url) {
   }
 }
 
+const SELF_SOURCE_URL_PATTERNS = [
+  "creator.xiaohongshu.com",
+  "zhaojinlong-123.github.io/interview-hub",
+  "xiaohongshu.com/explore/6a2cd7840000000015024480",
+  "xiaohongshu.com/explore/6a2f55a50000000017028b54",
+];
+
+const GENERIC_ANSWER_PATTERNS = [
+  "回答这类题要避免只背概念",
+  "建议按四层组织",
+  "如果题目来自真实面经",
+  "先解释核心机制，再讲工程取舍",
+  "先讲核心机制，再讲工程取舍",
+];
+
+function assertSourceUrl(sourcePlatform, sourceUrl) {
+  const value = String(sourceUrl || "");
+  if (!sourcePlatform || !value) {
+    throw new Error("Source alignment check failed: source platform and source URL are required");
+  }
+  if (SELF_SOURCE_URL_PATTERNS.some((pattern) => value.includes(pattern))) {
+    throw new Error(`Source alignment check failed: source URL points to self-published or internal content: ${value}`);
+  }
+  if (String(sourcePlatform).includes("小红书") && !/xiaohongshu\.com\/explore\/[A-Za-z0-9]+/.test(value)) {
+    throw new Error("Source alignment check failed: Xiaohongshu source must be a concrete non-self note URL, not a search page or creator page");
+  }
+}
+
+function assertNoGenericAnswer(text, context) {
+  const value = String(text || "");
+  const hit = GENERIC_ANSWER_PATTERNS.find((pattern) => value.includes(pattern));
+  if (hit) {
+    throw new Error(`Answer quality check failed: ${context} contains generic fallback phrase "${hit}"`);
+  }
+}
+
 function compactTags(tags) {
   return tags
     .map((tag) => `#${String(tag).replace(/\s+/g, "").replace(/[|/｜]/g, "")}`)
@@ -152,7 +188,7 @@ function compactMarkdownLine(line) {
 
 function extractQuestionAnswers(markdown, fallbackQuestions) {
   const blocks = [];
-  const pattern = /^###\s+题目\s*(\d+)：(.+)$/gm;
+  const pattern = /^###\s+(?:\u9898\u76ee|\u68f0\u6a0a\u7bad\u6d30)\s*(\d+)[^\p{L}\p{N}]+(.+)$/gmu;
   const matches = [...markdown.matchAll(pattern)];
   for (let i = 0; i < matches.length; i++) {
     const start = matches[i].index + matches[i][0].length;
@@ -162,7 +198,7 @@ function extractQuestionAnswers(markdown, fallbackQuestions) {
       .split(/\r?\n/)
       .map(compactMarkdownLine)
       .filter(Boolean)
-      .filter((line) => !/^详细回答：$|^面试展开：$/.test(line))
+      .filter((line) => !/^(?:\u8be6\u7ec6\u56de\u7b54|\u9762\u8bd5\u5c55\u5f00)/.test(line))
       .join("\n");
     blocks.push({
       question: compactMarkdownLine(matches[i][2]),
@@ -170,12 +206,8 @@ function extractQuestionAnswers(markdown, fallbackQuestions) {
     });
   }
   if (blocks.length) return blocks.slice(0, 4);
-  return fallbackQuestions.slice(0, 4).map((question) => ({
-    question,
-    answer: "先讲核心机制，再讲工程取舍、常见坑和评估指标，最后落到自己的项目经验。",
-  }));
+  throw new Error("Answer quality check failed: markdown has no per-question model answers; refusing to use generic fallback");
 }
-
 function cardText(text, limit) {
   const value = cleanLine(text);
   return value.length > limit ? `${value.slice(0, limit - 1)}…` : value;
@@ -710,6 +742,8 @@ function assertPayloadAlignment(payload) {
   for (const card of payload.imageCards || []) {
     const title = String(card.title || "");
     const body = String(card.body || "");
+    assertNoGenericAnswer(title, `card title ${card.kind || ""}`);
+    assertNoGenericAnswer(body, `card body ${title || card.kind || ""}`);
     if (title.includes("action token") && title.includes("diffusion policy")) {
       const hit = genericVisionSignals.find((signal) => body.includes(signal));
       if (hit) throw new Error(`Answer alignment check failed: VLA action card contains ${hit}`);
@@ -719,15 +753,14 @@ function assertPayloadAlignment(payload) {
       if (hit) throw new Error(`Answer alignment check failed: robot data card contains ${hit}`);
     }
   }
-  if (!payload.sourcePlatform || !payload.sourceUrl) {
-    throw new Error("Source alignment check failed: source platform and source URL are required");
-  }
+  assertSourceUrl(payload.sourcePlatform, payload.sourceUrl);
   if (!String(payload.body || "").includes(String(payload.sourceUrl))) {
     throw new Error("Source alignment check failed: body must include the source URL");
   }
   if (!String(payload.body || "").includes(String(payload.sourcePlatform))) {
     throw new Error("Source alignment check failed: body must include the source platform");
   }
+  assertNoGenericAnswer(payload.body, "publish body");
 }
 
 function commitAndPush() {

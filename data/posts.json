@@ -8304,7 +8304,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：字节VLA具身智能题目精讲 噜噜噜 昨天 19:36 6",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781419785,
-    "updatedAt": 1781419797,
+    "updatedAt": 1781519697,
     "questionAnswers": [
       {
         "key": "episode:e585b7e8baab",
@@ -8341,7 +8341,9 @@
         "answerStatus": "verified",
         "updatedAt": "2026-06-15T04:01:46.615Z"
       }
-    ]
+    ],
+    "sourceValidationStatus": "invalid_self_source",
+    "sourceValidationNote": "This source is a self-published Xiaohongshu note and cannot be used as the original interview-question source."
   },
   {
     "id": "auto-20260614-4207340a5efc",

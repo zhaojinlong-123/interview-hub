@@ -12,6 +12,21 @@ const SHOULD_FIX = process.argv.includes("--fix");
 const SHOULD_FAIL_ON_RISK = process.argv.includes("--fail-on-risk");
 const SHOULD_REPAIR_QUEUE = process.argv.includes("--repair-queue");
 
+const SELF_SOURCE_URL_PATTERNS = [
+  "creator.xiaohongshu.com",
+  "zhaojinlong-123.github.io/interview-hub",
+  "xiaohongshu.com/explore/6a2cd7840000000015024480",
+  "xiaohongshu.com/explore/6a2f55a50000000017028b54",
+];
+
+const GENERIC_ANSWER_PATTERNS = [
+  "回答这类题要避免只背概念",
+  "建议按四层组织",
+  "如果题目来自真实面经",
+  "先解释核心机制，再讲工程取舍",
+  "先讲核心机制，再讲工程取舍",
+];
+
 async function readJson(file, fallback) {
   try {
     return JSON.parse(await fs.readFile(file, "utf8"));
@@ -121,6 +136,8 @@ function answerForQuestion(question) {
 function answerRisk(question, answer) {
   const qFamily = classifyQuestion(question);
   const aFamily = classifyQuestion(answer);
+  const genericHit = GENERIC_ANSWER_PATTERNS.find((pattern) => String(answer || "").includes(pattern));
+  if (genericHit) return `Generic fallback answer is not allowed: ${genericHit}`;
   if (qFamily === "vla_action" && /Q-Former|Linear projector|视觉 encoder|VLM 数据流|图文/.test(answer)) {
     return "VLA action question appears to use VLM connector answer";
   }
@@ -195,6 +212,13 @@ function auditQueue(queue) {
       try {
         host = new URL(record.sourceUrl).hostname;
       } catch {}
+      const sourceUrl = String(record.sourceUrl || "");
+      if (SELF_SOURCE_URL_PATTERNS.some((pattern) => sourceUrl.includes(pattern))) {
+        issues.push({ type: "self_or_internal_source", id: record.id, title: record.title, sourceUrl: record.sourceUrl });
+      }
+      if (/xiaohongshu\.com\/search_result/.test(sourceUrl)) {
+        issues.push({ type: "xhs_source_is_search_page", id: record.id, title: record.title, sourceUrl: record.sourceUrl, note: "Xiaohongshu source must be the concrete original note URL and must not be a search result page." });
+      }
       const platform = String(record.sourcePlatform);
       if (platform.includes("小红书") && !host.includes("xiaohongshu.com")) {
         issues.push({ type: "source_platform_mismatch", id: record.id, title: record.title, sourcePlatform: record.sourcePlatform, sourceUrl: record.sourceUrl });

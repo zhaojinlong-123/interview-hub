@@ -31,7 +31,9 @@
     "sourceValidationStatus": "invalid_self_source",
     "status": "source_invalid",
     "publishFailureReason": "Source URL points to a self-published Xiaohongshu note; original non-self source containing the questions is required.",
-    "updatedAt": "2026-06-15T10:34:57.986Z"
+    "updatedAt": "2026-06-15T10:34:57.986Z",
+    "onlineCorrectionAt": "2026-06-15T10:43:34.762Z",
+    "onlineCorrectionNote": "Edited Xiaohongshu body to remove self-source link. Source remains manual verification required."
   },
   {
     "id": "daily-2026-06-14-8ded06a9a5b9",

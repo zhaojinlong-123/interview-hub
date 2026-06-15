@@ -59,6 +59,11 @@ function extractQuestionsFromCard(record) {
 
 function classifyQuestion(text) {
   const q = String(text || "");
+  if (/episode|成功.*失败.*中断|人为接管|接管.*标注|终止原因/i.test(q)) return "embodied_episode";
+  if (/imitation learning|online.*强化学习|在线强化学习|安全风险|受限在线探索/i.test(q)) return "embodied_online_rl";
+  if (/sim-to-real|视觉随机化|动力学随机化|真实少样本|域随机化/i.test(q)) return "embodied_sim2real";
+  if (/长程具身|子目标分解|动作不可逆|重规划|环境变化/i.test(q)) return "embodied_long_horizon";
+  if (/具身智能评估|不能只看成功率|碰撞率|接管率|泛化指标/i.test(q)) return "embodied_eval";
   if (/action\s*token|diffusion\s*policy|连续动作|动作回归|动作表示/i.test(q)) return "vla_action";
   if (/遥操作|时间同步|轨迹切分|失败样本|机器人数据|具身数据/i.test(q)) return "robot_data";
   if (/世界模型|BEV|occupancy|轨迹预测|仿真闭环|数据闭环|自动驾驶/i.test(q)) return "world_model";
@@ -80,6 +85,16 @@ function answerForQuestion(question) {
       return "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。";
     case "robot_data":
       return "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。";
+    case "embodied_episode":
+      return "episode 切分要围绕任务语义和控制连续性，而不是机械按固定时长切。一次 episode 通常从任务指令下发、机器人进入初始状态或人工开始遥操作时开始，到任务完成、失败、超时、中断或人为接管时结束。标注时至少记录起止时间、任务目标、关键阶段、动作轨迹、观察流、成功状态和终止原因。成功样本要标注是否完全达成目标；失败样本要标注失败发生点、失败类型、是否可恢复和失败原因；中断样本要区分系统异常、传感器丢失、用户暂停和安全策略触发；人为接管要记录接管时刻、接管前模型输出、人工修正动作和接管原因。";
+    case "embodied_online_rl":
+      return "VLA 从 imitation learning 过渡到在线强化学习，通常先用高质量遥操作或人类演示训练 BC/SFT 策略，再用离线 RL、偏好数据或仿真环境做策略改进，最后在真实环境中做受限在线探索。安全侧需要动作限幅、速度/力矩/碰撞约束、安全区域、规则过滤器、不确定性估计、异常检测和可回退策略；评估侧要先过仿真、离线 replay、影子模式和小流量灰度。在线 RL 的收益是优化长期目标和恢复能力，代价是安全、样本效率和分布漂移。";
+    case "embodied_sim2real":
+      return "视觉随机化、动力学随机化和真实少样本微调解决的是 sim-to-real gap 的不同来源。视觉随机化改变纹理、光照、背景、相机位姿、噪声和遮挡，主要提升感知鲁棒性；动力学随机化改变质量、摩擦、关节阻尼、延迟、执行器噪声和接触参数，主要提升控制稳定性；真实少样本微调用少量真实机器人数据校准仿真学到的策略或表征。随机化太弱会过拟合仿真，太强会让训练不稳定，评估要看成功率、碰撞率、恢复率和跨场景泛化。";
+    case "embodied_long_horizon":
+      return "长程具身任务要把高层规划和低层控制分开处理。高层用语言或视觉语言模型做任务分解，维护环境状态、已完成步骤、物体位置和历史失败；低层用 VLA policy、diffusion policy 或控制器执行短程技能。环境变化需要持续重感知和状态更新，动作不可逆错误要提前做风险评估，并设置确认、回退或人工接管。评估不能只看最终成功，还要看子目标成功率、重规划次数、无效动作比例、错误恢复率、任务时长和安全事件。";
+    case "embodied_eval":
+      return "具身智能不能只看成功率，因为同样成功可能对应完全不同的安全性、效率和泛化能力。除了成功率，还要看碰撞率、接管率、near miss、力/速度越界、任务完成时间、轨迹平滑度、能耗、恢复成功率、失败类型分布和长尾场景覆盖。泛化指标要覆盖新物体、新背景、新光照、新相机位姿、新任务组合和不同机器人平台。成功率回答能不能做成，安全和泛化指标回答能不能稳定、低风险、可规模化地做成。";
     case "world_model":
       return "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。";
     case "distributed_training":

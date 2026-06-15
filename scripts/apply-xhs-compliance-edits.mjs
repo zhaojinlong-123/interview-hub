@@ -4,7 +4,6 @@ import http from "node:http";
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 
 const jobs = [
-  { asset: "compliance-training-memory-20260615", noteId: "6a2e89ff0000000017029a89" },
   { asset: "compliance-video-understanding-20260615", noteId: "6a2e1323000000001702dacc" },
   { asset: "compliance-multi-image-vlm-20260615", noteId: "6a2cd92c000000001c0241b3" },
   { asset: "compliance-world-model-planning-20260615", noteId: "6a2cd824000000001502481d" },

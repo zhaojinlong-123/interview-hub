@@ -209,7 +209,7 @@ async function submit(send) {
     target.dispatchEvent(new CustomEvent("publish", { bubbles: true, composed: true }));
     return { ok: true, method: "publish-event" };
   })()`);
-  await sleep(12000);
+  await sleep(45000);
   const directState = await evaluate(send, `(() => ({ url: location.href, text: (document.body.innerText || "").slice(0, 1200) }))()`);
   if (/成功|审核中|已发布|published=true/.test(`${directState.url}\n${directState.text}`)) {
     return { ok: true, direct, state: directState };
@@ -231,7 +231,7 @@ async function submit(send) {
     await send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", buttons: 0, clickCount: 1, pointerType: "mouse" });
     await sleep(3000);
   }
-  await sleep(12000);
+  await sleep(45000);
   const state = await evaluate(send, `(() => ({ url: location.href, text: (document.body.innerText || "").slice(0, 1200) }))()`);
   return { ok: /成功|审核中|已发布|published=true/.test(`${state.url}\n${state.text}`), state, rect };
 }

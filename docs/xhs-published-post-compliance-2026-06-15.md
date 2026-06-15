@@ -12,14 +12,14 @@
 | 线上标题 | noteId | 修复素材 | 状态 |
 | --- | --- | --- | --- |
 | 具身数据标注题目精讲 | `6a2f55a50000000017028b54` | `compliance-embodied-data-20260615` | 已提交编辑，线上显示审核中 |
-| 字节训练框架/显存优化题目精讲 | `6a2e89ff0000000017029a89` | `compliance-training-memory-20260615` | 已替换图卡和正文，等待人工点击发布 |
-| VLA/机器人动作题目精讲 | `6a2e1323000000001702dacc` | `compliance-video-understanding-20260615` | 待编辑 |
-| 多图多轮视觉问答题目精讲 | `6a2cd92c000000001c0241b3` | `compliance-multi-image-vlm-20260615` | 待编辑 |
-| 世界模型规划题目精讲 | `6a2cd824000000001502481d` | `compliance-world-model-planning-20260615` | 待编辑 |
-| 阿里多模态大模型题目精讲 | `6a2cd79b000000001c0278b0` | `compliance-ali-multimodal-20260615` | 待编辑 |
-| 字节VLA具身智能题目精讲 | `6a2cd7840000000015024480` | `compliance-openvla-action-20260615` | 待编辑 |
-| 自动驾驶数据闭环题目精讲 | `6a2cd72a000000001c027637` | `compliance-autodrive-data-20260615` | 待编辑 |
-| 字节训练框架推理优化题目精讲 | `6a2cd39c000000001503c862` | `compliance-inference-kvcache-20260615` | 待编辑 |
+| 训练显存优化题目精讲 | `6a2e89ff0000000017029a89` | `compliance-training-memory-20260615` | 已提交编辑，线上显示审核中 |
+| 视频理解时序建模题目精讲 | `6a2e1323000000001702dacc` | `compliance-video-understanding-20260615` | 已提交编辑 |
+| 多图多轮视觉问答题目精讲 | `6a2cd92c000000001c0241b3` | `compliance-multi-image-vlm-20260615` | 已提交编辑 |
+| 世界模型规划题目精讲 | `6a2cd824000000001502481d` | `compliance-world-model-planning-20260615` | 已提交编辑 |
+| 多模态连接层题目精讲 | `6a2cd79b000000001c0278b0` | `compliance-ali-multimodal-20260615` | 已提交编辑 |
+| 字节VLA具身智能题目精讲 | `6a2cd7840000000015024480` | `compliance-openvla-action-20260615` | 已提交编辑 |
+| 自动驾驶数据闭环题目精讲 | `6a2cd72a000000001c027637` | `compliance-autodrive-data-20260615` | 已提交编辑 |
+| 推理部署KVCache题目精讲 | `6a2cd39c000000001503c862` | `compliance-inference-kvcache-20260615` | 已提交编辑 |
 
 ## 自动化结论
 
@@ -30,12 +30,12 @@
 - 替换标题和正文。
 - 生成可复用的图卡素材和正文 JSON。
 
-小红书最终提交按钮存在平台侧交互限制：脚本可以定位到内部 `button.ce-btn` 和外层 `xhs-publish-btn`，但通过 CDP 派发点击、`publish` 自定义事件、内部 `_onPublish()` 都没有触发最终提交。当前可靠流程是脚本填好内容后，由人工点击页面底部红色“发布”按钮确认。
+最终提交按钮实际挂载在 `xhs-publish-btn` 内部 Vue 容器的 `button.ce-btn` 上。脚本已改为优先点击该内部按钮，并把提交后等待时间加长到 45 秒，当前 9 条线上帖子均已完成图卡和正文替换提交。
 
 ## 后续使用
 
 1. 运行 `node scripts/build-xhs-compliance-assets.mjs` 重新生成合规素材。
 2. 打开指定 `noteId` 的编辑页。
 3. 运行 `node scripts/edit-xhs-note.mjs --asset=<asset-id>` 填充内容。
-4. 在浏览器页面底部人工点击“发布”。
+4. 脚本会自动触发内部发布按钮；如平台改版导致提交失败，再在浏览器页面底部人工点击“发布”。
 5. 回到创作者中心笔记管理页，确认标题更新且状态进入审核中或已发布。

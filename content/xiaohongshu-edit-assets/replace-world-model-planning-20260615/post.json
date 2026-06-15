@@ -1,0 +1,28 @@
+{
+  "id": "replace-world-model-planning-20260615",
+  "oldTitle": "VLA具身智能题目精讲",
+  "oldDate": "2026-06-13 12:10",
+  "title": "世界模型规划题目精讲",
+  "company": "综合",
+  "direction": "世界模型",
+  "sourcePlatform": "51CTO",
+  "sourceUrl": "https://www.51cto.com/article/820298.html",
+  "questions": [
+    "世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "世界模型如何学习环境动态，和传统感知预测规划模块相比优势和风险是什么？"
+  ],
+  "answers": [
+    "latent dynamics 决定模型在隐空间里怎么预测下一步状态，它要足够压缩，又不能丢掉和控制有关的物体、几何、速度和接触关系。reward model 决定规划时什么轨迹算好，如果 reward 只覆盖短期目标，模型容易学到投机策略；如果 reward 太稀疏，长程规划会不稳定。rollout horizon 决定向未来展开多远：短 horizon 更稳定但容易贪心，长 horizon 能看见长期收益但误差会累积。工程上通常用多步预测损失、latent consistency、终止/失败预测和不确定性估计来约束世界模型，再用 MPC、beam search 或策略网络在模型内 rollout。面试回答重点是：规划效果不是只由生成质量决定，而由动态预测误差、奖励设计、展开长度和不确定性共同决定。",
+    "世界模型试图学习环境状态随时间和动作变化的规律，而传统模块通常把感知、预测、规划拆开优化。它的优势是可以在统一表示里做反事实推演，例如如果机器人这样抓、车这样变道，未来会发生什么；也能用仿真式 rollout 支持策略搜索和数据增强。风险在于模型误差会沿时间累积，分布外场景可能生成看似合理但错误的未来，闭环规划还可能利用 reward 漏洞。回答时可以对比：感知预测规划链路更可解释、边界更清楚；世界模型更适合长程交互和策略评估，但需要不确定性、失败检测、真实闭环评测和安全约束兜底。"
+  ],
+  "body": "每日精选：综合 世界模型题目精讲。\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/820298.html\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/05-answer.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/06-answer.png",
+    "content/xiaohongshu-edit-assets/replace-world-model-planning-20260615/07-answer.png"
+  ]
+}

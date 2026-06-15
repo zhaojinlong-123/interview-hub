@@ -1,0 +1,27 @@
+{
+  "id": "replace-video-understanding-20260615",
+  "oldTitle": "VLA/机器人动作题目精讲",
+  "oldDate": "2026-06-14 10:34",
+  "title": "视频理解时序建模题目精讲",
+  "company": "综合",
+  "direction": "视频 / 视觉理解",
+  "sourcePlatform": "CSDN",
+  "sourceUrl": "https://blog.csdn.net/qq_45934285/article/details/143261317",
+  "questions": [
+    "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+    "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？"
+  ],
+  "answers": [
+    "这题要先把视频理解拆成表示、时序建模和评估三层。表示层通常从均匀采样、关键帧采样或运动感知采样得到帧序列，再用视觉 encoder 得到 frame token 或 patch token；时序层再通过 temporal attention、时序卷积、状态空间模型、memory token 或片段级检索，把动作变化、事件先后和跨镜头实体关系建起来。评估时不能只看单帧问答准确率，要分别看动作类别、事件边界定位、人物或物体身份保持、跨帧指代、因果顺序和长视频问答。工程上还要报告帧数、采样策略、token 压缩比例、延迟和显存，因为视频模型的瓶颈常常不是会不会看图，而是能不能在有限 token 预算下保留关键运动信息。",
+    "temporal token 压缩的核心是把大量帧 token 变成少量但信息密度更高的时序 token。常见做法包括按时间窗口池化、关键帧选择、query token 汇聚、运动显著性筛选和分层摘要。它的优点是显著降低长视频 attention 成本，让模型能处理更长上下文；代价是细粒度动作、短暂事件和物体身份变化容易被压掉。直接长上下文 attention 信息保留更完整，但显存和延迟随帧数快速上升。面试里可以这样回答：短视频、细粒度动作识别优先保留更多帧和局部 token；长视频问答、检索和摘要更适合先压缩成片段记忆，再做跨片段推理。最后一定要用事件边界、动作顺序和跨帧一致性指标验证压缩没有丢关键动态。"
+  ],
+  "body": "每日精选：综合 视频 / 视觉理解题目精讲。\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n引用来源：CSDN\n原文链接：https://blog.csdn.net/qq_45934285/article/details/143261317\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/05-answer.png",
+    "content/xiaohongshu-edit-assets/replace-video-understanding-20260615/06-answer.png"
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "视频理解时序建模题目精讲",
+    "body": "公司：综合\n方向：视频 / 视觉理解\n题目：视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 视频模型如何评估时序一致性、动作理解、事件边界和身份保持？\n\n2. temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+    "body": "这题要先把视频理解拆成表示、时序建模和评估三层。表示层通常从均匀采样、关键帧采样或运动感知采样得到帧序列，再用视觉 encoder 得到 frame token 或 patch token；时序层再通过 temporal attention、时序卷积、状态空间模型、memory token 或片段级检索，把动作变化、事件先后和跨镜头实体关系建起来。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+    "body": "评估时不能只看单帧问答准确率，要分别看动作类别、事件边界定位、人物或物体身份保持、跨帧指代、因果顺序和长视频问答。工程上还要报告帧数、采样策略、token 压缩比例、延迟和显存，因为视频模型的瓶颈常常不是会不会看图，而是能不能在有限 token 预算下保留关键运动信息。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+    "body": "temporal token 压缩的核心是把大量帧 token 变成少量但信息密度更高的时序 token。常见做法包括按时间窗口池化、关键帧选择、query token 汇聚、运动显著性筛选和分层摘要。它的优点是显著降低长视频 attention 成本，让模型能处理更长上下文；代价是细粒度动作、短暂事件和物体身份变化容易被压掉。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+    "body": "直接长上下文 attention 信息保留更完整，但显存和延迟随帧数快速上升。面试里可以这样回答：短视频、细粒度动作识别优先保留更多帧和局部 token；长视频问答、检索和摘要更适合先压缩成片段记忆，再做跨片段推理。最后一定要用事件边界、动作顺序和跨帧一致性指标验证压缩没有丢关键动态。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-video-understanding-20260615\\06-answer.png"
+  }
+]

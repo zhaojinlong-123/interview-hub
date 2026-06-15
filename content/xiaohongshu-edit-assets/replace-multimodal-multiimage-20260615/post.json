@@ -1,0 +1,27 @@
+{
+  "id": "replace-multimodal-multiimage-20260615",
+  "oldTitle": "字节多模态大模型题目精讲",
+  "oldDate": "2026-06-13 12:14",
+  "title": "多图多轮视觉问答题目精讲",
+  "company": "字节",
+  "direction": "多模态大模型",
+  "sourcePlatform": "知乎",
+  "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+  "questions": [
+    "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+    "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？"
+  ],
+  "answers": [
+    "多图理解的关键不是把几张图简单拼接，而是让模型知道每张图的身份、顺序和引用关系。输入侧通常给每张图加 image id、位置标记或时间顺序标记，避免模型把不同图里的实体混在一起；表示侧可以用共享 vision encoder，再通过 cross-attention 或多图 memory 做融合；推理侧要显式处理比较、变化检测、跨图指代和多轮上下文。评估时要单独看跨图实体一致性、图间顺序理解、差异比较、引用定位和多轮追问稳定性。面试回答可以强调：多图任务最怕图像引用错位，所以数据构造和评测都要包含“第几张图”“上一张图中的对象”“两图差异”这类强约束问题。",
+    "VLM 幻觉常见原因有四类：数据侧图文不匹配、caption 模板化、OCR 泄漏或评测集污染；模型侧视觉 token 被过度压缩，LLM 语言先验压过视觉证据；训练侧指令微调偏向迎合用户，缺少拒答和不确定性样本；解码侧温度过高或没有视觉一致性约束。缓解也要分层：数据上做图文一致性过滤、困难负样本和区域级标注；模型上增强 grounding、区域引用和高分辨率细节；训练上加入偏好对齐与不确定性表达；推理上降低温度、要求引用视觉证据，必要时做检测/OCR 工具校验。好的回答要落到指标：hallucination rate、grounding accuracy、OCR 准确率、区域问答和人工 badcase 复测。"
+  ],
+  "body": "每日精选：字节 多模态大模型题目精讲。\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n引用来源：知乎\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+  "imageFiles": [
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/01-cover.png",
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/02-questions.png",
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/03-answer.png",
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/04-answer.png",
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/05-answer.png",
+    "content/xiaohongshu-edit-assets/replace-multimodal-multiimage-20260615/06-answer.png"
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "面试题目",
+    "title": "世界模型规划题目精讲",
+    "body": "公司：综合\n方向：世界模型\n题目：世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "footer": "第一页先看公司 / 方向 / 题目",
+    "index": 1,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "本篇问题",
+    "title": "今天重点看这几题",
+    "body": "1. 世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？\n\n2. 世界模型如何学习环境动态，和传统感知预测规划模块相比优势和风险是什么？",
+    "footer": "后面按顺序给完整回答",
+    "index": 2,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-1",
+    "title": "世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "body": "latent dynamics 决定模型在隐空间里怎么预测下一步状态，它要足够压缩，又不能丢掉和控制有关的物体、几何、速度和接触关系。reward model 决定规划时什么轨迹算好，如果 reward 只覆盖短期目标，模型容易学到投机策略；如果 reward 太稀疏，长程规划会不稳定。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 3,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-2",
+    "title": "世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "body": "rollout horizon 决定向未来展开多远：短 horizon 更稳定但容易贪心，长 horizon 能看见长期收益但误差会累积。工程上通常用多步预测损失、latent consistency、终止/失败预测和不确定性估计来约束世界模型，再用 MPC、beam search 或策略网络在模型内 rollout。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 4,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\04-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 1-3",
+    "title": "世界模型训练中 latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "body": "面试回答重点是：规划效果不是只由生成质量决定，而由动态预测误差、奖励设计、展开长度和不确定性共同决定。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 5,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-1",
+    "title": "世界模型如何学习环境动态，和传统感知预测规划模块相比优势和风险是什么？",
+    "body": "世界模型试图学习环境状态随时间和动作变化的规律，而传统模块通常把感知、预测、规划拆开优化。它的优势是可以在统一表示里做反事实推演，例如如果机器人这样抓、车这样变道，未来会发生什么；也能用仿真式 rollout 支持策略搜索和数据增强。风险在于模型误差会沿时间累积，分布外场景可能生成看似合理但错误的未来，闭环规划还可能利用 reward 漏洞。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 6,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\06-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细回答 2-2",
+    "title": "世界模型如何学习环境动态，和传统感知预测规划模块相比优势和风险是什么？",
+    "body": "回答时可以对比：感知预测规划链路更可解释、边界更清楚；世界模型更适合长程交互和策略评估，但需要不确定性、失败检测、真实闭环评测和安全约束兜底。",
+    "footer": "机制 -> 取舍 -> 工程指标",
+    "index": 7,
+    "total": 7,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-edit-assets\\replace-world-model-planning-20260615\\07-answer.png"
+  }
+]

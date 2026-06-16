@@ -54,10 +54,8 @@
     "sourcePlatform": "小红书",
     "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "status": "published",
-    "updatedAt": "2026-06-15T10:34:57.986Z",
-    "sourceValidationStatus": "invalid_self_source",
-    "sourceValidationNote": "Keep for duplicate prevention only; do not use as a valid source-backed published question."
+    "status": "source_invalid_after_publish",
+    "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
     "key": "embodied_eval:e5510611f7f0",
@@ -71,10 +69,8 @@
     "sourcePlatform": "小红书",
     "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "status": "published",
-    "updatedAt": "2026-06-15T10:34:57.986Z",
-    "sourceValidationStatus": "invalid_self_source",
-    "sourceValidationNote": "Keep for duplicate prevention only; do not use as a valid source-backed published question."
+    "status": "source_invalid_after_publish",
+    "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
     "key": "embodied_long_horizon:183013477bf2",
@@ -88,10 +84,8 @@
     "sourcePlatform": "小红书",
     "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "status": "published",
-    "updatedAt": "2026-06-15T10:34:57.986Z",
-    "sourceValidationStatus": "invalid_self_source",
-    "sourceValidationNote": "Keep for duplicate prevention only; do not use as a valid source-backed published question."
+    "status": "source_invalid_after_publish",
+    "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
     "key": "embodied_online_rl:005f655d4d6f",
@@ -105,10 +99,8 @@
     "sourcePlatform": "小红书",
     "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "status": "published",
-    "updatedAt": "2026-06-15T10:34:57.986Z",
-    "sourceValidationStatus": "invalid_self_source",
-    "sourceValidationNote": "Keep for duplicate prevention only; do not use as a valid source-backed published question."
+    "status": "source_invalid_after_publish",
+    "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
     "key": "embodied_sim2real:c18145b337df",
@@ -122,10 +114,8 @@
     "sourcePlatform": "小红书",
     "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd7840000000015024480?xsec_token=ABph78W1r_ZHk8bqDtoizWXOd456YhxOU55Eab6_ooDKc%3D&xsec_source=pc_search",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "status": "published",
-    "updatedAt": "2026-06-15T10:34:57.986Z",
-    "sourceValidationStatus": "invalid_self_source",
-    "sourceValidationNote": "Keep for duplicate prevention only; do not use as a valid source-backed published question."
+    "status": "source_invalid_after_publish",
+    "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
     "key": "inference:3768f843ba28",

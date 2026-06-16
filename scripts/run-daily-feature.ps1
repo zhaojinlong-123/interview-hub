@@ -43,6 +43,36 @@ function Invoke-LoggedCommand {
   return $exitCode
 }
 
+function Invoke-CandidateRefresh {
+  param([string]$LogFile)
+
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  "[$stamp] No publishable candidate found. Refreshing interview candidates, deduping questions, and retrying once." |
+    Out-File -FilePath $LogFile -Encoding utf8 -Append
+
+  $env:CHROME_CDP = "http://127.0.0.1:9222"
+
+  $updateExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\update-interviews.mjs", "--max-new=1000") -LogFile $LogFile
+  if ($updateExit -ne 0) {
+    throw "candidate refresh failed: update-interviews exited with code $updateExit. Start controllable Chrome on 127.0.0.1:9222 and rerun the task."
+  }
+
+  $boostExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\boost-interview-questions.mjs", "--write", "--min-new=20") -LogFile $LogFile
+  if ($boostExit -ne 0) {
+    throw "candidate refresh failed: boost-interview-questions exited with code $boostExit"
+  }
+
+  $dedupeExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\dedupe-post-questions.mjs", "--write") -LogFile $LogFile
+  if ($dedupeExit -ne 0) {
+    throw "candidate refresh failed: dedupe-post-questions exited with code $dedupeExit"
+  }
+
+  $auditExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\audit-xhs-publish.mjs", "--fix") -LogFile $LogFile
+  if ($auditExit -ne 0) {
+    throw "candidate refresh failed: audit-xhs-publish exited with code $auditExit"
+  }
+}
+
 try {
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
   "[$stamp] Daily feature started: slot=$Slot publishTime=$PublishTime" |
@@ -58,9 +88,14 @@ try {
     $generateArgs += "--publish-time=$PublishTime"
   }
 
-  $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile "$logDir\daily-feature-last.log"
+  $dailyLog = "$logDir\daily-feature-last.log"
+  $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
   if ($generateExit -ne 0) {
-    throw "generate-daily-feature exited with code $generateExit"
+    Invoke-CandidateRefresh -LogFile $dailyLog
+    $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
+    if ($generateExit -ne 0) {
+      throw "generate-daily-feature exited with code $generateExit"
+    }
   }
 
   $publishExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\publish-xiaohongshu.mjs") -LogFile "$logDir\daily-feature-last.log"

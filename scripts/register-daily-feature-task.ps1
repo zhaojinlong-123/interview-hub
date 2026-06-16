@@ -1,15 +1,27 @@
 param(
-  [string]$Time = "09:30"
+  [string]$MorningTime = "09:30",
+  [string]$AfternoonTime = "15:30"
 )
 
 $ErrorActionPreference = "Stop"
 
-$taskName = "InterviewHubDailyFeature"
 $scriptPath = "E:\workshop\interview-hub\scripts\run-daily-feature.ps1"
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
-$trigger = New-ScheduledTaskTrigger -Daily -At $Time
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
 
-Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
+function Register-DailyFeatureTask {
+  param(
+    [string]$TaskName,
+    [string]$Slot,
+    [string]$Time
+  )
 
-Write-Host "Registered $taskName at $Time daily."
+  $argument = "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`" -Slot $Slot -PublishTime $Time"
+  $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $argument
+  $trigger = New-ScheduledTaskTrigger -Daily -At $Time
+
+  Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
+  Write-Host "Registered $TaskName at $Time daily."
+}
+
+Register-DailyFeatureTask -TaskName "InterviewHubDailyFeatureMorning" -Slot "morning" -Time $MorningTime
+Register-DailyFeatureTask -TaskName "InterviewHubDailyFeatureAfternoon" -Slot "afternoon" -Time $AfternoonTime

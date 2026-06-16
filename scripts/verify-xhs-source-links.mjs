@@ -20,57 +20,23 @@ async function writeJson(file, value) {
   await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-function getJson(url) {
+function request(url, options = {}) {
   return new Promise((resolve, reject) => {
-    http.get(url, (res) => {
-      let body = "";
-      res.setEncoding("utf8");
-      res.on("data", (chunk) => {
-        body += chunk;
-      });
-      res.on("end", () => {
-        try {
-          resolve(JSON.parse(body));
-        } catch (error) {
-          reject(error);
-        }
-      });
-    }).on("error", reject);
-  });
-}
-
-function request(url) {
-  return new Promise((resolve, reject) => {
-    http.get(url, (res) => {
+    const req = http.request(url, options, (res) => {
       let body = "";
       res.setEncoding("utf8");
       res.on("data", (chunk) => {
         body += chunk;
       });
       res.on("end", () => resolve(body));
-    }).on("error", reject);
-  });
-}
-
-function putJson(url) {
-  return new Promise((resolve, reject) => {
-    const req = http.request(url, { method: "PUT" }, (res) => {
-      let body = "";
-      res.setEncoding("utf8");
-      res.on("data", (chunk) => {
-        body += chunk;
-      });
-      res.on("end", () => {
-        try {
-          resolve(JSON.parse(body));
-        } catch (error) {
-          reject(error);
-        }
-      });
     });
     req.on("error", reject);
     req.end();
   });
+}
+
+async function requestJson(url, options = {}) {
+  return JSON.parse(await request(url, options));
 }
 
 function sleep(ms) {
@@ -104,50 +70,43 @@ async function connect(webSocketDebuggerUrl) {
 
 async function createTab(url) {
   const endpoint = `${CDP.replace(/\/$/, "")}/json/new?${encodeURIComponent(url)}`;
-  const target = await putJson(endpoint);
-  return connect(target.webSocketDebuggerUrl);
+  return requestJson(endpoint, { method: "PUT" });
+}
+
+async function getTargets() {
+  return requestJson(`${CDP.replace(/\/$/, "")}/json/list`);
+}
+
+async function closeTarget(id) {
+  try {
+    await request(`${CDP.replace(/\/$/, "")}/json/close/${id}`);
+  } catch {}
+}
+
+function classifyPage(target) {
+  const url = String(target.url || "");
+  const title = String(target.title || "");
+  if (/website-login\/error/.test(url) || /安全限制|访问链接异常|error_code/.test(title)) {
+    return "blocked_or_login_required";
+  }
+  if (/xiaohongshu\.com\/explore\//.test(url) && /小红书/.test(title)) {
+    return "opened";
+  }
+  if (/小红书/.test(title)) {
+    return "login_required_but_title_readable";
+  }
+  return "unknown";
 }
 
 async function verify(record) {
-  const page = await createTab(record.sourceUrl);
-  const { ws, send } = page;
+  const target = await createTab(record.sourceUrl);
   try {
-    await send("Runtime.enable");
-    await send("Page.enable");
-    await send("Page.navigate", { url: record.sourceUrl });
-    await sleep(5000);
-    await send("Page.stopLoading");
-    let value = {};
-    for (let attempt = 0; attempt < 3; attempt += 1) {
-      const state = await send("Runtime.evaluate", {
-        expression: `(() => ({
-          url: location.href,
-          title: document.title,
-          readyState: document.readyState,
-          text: (document.body?.innerText || "").slice(0, 1600)
-        }))()`,
-        returnByValue: true,
-      });
-      value = state.result?.value || {};
-      if (value.url || value.title || value.text) break;
-      await sleep(1500);
-    }
-    const result = await send("Runtime.evaluate", {
-      expression: `(() => ({
-        url: location.href,
-        title: document.title,
-        readyState: document.readyState,
-        text: (document.body?.innerText || "").slice(0, 1600)
-      }))()`,
-      returnByValue: true,
-    });
-    value = result.result?.value || value;
-    const text = String(value.text || "");
-    let status = "unknown";
-    if (/安全限制|访问链接异常|error_code|登录|扫码/.test(text) || /website-login\/error/.test(value.url || "")) {
-      status = "blocked_or_login_required";
-    } else if (/小红书/.test(value.title || "") || /赞|收藏|评论|发布/.test(text)) {
-      status = "opened";
+    let value = target;
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      await sleep(3000);
+      const targets = await getTargets();
+      value = targets.find((item) => item.id === target.id) || value;
+      if (/xiaohongshu\.com\/explore\//.test(value.url || "") || /website-login\/error/.test(value.url || "")) break;
     }
     return {
       queueId: record.id,
@@ -155,16 +114,13 @@ async function verify(record) {
       sourceUrl: record.sourceUrl,
       finalUrl: value.url || "",
       pageTitle: value.title || "",
-      readyState: value.readyState || "",
-      status,
-      textSample: text.replace(/\s+/g, " ").slice(0, 260),
+      readyState: "",
+      status: classifyPage(value),
+      textSample: "",
       verifiedAt: new Date().toISOString(),
     };
   } finally {
-    try {
-      await send("Page.close");
-    } catch {}
-    ws.close();
+    await closeTarget(target.id);
   }
 }
 

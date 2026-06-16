@@ -171,10 +171,10 @@
     "direction": "训练框架 / 推理优化",
     "primaryQuestion": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
     "topic": "训练框架 / 显存优化",
-    "body": "每日精选：字节｜训练框架 / 推理优化 题目精讲 今天这条适合复习：多模态大模型 / VLA / 具身智能 / 视频理解 / 视觉理解 / 训练框架。 面试题目 1. DeepSpeed\n引用来源：小红书，2026-06-14\n原文链接：https://www.xiaohongshu.com/search_result/6a2cd39c000000001503c862?xsec_token=ABph78W1r_ZHk8bqDtoizWXIM5-_ErHrykT5k6uiUMg5Y%3D&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #字节 #训练框架 #训练框架推理优化 #大模型面试 #AI学习",
+    "body": "每日精选：字节｜训练框架 / 推理优化 题目精讲 今天这条适合复习：多模态大模型 / VLA / 具身智能 / 视频理解 / 视觉理解 / 训练框架。 面试题目 1. DeepSpeed\n引用来源：小红书，2026-06-14\n原文链接：https://www.xiaohongshu.com/explore/6a2cd39c000000001503c862?xsec_token=ABph78W1r_ZHk8bqDtoizWXIM5-_ErHrykT5k6uiUMg5Y=&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #字节 #训练框架 #训练框架推理优化 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-14",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2cd39c000000001503c862?xsec_token=ABph78W1r_ZHk8bqDtoizWXIM5-_ErHrykT5k6uiUMg5Y%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a2cd39c000000001503c862?xsec_token=ABph78W1r_ZHk8bqDtoizWXIM5-_ErHrykT5k6uiUMg5Y=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-14-8ded06a9a5b9.md",
     "featureId": "daily-2026-06-14-8ded06a9a5b9",
     "postId": "auto-20260614-ea039a63cf1d",
@@ -239,7 +239,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-eeee8e7e0263",
@@ -306,7 +308,7 @@
     "body": "每日精选：蔚来｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3Gl\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #蔚来 #大模型 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-d8f0889f10e1.md",
     "featureId": "daily-2026-06-13-d8f0889f10e1",
     "postId": "auto-20260613-5567a52c6128",
@@ -369,7 +371,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
@@ -379,7 +383,7 @@
     "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面经 #具身 #机器人 #综合 #VLA具身智能 #大模型面试",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-06",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-d6e5e8fb2a41.md",
     "featureId": "daily-2026-06-13-d6e5e8fb2a41",
     "postId": "auto-20260606-566028bd9c5c",
@@ -426,7 +430,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-c026b29d4659",
@@ -501,7 +507,7 @@
     "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-13，xiaohongshu.com\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-acef07a226aa.md",
     "featureId": "daily-2026-06-13-acef07a226aa",
     "postId": "auto-20260613-3ba92dd70118",
@@ -548,7 +554,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-a866a4919061",
@@ -778,10 +786,10 @@
     "title": "字节VLA/机器人动作题目精讲",
     "coverTitle": "字节面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：字节 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：小红书，2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #字节 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
+    "body": "每日精选：字节 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：小红书，2026-06-13\n原文链接：https://www.xiaohongshu.com/explore/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE=&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #字节 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6980216c000000000a030e49?xsec_token=ABAay3NYslcXQvn4FXjdFFSxABC1imSiNpT9ruf0xxmKE=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-2d55b23ddce6.md",
     "featureId": "daily-2026-06-13-2d55b23ddce6",
     "postId": "auto-20260613-21818fae62dc",
@@ -831,7 +839,9 @@
     "company": "字节",
     "direction": "VLA / 具身智能",
     "primaryQuestion": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-    "topic": "VLA / 机器人动作"
+    "topic": "VLA / 机器人动作",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-176a8d789a4e",
@@ -841,7 +851,7 @@
     "body": "每日精选：综合｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGN\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-176a8d789a4e.md",
     "featureId": "daily-2026-06-13-176a8d789a4e",
     "postId": "auto-20260613-9d9a46d8887a",
@@ -888,7 +898,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-13-08551c35562c",
@@ -1083,7 +1095,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "unresolved_search_result",
+    "sourceValidationNote": "Still resolves to a Xiaohongshu search page; do not use as a valid source-backed publish candidate."
   },
   {
     "id": "xhs-daily-2026-06-10-d4b25fa7e460",
@@ -1093,7 +1107,7 @@
     "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面试 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-06",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69e4e968000000002301cbbc?xsec_token=AB3YspA-f6sRpK6KjjqiWwuiC5Uo7O0Op9Pg3AfQR7JP4%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e4e968000000002301cbbc?xsec_token=AB3YspA-f6sRpK6KjjqiWwuiC5Uo7O0Op9Pg3AfQR7JP4=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-10-d4b25fa7e460.md",
     "featureId": "daily-2026-06-10-d4b25fa7e460",
     "postId": "auto-20260606-a4648d2edf72",
@@ -1140,7 +1154,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-09-bfb99c10afae",
@@ -1150,7 +1166,7 @@
     "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面经 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-06",
-    "sourceUrl": "https://www.xiaohongshu.com/search_result/69f2fd3f00000000370343bb?xsec_token=ABza3oJsRcEFvAlXn9CTj2agGcbNCiSaq_4XvgEY-JDOs%3D&xsec_source=pc_search",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69f2fd3f00000000370343bb?xsec_token=ABza3oJsRcEFvAlXn9CTj2agGcbNCiSaq_4XvgEY-JDOs=&xsec_source=pc_search",
     "articlePath": "content/xiaohongshu-drafts/2026-06-09-bfb99c10afae.md",
     "featureId": "daily-2026-06-09-bfb99c10afae",
     "postId": "auto-20260606-0705a0e6474c",
@@ -1197,7 +1213,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-14T16:25:26.597Z",
+    "sourceValidationStatus": "verified_original_note",
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
   },
   {
     "id": "xhs-daily-2026-06-08-da7740600601",

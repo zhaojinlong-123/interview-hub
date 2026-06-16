@@ -8,6 +8,8 @@ $ErrorActionPreference = "Stop"
 $scriptPath = "E:\workshop\interview-hub\scripts\run-daily-feature.ps1"
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
 
+Unregister-ScheduledTask -TaskName "InterviewHubDailyFeature" -Confirm:$false -ErrorAction SilentlyContinue
+
 function Register-DailyFeatureTask {
   param(
     [string]$TaskName,

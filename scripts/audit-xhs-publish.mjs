@@ -194,17 +194,26 @@ function auditQueue(queue) {
       byQuestion.set(key, list);
     });
 
+    const answerBodiesByQuestion = new Map();
     for (const [index, card] of answerCards.entries()) {
       const title = String(card.title || "");
       const body = String(card.body || "");
-      const indexMatch = String(card.kicker || "").match(/详细解答\s*(\d+)/);
+      const indexMatch = String(card.kicker || "").match(/(\d+)/);
       const indexedQuestion = indexMatch ? questions[Number(indexMatch[1]) - 1] : "";
       const matchedQuestion = indexedQuestion
-        || questions.find((q) => title.includes(q.slice(0, Math.min(20, q.length))) || q.includes(title.replace(/…$/, "").slice(0, 20)))
+        || questions.find((q) => title.includes(q.slice(0, Math.min(20, q.length))) || q.includes(title.slice(0, 20)))
         || questions[Math.min(index, questions.length - 1)]
         || title;
-      const risk = answerRisk(matchedQuestion, body);
-      if (risk) issues.push({ type: "answer_mismatch", id: record.id, title: record.title, question: matchedQuestion, risk });
+      const key = questionKey(matchedQuestion) || matchedQuestion;
+      const current = answerBodiesByQuestion.get(key);
+      answerBodiesByQuestion.set(key, {
+        question: matchedQuestion,
+        body: [current?.body, body].filter(Boolean).join("\n"),
+      });
+    }
+    for (const { question, body } of answerBodiesByQuestion.values()) {
+      const risk = answerRisk(question, body);
+      if (risk) issues.push({ type: "answer_mismatch", id: record.id, title: record.title, question, risk });
     }
 
     if (record.sourcePlatform && record.sourceUrl) {

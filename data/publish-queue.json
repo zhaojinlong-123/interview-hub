@@ -1,5 +1,249 @@
 [
   {
+    "id": "xhs-daily-2026-06-15-7365dd0ad34a",
+    "title": "对齐训练RLHF题目精讲",
+    "coverTitle": "强化学习 / 对齐训练题目精讲",
+    "coverSubtitle": "强化学习 / 对齐训练 高频题",
+    "body": "每日精选：强化学习 / 对齐训练题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：牛客，2026-06-14\n原文链接：https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-15-7365dd0ad34a.md",
+    "featureId": "daily-2026-06-15-7365dd0ad34a",
+    "postId": "missed-20260615-morning-rl",
+    "company": "",
+    "direction": "强化学习 / 对齐训练",
+    "primaryQuestion": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
+    "imageCards": [
+      {
+        "kicker": "本篇速览",
+        "title": "强化学习 / 对齐训练",
+        "body": "方向：强化学习 / 对齐训练\n题目：RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？\n\n2. Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "footer": "题目和来源一致，答案逐题展开"
+      },
+      {
+        "kicker": "详细解答 1",
+        "title": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "body": "RLHF 是一套从人类偏好到策略优化的流程，常见做法是先训练 reward model，再用 PPO 优化策略；PPO 需要采样、reward model 和 KL 约束，灵活但成本高、稳定性敏感。DPO 不显式训练 reward model，而是直接用偏好对优化策略，让偏好样本中的 chosen 比 rejected 更可能，工程更简单稳定，但强依赖偏好数据质量。GRPO 用组内相对奖励降低对 value model 的依赖，常用于数学推理等可批量采样比较的场景。面试回答要讲数据来源、KL 约束、reward hacking、长度偏置、评估指标和线上安全边界。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "详细解答 2",
+        "title": "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "body": "Reward model 的偏好数据通常来自同一 prompt 下多个回答的人工排序、专家标注或模型辅助标注。关键是让 chosen/rejected 覆盖真实质量差异，而不是只覆盖格式差异。长度偏置可以通过长度分桶、显式惩罚、pair 采样平衡和评估时控制回答长度缓解；reward hacking 要用 held-out 人评、规则校验、红队样本和多维 reward 监控；分布外回答则需要加入拒答、安全、事实性和复杂任务样本。好的 reward model 不应只给高分，而要能区分有用性、真实性、安全性和指令遵循，并持续用线上 badcase 回流修正。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "引用来源",
+        "title": "牛客",
+        "body": "牛客 · 2026-06-14\nhttps://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
+        "footer": "链接也会放在正文里"
+      }
+    ],
+    "status": "published",
+    "reason": "已提交发布，进入平台处理",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "createdAt": "2026-06-16T15:05:07.445Z",
+    "updatedAt": "2026-06-16T15:05:07.445Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-16-24818255f515",
+    "title": "字节多模态大模型题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "body": "每日精选：字节｜多模态大模型题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n公司：字节\n引用来源：知乎，2026-06-14\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-16-24818255f515.md",
+    "featureId": "daily-2026-06-16-24818255f515",
+    "postId": "missed-20260616-morning-byte-vlm",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "primaryQuestion": "高分辨率图片输入时，动态分辨率、tile 切分和 token 压缩如何取舍？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-16-24818255f515/01-card.png",
+    "imageCards": [
+      {
+        "kicker": "本篇速览",
+        "title": "字节｜多模态大模型",
+        "body": "公司：字节\n方向：多模态大模型\n题目：高分辨率图片输入时，动态分辨率、tile 切分和 token 压缩如何取舍？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 高分辨率图片输入时，动态分辨率、tile 切分和 token 压缩如何取舍？\n\n2. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+        "footer": "题目和来源一致，答案逐题展开"
+      },
+      {
+        "kicker": "详细解答 1",
+        "title": "高分辨率图片输入时，动态分辨率、tile 切分和 token 压缩如何取舍？",
+        "body": "高分辨率输入的核心矛盾是细节信息和 token 成本。动态分辨率会根据图片长宽比和内容复杂度选择输入尺度，优点是避免所有图片都按最大分辨率处理；tile 切分把大图拆成局部块，适合 OCR、图表、遥感和细粒度检测，但会增加跨 tile 融合难度；token 压缩通过 pooling、query 压缩或 token pruning 减少视觉 token，适合降低 LLM 侧上下文压力。取舍上，如果任务依赖局部文字和小目标，应优先保留高分辨率 tile；如果任务偏整体场景理解，可以更强压缩。面试回答要落到指标：准确率、OCR 召回、幻觉率、视觉 token 数、显存和首 token 延迟。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "详细解答 2",
+        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
+        "body": "视觉 encoder 输出通常是连续视觉特征，而 LLM 接收的是语言 token embedding，因此需要连接层把视觉特征映射到 LLM 可用空间。Linear projector 最简单，直接线性映射视觉 patch token，延迟低、训练稳定，但压缩和选择能力弱；Q-Former 使用可学习 query 从视觉特征里抽取固定数量的视觉摘要，能减少 token，但可能丢细节；cross-attention adapter 让语言侧和视觉侧交互更充分，表达能力强，但训练和推理成本更高。工程上常按任务选择：OCR 和细粒度 grounding 更需要保留局部 token，通用问答可以用 query 压缩。评估要看图文对齐、grounding、OCR、空间关系和幻觉率。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "引用来源",
+        "title": "知乎",
+        "body": "知乎 · 2026-06-14\nhttps://zhuanlan.zhihu.com/p/2014314780802967473",
+        "footer": "链接也会放在正文里"
+      }
+    ],
+    "status": "published",
+    "reason": "已提交发布，进入平台处理",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "createdAt": "2026-06-16T15:03:51.761Z",
+    "updatedAt": "2026-06-16T15:03:51.761Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-16-78fd3487c994",
+    "title": "KVCache推理部署题目精讲",
+    "coverTitle": "推理部署 / 模型压缩题目精讲",
+    "coverSubtitle": "推理部署 / 模型压缩 高频题",
+    "body": "每日精选：推理部署 / 模型压缩题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：知乎，2026-06-14\n原文链接：https://zhuanlan.zhihu.com/p/2014643829844770923\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014643829844770923",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-16-78fd3487c994.md",
+    "featureId": "daily-2026-06-16-78fd3487c994",
+    "postId": "missed-20260616-afternoon-inference",
+    "company": "",
+    "direction": "推理部署 / 模型压缩",
+    "primaryQuestion": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
+    "imageCards": [
+      {
+        "kicker": "本篇速览",
+        "title": "推理部署 / 模型压缩",
+        "body": "方向：推理部署 / 模型压缩\n题目：KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？\n\n2. PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
+        "footer": "题目和来源一致，答案逐题展开"
+      },
+      {
+        "kicker": "详细解答 1",
+        "title": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+        "body": "KV cache 保存每层 attention 的 key/value，用来避免生成新 token 时重复计算历史上下文。它的显存大致随 batch size、序列长度、层数、KV head 数、head dimension 和数据类型线性增长。训练时主要显存压力来自参数、梯度、优化器状态和激活值；推理时没有梯度和优化器状态，长上下文下 KV cache 会成为核心瓶颈。优化手段包括 MQA/GQA 减少 KV head、PagedAttention 降低碎片、KV cache 量化、prefix cache 复用、滑动窗口或 KV eviction。面试里最好能说明 TTFT 受 prefill 影响，TPOT 受 decode 阶段和 KV 读取影响。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "详细解答 2",
+        "title": "PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
+        "body": "传统连续 KV cache 往往为每个请求预留一段连续显存，序列长度不一致时容易产生浪费和碎片。PagedAttention 借鉴操作系统分页思想，把 KV cache 切成固定大小的 block，通过页表把逻辑序列位置映射到物理块。这样短请求不会占用过大的连续空间，长请求可以按需扩展，多个请求调度时也更容易复用和回收。它提升的是显存利用率和 batch 调度灵活性，不是改变 attention 的数学结果。工程风险在 block size、页表管理、内存访问局部性和调度复杂度，需要用吞吐、显存水位、碎片率、TTFT 和 TPOT 一起评估。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "引用来源",
+        "title": "知乎",
+        "body": "知乎 · 2026-06-14\nhttps://zhuanlan.zhihu.com/p/2014643829844770923",
+        "footer": "链接也会放在正文里"
+      }
+    ],
+    "status": "published",
+    "reason": "?????????????????",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "createdAt": "2026-06-16T14:26:16.159Z",
+    "updatedAt": "2026-06-16T15:06:03.651Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-15-e3bc7c5a3575",
+    "title": "视频时序理解题目精讲",
+    "coverTitle": "视频 / 视觉理解题目精讲",
+    "coverSubtitle": "视频 / 视觉理解 高频题",
+    "body": "每日精选：视频 / 视觉理解题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：CSDN，2026-06-14\n原文链接：https://blog.csdn.net/qq_45934285/article/details/143261317\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://blog.csdn.net/qq_45934285/article/details/143261317",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-15-e3bc7c5a3575.md",
+    "featureId": "daily-2026-06-15-e3bc7c5a3575",
+    "postId": "missed-20260615-afternoon-video",
+    "company": "",
+    "direction": "视频 / 视觉理解",
+    "primaryQuestion": "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-15-e3bc7c5a3575/01-card.png",
+    "imageCards": [
+      {
+        "kicker": "本篇速览",
+        "title": "视频 / 视觉理解",
+        "body": "方向：视频 / 视觉理解\n题目：视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？\n\n2. 视频问答如何评估动作理解、事件边界、因果关系和跨镜头一致性？",
+        "footer": "题目和来源一致，答案逐题展开"
+      },
+      {
+        "kicker": "详细解答 1",
+        "title": "视频理解中帧采样、temporal token 压缩和 long-context attention 如何…",
+        "body": "这题要先说明三者解决的是同一个矛盾：视频信息量很大，但模型上下文、显存和延迟有限。帧采样决定把哪些原始帧送进模型，适合从输入侧降低成本；temporal token 压缩是在特征侧合并冗余时间信息，适合保留长视频全局语义；long-context attention 则尽量保留更多 token，让模型直接建模长程依赖。工程上，短视频动作识别可以用较密采样，长视频问答更依赖关键帧加片段检索；如果任务需要细粒度动作边界，不能压得太狠；如果任务更偏摘要或场景理解，可以更激进压缩。面试里要补评估指标：动作识别准确率、事件边界定位、跨片段一致性、首 token 延迟和单位视频成本。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "详细解答 2",
+        "title": "视频问答如何评估动作理解、事件边界、因果关系和跨镜头一致性？",
+        "body": "视频问答评估不能只看答案是否语义相近，要按能力拆解。动作理解看模型能否区分拿起、放下、打开、关闭等时间相关动作；事件边界看能否定位动作开始和结束，而不是只识别静态画面；因果关系看是否能回答因为前面发生了什么所以后面结果如何；跨镜头一致性看同一人物、物体或状态在多个片段里是否保持一致。数据集设计上要有时间戳标注、干扰帧、相似动作负例和跨片段问题。线上评估还要看幻觉率和不确定性表达：视频里没有出现的信息，模型应该说无法判断，而不是补剧情。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "引用来源",
+        "title": "CSDN",
+        "body": "CSDN · 2026-06-14\nhttps://blog.csdn.net/qq_45934285/article/details/143261317",
+        "footer": "链接也会放在正文里"
+      }
+    ],
+    "status": "published",
+    "reason": "?????????????????",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "createdAt": "2026-06-16T14:23:46.427Z",
+    "updatedAt": "2026-06-16T15:06:03.651Z"
+  },
+  {
     "id": "xhs-daily-2026-06-15-680ffa613f61",
     "title": "字节具身智能任务题目精讲",
     "coverTitle": "字节面试题精讲",
@@ -103,64 +347,92 @@
   },
   {
     "id": "xhs-daily-2026-06-14-ef7ca72d79bc",
-    "title": "VLA/机器人动作题目精讲",
+    "title": "CSDN???????",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "company": "综合",
-    "direction": "VLA / 具身智能",
-    "primaryQuestion": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-    "topic": "VLA / 机器人动作",
-    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-06-13\n原文链接：https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20%E9%9D%A2%E7%BB%8F\n完整回答已拆成图卡，建议按顺序复习。\n#知乎 #LLM #VLA #多模态 #面经 #具身 #综合 #VLA具身智能",
-    "sourcePlatform": "知乎",
+    "company": "??",
+    "direction": "?? / ????",
+    "primaryQuestion": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+    "topic": "???? / ????",
+    "body": "每日精选：综合｜视频 / 视觉理解题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：CSDN\n原文链接：https://blog.csdn.net/qq_45934285/article/details/143261317\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20%E9%9D%A2%E7%BB%8F",
+    "sourceUrl": "https://blog.csdn.net/qq_45934285/article/details/143261317",
     "articlePath": "content/xiaohongshu-drafts/2026-06-14-ef7ca72d79bc.md",
     "featureId": "daily-2026-06-14-ef7ca72d79bc",
     "postId": "auto-20260613-ce5f69daa751",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/01-cover.png",
+    "coverImage": "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/01-cover.png",
     "imageCards": [
       {
         "kind": "cover",
-        "kicker": "本篇速览",
-        "title": "综合｜VLA / 具身智能",
-        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-        "footer": "Interview Hub · 面试题精讲"
+        "kicker": "面试题目",
+        "title": "视频理解时序建模题目精讲",
+        "body": "公司：综合\n方向：视频 / 视觉理解\n题目：视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+        "footer": "第一页先看公司 / 方向 / 题目",
+        "index": 1,
+        "total": 6
       },
       {
         "kind": "questions",
-        "kicker": "面试题目",
+        "kicker": "本篇问题",
         "title": "今天重点看这几题",
-        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "footer": "先能 30 秒讲清楚，再展开细节"
+        "body": "1. 视频模型如何评估时序一致性、动作理解、事件边界和身份保持？\n\n2. temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+        "footer": "后面按顺序给完整回答",
+        "index": 2,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 1",
-        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-1",
+        "title": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+        "body": "视频理解不能只看单帧问答准确率，要拆成时序一致性、动作理解、事件边界和身份保持几类能力。时序一致性看模型是否理解先后顺序和因果关系；动作理解看是否识别动作类别、动作对象和动作变化；事件边界看能否定位开始、结束和关键转折点；身份保持看跨镜头、遮挡和长视频中人物或物体是否被混淆。工程评估要报告采样帧数、视频长度、token 预算、延迟和显存，因为很多视频模型失败不是不会看图，",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 3,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 2",
-        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-2",
+        "title": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
+        "body": "而是关键帧没被保留或时序信息被压缩掉。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 4,
+        "total": 6
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细回答 2-1",
+        "title": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+        "body": "temporal token 压缩的目标是把大量帧 token 变成少量高信息密度的时序 token。常见做法包括时间窗口池化、关键帧选择、query token 汇聚、运动显著性筛选和片段级摘要。它的优点是显著降低长视频 attention 成本，让模型能处理更长上下文；代价是短暂动作、细粒度事件和跨帧身份变化容易被压掉。短视频细粒度动作识别更适合保留更多帧和局部 token，",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 5,
+        "total": 6
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细回答 2-2",
+        "title": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
+        "body": "长视频问答、检索和摘要更适合先压缩成片段记忆，再做跨片段推理。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 6,
+        "total": 6
       }
     ],
     "createdAt": "2026-06-14T02:33:52.821Z",
     "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/01-cover.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/02-questions.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-14-ef7ca72d79bc/06-answer.png"
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/01-cover.png",
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/02-questions.png",
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/03-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/04-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/05-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-video-understanding-20260615/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.595Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "sourceValidationStatus": "replaced_with_verified_topic",
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets."
   },
   {
     "id": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -302,78 +574,92 @@
   },
   {
     "id": "xhs-daily-2026-06-13-d8f0889f10e1",
-    "title": "蔚来VLA具身智能题目精讲",
+    "title": "51CTO???????",
     "coverTitle": "蔚来面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：蔚来｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3Gl\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #蔚来 #大模型 #VLA #面经 #VLA具身智能 #大模型面试 #AI学习",
-    "sourcePlatform": "小红书",
+    "body": "每日精选：综合｜自动驾驶 / 世界模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/821686.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "sourcePlatform": "51CTO",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6a1d8be2000000003701ce12?xsec_token=AB8iuIrL66-e76JHj-C1uJknn1i3GlZFOQ76n9trr1RWY=&xsec_source=pc_search",
+    "sourceUrl": "https://www.51cto.com/article/821686.html",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-d8f0889f10e1.md",
     "featureId": "daily-2026-06-13-d8f0889f10e1",
     "postId": "auto-20260613-5567a52c6128",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/01-cover.png",
+    "coverImage": "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/01-cover.png",
     "imageCards": [
       {
         "kind": "cover",
-        "kicker": "每日精选",
-        "title": "蔚来面试题精讲",
-        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-        "footer": "Interview Hub"
+        "kicker": "面试题目",
+        "title": "自动驾驶数据闭环题目精讲",
+        "body": "公司：综合\n方向：自动驾驶 / 世界模型\n题目：自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+        "footer": "第一页先看公司 / 方向 / 题目",
+        "index": 1,
+        "total": 6
       },
       {
         "kind": "questions",
-        "kicker": "面试题目",
+        "kicker": "本篇问题",
         "title": "今天重点看这几题",
-        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n3. 自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？\n\n4. 驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
-        "footer": "先能 30 秒讲清楚，再展开细节"
+        "body": "1. 自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？\n\n2. 多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+        "footer": "后面按顺序给完整回答",
+        "index": 2,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 1",
-        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-1",
+        "title": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+        "body": "自动驾驶数据筛选不是随机抽样，而是围绕高价值片段做闭环。corner case 可以从感知低置信度、预测分歧、规划急刹、规则冲突、罕见天气和异常交通参与者中挖掘；near miss 看 TTC、最小距离、急刹、接管前后轨迹和安全员干预；接管片段要标出接管原因、接管前模型输出、人工修正动作和是否可恢复；",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 3,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 2",
-        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-2",
+        "title": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+        "body": "标注不确定样本来自多标注员分歧、模型 ensemble 分歧、遮挡严重和传感器缺失。最后要聚类去重、人工复核并回流训练。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 4,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 3",
-        "title": "自动驾驶世界模型如何从 BEV、occupancy、轨迹预测和仿真闭环中学习环境动态？",
-        "body": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 2-1",
+        "title": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+        "body": "多传感器对齐要同时处理时间对齐和空间标定。时间上，每路传感器都有 timestamp，常以主相机或融合时间轴为基准，对点云、雷达目标、定位姿态、车速和控制信号做插值或最近邻匹配，高速运动场景还要做运动补偿。空间上，需要外参把不同传感器统一到车体坐标系或世界坐标系，再投影到 BEV 或图像平面。难点包括时钟漂移、丢帧、曝光延迟、外参松动和定位跳变，",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 5,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 4",
-        "title": "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
-        "body": "自动驾驶或机器人世界模型的重点是学习环境状态随动作和时间的变化。BEV/occupancy 提供空间占用和可行驶区域，轨迹预测刻画其他交通参与者或物体的未来行为，仿真闭环用模型生成的未来状态反过来评估规划策略。回答时要区分 open-loop 预测分数和 closed-loop 交互效果：前者看重重建、预测、碰撞和位姿误差，后者更看重安全、舒适、任务成功率和长尾场景恢复能力。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 2-2",
+        "title": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
+        "body": "必须用重投影误差、动态目标一致性和线上 badcase 持续校验。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 6,
+        "total": 6
       }
     ],
     "createdAt": "2026-06-13T04:05:52.054Z",
     "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/01-cover.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/02-questions.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/06-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/07-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-d8f0889f10e1/08-answer.png"
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/01-cover.png",
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/02-questions.png",
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/03-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/04-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/05-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-autodrive-data-20260615/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z",
-    "sourceValidationStatus": "verified_original_note",
-    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "sourceValidationStatus": "replaced_with_verified_topic",
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
+    "company": "????",
+    "direction": "???? / ????",
+    "topic": "????????",
+    "primaryQuestion": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？"
   },
   {
     "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
@@ -845,62 +1131,82 @@
   },
   {
     "id": "xhs-daily-2026-06-13-176a8d789a4e",
-    "title": "VLA具身智能题目精讲",
+    "title": "51CTO???????",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：综合｜VLA / 具身智能 题目精讲\n\n今天这条适合复习：VLA / 具身智能 / 多模态大模型 / 训练框架 / 推理优化 / 自动驾驶数据。\n\n面试题目\n1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？\n\n一句话答案\n这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。\n面试展开\n面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。\n复习抓手\n- 先说核心机制，再说工程取舍。\n- 主动补常见坑和评估指标。\n- 最后落到自己的项目经验。\n\n引用来源：小红书 2026-06-13\n原文链接：https://www.xiaohongshu.com/search_result/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGN\n引用来源：小红书，2026-06-13，xiaohongshu.com\n完整整理见图卡。\n#小红书 #VLA #面试 #综合 #VLA具身智能 #大模型面试 #AI学习",
-    "sourcePlatform": "小红书",
+    "body": "每日精选：综合｜世界模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/820298.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "sourcePlatform": "51CTO",
     "sourceDate": "2026-06-13",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6a2b71d9000000002202a62b?xsec_token=ABL8XYuRnDDu-jEmdqXTAo83rlnl9vJDVNfaiGNZ9T3Yo=&xsec_source=pc_search",
+    "sourceUrl": "https://www.51cto.com/article/820298.html",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-176a8d789a4e.md",
     "featureId": "daily-2026-06-13-176a8d789a4e",
     "postId": "auto-20260613-9d9a46d8887a",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
+    "coverImage": "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/01-cover.png",
     "imageCards": [
       {
         "kind": "cover",
-        "kicker": "每日精选",
-        "title": "VLA具身智能面试题精讲",
-        "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-        "footer": "Interview Hub"
+        "kicker": "面试题目",
+        "title": "世界模型规划题目精讲",
+        "body": "公司：综合\n方向：世界模型\n题目：世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+        "footer": "第一页先看公司 / 方向 / 题目",
+        "index": 1,
+        "total": 5
       },
       {
         "kind": "questions",
-        "kicker": "面试题目",
+        "kicker": "本篇问题",
         "title": "今天重点看这几题",
-        "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "footer": "先能 30 秒讲清楚，再展开细节"
+        "body": "1. 世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？\n\n2. 世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？",
+        "footer": "后面按顺序给完整回答",
+        "index": 2,
+        "total": 5
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 1",
-        "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-        "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。工程取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-1",
+        "title": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+        "body": "latent dynamics 决定模型在隐空间里如何预测下一步状态，既要压缩又不能丢掉和控制相关的几何、速度、接触和物体关系。reward model 决定什么轨迹算好，如果 reward 太短视会贪心，太稀疏会让长程规划不稳定。rollout horizon 决定向未来展开多远：短 horizon 稳但容易短视，长 horizon 能看长期收益但误差会累积。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 3,
+        "total": 5
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 2",
-        "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-        "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-2",
+        "title": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+        "body": "工程上通常用多步预测损失、latent consistency、不确定性估计和闭环评测约束世界模型，而不是只看生成画面质量。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 4,
+        "total": 5
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细回答 2",
+        "title": "世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？",
+        "body": "传统链路把感知、预测和规划拆开优化，边界清楚、可解释性强；世界模型试图学习环境随动作和时间变化的统一表示，能做反事实推演和闭环策略搜索。优势是更适合长程交互、仿真 rollout 和数据增强；风险是模型误差沿时间累积，分布外场景可能生成看似合理但错误的未来，规划器还可能利用 reward 漏洞。面试回答要强调安全兜底：不确定性估计、失败检测、真实闭环评测和规则约束缺一不可。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 5,
+        "total": 5
       }
     ],
     "createdAt": "2026-06-13T04:10:02.012Z",
     "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/01-cover.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/02-questions.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-13-176a8d789a4e/06-answer.png"
+      "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/01-cover.png",
+      "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/02-questions.png",
+      "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/03-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/04-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-world-model-planning-20260615/05-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z",
-    "sourceValidationStatus": "verified_original_note",
-    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "sourceValidationStatus": "replaced_with_verified_topic",
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
+    "company": "??",
+    "direction": "????",
+    "topic": "??????",
+    "primaryQuestion": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？"
   },
   {
     "id": "xhs-daily-2026-06-13-08551c35562c",
@@ -977,68 +1283,92 @@
   },
   {
     "id": "xhs-daily-2026-06-12-362a59bc5046",
-    "title": "字节多模态大模型题目精讲",
+    "title": "????VQA???",
     "coverTitle": "字节面试题精讲",
     "coverSubtitle": "多模态大模型 高频题",
-    "body": "每日精选：字节 多模态大模型题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：知乎，2026-06-06，zhihu.com\n#知乎 #字节 #大模型 #多模态 #面经 #多模态大模型 #大模型面试 #AI学习",
-    "sourcePlatform": "知乎",
+    "body": "每日精选：综合｜多模态大模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：知乎专栏\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "sourcePlatform": "知乎专栏",
     "sourceDate": "2026-06-06",
-    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E7%BB%8F",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
     "articlePath": "content/xiaohongshu-drafts/2026-06-12-362a59bc5046.md",
     "featureId": "daily-2026-06-12-362a59bc5046",
     "postId": "auto-20260606-4b438e6d70ba",
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/01-cover.png",
+    "coverImage": "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/01-cover.png",
     "imageCards": [
       {
         "kind": "cover",
-        "kicker": "每日精选",
-        "title": "字节面试题精讲",
-        "body": "多模态大模型 高频题\n面试题目 / 详细解答 / 追问方向",
-        "footer": "Interview Hub"
+        "kicker": "面试题目",
+        "title": "多图多轮视觉问答题目精讲",
+        "body": "公司：综合\n方向：多模态大模型\n题目：多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+        "footer": "第一页先看公司 / 方向 / 题目",
+        "index": 1,
+        "total": 6
       },
       {
         "kind": "questions",
-        "kicker": "面试题目",
+        "kicker": "本篇问题",
         "title": "今天重点看这几题",
-        "body": "1. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？\n\n2. 多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？\n\n3. 图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-        "footer": "先能 30 秒讲清楚，再展开细节"
+        "body": "1. 多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？\n\n2. VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+        "footer": "后面按顺序给完整回答",
+        "index": 2,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 1",
-        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
-        "body": "多模态连接层的作用是把视觉 encoder 输出映射到 LLM 可理解的 token 空间。Linear projector 简单高效但表达能力有限；Q-Former 用可学习 query 压缩视觉信息，适合减少 token；cross-attention 交互更充分但计算更贵。回答时要补训练目标和评估方式：图文对齐、指令微调、grounding、OCR、空间关系和幻觉率，不能只背模块名字。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-1",
+        "title": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+        "body": "多图理解不是把几张图简单拼接，而是要让模型知道每张图的身份、顺序和引用关系。输入侧可以给每张图增加 image id、位置标记或时间顺序标记；表示侧使用共享 vision encoder，再通过 cross-attention、多图 memory 或图间关系模块融合；推理侧要显式处理比较、变化检测、跨图指代和多轮上下文。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 3,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 2",
-        "title": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
-        "body": "视觉理解评估要按能力拆开：OCR 看文字识别和文本理解，grounding 看回答是否落到正确区域，空间关系看相对位置、计数和属性绑定，幻觉看图中没有的内容是否被编造，多轮对话看上下文一致性。工程上要结合公开 benchmark、人工评测、线上 badcase 和任务通过率，而不是只看单一总分。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 1-2",
+        "title": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+        "body": "评估时要单独看跨图实体一致性、图间顺序理解、差异比较、引用定位和多轮追问稳定性，否则模型很容易把不同图片里的对象混在一起。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 4,
+        "total": 6
       },
       {
         "kind": "answer",
-        "kicker": "详细解答 3",
-        "title": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
-        "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但必须去重、过滤模板化答案、隔离评测集，并加入困难负样本。常见坑是 OCR 泄漏、caption 套话、图文不匹配、低质量合成数据和评测集污染，这些会让模型看似会答题，实际泛化很差。",
-        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+        "kicker": "详细回答 2-1",
+        "title": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+        "body": "VLM 幻觉常来自四层：数据侧图文不匹配、caption 模板化、OCR 泄漏或评测集污染；模型侧视觉 token 被过度压缩，LLM 语言先验压过视觉证据；训练侧指令微调偏向迎合用户，缺少拒答和不确定性样本；解码侧温度过高或没有视觉一致性约束。缓解也要分层：数据清洗和困难负样本、区域级 grounding、加入不确定性表达、降低解码温度、要求引用视觉证据，",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 5,
+        "total": 6
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细回答 2-2",
+        "title": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
+        "body": "并用 hallucination rate、grounding accuracy、OCR 准确率和人工 badcase 复测来验证。",
+        "footer": "机制 -> 取舍 -> 工程指标",
+        "index": 6,
+        "total": 6
       }
     ],
     "createdAt": "2026-06-13T04:14:25.415Z",
     "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/01-cover.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/02-questions.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/03-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/04-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/05-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/06-answer.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-12-362a59bc5046/07-answer.png"
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/01-cover.png",
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/02-questions.png",
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/03-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/04-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/05-answer.png",
+      "content/xiaohongshu-edit-assets/compliance-multi-image-vlm-20260615/06-answer.png"
     ],
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "company": "??",
+    "direction": "??????",
+    "topic": "????????",
+    "primaryQuestion": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
+    "sourceValidationStatus": "replaced_with_verified_topic",
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets."
   },
   {
     "id": "xhs-daily-2026-06-11-f733da88ddaa",

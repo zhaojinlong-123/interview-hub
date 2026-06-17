@@ -23,7 +23,10 @@
     "publishStatus": "published",
     "autoPublish": true,
     "publishedAt": "2026-06-16T15:05:07.445Z",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "xhsNoteId": "6a3165f6000000001603d7f9",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.054Z"
   },
   {
     "id": "daily-2026-06-16-24818255f515",
@@ -48,8 +51,11 @@
     "target": "xiaohongshu",
     "publishStatus": "published",
     "autoPublish": true,
-    "publishedAt": "2026-06-16T15:03:51.759Z",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+    "publishedAt": "2026-06-17T04:08:39.056Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "xhsNoteId": "6a321d3e000000001c026bcb",
+    "overlapFixStatus": "republished_with_fixed_cards",
+    "overlapFixedAt": "2026-06-17T04:08:39.056Z"
   },
   {
     "id": "daily-2026-06-16-78fd3487c994",
@@ -75,7 +81,10 @@
     "publishStatus": "published",
     "autoPublish": true,
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "publishedAt": "2026-06-16T15:06:03.651Z"
+    "publishedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a31616b0000000015024a0f",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.056Z"
   },
   {
     "id": "daily-2026-06-15-e3bc7c5a3575",
@@ -101,7 +110,10 @@
     "publishStatus": "published",
     "autoPublish": true,
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "publishedAt": "2026-06-16T15:06:03.651Z"
+    "publishedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a3160b0000000001603fbc4",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.056Z"
   },
   {
     "id": "daily-2026-06-15-680ffa613f61",

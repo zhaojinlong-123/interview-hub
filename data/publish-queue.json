@@ -58,7 +58,10 @@
     "reason": "已提交发布，进入平台处理",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "createdAt": "2026-06-16T15:05:07.445Z",
-    "updatedAt": "2026-06-16T15:05:07.445Z"
+    "updatedAt": "2026-06-16T15:05:07.445Z",
+    "xhsNoteId": "6a3165f6000000001603d7f9",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.058Z"
   },
   {
     "id": "xhs-daily-2026-06-16-24818255f515",
@@ -119,7 +122,11 @@
     "reason": "已提交发布，进入平台处理",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "createdAt": "2026-06-16T15:03:51.761Z",
-    "updatedAt": "2026-06-16T15:03:51.761Z"
+    "updatedAt": "2026-06-16T15:03:51.761Z",
+    "xhsNoteId": "6a321d3e000000001c026bcb",
+    "overlapFixStatus": "republished_with_fixed_cards",
+    "overlapFixedAt": "2026-06-17T04:08:39.058Z",
+    "publishedAt": "2026-06-17T04:08:39.058Z"
   },
   {
     "id": "xhs-daily-2026-06-16-78fd3487c994",
@@ -180,7 +187,10 @@
     "reason": "?????????????????",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "createdAt": "2026-06-16T14:26:16.159Z",
-    "updatedAt": "2026-06-16T15:06:03.651Z"
+    "updatedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a31616b0000000015024a0f",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.058Z"
   },
   {
     "id": "xhs-daily-2026-06-15-e3bc7c5a3575",
@@ -241,7 +251,10 @@
     "reason": "?????????????????",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "createdAt": "2026-06-16T14:23:46.427Z",
-    "updatedAt": "2026-06-16T15:06:03.651Z"
+    "updatedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a3160b0000000001603fbc4",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.058Z"
   },
   {
     "id": "xhs-daily-2026-06-15-680ffa613f61",

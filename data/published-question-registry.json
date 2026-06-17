@@ -175,7 +175,11 @@
     "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
-    "updatedAt": "2026-06-16T15:03:51.761Z"
+    "updatedAt": "2026-06-16T15:03:51.761Z",
+    "xhsNoteId": "6a321d3e000000001c026bcb",
+    "overlapFixStatus": "republished_with_fixed_cards",
+    "overlapFixedAt": "2026-06-17T04:08:39.060Z",
+    "publishedAt": "2026-06-17T04:08:39.060Z"
   },
   {
     "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
@@ -190,7 +194,10 @@
     "sourceUrl": "https://blog.csdn.net/qq_45934285/article/details/143261317",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
-    "updatedAt": "2026-06-16T15:06:03.651Z"
+    "updatedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a3160b0000000001603fbc4",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.060Z"
   },
   {
     "key": "general:视频模型如何评估时序一致性动作理解事件边界和身份保持",
@@ -265,7 +272,10 @@
     "sourceUrl": "https://zhuanlan.zhihu.com/p/2014643829844770923",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
-    "updatedAt": "2026-06-16T15:06:03.651Z"
+    "updatedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a31616b0000000015024a0f",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.060Z"
   },
   {
     "key": "rl:646818b91c8e",
@@ -280,7 +290,10 @@
     "sourceUrl": "https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
-    "updatedAt": "2026-06-16T15:05:07.445Z"
+    "updatedAt": "2026-06-16T15:05:07.445Z",
+    "xhsNoteId": "6a3165f6000000001603d7f9",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.060Z"
   },
   {
     "key": "robot_data:5c6e23bce94e",

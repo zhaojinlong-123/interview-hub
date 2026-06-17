@@ -155,6 +155,10 @@ function guessCompany(text) {
   return COMPANY_KEYWORDS.find((company) => text.includes(company)) || "综合";
 }
 
+function hasCompanyMention(text) {
+  return COMPANY_KEYWORDS.some((company) => String(text || "").includes(company));
+}
+
 function guessType(text) {
   if (/题库|合集|攻略|总结|LeetCode|八股/.test(text)) return "collection";
   if (/题|问|50问/.test(text)) return "question";
@@ -438,7 +442,7 @@ function rankCandidate(candidate, settings = {}) {
   let score = 0;
   if (/面经|面试|一面|二面|三面|题|八股/.test(text)) score += 8;
   if (/大模型|LLM|VLA|多模态|具身|训练框架|DeepSpeed|Megatron/.test(text)) score += 6;
-  if (COMPANY_KEYWORDS.some((company) => text.includes(company))) score += 3;
+  if (hasCompanyMention(text)) score += Number(settings.companyPriority?.searchCandidateBonus ?? 10);
   if (/今天|昨天|小时前|分钟前|06-|05-|2026/.test(text)) score += 3;
   const focusDirections = settings.focusDirections || [];
   const focusHits = focusDirections.filter((keyword) => text.toLowerCase().includes(String(keyword).toLowerCase()));

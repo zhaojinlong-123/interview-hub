@@ -52,5 +52,12 @@
     "World Model 自动驾驶 面经",
     "世界模型 VLA 具身智能 面试题",
     "视频生成 世界模型 面经"
-  ]
+  ],
+  "companyPriority": {
+    "enabled": true,
+    "preferSpecificCompanyQuestions": true,
+    "searchCandidateBonus": 10,
+    "dailyFeatureBonus": 18,
+    "note": "Prefer interview questions with concrete company or institution source. Generic company values such as comprehensive, unknown, or unspecified do not receive this priority."
+  }
 }

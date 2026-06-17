@@ -63,6 +63,15 @@ function textOf(post) {
   ].filter(Boolean).join(" ");
 }
 
+function hasSpecificCompany(post) {
+  const company = String(post.company || "").trim();
+  if (!company) return false;
+  const genericCompanies = new Set(["综合", "未明确", "未知", "其他", "??", "????", "缁煎悎", "鏈槑纭?"]);
+  if (genericCompanies.has(company)) return false;
+  if (/^[?\s？]+$/.test(company)) return false;
+  return true;
+}
+
 function normalizeText(value) {
   return String(value || "")
     .toLowerCase()
@@ -211,6 +220,12 @@ function scorePost(post, settings) {
     const points = Math.min(24, focusHits.length * 6);
     score += points;
     reasons.push(`重点方向 ${focusHits.join(" / ")} +${points}`);
+  }
+
+  if (hasSpecificCompany(post)) {
+    const points = Number(settings.companyPriority?.dailyFeatureBonus ?? 18);
+    score += points;
+    reasons.push(`明确公司来源 ${post.company} +${points}`);
   }
 
   if (STRATEGIC_COMPANIES.some((company) => String(post.company || "").includes(company) || text.includes(company))) {

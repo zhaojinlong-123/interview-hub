@@ -59,6 +59,65 @@
     "updatedAt": "2026-06-18T10:53:45.635Z"
   },
   {
+    "id": "xhs-daily-2026-06-18-5047323d8c9c",
+    "title": "QwenQwen2.5类大模型在…题目精",
+    "coverTitle": "Qwen面试题精讲",
+    "coverSubtitle": "大模型架构 / 推理部署 高频题",
+    "company": "Qwen",
+    "direction": "大模型架构 / 推理部署",
+    "primaryQuestion": "Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有什么不同？",
+    "topic": "Qwen2.5 类大模型在…",
+    "body": "每日精选：Qwen 大模型架构 / 推理部署题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-18\n原文链接：https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #Qwen #大模型 #面试 #大模型架构推理部署 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-18",
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-18-5047323d8c9c.md",
+    "featureId": "daily-2026-06-18-5047323d8c9c",
+    "postId": "auto-20260618-f7b3282f50d8",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-18-5047323d8c9c/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "Qwen｜大模型架构 / 推理部署",
+        "body": "公司：Qwen\n方向：大模型架构 / 推理部署\n题目：Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有什么不同？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有什么不同？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有…",
+        "body": "回答 Qwen2.5 时不要只背模型名，要围绕结构、数据、上下文和生态讲。结构上可以从 decoder-only Transformer、RoPE/长上下文扩展、GQA/MQA 类 attention 优化、SwiGLU、RMSNorm 这些通用组件展开；训练上强调中英文、多语言、代码、数学和指令数据混合；生态上 Qwen 的多尺寸模型、VL/Audio/Code 等变体和工具调用能力是常见亮点。和 LLaMA 对比时，可以强调开源生态、数据配比和中文能力；和 DeepSeek 对比时，可以讨论",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有…",
+        "body": "MoE、推理成本、强化学习推理能力和工程部署取舍。面试官真正想看的是你能否把架构差异转成能力、成本和部署影响，而不是罗列参数。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-18T10:54:03.978Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-5047323d8c9c/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-5047323d8c9c/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-5047323d8c9c/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-5047323d8c9c/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-18T10:54:25.642Z"
+  },
+  {
     "id": "xhs-daily-2026-06-16-78fd3487c994",
     "title": "KVCache推理部署题目精讲",
     "coverTitle": "推理部署 / 模型压缩题目精讲",

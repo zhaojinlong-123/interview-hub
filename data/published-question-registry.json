@@ -223,6 +223,21 @@
     "updatedAt": "2026-06-18T10:53:45.635Z"
   },
   {
+    "key": "general:qwen25类大模型在面试中常被问到哪些结构和训练特点和llamadeepseek的回答重点有什么不同",
+    "question": "Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有什么不同？",
+    "queueId": "xhs-daily-2026-06-18-5047323d8c9c",
+    "featureId": "daily-2026-06-18-5047323d8c9c",
+    "postId": "auto-20260618-f7b3282f50d8",
+    "title": "QwenQwen2.5类大模型在…题目精",
+    "company": "Qwen",
+    "direction": "大模型架构 / 推理部署",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-18T10:54:25.642Z"
+  },
+  {
     "key": "general:temporaltoken压缩如何保留动作变化和事件顺序相比长上下文attention有什么取舍",
     "question": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
     "queueId": "xhs-daily-2026-06-14-ef7ca72d79bc",

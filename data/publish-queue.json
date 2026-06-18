@@ -1,65 +1,124 @@
 [
   {
-    "id": "xhs-daily-2026-06-15-7365dd0ad34a",
-    "title": "对齐训练RLHF题目精讲",
-    "coverTitle": "强化学习 / 对齐训练题目精讲",
-    "coverSubtitle": "强化学习 / 对齐训练 高频题",
-    "body": "每日精选：强化学习 / 对齐训练题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：牛客，2026-06-14\n原文链接：https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
-    "sourcePlatform": "牛客",
-    "sourceDate": "2026-06-14",
-    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
-    "articlePath": "content/xiaohongshu-drafts/2026-06-15-7365dd0ad34a.md",
-    "featureId": "daily-2026-06-15-7365dd0ad34a",
-    "postId": "missed-20260615-morning-rl",
-    "company": "",
-    "direction": "强化学习 / 对齐训练",
-    "primaryQuestion": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-    "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/02-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/03-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/04-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/05-card.png"
+    "id": "xhs-daily-2026-06-18-d1d94a189071",
+    "title": "智元VLA/机器人动作题目精讲",
+    "coverTitle": "智元面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "智元",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：智元 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-06-18\n原文链接：https://juejin.cn/post/7631311804195471396?searchId=20260618093353242051243E29BC377AAC\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #智元 #VLA #具身 #机器人 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-06-18",
+    "sourceUrl": "https://juejin.cn/post/7631311804195471396?searchId=20260618093353242051243E29BC377AAC",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-18-d1d94a189071.md",
+    "featureId": "daily-2026-06-18-d1d94a189071",
+    "postId": "auto-20260618-66d021682a2f",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-18-d1d94a189071/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "智元｜VLA / 具身智能",
+        "body": "公司：智元\n方向：VLA / 具身智能\n题目：智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+        "body": "VLM、VLA 和 Video 模型在具身系统中通常对应三层能力。VLM 负责理解场景和指令，例如识别物体、读懂空间关系、把用户语言转成任务语义；Video 模型负责时序理解和预测，例如判断动作进展、物体状态变化、失败前兆和未来几步可能发生什么；VLA 则把视觉、语言和机器人状态映射到动作，输出 action token、连续控制量或一段轨迹。三者可以端到端融合，也可以分层组合：VLM 做高层规划，Video 做状态估计和预测，VLA 做低层动作生成。工程取舍是，端到端系统上限高但难调试，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+        "body": "分层系统可解释性好但误差会层层传递。面试里要强调闭环：感知、规划、动作、执行反馈和失败样本回流缺一不可。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
     ],
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
+    "createdAt": "2026-06-18T10:53:17.869Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-d1d94a189071/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-d1d94a189071/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-d1d94a189071/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-18-d1d94a189071/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-18T10:53:45.635Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-16-78fd3487c994",
+    "title": "KVCache推理部署题目精讲",
+    "coverTitle": "推理部署 / 模型压缩题目精讲",
+    "coverSubtitle": "推理部署 / 模型压缩 高频题",
+    "body": "每日精选：推理部署 / 模型压缩题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：知乎，2026-06-14\n原文链接：https://zhuanlan.zhihu.com/p/2014643829844770923\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014643829844770923",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-16-78fd3487c994.md",
+    "featureId": "daily-2026-06-16-78fd3487c994",
+    "postId": "missed-20260616-afternoon-inference",
+    "company": "",
+    "direction": "推理部署 / 模型压缩",
+    "primaryQuestion": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
     "imageCards": [
       {
         "kicker": "本篇速览",
-        "title": "强化学习 / 对齐训练",
-        "body": "方向：强化学习 / 对齐训练\n题目：RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "title": "推理部署 / 模型压缩",
+        "body": "方向：推理部署 / 模型压缩\n题目：KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
         "footer": "Interview Hub · 面试题精讲"
       },
       {
         "kicker": "面试题目",
         "title": "今天重点看这几题",
-        "body": "1. RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？\n\n2. Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "body": "1. KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？\n\n2. PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
         "footer": "题目和来源一致，答案逐题展开"
       },
       {
         "kicker": "详细解答 1",
-        "title": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
-        "body": "RLHF 是一套从人类偏好到策略优化的流程，常见做法是先训练 reward model，再用 PPO 优化策略；PPO 需要采样、reward model 和 KL 约束，灵活但成本高、稳定性敏感。DPO 不显式训练 reward model，而是直接用偏好对优化策略，让偏好样本中的 chosen 比 rejected 更可能，工程更简单稳定，但强依赖偏好数据质量。GRPO 用组内相对奖励降低对 value model 的依赖，常用于数学推理等可批量采样比较的场景。面试回答要讲数据来源、KL 约束、reward hacking、长度偏置、评估指标和线上安全边界。",
+        "title": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
+        "body": "KV cache 保存每层 attention 的 key/value，用来避免生成新 token 时重复计算历史上下文。它的显存大致随 batch size、序列长度、层数、KV head 数、head dimension 和数据类型线性增长。训练时主要显存压力来自参数、梯度、优化器状态和激活值；推理时没有梯度和优化器状态，长上下文下 KV cache 会成为核心瓶颈。优化手段包括 MQA/GQA 减少 KV head、PagedAttention 降低碎片、KV cache 量化、prefix cache 复用、滑动窗口或 KV eviction。面试里最好能说明 TTFT 受 prefill 影响，TPOT 受 decode 阶段和 KV 读取影响。",
         "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
       },
       {
         "kicker": "详细解答 2",
-        "title": "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
-        "body": "Reward model 的偏好数据通常来自同一 prompt 下多个回答的人工排序、专家标注或模型辅助标注。关键是让 chosen/rejected 覆盖真实质量差异，而不是只覆盖格式差异。长度偏置可以通过长度分桶、显式惩罚、pair 采样平衡和评估时控制回答长度缓解；reward hacking 要用 held-out 人评、规则校验、红队样本和多维 reward 监控；分布外回答则需要加入拒答、安全、事实性和复杂任务样本。好的 reward model 不应只给高分，而要能区分有用性、真实性、安全性和指令遵循，并持续用线上 badcase 回流修正。",
+        "title": "PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
+        "body": "传统连续 KV cache 往往为每个请求预留一段连续显存，序列长度不一致时容易产生浪费和碎片。PagedAttention 借鉴操作系统分页思想，把 KV cache 切成固定大小的 block，通过页表把逻辑序列位置映射到物理块。这样短请求不会占用过大的连续空间，长请求可以按需扩展，多个请求调度时也更容易复用和回收。它提升的是显存利用率和 batch 调度灵活性，不是改变 attention 的数学结果。工程风险在 block size、页表管理、内存访问局部性和调度复杂度，需要用吞吐、显存水位、碎片率、TTFT 和 TPOT 一起评估。",
         "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
       },
       {
         "kicker": "引用来源",
-        "title": "牛客",
-        "body": "牛客 · 2026-06-14\nhttps://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
+        "title": "知乎",
+        "body": "知乎 · 2026-06-14\nhttps://zhuanlan.zhihu.com/p/2014643829844770923",
         "footer": "链接也会放在正文里"
       }
     ],
     "status": "published",
-    "reason": "已提交发布，进入平台处理",
+    "reason": "?????????????????",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "createdAt": "2026-06-16T15:05:07.445Z",
-    "updatedAt": "2026-06-16T15:05:07.445Z",
-    "xhsNoteId": "6a3165f6000000001603d7f9",
+    "createdAt": "2026-06-16T14:26:16.159Z",
+    "updatedAt": "2026-06-16T15:06:03.651Z",
+    "xhsNoteId": "6a31616b0000000015024a0f",
     "overlapFixStatus": "image_cards_replaced_and_submitted",
     "overlapFixedAt": "2026-06-17T04:08:39.058Z"
   },
@@ -129,70 +188,6 @@
     "publishedAt": "2026-06-17T04:08:39.058Z"
   },
   {
-    "id": "xhs-daily-2026-06-16-78fd3487c994",
-    "title": "KVCache推理部署题目精讲",
-    "coverTitle": "推理部署 / 模型压缩题目精讲",
-    "coverSubtitle": "推理部署 / 模型压缩 高频题",
-    "body": "每日精选：推理部署 / 模型压缩题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：知乎，2026-06-14\n原文链接：https://zhuanlan.zhihu.com/p/2014643829844770923\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
-    "sourcePlatform": "知乎",
-    "sourceDate": "2026-06-14",
-    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014643829844770923",
-    "articlePath": "content/xiaohongshu-drafts/2026-06-16-78fd3487c994.md",
-    "featureId": "daily-2026-06-16-78fd3487c994",
-    "postId": "missed-20260616-afternoon-inference",
-    "company": "",
-    "direction": "推理部署 / 模型压缩",
-    "primaryQuestion": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
-    "imageCardFiles": [
-      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/02-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/03-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/04-card.png",
-      "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/05-card.png"
-    ],
-    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-16-78fd3487c994/01-card.png",
-    "imageCards": [
-      {
-        "kicker": "本篇速览",
-        "title": "推理部署 / 模型压缩",
-        "body": "方向：推理部署 / 模型压缩\n题目：KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
-        "footer": "Interview Hub · 面试题精讲"
-      },
-      {
-        "kicker": "面试题目",
-        "title": "今天重点看这几题",
-        "body": "1. KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？\n\n2. PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
-        "footer": "题目和来源一致，答案逐题展开"
-      },
-      {
-        "kicker": "详细解答 1",
-        "title": "KV cache 显存如何随 batch、序列长度、层数、head 数和 hidden size 增长？",
-        "body": "KV cache 保存每层 attention 的 key/value，用来避免生成新 token 时重复计算历史上下文。它的显存大致随 batch size、序列长度、层数、KV head 数、head dimension 和数据类型线性增长。训练时主要显存压力来自参数、梯度、优化器状态和激活值；推理时没有梯度和优化器状态，长上下文下 KV cache 会成为核心瓶颈。优化手段包括 MQA/GQA 减少 KV head、PagedAttention 降低碎片、KV cache 量化、prefix cache 复用、滑动窗口或 KV eviction。面试里最好能说明 TTFT 受 prefill 影响，TPOT 受 decode 阶段和 KV 读取影响。",
-        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
-      },
-      {
-        "kicker": "详细解答 2",
-        "title": "PagedAttention 为什么能提升显存利用率，和连续 KV cache 分配有什么区别？",
-        "body": "传统连续 KV cache 往往为每个请求预留一段连续显存，序列长度不一致时容易产生浪费和碎片。PagedAttention 借鉴操作系统分页思想，把 KV cache 切成固定大小的 block，通过页表把逻辑序列位置映射到物理块。这样短请求不会占用过大的连续空间，长请求可以按需扩展，多个请求调度时也更容易复用和回收。它提升的是显存利用率和 batch 调度灵活性，不是改变 attention 的数学结果。工程风险在 block size、页表管理、内存访问局部性和调度复杂度，需要用吞吐、显存水位、碎片率、TTFT 和 TPOT 一起评估。",
-        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
-      },
-      {
-        "kicker": "引用来源",
-        "title": "知乎",
-        "body": "知乎 · 2026-06-14\nhttps://zhuanlan.zhihu.com/p/2014643829844770923",
-        "footer": "链接也会放在正文里"
-      }
-    ],
-    "status": "published",
-    "reason": "?????????????????",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "createdAt": "2026-06-16T14:26:16.159Z",
-    "updatedAt": "2026-06-16T15:06:03.651Z",
-    "xhsNoteId": "6a31616b0000000015024a0f",
-    "overlapFixStatus": "image_cards_replaced_and_submitted",
-    "overlapFixedAt": "2026-06-17T04:08:39.058Z"
-  },
-  {
     "id": "xhs-daily-2026-06-15-e3bc7c5a3575",
     "title": "视频时序理解题目精讲",
     "coverTitle": "视频 / 视觉理解题目精讲",
@@ -253,6 +248,70 @@
     "createdAt": "2026-06-16T14:23:46.427Z",
     "updatedAt": "2026-06-16T15:06:03.651Z",
     "xhsNoteId": "6a3160b0000000001603fbc4",
+    "overlapFixStatus": "image_cards_replaced_and_submitted",
+    "overlapFixedAt": "2026-06-17T04:08:39.058Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-15-7365dd0ad34a",
+    "title": "对齐训练RLHF题目精讲",
+    "coverTitle": "强化学习 / 对齐训练题目精讲",
+    "coverSubtitle": "强化学习 / 对齐训练 高频题",
+    "body": "每日精选：强化学习 / 对齐训练题目精讲\n本篇图卡包含面试题目、完整解答和追问方向。第一页先看方向和题目，后面按顺序复习答案。\n引用来源：牛客，2026-06-14\n原文链接：https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f\n#大模型面试 #AI学习 #多模态 #VLA #世界模型 #推理部署 #面经",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-15-7365dd0ad34a.md",
+    "featureId": "daily-2026-06-15-7365dd0ad34a",
+    "postId": "missed-20260615-morning-rl",
+    "company": "",
+    "direction": "强化学习 / 对齐训练",
+    "primaryQuestion": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/02-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/03-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/04-card.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/05-card.png"
+    ],
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-15-7365dd0ad34a/01-card.png",
+    "imageCards": [
+      {
+        "kicker": "本篇速览",
+        "title": "强化学习 / 对齐训练",
+        "body": "方向：强化学习 / 对齐训练\n题目：RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？\n\n2. Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "footer": "题目和来源一致，答案逐题展开"
+      },
+      {
+        "kicker": "详细解答 1",
+        "title": "RLHF、DPO、GRPO、PPO 的优化目标、训练数据和稳定性问题分别是什么？",
+        "body": "RLHF 是一套从人类偏好到策略优化的流程，常见做法是先训练 reward model，再用 PPO 优化策略；PPO 需要采样、reward model 和 KL 约束，灵活但成本高、稳定性敏感。DPO 不显式训练 reward model，而是直接用偏好对优化策略，让偏好样本中的 chosen 比 rejected 更可能，工程更简单稳定，但强依赖偏好数据质量。GRPO 用组内相对奖励降低对 value model 的依赖，常用于数学推理等可批量采样比较的场景。面试回答要讲数据来源、KL 约束、reward hacking、长度偏置、评估指标和线上安全边界。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "详细解答 2",
+        "title": "Reward model 如何构造偏好数据，如何处理 reward hacking、长度偏置和分布外回答？",
+        "body": "Reward model 的偏好数据通常来自同一 prompt 下多个回答的人工排序、专家标注或模型辅助标注。关键是让 chosen/rejected 覆盖真实质量差异，而不是只覆盖格式差异。长度偏置可以通过长度分桶、显式惩罚、pair 采样平衡和评估时控制回答长度缓解；reward hacking 要用 held-out 人评、规则校验、红队样本和多维 reward 监控；分布外回答则需要加入拒答、安全、事实性和复杂任务样本。好的 reward model 不应只给高分，而要能区分有用性、真实性、安全性和指令遵循，并持续用线上 badcase 回流修正。",
+        "footer": "机制 -> 工程取舍 -> 风险 -> 指标"
+      },
+      {
+        "kicker": "引用来源",
+        "title": "牛客",
+        "body": "牛客 · 2026-06-14\nhttps://www.nowcoder.com/feed/main/detail/d9b2ff6d748c4827aba3a0227a733d0f",
+        "footer": "链接也会放在正文里"
+      }
+    ],
+    "status": "published",
+    "reason": "已提交发布，进入平台处理",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "createdAt": "2026-06-16T15:05:07.445Z",
+    "updatedAt": "2026-06-16T15:05:07.445Z",
+    "xhsNoteId": "6a3165f6000000001603d7f9",
     "overlapFixStatus": "image_cards_replaced_and_submitted",
     "overlapFixedAt": "2026-06-17T04:08:39.058Z"
   },

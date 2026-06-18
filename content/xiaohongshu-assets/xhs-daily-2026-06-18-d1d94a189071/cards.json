@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "智元｜VLA / 具身智能",
+    "body": "公司：智元\n方向：VLA / 具身智能\n题目：智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-18-d1d94a189071\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-18-d1d94a189071\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+    "body": "VLM、VLA 和 Video 模型在具身系统中通常对应三层能力。VLM 负责理解场景和指令，例如识别物体、读懂空间关系、把用户语言转成任务语义；Video 模型负责时序理解和预测，例如判断动作进展、物体状态变化、失败前兆和未来几步可能发生什么；VLA 则把视觉、语言和机器人状态映射到动作，输出 action token、连续控制量或一段轨迹。三者可以端到端融合，也可以分层组合：VLM 做高层规划，Video 做状态估计和预测，VLA 做低层动作生成。工程取舍是，端到端系统上限高但难调试，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-18-d1d94a189071\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
+    "body": "分层系统可解释性好但误差会层层传递。面试里要强调闭环：感知、规划、动作、执行反馈和失败样本回流缺一不可。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-18-d1d94a189071\\04-answer.png"
+  }
+]

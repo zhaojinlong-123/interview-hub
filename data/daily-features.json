@@ -1,5 +1,37 @@
 [
   {
+    "id": "daily-2026-06-18-d1d94a189071",
+    "date": "2026-06-18",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260618-66d021682a2f",
+    "title": "掘金：CodeSheep 1月前 前端 后端 稚晖君又开始摇人了，有点猛啊！ 作为具身智能领域的新起独角兽，智元机器人这两年在资本市场可谓是备受关注。谁都没有想到，这家成立仅仅... 参与具身智能基础模型研发，覆盖 VLM/VLA/Vide",
+    "company": "智元",
+    "direction": "VLA / 具身智能",
+    "score": 106,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "明确公司来源 智元 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 VLA / 具身智能 / 强化学习 +12",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://juejin.cn/post/7631311804195471396?searchId=20260618093353242051243E29BC377AAC",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-06-18",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-18-d1d94a189071.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-18T10:53:45.646Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-15-7365dd0ad34a",
     "date": "2026-06-15",
     "slot": "morning-reissue",

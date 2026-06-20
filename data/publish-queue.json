@@ -1,5 +1,241 @@
 [
   {
+    "id": "xhs-daily-2026-06-20-cb3afb047a33",
+    "title": "美团多模态理解题目精讲",
+    "coverTitle": "美团面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "primaryQuestion": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "topic": "多模态理解",
+    "body": "每日精选：美团 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-06-20\n原文链接：https://juejin.cn/post/7319663384097275942?searchId=20260620093344D895E8525CC128AE9B31\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #美团 #大模型 #LLM #多模态 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-06-20",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=20260620093344D895E8525CC128AE9B31",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-20-cb3afb047a33.md",
+    "featureId": "daily-2026-06-20-cb3afb047a33",
+    "postId": "auto-20260620-cf2459555f04",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-20-cb3afb047a33/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "美团｜多模态大模型",
+        "body": "公司：美团\n方向：多模态大模型\n题目：端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+        "body": "端侧 MobileVLM 的核心矛盾是视觉 token 多、语言模型重，而移动设备的算力、内存和功耗都有限。常见优化路线是视觉侧用轻量 encoder 或降低输入分辨率，连接层压缩视觉 token，语言侧选择小参数模型并配合 INT8/INT4 量化、算子融合和 KV cache 管理。训练时要用蒸馏把大模型的视觉问答、OCR 和推理能力迁移到小模型，同时用端侧真实场景数据做微调，避免只在公开数据集上好看。部署评估要同时看首 token 延迟、端到端响应时间、峰值内存、功耗、温升和离线准确率。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+        "body": "面试里可以强调端侧模型不是简单缩小参数，而是模型结构、数据蒸馏、推理引擎和业务场景共同取舍。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-20T03:10:50.217Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-cb3afb047a33/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-cb3afb047a33/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-cb3afb047a33/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-cb3afb047a33/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-20T03:11:12.244Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-20-14571d046e15",
+    "title": "小鹏VLA/机器人动作题目精讲",
+    "coverTitle": "小鹏面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "小鹏",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：小鹏 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-06-20\n原文链接：https://www.bilibili.com/video/BV1nyiLBNEVX/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #小鹏 #机器人 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-20",
+    "sourceUrl": "https://www.bilibili.com/video/BV1nyiLBNEVX/",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-20-14571d046e15.md",
+    "featureId": "daily-2026-06-20-14571d046e15",
+    "postId": "auto-20260620-b358ed75ea8a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-20-14571d046e15/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "小鹏｜VLA / 具身智能",
+        "body": "公司：小鹏\n方向：VLA / 具身智能\n题目：VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+        "body": "模仿学习主要从专家轨迹里学习动作分布，优点是稳定、样本效率高，但容易受限于专家数据覆盖范围，遇到偏离轨迹的状态时会累积误差。VLA 引入强化学习，是为了让模型在环境反馈下优化长期任务成功率，而不是只拟合单步动作。强化学习可以处理稀疏奖励、失败恢复、探索更优策略和安全接管策略，但代价是训练不稳定、样本成本高，并且真实机器人上试错风险大。实际工程通常不会直接端到端在线 RL，而是先用遥操作或视频数据做预训练和 imitation learning，再在仿真或受控真实环境里做 RL 微调，并通过 reward",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+        "body": "shaping、离线 RL、success predictor 和安全约束降低风险。面试里要把 reward 设计、sim-to-real、失败样本回流和安全边界讲清楚。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-20T03:07:34.364Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-14571d046e15/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-14571d046e15/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-14571d046e15/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-20-14571d046e15/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-20T03:07:56.002Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-19-e6147d4c454e",
+    "title": "综合大模型训练中为什么很多L…题目精讲",
+    "coverTitle": "大模型训练面试题精讲",
+    "coverSubtitle": "大模型训练 高频题",
+    "company": "综合",
+    "direction": "大模型训练",
+    "primaryQuestion": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "topic": "大模型训练中为什么很多 L…",
+    "body": "每日精选：综合 大模型训练题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-06-19\n原文链接：https://www.bilibili.com/video/BV1hMJ36KE2h/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #大模型 #面试 #综合 #大模型训练 #大模型面试 #AI学习",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-19",
+    "sourceUrl": "https://www.bilibili.com/video/BV1hMJ36KE2h/",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-19-e6147d4c454e.md",
+    "featureId": "daily-2026-06-19-e6147d4c454e",
+    "postId": "auto-20260619-6b8e7106d772",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-19-e6147d4c454e/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜大模型训练",
+        "body": "公司：综合\n方向：大模型训练\n题目：大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+        "body": "Dropout 的主要作用是通过随机屏蔽神经元减少过拟合，但现代 LLM 通常数据规模巨大、训练 token 很多，过拟合压力相对小，反而更关注训练稳定性和吞吐。Dropout 会引入随机噪声，可能影响大规模分布式训练的收敛效率，也会让预训练和推理行为存在额外差异。Transformer 里残差连接、RMSNorm/LayerNorm、权重衰减、数据去重、学习率调度和大规模混合数据本身已经提供了一部分正则化效果。并不是所有场景都不能用 Dropout，小数据微调、分类头训练或特定任务仍可能使用；只是主流 LLM",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+        "body": "预训练更倾向于减少不必要随机性，把稳定性和规模效率放在前面。面试回答要避免说“Dropout 没用”，更准确是“大规模预训练阶段收益通常小于工程和收敛成本”。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-20T03:11:26.342Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-e6147d4c454e/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-e6147d4c454e/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-e6147d4c454e/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-e6147d4c454e/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-20T03:11:48.018Z"
+  },
+  {
+    "id": "xhs-daily-2026-06-19-092b64d9bea7",
+    "title": "汇川VLA/机器人动作题目精讲",
+    "coverTitle": "汇川面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "汇川",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：汇川 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-06-19\n原文链接：https://www.bilibili.com/video/BV1DaxkzQECY/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #面试 #机器人 #汇川 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-19",
+    "sourceUrl": "https://www.bilibili.com/video/BV1DaxkzQECY/",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-19-092b64d9bea7.md",
+    "featureId": "daily-2026-06-19-092b64d9bea7",
+    "postId": "auto-20260619-552ccd26e570",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-19-092b64d9bea7/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "汇川｜VLA / 具身智能",
+        "body": "公司：汇川\n方向：VLA / 具身智能\n题目：机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+        "body": "运动规划解决的是从当前状态到目标状态走哪条路径，重点考虑碰撞约束、可达性、动力学限制和任务目标；轨迹跟踪解决的是沿着规划出的路径如何在时间上平滑执行，重点关注速度、加速度、jerk 和误差收敛；底层控制解决的是如何把期望轨迹转成电机、关节或末端执行器的控制输入，常见方法包括 PID、MPC、阻抗控制和力控。三者的时间尺度不同：规划偏高层、频率较低，控制偏底层、频率更高。面试里还要说清楚误差来源：传感器噪声、模型不准、摩擦、延迟、负载变化和接触不确定性。具身智能系统里，VLA 可以生成高层动作意图或轨迹候选，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+        "body": "但真正落地仍需要传统控制和安全约束兜住执行边界。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-20T03:12:07.499Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-092b64d9bea7/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-092b64d9bea7/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-092b64d9bea7/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-19-092b64d9bea7/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-06-20T03:12:29.426Z"
+  },
+  {
     "id": "xhs-daily-2026-06-18-d1d94a189071",
     "title": "智元VLA/机器人动作题目精讲",
     "coverTitle": "智元面试题精讲",

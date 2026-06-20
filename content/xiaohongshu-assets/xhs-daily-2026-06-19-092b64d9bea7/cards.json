@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "汇川｜VLA / 具身智能",
+    "body": "公司：汇川\n方向：VLA / 具身智能\n题目：机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-092b64d9bea7\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-092b64d9bea7\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "body": "运动规划解决的是从当前状态到目标状态走哪条路径，重点考虑碰撞约束、可达性、动力学限制和任务目标；轨迹跟踪解决的是沿着规划出的路径如何在时间上平滑执行，重点关注速度、加速度、jerk 和误差收敛；底层控制解决的是如何把期望轨迹转成电机、关节或末端执行器的控制输入，常见方法包括 PID、MPC、阻抗控制和力控。三者的时间尺度不同：规划偏高层、频率较低，控制偏底层、频率更高。面试里还要说清楚误差来源：传感器噪声、模型不准、摩擦、延迟、负载变化和接触不确定性。具身智能系统里，VLA 可以生成高层动作意图或轨迹候选，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-092b64d9bea7\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "body": "但真正落地仍需要传统控制和安全约束兜住执行边界。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-092b64d9bea7\\04-answer.png"
+  }
+]

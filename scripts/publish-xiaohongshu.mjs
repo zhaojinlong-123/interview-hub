@@ -783,7 +783,9 @@ async function main() {
   const features = await readJson(FEATURES_FILE, []);
   const posts = await readJson(POSTS_FILE, []);
   const featureId = process.argv.find((arg) => arg.startsWith("--id="))?.slice(5);
-  const feature = featureId ? features.find((item) => item.id === featureId) : features[0];
+  const feature = featureId
+    ? features.find((item) => item.id === featureId)
+    : features.find((item) => item.publishStatus === "draft_ready" && item.autoPublish !== false);
   if (!feature) throw new Error("没有可发布的每日精选");
   const post = posts.find((item) => item.id === feature.postId);
   const articlePath = path.join(ROOT, feature.articlePath || "");

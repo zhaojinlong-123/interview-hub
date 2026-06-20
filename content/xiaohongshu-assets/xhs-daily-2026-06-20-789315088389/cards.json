@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜视频 / 视觉理解",
+    "body": "公司：综合\n方向：视频 / 视觉理解\n题目：视频理解模型如何用动态推理和 Early Exit 降低延迟，同时尽量不牺牲准确率？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-789315088389\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 视频理解模型如何用动态推理和 Early Exit 降低延迟，同时尽量不牺牲准确率？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-789315088389\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "视频理解模型如何用动态推理和 Early Exit 降低延迟，同时尽量不牺牲准确率？",
+    "body": "视频理解的计算量主要来自帧数、分辨率和时序 attention。动态推理的思路是让模型根据样本难度自适应决定看多少帧、走多少层或生成多长推理链。简单样本可以早退出，复杂样本继续计算。Early Exit 通常会在中间层加分类头、置信度估计或价值判断，当置信度足够高且跨帧一致性稳定时提前输出。关键风险是过早退出会漏掉后续关键事件，因此要结合时间覆盖约束、置信度校准和困难样本回退策略。训练上可以用蒸馏、强化学习或代价敏感目标，把准确率和计算成本一起优化。评估时不能只看平均延迟，还要看",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-789315088389\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "视频理解模型如何用动态推理和 Early Exit 降低延迟，同时尽量不牺牲准确率？",
+    "body": "P95/P99、长视频事件召回、动作边界、身份保持和低置信度样本的失败率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-789315088389\\04-answer.png"
+  }
+]

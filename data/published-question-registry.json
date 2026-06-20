@@ -133,6 +133,21 @@
     "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
+    "key": "general:大模型训练中为什么很多llm不再依赖dropout它和数据规模归一化残差结构有什么关系",
+    "question": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "queueId": "xhs-daily-2026-06-19-e6147d4c454e",
+    "featureId": "daily-2026-06-19-e6147d4c454e",
+    "postId": "auto-20260619-6b8e7106d772",
+    "title": "综合大模型训练中为什么很多L…题目精讲",
+    "company": "综合",
+    "direction": "大模型训练",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1hMJ36KE2h/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-20T03:11:48.018Z"
+  },
+  {
     "key": "general:多传感器数据中相机激光雷达毫米波雷达定位和车控状态如何做时间空间对齐",
     "question": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
     "queueId": "xhs-daily-2026-06-13-d8f0889f10e1",
@@ -176,6 +191,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T15:03:51.761Z"
+  },
+  {
+    "key": "general:机器人控制算法面试中运动规划轨迹跟踪和底层控制分别解决什么问题",
+    "question": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
+    "queueId": "xhs-daily-2026-06-19-092b64d9bea7",
+    "featureId": "daily-2026-06-19-092b64d9bea7",
+    "postId": "auto-20260619-552ccd26e570",
+    "title": "汇川VLA/机器人动作题目精讲",
+    "company": "汇川",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1DaxkzQECY/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-20T03:12:29.426Z"
   },
   {
     "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
@@ -253,6 +283,21 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "inference:199ee39da818",
+    "question": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "queueId": "xhs-daily-2026-06-20-cb3afb047a33",
+    "featureId": "daily-2026-06-20-cb3afb047a33",
+    "postId": "auto-20260620-cf2459555f04",
+    "title": "美团多模态理解题目精讲",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "sourcePlatform": "掘金",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=20260620093344D895E8525CC128AE9B31",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-20T03:11:12.244Z"
+  },
+  {
     "key": "inference:3768f843ba28",
     "question": "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
     "queueId": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -266,6 +311,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "inference:98d03fc54828",
+    "question": "视频理解模型如何用动态推理和 Early Exit 降低延迟，同时尽量不牺牲准确率？",
+    "queueId": "xhs-daily-2026-06-20-789315088389",
+    "featureId": "daily-2026-06-20-789315088389",
+    "postId": "auto-20260620-4cd13be56e57",
+    "title": "综合视频理解模型如何用动态推理…题目精讲",
+    "company": "综合",
+    "direction": "视频 / 视觉理解",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1h7zFBEEFA/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-20T07:30:26.176Z"
   },
   {
     "key": "memory:33f66bf553cc",
@@ -311,6 +371,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T15:05:07.445Z"
+  },
+  {
+    "key": "rl:ac06e0166e1b",
+    "question": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "queueId": "xhs-daily-2026-06-20-14571d046e15",
+    "featureId": "daily-2026-06-20-14571d046e15",
+    "postId": "auto-20260620-b358ed75ea8a",
+    "title": "小鹏VLA/机器人动作题目精讲",
+    "company": "小鹏",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1nyiLBNEVX/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-20T03:07:56.002Z"
   },
   {
     "key": "robot_data:5c6e23bce94e",

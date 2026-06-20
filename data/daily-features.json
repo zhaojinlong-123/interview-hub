@@ -1,5 +1,34 @@
 [
   {
+    "id": "daily-2026-06-20-789315088389",
+    "date": "2026-06-20",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260620-4cd13be56e57",
+    "title": "B站：2082 0 35:11 多模态大模型视频理解加速｜VideoAuto-R1：GRPO 强化学习 + 置信度，实现动态推理与Early Exit｜让视频推理又快又准 唐国梁Tommy · 01-22",
+    "company": "综合",
+    "direction": "视频 / 视觉理解",
+    "score": 82,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 / 视频理解 / 视觉理解 / 推理优化 +24",
+      "稀缺方向 推理优化 / 强化学习 / 多模态 +12",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://www.bilibili.com/video/BV1h7zFBEEFA/",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-20",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-20-789315088389.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-20T07:30:26.189Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-20-14571d046e15",
     "date": "2026-06-20",
     "slot": "afternoon",

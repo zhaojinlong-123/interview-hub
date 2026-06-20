@@ -9,7 +9,8 @@ const SETTINGS_FILE = path.join(ROOT, "data", "daily-settings.json");
 const FEATURES_FILE = path.join(ROOT, "data", "daily-features.json");
 const PUBLISHED_QUESTION_REGISTRY_FILE = path.join(ROOT, "data", "published-question-registry.json");
 const DRAFT_DIR = path.join(ROOT, "content", "xiaohongshu-drafts");
-const TODAY = new Date().toISOString().slice(0, 10);
+const TARGET_DATE = process.argv.find((arg) => arg.startsWith("--date="))?.split("=")[1] || new Date().toISOString().slice(0, 10);
+const TODAY = TARGET_DATE;
 const SHOULD_PUSH = process.argv.includes("--push");
 const SHOULD_DRY_RUN = process.argv.includes("--dry-run");
 const SLOT = process.argv.find((arg) => arg.startsWith("--slot="))?.split("=")[1] || process.env.DAILY_FEATURE_SLOT || "morning";
@@ -505,6 +506,7 @@ async function main() {
   const candidates = posts
     .filter((post) =>
       post.sourceUrl
+      && (!post.sourceDate || post.sourceDate <= TODAY)
       && isPublishableSourceUrl(post)
       && sourceBacksQuestions(post)
       && hasVerifiedAnswersForAllQuestions(post)

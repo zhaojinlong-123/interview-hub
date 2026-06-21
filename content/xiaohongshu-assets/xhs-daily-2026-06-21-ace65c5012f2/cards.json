@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "Qwen｜多模态大模型",
+    "body": "公司：Qwen\n方向：多模态大模型\n题目：Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-ace65c5012f2\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-ace65c5012f2\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
+    "body": "Qwen-VL 这类模型一般不是把原始图片直接喂给大语言模型，而是先用视觉编码器把图片切成视觉特征，再通过 projector、adapter 或 cross-modal connector 映射到语言模型可以消费的 token 空间。训练通常分三步：第一步做图文对齐，让视觉 token 和文本语义落到同一个表达空间；第二步做多模态指令微调，让模型学会按照用户问题读取图片、定位信息、解释图表和进行视觉问答；第三步做偏好对齐或任务微调，提升回答格式、可靠性和安全性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-ace65c5012f2\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
+    "body": "面试里要强调两点：一是视觉编码器和语言模型之间的接口决定了信息瓶颈，二是评估不能只看 VQA 分数，还要看 OCR、定位、细粒度属性、幻觉率和多轮上下文稳定性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-ace65c5012f2\\04-answer.png"
+  }
+]

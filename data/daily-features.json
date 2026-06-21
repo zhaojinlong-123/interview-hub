@@ -1,5 +1,36 @@
 [
   {
+    "id": "daily-2026-06-21-ace65c5012f2",
+    "date": "2026-06-21",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260620-5df12524a523",
+    "title": "掘金：CoovallyAIHub 7月前 算法 计算机视觉 让Qwen-VL的检测能力像YOLO一样强，VLM-FO1如何打通大模型的视觉任督二脉 在当今多模态大模型（VLMs）飞速发展的时代，一个令人尴尬的问题依然存在：为什么这些能看懂图",
+    "company": "Qwen",
+    "direction": "多模态大模型",
+    "score": 84,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 Qwen +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://juejin.cn/post/7571678763782258722?searchId=202606200934123712A5056DD60BB31F76",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-06-20",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-21-ace65c5012f2.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-20-789315088389",
     "date": "2026-06-20",
     "slot": "afternoon",

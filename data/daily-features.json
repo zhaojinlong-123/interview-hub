@@ -1,5 +1,34 @@
 [
   {
+    "id": "daily-2026-06-21-a86e23735ed8",
+    "date": "2026-06-21",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260619-d581c7d19786",
+    "title": "B站：334 0 00:20 VLA动作置信度≠任务成功率",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 66,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "稀缺方向 VLA / 具身智能 +8",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://www.bilibili.com/video/BV1kfLv6CEno/",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-19",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-21-a86e23735ed8.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-21-ace65c5012f2",
     "date": "2026-06-21",
     "slot": "morning",

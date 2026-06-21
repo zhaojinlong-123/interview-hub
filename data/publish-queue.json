@@ -59,6 +59,65 @@
     "updatedAt": "2026-06-21T01:30:33.541Z"
   },
   {
+    "id": "xhs-daily-2026-06-21-a86e23735ed8",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-06-19\n原文链接：https://www.bilibili.com/video/BV1kfLv6CEno/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #VLA #机器人 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-19",
+    "sourceUrl": "https://www.bilibili.com/video/BV1kfLv6CEno/",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-21-a86e23735ed8.md",
+    "featureId": "daily-2026-06-21-a86e23735ed8",
+    "postId": "auto-20260619-d581c7d19786",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-21-a86e23735ed8/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+        "body": "VLA 的动作置信度通常表示模型对当前动作 token、连续控制量或轨迹片段的预测把握，但任务成功率取决于长时间闭环执行结果，两者不是一回事。模型可能对单步抓取动作很自信，但因为物体滑动、遮挡、相机延迟、接触动力学误差或后续路径规划失败，最终任务仍然失败。校准时要把单步概率和 episode 级结果关联起来：记录每个时刻的观测、动作、置信度、接触状态、人工接管和最终成功/失败标签；再用 reliability diagram、ECE、Brier score 等指标看置信度是否真的对应成功概率。工程上可以训练一个独立",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+        "body": "success predictor 或 value head，把视觉状态、动作序列和历史反馈一起输入，输出可执行性评分。上线时不要用置信度直接替代安全判断，而要结合阈值拒答、低置信度接管、失败回放和主动探索数据回流。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-21T07:30:03.995Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-21-a86e23735ed8/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-21-a86e23735ed8/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-21-a86e23735ed8/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-21-a86e23735ed8/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-21T07:30:32.661Z"
+  },
+  {
     "id": "xhs-daily-2026-06-20-cb3afb047a33",
     "title": "美团多模态理解题目精讲",
     "coverTitle": "美团面试题精讲",

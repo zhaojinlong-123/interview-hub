@@ -23,10 +23,18 @@
     "sourceDate": "2026-06-19",
     "articlePath": "content/xiaohongshu-drafts/2026-06-21-a86e23735ed8.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
     "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "publishedAt": "2026-06-21T16:18:25.635Z",
+    "updatedAt": "2026-06-21T16:18:25.635Z",
+    "publishResult": {
+      "ok": true,
+      "status": "published",
+      "publishedAt": "2026-06-21T16:18:25.635Z",
+      "note": "Republished to Xiaohongshu; detected published=true success marker"
+    }
   },
   {
     "id": "daily-2026-06-21-ace65c5012f2",
@@ -54,10 +62,18 @@
     "sourceDate": "2026-06-20",
     "articlePath": "content/xiaohongshu-drafts/2026-06-21-ace65c5012f2.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
     "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "publishedAt": "2026-06-21T16:18:25.635Z",
+    "updatedAt": "2026-06-21T16:18:25.635Z",
+    "publishResult": {
+      "ok": true,
+      "status": "published",
+      "publishedAt": "2026-06-21T16:18:25.635Z",
+      "note": "Republished to Xiaohongshu; detected published=true success marker"
+    }
   },
   {
     "id": "daily-2026-06-20-789315088389",
@@ -567,10 +583,18 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-13-eeee8e7e0263.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
     "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "publishedAt": "2026-06-21T16:18:25.635Z",
+    "updatedAt": "2026-06-21T16:18:25.635Z",
+    "publishResult": {
+      "ok": true,
+      "status": "published",
+      "publishedAt": "2026-06-21T16:18:25.635Z",
+      "note": "Republished to Xiaohongshu; detected published=true success marker"
+    }
   },
   {
     "id": "daily-2026-06-13-d6e5e8fb2a41",
@@ -945,10 +969,18 @@
     "sourceDate": "2026-06-06",
     "articlePath": "content/xiaohongshu-drafts/2026-06-08-da7740600601.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
     "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "publishedAt": "2026-06-21T16:18:25.635Z",
+    "updatedAt": "2026-06-21T16:18:25.635Z",
+    "publishResult": {
+      "ok": true,
+      "status": "published",
+      "publishedAt": "2026-06-21T16:18:25.635Z",
+      "note": "Republished to Xiaohongshu; detected published=true success marker"
+    }
   },
   {
     "id": "daily-2026-06-07-f819e557a306",

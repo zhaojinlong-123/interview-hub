@@ -268,6 +268,21 @@
     "updatedAt": "2026-06-18T10:54:25.642Z"
   },
   {
+    "key": "general:qwenvl类视觉语言模型如何把图像特征接入语言模型训练流程通常分哪几步",
+    "question": "Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
+    "queueId": "xhs-daily-2026-06-21-ace65c5012f2",
+    "featureId": "daily-2026-06-21-ace65c5012f2",
+    "postId": "auto-20260620-5df12524a523",
+    "title": "QwenQwen-VL类视觉语言…题目精",
+    "company": "Qwen",
+    "direction": "多模态大模型",
+    "sourcePlatform": "掘金",
+    "sourceUrl": "https://juejin.cn/post/7571678763782258722?searchId=202606200934123712A5056DD60BB31F76",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "status": "published",
+    "updatedAt": "2026-06-21T16:18:25.635Z"
+  },
+  {
     "key": "general:temporaltoken压缩如何保留动作变化和事件顺序相比长上下文attention有什么取舍",
     "question": "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？",
     "queueId": "xhs-daily-2026-06-14-ef7ca72d79bc",
@@ -281,6 +296,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
+  },
+  {
+    "key": "general:vla动作置信度为什么不能等同于任务成功率机器人控制里应如何做校准",
+    "question": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "queueId": "xhs-daily-2026-06-21-a86e23735ed8",
+    "featureId": "daily-2026-06-21-a86e23735ed8",
+    "postId": "auto-20260619-d581c7d19786",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1kfLv6CEno/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "status": "published",
+    "updatedAt": "2026-06-21T16:18:25.635Z"
   },
   {
     "key": "inference:199ee39da818",
@@ -390,28 +420,43 @@
   {
     "key": "robot_data:5c6e23bce94e",
     "question": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-    "queueId": "xhs-daily-2026-06-13-d6e5e8fb2a41",
-    "featureId": "daily-2026-06-13-d6e5e8fb2a41",
-    "postId": "auto-20260606-566028bd9c5c",
-    "title": "VLA具身智能题目精讲",
-    "sourcePlatform": "小红书",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI=&xsec_source=pc_search",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "queueId": "xhs-daily-2026-06-13-eeee8e7e0263",
+    "featureId": "daily-2026-06-13-eeee8e7e0263",
+    "postId": "auto-20260606-40073afa56ef",
+    "title": "腾讯VLA具身智能题目精讲",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/discuss/778009111140016128",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
     "status": "published",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-21T16:18:25.635Z"
   },
   {
     "key": "vla_action:7a635fa24952",
     "question": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
-    "queueId": "xhs-daily-2026-06-13-d6e5e8fb2a41",
-    "featureId": "daily-2026-06-13-d6e5e8fb2a41",
-    "postId": "auto-20260606-566028bd9c5c",
-    "title": "VLA具身智能题目精讲",
-    "sourcePlatform": "小红书",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI=&xsec_source=pc_search",
+    "queueId": "xhs-daily-2026-06-13-eeee8e7e0263",
+    "featureId": "daily-2026-06-13-eeee8e7e0263",
+    "postId": "auto-20260606-40073afa56ef",
+    "title": "腾讯VLA具身智能题目精讲",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/discuss/778009111140016128",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "status": "published",
+    "updatedAt": "2026-06-21T16:18:25.635Z"
+  },
+  {
+    "key": "vlm_connector:6c4810711873",
+    "question": "多模态大模型为什么需要模态对齐，图像文本对齐通常如何训练和评估？",
+    "queueId": "xhs-daily-2026-06-22-d3699569f41a",
+    "featureId": "daily-2026-06-22-d3699569f41a",
+    "postId": "auto-20260620-602781ef6d03",
+    "title": "字节多模态理解题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350?ops_request_misc=elastic_search_misc&request_id=7c49c03fddd2e3ebf778f7759577b47e&biz_id=0",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
-    "updatedAt": "2026-06-14T16:25:26.597Z"
+    "updatedAt": "2026-06-22T01:30:25.818Z"
   },
   {
     "key": "vlm_connector:f3d838cdb143",

@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-06-22-d3699569f41a",
+    "date": "2026-06-22",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260620-602781ef6d03",
+    "title": "CSDN：字节面试题：多模态大模型的模态对齐",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "score": 83,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 字节 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 强化学习 / 多模态 +8",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350?ops_request_misc=elastic_search_misc&request_id=7c49c03fddd2e3ebf778f7759577b47e&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-20",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-22-d3699569f41a.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-22T01:30:25.847Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-21-a86e23735ed8",
     "date": "2026-06-21",
     "slot": "afternoon",

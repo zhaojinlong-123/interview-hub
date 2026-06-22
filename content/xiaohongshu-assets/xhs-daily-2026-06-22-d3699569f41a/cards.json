@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜多模态大模型",
+    "body": "公司：字节\n方向：多模态大模型\n题目：多模态大模型为什么需要模态对齐，图像文本对齐通常如何训练和评估？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-22-d3699569f41a\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 多模态大模型为什么需要模态对齐，图像文本对齐通常如何训练和评估？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-22-d3699569f41a\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "多模态大模型为什么需要模态对齐，图像文本对齐通常如何训练和评估？",
+    "body": "模态对齐的目标是让图像、视频和文本在语义空间里能互相解释。没有对齐时，语言模型即使很强，也不知道某个视觉 token 对应的是物体、位置、文字还是动作，容易出现看图说话不准、OCR 错误和视觉幻觉。训练上常见做法包括图文对比学习、图文匹配、caption 生成、区域级 grounding、多图问答和指令微调。对齐粒度也很重要：全局图文对齐适合检索和分类，区域级对齐适合定位和细节问答，时序对齐适合视频理解。评估时不能只看一个综合 benchmark，要拆成检索召回、VQA 准确率、OCR 准确率、定位",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-22-d3699569f41a\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "多模态大模型为什么需要模态对齐，图像文本对齐通常如何训练和评估？",
+    "body": "IoU、幻觉率、多轮一致性和长尾场景表现。面试回答最好补一句：对齐不是一次性预训练结束，线上 badcase、业务数据和人工偏好会持续修正模型对视觉证据的使用方式。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-22-d3699569f41a\\04-answer.png"
+  }
+]

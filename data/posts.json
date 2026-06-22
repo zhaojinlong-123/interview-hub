@@ -65,8 +65,8 @@
   },
   {
     "id": "auto-20260620-5df12524a523",
-    "title": "掘金：CoovallyAIHub 7月前 算法 计算机视觉 让Qwen-VL的检测能力像YOLO一样强，VLM-FO1如何打通大模型的视觉任督二脉 在当今多模态大模型（VLMs）飞速发展的时代，一个令人尴尬的问题依然存在：为什么这些能看懂图",
-    "company": "Qwen",
+    "title": "Qwen-VL视觉语言题目精讲",
+    "company": "",
     "role": "大模型相关岗位",
     "direction": "多模态大模型",
     "domain": "视觉语言理解",
@@ -97,7 +97,9 @@
         "answeredAt": "2026-06-20T03:03:50.597Z",
         "source": "backfill-publishable-candidates"
       }
-    ]
+    ],
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260620-7315480009ee",
@@ -4702,8 +4704,8 @@
   },
   {
     "id": "auto-20260618-f7b3282f50d8",
-    "title": "CSDN：大模型面试题85：Qwen2.5",
-    "company": "Qwen",
+    "title": "Qwen2.5大模型题目精讲",
+    "company": "",
     "role": "大模型相关岗位",
     "direction": "大模型架构 / 推理部署",
     "domain": "Qwen / 开源大模型",
@@ -4742,7 +4744,9 @@
         "answeredAt": "2026-06-18T10:46:27.265Z",
         "source": "repair-today-candidate-questions"
       }
-    ]
+    ],
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260618-66d021682a2f",
@@ -18500,8 +18504,8 @@
   },
   {
     "id": "auto-20260613-5567a52c6128",
-    "title": "小红书：面经",
-    "company": "蔚来",
+    "title": "自动驾驶数据闭环题目精讲",
+    "company": "",
     "role": "大模型相关岗位",
     "direction": "VLA / 具身智能",
     "domain": "机器人数据 / 动作模型",
@@ -18522,7 +18526,9 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：面经-蔚来-端到端大模型算法实习生-VLA方向 理塘伝説 06-01 38",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781322502,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Historical mojibake company cleared; online title already uses topic-only wording.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260613-4f0338fee109",
@@ -18551,8 +18557,8 @@
   },
   {
     "id": "auto-20260613-ce5f69daa751",
-    "title": "知乎：具身智能算法工程师面经【300题版】 Finalchemist：VLA与多模态策略（Vision",
-    "company": "综合",
+    "title": "视频时序理解题目精讲",
+    "company": "",
     "role": "大模型相关岗位",
     "direction": "VLA / 具身智能",
     "domain": "机器人数据 / 动作模型",
@@ -18574,7 +18580,9 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：具身智能算法工程师面经【300题版】 Finalchemist：VLA与多模态策略（Vision-Language-Action） 1. 为什么纯LLM架构无法直接解决机器人控制...阅读全文​ ​ 赞同 30​ ​ 2 条评论 03-14",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781322502,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260613-2679e9dc961d",
@@ -18849,8 +18857,8 @@
   },
   {
     "id": "auto-20260613-9d9a46d8887a",
-    "title": "小红书：VLA算法工程师面试题：频率不匹配问题",
-    "company": "综合",
+    "title": "世界模型规划题目精讲",
+    "company": "",
     "role": "大模型相关岗位",
     "direction": "VLA / 具身智能",
     "domain": "机器人数据 / 动作模型",
@@ -18869,7 +18877,9 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试题：频率不匹配问题 学姐定新丸 昨天 15:10 9",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1781322502,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260613-632a9a51a598",
@@ -19831,7 +19841,7 @@
   },
   {
     "id": "auto-20260606-4b438e6d70ba",
-    "title": "知乎：字节多模态大模型面经一面 momo：最长公共子序列 二面 1.自我介绍 2.拷打项目(多模态是如何训练的?如何将prompt和微调结合?怎么从特别多的promp",
+    "title": "字节多图VQA题目精讲",
     "company": "字节",
     "role": "大模型相关岗位",
     "direction": "多模态大模型",
@@ -19853,7 +19863,9 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：字节多模态大模型面经一面 momo：最长公共子序列 二面 1.自我介绍 2.拷打项目(多模态是如何训练的?如何将prompt和微调结合?怎么从特别多的prompt验证...阅读全文​ ​ 赞同 306​ ​ 17 条评论 01-24",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1780755744,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Source title identifies ByteDance multimodal interview content.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260606-255a4b1278f5",
@@ -20011,8 +20023,8 @@
   },
   {
     "id": "auto-20260606-566028bd9c5c",
-    "title": "小红书：普渡机器人具身VLA面经",
-    "company": "综合",
+    "title": "普渡VLA具身智能题目精讲",
+    "company": "普渡",
     "role": "大模型相关岗位",
     "direction": "VLA / 具身智能",
     "domain": "机器人数据 / 动作模型",
@@ -20033,7 +20045,9 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：普渡机器人具身VLA面经 今天毕业了吗（毕业版） 2025-11-06 125",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1780755744,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Source title identifies Pudu Robotics / 普渡机器人.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "auto-20260606-fe9773709c65",
@@ -20414,8 +20428,8 @@
   },
   {
     "id": "auto-20260606-66b769a6c484",
-    "title": "51CTO：火山引擎具身智能闭门研讨会：大模型驱动具身智能产业新未来转载",
-    "company": "NVIDIA",
+    "title": "火山引擎VLA具身智能题目精讲",
+    "company": "火山引擎",
     "role": "AI / 算法候选人",
     "direction": "VLA / 具身智能",
     "domain": "机器人数据 / 动作模型",
@@ -20437,7 +20451,9 @@
     "content": "自动更新脚本从 51CTO 搜索到的近期面经候选。摘要：火山引擎具身智能闭门研讨会：大模型驱动具身智能产业新未来转载 近日，由火山引擎主办、NVIDIA作为特别合作方的具身智能行业闭门研讨会在上海成功举行。.....本次研讨会以\"创变·智启具身\"为主题，聚焦大模型驱动下的具身智能产业发展新机遇，吸引了来自智能制造、自动驾驶、服务机器人等领域的50余位企业高管、技术专家和产业投资人参会，共同探讨物理AI时代的技术演进路径与商业落地策略 2025-07-29 17:53:19",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1780755744,
-    "updatedAt": 1781919366
+    "updatedAt": 1781919366,
+    "companyAuditNote": "Source title identifies Volcano Engine, not NVIDIA.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "bank-autonomous-data-world-model-202606",

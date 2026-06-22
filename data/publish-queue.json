@@ -60,14 +60,14 @@
   },
   {
     "id": "xhs-daily-2026-06-21-ace65c5012f2",
-    "title": "QwenQwen-VL类视觉语言…题目精",
+    "title": "Qwen-VL视觉语言题目精讲",
     "coverTitle": "Qwen面试题精讲",
     "coverSubtitle": "多模态大模型 高频题",
-    "company": "Qwen",
+    "company": "",
     "direction": "多模态大模型",
     "primaryQuestion": "Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
     "topic": "Qwen-VL 类视觉语言…",
-    "body": "每日精选：Qwen 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-06-20\n原文链接：https://juejin.cn/post/7571678763782258722?searchId=202606200934123712A5056DD60BB31F76\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #Qwen #大模型 #多模态 #多模态大模型 #大模型面试 #AI学习",
+    "body": "Qwen-VL视觉语言题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-06-20\n原文链接：https://juejin.cn/post/7571678763782258722?searchId=202606200934123712A5056DD60BB31F76\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #Qwen #大模型 #多模态 #多模态大模型 #大模型面试 #AI学习",
     "sourcePlatform": "掘金",
     "sourceDate": "2026-06-20",
     "sourceUrl": "https://juejin.cn/post/7571678763782258722?searchId=202606200934123712A5056DD60BB31F76",
@@ -117,7 +117,9 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
     "updatedAt": "2026-06-21T16:18:25.635Z",
     "publishedAt": "2026-06-21T16:18:25.635Z",
-    "lastPublishAttemptAt": "2026-06-21T16:18:25.635Z"
+    "lastPublishAttemptAt": "2026-06-21T16:18:25.635Z",
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-21-a86e23735ed8",
@@ -536,14 +538,14 @@
   },
   {
     "id": "xhs-daily-2026-06-18-5047323d8c9c",
-    "title": "QwenQwen2.5类大模型在…题目精",
+    "title": "Qwen2.5大模型题目精讲",
     "coverTitle": "Qwen面试题精讲",
     "coverSubtitle": "大模型架构 / 推理部署 高频题",
-    "company": "Qwen",
+    "company": "",
     "direction": "大模型架构 / 推理部署",
     "primaryQuestion": "Qwen2.5 类大模型在面试中常被问到哪些结构和训练特点，和 LLaMA/DeepSeek 的回答重点有什么不同？",
     "topic": "Qwen2.5 类大模型在…",
-    "body": "每日精选：Qwen 大模型架构 / 推理部署题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-18\n原文链接：https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #Qwen #大模型 #面试 #大模型架构推理部署 #大模型面试 #AI学习",
+    "body": "Qwen2.5大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-18\n原文链接：https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #Qwen #大模型 #面试 #大模型架构推理部署 #大模型面试 #AI学习",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-18",
     "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=999875e57e23e759c8bfa4ce6e10a1f6&biz_id=0",
@@ -591,7 +593,9 @@
     "status": "published",
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
-    "updatedAt": "2026-06-18T10:54:25.642Z"
+    "updatedAt": "2026-06-18T10:54:25.642Z",
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-16-78fd3487c994",
@@ -954,14 +958,14 @@
   },
   {
     "id": "xhs-daily-2026-06-14-ef7ca72d79bc",
-    "title": "CSDN???????",
+    "title": "视频时序理解题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "company": "??",
+    "company": "",
     "direction": "?? / ????",
     "primaryQuestion": "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
     "topic": "???? / ????",
-    "body": "每日精选：综合｜视频 / 视觉理解题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：CSDN\n原文链接：https://blog.csdn.net/qq_45934285/article/details/143261317\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "body": "视频时序理解题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：CSDN\n原文链接：https://blog.csdn.net/qq_45934285/article/details/143261317\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://blog.csdn.net/qq_45934285/article/details/143261317",
@@ -1039,7 +1043,9 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "updatedAt": "2026-06-16T13:01:49.953Z",
     "sourceValidationStatus": "replaced_with_verified_topic",
-    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets."
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -1183,10 +1189,10 @@
   },
   {
     "id": "xhs-daily-2026-06-13-d8f0889f10e1",
-    "title": "51CTO???????",
+    "title": "自动驾驶数据闭环题目精讲",
     "coverTitle": "蔚来面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：综合｜自动驾驶 / 世界模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/821686.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "body": "自动驾驶数据闭环题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/821686.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
     "sourcePlatform": "51CTO",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://www.51cto.com/article/821686.html",
@@ -1265,17 +1271,19 @@
     "updatedAt": "2026-06-16T13:01:49.953Z",
     "sourceValidationStatus": "replaced_with_verified_topic",
     "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
-    "company": "????",
+    "company": "",
     "direction": "???? / ????",
     "topic": "????????",
-    "primaryQuestion": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？"
+    "primaryQuestion": "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
+    "companyAuditNote": "Historical mojibake company cleared; online title already uses topic-only wording.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-13-d6e5e8fb2a41",
-    "title": "VLA具身智能题目精讲",
+    "title": "普渡VLA具身智能题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：综合 VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面经 #具身 #机器人 #综合 #VLA具身智能 #大模型面试",
+    "body": "普渡VLA具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：小红书，2026-06-06，xiaohongshu.com\n#小红书 #VLA #面经 #具身 #机器人 #综合 #VLA具身智能 #大模型面试",
     "sourcePlatform": "小红书",
     "sourceDate": "2026-06-06",
     "sourceUrl": "https://www.xiaohongshu.com/explore/68ece913000000000301c81b?xsec_token=AB-CpiucYLfDf6mD_JqXV6YJCwUuR1OOppXO0xsEkuGnI=&xsec_source=pc_search",
@@ -1327,7 +1335,10 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "updatedAt": "2026-06-14T16:25:26.597Z",
     "sourceValidationStatus": "verified_original_note",
-    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL."
+    "sourceValidationNote": "Verified through Chrome CDP: search_result redirects to this concrete original note URL.",
+    "company": "普渡",
+    "companyAuditNote": "Source title identifies Pudu Robotics / 普渡机器人.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-13-c026b29d4659",
@@ -1740,10 +1751,10 @@
   },
   {
     "id": "xhs-daily-2026-06-13-176a8d789a4e",
-    "title": "51CTO???????",
+    "title": "世界模型规划题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：综合｜世界模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/820298.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "body": "世界模型规划题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：51CTO\n原文链接：https://www.51cto.com/article/820298.html\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
     "sourcePlatform": "51CTO",
     "sourceDate": "2026-06-13",
     "sourceUrl": "https://www.51cto.com/article/820298.html",
@@ -1812,10 +1823,12 @@
     "updatedAt": "2026-06-16T13:01:49.953Z",
     "sourceValidationStatus": "replaced_with_verified_topic",
     "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
-    "company": "??",
+    "company": "",
     "direction": "????",
     "topic": "??????",
-    "primaryQuestion": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？"
+    "primaryQuestion": "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-13-08551c35562c",
@@ -1892,10 +1905,10 @@
   },
   {
     "id": "xhs-daily-2026-06-12-362a59bc5046",
-    "title": "????VQA???",
+    "title": "字节多图VQA题目精讲",
     "coverTitle": "字节面试题精讲",
     "coverSubtitle": "多模态大模型 高频题",
-    "body": "每日精选：综合｜多模态大模型题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：知乎专栏\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
+    "body": "字节多图VQA题目精讲\n\n本篇图卡包含：面试题目、完整解答、追问方向。第一页先看公司、方向、题目，后面按顺序复习答案。\n\n引用来源：知乎专栏\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n\n#面经 #大模型面试 #AI学习 #多模态 #VLA #世界模型 #视频理解",
     "sourcePlatform": "知乎专栏",
     "sourceDate": "2026-06-06",
     "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
@@ -1972,12 +1985,14 @@
     "reason": "已提交小红书发布，可能进入平台审核",
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "updatedAt": "2026-06-16T13:01:49.953Z",
-    "company": "??",
+    "company": "字节",
     "direction": "??????",
     "topic": "????????",
     "primaryQuestion": "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
     "sourceValidationStatus": "replaced_with_verified_topic",
-    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets."
+    "sourceValidationNote": "Historical duplicate note edited with non-duplicate topic assets; queue metadata synchronized from xiaohongshu-edit-assets.",
+    "companyAuditNote": "Source title identifies ByteDance multimodal interview content.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-11-f733da88ddaa",
@@ -2158,10 +2173,10 @@
   },
   {
     "id": "xhs-daily-2026-06-08-da7740600601",
-    "title": "NVIDIAVLA具身智能题目精讲",
+    "title": "火山引擎VLA具身智能题目精讲",
     "coverTitle": "NVIDIA面试题精讲",
     "coverSubtitle": "VLA / 具身智能 高频题",
-    "body": "每日精选：NVIDIA VLA / 具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：51CTO，2026-06-06，51cto.com\n#51CTO #NVIDIA #大模型 #具身 #机器人 #自动驾驶 #VLA具身智能 #大模型面试",
+    "body": "火山引擎VLA具身智能题目精讲\n今天把文字整理成图卡：面试题目、详细解答、追问方向都在图片里。\n引用来源：51CTO，2026-06-06，51cto.com\n#51CTO #NVIDIA #大模型 #具身 #机器人 #自动驾驶 #VLA具身智能 #大模型面试",
     "sourcePlatform": "51CTO",
     "sourceDate": "2026-06-06",
     "sourceUrl": "https://www.51cto.com/article/821686.html",
@@ -2229,7 +2244,10 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
     "updatedAt": "2026-06-21T16:18:25.635Z",
     "publishedAt": "2026-06-21T16:18:25.635Z",
-    "lastPublishAttemptAt": "2026-06-21T16:18:25.635Z"
+    "lastPublishAttemptAt": "2026-06-21T16:18:25.635Z",
+    "company": "火山引擎",
+    "companyAuditNote": "Source title identifies Volcano Engine, not NVIDIA.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "xhs-daily-2026-06-07-f819e557a306",

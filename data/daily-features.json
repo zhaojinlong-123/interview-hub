@@ -72,8 +72,8 @@
     "slot": "morning",
     "publishTime": "09:30",
     "postId": "auto-20260620-5df12524a523",
-    "title": "掘金：CoovallyAIHub 7月前 算法 计算机视觉 让Qwen-VL的检测能力像YOLO一样强，VLM-FO1如何打通大模型的视觉任督二脉 在当今多模态大模型（VLMs）飞速发展的时代，一个令人尴尬的问题依然存在：为什么这些能看懂图",
-    "company": "Qwen",
+    "title": "Qwen-VL视觉语言题目精讲",
+    "company": "",
     "direction": "多模态大模型",
     "score": 84,
     "reasons": [
@@ -103,7 +103,9 @@
       "status": "published",
       "publishedAt": "2026-06-21T16:18:25.635Z",
       "note": "Republished to Xiaohongshu; detected published=true success marker"
-    }
+    },
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-20-789315088389",
@@ -258,8 +260,8 @@
     "slot": "afternoon",
     "publishTime": "15:30",
     "postId": "auto-20260618-f7b3282f50d8",
-    "title": "CSDN：大模型面试题85：Qwen2.5",
-    "company": "Qwen",
+    "title": "Qwen2.5大模型题目精讲",
+    "company": "",
     "direction": "大模型架构 / 推理部署",
     "score": 90,
     "reasons": [
@@ -281,7 +283,9 @@
     "publishStatus": "published",
     "autoPublish": true,
     "publishedAt": "2026-06-18T10:54:25.656Z",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-18-d1d94a189071",
@@ -500,8 +504,8 @@
     "id": "daily-2026-06-14-ef7ca72d79bc",
     "date": "2026-06-14",
     "postId": "auto-20260613-ce5f69daa751",
-    "title": "CSDN???????",
-    "company": "??",
+    "title": "视频时序理解题目精讲",
+    "company": "",
     "direction": "?? / ????",
     "score": 79,
     "reasons": [
@@ -528,14 +532,16 @@
       "视频模型如何评估时序一致性、动作理解、事件边界和身份保持？",
       "temporal token 压缩如何保留动作变化和事件顺序，相比长上下文 attention 有什么取舍？"
     ],
-    "updatedAt": "2026-06-16T13:01:49.953Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-13-176a8d789a4e",
     "date": "2026-06-13",
     "postId": "auto-20260613-9d9a46d8887a",
-    "title": "51CTO???????",
-    "company": "??",
+    "title": "世界模型规划题目精讲",
+    "company": "",
     "direction": "????",
     "score": 80,
     "reasons": [
@@ -561,7 +567,9 @@
       "世界模型训练中，latent dynamics、reward model 和 rollout horizon 如何影响规划效果？",
       "世界模型和传统感知-预测-规划链路相比，优势和风险分别是什么？"
     ],
-    "updatedAt": "2026-06-16T13:01:49.953Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "companyAuditNote": "Historical mojibake title/company fixed; source is topic content, no confirmed company.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-13-acef07a226aa",
@@ -630,8 +638,8 @@
     "id": "daily-2026-06-13-d6e5e8fb2a41",
     "date": "2026-06-13",
     "postId": "auto-20260606-566028bd9c5c",
-    "title": "小红书：普渡机器人具身VLA面经",
-    "company": "综合",
+    "title": "普渡VLA具身智能题目精讲",
+    "company": "普渡",
     "direction": "VLA / 具身智能",
     "score": 84,
     "reasons": [
@@ -652,7 +660,9 @@
     "publishStatus": "published",
     "autoPublish": true,
     "publishedAt": "2026-06-13T04:08:29.384Z",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "companyAuditNote": "Source title identifies Pudu Robotics / 普渡机器人.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-13-c026b29d4659",
@@ -799,8 +809,8 @@
     "id": "daily-2026-06-13-d8f0889f10e1",
     "date": "2026-06-13",
     "postId": "auto-20260613-5567a52c6128",
-    "title": "51CTO???????",
-    "company": "????",
+    "title": "自动驾驶数据闭环题目精讲",
+    "company": "",
     "direction": "???? / ????",
     "score": 97,
     "reasons": [
@@ -827,7 +837,9 @@
       "自动驾驶数据筛选时，如何识别 corner case、near miss、接管片段和标注不确定样本？",
       "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？"
     ],
-    "updatedAt": "2026-06-16T13:01:49.953Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "companyAuditNote": "Historical mojibake company cleared; online title already uses topic-only wording.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-13-9d3c283ef28d",
@@ -861,8 +873,8 @@
     "id": "daily-2026-06-12-362a59bc5046",
     "date": "2026-06-12",
     "postId": "auto-20260606-4b438e6d70ba",
-    "title": "????VQA???",
-    "company": "??",
+    "title": "字节多图VQA题目精讲",
+    "company": "字节",
     "direction": "??????",
     "score": 84,
     "reasons": [
@@ -890,7 +902,9 @@
       "多图理解任务中，如何保证跨图实体一致性、顺序理解和比较推理能力？",
       "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？"
     ],
-    "updatedAt": "2026-06-16T13:01:49.953Z"
+    "updatedAt": "2026-06-16T13:01:49.953Z",
+    "companyAuditNote": "Source title identifies ByteDance multimodal interview content.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-11-f733da88ddaa",
@@ -980,8 +994,8 @@
     "id": "daily-2026-06-08-da7740600601",
     "date": "2026-06-08",
     "postId": "auto-20260606-66b769a6c484",
-    "title": "51CTO：火山引擎具身智能闭门研讨会：大模型驱动具身智能产业新未来转载",
-    "company": "NVIDIA",
+    "title": "火山引擎VLA具身智能题目精讲",
+    "company": "火山引擎",
     "direction": "VLA / 具身智能",
     "score": 94,
     "reasons": [
@@ -1010,7 +1024,9 @@
       "status": "published",
       "publishedAt": "2026-06-21T16:18:25.635Z",
       "note": "Republished to Xiaohongshu; detected published=true success marker"
-    }
+    },
+    "companyAuditNote": "Source title identifies Volcano Engine, not NVIDIA.",
+    "companyAuditUpdatedAt": "2026-06-22T04:19:40.478Z"
   },
   {
     "id": "daily-2026-06-07-f819e557a306",

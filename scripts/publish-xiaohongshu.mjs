@@ -343,6 +343,35 @@ async function getJson(url) {
   return response.json();
 }
 
+async function closeExtraXhsTabs() {
+  let tabs = [];
+  try {
+    tabs = await getJson(`${CDP}/json/list`);
+  } catch {
+    return { closed: [], skipped: true };
+  }
+  const closeTargets = tabs.filter((tab) => {
+    if (tab.type !== "page") return false;
+    const url = String(tab.url || "");
+    if (!/xiaohongshu\.com/.test(url)) return false;
+    if (url.includes("creator.xiaohongshu.com/new/note-manager")) return false;
+    return (
+      url.includes("creator.xiaohongshu.com/publish/publish")
+      || url.includes("creator.xiaohongshu.com/publish/success")
+      || url.includes("xiaohongshu.com/explore")
+      || url === "https://www.xiaohongshu.com/explore"
+    );
+  });
+  const closed = [];
+  for (const tab of closeTargets) {
+    try {
+      await fetch(`${CDP}/json/close/${tab.id}`);
+      closed.push({ id: tab.id, title: tab.title, url: tab.url });
+    } catch {}
+  }
+  return { closed };
+}
+
 function escapePs(value) {
   return String(value || "").replace(/`/g, "``").replace(/"/g, '`"');
 }
@@ -842,7 +871,14 @@ async function main() {
   commitAndPush();
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main()
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    const cleanup = await closeExtraXhsTabs();
+    if (cleanup.closed?.length) {
+      console.log(JSON.stringify({ xhsTabCleanup: cleanup }, null, 2));
+    }
+  });

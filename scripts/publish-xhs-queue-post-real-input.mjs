@@ -64,6 +64,35 @@ class CdpSession {
   }
 }
 
+async function closeExtraXhsTabs() {
+  let tabs = [];
+  try {
+    tabs = JSON.parse(await request("GET", "/json/list"));
+  } catch {
+    return { closed: [], skipped: true };
+  }
+  const closeTargets = tabs.filter((tab) => {
+    if (tab.type !== "page") return false;
+    const url = String(tab.url || "");
+    if (!/xiaohongshu\.com/.test(url)) return false;
+    if (url.includes("creator.xiaohongshu.com/new/note-manager")) return false;
+    return (
+      url.includes("creator.xiaohongshu.com/publish/publish")
+      || url.includes("creator.xiaohongshu.com/publish/success")
+      || url.includes("xiaohongshu.com/explore")
+      || url === "https://www.xiaohongshu.com/explore"
+    );
+  });
+  const closed = [];
+  for (const tab of closeTargets) {
+    try {
+      await request("GET", `/json/close/${tab.id}`);
+      closed.push({ id: tab.id, title: tab.title, url: tab.url });
+    } catch {}
+  }
+  return { closed };
+}
+
 async function setText(page, selectorExpression, text, label) {
   const focus = await page.send("Runtime.evaluate", {
     returnByValue: true,
@@ -211,4 +240,8 @@ try {
   }, null, 2));
 } finally {
   page.close();
+  const cleanup = await closeExtraXhsTabs();
+  if (cleanup.closed?.length) {
+    console.log(JSON.stringify({ xhsTabCleanup: cleanup }, null, 2));
+  }
 }

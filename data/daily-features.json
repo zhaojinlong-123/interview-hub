@@ -1,12 +1,43 @@
 [
   {
+    "id": "daily-2026-06-23-76634ddfdcff",
+    "date": "2026-06-23",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260623-50d0c03d01a9",
+    "title": "小红书：美团春招大模型算法岗面经·MoE+GRPO",
+    "company": "美团",
+    "direction": "MoE / GRPO / 大模型训练",
+    "score": 91,
+    "reasons": [
+      "近期性 +22",
+      "明确公司来源 美团 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 强化学习 +4",
+      "高频问题 2 个 +10",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a0033fc000000003601d12a",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-23",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-23-76634ddfdcff.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-06-23T12:05:18.906Z"
+  },
+  {
     "id": "daily-2026-06-23-646a5c9ac389",
     "date": "2026-06-23",
     "slot": "morning",
     "publishTime": "09:30",
     "postId": "auto-20260620-afe145f2f169",
     "title": "B站：1131 0 10:52:02 【2026最新计算机视觉教程】传统CV+视觉大模型，算法原理+框架详解+源码解读+项目实战",
-    "company": "Qwen",
+    "company": "",
     "direction": "多模态大模型",
     "score": 80,
     "reasons": [
@@ -24,10 +55,20 @@
     "sourceDate": "2026-06-20",
     "articlePath": "content/xiaohongshu-drafts/2026-06-23-646a5c9ac389.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
     "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "companyAuditNote": "Qwen is a model family/product name in this source, not a confirmed interview company.",
+    "companyAuditUpdatedAt": "2026-06-23T11:23:11.920Z",
+    "publishedAt": "2026-06-23T11:26:01.366Z",
+    "updatedAt": "2026-06-23T11:26:01.366Z",
+    "publishResult": {
+      "ok": true,
+      "status": "published",
+      "publishedAt": "2026-06-23T11:26:01.366Z",
+      "note": "Republished to Xiaohongshu; detected published=true success marker"
+    }
   },
   {
     "id": "daily-2026-06-22-d3699569f41a",

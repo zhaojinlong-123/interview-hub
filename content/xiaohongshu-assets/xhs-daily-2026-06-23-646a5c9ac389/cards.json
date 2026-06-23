@@ -2,8 +2,8 @@
   {
     "kind": "cover",
     "kicker": "本篇速览",
-    "title": "Qwen｜多模态大模型",
-    "body": "公司：Qwen\n方向：多模态大模型\n题目：为什么通用 VLM 的检测能力通常弱于 YOLO，如何增强其定位和检测能力？",
+    "title": "VLM｜检测定位",
+    "body": "方向：多模态大模型\n题目：为什么通用 VLM 的检测能力通常弱于 YOLO，如何增强其定位和检测能力？",
     "footer": "Interview Hub · 面试题精讲",
     "index": 1,
     "total": 4,

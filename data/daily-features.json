@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-06-23-646a5c9ac389",
+    "date": "2026-06-23",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260620-afe145f2f169",
+    "title": "B站：1131 0 10:52:02 【2026最新计算机视觉教程】传统CV+视觉大模型，算法原理+框架详解+源码解读+项目实战",
+    "company": "Qwen",
+    "direction": "多模态大模型",
+    "score": 80,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 Qwen +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://www.bilibili.com/video/BV1Ds7z63E2u/",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-06-20",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-23-646a5c9ac389.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-22-d3699569f41a",
     "date": "2026-06-22",
     "slot": "morning",

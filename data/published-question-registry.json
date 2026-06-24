@@ -238,6 +238,21 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "general:为什么通用vlm的检测能力通常弱于yolo如何增强其定位和检测能力",
+    "question": "为什么通用 VLM 的检测能力通常弱于 YOLO，如何增强其定位和检测能力？",
+    "queueId": "xhs-daily-2026-06-23-646a5c9ac389",
+    "featureId": "daily-2026-06-23-646a5c9ac389",
+    "postId": "auto-20260620-afe145f2f169",
+    "title": "VLM检测定位题目精讲",
+    "company": "",
+    "direction": "多模态大模型",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1Ds7z63E2u/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-23T11:26:01.366Z"
+  },
+  {
     "key": "general:智元这类具身智能基础模型岗位中vlmvla和video模型在机器人系统里分别承担什么角色",
     "question": "智元这类具身智能基础模型岗位中，VLM、VLA 和 Video 模型在机器人系统里分别承担什么角色？",
     "queueId": "xhs-daily-2026-06-18-d1d94a189071",
@@ -251,6 +266,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-18T10:53:45.635Z"
+  },
+  {
+    "key": "general:moe中专家路由如何做负载均衡和专家容量控制为什么会出现专家塌缩",
+    "question": "MoE 中专家路由如何做负载均衡和专家容量控制，为什么会出现专家塌缩？",
+    "queueId": "xhs-daily-2026-06-23-76634ddfdcff",
+    "featureId": "daily-2026-06-23-76634ddfdcff",
+    "postId": "auto-20260623-50d0c03d01a9",
+    "title": "美团MoE中专家路由如何做负…题目精讲",
+    "company": "美团",
+    "direction": "MoE / GRPO / 大模型训练",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a0033fc000000003601d12a",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-23T12:05:18.906Z"
   },
   {
     "key": "general:qwen25类大模型在面试中常被问到哪些结构和训练特点和llamadeepseek的回答重点有什么不同",
@@ -401,6 +431,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T15:05:07.445Z"
+  },
+  {
+    "key": "rl:94ea640decd7",
+    "question": "GRPO 相比 PPO 为什么可以省去价值模型，适合哪些大模型推理训练场景？",
+    "queueId": "xhs-daily-2026-06-23-76634ddfdcff",
+    "featureId": "daily-2026-06-23-76634ddfdcff",
+    "postId": "auto-20260623-50d0c03d01a9",
+    "title": "美团MoE中专家路由如何做负…题目精讲",
+    "company": "美团",
+    "direction": "MoE / GRPO / 大模型训练",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a0033fc000000003601d12a",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-23T12:05:18.906Z"
   },
   {
     "key": "rl:ac06e0166e1b",

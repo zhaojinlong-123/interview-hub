@@ -208,6 +208,21 @@
     "updatedAt": "2026-06-20T03:12:29.426Z"
   },
   {
+    "key": "general:扩散模型生成的是actionchunk但在手术中组织形变是实时的如果你的chunk还没跑完组织已经发生了非线性位移你的系统怎么做闭环修正",
+    "question": "扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
+    "queueId": "xhs-daily-2026-06-24-df7f186f903b",
+    "featureId": "daily-2026-06-24-df7f186f903b",
+    "postId": "auto-20260624-5b9d555b643a",
+    "title": "腾讯扩散模型生成的是Actio…题目精讲",
+    "company": "腾讯",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e370800000000020039d78?xsec_token=ABHXIJUG94jDyqOCDzJzB4zp2bIDfU1_FEwualMezweJM%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/new/note-manager",
+    "status": "published",
+    "updatedAt": "2026-06-24T11:17:24.320Z"
+  },
+  {
     "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
     "question": "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
     "queueId": "xhs-daily-2026-06-15-e3bc7c5a3575",
@@ -268,6 +283,21 @@
     "updatedAt": "2026-06-18T10:53:45.635Z"
   },
   {
+    "key": "general:clip模型的原理是什么它是如何实现图文对齐的损失函数怎么设计的",
+    "question": "CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
+    "queueId": "xhs-daily-2026-06-24-d35dfb9b8113",
+    "featureId": "daily-2026-06-24-d35dfb9b8113",
+    "postId": "auto-20260624-65dd2866bb5e",
+    "title": "字节VisionTransf…题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/693c175d000000001e02f513?xsec_token=AB-GkRaO0Sq06YxsmCbi2cn_uQhicr5GD6Ads99rpFnsM%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/new/note-manager",
+    "status": "published",
+    "updatedAt": "2026-06-24T11:17:24.320Z"
+  },
+  {
     "key": "general:moe中专家路由如何做负载均衡和专家容量控制为什么会出现专家塌缩",
     "question": "MoE 中专家路由如何做负载均衡和专家容量控制，为什么会出现专家塌缩？",
     "queueId": "xhs-daily-2026-06-23-76634ddfdcff",
@@ -326,6 +356,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
+  },
+  {
+    "key": "general:visiontransformervit和cnn在图像特征提取上的优劣对比",
+    "question": "Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
+    "queueId": "xhs-daily-2026-06-24-d35dfb9b8113",
+    "featureId": "daily-2026-06-24-d35dfb9b8113",
+    "postId": "auto-20260624-65dd2866bb5e",
+    "title": "字节VisionTransf…题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/693c175d000000001e02f513?xsec_token=AB-GkRaO0Sq06YxsmCbi2cn_uQhicr5GD6Ads99rpFnsM%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/new/note-manager",
+    "status": "published",
+    "updatedAt": "2026-06-24T11:17:24.320Z"
   },
   {
     "key": "general:vla动作置信度为什么不能等同于任务成功率机器人控制里应如何做校准",

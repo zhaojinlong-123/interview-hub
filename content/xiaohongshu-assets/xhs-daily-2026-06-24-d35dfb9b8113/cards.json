@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜多模态大模型",
+    "body": "公司：字节\n方向：多模态大模型\n题目：Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-d35dfb9b8113\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？\n\n2. CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-d35dfb9b8113\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
+    "body": "CNN 通过局部卷积、权重共享和平移归纳偏置，在中小数据和高分辨率密集预测中样本效率高；ViT 把图像切成 patch token，用自注意力直接建模长距离关系，规模化后表达能力和迁移性更强，但训练数据与计算需求更大。多模态大模型常选 ViT，因为 token 形式容易接入 LLM，不过对小目标和局部细节通常需要高分辨率、动态切图、多尺度特征或卷积 stem 补强。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-d35dfb9b8113\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
+    "body": "CLIP 使用图像编码器和文本编码器把配对图文映射到同一向量空间，在一个 batch 内把真实图文对作为正样本，其余组合视为负样本，双向计算图到文和文到图的对比损失。InfoNCE 本质上让正样本相似度相对所有候选更高，温度参数控制分布尖锐程度。CLIP 的优势是大规模弱监督和零样本迁移，局限是依赖 batch 内负样本、偏向全局语义，对计数、空间关系和细粒度局部属性不够敏感。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-d35dfb9b8113\\04-answer.png"
+  }
+]

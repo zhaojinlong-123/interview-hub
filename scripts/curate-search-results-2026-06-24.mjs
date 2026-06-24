@@ -7,7 +7,7 @@ const TARGET_DATE = "2026-06-24";
 const SHOULD_WRITE = process.argv.includes("--write");
 
 const interviewSignals = /面经|面试|八股|一面|二面|三面|四面|offer|高频题|面试题|面试实录|校招|实习/i;
-const rejectSignals = /课程|教程|就业指南|论文|综述|项目源码|项目代码|资源下载|下载/i;
+const rejectSignals = /课程|教程|就业指南|论文|综述|项目源码|项目代码|资源下载|下载|网工|VLAN|OSPF|生成树|端口隔离/i;
 const excludedDirections = /RAG|Agent/i;
 
 function normalizeXhsUrl(url) {
@@ -17,10 +17,27 @@ function normalizeXhsUrl(url) {
   return `https://www.xiaohongshu.com/explore/${match[1]}${match[2] || ""}`;
 }
 
+function normalizeSourceUrl(url) {
+  const xhs = normalizeXhsUrl(url);
+  try {
+    const parsed = new URL(xhs);
+    for (const key of [...parsed.searchParams.keys()]) {
+      if (/^(utm_|request_id|ops_request_misc|biz_id|searchId|spm|from|source)/i.test(key)) {
+        parsed.searchParams.delete(key);
+      }
+    }
+    parsed.hash = "";
+    return parsed.toString();
+  } catch {
+    return xhs;
+  }
+}
+
 const posts = JSON.parse(await fs.readFile(POSTS_FILE, "utf8"));
 const kept = [];
 const removed = [];
 const next = [];
+const seenSourceUrls = new Set();
 
 for (const post of posts) {
   if (post.sourceDate !== TARGET_DATE) {
@@ -42,7 +59,12 @@ for (const post of posts) {
     continue;
   }
 
-  post.sourceUrl = normalizeXhsUrl(post.sourceUrl);
+  post.sourceUrl = normalizeSourceUrl(post.sourceUrl);
+  if (seenSourceUrls.has(post.sourceUrl)) {
+    removed.push({ id: post.id, title: post.title, reason: "duplicate canonical source URL" });
+    continue;
+  }
+  seenSourceUrls.add(post.sourceUrl);
   post.reviewStatus = (post.questions || []).length ? "question_ready" : "source_candidate";
   post.updatedAt = Math.floor(Date.now() / 1000);
   kept.push(post);

@@ -18,12 +18,31 @@
       "面试",
       "具身"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯RoboticsX 具身智能算法一面（贼难） 技术岗面试服务（代理面试，面试辅导） 04-18 165",
+    "questions": [
+      "手术动辄几小时，Transformer 的 KV Cache 会随时间爆炸，虽然换了 Mamba。但 Mamba 的线性压缩本质上是Lossy，怎么保证它在记录了前一个小时的操作后，还能精准记得现在对应的逻辑，而不是产生幻觉？",
+      "扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯RoboticsX 具身智能算法一面（贼难） 技术岗面试服务（代理面试，面试辅导） 04-18 165 来源正文抽取题目： 手术动辄几小时，Transformer 的 KV Cache 会随时间爆炸，虽然换了 Mamba。但 Mamba 的线性压缩本质上是Lossy，怎么保证它在记录了前一个小时的操作后，还能精准记得现在对应的逻辑，而不是产生幻觉？ 扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？ 来源正文抽取题目： 手术动辄几小时，Transformer 的 KV Cache 会随时间爆炸，虽然换了 Mamba。但 Mamba 的线性压缩本质上是Lossy，怎么保证它在记录了前一个小时的操作后，还能精准记得现在对应的逻辑，而不是产生幻觉？ 扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "手术动辄几小时，Transformer 的 KV Cache 会随时间爆炸，虽然换了 Mamba。但 Mamba 的线性压缩本质上是Lossy，怎么保证它在记录了前一个小时的操作后，还能精准记得现在对应的逻辑，而不是产生幻觉？",
+        "answer": "Transformer 的自注意力需要计算序列中 token 两两交互，标准实现的注意力矩阵大小为 n×n，因此时间和显存复杂度通常随序列长度呈 O(n²) 增长；Mamba 使用选择性状态空间模型，把历史压缩进固定维度状态并递推更新，序列计算近似 O(n)。代价是 Mamba 的状态压缩不是无损记忆，长时细节可能被覆盖。机器人长任务中不应只依赖单一隐状态，而应结合分层记忆：短期连续状态交给 Mamba，关键事件、目标和操作结果写入结构化外部记忆，需要时检索回模型；同时用阶段边界监督、记忆一致性损失和长序列回放评估遗忘。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.048Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
+        "answer": "Action Chunk 不能作为开环轨迹一次执行到底。更稳妥的做法是采用滚动时域控制：策略每次预测一段动作，但控制器只执行前几个动作，随后重新采集视觉、力觉和机器人本体状态，再用最新观测重规划剩余轨迹。对组织形变这类强非刚性场景，还应加入目标跟踪与形变估计、动作置信度或不确定性检测、力/速度安全约束以及异常触发的快速停止。训练时可通过扰动轨迹、失败恢复数据和延迟随机化，让策略学会在状态偏离时回到可恢复区域。核心是“短执行、频重规划、低层安全控制兜底”，而不是追求一次生成很长的动作序列。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.049Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-775c4de6ce0b",
@@ -47,7 +66,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：小鹏汽车 vlm/vla 算法面试题及答案整理 杰克学长聊offer-小俊 05-08 12",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -72,7 +91,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：美团多模态 llm 算法实习一面（已 offer） Benson 2025-08-03 155",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -98,7 +117,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：淘天大模型（已0C）浅说一下大模型面试强度 小红薯6871524B 2025-07-07 58",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -120,12 +139,31 @@
       "大模型",
       "面经"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：快手大模型一二面 AI实战领航员 2025-12-18 139",
+    "questions": [
+      "Qwen 在训练时采用的 “packing” 形式和“多轮对话”形式有何区别？各自对训练效率和模型能力有何影响？",
+      "训练一个 8B 参数的大模型，大概需要多少显存？如果显存不够，你会用哪些技术缓解？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：快手大模型一二面 AI实战领航员 2025-12-18 139 来源正文抽取题目： Qwen 在训练时采用的 “packing” 形式和“多轮对话”形式有何区别？各自对训练效率和模型能力有何影响？ 训练一个 8B 参数的大模型，大概需要多少显存？如果显存不够，你会用哪些技术缓解？ 来源正文抽取题目： Qwen 在训练时采用的 “packing” 形式和“多轮对话”形式有何区别？各自对训练效率和模型能力有何影响？ 训练一个 8B 参数的大模型，大概需要多少显存？如果显存不够，你会用哪些技术缓解？",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "Qwen 在训练时采用的 “packing” 形式和“多轮对话”形式有何区别？各自对训练效率和模型能力有何影响？",
+        "answer": "Packing 是把多条短样本拼进同一固定长度序列，配合 attention mask 和 loss mask 避免样本间互相看到，主要目的是减少 padding、提升 token 利用率和训练吞吐。多轮对话格式则是在一条样本中保留 system、user、assistant 的真实轮次结构，并只对需要学习的 assistant token 计算损失，目标是学习上下文跟踪和角色一致性。二者可以同时使用：先构造正确的多轮样本，再把多条样本 packing；关键是处理边界位置编码、跨样本 attention 隔离和 loss mask。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.050Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "训练一个 8B 参数的大模型，大概需要多少显存？如果显存不够，你会用哪些技术缓解？",
+        "answer": "仅看权重，8B 参数模型使用 FP16/BF16 约需 16GB；但全参训练远不止权重，还包括梯度、Adam 一阶/二阶状态、主权重、激活值和通信缓冲，通常需要权重体积的数倍甚至十余倍。粗略估算时应分别列出参数、梯度、优化器状态和激活，而不是只报一个数字。显存不足可组合使用 BF16/FP16、ZeRO-2/3 或 FSDP、张量/流水线并行、gradient checkpointing、FlashAttention、CPU/NVMe offload、减小 micro-batch、序列并行，以及 LoRA/QLoRA。推理场景还要单独计算随 batch 和上下文长度增长的 KV Cache。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.050Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-b44c14222225",
@@ -150,7 +188,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：千寻智能多模态世界模型工程师实习生面试 面试干货站 46分钟前 赞",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -176,7 +214,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试：机器人部署工具适用 学姐定新丸 5小时前 1",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -201,7 +239,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试题：频率不匹配问题 学姐定新丸 06-12 12",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -222,12 +260,31 @@
       "多模态",
       "面经"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：多模态面经|佑驾创新 momo 2小时前 3",
+    "questions": [
+      "你方案里KL散度、熵分别代表什么含义？",
+      "强化学习部分为什么选用GRPO而不直接使用PPO？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：多模态面经|佑驾创新 momo 2小时前 3 来源正文抽取题目： 你方案里KL散度、熵分别代表什么含义？ 强化学习部分为什么选用GRPO而不直接使用PPO？ 来源正文抽取题目： 你方案里KL散度、熵分别代表什么含义？ 强化学习部分为什么选用GRPO而不直接使用PPO？",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "你方案里KL散度、熵分别代表什么含义？",
+        "answer": "KL 散度约束新策略不要过快偏离参考策略，主要用于防止强化学习把语言能力和回答分布推坏；熵衡量策略输出的不确定性或多样性，熵过低容易过早收敛到单一模式，熵过高则动作或 token 分布过于随机。训练时常把任务奖励、KL 惩罚和熵奖励组合：提高 KL 系数会更保守，提高熵系数会鼓励探索。两者都应随训练阶段和 reward 稳定性调节，并结合通过率、长度、重复率和安全性观察是否出现模式坍塌。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "强化学习部分为什么选用GRPO而不直接使用PPO？",
+        "answer": "PPO 通常依赖 value model 估计状态价值，再用 GAE 构造 advantage；GRPO 对同一 prompt 采样一组回答，用组内奖励的相对均值和方差归一化得到 advantage，因此可省去单独的价值模型。这样能降低显存和工程复杂度，适合数学、代码、可验证问答等同题多采样场景。局限是组内样本过于相似时优势信号很弱，奖励尺度或规则漏洞也会导致 reward hacking。实践中仍需 KL 约束控制策略偏离参考模型，并监控组内奖励方差、响应长度和通过率。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-fbcf5db0fe86",
@@ -251,7 +308,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：背大模型面试八股文掌握正确方法，效率翻倍 我爱学习 2小时前 1",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -275,7 +332,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：原力灵机vla实习面经 grass 05-09 3",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -300,7 +357,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：最近一周大模型面试情况 继续努力 2025-07-17 29",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -315,7 +372,7 @@
     "difficulty": "中等",
     "sourcePlatform": "掘金",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://juejin.cn/post/7430419976106737715?searchId=2026062418303583F269691F2072F38EDD",
+    "sourceUrl": "https://juejin.cn/post/7430419976106737715",
     "tags": [
       "掘金",
       "大模型",
@@ -326,7 +383,7 @@
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：LLMs 入门实战系列大全：LLMs应用、领域大模型介绍、大模型常见面经汇总",
     "prepTips": "",
     "createdAt": 1782297150,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -352,7 +409,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：阿里通义大模型10.30 AI实战领航员 2025-11-25 311",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -378,7 +435,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：字节推荐大模型 AI实战领航员 2025-12-05 99",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -402,7 +459,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：小红书内容治理 多模态内容理解一面 Daemon 2025-12-07 165",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -428,7 +485,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：百度多模态理解面经 摆烂中 2025-10-28 27",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -451,12 +508,31 @@
       "多模态",
       "面经"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：字节·大模型多模态 AI实战领航员 2025-12-12 180",
+    "questions": [
+      "Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
+      "CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：字节·大模型多模态 AI实战领航员 2025-12-12 180 来源正文抽取题目： Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？ CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？ 来源正文抽取题目： Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？ CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
+        "answer": "CNN 通过局部卷积、权重共享和平移归纳偏置，在中小数据和高分辨率密集预测中样本效率高；ViT 把图像切成 patch token，用自注意力直接建模长距离关系，规模化后表达能力和迁移性更强，但训练数据与计算需求更大。多模态大模型常选 ViT，因为 token 形式容易接入 LLM，不过对小目标和局部细节通常需要高分辨率、动态切图、多尺度特征或卷积 stem 补强。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
+        "answer": "CLIP 使用图像编码器和文本编码器把配对图文映射到同一向量空间，在一个 batch 内把真实图文对作为正样本，其余组合视为负样本，双向计算图到文和文到图的对比损失。InfoNCE 本质上让正样本相似度相对所有候选更高，温度参数控制分布尖锐程度。CLIP 的优势是大规模弱监督和零样本迁移，局限是依赖 batch 内负样本、偏向全局语义，对计数、空间关系和细粒度局部属性不够敏感。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-3c7edf8d1a39",
@@ -470,19 +546,38 @@
     "difficulty": "困难",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=1d9b409402a9bee51994a20a529cca37&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758",
     "tags": [
       "CSDN",
       "VLA",
       "面试",
       "具身"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析",
+    "questions": [
+      "如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
+      "模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析 来源正文抽取题目： 如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？ 模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？ 来源正文抽取题目： 如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？ 模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
+        "answer": "Sim-to-Real 的差距主要来自视觉外观、动力学参数、传感器噪声、控制延迟和接触模型不一致。常用手段包括视觉与动力学域随机化、系统辨识、噪声/延迟注入、仿真图像风格迁移、鲁棒策略训练，以及少量真实数据微调。评估不能只看平均成功率，还要看不同物体、光照、摩擦、载荷和相机位姿下的最差性能与恢复率。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
+        "answer": "模仿学习直接拟合专家演示，训练稳定、样本利用率高，适合快速获得可用策略，但容易受到分布偏移和复合误差影响；强化学习能基于长期奖励探索超越演示的策略，但真实机器人采样昂贵且有安全风险。常见组合是先用行为克隆/SFT 初始化，再用离线 RL、仿真 RL 或受约束在线 RL 优化成功率和恢复能力，同时保留专家数据做正则，防止策略漂移。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.051Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-f1a149985de2",
@@ -506,7 +601,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA面试八股 action step到底设多少 12 48分钟前 6",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -531,7 +626,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师高频面试题复盘解析 一面就过题库 06-16 6",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -557,7 +652,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：面试官最爱问：多模态大模型基础知识点（P1） C_noized 6天前 10",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -572,18 +667,37 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/weixin_31315007/article/details/158247399?ops_request_misc=elastic_search_misc&request_id=1d9b409402a9bee51994a20a529cca37&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/weixin_31315007/article/details/158247399",
     "tags": [
       "CSDN",
       "面试",
       "具身"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：Pi0具身智能Java面试题解析：核心技术考点详解",
+    "questions": [
+      "1 如何处理模型推理延迟问题？",
+      "2 如何设计高效的机器人动作队列？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：Pi0具身智能Java面试题解析：核心技术考点详解 来源正文抽取题目： 1 如何处理模型推理延迟问题？ 2 如何设计高效的机器人动作队列？ 来源正文抽取题目： 1 如何处理模型推理延迟问题？ 2 如何设计高效的机器人动作队列？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "1 如何处理模型推理延迟问题？",
+        "answer": "降低模型推理延迟要先拆分视觉编码、prefill、decode/动作生成、通信和控制等待。可采用视觉特征缓存、低分辨率快速路径、模型蒸馏、INT8/FP8、FlashAttention、CUDA Graph、批处理与异步流水线；机器人控制还可让低层控制器在模型计算期间继续执行短 action chunk。必须设置超时和旧结果丢弃机制，避免迟到动作污染闭环。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.052Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "2 如何设计高效的机器人动作队列？",
+        "answer": "高效动作队列需要支持时间戳、优先级、可取消和状态反馈。VLA 低频地产生 action chunk，控制线程按固定周期消费；当新观测触发重规划、碰撞风险或人工接管时，应原子地废弃未执行动作并切换到安全动作。队列还应限制最大前瞻时长，记录每个动作的计划时间与实际执行时间，用于监控延迟、丢帧和控制漂移。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.052Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-5f8d190e613e",
@@ -606,7 +720,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型八股文，五天背完拿offer 你的菜 5小时前 12",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -631,7 +745,7 @@
     "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：“面试造火箭”之 强化学习（具身/自驾）总结",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -652,12 +766,23 @@
       "大模型",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：大模型的一些面试题小结",
+    "questions": [
+      "跟原始 Transformer 论文中的绝对位置编码相比，RoPE（旋转位置嵌入）有什么优点？"
+    ],
+    "content": "自动更新脚本从 知乎 搜索到的近期面经候选。摘要：大模型的一些面试题小结 来源正文抽取题目： 跟原始 Transformer 论文中的绝对位置编码相比，RoPE（旋转位置嵌入）有什么优点？ 来源正文抽取题目： 跟原始 Transformer 论文中的绝对位置编码相比，RoPE（旋转位置嵌入）有什么优点？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "跟原始 Transformer 论文中的绝对位置编码相比，RoPE（旋转位置嵌入）有什么优点？",
+        "answer": "RoPE 将每个位置对应为不同旋转角度，对 Query 和 Key 的二维子空间做旋转。单个向量携带的是绝对位置角度，但注意力内积中的旋转会化简为两位置角度之差，因此分数自然依赖相对距离。相比直接相加的位置向量，RoPE 不改变向量范数，且能把相对位置信息直接注入 QK 内积。长上下文扩展时，常用 NTK-aware scaling、YaRN 或位置插值调整旋转频率，但必须重新评估远距离注意力、短上下文退化和外推稳定性。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-be4e682a8110",
@@ -681,7 +806,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型FlashAttention面试连环炮，炮火猛烈 丁师兄大模型 2025-04-15 796",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -706,7 +831,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型面试被问这个问题，回答也是神了！ 大模型之魂 04-15 2",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -731,7 +856,7 @@
     "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：3.3万 11 03:36 25届13-24k大模型应用开发面试经历 WaVel柒柒 · 03-27",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -755,7 +880,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：vla算法工程师岗面经已复盘 杰克学长聊offer-小杰 2天前 17",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782286567,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -782,7 +907,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：淘天多模态大模型面试全记录✍️ 大模型-瓦力 2025-09-19 43",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -809,33 +934,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：多模态大模型面试：QwenVL系列核心考点 莎莎学姐 2025-09-22 8",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
-  },
-  {
-    "id": "auto-20260624-56e8f6859d87",
-    "title": "B站：1578 0 13:34:34 【网工面试题15道】2025年最新网工高频面试场景题，一周刷完，比啃书效果强太多了",
-    "company": "华为",
-    "role": "大模型相关岗位",
-    "direction": "VLA / 具身智能",
-    "domain": "机器人数据 / 动作模型",
-    "category": "VLA / 具身智能",
-    "type": "question",
-    "difficulty": "困难",
-    "sourcePlatform": "B站",
-    "sourceDate": "2026-06-24",
-    "sourceUrl": "https://www.bilibili.com/video/BV1wEHyzvEMf/",
-    "tags": [
-      "B站",
-      "华为",
-      "VLA",
-      "面试"
-    ],
-    "questions": [],
-    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：1578 0 13:34:34 【网工面试题15道】2025年最新网工高频面试场景题，一周刷完，比啃书效果强太多了！（VLAN/生成树/VRRP/端口隔离/STP/OSPF等等） 华为HCIE2198-军哥 · 2025-09-09",
-    "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
-    "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -850,7 +949,7 @@
     "difficulty": "困难",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=a6874ae851001fd72726fe406a739df0&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779",
     "tags": [
       "CSDN",
       "字节",
@@ -863,7 +962,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -878,7 +977,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350",
     "tags": [
       "CSDN",
       "字节",
@@ -890,7 +989,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：字节面试题：多模态大模型的模态对齐",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -912,12 +1011,23 @@
       "大模型",
       "面经"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：阿里大模型算法面经 顺藤摸瓜 30分钟前 8",
+    "questions": [
+      "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：阿里大模型算法面经 顺藤摸瓜 30分钟前 8 来源正文抽取题目： 对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？ 来源正文抽取题目： 对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+        "answer": "DPO 和“奖励模型 + GRPO”没有绝对优劣，取决于数据和目标。DPO 直接用偏好对优化策略，不需要在线采样和单独 reward model，训练稳定、成本低，适合已有高质量 chosen/rejected 数据的场景；奖励模型 + GRPO 可以对同一 prompt 在线采样多条回答，用可验证奖励或学习型奖励持续探索，适合数学、代码和复杂推理，但工程复杂、采样昂贵，并存在 reward hacking。实践中可先用 DPO 获得稳定起点，再用 GRPO 做小步强化；评估要同时看任务通过率、KL 偏移、回答长度、奖励泛化和安全性。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-eebe56068418",
@@ -942,7 +1052,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：字节AI大模型算法 AI实战领航员 01-18 308",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -968,7 +1078,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：面试字节大模型应用开发岗，强度已经拉满了 jiman2 02-24 84",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -990,12 +1100,23 @@
       "大模型",
       "面经"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：腾讯混元大模型算法 AI实战领航员 01-28 89",
+    "questions": [
+      "在推荐系统的模型适配中，对比LoRA与全参数微调，它们各自更适合什么样的场景？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：腾讯混元大模型算法 AI实战领航员 01-28 89 来源正文抽取题目： 在推荐系统的模型适配中，对比LoRA与全参数微调，它们各自更适合什么样的场景？ 来源正文抽取题目： 在推荐系统的模型适配中，对比LoRA与全参数微调，它们各自更适合什么样的场景？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "在推荐系统的模型适配中，对比LoRA与全参数微调，它们各自更适合什么样的场景？",
+        "answer": "LoRA 冻结主模型，只训练低秩增量矩阵，显著降低梯度和优化器状态显存，也便于为不同业务维护独立 adapter；全参微调容量更大，适合大规模领域迁移，但成本高且更容易造成通用能力遗忘。选择时应比较数据规模、领域差异、目标能力是否需要重塑主干表征，以及线上是否需要多租户热切换。LoRA 并非天然无损，rank、注入层、学习率和数据覆盖不足都会限制上限。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-325c56f703b6",
@@ -1009,7 +1130,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=a6874ae851001fd72726fe406a739df0&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850",
     "tags": [
       "CSDN",
       "快手",
@@ -1022,7 +1143,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】快手大模型算法岗面经：从多模态模型到LoRA技术，面试官常问问题详解！",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1037,19 +1158,38 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160497336?ops_request_misc=elastic_search_misc&request_id=fbc745fddaec58f97b6bd23a7a09c7ce&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160497336",
     "tags": [
       "CSDN",
       "快手",
       "多模态",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：快手多模态算法工程师面试题精选：10道高频考题+答案解析",
+    "questions": [
+      "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+      "题2：CLIP和BLIP的主要区别是什么？BLIP-2的Q-Former为什么这么设计？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：快手多模态算法工程师面试题精选：10道高频考题+答案解析 来源正文抽取题目： 题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？ 题2：CLIP和BLIP的主要区别是什么？BLIP-2的Q-Former为什么这么设计？ 来源正文抽取题目： 题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？ 题2：CLIP和BLIP的主要区别是什么？BLIP-2的Q-Former为什么这么设计？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+        "answer": "CLIP 使用图像编码器和文本编码器把配对图文映射到同一向量空间，在一个 batch 内把真实图文对作为正样本，其余组合视为负样本，双向计算图到文和文到图的对比损失。InfoNCE 本质上让正样本相似度相对所有候选更高，温度参数控制分布尖锐程度。CLIP 的优势是大规模弱监督和零样本迁移，局限是依赖 batch 内负样本、偏向全局语义，对计数、空间关系和细粒度局部属性不够敏感。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      },
+      {
+        "question": "题2：CLIP和BLIP的主要区别是什么？BLIP-2的Q-Former为什么这么设计？",
+        "answer": "CLIP 是双塔对比学习模型，重点把整图和整句映射到共享向量空间，擅长检索和零样本分类；BLIP 同时结合理解与生成目标，并通过数据清洗和字幕生成改善图文训练数据；BLIP-2 使用冻结视觉编码器、冻结 LLM 和轻量 Q-Former。Q-Former 里的可学习 query 通过 cross-attention 从大量视觉 token 中提取与语言任务相关的少量表示，再接入 LLM，因此显著降低连接成本。它的取舍是压缩高效，但 query 数量过少可能损失细粒度局部信息。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-46682c01df82",
@@ -1063,45 +1203,30 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711?ops_request_misc=elastic_search_misc&request_id=fbc745fddaec58f97b6bd23a7a09c7ce&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711",
     "tags": [
       "CSDN",
       "Qwen",
       "大模型",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试题85：Qwen2.5-VL的预训练流程。",
-    "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
-    "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
-  },
-  {
-    "id": "auto-20260624-5928f02ea31b",
-    "title": "CSDN：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析",
-    "company": "综合",
-    "role": "大模型相关岗位",
-    "direction": "VLA / 具身智能",
-    "domain": "机器人数据 / 动作模型",
-    "category": "VLA / 具身智能",
-    "type": "question",
-    "difficulty": "困难",
-    "sourcePlatform": "CSDN",
-    "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=5722efcee9272ec5861ee66de0233849&biz_id=0",
-    "tags": [
-      "CSDN",
-      "VLA",
-      "面试",
-      "具身"
+    "questions": [
+      "一、先搞懂：Qwen2.5-VL到底是什么？"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析",
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试题85：Qwen2.5-VL的预训练流程。 来源正文抽取题目： 一、先搞懂：Qwen2.5-VL到底是什么？ 来源正文抽取题目： 一、先搞懂：Qwen2.5-VL到底是什么？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "一、先搞懂：Qwen2.5-VL到底是什么？",
+        "answer": "Qwen2.5-VL 是面向图像和视频理解的视觉语言模型：视觉侧把图片或视频编码成视觉 token，经过连接/投影模块与文本 token 一起送入语言模型，从而完成问答、OCR、图表理解、目标定位、视频时序理解和工具调用。理解它时要关注三个层面：动态分辨率或视觉 token 压缩如何控制高分辨率成本；视觉 token 如何与语言空间对齐；训练数据如何从图文预训练过渡到多模态指令微调和偏好对齐。它不是单纯“给 Qwen 加图片输入”，而是一套视觉编码、时空建模、对齐训练和评测体系。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-689331b86e13",
@@ -1124,7 +1249,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA 实习八股指南 (1) Zxx 05-18 381",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1149,7 +1274,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA工程师面试｜被问到技术短板，别想着怎 offer收割机 06-11 3",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1174,7 +1299,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面经：OpenVLA与RT-2的异同 学姐定新丸 06-14 6",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1199,7 +1324,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：多模态大模型一面：NeRF 五道口 AI 大师兄 03-25 4",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1224,7 +1349,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试：让机械臂平顺 学姐定新丸 5天前 8",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1249,7 +1374,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：高德多模态视频理解/生成面经 摆烂中 2025-10-28 56",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1264,7 +1389,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/159165484?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/159165484",
     "tags": [
       "CSDN",
       "大模型",
@@ -1275,7 +1400,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：高德地图 多模态大模型算法工程师面试题精选：10道高频考题+深度解析（附PDF）VIP",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1290,7 +1415,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://download.csdn.net/download/zhhhhh15/92740167?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=1",
+    "sourceUrl": "https://download.csdn.net/download/zhhhhh15/92740167",
     "tags": [
       "CSDN",
       "大模型",
@@ -1301,7 +1426,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：高德地图 多模态大模型算法工程师面试题精选：10道高频考题+深度解析",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1316,7 +1441,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/m0_59164520/article/details/145123109?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/m0_59164520/article/details/145123109",
     "tags": [
       "CSDN",
       "大模型",
@@ -1327,32 +1452,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：面试题：多模态大模型建模的方法有哪些？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
-  },
-  {
-    "id": "auto-20260624-68600b5f9a4b",
-    "title": "CSDN：Pi0具身智能Java面试题解析：核心技术考点详解",
-    "company": "综合",
-    "role": "AI / 算法候选人",
-    "direction": "VLA / 具身智能",
-    "domain": "机器人数据 / 动作模型",
-    "category": "VLA / 具身智能",
-    "type": "question",
-    "difficulty": "中等",
-    "sourcePlatform": "CSDN",
-    "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/weixin_31315007/article/details/158247399?ops_request_misc=elastic_search_misc&request_id=5722efcee9272ec5861ee66de0233849&biz_id=0",
-    "tags": [
-      "CSDN",
-      "面试",
-      "具身"
-    ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：Pi0具身智能Java面试题解析：核心技术考点详解",
-    "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
-    "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1377,7 +1477,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型算法面经 顺藤摸瓜 7小时前 8",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1402,7 +1502,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA实习究竟谁在上岸啊❓ 小樱在创业 05-31 103",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1427,7 +1527,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：CV 转大模型算法面经 | 真实踩坑复盘 和笨蛋女友的学习日记 05-25 5",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1452,7 +1552,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型八股文，5天背完面试通过率96％ 胆小鬼 昨天 15:09 14",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1477,7 +1577,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：就这个网易大模型算法岗，面试强度直接拉满 算法工程师鱼儿 2025-04-30 51",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1502,7 +1602,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型LoRA面试全攻略（上） AI实战领航员 03-22 258",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1527,7 +1627,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：具身智能VLA实习一周含泪总结经验 小樱在创业 4天前 574",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1552,7 +1652,7 @@
     "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：【大模型面试精讲】工具调用失败治理 好好学习的喵 3天前 43",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1567,7 +1667,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/trb201013/article/details/156987313?ops_request_misc=elastic_search_misc&request_id=a6874ae851001fd72726fe406a739df0&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/trb201013/article/details/156987313",
     "tags": [
       "CSDN",
       "大模型",
@@ -1579,7 +1679,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试通关秘籍：9家大厂面经详解，从OCR到多模态助你拿下offer",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1594,7 +1694,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/2401_84495872/article/details/151796448?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/2401_84495872/article/details/151796448",
     "tags": [
       "CSDN",
       "大模型",
@@ -1606,7 +1706,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2025秋招LLM大模型多模态面试题：110道大模型面试常见问题及答案，助你拿下AI工程师岗位！",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1621,7 +1721,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/m0_63171455/article/details/151314693?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/m0_63171455/article/details/151314693",
     "tags": [
       "CSDN",
       "大模型",
@@ -1632,7 +1732,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2025大模型面试题珍藏合集：清华校友整理10万字大厂面试宝典，多模态、prompt工程全覆盖，收藏必备！",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1647,19 +1747,30 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/dulnode/article/details/151143684?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=0",
+    "sourceUrl": "https://blog.csdn.net/dulnode/article/details/151143684",
     "tags": [
       "CSDN",
       "大模型",
       "多模态",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试题剖析：大模型多模态微调技术全解析",
+    "questions": [
+      "请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试题剖析：大模型多模态微调技术全解析 来源正文抽取题目： 请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？ 来源正文抽取题目： 请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
+        "answer": "图文对齐意味着视觉区域、对象属性和文本语义在共享表示或生成过程中正确对应。例如商品检索中，“红色圆领连衣裙”应匹配颜色、领型和类别都一致的图片；视觉问答中，模型提到的数量和位置应来自图中真实对象。若图文不对齐，训练会把错误属性绑定到对象，造成检索召回下降、OCR/grounding 错位和视觉幻觉。治理方法包括图文相似度过滤、对象或区域级对齐、困难负样本、人工抽检和下游任务一致性评估。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.053Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-a0212890405f",
@@ -1673,7 +1784,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952",
     "tags": [
       "CSDN",
       "大模型",
@@ -1683,7 +1794,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：模型部署（二）",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1698,18 +1809,29 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643",
     "tags": [
       "CSDN",
       "大模型",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：模型部署（一）",
+    "questions": [
+      "六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：模型部署（一） 来源正文抽取题目： 六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？ 来源正文抽取题目： 六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？",
+        "answer": "配置 `max_model_len` 或 `n_ctx` 时要先按 KV Cache 显存预算倒推，而不是直接设成模型理论上限。可用近似关系估算 KV Cache：层数 × 2(K/V) × KV 头数 × head_dim × 序列长度 × 并发序列数 × 数据类型字节数。预留模型权重、CUDA workspace 和碎片后，再确定最大上下文与 `gpu_memory_utilization`。上下文越长，可同时服务的请求越少；如果频繁 OOM，应降低最大长度、并发序列数或 batch token 上限，采用 GQA/MQA、KV Cache FP8、张量并行或前缀缓存。上线前需压测 TTFT、吞吐、P99 和抢占次数。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.054Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-aed334ee766f",
@@ -1723,18 +1845,29 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146692681?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146692681",
     "tags": [
       "CSDN",
       "大模型",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（三）",
+    "questions": [
+      "九、如何通过流水线并行（Pipeline Parallel）在多节点上扩展微调任务？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（三） 来源正文抽取题目： 九、如何通过流水线并行（Pipeline Parallel）在多节点上扩展微调任务？ 来源正文抽取题目： 九、如何通过流水线并行（Pipeline Parallel）在多节点上扩展微调任务？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "九、如何通过流水线并行（Pipeline Parallel）在多节点上扩展微调任务？",
+        "answer": "数据并行复制完整模型、切分 batch，并在反向传播后同步梯度；张量并行切分单层矩阵，解决单层参数放不下；流水线并行按层切分模型，通过 micro-batch 填充流水线，但会产生 bubble；ZeRO/FSDP 则切分优化器状态、梯度和参数，降低每卡冗余。真实大模型通常组合这些策略，取舍取决于显存、网络带宽、模型宽度/深度和全局 batch。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.054Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-53339259e32c",
@@ -1748,18 +1881,29 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808",
     "tags": [
       "CSDN",
       "大模型",
       "面试"
     ],
-    "questions": [],
-    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（二）",
+    "questions": [
+      "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（二） 来源正文抽取题目： 二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？ 来源正文抽取题目： 二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
-    "reviewStatus": "source_candidate"
+    "updatedAt": 1782299211,
+    "reviewStatus": "question_ready",
+    "questionAnswers": [
+      {
+        "question": "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+        "answer": "`temperature` 通过缩放 logits 控制概率分布尖锐程度：低温让高概率 token 更占优势，输出更稳定；高温增加随机性，但也提高事实错误和格式漂移风险。`top_p` 只保留累计概率达到阈值的最小 token 集，再从中采样，因此会随上下文动态改变候选数量。生产中通常先按任务确定温度，再用 top_p 限制长尾：代码、抽取和结构化输出使用低温；创作和头脑风暴可适当提高。还应配合 top_k、重复惩罚、最大长度和固定随机种子做离线评测。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-06-24T11:06:51.054Z",
+        "source": "promote-candidate-questions-2026-06-24"
+      }
+    ]
   },
   {
     "id": "auto-20260624-d47ccc11ad37",
@@ -1773,7 +1917,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280221?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280221",
     "tags": [
       "CSDN",
       "大模型",
@@ -1783,7 +1927,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（一）",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1798,7 +1942,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280129?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280129",
     "tags": [
       "CSDN",
       "大模型",
@@ -1808,7 +1952,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调基础知识",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1823,7 +1967,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884446?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884446",
     "tags": [
       "CSDN",
       "大模型",
@@ -1833,7 +1977,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练优化算法",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1848,7 +1992,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909886?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909886",
     "tags": [
       "CSDN",
       "大模型",
@@ -1858,7 +2002,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之模型监控与调试",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1873,7 +2017,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885374?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885374",
     "tags": [
       "CSDN",
       "大模型",
@@ -1883,7 +2027,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练稳定性",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1898,7 +2042,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909725?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909725",
     "tags": [
       "CSDN",
       "大模型",
@@ -1908,7 +2052,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练策略",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1923,7 +2067,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909490?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909490",
     "tags": [
       "CSDN",
       "大模型",
@@ -1933,7 +2077,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之分布式训练",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1948,7 +2092,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529",
     "tags": [
       "CSDN",
       "大模型",
@@ -1958,7 +2102,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之数据处理与增强",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1973,7 +2117,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884284?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884284",
     "tags": [
       "CSDN",
       "大模型",
@@ -1983,7 +2127,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之预训练",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -1998,7 +2142,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855032?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855032",
     "tags": [
       "CSDN",
       "大模型",
@@ -2008,7 +2152,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：深度学习基础（一）",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {
@@ -2023,7 +2167,7 @@
     "difficulty": "中等",
     "sourcePlatform": "CSDN",
     "sourceDate": "2026-06-24",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855547?ops_request_misc=elastic_search_misc&request_id=de4db06e05f83943db5a9ff218b30b6c&biz_id=",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855547",
     "tags": [
       "CSDN",
       "大模型",
@@ -2033,7 +2177,7 @@
     "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：深度学习基础（二）",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782264968,
-    "updatedAt": 1782297245,
+    "updatedAt": 1782299130,
     "reviewStatus": "source_candidate"
   },
   {

@@ -1,5 +1,36 @@
 [
   {
+    "id": "daily-2026-06-25-bdc793393734",
+    "date": "2026-06-25",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260624-1d7fd9513c8e",
+    "title": "小红书：阿里大模型算法面经",
+    "company": "阿里",
+    "direction": "大模型面经",
+    "score": 84,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 阿里 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3a9d210000000017008c3a?xsec_token=ABGFHX_aMmbK4mmCZT-wJheY4NN6IlrEEnIziWO6I4xI0%3D&xsec_source=pc_search",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-25-bdc793393734.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-24-d35dfb9b8113",
     "date": "2026-06-24",
     "slot": "afternoon",

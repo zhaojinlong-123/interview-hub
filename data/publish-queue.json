@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-06-25-bdc793393734",
+    "title": "阿里对比DPO和GRPO两种微…题目精讲",
+    "coverTitle": "阿里面试题精讲",
+    "coverSubtitle": "大模型面经 高频题",
+    "company": "阿里",
+    "direction": "大模型面经",
+    "primaryQuestion": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "topic": "对比DPO和GRPO两种微…",
+    "body": "每日精选：阿里｜大模型面经 题目精讲 今天这条适合复习：多模态大模型 / VLA / 具身智能 / 视频理解 / 视觉理解 / 训练框架。 面试题目 1. 对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？ 一句话答案 DPO 和“奖励模型 + GRPO”没有绝对优劣，取决于数据和目标。DPO 直接用偏好对优化策略，不需要在线采样和单独 reward model，训练稳定、成本低，适合已有高质量 chosen/rejected 数据的场景；奖励模型 + GRPO 可以对同一 prompt 在线采样多条回答，用可验证奖励或学习型奖励持续探索，适合数学、代码和复杂推理，但工程复 面试展开 面试展开时，把答案和自己的项目挂钩最有说服力：你遇到过什么失败样本，怎么定位，怎么改数据或模型，指标提升了多少，是否带来新的成本或风险。 复习抓手 - 先说核心机制，再说工程取舍。 - 主动补常见坑和评估指标。 - 最后落到自己的项目经验。 引用来源：小红书 2026-06-24 原文链接：https://www.xiaohongshu.com/explore/6a3a9d210000000017008c3a?xsec_token=ABGFHX_aMmbK4mmC\n引用来源：小红书，2026-06-24\n原文链接：https://www.xiaohongshu.com/explore/6a3a9d210000000017008c3a?xsec_token=ABGFHX_aMmbK4mmCZT-wJheY4NN6IlrEEnIziWO6I4xI0%3D&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #阿里 #大模型 #面经 #大模型面经 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-24",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3a9d210000000017008c3a?xsec_token=ABGFHX_aMmbK4mmCZT-wJheY4NN6IlrEEnIziWO6I4xI0%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-25-bdc793393734.md",
+    "featureId": "daily-2026-06-25-bdc793393734",
+    "postId": "auto-20260624-1d7fd9513c8e",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-25-bdc793393734/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "阿里｜大模型面经",
+        "body": "公司：阿里\n方向：大模型面经\n题目：对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+        "body": "DPO 和“奖励模型 + GRPO”没有绝对优劣，取决于数据和目标。DPO 直接用偏好对优化策略，不需要在线采样和单独 reward model，训练稳定、成本低，适合已有高质量 chosen/rejected 数据的场景；奖励模型 + GRPO 可以对同一 prompt 在线采样多条回答，用可验证奖励或学习型奖励持续探索，适合数学、代码和复杂推理，但工程复杂、采样昂贵，并存在 reward hacking。实践中可先用 DPO 获得稳定起点，再用 GRPO 做小步强化；评估要同时看任务通过率、KL",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+        "body": "偏移、回答长度、奖励泛化和安全性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-25T01:30:04.747Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-bdc793393734/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-bdc793393734/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-bdc793393734/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-bdc793393734/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-25T01:30:33.263Z"
+  },
+  {
     "id": "xhs-daily-2026-06-24-df7f186f903b",
     "title": "腾讯扩散模型生成的是Actio…题目精讲",
     "coverTitle": "腾讯面试题精讲",

@@ -253,6 +253,21 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "general:题1请讲讲clip的核心原理它是怎么做图文对齐的正样本冲突怎么处理",
+    "question": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+    "queueId": "xhs-daily-2026-06-25-8573f6f2581e",
+    "featureId": "daily-2026-06-25-8573f6f2581e",
+    "postId": "auto-20260624-01bce315d72b",
+    "title": "快手题1：请讲讲CLIP的核心…题目精讲",
+    "company": "快手",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160497336",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-25T14:02:27.386Z"
+  },
+  {
     "key": "general:为什么通用vlm的检测能力通常弱于yolo如何增强其定位和检测能力",
     "question": "为什么通用 VLM 的检测能力通常弱于 YOLO，如何增强其定位和检测能力？",
     "queueId": "xhs-daily-2026-06-23-646a5c9ac389",
@@ -476,6 +491,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T15:05:07.445Z"
+  },
+  {
+    "key": "rl:6df17b5ffc89",
+    "question": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "queueId": "xhs-daily-2026-06-25-bdc793393734",
+    "featureId": "daily-2026-06-25-bdc793393734",
+    "postId": "auto-20260624-1d7fd9513c8e",
+    "title": "阿里对比DPO和GRPO两种微…题目精讲",
+    "company": "阿里",
+    "direction": "大模型面经",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3a9d210000000017008c3a?xsec_token=ABGFHX_aMmbK4mmCZT-wJheY4NN6IlrEEnIziWO6I4xI0%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-25T14:02:27.386Z"
   },
   {
     "key": "rl:94ea640decd7",

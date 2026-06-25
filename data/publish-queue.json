@@ -59,6 +59,57 @@
     "updatedAt": "2026-06-25T01:30:33.263Z"
   },
   {
+    "id": "xhs-daily-2026-06-25-8573f6f2581e",
+    "title": "快手题1：请讲讲CLIP的核心…题目精讲",
+    "coverTitle": "快手面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "快手",
+    "direction": "多模态大模型",
+    "primaryQuestion": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+    "topic": "题1：请讲讲CLIP的核心…",
+    "body": "每日精选：快手 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-24\n原文链接：https://blog.csdn.net/zhhhhh15/article/details/160497336\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #快手 #多模态 #面试 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160497336",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-25-8573f6f2581e.md",
+    "featureId": "daily-2026-06-25-8573f6f2581e",
+    "postId": "auto-20260624-01bce315d72b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-25-8573f6f2581e/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "快手｜多模态大模型",
+        "body": "公司：快手\n方向：多模态大模型\n题目：题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+        "body": "CLIP 使用图像编码器和文本编码器把配对图文映射到同一向量空间，在一个 batch 内把真实图文对作为正样本，其余组合视为负样本，双向计算图到文和文到图的对比损失。InfoNCE 本质上让正样本相似度相对所有候选更高，温度参数控制分布尖锐程度。CLIP 的优势是大规模弱监督和零样本迁移，局限是依赖 batch 内负样本、偏向全局语义，对计数、空间关系和细粒度局部属性不够敏感。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-25T07:30:04.297Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-8573f6f2581e/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-8573f6f2581e/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-25-8573f6f2581e/03-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-25T07:30:32.445Z"
+  },
+  {
     "id": "xhs-daily-2026-06-24-df7f186f903b",
     "title": "腾讯扩散模型生成的是Actio…题目精讲",
     "coverTitle": "腾讯面试题精讲",

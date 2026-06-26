@@ -45,10 +45,12 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-26-8b52dd563dcf/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-26-8b52dd563dcf/03-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-06-26T07:30:32.869Z"
+    "status": "published",
+    "reason": "?????????????",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea34c000000001503ea77",
+    "updatedAt": "2026-06-26T16:08:40.537Z",
+    "noteId": "6a3ea34c000000001503ea77",
+    "publishedAt": "2026-06-26T16:05:00.000Z"
   },
   {
     "id": "xhs-daily-2026-06-26-56b49d1f1909",
@@ -104,10 +106,12 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-26-56b49d1f1909/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-26-56b49d1f1909/04-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-06-26T01:30:32.817Z"
+    "status": "published",
+    "reason": "?????????????",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea2cf00000000160265e7",
+    "updatedAt": "2026-06-26T16:08:40.537Z",
+    "noteId": "6a3ea2cf00000000160265e7",
+    "publishedAt": "2026-06-26T16:03:00.000Z"
   },
   {
     "id": "xhs-daily-2026-06-25-bdc793393734",

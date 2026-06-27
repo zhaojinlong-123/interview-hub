@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-06-27-ef7ff67575d8",
+    "date": "2026-06-27",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260624-c80894a77516",
+    "title": "CSDN：Pi0具身智能Java面试题解析：核心技术考点详解",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 63,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "稀缺方向 VLA / 具身智能 +8",
+      "高频问题 2 个 +10",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://blog.csdn.net/weixin_31315007/article/details/158247399",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-27-ef7ff67575d8.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-27T07:30:33.813Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-27-aac327639495",
     "date": "2026-06-27",
     "slot": "morning",

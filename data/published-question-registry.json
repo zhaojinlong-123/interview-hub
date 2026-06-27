@@ -133,6 +133,21 @@
     "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
+    "key": "embodied_sim2real:e110f0f1e42f",
+    "question": "如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
+    "queueId": "xhs-daily-2026-06-26-56b49d1f1909",
+    "featureId": "daily-2026-06-26-56b49d1f1909",
+    "postId": "auto-20260624-3c7edf8d1a39",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea2cf00000000160265e7",
+    "status": "published",
+    "updatedAt": "2026-06-26T16:08:40.537Z"
+  },
+  {
     "key": "general:大模型训练中为什么很多llm不再依赖dropout它和数据规模归一化残差结构有什么关系",
     "question": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
     "queueId": "xhs-daily-2026-06-19-e6147d4c454e",
@@ -223,6 +238,21 @@
     "updatedAt": "2026-06-24T11:17:24.320Z"
   },
   {
+    "key": "general:你方案里kl散度熵分别代表什么含义",
+    "question": "你方案里KL散度、熵分别代表什么含义？",
+    "queueId": "xhs-daily-2026-06-27-aac327639495",
+    "featureId": "daily-2026-06-27-aac327639495",
+    "postId": "auto-20260624-eb0e8118428a",
+    "title": "综合你方案里KL散度、熵分别代…题目精讲",
+    "company": "综合",
+    "direction": "多模态大模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3b92d90000000007027516?xsec_token=ABADldT2-Ycpy9z77HjMhZg7lK5NSXS37J_BvXXb4hFTA%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-27T01:30:26.643Z"
+  },
+  {
     "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
     "question": "视频理解中帧采样、temporal token 压缩和 long-context attention 如何取舍？",
     "queueId": "xhs-daily-2026-06-15-e3bc7c5a3575",
@@ -281,6 +311,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-23T11:26:01.366Z"
+  },
+  {
+    "key": "general:一先搞懂qwen25vl到底是什么",
+    "question": "一、先搞懂：Qwen2.5-VL到底是什么？",
+    "queueId": "xhs-daily-2026-06-26-8b52dd563dcf",
+    "featureId": "daily-2026-06-26-8b52dd563dcf",
+    "postId": "auto-20260624-46682c01df82",
+    "title": "Qwen一、先搞懂：Qwen2.5…题目",
+    "company": "Qwen",
+    "direction": "大模型面经",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea34c000000001503ea77",
+    "status": "published",
+    "updatedAt": "2026-06-26T16:08:40.537Z"
   },
   {
     "key": "general:智元这类具身智能基础模型岗位中vlmvla和video模型在机器人系统里分别承担什么角色",
@@ -523,6 +568,21 @@
     "updatedAt": "2026-06-23T12:05:18.906Z"
   },
   {
+    "key": "rl:9e4f58383d24",
+    "question": "模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
+    "queueId": "xhs-daily-2026-06-26-56b49d1f1909",
+    "featureId": "daily-2026-06-26-56b49d1f1909",
+    "postId": "auto-20260624-3c7edf8d1a39",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea2cf00000000160265e7",
+    "status": "published",
+    "updatedAt": "2026-06-26T16:08:40.537Z"
+  },
+  {
     "key": "rl:ac06e0166e1b",
     "question": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
     "queueId": "xhs-daily-2026-06-20-14571d046e15",
@@ -536,6 +596,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-20T03:07:56.002Z"
+  },
+  {
+    "key": "rl:bab0e38279b1",
+    "question": "强化学习部分为什么选用GRPO而不直接使用PPO？",
+    "queueId": "xhs-daily-2026-06-27-aac327639495",
+    "featureId": "daily-2026-06-27-aac327639495",
+    "postId": "auto-20260624-eb0e8118428a",
+    "title": "综合你方案里KL散度、熵分别代…题目精讲",
+    "company": "综合",
+    "direction": "多模态大模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3b92d90000000007027516?xsec_token=ABADldT2-Ycpy9z77HjMhZg7lK5NSXS37J_BvXXb4hFTA%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-27T01:30:26.643Z"
   },
   {
     "key": "robot_data:5c6e23bce94e",
@@ -674,53 +749,5 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
-  },
-  {
-    "key": "published:e5a682e4bd95e8a7a3e586b3",
-    "question": "如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
-    "queueId": "xhs-daily-2026-06-26-56b49d1f1909",
-    "featureId": "daily-2026-06-26-56b49d1f1909",
-    "postId": "auto-20260624-3c7edf8d1a39",
-    "title": "综合世界模型/自动驾驶题目精讲",
-    "company": "综合",
-    "direction": "VLA / 具身智能",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea2cf00000000160265e7",
-    "noteId": "6a3ea2cf00000000160265e7",
-    "status": "published",
-    "updatedAt": "2026-06-26T16:08:40.537Z"
-  },
-  {
-    "key": "published:e6a8a1e4bbbfe5ada6e4b9a0",
-    "question": "模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
-    "queueId": "xhs-daily-2026-06-26-56b49d1f1909",
-    "featureId": "daily-2026-06-26-56b49d1f1909",
-    "postId": "auto-20260624-3c7edf8d1a39",
-    "title": "综合世界模型/自动驾驶题目精讲",
-    "company": "综合",
-    "direction": "VLA / 具身智能",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea2cf00000000160265e7",
-    "noteId": "6a3ea2cf00000000160265e7",
-    "status": "published",
-    "updatedAt": "2026-06-26T16:08:40.537Z"
-  },
-  {
-    "key": "published:e4b880e38081e58588e6909e",
-    "question": "一、先搞懂：Qwen2.5-VL到底是什么？",
-    "queueId": "xhs-daily-2026-06-26-8b52dd563dcf",
-    "featureId": "daily-2026-06-26-8b52dd563dcf",
-    "postId": "auto-20260624-46682c01df82",
-    "title": "Qwen一、先搞懂：Qwen2.5…题目",
-    "company": "Qwen",
-    "direction": "大模型面经",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea34c000000001503ea77",
-    "noteId": "6a3ea34c000000001503ea77",
-    "status": "published",
-    "updatedAt": "2026-06-26T16:08:40.537Z"
   }
 ]

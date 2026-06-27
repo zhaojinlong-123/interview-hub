@@ -1,5 +1,34 @@
 [
   {
+    "id": "daily-2026-06-27-aac327639495",
+    "date": "2026-06-27",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260624-eb0e8118428a",
+    "title": "小红书：多模态面经",
+    "company": "综合",
+    "direction": "多模态大模型",
+    "score": 71,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "大厂/重点机构 +14",
+      "稀缺方向 强化学习 / 多模态 +8",
+      "高频问题 2 个 +10",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a3b92d90000000007027516?xsec_token=ABADldT2-Ycpy9z77HjMhZg7lK5NSXS37J_BvXXb4hFTA%3D&xsec_source=pc_search",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-27-aac327639495.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-27T01:30:26.674Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-26-8b52dd563dcf",
     "date": "2026-06-26",
     "slot": "afternoon",

@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜多模态大模型",
+    "body": "公司：综合\n方向：多模态大模型\n题目：你方案里KL散度、熵分别代表什么含义？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-aac327639495\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 你方案里KL散度、熵分别代表什么含义？\n\n2. 强化学习部分为什么选用GRPO而不直接使用PPO？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-aac327639495\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "你方案里KL散度、熵分别代表什么含义？",
+    "body": "KL 散度约束新策略不要过快偏离参考策略，主要用于防止强化学习把语言能力和回答分布推坏；熵衡量策略输出的不确定性或多样性，熵过低容易过早收敛到单一模式，熵过高则动作或 token 分布过于随机。训练时常把任务奖励、KL 惩罚和熵奖励组合：提高 KL 系数会更保守，提高熵系数会鼓励探索。两者都应随训练阶段和 reward 稳定性调节，并结合通过率、长度、重复率和安全性观察是否出现模式坍塌。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-aac327639495\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "强化学习部分为什么选用GRPO而不直接使用PPO？",
+    "body": "PPO 通常依赖 value model 估计状态价值，再用 GAE 构造 advantage；GRPO 对同一 prompt 采样一组回答，用组内奖励的相对均值和方差归一化得到 advantage，因此可省去单独的价值模型。这样能降低显存和工程复杂度，适合数学、代码、可验证问答等同题多采样场景。局限是组内样本过于相似时优势信号很弱，奖励尺度或规则漏洞也会导致 reward hacking。实践中仍需 KL 约束控制策略偏离参考模型，并监控组内奖励方差、响应长度和通过率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-aac327639495\\04-answer.png"
+  }
+]

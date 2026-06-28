@@ -223,6 +223,21 @@
     "updatedAt": "2026-06-16T15:03:51.761Z"
   },
   {
+    "key": "general:跟原始transformer论文中的绝对位置编码相比rope旋转位置嵌入有什么优点",
+    "question": "跟原始 Transformer 论文中的绝对位置编码相比，RoPE（旋转位置嵌入）有什么优点？",
+    "queueId": "xhs-daily-2026-06-28-f7918628c87c",
+    "featureId": "daily-2026-06-28-f7918628c87c",
+    "postId": "auto-20260624-af8b00730245",
+    "title": "综合跟原始Transform…题目精讲",
+    "company": "综合",
+    "direction": "大模型面经",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1922623218738504885",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-28T07:30:27.859Z"
+  },
+  {
     "key": "general:机器人控制算法面试中运动规划轨迹跟踪和底层控制分别解决什么问题",
     "question": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
     "queueId": "xhs-daily-2026-06-19-092b64d9bea7",

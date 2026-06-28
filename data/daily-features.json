@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-06-28-f7918628c87c",
+    "date": "2026-06-28",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260624-af8b00730245",
+    "title": "知乎：大模型的一些面试题小结",
+    "company": "综合",
+    "direction": "大模型面经",
+    "score": 48,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1922623218738504885",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-28-f7918628c87c.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-28T07:30:27.890Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-06-28-e23948a8d047",
     "date": "2026-06-28",
     "slot": "morning",

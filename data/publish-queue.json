@@ -1,5 +1,56 @@
 [
   {
+    "id": "xhs-daily-2026-06-28-e23948a8d047",
+    "title": "综合请举例说明“图文对齐”在实…题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "综合",
+    "direction": "多模态大模型",
+    "primaryQuestion": "请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
+    "topic": "请举例说明“图文对齐”在实…",
+    "body": "每日精选：综合 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-24\n原文链接：https://blog.csdn.net/dulnode/article/details/151143684\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #大模型 #多模态 #面试 #综合 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "sourceUrl": "https://blog.csdn.net/dulnode/article/details/151143684",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-28-e23948a8d047.md",
+    "featureId": "daily-2026-06-28-e23948a8d047",
+    "postId": "auto-20260624-f5ff6e043a20",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-28-e23948a8d047/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜多模态大模型",
+        "body": "公司：综合\n方向：多模态大模型\n题目：请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "请举例说明“图文对齐”在实际场景中的具体体现，若图文不对齐会带来什么问题？",
+        "body": "图文对齐意味着视觉区域、对象属性和文本语义在共享表示或生成过程中正确对应。例如商品检索中，“红色圆领连衣裙”应匹配颜色、领型和类别都一致的图片；视觉问答中，模型提到的数量和位置应来自图中真实对象。若图文不对齐，训练会把错误属性绑定到对象，造成检索召回下降、OCR/grounding 错位和视觉幻觉。治理方法包括图文相似度过滤、对象或区域级对齐、困难负样本、人工抽检和下游任务一致性评估。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-28T01:30:04.854Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-28-e23948a8d047/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-28-e23948a8d047/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-28-e23948a8d047/03-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-06-28T01:30:33.061Z"
+  },
+  {
     "id": "xhs-daily-2026-06-27-ef7ff67575d8",
     "title": "综合1如何处理模型推理延迟问题题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",

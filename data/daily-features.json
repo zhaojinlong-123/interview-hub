@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-06-29-61591d5001f4",
+    "date": "2026-06-29",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260624-9a20b028e755",
+    "title": "CSDN：大模型最新面试题系列：模型部署（一）",
+    "company": "综合",
+    "direction": "大模型面经",
+    "score": 48,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-29-61591d5001f4.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-28-f7918628c87c",
     "date": "2026-06-28",
     "slot": "afternoon",

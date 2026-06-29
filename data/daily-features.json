@@ -1,5 +1,37 @@
 [
   {
+    "id": "daily-2026-06-29-8c8defee0e13",
+    "date": "2026-06-29",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260629-14f67ad3334b",
+    "title": "CSDN：具身智能TL常用算法面经：基础认知与 VLA 框架(一)",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 70,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 VLA / 具身智能 +12",
+      "稀缺方向 VLA / 具身智能 +8",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "困难题/高压面 +8",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=elastic_search_misc&request_id=a16be3a408153df407c2793418031e84&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-29",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-29-8c8defee0e13.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-06-29T11:16:00.000Z",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a42541d000000001c025e75",
+    "noteId": "6a42541d000000001c025e75",
+    "updatedAt": "2026-06-29T11:18:56.013Z"
+  },
+  {
     "id": "daily-2026-06-29-61591d5001f4",
     "date": "2026-06-29",
     "slot": "morning",
@@ -22,10 +54,12 @@
     "sourceDate": "2026-06-24",
     "articlePath": "content/xiaohongshu-drafts/2026-06-29-61591d5001f4.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4251c8000000001603ec0b",
+    "noteId": "6a4251c8000000001603ec0b",
+    "publishedAt": "2026-06-29T11:06:00.000Z",
+    "updatedAt": "2026-06-29T11:18:56.013Z"
   },
   {
     "id": "daily-2026-06-28-f7918628c87c",

@@ -1,5 +1,66 @@
 [
   {
+    "id": "xhs-daily-2026-06-29-8c8defee0e13",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-29\n原文链接：https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=elastic_search_misc&request_id=a16be3a408153df407c2793418031e84&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #VLA #面经 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-29",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=elastic_search_misc&request_id=a16be3a408153df407c2793418031e84&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-06-29-8c8defee0e13.md",
+    "featureId": "daily-2026-06-29-8c8defee0e13",
+    "postId": "auto-20260629-14f67ad3334b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-06-29-8c8defee0e13/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+        "body": "传统感知-规划-控制管线通常先做检测、分割、定位和状态估计，再由规划器生成轨迹，最后控制器执行。它的优点是模块清晰、可解释、工程边界明确，适合安全要求高的工业场景；缺点是依赖人工建模和规则，遇到开放词汇物体、复杂语言指令和长尾场景时扩展成本高。VLA 的优势是把视觉、语言和行为放进统一模型里，可以直接利用大规模图文、视频和机器人数据获得更强的语义泛化能力，能处理“把桌上红色杯子放到电脑左边”这类开放指令。风险在于：模型可能产生视觉幻觉，动作决策缺乏可解释性，训练分布外场景不稳定，且错误可能直接进入物理世界。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+        "body": "工程上不能把 VLA 当成黑盒控制器裸奔，通常要加安全边界、动作可行性检查、低层控制兜底、异常停止、日志回放和离线仿真评估。好的回答要同时承认 VLA 的泛化潜力和落地风险。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-06-29T11:16:34.632Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-06-29-8c8defee0e13/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-29-8c8defee0e13/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-29-8c8defee0e13/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-06-29-8c8defee0e13/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "?????????????/???",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a42541d000000001c025e75",
+    "updatedAt": "2026-06-29T11:18:56.013Z",
+    "noteId": "6a42541d000000001c025e75",
+    "publishedAt": "2026-06-29T11:16:00.000Z"
+  },
+  {
     "id": "xhs-daily-2026-06-29-61591d5001f4",
     "title": "综合六、如何配置vllm的服务…题目精讲",
     "coverTitle": "大模型面经面试题精讲",
@@ -53,10 +114,12 @@
       "content/xiaohongshu-assets/xhs-daily-2026-06-29-61591d5001f4/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-06-29-61591d5001f4/04-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-06-29T01:30:33.076Z"
+    "status": "published",
+    "reason": "?????????????/???",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4251c8000000001603ec0b",
+    "updatedAt": "2026-06-29T11:18:56.013Z",
+    "noteId": "6a4251c8000000001603ec0b",
+    "publishedAt": "2026-06-29T11:06:00.000Z"
   },
   {
     "id": "xhs-daily-2026-06-28-f7918628c87c",

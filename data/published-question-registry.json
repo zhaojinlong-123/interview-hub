@@ -253,6 +253,36 @@
     "updatedAt": "2026-06-20T03:12:29.426Z"
   },
   {
+    "key": "general:九如何通过流水线并行pipelineparallel在多节点上扩展微调任务",
+    "question": "九、如何通过流水线并行（Pipeline Parallel）在多节点上扩展微调任务？",
+    "queueId": "xhs-daily-2026-06-30-56657623163f",
+    "featureId": "daily-2026-06-30-56657623163f",
+    "postId": "auto-20260624-aed334ee766f",
+    "title": "综合训练框架/显存优化题目精讲",
+    "company": "综合",
+    "direction": "大模型面经",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146692681",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-06-30T01:30:26.809Z"
+  },
+  {
+    "key": "general:具身智能基础认知中vla与传统感知规划控制管线相比优势风险和可解释性问题是什么",
+    "question": "具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
+    "queueId": "xhs-daily-2026-06-29-8c8defee0e13",
+    "featureId": "daily-2026-06-29-8c8defee0e13",
+    "postId": "auto-20260629-14f67ad3334b",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=elastic_search_misc&request_id=a16be3a408153df407c2793418031e84&biz_id=0",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a42541d000000001c025e75",
+    "status": "published",
+    "updatedAt": "2026-06-29T11:18:56.013Z"
+  },
+  {
     "key": "general:扩散模型生成的是actionchunk但在手术中组织形变是实时的如果你的chunk还没跑完组织已经发生了非线性位移你的系统怎么做闭环修正",
     "question": "扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
     "queueId": "xhs-daily-2026-06-24-df7f186f903b",
@@ -538,6 +568,21 @@
     "updatedAt": "2026-06-20T07:30:26.176Z"
   },
   {
+    "key": "memory:1f6fb170081b",
+    "question": "六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？",
+    "queueId": "xhs-daily-2026-06-29-61591d5001f4",
+    "featureId": "daily-2026-06-29-61591d5001f4",
+    "postId": "auto-20260624-9a20b028e755",
+    "title": "综合六、如何配置vllm的服务…题目精讲",
+    "company": "综合",
+    "direction": "大模型面经",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4251c8000000001603ec0b",
+    "status": "published",
+    "updatedAt": "2026-06-29T11:18:56.013Z"
+  },
+  {
     "key": "memory:33f66bf553cc",
     "question": "大模型训练中显存如何拆解到参数、梯度、优化器状态、激活值和 KV cache？",
     "queueId": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -794,37 +839,5 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
-  },
-  {
-    "key": "published:e585ade38081e5a682e4bd95",
-    "question": "六、如何配置vllm的服务参数（如max_model_len、n_ctx）以适应硬件限制？",
-    "queueId": "xhs-daily-2026-06-29-61591d5001f4",
-    "featureId": "daily-2026-06-29-61591d5001f4",
-    "postId": "auto-20260624-9a20b028e755",
-    "title": "综合六、如何配置vllm的服务…题目精讲",
-    "company": "综合",
-    "direction": "大模型面经",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a4251c8000000001603ec0b",
-    "noteId": "6a4251c8000000001603ec0b",
-    "status": "published",
-    "updatedAt": "2026-06-29T11:18:56.013Z"
-  },
-  {
-    "key": "published:e585b7e8baabe699bae883bd",
-    "question": "具身智能基础认知中，VLA 与传统感知-规划-控制管线相比，优势、风险和可解释性问题是什么？",
-    "queueId": "xhs-daily-2026-06-29-8c8defee0e13",
-    "featureId": "daily-2026-06-29-8c8defee0e13",
-    "postId": "auto-20260629-14f67ad3334b",
-    "title": "综合VLA/机器人动作题目精讲",
-    "company": "综合",
-    "direction": "VLA / 具身智能",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=elastic_search_misc&request_id=a16be3a408153df407c2793418031e84&biz_id=0",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a42541d000000001c025e75",
-    "noteId": "6a42541d000000001c025e75",
-    "status": "published",
-    "updatedAt": "2026-06-29T11:18:56.013Z"
   }
 ]

@@ -178,6 +178,21 @@
     "updatedAt": "2026-06-20T03:11:48.018Z"
   },
   {
+    "key": "general:短视频推荐场景中如何把画面字幕音频和用户反馈统一构造成多模态训练样本",
+    "question": "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
+    "queueId": "xhs-daily-2026-07-01-4afb193992d7",
+    "featureId": "daily-2026-07-01-4afb193992d7",
+    "postId": "manual-20260701-kuaishou-video-vlm",
+    "title": "快手视频理解里如何做长视频分段…题目精讲",
+    "company": "快手",
+    "direction": "视频理解 / 多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4526f7000000001700968a",
+    "status": "published",
+    "updatedAt": "2026-07-01T14:42:48.393Z"
+  },
+  {
     "key": "general:多传感器数据中相机激光雷达毫米波雷达定位和车控状态如何做时间空间对齐",
     "question": "多传感器数据中，相机、激光雷达、毫米波雷达、定位和车控状态如何做时间空间对齐？",
     "queueId": "xhs-daily-2026-06-13-d8f0889f10e1",
@@ -311,6 +326,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-27T01:30:26.643Z"
+  },
+  {
+    "key": "general:视频理解里如何做长视频分段层级表征和摘要避免只看关键帧丢失动作过程",
+    "question": "视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？",
+    "queueId": "xhs-daily-2026-07-01-4afb193992d7",
+    "featureId": "daily-2026-07-01-4afb193992d7",
+    "postId": "manual-20260701-kuaishou-video-vlm",
+    "title": "快手视频理解里如何做长视频分段…题目精讲",
+    "company": "快手",
+    "direction": "视频理解 / 多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4526f7000000001700968a",
+    "status": "published",
+    "updatedAt": "2026-07-01T14:42:48.393Z"
   },
   {
     "key": "general:视频理解中帧采样temporaltoken压缩和longcontextattention如何取舍",
@@ -611,6 +641,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T15:06:03.651Z"
+  },
+  {
+    "key": "memory:f2248c98b480",
+    "question": "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+    "queueId": "xhs-daily-2026-07-01-6fdff1f7f031",
+    "featureId": "daily-2026-07-01-6fdff1f7f031",
+    "postId": "auto-20260624-53339259e32c",
+    "title": "综合二、如何通过vllm的采样…题目精讲",
+    "company": "综合",
+    "direction": "大模型面经",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4525ab000000001c026d9e",
+    "status": "published",
+    "updatedAt": "2026-07-01T14:38:38.529Z"
   },
   {
     "key": "rl:646818b91c8e",

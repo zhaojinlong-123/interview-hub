@@ -1,5 +1,38 @@
 [
   {
+    "id": "daily-2026-07-01-4afb193992d7",
+    "date": "2026-07-01",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "manual-20260701-kuaishou-video-vlm",
+    "title": "快手多模态算法面试题：短视频理解与多模态样本构造",
+    "company": "快手",
+    "direction": "视频理解 / 多模态大模型",
+    "score": 87,
+    "reasons": [
+      "近期性 +8",
+      "重点方向 多模态大模型 / 视频理解 / 视觉理解 +18",
+      "明确公司来源 快手 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 2 个 +10",
+      "有来源链接 +6",
+      "摘要信息量充足 +5",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-05-04",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-01-4afb193992d7.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-01T14:40:00.000Z",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4526f7000000001700968a",
+    "noteId": "6a4526f7000000001700968a",
+    "updatedAt": "2026-07-01T14:42:48.393Z"
+  },
+  {
     "id": "daily-2026-07-01-6fdff1f7f031",
     "date": "2026-07-01",
     "slot": "morning",
@@ -22,10 +55,12 @@
     "sourceDate": "2026-06-24",
     "articlePath": "content/xiaohongshu-drafts/2026-07-01-6fdff1f7f031.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a4525ab000000001c026d9e",
+    "noteId": "6a4525ab000000001c026d9e",
+    "publishedAt": "2026-07-01T14:35:00.000Z",
+    "updatedAt": "2026-07-01T14:38:38.529Z"
   },
   {
     "id": "daily-2026-06-30-56657623163f",

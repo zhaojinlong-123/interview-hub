@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-07-01-6fdff1f7f031",
+    "date": "2026-07-01",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260624-53339259e32c",
+    "title": "CSDN：大模型最新面试题系列：微调篇之微调框架（二）",
+    "company": "综合",
+    "direction": "大模型面经",
+    "score": 48,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "摘要信息量充足 +5"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-01-6fdff1f7f031.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-06-30-56657623163f",
     "date": "2026-06-30",
     "slot": "morning",

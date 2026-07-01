@@ -1,5 +1,56 @@
 [
   {
+    "id": "xhs-daily-2026-07-01-6fdff1f7f031",
+    "title": "综合二、如何通过vllm的采样…题目精讲",
+    "coverTitle": "大模型面经面试题精讲",
+    "coverSubtitle": "大模型面经 高频题",
+    "company": "综合",
+    "direction": "大模型面经",
+    "primaryQuestion": "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+    "topic": "二、如何通过vllm的采样…",
+    "body": "每日精选：综合｜大模型面经 题目精讲 今天这条适合复习：多模态大模型 / VLA / 具身智能 / 视频理解 / 视觉理解 / 训练框架。 面试题目 1. 二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？ 一句话答案 `temperature` 通过缩放 logits 控制概率分布尖锐程度：低温让高概率 token 更占优势，输出更稳定；高温增加随机性，但也提高事实错误和格式漂移风险。`top_p` 只保留累计概率达到阈值的最小 token 集，再从中采样，因此会随上下文动态改变候选数量。生产中通常先按任务确定温度，再用 top_p 限制长尾：代码、抽取和结构化输出使用低 面试展开 面试展开时，最好能做数量级估算：参数量、精度、优化器状态倍数、batch size、sequence length 都会影响显存。回答不要停在“用\n引用来源：CSDN，2026-06-24\n原文链接：https://blog.csdn.net/zhangzhentiyes/article/details/146691808\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #大模型 #面试 #综合 #大模型面经 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-24",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-01-6fdff1f7f031.md",
+    "featureId": "daily-2026-07-01-6fdff1f7f031",
+    "postId": "auto-20260624-53339259e32c",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-01-6fdff1f7f031/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜大模型面经",
+        "body": "公司：综合\n方向：大模型面经\n题目：二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+        "body": "`temperature` 通过缩放 logits 控制概率分布尖锐程度：低温让高概率 token 更占优势，输出更稳定；高温增加随机性，但也提高事实错误和格式漂移风险。`top_p` 只保留累计概率达到阈值的最小 token 集，再从中采样，因此会随上下文动态改变候选数量。生产中通常先按任务确定温度，再用 top_p 限制长尾：代码、抽取和结构化输出使用低温；创作和头脑风暴可适当提高。还应配合 top_k、重复惩罚、最大长度和固定随机种子做离线评测。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-01T01:30:04.817Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-01-6fdff1f7f031/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-01-6fdff1f7f031/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-01-6fdff1f7f031/03-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-07-01T01:30:32.985Z"
+  },
+  {
     "id": "xhs-daily-2026-06-30-56657623163f",
     "title": "综合训练框架/显存优化题目精讲",
     "coverTitle": "大模型面经面试题精讲",

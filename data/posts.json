@@ -1,5 +1,1687 @@
 [
   {
+    "id": "auto-20260701-0dff93d2c054",
+    "title": "CSDN：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
+    "company": "字节",
+    "role": "大模型相关岗位",
+    "direction": "训练框架 / 推理优化",
+    "domain": "分布式训练 / 部署",
+    "category": "推理优化 / 模型压缩",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "tags": [
+      "CSDN",
+      "字节",
+      "大模型",
+      "多模态",
+      "面经",
+      "DeepSpeed"
+    ],
+    "questions": [
+      "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶颈？",
+      "多模态 LoRA 微调时，视觉编码器、projector 和 LLM 哪些层更适合训练，如何避免语言能力退化？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶颈？",
+        "answer": "可以先把问题拆成参数放置、单层计算和训练成本三层。ZeRO-3/FSDP 负责把参数、梯度和优化器状态分片，解决单卡显存装不下完整模型的问题；张量并行切分 attention 或 FFN 的矩阵计算，解决单层太宽、单卡算不动的问题；LoRA 则只训练低秩增量，减少可训练参数、优化器状态和通信量。多模态场景里，常见做法是冻结或半冻结视觉编码器，语言模型主体用 ZeRO/FSDP 管理，projector、adapter 或部分 LLM 层用 LoRA 训练。如果模型很大且单层矩阵也放不下，再叠加张量并行。面试里要强调组合顺序：先估算权重、梯度、优化器状态和激活值，再决定是否需要 ZeRO-3；再看单层矩阵和 batch token 是否需要张量并行；最后用 LoRA 控制微调成本和灾难性遗忘。风险是并行策略叠太多会让通信、checkpoint、恢复和性能调优复杂化。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      },
+      {
+        "question": "多模态 LoRA 微调时，视觉编码器、projector 和 LLM 哪些层更适合训练，如何避免语言能力退化？",
+        "answer": "多模态 LoRA 的核心是让视觉特征进入语言空间，同时尽量少破坏原有语言能力。视觉编码器如果已经很强，通常先冻结，只训练 projector 或 cross-modal adapter；如果目标领域视觉分布差异很大，比如医学、遥感、车载或机器人视角，再考虑解冻高层视觉 block 或加视觉侧 LoRA。LLM 侧可以在 attention 的 q/v/o 或 FFN 上加 LoRA，但 rank 不宜过大，且要混入通用指令数据维持语言能力。避免退化的关键包括：保留一定比例纯文本/通用多模态数据；控制学习率和 LoRA rank；对 projector 先 warmup；监控语言 benchmark、OCR、grounding 和幻觉率；必要时用 KL 或 reference loss 约束输出分布。回答时不要只说“冻结视觉、训练 LoRA”，要说明训练哪些层取决于领域差异、数据规模和目标任务。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-c6d314c9cad9",
+    "title": "CSDN：字节面试题：多模态大模型的模态对齐",
+    "company": "字节",
+    "role": "大模型相关岗位",
+    "direction": "强化学习 / 对齐训练",
+    "domain": "偏好优化",
+    "category": "强化学习 / 对齐训练",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "字节",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [
+      "多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+      "VLM 出现视觉幻觉时，应该从数据、模型结构和解码三个层面分别怎么排查？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：字节面试题：多模态大模型的模态对齐",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+        "answer": "图文对比学习主要把整图和整句拉到同一语义空间，适合检索和粗粒度语义对齐，但它不能保证模型会按指令回答、能定位局部区域、能处理多轮上下文，也不能解决视觉幻觉。指令微调阶段要进一步对齐三类东西：第一是任务格式对齐，让模型知道问答、OCR、grounding、图表理解、视频问答等任务分别怎么输出；第二是粒度对齐，让局部对象、属性、数量、空间关系和文字区域能对应到语言描述；第三是行为对齐，让模型在看不清、证据不足或输入冲突时能表达不确定性，而不是编造。工程上通常混合 caption、VQA、OCR、region-level grounding、多图比较和拒答样本，并用负样本降低幻觉。面试里可以总结为：对比学习解决“看见什么大概像什么”，指令微调解决“按任务要求可靠地说什么”。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      },
+      {
+        "question": "VLM 出现视觉幻觉时，应该从数据、模型结构和解码三个层面分别怎么排查？",
+        "answer": "数据层先查图文是否错配、caption 是否过度泛化、OCR/框标注是否错误、训练集中是否存在强语言先验。例如大量“厨房里有微波炉”的样本会让模型在没有微波炉时也猜出来。模型结构层检查视觉 token 是否被过度压缩，projector 是否丢了局部细节，LLM 是否过度依赖文本 prompt；对于高分辨率、计数和空间关系任务，可能需要 tile、region token 或 grounding 分支。解码层检查 temperature、top_p、重复惩罚和系统提示，过高随机性会放大幻觉；同时可以加入 evidence-first prompt，让模型先列视觉证据再回答。评估时不能只看总准确率，要拆 OCR、计数、属性、空间关系、拒答和反事实样本。一个好的回答应说明幻觉不是单点问题，而是数据先验、视觉瓶颈和语言生成倾向共同造成的。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-15ced10bfef2",
+    "title": "小红书：淘天AI大模型开发面经（强度拉满）",
+    "company": "淘天",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a4521f3000000001603f882?xsec_token=ABaWCdQMLfX-J7D53I48qxM_szJ2VE_DR5Tj7ok9bDIJU%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "淘天",
+      "大模型",
+      "面经"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：淘天AI大模型开发面经（强度拉满） AI大模型-Lino 51分钟前 4",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-e98d6a62d6a7",
+    "title": "小红书：小鹏汽车vlm/vla算法实习生面经不看太亏了",
+    "company": "小鹏",
+    "role": "大模型相关岗位",
+    "direction": "自动驾驶 / 世界模型",
+    "domain": "数据闭环 / 仿真",
+    "category": "自动驾驶 / 数据闭环",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_token=ABV8_JlWYTYT2lNY7GRKJgMO9KA0iOJ7U_-CzlBjdkqws%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "小鹏",
+      "面经"
+    ],
+    "questions": [
+      "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+      "自动驾驶 VLA 如何评估闭环能力，为什么离线感知准确率不足以说明模型可用？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：小鹏汽车vlm/vla算法实习生面经不看太亏了 杰克学长聊offer-小俊 6小时前 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+        "answer": "自动驾驶里的原始图像、点云和 BEV 特征不能直接丢给语言模型，需要先转成结构化或半结构化场景 token。常见做法是先用感知模型得到车道线、交通灯、动态目标、occupancy、可行驶区域、轨迹候选和自车状态，再通过 projector、query token 或序列化模板把这些信息编码成 LLM 可消费的 token。关键是保留时空关系：目标相对自车的位置、速度、意图，车道拓扑和交通规则约束，不能只给静态类别标签。对于 VLA，还要把候选动作或规划轨迹作为条件，让模型理解“如果我这样开，未来会发生什么”。面试里可以强调两条路线：端到端视觉 token 路线表达力强但解释性弱；结构化场景 token 路线更可控、更适合安全审计，实际系统往往混合使用。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      },
+      {
+        "question": "自动驾驶 VLA 如何评估闭环能力，为什么离线感知准确率不足以说明模型可用？",
+        "answer": "离线感知准确率只说明单帧或短片段识别得准，不代表模型在自己的动作影响下仍然安全。闭环评估要让模型输出规划或控制，再把动作反馈到仿真或真实系统中，观察后续状态是否变好。关键指标包括碰撞率、接管率、交通规则违规率、舒适性、最小 TTC、路线完成率、长尾场景恢复能力和 near miss。还要做反事实评估：同一场景下不同自车动作会导致不同未来，世界模型或 VLA 必须能预测这种动作条件下的变化。离线模型可能在专家轨迹附近表现好，但一旦偏离训练分布就会误差累积。面试回答应指出：自动驾驶模型最终优化的是安全、合法、舒适和可恢复的闭环行为，而不是单独的检测 mAP 或轨迹 ADE。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-8b196b82fafc",
+    "title": "小红书：腾讯wxg多模态算法面经存档（已oc",
+    "company": "腾讯",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6865fe14000000001c034604?xsec_token=ABsl7ih34g3_ITmb8MXStNoz5h1S2E-KEyBEaTQS4w66M%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "腾讯",
+      "多模态",
+      "面经"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：腾讯wxg多模态算法面经存档（已oc 绿色毛衣 2025-07-03 252",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-584de2c9d033",
+    "title": "小红书：算法面经：字节推荐大模型",
+    "company": "字节",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/691733b20000000004005248?xsec_token=AB66vUsz3iGARoe85_xR7ZibE1Z9GIr8UnKm4wKXtRGGs%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "字节",
+      "大模型",
+      "面经"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：算法面经：字节推荐大模型 AI实战领航员 2025-12-05 99",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-55ced386e0c5",
+    "title": "牛客：你觉得计算机视觉与 ChatGPT 这样的大模型在网络上有什么区别？说说你的理解 为什么不投算法相关的岗位？ 二、实习经历 介绍一下你在阿里云实习时做的项目吧？...（大模型） 询问面试表现并请求建议。 六、后续 第二天早上告 ...",
+    "company": "阿里",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.nowcoder.com/discuss/519452215057055744",
+    "tags": [
+      "牛客",
+      "阿里",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 牛客 搜索到的近期面经候选。摘要：你觉得计算机视觉与 ChatGPT 这样的大模型在网络上有什么区别？说说你的理解 为什么不投算法相关的岗位？ 二、实习经历 介绍一下你在阿里云实习时做的项目吧？...（大模型） 询问面试表现并请求建议。 六、后续 第二天早上告 ... 查看更多",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-e5fd56c26393",
+    "title": "CSDN：【26届校招】快手大模型算法岗面经：从多模态模型到LoRA技术，面试官常问问题详解！",
+    "company": "快手",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "tags": [
+      "CSDN",
+      "快手",
+      "大模型",
+      "多模态",
+      "面经",
+      "面试"
+    ],
+    "questions": [
+      "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+      "短视频 VLM 为什么需要时序建模，单帧图文模型在推荐和审核场景会漏掉哪些信息？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：【26届校招】快手大模型算法岗面经：从多模态模型到LoRA技术，面试官常问问题详解！",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+        "answer": "短视频样本要同时包含内容侧和用户反馈侧。内容侧先抽封面、关键帧或 clip，提取 OCR 字幕、ASR 文本、背景音乐、标题、话题和作者信息；用户侧记录曝光、点击、完播、停留、点赞、收藏、评论、转发和负反馈。构造时用统一 video id 和时间戳对齐多模态信息，并区分强弱监督：完播、长停留和收藏通常比点击更强，负反馈和快速划走可作为负样本。难点是曝光偏置和热门偏置，所以要做位置校正、负采样、时间切分和去重，避免模型只学到流量分布。训练上可以把内容理解任务和推荐排序任务结合，既做 caption/OCR/VQA 辅助目标，也做 CTR、完播率或互动率预测。评估要看离线 AUC/NDCG、线上 A/B、冷启动、长尾覆盖和内容安全。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      },
+      {
+        "question": "短视频 VLM 为什么需要时序建模，单帧图文模型在推荐和审核场景会漏掉哪些信息？",
+        "answer": "单帧图文模型只能看到局部静态证据，容易漏掉动作过程、情绪变化、剧情反转、危险行为和违规上下文。短视频推荐关心的是用户为什么停留：可能是前几秒铺垫、中间动作、结尾反转或音乐节奏；审核场景也常常需要连续帧才能判断打斗、危险操作、擦边或误导。时序建模可以通过 clip-level encoder、temporal attention、事件边界检测、关键片段检索和长视频记忆来实现。工程上通常先低成本均匀采样，再对高运动或高语义变化片段加密采样。面试里可以指出：单帧模型适合封面理解和粗分类；时序模型适合动作、因果、事件边界和跨镜头一致性。真正上线时两者会分层组合，以控制成本和延迟。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-d2452f75c025",
+    "title": "CSDN：26秋招大模型技术岗位面试题+面经（九）：小红书",
+    "company": "小红书",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/2401_83173765/article/details/148292651?ops_request_misc=&request_id=&biz_id=102",
+    "tags": [
+      "CSDN",
+      "小红书",
+      "大模型",
+      "面经",
+      "面试"
+    ],
+    "questions": [
+      "小红书内容理解场景中，如何同时优化图文相关性、审美质量和安全风险识别？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：26秋招大模型技术岗位面试题+面经（九）：小红书VIP",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "小红书内容理解场景中，如何同时优化图文相关性、审美质量和安全风险识别？",
+        "answer": "这类场景不能只做一个多分类模型，而应拆成多任务内容理解。图文相关性关注标题、正文、图片和视频是否一致，可用图文匹配、OCR/ASR 对齐和语义检索；审美质量关注清晰度、构图、主体突出、滤镜和风格，可以训练质量评分或偏好模型；安全风险识别关注违规、广告、诱导、隐私和敏感内容，需要规则、分类器和人工审核闭环。多任务训练时共享视觉/文本编码器，但不同任务用独立 head 或 adapter，避免安全任务被推荐目标稀释。数据上要注意负样本构造：图文错配、标题党、低质图、擦边和误导内容都要覆盖。上线后用召回率、误杀率、申诉率、人工复核一致性和推荐效果综合权衡。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-c48382f27e86",
+    "title": "CSDN：具身智能TL常用算法面经：基础认知与 VLA 框架(一)",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=&request_id=&biz_id=102",
+    "tags": [
+      "CSDN",
+      "VLA",
+      "面经",
+      "具身"
+    ],
+    "questions": [
+      "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：基础认知与 VLA 框架(一)",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+        "answer": "跨机器人泛化的关键是把任务语义、环境观测和具体控制接口解耦。视觉侧输出对象、空间关系、状态变化或视觉 token；语言侧提供目标、约束和阶段性指令；动作侧不能只绑定某个机械臂的关节维度，而应尽量使用末端位姿、技能 token、归一化动作或机器人无关的 action chunk。不同机器人再通过低层控制器或 embodiment adapter 映射到具体关节。训练数据中要显式记录相机外参、机器人本体状态、控制频率和动作坐标系，否则模型会把平台差异误当成任务规律。回答时可以强调分层：高层 VLA 学任务和语义动作，低层控制器处理动力学和安全约束。这样既利于跨平台迁移，也方便在真实机器人上做限幅、碰撞检查和急停。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-5282521e72b6",
+    "title": "CSDN：具身智能TL常用算法面经：经典 VLA 模型与动作生成范式(二)",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=&request_id=&biz_id=102",
+    "tags": [
+      "CSDN",
+      "VLA",
+      "面经",
+      "具身"
+    ],
+    "questions": [
+      "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：具身智能TL常用算法面经：经典 VLA 模型与动作生成范式(二)",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？",
+        "answer": "RT-1 更偏机器人多任务策略学习，把视觉和语言条件映射到离散化动作 token，适合统一多个任务但受动作量化影响。RT-2 把互联网视觉语言知识迁移到机器人动作，把动作也表示成语言模型可生成的 token，优势是语义泛化更强。OpenVLA 延续视觉语言动作统一建模思路，强调开源数据和跨任务泛化。Diffusion Policy 则不是自回归 token 生成，而是对一段连续动作轨迹做去噪生成，能表达多峰、平滑的 action chunk，适合抓取、装配等连续控制任务，但推理步数和延迟更高。面试里要把“离散 token 便于复用 LLM”和“连续扩散轨迹更适合精细控制”讲清楚，并说明实际系统常用高层 token 规划加低层连续控制。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-abcc070cf71c",
+    "title": "CSDN：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "question",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0",
+    "tags": [
+      "CSDN",
+      "VLA",
+      "面试",
+      "具身"
+    ],
+    "questions": [
+      "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+      "VLA 模型如何处理语言指令中的歧义，比如“把它放到旁边”这种缺少明确目标的命令？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：中国移动具身智能算法（VLA预训练及模型架构方向）面试题精选：10道高频考题+答案解析",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+        "answer": "VLA 预训练样本至少要包含多视角图像或视频、语言指令、机器人本体状态、末端位姿、动作命令、时间戳、相机外参、任务阶段、成功/失败标签和必要的力觉或触觉信息。只保存图像和动作会丢掉意图、坐标系和状态上下文，模型不知道这个动作是为了完成什么目标，也难以区分同一视觉状态下的不同任务。时间戳用于同步多相机和控制信号，外参用于空间对齐，本体状态用于判断可达性，成功失败标签用于学习恢复和风险。对于真实机器人数据，还要记录人工接管、异常、碰撞、超时和重试。一个成熟的数据 schema 能支持 imitation learning、失败样本挖掘、离线 RL 和仿真回放，而不是只能做简单行为克隆。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      },
+      {
+        "question": "VLA 模型如何处理语言指令中的歧义，比如“把它放到旁边”这种缺少明确目标的命令？",
+        "answer": "这类指令的难点在于代词、参照物和空间关系都不完整。系统应先做语义解析和上下文补全：结合历史对话、当前视觉场景、用户注视或最近操作，推断“它”指哪个对象，“旁边”相对哪个参照物。若存在多个高概率解释，不能强行动作，应触发澄清问题或给出候选确认。模型侧可以输出不确定性、候选目标和理由，再由安全策略决定是否执行。训练数据中要加入歧义指令、澄清对话和错误执行负例，让模型学会“看不确定时先问”。面试回答可以总结为：语言理解不是直接映射动作，而是先把指令落到可验证的场景符号和目标状态，再规划动作。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-0adcd88d460a",
+    "title": "掘金：机器之心 2年前 人工智能 AIGC 骁龙888实时运行，美团、浙大等打造全流程移动端多模态大模型MobileVLM 多模态大模型，包含了 LLM 基座训练、SFT、VLM 全流程。也许不久的将来，每个人都能方便、快捷、低成本的拥有属",
+    "company": "美团",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=20260701231336E31C49959EA6A043836D",
+    "tags": [
+      "掘金",
+      "美团",
+      "大模型",
+      "LLM",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：机器之心 2年前 人工智能 AIGC 骁龙888实时运行，美团、浙大等打造全流程移动端多模态大模型MobileVLM 多模态大模型，包含了 LLM 基座训练、SFT、VLM 全流程。也许不久的将来，每个人都能方便、快捷、低成本的拥有属于自己的大模型。MobileVLM 是一款专为移动设备设计的快速、强大和开放的视觉语言助手。它结合了面向... 1 2",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-d9a26fddfea4",
+    "title": "小红书：上海AI lab文档多模态大模型实习一面面经",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/68df41c70000000004016ed7?xsec_token=ABiGDrBH_hJQG0KGKvJjAXGD7YuG55LtxLDIsNe5FTJHc%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型",
+      "多模态",
+      "面经"
+    ],
+    "questions": [
+      "文档多模态大模型中，版面结构、OCR 文本和视觉区域如何联合建模？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：上海AI lab文档多模态大模型实习一面面经 我要逆天 2025-10-03 23",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "文档多模态大模型中，版面结构、OCR 文本和视觉区域如何联合建模？",
+        "answer": "文档理解不能把 OCR 文本当普通纯文本，因为表格、标题、段落、脚注和图像区域的空间位置很关键。常见做法是同时输入 OCR token、bbox 坐标、页面图像特征和版面结构标签，用 Layout-aware Transformer、视觉 token 加文本 token 或区域级 cross-attention 建模。bbox 提供阅读顺序和二维空间关系，视觉特征补充字体、表格线、图标和扫描噪声，文本特征负责语义。对于多页文档，还需要页面级索引和跨页检索。训练任务可以包括字段抽取、表格解析、文档 VQA、阅读顺序恢复和版面分类。面试中要强调：文档多模态的核心不是 OCR 后喂给 LLM，而是保留“文字在哪里”和“版面如何组织”。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-d78f10e13054",
+    "title": "小红书：AI算法面试题：有哪些多模态大模型",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/697c7816000000001a022b16?xsec_token=AB59zivHGhd3SsA9HOJw7owI3B1rlcQXvBpJXnjGA0cJA%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：AI算法面试题：有哪些多模态大模型 乔木mq 01-30 2",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-d31cd43ca2fb",
+    "title": "小红书：VLA算法工程师",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a43b1cd0000000016027ea6?xsec_token=ABSRhaIDowo8EXG-5YQH6djzyfJmgURvQEwoGL0rtREj8%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "VLA",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师-面试复盘解析分享 星星闪耀着 1天前 9",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-a845d0eaea83",
+    "title": "小红书：VLA算法工程师面试",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "question",
+    "difficulty": "困难",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a432b2c000000002103c3b7?xsec_token=ABSRhaIDowo8EXG-5YQH6djzda2Bkku4usiHgPhC4IDNk%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "VLA",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：VLA算法工程师面试-模型架构题 学姐定新丸 1天前 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-31d4047ea35e",
+    "title": "小红书：多模态大模型面试：InternVL系列核心考点",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6922fb9c000000001e03509a?xsec_token=AB5Q5hXLGVj9eOHx-BPRat60zF5HOmZSlFMnjUAHA1N1o%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [
+      "InternVL 这类 VLM 为什么常用高分辨率切图和动态 tile，代价是什么？"
+    ],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：多模态大模型面试：InternVL系列核心考点 莎莎学姐 2025-11-23 5",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "InternVL 这类 VLM 为什么常用高分辨率切图和动态 tile，代价是什么？",
+        "answer": "高分辨率切图是为了保留小目标、文字、图表和局部属性。若直接把整图缩到固定分辨率，OCR、计数和细粒度识别会损失严重；动态 tile 会根据图像长宽比和分辨率把图片切成多个局部块，再加全局缩略图，让模型同时看到整体和细节。代价是视觉 token 数量增加，导致 encoder 计算、LLM 上下文、显存和首 token 延迟上升。工程上需要限制最大 tile 数、做 token 压缩、缓存视觉特征，并按任务动态选择分辨率：普通问答低 tile，OCR/图表/小目标高 tile。面试里可以把它归纳为“用计算换细节”，关键是按任务自适应，而不是所有图片都开最高分辨率。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-67d88bcc99cb",
+    "title": "CSDN：高德地图 多模态大模型算法工程师面试题精选：10道高频考题+深度解析（附PDF）",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/159165484?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：高德地图 多模态大模型算法工程师面试题精选：10道高频考题+深度解析（附PDF）VIP",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-4bcb89f14c20",
+    "title": "CSDN：面试题：多模态大模型建模的方法有哪些？",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/m0_59164520/article/details/145123109?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：面试题：多模态大模型建模的方法有哪些？",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-8031504fa394",
+    "title": "CSDN：Pi0具身智能Java面试题解析：核心技术考点详解",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/weixin_31315007/article/details/158247399?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0",
+    "tags": [
+      "CSDN",
+      "面试",
+      "具身"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：Pi0具身智能Java面试题解析：核心技术考点详解",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-c59f72fbe0e5",
+    "title": "小红书：大模型多模态理解与生成期末试卷（原创）",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a4500950000000017029c73?xsec_token=ABaWCdQMLfX-J7D53I48qxM2FWeYwB1NVfABf7iaHVOh8%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：大模型多模态理解与生成期末试卷（原创） AI上大模型刷题姬 1小时前 37",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-1ea23662affe",
+    "title": "小红书：AI上大模型刷题姬 1小时前",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/user/profile/61fa62010000000010009ae9?channel_type=web_search_result_notes&parent_page_channel_type=web_profile_board&xsec_token=ABSXs9eS_X9GgGTmlqRfQq7klY5ctaiBwfufSbPEVfM-U=&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：AI上大模型刷题姬 1小时前 37",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-2c0648059fd2",
+    "title": "B站：39 0 10:58 面试官：讲讲多模态预训练数据集构建流程",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.bilibili.com/video/BV1CuTi6tEUK/",
+    "tags": [
+      "B站",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：39 0 10:58 面试官：讲讲多模态预训练数据集构建流程？？被问懵了。。AI大模型面试必看！ AI大模型TV · 7小时前",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-41007c65fd65",
+    "title": "B站：168 0 09:03 揭秘大模型到底怎么听懂人话",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.bilibili.com/video/BV1b2Ko6fEMZ/",
+    "tags": [
+      "B站",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：168 0 09:03 揭秘大模型到底怎么听懂人话？ AI大模型面试实战 · 昨天",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-1da1bf44224e",
+    "title": "小红书：B站、合合信息、智慧树 多模态/大模型一面",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/688c821d000000000500befb?xsec_token=ABUqpfKxUcJCdfMfqSupOkgKEtoql1iqZSraX93t8dtoI%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：B站、合合信息、智慧树 多模态/大模型一面 Bilibili 2025-08-01 120",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-d6343bec17ca",
+    "title": "小红书：入门大模型必知100道基础题！",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a438119000000001700b9e9?xsec_token=ABSRhaIDowo8EXG-5YQH6dj4GI7jiw4HYHPlkDC-PMz7w%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书",
+      "大模型"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：入门大模型必知100道基础题！ uu嘟 1天前 7",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-d666de316249",
+    "title": "B站：907 0 05:03 大模型高频面试：大模型 badcase 如何解决",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.bilibili.com/video/BV1nTexzVEX8/",
+    "tags": [
+      "B站",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：907 0 05:03 大模型高频面试：大模型 badcase 如何解决？ AI有温度 · 2025-08-25",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-b04fa8fcfbd8",
+    "title": "B站：面试官：说一下大模型输出格式如何控制？被问懵了。。AI大模型面试必看！",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.bilibili.com/video/BV1CM1oBVEwf/",
+    "tags": [
+      "B站",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：面试官：说一下大模型输出格式如何控制？被问懵了。。AI大模型面试必看！AI大模型大课堂 · 2025-11-09",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-8aa57b49668d",
+    "title": "CSDN：大模型面试通关秘籍：9家大厂面经详解，从OCR到多模态助你拿下offer",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/trb201013/article/details/156987313?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "多模态",
+      "面经",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试通关秘籍：9家大厂面经详解，从OCR到多模态助你拿下offer",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-9a3361e999cc",
+    "title": "CSDN：2025秋招LLM大模型多模态面试题：110道大模型面试常见问题及答案，助你拿下AI工程师岗位！",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/2401_84495872/article/details/151796448?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "LLM",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2025秋招LLM大模型多模态面试题：110道大模型面试常见问题及答案，助你拿下AI工程师岗位！",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-f13aec22928c",
+    "title": "CSDN：大模型面试题剖析：大模型多模态微调技术全解析",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/dulnode/article/details/151143684?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型面试题剖析：大模型多模态微调技术全解析",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-bf5621b9d675",
+    "title": "CSDN：大模型最新面试题系列：模型部署（二）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [
+      "模型部署时，vLLM 的 PagedAttention、prefix cache 和 continuous batching 分别解决什么问题？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：模型部署（二）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "模型部署时，vLLM 的 PagedAttention、prefix cache 和 continuous batching 分别解决什么问题？",
+        "answer": "PagedAttention 解决 KV cache 显存碎片和预留浪费，把不同请求的 KV 切成块管理，逻辑连续但物理可离散分配；prefix cache 解决重复前缀的重复计算问题，比如系统提示词、长文档前缀或多轮对话公共上下文可以复用已算好的 KV；continuous batching 解决静态 batch 等待和 GPU 利用率低的问题，让新请求在生成过程中动态加入批次，完成的请求及时释放资源。三者都提升吞吐，但影响点不同：PagedAttention偏显存管理，prefix cache偏复用计算，continuous batching偏调度效率。上线评估要同时看 TTFT、TPOT、吞吐、显存水位、P99 延迟和公平性，不能只看平均 tokens/s。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-8e184a8536ba",
+    "title": "CSDN：大模型最新面试题系列：模型部署（一）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：模型部署（一）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-cc8e6566face",
+    "title": "CSDN：大模型最新面试题系列：微调篇之微调框架（三）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146692681?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [
+      "SFT 微调中，packing、多轮对话 mask 和 loss 只算 assistant token 分别有什么作用？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（三）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "SFT 微调中，packing、多轮对话 mask 和 loss 只算 assistant token 分别有什么作用？",
+        "answer": "Packing 是把多条短样本拼到同一固定长度序列里，提高 token 利用率，减少 padding；但必须用 attention mask 或 sample boundary 防止不同样本互相看见。多轮对话 mask 用来保留 system、user、assistant 的角色结构，让模型理解上下文轮次。loss 只算 assistant token 是因为训练目标是让模型学会回答，而不是预测用户问题或系统提示词；如果把 user token 也计入 loss，模型可能学习复述输入，降低指令跟随质量。实践中还要处理 EOS、模板一致性、超长截断和多样本拼接后的 position id。面试里可以强调：SFT 数据格式错误会直接表现为模型啰嗦、角色混乱、重复用户问题或无法正确停止。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-d0cd46e482bf",
+    "title": "CSDN：大模型最新面试题系列：微调篇之微调框架（二）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146691808?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（二）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-b500252e8e50",
+    "title": "CSDN：大模型最新面试题系列：微调篇之微调框架（一）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280221?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调框架（一）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-71b4e3cef688",
+    "title": "CSDN：大模型最新面试题系列：微调篇之微调基础知识",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146280129?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：微调篇之微调基础知识",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-5e63f1a4c893",
+    "title": "CSDN：大模型最新面试题系列：训练篇之训练优化算法",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884446?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练优化算法",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-1b8c4b115791",
+    "title": "CSDN：大模型最新面试题系列：训练篇之模型监控与调试",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909886?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [
+      "大模型训练出现 loss spike 时，应该如何区分是数据异常、数值不稳定还是通信/并行问题？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之模型监控与调试",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "大模型训练出现 loss spike 时，应该如何区分是数据异常、数值不稳定还是通信/并行问题？",
+        "answer": "先看 spike 是否可复现。如果固定随机种子和同一 batch 可复现，优先检查数据：异常长样本、乱码、错误标签、重复模板或损坏图片。如果不可复现且伴随 NaN/Inf，重点查数值稳定性：学习率过高、梯度裁剪缺失、FP16 溢出、归一化异常或 attention mask 错误。如果 spike 只在多机多卡出现，单卡或少卡正常，就要查通信和并行：梯度同步、参数分片恢复、pipeline micro-batch 边界、MoE 路由负载和 checkpoint 恢复。排查手段包括记录样本 id、梯度范数、激活统计、loss scale、每层参数范数和通信 trace。处理上可以数据隔离、降低学习率、启用 BF16、梯度裁剪、跳过坏 batch 或修复并行配置。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-a5256313dfd8",
+    "title": "CSDN：大模型最新面试题系列：训练篇之训练稳定性",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885374?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [
+      "训练稳定性里，学习率 warmup、梯度裁剪、weight decay 和 EMA 分别解决什么问题？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练稳定性",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "训练稳定性里，学习率 warmup、梯度裁剪、weight decay 和 EMA 分别解决什么问题？",
+        "answer": "Warmup 让训练初期从较小学习率逐步升高，避免随机初始化或新任务微调阶段梯度剧烈震荡；梯度裁剪限制梯度范数，防止偶发异常 batch 或长序列导致参数一步更新过大；weight decay 抑制权重过大，提高泛化，AdamW 中通常与梯度更新解耦；EMA 对参数做滑动平均，能降低训练噪声，常用于视觉或扩散模型，LLM 中使用要看成本和收益。它们解决的问题不同：warmup 管启动，裁剪管极端梯度，weight decay 管复杂度，EMA 管评估稳定。面试里要补一句：这些手段不能替代数据清洗和数值监控，如果 mask、标签或混合精度配置错了，再多稳定技巧也只是掩盖问题。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-45c10341f884",
+    "title": "CSDN：大模型最新面试题系列：训练篇之训练策略",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909725?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之训练策略",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-79bb859b5eef",
+    "title": "CSDN：大模型最新面试题系列：训练篇之分布式训练",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "训练框架 / 推理优化",
+    "domain": "分布式训练 / 部署",
+    "category": "推理优化 / 模型压缩",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145909490?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [
+      "分布式训练中，如何判断瓶颈是在计算、显存、通信还是数据加载？"
+    ],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之分布式训练",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "分布式训练中，如何判断瓶颈是在计算、显存、通信还是数据加载？",
+        "answer": "判断瓶颈要看 profiler 和系统指标，而不是凭感觉。计算瓶颈表现为 GPU SM 利用率高但 step time 长，算子占比集中在 matmul/attention；显存瓶颈表现为 OOM、频繁重算或 batch 上不去；通信瓶颈表现为 all-reduce/all-gather/all-to-all 时间占比高，GPU 等通信，跨节点扩展效率差；数据加载瓶颈表现为 GPU 利用率周期性掉到低位，CPU、磁盘或网络读取成为等待点。排查顺序通常是先固定 batch 和序列长度，记录 step time 分解，再分别开启/关闭 checkpointing、调整并行度、换数据缓存、看通信 trace。优化手段包括 FlashAttention、算子融合、ZeRO/FSDP、张量并行、通信重叠、数据预取和样本 packing。面试里最好能给出“指标-现象-手段”的闭环。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
+    "id": "auto-20260701-32979fc4899c",
+    "title": "CSDN：大模型最新面试题系列：训练篇之数据处理与增强",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之数据处理与增强",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-296a3080f1ac",
+    "title": "CSDN：大模型最新面试题系列：训练篇之预训练",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145884284?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：训练篇之预训练",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-a3471dce3ab6",
+    "title": "CSDN：大模型最新面试题系列：深度学习基础（一）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855032?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：深度学习基础（一）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-c9b7062cadd6",
+    "title": "CSDN：大模型最新面试题系列：深度学习基础（二）",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145855547?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：大模型最新面试题系列：深度学习基础（二）",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-84900f82f113",
+    "title": "CSDN：2025大模型面试题珍藏合集：清华校友整理10万字大厂面试宝典，多模态、prompt工程全覆盖，收藏必备！",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "collection",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/m0_63171455/article/details/151314693?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "tags": [
+      "CSDN",
+      "大模型",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：2025大模型面试题珍藏合集：清华校友整理10万字大厂面试宝典，多模态、prompt工程全覆盖，收藏必备！",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-efe0ef9c9fe9",
+    "title": "掘金：GoAI 2年前 算法 面试 《深入浅出多模态》（一）：多模态模型论文最全总结 [图片]✨专栏介绍： 本作者推出全新系列《深入浅出多模态》专栏，具体章节如导图所示（导图后续更新），将分别从各个多模态模型的概念、经典模型、创新点、论文综",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "collection",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7345379927392829476?searchId=20260701231336E31C49959EA6A043836D",
+    "tags": [
+      "掘金",
+      "多模态",
+      "面试"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：GoAI 2年前 算法 面试 《深入浅出多模态》（一）：多模态模型论文最全总结 [图片]✨专栏介绍： 本作者推出全新系列《深入浅出多模态》专栏，具体章节如导图所示（导图后续更新），将分别从各个多模态模型的概念、经典模型、创新点、论文综述、发展方向、数据集等各种角度展开详细介绍，欢... 3",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-b2074db3b41e",
+    "title": "掘金：CodeJourney 1年前 人工智能 基于深度学习的自动人脸表情情感识别系统-模型构建与多模态融合应用 基于深度学习的自动人脸表情情感识别系统-模型构建与多模态融合应用随着人工智能技术的不断发展，情感识别作为计算机视觉和情感计算领",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7443736091589197824?searchId=20260701231342F199CFBEE3FF1F4E32B2",
+    "tags": [
+      "掘金",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：CodeJourney 1年前 人工智能 基于深度学习的自动人脸表情情感识别系统-模型构建与多模态融合应用 基于深度学习的自动人脸表情情感识别系统-模型构建与多模态融合应用随着人工智能技术的不断发展，情感识别作为计算机视觉和情感计算领域中的一个重要课题，得到了广泛关注。人类的面部表情是表达情感的主要方式之... 17",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-03622ce79cac",
+    "title": "掘金：机器之心 2年前 资讯 谷歌具身智能新研究：比RT",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7344970197130674215?searchId=20260701231347F199CFBEE3FF1F4E363C",
+    "tags": [
+      "掘金",
+      "VLA",
+      "具身",
+      "机器人"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：机器之心 2年前 资讯 谷歌具身智能新研究：比RT-2优秀的RT-H来了 人工智能正在越来越多地走向现实世界，因此具身智能相关的研究也正受到越来越多的关注。在众多研究项目中... 谷歌 DeepMind 去年 7 月推出的 RT-2：全球第一个控制机器人的视觉 - 语言 - 动作（VLA）模型。只需要像对...",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-316017a26449",
+    "title": "小红书：综合二、如何通过vllm的采样…题目精讲",
+    "company": "综合",
+    "role": "AI / 算法候选人",
+    "direction": "大模型面经",
+    "domain": "综合",
+    "category": "多模态大模型",
+    "type": "question",
+    "difficulty": "中等",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/search_result/6a4525ab000000001c026d9e?xsec_token=ABaWCdQMLfX-J7D53I48qxM4bGe8kzSeMPtdg3vktyF5k%3D&xsec_source=pc_search",
+    "tags": [
+      "小红书"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 小红书 搜索到的近期面经候选。摘要：综合二、如何通过vllm的采样…题目精讲 噜噜噜 35分钟前 3",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-eba5e4a03bab",
+    "title": "B站：多模态大模型——阔叶材管孔特征提取与分析",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.bilibili.com/video/BV1ZN4y1S7Jt/",
+    "tags": [
+      "B站",
+      "大模型",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 B站 搜索到的近期面经候选。摘要：多模态大模型——阔叶材管孔特征提取与分析实战很拉的训练场球星 · 2023-11-09",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-90f5049259ec",
+    "title": "CSDN：RL-VLA综述：强化学习推动VLA发展[项目源码]",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://download.csdn.net/download/eee77/92724810?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=1",
+    "tags": [
+      "CSDN",
+      "VLA"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：RL-VLA综述：强化学习推动VLA发展[项目源码]",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-4380d1da94b1",
+    "title": "CSDN：π∗0.6——通过RL框架RECAP微调流式VLA π0.6：先基于示教数据做离线RL预训练，再SFT(即IL微调)，最后在线RL后训练(与环境自主交互，从经验数据中学习，且必要时人工干预)",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "VLA / 具身智能",
+    "domain": "机器人数据 / 动作模型",
+    "category": "VLA / 具身智能",
+    "type": "experience",
+    "difficulty": "困难",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/v_july_v/article/details/154989166?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0",
+    "tags": [
+      "CSDN",
+      "VLA"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 CSDN 搜索到的近期面经候选。摘要：π∗0.6——通过RL框架RECAP微调流式VLA π0.6：先基于示教数据做离线RL预训练，再SFT(即IL微调)，最后在线RL后训练(与环境自主交互，从经验数据中学习，且必要时人工干预)",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-2c52414a01e5",
+    "title": "掘金：汀丶人工智能 2年前 人工智能 LLM 大模型学习必知必会系列(三)：LLM和多模态模型高效推理实践 LLM 大模型学习必知必会系列(三)：LLM和多模态模型高效推理实践1.多模态大模型推理LLM 的推理流程：[图... 本次实践启动",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "训练框架 / 推理优化",
+    "domain": "分布式训练 / 部署",
+    "category": "推理优化 / 模型压缩",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7373573927211565091?searchId=20260701231336E31C49959EA6A043836D",
+    "tags": [
+      "掘金",
+      "大模型",
+      "LLM",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：汀丶人工智能 2年前 人工智能 LLM 大模型学习必知必会系列(三)：LLM和多模态模型高效推理实践 LLM 大模型学习必知必会系列(三)：LLM和多模态模型高效推理实践1.多模态大模型推理LLM 的推理流程：[图... 本次实践启动页面端 demo 展示：1python -m fastchat.serve.gradio_web_server --host 0.0.0.0 --port 8... 4 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-f5dc5625894b",
+    "title": "掘金：blzlh 1年前 JavaScript Node.js 你见过的最强的看图写话项目？使用 OpenAI 多模态编程 引言随着人工智能技术的快速发展，OpenAI 推出的一系列模型和服务，极大地推动了自然语言处理和图像生成等领域的发展",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7437172017776558121?searchId=20260701231342F199CFBEE3FF1F4E32B2",
+    "tags": [
+      "掘金",
+      "多模态"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：blzlh 1年前 JavaScript Node.js 你见过的最强的看图写话项目？使用 OpenAI 多模态编程 引言随着人工智能技术的快速发展，OpenAI 推出的一系列模型和服务，极大地推动了自然语言处理和图像生成等领域的发展。这些服务不仅限于文本处理，还支持图片、视频和音频等多种媒体形式（多模态），为开发者提供... 46 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-ac02cd4b28ee",
+    "title": "掘金：CVHub 2年前 算法 万字长文带你全面解读视觉大模型 导读众所周知，视觉系统对于理解和推理视觉场景的组成特性至关重要。这个领域的挑战在于对象之间的复杂关... 面的最新进展有一个大致的认知。共勉。需要完整 PDF 版本请添加微信号",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "训练框架 / 推理优化",
+    "domain": "分布式训练 / 部署",
+    "category": "推理优化 / 模型压缩",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7264503091118653492?searchId=20260701231405F199CFBEE3FF1F4E3EF6",
+    "tags": [
+      "掘金",
+      "大模型"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：CVHub 2年前 算法 万字长文带你全面解读视觉大模型 导读众所周知，视觉系统对于理解和推理视觉场景的组成特性至关重要。这个领域的挑战在于对象之间的复杂关... 面的最新进展有一个大致的认知。共勉。需要完整 PDF 版本请添加微信号: cv_huber，备注“视觉大模型”即... 7 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-1a17b9b7a1df",
+    "title": "掘金：机器之心 3年前 人工智能 离视觉大一统更近一步：分割一切之后，Meta又开源一组多用途大模型 机器之心报道机器之心编辑部DINOv2 无需微调就能用于多种视觉任务。在开源了「分割一切」的 SAM 模型后... 这可以使模型更好地理解",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7225871227742912572?searchId=20260701231405F199CFBEE3FF1F4E3EF6",
+    "tags": [
+      "掘金",
+      "大模型"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：机器之心 3年前 人工智能 离视觉大一统更近一步：分割一切之后，Meta又开源一组多用途大模型 机器之心报道机器之心编辑部DINOv2 无需微调就能用于多种视觉任务。在开源了「分割一切」的 SAM 模型后... 这可以使模型更好地理解局部信息；可以从任何图像集合中学习；DINOv2 的预训练版本已经可用，并可以在一... 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
+    "id": "auto-20260701-76b64dca600d",
+    "title": "掘金：DataCanvas 2年前 人工智能 什么是大模型？一文读懂大模型的基本概念 大模型在各种领域都有广泛的应用，包括自然语言处理、计算机视觉、语音识别和推荐系统等。大模型通过训练... 它经过特定的训练，以更好地处理多轮对话和上下文理",
+    "company": "综合",
+    "role": "大模型相关岗位",
+    "direction": "多模态大模型",
+    "domain": "视觉语言理解",
+    "category": "多模态大模型",
+    "type": "experience",
+    "difficulty": "中等",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://juejin.cn/post/7297917491794968588?searchId=20260701231405F199CFBEE3FF1F4E3EF6",
+    "tags": [
+      "掘金",
+      "大模型"
+    ],
+    "questions": [],
+    "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：DataCanvas 2年前 人工智能 什么是大模型？一文读懂大模型的基本概念 大模型在各种领域都有广泛的应用，包括自然语言处理、计算机视觉、语音识别和推荐系统等。大模型通过训练... 它经过特定的训练，以更好地处理多轮对话和上下文理解。ChatGPT设计用于提供流畅、连贯和有趣的对话体验，... 3 1",
+    "prepTips": "",
+    "createdAt": 1782918959,
+    "updatedAt": 1782918959
+  },
+  {
     "id": "auto-20260701-60cd01d8c590",
     "title": "掘金：用户537634037730 10月前 人工智能 尚硅谷 AI 大模型专项课：解锁人工智能技术底层逻辑 具身智能（Embodied AI） ：剖析视觉",
     "company": "字节",
@@ -676,11 +2358,23 @@
       "多模态",
       "面试"
     ],
-    "questions": [],
+    "questions": [
+      "多模态大模型通常由视觉编码器、连接层和语言模型组成，各部分训练目标如何分阶段设计？"
+    ],
     "content": "自动更新脚本从 掘金 搜索到的近期面经候选。摘要：艾醒 10月前 算法 人工智能 大模型面试题剖析：大模型多模态微调技术全解析 模拟面试（一）基础概念与结构类问题1：多模态大模型通常由哪几部分构成？请分别说明各部分的核心作用。参考答案： 多模态大模型主要由视觉编码器、投影层和语言模型三部分构成，各部分核心作用如下：视觉编码... 1 1",
     "prepTips": "按基础原理、工程实现、评估指标和项目追问四块复习，回答时优先讲清楚机制和取舍。",
     "createdAt": 1782891368,
-    "updatedAt": 1782891369
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "多模态大模型通常由视觉编码器、连接层和语言模型组成，各部分训练目标如何分阶段设计？",
+        "answer": "第一阶段通常做视觉-语言对齐，冻结或半冻结视觉编码器和 LLM，训练 projector/Q-Former，让视觉 token 映射到语言模型可理解的空间，目标可以是 caption 或图文匹配。第二阶段做多模态指令微调，混合 VQA、OCR、grounding、图表、多图和视频任务，让模型学会按指令使用视觉证据。第三阶段可做偏好对齐或安全对齐，降低幻觉、格式错误和不当回答。若领域差异大，可以在视觉侧或 LLM 高层加入 LoRA 继续适配。面试里要说明分阶段的原因：直接端到端全量训练成本高且不稳定，先对齐再指令微调能降低训练难度，同时保留语言模型原有能力。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
   },
   {
     "id": "auto-20260701-99edb3ff4c31",
@@ -36960,6 +38654,61 @@
     ]
   },
   {
+    "id": "manual-20260701-kuaishou-video-vlm",
+    "title": "快手多模态算法面试题：短视频理解与多模态样本构造",
+    "company": "快手",
+    "role": "多模态算法工程师",
+    "direction": "视频理解 / 多模态大模型",
+    "domain": "短视频理解 / VLM / 多模态训练数据",
+    "category": "视频 / 视觉理解",
+    "type": "interview",
+    "difficulty": "中等",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-05-04",
+    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
+    "tags": [
+      "快手",
+      "多模态大模型",
+      "视频理解",
+      "短视频推荐",
+      "VLM",
+      "数据构造"
+    ],
+    "questions": [
+      "视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？",
+      "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
+      "视频理解模型如何区分“动作发生过”和“动作正在发生”，数据标注和模型结构上分别要注意什么？"
+    ],
+    "content": "来源文章说明其基于 2025-2026 年快手多模态算法岗真实面经整理，覆盖 CLIP/BLIP 原理、视频理解、VLM 对齐、业务场景和训练优化等考点。本文抽取两个更适合日常复习的专业题目：视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
+    "prepTips": "重点关注视频时序建模、多模态对齐、样本构造、弱标签噪声处理、线上推荐目标和离线评估之间的关系。",
+    "createdAt": 1782916823,
+    "updatedAt": 1782918959,
+    "questionAnswers": [
+      {
+        "question": "视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？",
+        "answer": "长视频不能只抽几张关键帧后交给图文模型，因为动作、因果和状态变化都藏在帧间。工程上通常先做分段：可以按镜头切换、时间窗口或事件边界把视频切成 clip，每个 clip 保留连续帧或稀疏帧序列；再做层级表征：底层用视觉编码器或视频 Transformer 提取局部时序特征，中层聚合动作片段和对象状态变化，高层再生成事件摘要或供 LLM 推理。为了避免丢动作过程，采样要覆盖开始、过程、结束三个阶段，不能只取最高置信关键帧；对快速动作可以提高局部帧率，对长静态片段可以降采样。面试里可以强调三点：一是分段要服务任务，例如问答重视事件边界，推荐重视用户停留片段；二是摘要要保留主体、动作、对象、时间顺序和状态变化；三是评估不能只看文本相似度，还要用时序一致性、动作识别准确率、事件定位误差和人工核验检查模型是否真的理解了视频。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T14:40:23.805Z",
+        "source": "manual-daily-feature-repair"
+      },
+      {
+        "question": "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
+        "answer": "短视频推荐的数据构造要把内容侧多模态信号和用户侧反馈对齐到同一个样本里。内容侧通常包括视频帧或 clip、封面、OCR 字幕、ASR 文本、背景音乐、声音事件、标题标签和作者信息；用户侧包括曝光、点击、完播、停留时长、点赞、收藏、评论、转发、不感兴趣等行为。构造样本时，先用统一的视频 id 和时间戳把多模态特征对齐，再把用户行为转成监督信号：点击和完播可以做排序目标，长停留和收藏更接近强兴趣，跳出或负反馈可以做负样本。难点在噪声和偏差：字幕可能错、ASR 可能漏，热门视频有曝光偏置，用户点击不一定代表满意。因此需要做去重、质量过滤、曝光校正、负采样和时间切分，避免训练集泄漏到未来。一个成熟回答还要提到多任务训练：用 CTR、完播率、互动率、内容理解辅助任务一起训练，让模型既学会语义对齐，也学会推荐目标。最后用离线 AUC/NDCG、线上 A/B、冷启动效果和长尾内容覆盖率综合评估。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T14:40:23.805Z",
+        "source": "manual-daily-feature-repair"
+      },
+      {
+        "question": "视频理解模型如何区分“动作发生过”和“动作正在发生”，数据标注和模型结构上分别要注意什么？",
+        "answer": "这需要显式建模时间边界和状态。数据标注上不能只给视频级标签，而要标出动作开始、持续、结束以及动作后的状态，例如“拿起杯子”发生过后杯子位置会变化，“正在拿起”则处于运动过程。模型结构上要保留帧序和局部运动特征，可以用 clip-level encoder、temporal attention、光流或轨迹特征，并在输出中区分事件检测、动作分类和状态判断。训练时可以加入正负时间片段：动作前、动作中、动作后都要有样本，避免模型只靠物体共现判断。评估上看 temporal IoU、边界误差和状态问答准确率。面试中要强调，视频理解的关键不是“看见物体”，而是理解状态随时间如何变化。",
+        "answerStatus": "model_answered",
+        "answeredAt": "2026-07-01T15:15:59.239Z",
+        "source": "question-bank-update-2026-07-01"
+      }
+    ],
+    "reviewStatus": "question_ready"
+  },
+  {
     "id": "browser-zhihu-llm-leetcode-20260409",
     "title": "知乎：大模型面试题 LeetCode 版",
     "company": "开源社区",
@@ -37013,51 +38762,5 @@
     "createdAt": 1780672728,
     "updatedAt": 1782891369,
     "questionAnswers": []
-  },
-  {
-    "id": "manual-20260701-kuaishou-video-vlm",
-    "title": "快手多模态算法面试题：短视频理解与多模态样本构造",
-    "company": "快手",
-    "role": "多模态算法工程师",
-    "direction": "视频理解 / 多模态大模型",
-    "domain": "短视频理解 / VLM / 多模态训练数据",
-    "category": "视频 / 视觉理解",
-    "type": "interview",
-    "difficulty": "中等",
-    "sourcePlatform": "CSDN",
-    "sourceDate": "2026-05-04",
-    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
-    "tags": [
-      "快手",
-      "多模态大模型",
-      "视频理解",
-      "短视频推荐",
-      "VLM",
-      "数据构造"
-    ],
-    "questions": [
-      "视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？",
-      "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？"
-    ],
-    "content": "来源文章说明其基于 2025-2026 年快手多模态算法岗真实面经整理，覆盖 CLIP/BLIP 原理、视频理解、VLM 对齐、业务场景和训练优化等考点。本文抽取两个更适合日常复习的专业题目：视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
-    "prepTips": "重点关注视频时序建模、多模态对齐、样本构造、弱标签噪声处理、线上推荐目标和离线评估之间的关系。",
-    "createdAt": 1782916823,
-    "updatedAt": 1782916823,
-    "questionAnswers": [
-      {
-        "question": "视频理解里如何做长视频分段、层级表征和摘要，避免只看关键帧丢失动作过程？",
-        "answer": "长视频不能只抽几张关键帧后交给图文模型，因为动作、因果和状态变化都藏在帧间。工程上通常先做分段：可以按镜头切换、时间窗口或事件边界把视频切成 clip，每个 clip 保留连续帧或稀疏帧序列；再做层级表征：底层用视觉编码器或视频 Transformer 提取局部时序特征，中层聚合动作片段和对象状态变化，高层再生成事件摘要或供 LLM 推理。为了避免丢动作过程，采样要覆盖开始、过程、结束三个阶段，不能只取最高置信关键帧；对快速动作可以提高局部帧率，对长静态片段可以降采样。面试里可以强调三点：一是分段要服务任务，例如问答重视事件边界，推荐重视用户停留片段；二是摘要要保留主体、动作、对象、时间顺序和状态变化；三是评估不能只看文本相似度，还要用时序一致性、动作识别准确率、事件定位误差和人工核验检查模型是否真的理解了视频。",
-        "answerStatus": "model_answered",
-        "answeredAt": "2026-07-01T14:40:23.805Z",
-        "source": "manual-daily-feature-repair"
-      },
-      {
-        "question": "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
-        "answer": "短视频推荐的数据构造要把内容侧多模态信号和用户侧反馈对齐到同一个样本里。内容侧通常包括视频帧或 clip、封面、OCR 字幕、ASR 文本、背景音乐、声音事件、标题标签和作者信息；用户侧包括曝光、点击、完播、停留时长、点赞、收藏、评论、转发、不感兴趣等行为。构造样本时，先用统一的视频 id 和时间戳把多模态特征对齐，再把用户行为转成监督信号：点击和完播可以做排序目标，长停留和收藏更接近强兴趣，跳出或负反馈可以做负样本。难点在噪声和偏差：字幕可能错、ASR 可能漏，热门视频有曝光偏置，用户点击不一定代表满意。因此需要做去重、质量过滤、曝光校正、负采样和时间切分，避免训练集泄漏到未来。一个成熟回答还要提到多任务训练：用 CTR、完播率、互动率、内容理解辅助任务一起训练，让模型既学会语义对齐，也学会推荐目标。最后用离线 AUC/NDCG、线上 A/B、冷启动效果和长尾内容覆盖率综合评估。",
-        "answerStatus": "model_answered",
-        "answeredAt": "2026-07-01T14:40:23.805Z",
-        "source": "manual-daily-feature-repair"
-      }
-    ]
   }
 ]

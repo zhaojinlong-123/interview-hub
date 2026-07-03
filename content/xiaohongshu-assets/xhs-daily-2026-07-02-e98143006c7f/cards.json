@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜多模态大模型",
+    "body": "公司：字节\n方向：多模态大模型\n题目：动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-e98143006c7f\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-e98143006c7f\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
+    "body": "动态分辨率和局部切图的本质，是用更多视觉细节换取更高计算成本。固定低分辨率输入适合普通场景理解，但会丢掉小字、小目标、图表细节和密集区域；局部切图会把原图按比例切成多个区域，让模型同时看到全局缩略图和局部高分辨率细节，因此更适合 OCR、图表、文档、多目标计数和细粒度属性识别。代价是视觉 token 数增加，视觉编码耗时、显存占用、上下文长度和首 token 延迟都会上升。工程上通常不应所有图片都开最高切图数，而是先用轻量规则或小模型判断任务是否需要细节：普通问答用低分辨率；",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-e98143006c7f\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
+    "body": "涉及文字、表格、小目标和坐标关系时提高切图数；超大图再配合区域检索。面试回答可以强调三点：第一，必须保留全局图，避免局部切图丢上下文；第二，切图数量要受最大 token 和延迟预算约束；第三，评估要分开看普通问答、文字识别、细粒度定位和线上延迟，而不是只看一个综合准确率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-e98143006c7f\\04-answer.png"
+  }
+]

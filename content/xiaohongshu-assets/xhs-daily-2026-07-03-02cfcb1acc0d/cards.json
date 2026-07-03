@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "快手｜视频理解 / 多模态大模型",
+    "body": "公司：快手\n方向：视频理解 / 多模态大模型\n题目：长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-02cfcb1acc0d\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-02cfcb1acc0d\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
+    "body": "长视频不能把所有帧一次性塞进模型，否则成本高、上下文长，而且容易被无关片段稀释。更稳的做法是分层处理：第一层把视频按镜头、时间窗口或事件边界切成片段，为每个片段生成短摘要、关键实体、动作和时间范围；第二层建立可检索索引，用户问题来了以后先召回相关片段；第三层对召回片段做高分辨率或更密集的时序推理；最后再把多个片段的证据合并成答案。跨时间问题的难点是顺序和状态变化，例如“他先做了什么，后来为什么失败”。这时摘要不能只写静态物体，还要记录主体、动作、对象、开始结束、状态变化和因果线索。工程上可以保留全局时间线，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-02cfcb1acc0d\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
+    "body": "避免片段之间互相孤立；对高置信片段用细粒度模型复核，对低相关片段只保留摘要。评估时要看片段召回率、答案正确率、时间定位误差和跨片段一致性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-02cfcb1acc0d\\04-answer.png"
+  }
+]

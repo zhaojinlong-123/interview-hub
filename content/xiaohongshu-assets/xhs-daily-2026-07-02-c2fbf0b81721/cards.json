@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "小鹏｜自动驾驶 / 世界模型",
+    "body": "公司：小鹏\n方向：自动驾驶 / 世界模型\n题目：车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-c2fbf0b81721\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-c2fbf0b81721\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
+    "body": "车端数据闭环要先保证数据本身可对齐、可复现、可追踪。时间对齐上，每路相机、雷达、定位、车控和规划输出都要带统一时钟时间戳；不同频率的数据不能简单按最近帧拼接，而要记录最大时间差，并对车辆运动做插值或补偿。空间标定上，需要维护相机内参、各传感器到车体坐标系的外参，以及外参漂移监控；车辆行驶时还要考虑滚动快门、震动和同步误差。异常样本回流通常来自接管、急刹、低置信度、预测分歧、规则触发和用户反馈，再经过聚类去重、风险分级和人工复核，进入标注和训练集。闭环训练不能只把新数据堆进去，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-c2fbf0b81721\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
+    "body": "还要做版本管理：记录数据版本、标注版本、模型版本和评测场景版本。最后通过离线回放、可交互仿真和小流量线上验证确认新模型是否真的降低接管率和风险，而不是只提高单帧指标。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-02-c2fbf0b81721\\04-answer.png"
+  }
+]

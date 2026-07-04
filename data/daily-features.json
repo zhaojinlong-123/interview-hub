@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-04-4df99639c9cd",
+    "date": "2026-07-04",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "reserve-20260703-huawei-edge-vlm",
+    "title": "华为多模态面经：端侧模型压缩与部署",
+    "company": "华为",
+    "direction": "推理部署 / 多模态大模型",
+    "score": 85,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 / 推理部署 +12",
+      "明确公司来源 华为 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e5b4a70000000020038bbb?xsec_source=pc_search",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-03",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-04-4df99639c9cd.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-04T07:30:26.160Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-04-a7ec03903e6a",
     "date": "2026-07-04",
     "slot": "morning",

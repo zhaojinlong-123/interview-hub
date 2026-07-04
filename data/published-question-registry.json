@@ -208,6 +208,21 @@
     "updatedAt": "2026-07-03T12:16:48.992Z"
   },
   {
+    "key": "general:端侧多模态模型部署时视觉编码语言推理和缓存复用分别如何降成本",
+    "question": "端侧多模态模型部署时，视觉编码、语言推理和缓存复用分别如何降成本？",
+    "queueId": "xhs-daily-2026-07-04-4df99639c9cd",
+    "featureId": "daily-2026-07-04-4df99639c9cd",
+    "postId": "reserve-20260703-huawei-edge-vlm",
+    "title": "华为多模态理解题目精讲",
+    "company": "华为",
+    "direction": "推理部署 / 多模态大模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e5b4a70000000020038bbb?xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-04T07:30:26.148Z"
+  },
+  {
     "key": "general:短视频推荐场景中如何把画面字幕音频和用户反馈统一构造成多模态训练样本",
     "question": "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
     "queueId": "xhs-daily-2026-07-01-4afb193992d7",

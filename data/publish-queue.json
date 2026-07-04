@@ -51,6 +51,57 @@
     "updatedAt": "2026-07-04T01:30:25.955Z"
   },
   {
+    "id": "xhs-daily-2026-07-04-4df99639c9cd",
+    "title": "华为多模态理解题目精讲",
+    "coverTitle": "华为面试题精讲",
+    "coverSubtitle": "推理部署 / 多模态大模型 高频题",
+    "company": "华为",
+    "direction": "推理部署 / 多模态大模型",
+    "primaryQuestion": "端侧多模态模型部署时，视觉编码、语言推理和缓存复用分别如何降成本？",
+    "topic": "多模态理解",
+    "body": "每日精选：华为 推理部署 / 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：小红书，2026-07-03\n原文链接：https://www.xiaohongshu.com/explore/69e5b4a70000000020038bbb?xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#华为 #推理部署多模态大模型 #面经 #大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-03",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/69e5b4a70000000020038bbb?xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-04-4df99639c9cd.md",
+    "featureId": "daily-2026-07-04-4df99639c9cd",
+    "postId": "reserve-20260703-huawei-edge-vlm",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-04-4df99639c9cd/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "华为｜推理部署 / 多模态大模型",
+        "body": "公司：华为\n方向：推理部署 / 多模态大模型\n题目：端侧多模态模型部署时，视觉编码、语言推理和缓存复用分别如何降成本？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 端侧多模态模型部署时，视觉编码、语言推理和缓存复用分别如何降成本？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1",
+        "title": "端侧多模态模型部署时，视觉编码、语言推理和缓存复用分别如何降成本？",
+        "body": "端侧部署要分别压缩视觉侧、语言侧和系统调度。视觉编码可以降低输入分辨率、按任务选择切图数量、缓存重复图片特征，或使用轻量视觉编码器。语言推理侧可采用低比特量化、结构剪枝、小模型蒸馏和短回答约束，减少显存和延迟。缓存复用适合固定系统提示、重复图片或多轮对话中的相同上下文。还要把预处理、编码和生成流水线化，避免 CPU/GPU/NPU 互相等待。评估时不能只看模型准确率，还要看首字延迟、峰值内存、功耗、发热和离线可用性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-04T07:30:04.513Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-04-4df99639c9cd/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-04-4df99639c9cd/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-04-4df99639c9cd/03-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-04T07:30:26.148Z"
+  },
+  {
     "id": "xhs-daily-2026-07-03-300226a4c406",
     "title": "智元VLA/机器人动作题目精讲",
     "coverTitle": "智元面试题精讲",

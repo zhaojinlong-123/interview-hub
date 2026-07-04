@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-04-a7ec03903e6a",
+    "date": "2026-07-04",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "reserve-20260703-tencent-video-event",
+    "title": "腾讯视频理解面经：事件边界与状态变化",
+    "company": "腾讯",
+    "direction": "视频理解 / 多模态大模型",
+    "score": 85,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 / 视频理解 +12",
+      "明确公司来源 腾讯 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1933187361329611269",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-03",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-04-a7ec03903e6a.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-04T01:30:25.968Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-03-300226a4c406",
     "date": "2026-07-03",
     "slot": "afternoon",

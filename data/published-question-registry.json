@@ -163,6 +163,21 @@
     "updatedAt": "2026-06-27T07:30:33.782Z"
   },
   {
+    "key": "general:车端多传感器数据如何做时间对齐空间标定和异常样本回流支撑闭环训练",
+    "question": "车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
+    "queueId": "xhs-daily-2026-07-02-c2fbf0b81721",
+    "featureId": "daily-2026-07-02-c2fbf0b81721",
+    "postId": "manual-20260702-afternoon-xpeng-sensor-data-loop",
+    "title": "小鹏车端多传感器数据如何做时间…题目精讲",
+    "company": "小鹏",
+    "direction": "自动驾驶 / 世界模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_source=pc_search",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7720000000016027ec7",
+    "status": "published",
+    "updatedAt": "2026-07-03T12:16:48.992Z"
+  },
+  {
     "key": "general:大模型训练中为什么很多llm不再依赖dropout它和数据规模归一化残差结构有什么关系",
     "question": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
     "queueId": "xhs-daily-2026-06-19-e6147d4c454e",
@@ -176,6 +191,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-20T03:11:48.018Z"
+  },
+  {
+    "key": "general:动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍",
+    "question": "动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
+    "queueId": "xhs-daily-2026-07-02-e98143006c7f",
+    "featureId": "daily-2026-07-02-e98143006c7f",
+    "postId": "manual-20260702-morning-bytedance-dynamic-resolution",
+    "title": "字节动态图像分辨率与局部切图如…题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a78e000000001603fb86",
+    "status": "published",
+    "updatedAt": "2026-07-03T12:16:48.992Z"
   },
   {
     "key": "general:短视频推荐场景中如何把画面字幕音频和用户反馈统一构造成多模态训练样本",
@@ -266,6 +296,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-20T03:12:29.426Z"
+  },
+  {
+    "key": "general:机器人长程任务中如何把语言子目标视觉状态和低层控制连接起来避免一步错全局崩",
+    "question": "机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
+    "queueId": "xhs-daily-2026-07-03-300226a4c406",
+    "featureId": "daily-2026-07-03-300226a4c406",
+    "postId": "manual-20260703-afternoon-zhiyuan-robot-long-horizon",
+    "title": "智元VLA/机器人动作题目精讲",
+    "company": "智元",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "掘金",
+    "sourceUrl": "https://juejin.cn/post/7631311804195471396",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7ba000000001c025231",
+    "status": "published",
+    "updatedAt": "2026-07-03T12:16:48.992Z"
   },
   {
     "key": "general:九如何通过流水线并行pipelineparallel在多节点上扩展微调任务",
@@ -373,6 +418,21 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "general:视频事件理解中如何判断事件开始结束和状态变化而不是只做整段分类",
+    "question": "视频事件理解中，如何判断事件开始、结束和状态变化，而不是只做整段分类？",
+    "queueId": "xhs-daily-2026-07-04-a7ec03903e6a",
+    "featureId": "daily-2026-07-04-a7ec03903e6a",
+    "postId": "reserve-20260703-tencent-video-event",
+    "title": "腾讯视频事件理解中，如何判断事…题目精讲",
+    "company": "腾讯",
+    "direction": "视频理解 / 多模态大模型",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1933187361329611269",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-04T01:30:25.955Z"
+  },
+  {
     "key": "general:题1请讲讲clip的核心原理它是怎么做图文对齐的正样本冲突怎么处理",
     "question": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
     "queueId": "xhs-daily-2026-06-25-8573f6f2581e",
@@ -416,6 +476,21 @@
     "publishUrl": "https://www.xiaohongshu.com/explore/6a3ea34c000000001503ea77",
     "status": "published",
     "updatedAt": "2026-06-26T16:08:40.537Z"
+  },
+  {
+    "key": "general:长视频理解中如何用片段检索和层级摘要回答跨时间问题",
+    "question": "长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
+    "queueId": "xhs-daily-2026-07-03-02cfcb1acc0d",
+    "featureId": "daily-2026-07-03-02cfcb1acc0d",
+    "postId": "manual-20260703-morning-kuaishou-long-video",
+    "title": "快手长视频理解中如何用片段检索…题目精讲",
+    "company": "快手",
+    "direction": "视频理解 / 多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
+    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7a4000000001702e153",
+    "status": "published",
+    "updatedAt": "2026-07-03T12:16:48.992Z"
   },
   {
     "key": "general:智元这类具身智能基础模型岗位中vlmvla和video模型在机器人系统里分别承担什么角色",
@@ -884,69 +959,5 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
-  },
-  {
-    "key": "published:e8bda6e7abafe5a49ae4bca0",
-    "question": "车端多传感器数据如何做时间对齐、空间标定和异常样本回流，支撑闭环训练？",
-    "queueId": "xhs-daily-2026-07-02-c2fbf0b81721",
-    "featureId": "daily-2026-07-02-c2fbf0b81721",
-    "postId": "manual-20260702-afternoon-xpeng-sensor-data-loop",
-    "title": "小鹏车端多传感器数据如何做时间…题目精讲",
-    "company": "小鹏",
-    "direction": "自动驾驶 / 世界模型",
-    "sourcePlatform": "小红书",
-    "sourceUrl": "https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_source=pc_search",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7720000000016027ec7",
-    "noteId": "6a47a7720000000016027ec7",
-    "status": "published",
-    "updatedAt": "2026-07-03T12:16:48.992Z"
-  },
-  {
-    "key": "published:e58aa8e68081e59bbee5838f",
-    "question": "动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
-    "queueId": "xhs-daily-2026-07-02-e98143006c7f",
-    "featureId": "daily-2026-07-02-e98143006c7f",
-    "postId": "manual-20260702-morning-bytedance-dynamic-resolution",
-    "title": "字节动态图像分辨率与局部切图如…题目精讲",
-    "company": "字节",
-    "direction": "多模态大模型",
-    "sourcePlatform": "知乎",
-    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a78e000000001603fb86",
-    "noteId": "6a47a78e000000001603fb86",
-    "status": "published",
-    "updatedAt": "2026-07-03T12:16:48.992Z"
-  },
-  {
-    "key": "published:e995bfe8a786e9a291e79086",
-    "question": "长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
-    "queueId": "xhs-daily-2026-07-03-02cfcb1acc0d",
-    "featureId": "daily-2026-07-03-02cfcb1acc0d",
-    "postId": "manual-20260703-morning-kuaishou-long-video",
-    "title": "快手长视频理解中如何用片段检索…题目精讲",
-    "company": "快手",
-    "direction": "视频理解 / 多模态大模型",
-    "sourcePlatform": "CSDN",
-    "sourceUrl": "https://gitcode.csdn.net/69f8558e54b52172bc71bf4c.html",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7a4000000001702e153",
-    "noteId": "6a47a7a4000000001702e153",
-    "status": "published",
-    "updatedAt": "2026-07-03T12:16:48.992Z"
-  },
-  {
-    "key": "published:e69cbae599a8e4babae995bf",
-    "question": "机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
-    "queueId": "xhs-daily-2026-07-03-300226a4c406",
-    "featureId": "daily-2026-07-03-300226a4c406",
-    "postId": "manual-20260703-afternoon-zhiyuan-robot-long-horizon",
-    "title": "智元VLA/机器人动作题目精讲",
-    "company": "智元",
-    "direction": "VLA / 具身智能",
-    "sourcePlatform": "掘金",
-    "sourceUrl": "https://juejin.cn/post/7631311804195471396",
-    "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7ba000000001c025231",
-    "noteId": "6a47a7ba000000001c025231",
-    "status": "published",
-    "updatedAt": "2026-07-03T12:16:48.992Z"
   }
 ]

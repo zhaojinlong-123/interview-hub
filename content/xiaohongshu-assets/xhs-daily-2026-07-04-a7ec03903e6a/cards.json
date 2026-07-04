@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "腾讯｜视频理解 / 多模态大模型",
+    "body": "公司：腾讯\n方向：视频理解 / 多模态大模型\n题目：视频事件理解中，如何判断事件开始、结束和状态变化，而不是只做整段分类？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-04-a7ec03903e6a\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 视频事件理解中，如何判断事件开始、结束和状态变化，而不是只做整段分类？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-04-a7ec03903e6a\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "视频事件理解中，如何判断事件开始、结束和状态变化，而不是只做整段分类？",
+    "body": "整段分类只能回答视频大概是什么，无法解释事件在什么时候发生。事件理解需要把视频切成时间片段，预测每个片段的动作、主体、对象和状态，并回归开始结束边界。状态变化尤其重要，比如杯子从桌上到手里、门从关到开，这类变化要求模型比较事件前后帧。训练数据最好包含动作前、动作中、动作后三类片段，并标注边界和状态。评估时用边界误差、时间交并比、状态问答准确率和跨片段一致性共同判断。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-04-a7ec03903e6a\\03-answer.png"
+  }
+]

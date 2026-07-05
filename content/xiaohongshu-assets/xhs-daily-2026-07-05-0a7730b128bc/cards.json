@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "Qwen｜推理优化 / 大模型基础",
+    "body": "公司：Qwen\n方向：推理优化 / 大模型基础\n题目：长上下文推理中，位置外推、注意力稀释和证据检索分别会带来什么问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-0a7730b128bc\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 长上下文推理中，位置外推、注意力稀释和证据检索分别会带来什么问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-0a7730b128bc\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "长上下文推理中，位置外推、注意力稀释和证据检索分别会带来什么问题？",
+    "body": "长上下文不是把长度参数调大就结束。位置外推会让模型在训练长度之外的位置关系不稳定，需要缩放策略和长文本继续训练来适配。注意力稀释指关键信息被大量无关 token 淹没，模型可能找不到真正证据。证据检索则决定哪些片段进入上下文，如果召回错了，再强的模型也会答错。工程上通常结合分块索引、重排序、摘要记忆和引用定位，让模型先找到证据再回答。评估时要看 needle-in-a-haystack、跨段推理、引用准确率和长上下文下的延迟成本。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-0a7730b128bc\\03-answer.png"
+  }
+]

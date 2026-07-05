@@ -508,6 +508,21 @@
     "updatedAt": "2026-06-26T16:08:40.537Z"
   },
   {
+    "key": "general:长上下文推理中位置外推注意力稀释和证据检索分别会带来什么问题",
+    "question": "长上下文推理中，位置外推、注意力稀释和证据检索分别会带来什么问题？",
+    "queueId": "xhs-daily-2026-07-05-0a7730b128bc",
+    "featureId": "daily-2026-07-05-0a7730b128bc",
+    "postId": "reserve-20260703-qwen-long-context",
+    "title": "Qwen长上下文推理中，位置外推、…题目",
+    "company": "Qwen",
+    "direction": "推理优化 / 大模型基础",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-05T07:30:32.221Z"
+  },
+  {
     "key": "general:长视频理解中如何用片段检索和层级摘要回答跨时间问题",
     "question": "长视频理解中如何用片段检索和层级摘要回答跨时间问题？",
     "queueId": "xhs-daily-2026-07-03-02cfcb1acc0d",

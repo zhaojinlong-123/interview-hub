@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-05-0a7730b128bc",
+    "date": "2026-07-05",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "reserve-20260703-qwen-long-context",
+    "title": "Qwen 面经：长上下文推理与位置外推",
+    "company": "Qwen",
+    "direction": "推理优化 / 大模型基础",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 推理优化 +6",
+      "明确公司来源 Qwen +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 推理优化 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/weixin_45264425/article/details/157210711",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-03",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-05-0a7730b128bc.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-05T07:30:32.232Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-05-eb5c3cc39628",
     "date": "2026-07-05",
     "slot": "morning",

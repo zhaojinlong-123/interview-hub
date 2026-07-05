@@ -463,6 +463,21 @@
     "updatedAt": "2026-06-25T14:02:27.386Z"
   },
   {
+    "key": "general:图文指令数据如何做质量分层避免低质描述和错配样本拖累模型",
+    "question": "图文指令数据如何做质量分层，避免低质描述和错配样本拖累模型？",
+    "queueId": "xhs-daily-2026-07-05-eb5c3cc39628",
+    "featureId": "daily-2026-07-05-eb5c3cc39628",
+    "postId": "reserve-20260703-baidu-vlm-data",
+    "title": "百度图文指令数据如何做质量分层…题目精讲",
+    "company": "百度",
+    "direction": "多模态大模型",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1996677583337698496",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-05T01:30:27.239Z"
+  },
+  {
     "key": "general:为什么通用vlm的检测能力通常弱于yolo如何增强其定位和检测能力",
     "question": "为什么通用 VLM 的检测能力通常弱于 YOLO，如何增强其定位和检测能力？",
     "queueId": "xhs-daily-2026-06-23-646a5c9ac389",

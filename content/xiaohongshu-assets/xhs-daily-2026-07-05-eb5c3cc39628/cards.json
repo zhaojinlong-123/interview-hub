@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "百度｜多模态大模型",
+    "body": "公司：百度\n方向：多模态大模型\n题目：图文指令数据如何做质量分层，避免低质描述和错配样本拖累模型？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-eb5c3cc39628\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 图文指令数据如何做质量分层，避免低质描述和错配样本拖累模型？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-eb5c3cc39628\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "图文指令数据如何做质量分层，避免低质描述和错配样本拖累模型？",
+    "body": "图文数据质量可以从清晰度、图文一致性、信息密度、任务价值和安全合规五层筛选。低清、广告、水印、重复图和无关描述应先过滤；再用图文相似度、文字区域检查和人工抽检排除错配。高质量样本应描述具体对象、属性、数量、位置和关系，而不是只有“这是一张好看的图片”。指令数据还要覆盖问答、定位、比较、解释和拒答，避免模型只学会生成泛化描述。训练时可以对高质量样本加权，对噪声来源限额采样，并用验证集持续监控幻觉和细粒度能力。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-05-eb5c3cc39628\\03-answer.png"
+  }
+]

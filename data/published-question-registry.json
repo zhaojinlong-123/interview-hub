@@ -103,6 +103,21 @@
     "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
+    "key": "embodied_long_horizon:aa6c9c74479a",
+    "question": "机器人执行失败后，系统如何识别失败原因并选择重试、重规划或人工接管？",
+    "queueId": "xhs-daily-2026-07-06-06be44ea7253",
+    "featureId": "daily-2026-07-06-06be44ea7253",
+    "postId": "reserve-20260703-robot-failure-recovery",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-06T07:30:25.273Z"
+  },
+  {
     "key": "embodied_online_rl:005f655d4d6f",
     "question": "VLA 系统如何从 imitation learning 过渡到在线强化学习并控制安全风险？",
     "queueId": "xhs-daily-2026-06-15-680ffa613f61",

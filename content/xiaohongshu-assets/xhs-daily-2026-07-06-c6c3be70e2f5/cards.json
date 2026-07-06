@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "美团｜多模态大模型",
+    "body": "公司：美团\n方向：多模态大模型\n题目：移动端多模态模型为什么要做视觉特征压缩，如何避免压缩后丢失关键细节？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-c6c3be70e2f5\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 移动端多模态模型为什么要做视觉特征压缩，如何避免压缩后丢失关键细节？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-c6c3be70e2f5\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "移动端多模态模型为什么要做视觉特征压缩，如何避免压缩后丢失关键细节？",
+    "body": "移动端算力和内存有限，视觉 token 如果过多，会直接拉高编码耗时、上下文长度和功耗，所以必须压缩。压缩可以用池化、区域筛选、特征聚合、低分辨率全局图加局部高分辨率块等方式。避免丢细节的关键是不要盲目平均所有区域，而是保留文字、小目标、主体区域和用户问题相关区域。可以先用轻量检测或注意力分数找关键区域，再把这些区域送入高精度编码。评估要按任务分开看：普通场景描述可以强压缩，文字识别、商品属性和图表理解则需要保留更多局部信息。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-c6c3be70e2f5\\03-answer.png"
+  }
+]

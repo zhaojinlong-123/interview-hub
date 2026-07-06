@@ -508,6 +508,21 @@
     "updatedAt": "2026-06-26T16:08:40.537Z"
   },
   {
+    "key": "general:移动端多模态模型为什么要做视觉特征压缩如何避免压缩后丢失关键细节",
+    "question": "移动端多模态模型为什么要做视觉特征压缩，如何避免压缩后丢失关键细节？",
+    "queueId": "xhs-daily-2026-07-06-c6c3be70e2f5",
+    "featureId": "daily-2026-07-06-c6c3be70e2f5",
+    "postId": "reserve-20260703-meituan-mobile-vlm",
+    "title": "美团多模态理解题目精讲",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "sourcePlatform": "掘金",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-06T01:30:25.758Z"
+  },
+  {
     "key": "general:长上下文推理中位置外推注意力稀释和证据检索分别会带来什么问题",
     "question": "长上下文推理中，位置外推、注意力稀释和证据检索分别会带来什么问题？",
     "queueId": "xhs-daily-2026-07-05-0a7730b128bc",

@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-06-c6c3be70e2f5",
+    "date": "2026-07-06",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "reserve-20260703-meituan-mobile-vlm",
+    "title": "美团移动端多模态面经：轻量视觉语言模型",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 美团 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-03",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-06-c6c3be70e2f5.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-06T01:30:25.787Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-05-0a7730b128bc",
     "date": "2026-07-05",
     "slot": "afternoon",

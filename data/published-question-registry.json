@@ -193,6 +193,21 @@
     "updatedAt": "2026-07-03T12:16:48.992Z"
   },
   {
+    "key": "general:大模型面试复习时为什么要把训练推理数据和评测拆成四条线而不是只背模型结构",
+    "question": "大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+    "queueId": "xhs-daily-2026-07-07-7d3b697051bb",
+    "featureId": "daily-2026-07-07-7d3b697051bb",
+    "postId": "supplement-20260708-d5e9811ee0a8",
+    "title": "华为大模型面试复习时，为什么要…题目精讲",
+    "company": "华为",
+    "direction": "训练框架",
+    "sourcePlatform": "B站",
+    "sourceUrl": "https://www.bilibili.com/video/BV1kaDsBNEkJ/",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-08T13:52:33.930Z"
+  },
+  {
     "key": "general:大模型训练中为什么很多llm不再依赖dropout它和数据规模归一化残差结构有什么关系",
     "question": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
     "queueId": "xhs-daily-2026-06-19-e6147d4c454e",
@@ -598,6 +613,21 @@
     "updatedAt": "2026-06-24T11:17:24.320Z"
   },
   {
+    "key": "general:clipblip和qwenvl的训练目标与能力边界分别有什么不同",
+    "question": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "queueId": "xhs-daily-2026-07-07-e7456f7b12b3",
+    "featureId": "daily-2026-07-07-e7456f7b12b3",
+    "postId": "supplement-20260708-d66a87402c69",
+    "title": "百度CLIP、BLIP和Q…题目精讲",
+    "company": "百度",
+    "direction": "多模态大模型",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/713494385",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-08T13:52:01.031Z"
+  },
+  {
     "key": "general:moe中专家路由如何做负载均衡和专家容量控制为什么会出现专家塌缩",
     "question": "MoE 中专家路由如何做负载均衡和专家容量控制，为什么会出现专家塌缩？",
     "queueId": "xhs-daily-2026-06-23-76634ddfdcff",
@@ -703,6 +733,21 @@
     "updatedAt": "2026-06-20T03:11:12.244Z"
   },
   {
+    "key": "inference:1a8a3b1c8a5f",
+    "question": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "queueId": "xhs-daily-2026-07-08-d0a8e030c785",
+    "featureId": "daily-2026-07-08-d0a8e030c785",
+    "postId": "supplement-20260708-9d800fbece1b",
+    "title": "腾讯大模型推理服务如何在高并发…题目精讲",
+    "company": "腾讯",
+    "direction": "推理部署",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1997087164006155782",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-08T13:53:58.350Z"
+  },
+  {
     "key": "inference:3768f843ba28",
     "question": "KV cache、PagedAttention、continuous batching 和 speculative decoding 如何提升推理吞吐？",
     "queueId": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -716,6 +761,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "inference:497e998fb4d4",
+    "question": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "queueId": "xhs-daily-2026-07-08-9c6a5e53c421",
+    "featureId": "daily-2026-07-08-9c6a5e53c421",
+    "postId": "supplement-20260708-ae94cb5c9900",
+    "title": "美团多模态理解题目精讲",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "sourcePlatform": "掘金",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=202607082139168DD081ACD59893DC5ABE",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-08T13:53:17.667Z"
   },
   {
     "key": "inference:4fe50902c94e",

@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "腾讯｜推理部署",
+    "body": "公司：腾讯\n方向：推理部署\n题目：大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-d0a8e030c785\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-d0a8e030c785\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "body": "高并发推理服务要把请求准入、队列调度、显存管理和降级策略一起设计。吞吐依赖 batching、continuous batching、PagedAttention 和高 GPU 利用率；延迟依赖输入长度控制、prefill/decode 分离、优先级队列和超时机制；稳定性依赖显存水位保护、OOM 前拒绝新请求、异常重试、模型副本隔离和灰度发布。调度时要避免长上下文请求拖垮短请求，可以按输入长度、业务优先级和输出预算分队列。KV cache 是显存核心变量，需要监控每个请求的 token 数和剩余生成长度。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-d0a8e030c785\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "body": "线上还要有降级路径，例如切小模型、缩短上下文、关闭复杂工具、限制最大输出。指标上同时看 TTFT、TPOT、P95/P99、tokens/s、失败率和队列等待。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-d0a8e030c785\\04-answer.png"
+  }
+]

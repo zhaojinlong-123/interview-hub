@@ -1,5 +1,300 @@
 [
   {
+    "id": "xhs-daily-2026-07-09-1439d130f720",
+    "title": "美团多模态理解题目精讲",
+    "coverTitle": "美团面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "primaryQuestion": "多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+    "topic": "多模态理解",
+    "body": "每日精选：美团 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-07\n原文链接：https://zhuanlan.zhihu.com/p/2000170723654779295\n完整回答已拆成图卡，建议按顺序复习。\n#美团 #评测 #业务指标 #误差分析 #多模态 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2000170723654779295",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-09-1439d130f720.md",
+    "featureId": "daily-2026-07-09-1439d130f720",
+    "postId": "supplement-20260708-6dc9a77126a6",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-09-1439d130f720/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "美团｜多模态大模型",
+        "body": "公司：美团\n方向：多模态大模型\n题目：多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+        "body": "离线评测要先按业务任务拆能力，例如图文检索、OCR、商品属性、视频分类、风险识别、问答正确率和幻觉率。每个能力都要有代表性测试集，并按场景、类目、长尾、低质图片和高风险样本分桶。业务指标则可能是点击率、转化率、审核召回、误杀率、客服解决率或用户停留。关联二者的方式是建立任务链路：模型能力提升应该影响哪个中间指标，再影响哪个业务结果。例如 OCR 提升可能先提升商品属性覆盖率，再提升搜索相关性。上线前做 shadow test、人工抽检和 A/B 实验，记录失败样本回流。不能只用一个综合分，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+        "body": "因为综合分可能掩盖某个关键业务场景下降；也不能只看线上指标，否则难以定位模型具体能力短板。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-09T01:30:04.654Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-1439d130f720/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-1439d130f720/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-1439d130f720/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-1439d130f720/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-07-09T01:30:34.816Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-08-d0a8e030c785",
+    "title": "腾讯大模型推理服务如何在高并发…题目精讲",
+    "coverTitle": "腾讯面试题精讲",
+    "coverSubtitle": "推理部署 高频题",
+    "company": "腾讯",
+    "direction": "推理部署",
+    "primaryQuestion": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+    "topic": "大模型推理服务如何在高并发…",
+    "body": "每日精选：腾讯 推理部署题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-08\n原文链接：https://zhuanlan.zhihu.com/p/1997087164006155782\n完整回答已拆成图卡，建议按顺序复习。\n#腾讯 #推理部署 #稳定性 #调度 #降级 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-08",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1997087164006155782",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-08-d0a8e030c785.md",
+    "featureId": "daily-2026-07-08-d0a8e030c785",
+    "postId": "supplement-20260708-9d800fbece1b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-08-d0a8e030c785/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "腾讯｜推理部署",
+        "body": "公司：腾讯\n方向：推理部署\n题目：大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+        "body": "高并发推理服务要把请求准入、队列调度、显存管理和降级策略一起设计。吞吐依赖 batching、continuous batching、PagedAttention 和高 GPU 利用率；延迟依赖输入长度控制、prefill/decode 分离、优先级队列和超时机制；稳定性依赖显存水位保护、OOM 前拒绝新请求、异常重试、模型副本隔离和灰度发布。调度时要避免长上下文请求拖垮短请求，可以按输入长度、业务优先级和输出预算分队列。KV cache 是显存核心变量，需要监控每个请求的 token 数和剩余生成长度。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "大模型推理服务如何在高并发下同时保证吞吐、延迟和稳定性？",
+        "body": "线上还要有降级路径，例如切小模型、缩短上下文、关闭复杂工具、限制最大输出。指标上同时看 TTFT、TPOT、P95/P99、tokens/s、失败率和队列等待。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-08T13:53:30.035Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-d0a8e030c785/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-d0a8e030c785/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-d0a8e030c785/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-d0a8e030c785/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-08T13:53:58.350Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-08-9c6a5e53c421",
+    "title": "美团多模态理解题目精讲",
+    "coverTitle": "美团面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "美团",
+    "direction": "多模态大模型",
+    "primaryQuestion": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "topic": "多模态理解",
+    "body": "每日精选：美团 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-07-08\n原文链接：https://juejin.cn/post/7319663384097275942?searchId=202607082139168DD081ACD59893DC5ABE\n完整回答已拆成图卡，建议按顺序复习。\n#美团 #MobileVLM #端侧部署 #量化 #视觉压缩 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-07-08",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=202607082139168DD081ACD59893DC5ABE",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-08-9c6a5e53c421.md",
+    "featureId": "daily-2026-07-08-9c6a5e53c421",
+    "postId": "supplement-20260708-ae94cb5c9900",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-08-9c6a5e53c421/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "美团｜多模态大模型",
+        "body": "公司：美团\n方向：多模态大模型\n题目：端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+        "body": "端侧 MobileVLM 的关键是把视觉和语言两部分都做轻量化。视觉侧可以使用更小的 encoder、低分辨率输入、局部重要区域裁剪和 token 压缩，避免把大量 patch token 送进 LLM。语言侧需要选择小参数模型，并配合 INT8/INT4 量化、KV cache 管理、算子融合和推理引擎优化。为了不明显损失效果，训练时通常用大模型蒸馏小模型，把大 VLM 的答案、推理过程或中间视觉语义迁移到端侧模型；同时保留 OCR、小目标等 hard case 的高质量样本。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+        "body": "部署时要分阶段测量图像预处理、vision encoder、prefill、decode 的延迟，不能只看总耗时。实际产品还会设置任务分级：简单识别本地完成，复杂推理转云端或降级处理。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-08T13:52:55.975Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-9c6a5e53c421/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-9c6a5e53c421/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-9c6a5e53c421/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-08-9c6a5e53c421/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-08T13:53:17.667Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-07-e7456f7b12b3",
+    "title": "百度CLIP、BLIP和Q…题目精讲",
+    "coverTitle": "百度面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "百度",
+    "direction": "多模态大模型",
+    "primaryQuestion": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "topic": "CLIP、BLIP 和 Q…",
+    "body": "每日精选：百度 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-07\n原文链接：https://zhuanlan.zhihu.com/p/713494385\n完整回答已拆成图卡，建议按顺序复习。\n#百度 #CLIP #BLIP #Qwen-VL #VLM #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/713494385",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-07-e7456f7b12b3.md",
+    "featureId": "daily-2026-07-07-e7456f7b12b3",
+    "postId": "supplement-20260708-d66a87402c69",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-07-e7456f7b12b3/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "百度｜多模态大模型",
+        "body": "公司：百度\n方向：多模态大模型\n题目：CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+        "body": "CLIP 是双塔对比学习模型，核心目标是让匹配的图文向量接近、不匹配的远离，擅长检索和零样本分类，但生成和细粒度推理弱。BLIP 在图文理解和生成之间做了更多桥接，既能做 caption/VQA，也关注数据过滤和生成式目标；BLIP-2 用 Q-Former 把视觉特征压缩成少量 query token 接入 LLM，参数效率更高。Qwen-VL 类模型直接围绕强 LLM 构建视觉语言能力，重点是图像/视频输入、OCR、grounding、多轮对话和工具式任务。能力边界上，CLIP 更像通用视觉语义表征，BLIP",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+        "body": "更像视觉语言桥接方案，Qwen-VL 更像可交互的多模态助手。面试回答要把训练目标、模型结构、数据类型和适用任务一起讲清楚。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-08T13:51:39.205Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-e7456f7b12b3/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-e7456f7b12b3/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-e7456f7b12b3/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-e7456f7b12b3/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-08T13:52:01.031Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-07-7d3b697051bb",
+    "title": "华为大模型面试复习时，为什么要…题目精讲",
+    "coverTitle": "华为面试题精讲",
+    "coverSubtitle": "训练框架 高频题",
+    "company": "华为",
+    "direction": "训练框架",
+    "primaryQuestion": "大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+    "topic": "大模型面试复习时，为什么要…",
+    "body": "每日精选：华为 训练框架题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-07-07\n原文链接：https://www.bilibili.com/video/BV1kaDsBNEkJ/\n完整回答已拆成图卡，建议按顺序复习。\n#华为 #训练 #推理 #评测 #大模型面试 #训练框架 #AI学习",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://www.bilibili.com/video/BV1kaDsBNEkJ/",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-07-7d3b697051bb.md",
+    "featureId": "daily-2026-07-07-7d3b697051bb",
+    "postId": "supplement-20260708-d5e9811ee0a8",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-07-7d3b697051bb/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "华为｜训练框架",
+        "body": "公司：华为\n方向：训练框架\n题目：大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+        "body": "真实大模型岗位不只考 Transformer 结构，而是考能否把模型做出来、训稳定、部署稳、评估准。训练线关注数据配比、优化器、学习率、混合精度、并行和稳定性；推理线关注 KV cache、batch 调度、量化、吞吐、延迟和服务降级；数据线关注清洗、去重、质量分层、指令构造和安全过滤；评测线关注离线 benchmark、业务指标、误差分析和回归测试。只背模型结构容易答成概念罗列，遇到“线上延迟高怎么办”“loss spike 怎么查”“数据污染怎么防”就会断。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "大模型面试复习时，为什么要把训练、推理、数据和评测拆成四条线，而不是只背模型结构？",
+        "body": "结构化复习可以把每个问题落到瓶颈、指标、排查路径和工程取舍上，更接近面试官真实关注点。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-08T13:52:12.314Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-7d3b697051bb/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-7d3b697051bb/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-7d3b697051bb/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-07-7d3b697051bb/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-08T13:52:33.930Z"
+  },
+  {
     "id": "xhs-daily-2026-07-06-c6c3be70e2f5",
     "title": "美团多模态理解题目精讲",
     "coverTitle": "美团面试题精讲",

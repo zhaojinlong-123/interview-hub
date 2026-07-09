@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "百度｜多模态大模型",
+    "body": "公司：百度\n方向：多模态大模型\n题目：CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-07-e7456f7b12b3\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-07-e7456f7b12b3\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "body": "CLIP 是双塔对比学习模型，核心目标是让匹配的图文向量接近、不匹配的远离，擅长检索和零样本分类，但生成和细粒度推理弱。BLIP 在图文理解和生成之间做了更多桥接，既能做 caption/VQA，也关注数据过滤和生成式目标；BLIP-2 用 Q-Former 把视觉特征压缩成少量 query token 接入 LLM，参数效率更高。Qwen-VL 类模型直接围绕强 LLM 构建视觉语言能力，重点是图像/视频输入、OCR、grounding、多轮对话和工具式任务。能力边界上，CLIP 更像通用视觉语义表征，BLIP",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-07-e7456f7b12b3\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "CLIP、BLIP 和 Qwen-VL 的训练目标与能力边界分别有什么不同？",
+    "body": "更像视觉语言桥接方案，Qwen-VL 更像可交互的多模态助手。面试回答要把训练目标、模型结构、数据类型和适用任务一起讲清楚。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-07-e7456f7b12b3\\04-answer.png"
+  }
+]

@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-07-09-5a960434fb10",
+    "date": "2026-07-09",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "supplement-20260708-3c0c94f29b7b",
+    "title": "模型部署面经：Prefill 与 Decode 拆解",
+    "company": "综合",
+    "direction": "推理部署",
+    "score": 53,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 推理部署 / 推理优化 +12",
+      "稀缺方向 推理优化 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-09-5a960434fb10.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-09T07:30:27.620Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-09-1439d130f720",
     "date": "2026-07-09",
     "slot": "morning",

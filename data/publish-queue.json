@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-07-09-5a960434fb10",
+    "title": "综合大模型线上推理为什么要把…题目精讲",
+    "coverTitle": "推理部署面试题精讲",
+    "coverSubtitle": "推理部署 高频题",
+    "company": "综合",
+    "direction": "推理部署",
+    "primaryQuestion": "大模型线上推理为什么要把 prefill 和 decode 分开优化，二者瓶颈分别是什么？",
+    "topic": "大模型线上推理为什么要把 …",
+    "body": "每日精选：综合 推理部署题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/zhangzhentiyes/article/details/146966643?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=\n完整回答已拆成图卡，建议按顺序复习。\n#部署 #prefill #decode #TTFT #TPOT #综合 #推理部署 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966643?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-09-5a960434fb10.md",
+    "featureId": "daily-2026-07-09-5a960434fb10",
+    "postId": "supplement-20260708-3c0c94f29b7b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-09-5a960434fb10/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜推理部署",
+        "body": "公司：综合\n方向：推理部署\n题目：大模型线上推理为什么要把 prefill 和 decode 分开优化，二者瓶颈分别是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 大模型线上推理为什么要把 prefill 和 decode 分开优化，二者瓶颈分别是什么？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "大模型线上推理为什么要把 prefill 和 decode 分开优化，二者瓶颈分别是什么？",
+        "body": "Prefill 阶段处理整段输入上下文，主要瓶颈是大矩阵计算、注意力计算和输入 token 长度，因此影响首 token 延迟 TTFT。Decode 阶段每次生成一个或少量 token，主要瓶颈是 KV cache 读写、batch 调度和小矩阵计算效率，因此影响 TPOT 和吞吐。二者优化策略不同：prefill 适合 chunked prefill、prefix cache、输入长度控制和高效 attention；decode 适合 continuous batching、PagedAttention、KV",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "大模型线上推理为什么要把 prefill 和 decode 分开优化，二者瓶颈分别是什么？",
+        "body": "cache 压缩、speculative decoding 和更好的调度。线上系统还要区分长输入短输出、短输入长输出、多轮对话和批量离线任务。只看总延迟容易误判瓶颈，必须分别监控 TTFT、TPOT、tokens/s、显存水位和队列等待。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-09T07:30:05.789Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-5a960434fb10/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-5a960434fb10/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-5a960434fb10/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-09-5a960434fb10/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-09T07:30:27.609Z"
+  },
+  {
     "id": "xhs-daily-2026-07-09-1439d130f720",
     "title": "美团多模态理解题目精讲",
     "coverTitle": "美团面试题精讲",

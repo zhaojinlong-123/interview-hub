@@ -673,6 +673,21 @@
     "updatedAt": "2026-06-18T10:54:25.642Z"
   },
   {
+    "key": "general:qwenvl类模型把图像接入llm时为什么需要控制视觉token数量和位置编码",
+    "question": "Qwen-VL 类模型把图像接入 LLM 时，为什么需要控制视觉 token 数量和位置编码？",
+    "queueId": "xhs-daily-2026-07-10-afcbf0c98af2",
+    "featureId": "daily-2026-07-10-afcbf0c98af2",
+    "postId": "supplement-20260708-95c7f37352a5",
+    "title": "QwenQwen-VL类模型把图…题目精",
+    "company": "Qwen",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/weixin_31588979/article/details/160087360?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-10T01:30:26.989Z"
+  },
+  {
     "key": "general:qwenvl类视觉语言模型如何把图像特征接入语言模型训练流程通常分哪几步",
     "question": "Qwen-VL 类视觉语言模型如何把图像特征接入语言模型，训练流程通常分哪几步？",
     "queueId": "xhs-daily-2026-06-21-ace65c5012f2",

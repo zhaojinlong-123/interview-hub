@@ -1,5 +1,33 @@
 [
   {
+    "id": "daily-2026-07-10-3d4bd76a8df5",
+    "date": "2026-07-10",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "supplement-20260708-b2a7e4c89065",
+    "title": "训练稳定性面经：loss spike 定位",
+    "company": "综合",
+    "direction": "训练框架",
+    "score": 47,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 训练框架 +6",
+      "稀缺方向 训练框架 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885374?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-10-3d4bd76a8df5.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-07-10-afcbf0c98af2",
     "date": "2026-07-10",
     "slot": "morning",

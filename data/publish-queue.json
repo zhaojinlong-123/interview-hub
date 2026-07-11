@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-07-11-1f0f8ba06b7b",
+    "title": "阿里多模态理解题目精讲",
+    "coverTitle": "阿里面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "primaryQuestion": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+    "topic": "多模态理解",
+    "body": "每日精选：阿里 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/2401_85592132/article/details/151260542?ops_request_misc=&request_id=&biz_id=102\n完整回答已拆成图卡，建议按顺序复习。\n#阿里云 #VLM #预训练 #指令微调 #偏好对齐 #阿里 #多模态大模型 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/2401_85592132/article/details/151260542?ops_request_misc=&request_id=&biz_id=102",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-11-1f0f8ba06b7b.md",
+    "featureId": "daily-2026-07-11-1f0f8ba06b7b",
+    "postId": "supplement-20260708-9944dfdeedf3",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "阿里｜多模态大模型",
+        "body": "公司：阿里\n方向：多模态大模型\n题目：VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+        "body": "图文预训练主要解决视觉表征和语言语义的基础对齐，让模型知道图像内容如何映射到文本空间，常用 caption、图文对比、图文匹配或生成式目标。指令微调让模型学会按用户问题完成任务，例如 OCR、VQA、grounding、多图比较、视频问答和拒答；它强调任务格式、证据使用和多轮交互。偏好对齐进一步优化回答风格、安全边界、幻觉控制和人类偏好，例如回答更简洁、引用证据、不确定时不乱猜。三个阶段的数据质量侧重点不同：预训练看规模和覆盖，指令微调看任务多样性和答案可靠性，偏好对齐看偏好对是否能真实反映好坏。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+        "body": "不能跳过前两阶段直接做偏好，否则模型可能只是语言风格更像答案，但视觉证据利用不足。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-11T01:30:05.187Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-07-11T01:30:34.147Z"
+  },
+  {
     "id": "xhs-daily-2026-07-10-afcbf0c98af2",
     "title": "QwenQwen-VL类模型把图…题目精",
     "coverTitle": "Qwen面试题精讲",

@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-11-1f0f8ba06b7b",
+    "date": "2026-07-11",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "supplement-20260708-9944dfdeedf3",
+    "title": "阿里云多模态三面：VLM 训练阶段拆解",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 阿里 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/2401_85592132/article/details/151260542?ops_request_misc=&request_id=&biz_id=102",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-11-1f0f8ba06b7b.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-07-10-3d4bd76a8df5",
     "date": "2026-07-10",
     "slot": "afternoon",

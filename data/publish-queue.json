@@ -1,5 +1,123 @@
 [
   {
+    "id": "xhs-daily-2026-07-12-61ad44f10edf",
+    "title": "阿里多模态理解题目精讲",
+    "coverTitle": "阿里面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "primaryQuestion": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "topic": "多模态理解",
+    "body": "每日精选：阿里 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/2201_75499313/article/details/146128971?ops_request_misc=&request_id=&biz_id=102\n完整回答已拆成图卡，建议按顺序复习。\n#阿里 #淘天 #电商 #多模态数据 #SFT #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/2201_75499313/article/details/146128971?ops_request_misc=&request_id=&biz_id=102",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-12-61ad44f10edf.md",
+    "featureId": "daily-2026-07-12-61ad44f10edf",
+    "postId": "supplement-20260708-75dd75847035",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "阿里｜多模态大模型",
+        "body": "公司：阿里\n方向：多模态大模型\n题目：电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+        "body": "电商多模态指令数据要围绕真实业务任务构造，而不是只做通用看图说话。样本可以分为商品属性抽取、图文一致性判断、卖点生成、相似商品比较、搭配推荐、违规内容识别和用户问题回答。每条数据最好绑定图片区域、标题、类目、属性表、OCR、评论或问答上下文，避免答案只来自文本泄漏。质量分层很关键：高质量人工标注和专家规则样本用于核心能力，弱标注和合成样本用于覆盖长尾，但要经过图文匹配、属性一致性和敏感内容过滤。用户意图侧要覆盖搜索、购买决策、售后咨询和风格偏好。评估时按类目、价格段、图像质量和长尾属性分桶，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+        "body": "检查模型是否能在图像证据不足时表达不确定，而不是编造属性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-12T01:30:04.545Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
+    "updatedAt": "2026-07-12T01:30:32.671Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-11-6392b6853d00",
+    "title": "综合大模型训练数据版本迭代时，…题目精讲",
+    "coverTitle": "训练框架面试题精讲",
+    "coverSubtitle": "训练框架 高频题",
+    "company": "综合",
+    "direction": "训练框架",
+    "primaryQuestion": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "topic": "大模型训练数据版本迭代时，…",
+    "body": "每日精选：综合 训练框架题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-11\n原文链接：https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=\n完整回答已拆成图卡，建议按顺序复习。\n#训练数据 #数据治理 #回归评测 #质量过滤 #训练框架 #综合 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-11",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-11-6392b6853d00.md",
+    "featureId": "daily-2026-07-11-6392b6853d00",
+    "postId": "supplement-20260711-65cf3bedbbad",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-11-6392b6853d00/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜训练框架",
+        "body": "公司：综合\n方向：训练框架\n题目：大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+        "body": "训练数据迭代必须像代码一样做版本治理。首先要给每批样本记录来源、采集时间、授权状态、清洗规则、去重阈值、质量分、领域标签和过滤原因，保证后续能追溯“这条数据为什么进入训练集”。其次，每次数据变更都要生成数据 diff，例如新增了哪些领域、删除了哪些低质样本、重复率和长度分布如何变化，避免只看总量。训练前要跑小规模试训或 replay，观察 loss、梯度、困惑度和关键能力集表现；训练后要做回归评测，覆盖通用能力、目标领域、安全、事实性、代码/数学、多模态或业务 hard case。若新数据带来能力退化，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+        "body": "要能回滚到上一个数据版本，并通过分桶评测定位是某个来源、某类模板化样本还是过滤规则出了问题。工程上还应把数据版本、模型 checkpoint、训练配置和评测报告绑定，形成可审计链路。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-11T08:53:17.184Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-6392b6853d00/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-6392b6853d00/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-6392b6853d00/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-11-6392b6853d00/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-11T08:53:38.660Z"
+  },
+  {
     "id": "xhs-daily-2026-07-11-1f0f8ba06b7b",
     "title": "阿里多模态理解题目精讲",
     "coverTitle": "阿里面试题精讲",
@@ -46,17 +164,17 @@
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
-    "createdAt": "2026-07-11T01:30:05.187Z",
+    "createdAt": "2026-07-11T08:52:43.592Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-11-1f0f8ba06b7b/04-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-07-11T01:30:34.147Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-11T08:53:05.045Z"
   },
   {
     "id": "xhs-daily-2026-07-10-afcbf0c98af2",
@@ -164,17 +282,17 @@
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
-    "createdAt": "2026-07-10T07:30:05.682Z",
+    "createdAt": "2026-07-11T08:52:04.087Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-07-10-3d4bd76a8df5/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-10-3d4bd76a8df5/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-10-3d4bd76a8df5/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-10-3d4bd76a8df5/04-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-07-10T07:30:34.538Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-11T08:52:32.366Z"
   },
   {
     "id": "xhs-daily-2026-07-09-5a960434fb10",

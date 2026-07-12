@@ -15,6 +15,21 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "data:271a1e3ca023",
+    "question": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
+    "queueId": "xhs-daily-2026-07-11-1f0f8ba06b7b",
+    "featureId": "daily-2026-07-11-1f0f8ba06b7b",
+    "postId": "supplement-20260708-9944dfdeedf3",
+    "title": "阿里多模态理解题目精讲",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/2401_85592132/article/details/151260542?ops_request_misc=&request_id=&biz_id=102",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-11T08:53:05.045Z"
+  },
+  {
     "key": "data:92d0f41c6f60",
     "question": "图文/视频指令微调数据如何构造，如何控制噪声、偏见和 OCR 泄漏？",
     "queueId": "xhs-daily-2026-06-13-c026b29d4659",
@@ -221,6 +236,36 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-07-09T07:30:27.609Z"
+  },
+  {
+    "key": "general:大模型训练数据版本迭代时如何记录样本来源过滤规则和评测回归避免新数据引入能力退化",
+    "question": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "queueId": "xhs-daily-2026-07-11-6392b6853d00",
+    "featureId": "daily-2026-07-11-6392b6853d00",
+    "postId": "supplement-20260711-65cf3bedbbad",
+    "title": "综合大模型训练数据版本迭代时，…题目精讲",
+    "company": "综合",
+    "direction": "训练框架",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-11T08:53:38.660Z"
+  },
+  {
+    "key": "general:大模型训练中出现lossspike时如何区分数据异常数值不稳定和并行通信问题",
+    "question": "大模型训练中出现 loss spike 时，如何区分数据异常、数值不稳定和并行通信问题？",
+    "queueId": "xhs-daily-2026-07-10-3d4bd76a8df5",
+    "featureId": "daily-2026-07-10-3d4bd76a8df5",
+    "postId": "supplement-20260708-b2a7e4c89065",
+    "title": "综合训练框架/显存优化题目精讲",
+    "company": "综合",
+    "direction": "训练框架",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885374?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-11T08:52:32.366Z"
   },
   {
     "key": "general:大模型训练中为什么很多llm不再依赖dropout它和数据规模归一化残差结构有什么关系",

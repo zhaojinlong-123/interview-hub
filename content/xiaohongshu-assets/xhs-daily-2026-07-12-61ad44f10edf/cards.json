@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "阿里｜多模态大模型",
+    "body": "公司：阿里\n方向：多模态大模型\n题目：电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-12-61ad44f10edf\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-12-61ad44f10edf\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "body": "电商多模态指令数据要围绕真实业务任务构造，而不是只做通用看图说话。样本可以分为商品属性抽取、图文一致性判断、卖点生成、相似商品比较、搭配推荐、违规内容识别和用户问题回答。每条数据最好绑定图片区域、标题、类目、属性表、OCR、评论或问答上下文，避免答案只来自文本泄漏。质量分层很关键：高质量人工标注和专家规则样本用于核心能力，弱标注和合成样本用于覆盖长尾，但要经过图文匹配、属性一致性和敏感内容过滤。用户意图侧要覆盖搜索、购买决策、售后咨询和风格偏好。评估时按类目、价格段、图像质量和长尾属性分桶，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-12-61ad44f10edf\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "body": "检查模型是否能在图像证据不足时表达不确定，而不是编造属性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-12-61ad44f10edf\\04-answer.png"
+  }
+]

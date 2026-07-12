@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜训练框架",
+    "body": "公司：综合\n方向：训练框架\n题目：大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-11-6392b6853d00\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-11-6392b6853d00\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "body": "训练数据迭代必须像代码一样做版本治理。首先要给每批样本记录来源、采集时间、授权状态、清洗规则、去重阈值、质量分、领域标签和过滤原因，保证后续能追溯“这条数据为什么进入训练集”。其次，每次数据变更都要生成数据 diff，例如新增了哪些领域、删除了哪些低质样本、重复率和长度分布如何变化，避免只看总量。训练前要跑小规模试训或 replay，观察 loss、梯度、困惑度和关键能力集表现；训练后要做回归评测，覆盖通用能力、目标领域、安全、事实性、代码/数学、多模态或业务 hard case。若新数据带来能力退化，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-11-6392b6853d00\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "大模型训练数据版本迭代时，如何记录样本来源、过滤规则和评测回归，避免新数据引入能力退化？",
+    "body": "要能回滚到上一个数据版本，并通过分桶评测定位是某个来源、某类模板化样本还是过滤规则出了问题。工程上还应把数据版本、模型 checkpoint、训练配置和评测报告绑定，形成可审计链路。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-11-6392b6853d00\\04-answer.png"
+  }
+]

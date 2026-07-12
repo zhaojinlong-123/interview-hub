@@ -1,5 +1,63 @@
 [
   {
+    "id": "daily-2026-07-12-61ad44f10edf",
+    "date": "2026-07-12",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "supplement-20260708-75dd75847035",
+    "title": "阿里淘天多模态面经：商品理解数据构造",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 阿里 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/2201_75499313/article/details/146128971?ops_request_misc=&request_id=&biz_id=102",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-12-61ad44f10edf.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
+    "id": "daily-2026-07-11-6392b6853d00",
+    "date": "2026-07-11",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "supplement-20260711-65cf3bedbbad",
+    "title": "训练数据面经：版本治理与回归评测",
+    "company": "综合",
+    "direction": "训练框架",
+    "score": 47,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 训练框架 +6",
+      "稀缺方向 训练框架 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/145885529?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-11",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-11-6392b6853d00.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-11T08:53:38.671Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-11-1f0f8ba06b7b",
     "date": "2026-07-11",
     "slot": "morning",
@@ -24,10 +82,10 @@
     "sourceDate": "2026-07-07",
     "articlePath": "content/xiaohongshu-drafts/2026-07-11-1f0f8ba06b7b.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-07-11T08:53:05.062Z"
   },
   {
     "id": "daily-2026-07-10-3d4bd76a8df5",
@@ -52,10 +110,10 @@
     "sourceDate": "2026-07-07",
     "articlePath": "content/xiaohongshu-drafts/2026-07-10-3d4bd76a8df5.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-07-11T08:52:32.379Z"
   },
   {
     "id": "daily-2026-07-10-afcbf0c98af2",

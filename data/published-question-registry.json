@@ -283,6 +283,36 @@
     "updatedAt": "2026-06-20T03:11:48.018Z"
   },
   {
+    "key": "general:电商场景的多模态指令数据如何构造才能覆盖商品属性图文一致性和用户意图",
+    "question": "电商场景的多模态指令数据如何构造，才能覆盖商品属性、图文一致性和用户意图？",
+    "queueId": "xhs-daily-2026-07-12-61ad44f10edf",
+    "featureId": "daily-2026-07-12-61ad44f10edf",
+    "postId": "supplement-20260708-75dd75847035",
+    "title": "阿里多模态理解题目精讲",
+    "company": "阿里",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/2201_75499313/article/details/146128971?ops_request_misc=&request_id=&biz_id=102",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-12T14:37:42.246Z"
+  },
+  {
+    "key": "general:电商多模态模型如何同时建模商品图片标题属性和用户行为避免只学到热门偏置",
+    "question": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "queueId": "xhs-daily-2026-07-13-57902de794b4",
+    "featureId": "daily-2026-07-13-57902de794b4",
+    "postId": "supplement-20260708-991575ae9298",
+    "title": "字节多模态理解题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/824e9694564848f7a56bc9131ff2ceec",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-13T01:30:26.330Z"
+  },
+  {
     "key": "general:动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍",
     "question": "动态图像分辨率与局部切图如何在细粒度识别和推理成本之间取舍？",
     "queueId": "xhs-daily-2026-07-02-e98143006c7f",
@@ -866,6 +896,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-27T07:30:33.782Z"
+  },
+  {
+    "key": "inference:6ede7f6b5db9",
+    "question": "线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV cache 四个层面排查？",
+    "queueId": "xhs-daily-2026-07-12-991bf07d9a12",
+    "featureId": "daily-2026-07-12-991bf07d9a12",
+    "postId": "supplement-20260712-c8f3579ad4e9",
+    "title": "综合KVCache/推理加速题目精讲",
+    "company": "综合",
+    "direction": "推理部署",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-12T14:40:21.676Z"
   },
   {
     "key": "inference:98d03fc54828",

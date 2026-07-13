@@ -1,5 +1,131 @@
 [
   {
+    "id": "xhs-daily-2026-07-13-57902de794b4",
+    "title": "字节多模态理解题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "primaryQuestion": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "topic": "多模态理解",
+    "body": "每日精选：字节 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-07\n原文链接：https://www.nowcoder.com/feed/main/detail/824e9694564848f7a56bc9131ff2ceec\n完整回答已拆成图卡，建议按顺序复习。\n#字节 #电商 #多模态 #商品理解 #检索 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/824e9694564848f7a56bc9131ff2ceec",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-13-57902de794b4.md",
+    "featureId": "daily-2026-07-13-57902de794b4",
+    "postId": "supplement-20260708-991575ae9298",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-13-57902de794b4/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "字节｜多模态大模型",
+        "body": "公司：字节\n方向：多模态大模型\n题目：电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+        "body": "电商多模态建模通常分两层：先用图片、标题、类目、属性、OCR 和详情文本学习商品表征，再把点击、收藏、加购、成交、停留时长等用户行为作为监督信号用于召回或排序。为了避免热门偏置，训练时不能只把点击当正样本，因为曝光越多的商品天然点击多；需要加入曝光日志做反事实校正，按位置、流量入口、价格段和类目分桶采样。图片侧要保留款式、颜色、材质、logo、场景等细粒度属性，文本侧要清洗营销噪声和属性缺失。负样本应包含同类相似商品、相同标题不同图片、相同图片不同属性等 hard negative。评估要分整体指标和长尾指标，看",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+        "body": "NDCG、Recall、属性一致性、跨模态检索准确率，以及新品和低曝光商品的泛化效果。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-13T01:30:04.429Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-13-57902de794b4/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-13-57902de794b4/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-13-57902de794b4/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-13-57902de794b4/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-13T01:30:26.330Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-12-991bf07d9a12",
+    "title": "综合KVCache/推理加速题目精讲",
+    "coverTitle": "推理部署面试题精讲",
+    "coverSubtitle": "推理部署 高频题",
+    "company": "综合",
+    "direction": "推理部署",
+    "primaryQuestion": "线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV cache 四个层面排查？",
+    "topic": "KV Cache / 推理加速",
+    "body": "每日精选：综合 推理部署题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-12\n原文链接：https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=\n完整回答已拆成图卡，建议按顺序复习。\n#推理部署 #P99 #prefill #decode #KVcache #综合 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-12",
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-12-991bf07d9a12.md",
+    "featureId": "daily-2026-07-12-991bf07d9a12",
+    "postId": "supplement-20260712-c8f3579ad4e9",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜推理部署",
+        "body": "公司：综合\n方向：推理部署\n题目：线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV cache 四个层面排查？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV cache 四个层面排查？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV c…",
+        "body": "P99 升高但平均延迟正常，通常说明少量请求被长尾拖慢，而不是整体算力完全不足。第一层先看队列：是否有长上下文或高优先级请求占用 batch，是否存在 head-of-line blocking，队列等待时间是否在 P99 上放大。第二层看 prefill：长输入、prefix cache 未命中、chunked prefill 设置不合理，都会让首 token 延迟抬高；要按输入长度分桶看 TTFT。第三层看 decode：输出很长、continuous batching 调度不公平、单步 batch token",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV c…",
+        "body": "过大，会导致部分请求 TPOT 变差。第四层看 KV cache：显存水位高、碎片多、PagedAttention block 回收慢或 KV 量化/eviction 策略异常，都可能让少数请求等待资源。排查时不要只看平均 tokens/s，要同时记录队列等待、TTFT、TPOT、active sequence 数、batch token、KV cache 使用率、OOM/重试和不同长度分桶的 P95/P99。解决上可以做请求分级、长短请求隔离、限制最大上下文、开启 prefix cache、优化 chunked",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-3",
+        "title": "线上推理出现 P99 延迟升高但平均延迟正常时，应该如何从队列、prefill、decode 和 KV c…",
+        "body": "prefill、调整 batch token 上限和显存水位保护。 回答这类线上推理问题时，先把链路拆成排队、prefill、decode、KV cache 和调度策略，再用 TTFT、TPOT、P95/P99、batch token、active sequence、显存水位这些指标定位瓶颈。不要只说“加机器”或“调 batch”，要说明为什么长尾请求会影响 P99，以及怎样通过长短请求隔离、限流、prefix cache、chunked prefill 和 KV 管理降低长尾。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-12T14:39:59.795Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/04-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-12-991bf07d9a12/05-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-12T14:40:21.676Z"
+  },
+  {
     "id": "xhs-daily-2026-07-12-61ad44f10edf",
     "title": "阿里多模态理解题目精讲",
     "coverTitle": "阿里面试题精讲",
@@ -46,17 +172,17 @@
         "footer": "机制 -> 取舍 -> 坑 -> 指标"
       }
     ],
-    "createdAt": "2026-07-12T01:30:04.545Z",
+    "createdAt": "2026-07-12T14:37:13.543Z",
     "imageCardFiles": [
       "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/01-cover.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/02-questions.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/03-answer.png",
       "content/xiaohongshu-assets/xhs-daily-2026-07-12-61ad44f10edf/04-answer.png"
     ],
-    "status": "manual_required",
-    "reason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
-    "updatedAt": "2026-07-12T01:30:32.671Z"
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-12T14:37:42.246Z"
   },
   {
     "id": "xhs-daily-2026-07-11-6392b6853d00",

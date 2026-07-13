@@ -1,5 +1,64 @@
 [
   {
+    "id": "daily-2026-07-13-57902de794b4",
+    "date": "2026-07-13",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "supplement-20260708-991575ae9298",
+    "title": "字节抖音电商多模态面经：商品图文理解",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 字节 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/824e9694564848f7a56bc9131ff2ceec",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-13-57902de794b4.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-13T01:30:26.360Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
+    "id": "daily-2026-07-12-991bf07d9a12",
+    "date": "2026-07-12",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "supplement-20260712-c8f3579ad4e9",
+    "title": "推理部署面经：P99 延迟排查",
+    "company": "综合",
+    "direction": "推理部署",
+    "score": 49,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 推理部署 +6",
+      "稀缺方向 推理优化 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4",
+      "同日方向避开上午多模态 +2"
+    ],
+    "sourceUrl": "https://blog.csdn.net/zhangzhentiyes/article/details/146966952?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-12",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-12-991bf07d9a12.md",
+    "target": "xiaohongshu",
+    "publishStatus": "published",
+    "autoPublish": true,
+    "publishedAt": "2026-07-12T14:40:21.693Z",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-07-12-61ad44f10edf",
     "date": "2026-07-12",
     "slot": "morning",
@@ -24,10 +83,10 @@
     "sourceDate": "2026-07-07",
     "articlePath": "content/xiaohongshu-drafts/2026-07-12-61ad44f10edf.md",
     "target": "xiaohongshu",
-    "publishStatus": "manual_required",
+    "publishStatus": "published",
     "autoPublish": true,
-    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
-    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "publishedAt": "2026-07-12T14:37:42.299Z"
   },
   {
     "id": "daily-2026-07-11-6392b6853d00",

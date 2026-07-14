@@ -1,5 +1,35 @@
 [
   {
+    "id": "daily-2026-07-14-cbe93227e0cd",
+    "date": "2026-07-14",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "supplement-20260708-8f3daf49a807",
+    "title": "百度多模态算法面经：图文对齐失败排查",
+    "company": "百度",
+    "direction": "多模态大模型",
+    "score": 79,
+    "reasons": [
+      "近期性 +22",
+      "重点方向 多模态大模型 +6",
+      "明确公司来源 百度 +18",
+      "大厂/重点机构 +14",
+      "稀缺方向 多模态 +4",
+      "高频问题 1 个 +5",
+      "有来源链接 +6",
+      "标签信息完整 +4"
+    ],
+    "sourceUrl": "https://www.nowcoder.com/discuss/878600528970735616",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-07",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-14-cbe93227e0cd.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "已点击发布，但未检测到成功标记，请人工确认",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image"
+  },
+  {
     "id": "daily-2026-07-13-57902de794b4",
     "date": "2026-07-13",
     "slot": "morning",

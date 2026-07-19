@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "智元机器人｜VLA / 具身智能",
+    "body": "公司：智元机器人\n方向：VLA / 具身智能\n题目：VLA 如何把语言中的对象、部位和空间关系 grounding 到 3D 场景，并生成可执行动作？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-d0c23227adf2\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 如何把语言中的对象、部位和空间关系 grounding 到 3D 场景，并生成可执行动作？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-d0c23227adf2\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "VLA 如何把语言中的对象、部位和空间关系 grounding 到 3D 场景，并生成可执行动作？",
+    "body": "语言 grounding 到 3D 场景要分三步：先把语言里的对象、属性、部位和空间关系解析出来，例如“把左边桌上的红杯子放到水槽旁”；再把这些概念和视觉/点云中的实例、位姿、可操作部位对齐；最后把目标状态转成可执行的抓取、移动和放置动作。2D VLM 只能看到图像平面，容易在遮挡、深度和可达性上出错，所以具身系统通常需要深度、点云、相机外参和机器人本体状态。affordance 很关键：不是识别出杯子就能抓，还要知道哪里可抓、是否被遮挡、当前夹爪是否能到达。动作生成前要做碰撞检测、逆运动学和轨迹约束，必要时让",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-d0c23227adf2\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 如何把语言中的对象、部位和空间关系 grounding 到 3D 场景，并生成可执行动作？",
+    "body": "VLA 输出中间表征，如目标物体、目标位姿、抓取点和约束条件，而不是直接输出关节角。评估要覆盖语言定位准确率、3D 位姿误差、抓取成功率、空间关系满足率和遮挡场景泛化。 面试里不要停在概念层。更好的回答方式是把这道题和真实机器人系统挂钩：数据从哪里来，模型在链路里输出什么，低层控制如何兜底，失败样本如何回流，最终用什么指标判断是否真的可落地。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-d0c23227adf2\\04-answer.png"
+  }
+]

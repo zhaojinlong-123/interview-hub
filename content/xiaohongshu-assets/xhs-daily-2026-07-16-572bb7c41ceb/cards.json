@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "傅利叶智能｜具身智能 / 人形机器人",
+    "body": "公司：傅利叶智能\n方向：具身智能 / 人形机器人\n题目：人形机器人同时做行走和上肢操作时，如何处理重心、接触约束和任务优先级？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-572bb7c41ceb\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 人形机器人同时做行走和上肢操作时，如何处理重心、接触约束和任务优先级？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-572bb7c41ceb\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "人形机器人同时做行走和上肢操作时，如何处理重心、接触约束和任务优先级？",
+    "body": "这题考的是全身控制思路。人形机器人行走时需要保持动态平衡，上肢操作又会改变质心和角动量，因此不能把腿部步态和手臂轨迹完全独立规划。通常会建立全身动力学模型，把足底接触、摩擦锥、关节限位、质心位置和零力矩点等约束统一考虑。任务优先级上，安全和平衡最高，其次是足端接触稳定，再是手部操作精度和姿态舒适性。如果上肢抓取导致身体前倾，控制器需要通过腰部、腿部和足底力矩补偿；如果目标不可达，高层应重新规划站位，而不是强行伸手。工程实现可以用 MPC 规划质心和接触序列，用 QP/WBC 求解关节力矩或速度，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-572bb7c41ceb\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "人形机器人同时做行走和上肢操作时，如何处理重心、接触约束和任务优先级？",
+    "body": "再用视觉/力觉反馈修正。评估指标包括跌倒率、足底滑移、质心偏移、抓取成功率、接触力峰值、能耗和扰动恢复时间。回答要强调：具身任务不是单一轨迹跟踪，而是在多约束下做任务优先级优化。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-572bb7c41ceb\\04-answer.png"
+  }
+]

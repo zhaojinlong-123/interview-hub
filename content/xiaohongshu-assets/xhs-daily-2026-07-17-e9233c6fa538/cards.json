@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：长程具身任务中，如何把语言指令拆成子目标，并把子目标稳定落到低层控制器执行？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-e9233c6fa538\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 长程具身任务中，如何把语言指令拆成子目标，并把子目标稳定落到低层控制器执行？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-e9233c6fa538\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "长程具身任务中，如何把语言指令拆成子目标，并把子目标稳定落到低层控制器执行？",
+    "body": "这题要先说明层级结构：高层负责把自然语言任务拆成可验证的子目标，例如“找到杯子、抓取杯子、移动到桌面、放下杯子”；中层负责把子目标绑定到场景状态和可操作对象；低层控制器负责生成连续动作或轨迹。关键不是简单做 prompt 分解，而是每个子目标都要有可观测的完成条件，例如物体是否被抓住、位姿是否到达、接触力是否稳定。工程上通常会让 VLM/VLA 负责语义理解和动作意图，再由 motion planner、diffusion policy 或 MPC 负责短时控制。为了稳定执行，需要加入状态重估和闭环修正：每执行一个",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-e9233c6fa538\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "长程具身任务中，如何把语言指令拆成子目标，并把子目标稳定落到低层控制器执行？",
+    "body": "action chunk 后重新感知，检查目标是否偏移、夹爪是否打滑、环境是否变化。失败时不能一直重试同一动作，而要区分感知失败、抓取失败、路径不可达和动力学异常，再选择重规划、换抓取点或人工接管。评估不能只看最终成功率，还要看子目标完成率、平均重试次数、碰撞率、执行时间和跨场景泛化能力。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-e9233c6fa538\\04-answer.png"
+  }
+]

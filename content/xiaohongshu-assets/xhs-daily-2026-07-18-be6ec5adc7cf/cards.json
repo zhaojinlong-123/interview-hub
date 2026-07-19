@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：端到端 VLA 推理频率低于机器人控制频率时，如何设计 action chunk、插值和安全控制？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-18-be6ec5adc7cf\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 端到端 VLA 推理频率低于机器人控制频率时，如何设计 action chunk、插值和安全控制？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-18-be6ec5adc7cf\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "端到端 VLA 推理频率低于机器人控制频率时，如何设计 action chunk、插值和安全控制？",
+    "body": "VLA 通常运行在较低频率，例如 1-10Hz，而机械臂或底盘控制可能需要 50-1000Hz，所以不能让大模型直接承担所有低层伺服控制。常见做法是让 VLA 输出 action chunk，也就是未来一小段时间的动作序列或关键路点，低层控制器在高频循环里执行插值、轨迹跟踪和安全约束。chunk 不能过长，否则环境变化后动作会滞后；也不能过短，否则模型调用频繁、延迟和抖动会放大。工程上会保留一个滚动窗口：新 chunk 到来后平滑替换旧 chunk，并用观测反馈判断是否提前中止。插值层需要考虑速度、加速度、jerk",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-18-be6ec5adc7cf\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "端到端 VLA 推理频率低于机器人控制频率时，如何设计 action chunk、插值和安全控制？",
+    "body": "和关节限位，不能只做线性插值。安全控制通常放在模型之后，包括碰撞检测、力控阈值、急停、workspace 限制和人机距离约束。面试中可以补充指标：端到端延迟、控制频率、chunk 命中率、动作平滑度、碰撞率、急停次数和任务成功率。核心观点是 VLA 提供语义到动作的意图，低层控制保障实时性和安全边界。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-18-be6ec5adc7cf\\04-answer.png"
+  }
+]

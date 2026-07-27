@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 机器人数据",
+    "body": "公司：综合\n方向：VLA / 机器人数据\n题目：VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-688cb4a42943\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-688cb4a42943\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "body": "遥操作数据不能采完就直接训练。首先要做完整性检查：图像、深度、本体状态、动作、语言指令、时间戳和成功标记是否齐全。其次做时间对齐和轨迹切分，把连续日志切成 episode，并标注成功、失败、中断、人工接管和环境异常。质量控制要筛掉明显坏样本，比如相机遮挡、外参错误、夹爪空抓、动作抖动、延迟过大、任务描述和实际动作不一致。异常样本不能全部删除，失败样本如果标注清楚原因，反而可以用于失败预测、恢复策略和偏好学习。训练集构造要平衡任务、物体、场景、视角和成功/失败比例，避免模型只记住某个背景或操作员习惯。还要保留",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-688cb4a42943\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "body": "hard cases，如遮挡、反光、软物体、狭窄空间和多物体干扰。评估时看数据覆盖率、标注一致性、训练后真机成功率、失败恢复率和跨场景泛化。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-688cb4a42943\\04-answer.png"
+  }
+]

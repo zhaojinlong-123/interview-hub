@@ -15,6 +15,21 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "compression:a153c8c2a8e8",
+    "question": "多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+    "queueId": "xhs-daily-2026-07-27-ec4199c5c68c",
+    "featureId": "daily-2026-07-27-ec4199c5c68c",
+    "postId": "supplement-20260708-50a7ea6bac8a",
+    "title": "快手量化压缩/微调部署题目精讲",
+    "company": "快手",
+    "direction": "训练框架",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-27T13:17:43.985Z"
+  },
+  {
     "key": "data:271a1e3ca023",
     "question": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
     "queueId": "xhs-daily-2026-07-11-1f0f8ba06b7b",
@@ -118,6 +133,21 @@
     "updatedAt": "2026-06-15T10:34:57.986Z"
   },
   {
+    "key": "embodied_long_horizon:9a3dfc442a53",
+    "question": "长程具身任务中，如何把语言指令拆成子目标，并把子目标稳定落到低层控制器执行？",
+    "queueId": "xhs-daily-2026-07-17-e9233c6fa538",
+    "featureId": "daily-2026-07-17-e9233c6fa538",
+    "postId": "embodied-20260719-003e6cf1f9df",
+    "title": "综合长程具身任务中，如何把语言…题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/search?query=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BDVLA%E9%9D%A2%E7%BB%8F%E5%88%86%E4%BA%AB&type=post",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:58:10.155Z"
+  },
+  {
     "key": "embodied_long_horizon:aa6c9c74479a",
     "question": "机器人执行失败后，系统如何识别失败原因并选择重试、重规划或人工接管？",
     "queueId": "xhs-daily-2026-07-06-06be44ea7253",
@@ -146,6 +176,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "source_invalid_after_publish",
     "updatedAt": "2026-06-15T10:34:57.986Z"
+  },
+  {
+    "key": "embodied_sim2real:9c7bf346387b",
+    "question": "如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+    "queueId": "xhs-daily-2026-07-21-eabe08ff9112",
+    "featureId": "daily-2026-07-21-eabe08ff9112",
+    "postId": "embodied-20260725-0ff752fe469a",
+    "title": "综合如何解决Sim-to-R…题目精讲",
+    "company": "综合",
+    "direction": "具身智能 / Sim-to-Real",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:07:11.414Z"
   },
   {
     "key": "embodied_sim2real:c18145b337df",
@@ -343,6 +388,21 @@
     "updatedAt": "2026-07-04T07:30:26.148Z"
   },
   {
+    "key": "general:端到端vla推理频率低于机器人控制频率时如何设计actionchunk插值和安全控制",
+    "question": "端到端 VLA 推理频率低于机器人控制频率时，如何设计 action chunk、插值和安全控制？",
+    "queueId": "xhs-daily-2026-07-18-be6ec5adc7cf",
+    "featureId": "daily-2026-07-18-be6ec5adc7cf",
+    "postId": "embodied-20260719-d757325763a4",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/search?query=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB&type=post",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T12:00:55.885Z"
+  },
+  {
     "key": "general:短视频推荐场景中如何把画面字幕音频和用户反馈统一构造成多模态训练样本",
     "question": "短视频推荐场景中如何把画面、字幕、音频和用户反馈统一构造成多模态训练样本？",
     "queueId": "xhs-daily-2026-07-01-4afb193992d7",
@@ -371,6 +431,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
+  },
+  {
+    "key": "general:多机器人多任务数据训练vla时如何统一动作空间并避免模型只记住机器人平台差异",
+    "question": "多机器人、多任务数据训练 VLA 时，如何统一动作空间并避免模型只记住机器人平台差异？",
+    "queueId": "xhs-daily-2026-07-15-828ac7dffeef",
+    "featureId": "daily-2026-07-15-828ac7dffeef",
+    "postId": "embodied-20260719-3a8f0c34e165",
+    "title": "GoogleVLA/机器人动作题目精讲",
+    "company": "Google",
+    "direction": "VLA / 机器人基础模型",
+    "sourcePlatform": "GitHub",
+    "sourceUrl": "https://github.com/search?q=Google+robotics+transformer+VLA+interview+questions&type=repositories",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:59:56.981Z"
   },
   {
     "key": "general:多图理解任务中如何保证跨图实体一致性顺序理解和比较推理能力",
@@ -418,6 +493,21 @@
     "updatedAt": "2026-06-28T07:30:27.859Z"
   },
   {
+    "key": "general:机器人导航中ros时间戳如何对齐相机激光雷达里程计不同步会带来什么问题",
+    "question": "机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+    "queueId": "xhs-daily-2026-07-24-18f45d1f339d",
+    "featureId": "daily-2026-07-24-18f45d1f339d",
+    "postId": "embodied-20260725-b5d0a22d654b",
+    "title": "优必选VLA/机器人动作题目精讲",
+    "company": "优必选",
+    "direction": "机器人导航 / 具身智能",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/enterprise/679/interview",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:04:31.359Z"
+  },
+  {
     "key": "general:机器人控制算法面试中运动规划轨迹跟踪和底层控制分别解决什么问题",
     "question": "机器人控制算法面试中，运动规划、轨迹跟踪和底层控制分别解决什么问题？",
     "queueId": "xhs-daily-2026-06-19-092b64d9bea7",
@@ -446,6 +536,21 @@
     "publishUrl": "https://www.xiaohongshu.com/explore/6a47a7ba000000001c025231",
     "status": "published",
     "updatedAt": "2026-07-03T12:16:48.992Z"
+  },
+  {
+    "key": "general:机器人执行失败后如何把失败原因诊断恢复策略选择和数据回流做成闭环",
+    "question": "机器人执行失败后，如何把失败原因诊断、恢复策略选择和数据回流做成闭环？",
+    "queueId": "xhs-daily-2026-07-17-ba120c5fb209",
+    "featureId": "daily-2026-07-17-ba120c5fb209",
+    "postId": "embodied-20260719-196f9a4c9274",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 机器人数据闭环",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://www.zhihu.com/search?type=content&q=%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%20VLA%20%E9%9D%A2%E7%BB%8F",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:57:33.090Z"
   },
   {
     "key": "general:九如何通过流水线并行pipelineparallel在多节点上扩展微调任务",
@@ -493,6 +598,36 @@
     "updatedAt": "2026-06-24T11:17:24.320Z"
   },
   {
+    "key": "general:灵巧手抓取透明柔软或易滑物体时如何融合视觉和触觉判断接触状态",
+    "question": "灵巧手抓取透明、柔软或易滑物体时，如何融合视觉和触觉判断接触状态？",
+    "queueId": "xhs-daily-2026-07-15-28fbc4812c63",
+    "featureId": "daily-2026-07-15-28fbc4812c63",
+    "postId": "embodied-20260719-c362e9480808",
+    "title": "优必选灵巧手抓取透明、柔软或易滑…题目精",
+    "company": "优必选",
+    "direction": "具身智能 / 灵巧操作",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/search?query=%E4%BC%98%E5%BF%85%E9%80%89%20%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%20%E9%9D%A2%E7%BB%8F&type=post",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:59:30.256Z"
+  },
+  {
+    "key": "general:面试中如何系统比较rt2openvlaπ0gr00t和smolvla这类vla机器人基础模型",
+    "question": "面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基础模型？",
+    "queueId": "xhs-daily-2026-07-23-bf4f66590061",
+    "featureId": "daily-2026-07-23-bf4f66590061",
+    "postId": "embodied-20260725-1ae0b1f04524",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 机器人基础模型",
+    "sourcePlatform": "古月居",
+    "sourceUrl": "https://www.guyuehome.com/wap/detail?id=2051193990079868929",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:04:58.031Z"
+  },
+  {
     "key": "general:你方案里kl散度熵分别代表什么含义",
     "question": "你方案里KL散度、熵分别代表什么含义？",
     "queueId": "xhs-daily-2026-06-27-aac327639495",
@@ -506,6 +641,36 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-27T01:30:26.643Z"
+  },
+  {
+    "key": "general:人形机器人同时做行走和上肢操作时如何处理重心接触约束和任务优先级",
+    "question": "人形机器人同时做行走和上肢操作时，如何处理重心、接触约束和任务优先级？",
+    "queueId": "xhs-daily-2026-07-16-572bb7c41ceb",
+    "featureId": "daily-2026-07-16-572bb7c41ceb",
+    "postId": "embodied-20260719-d4cad160b530",
+    "title": "傅利叶智能VLA/机器人动作题目精讲",
+    "company": "傅利叶智能",
+    "direction": "具身智能 / 人形机器人",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/search?query=%E5%82%85%E5%88%A9%E5%8F%B6%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F&type=post",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:59:03.545Z"
+  },
+  {
+    "key": "general:人形机器人vla动作表征应该关注哪些关键点如何兼顾语义可控物理可行和安全约束",
+    "question": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "queueId": "xhs-daily-2026-07-23-c73650b10afa",
+    "featureId": "daily-2026-07-23-c73650b10afa",
+    "postId": "embodied-20260725-4bc37d51cea5",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 人形机器人",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/limengshi138392/article/details/161154768",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:05:24.707Z"
   },
   {
     "key": "general:视频理解里如何做长视频分段层级表征和摘要避免只看关键帧丢失动作过程",
@@ -688,6 +853,21 @@
     "updatedAt": "2026-06-18T10:53:45.635Z"
   },
   {
+    "key": "general:a*dwateb和mpc在机器人导航中分别解决什么问题如何组合使用",
+    "question": "A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+    "queueId": "xhs-daily-2026-07-24-373838adaf6b",
+    "featureId": "daily-2026-07-24-373838adaf6b",
+    "postId": "embodied-20260725-9b3c91f4225b",
+    "title": "优必选VLA/机器人动作题目精讲",
+    "company": "优必选",
+    "direction": "机器人导航 / 运动规划",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/enterprise/679/interview",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:04:04.716Z"
+  },
+  {
     "key": "general:clip模型的原理是什么它是如何实现图文对齐的损失函数怎么设计的",
     "question": "CLIP 模型的原理是什么？它是如何实现图文对齐的？损失函数怎么设计的？",
     "queueId": "xhs-daily-2026-06-24-d35dfb9b8113",
@@ -793,6 +973,21 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "general:univla中lateactionmodel潜在动作模型通常怎么搭建为什么不直接让vlm输出关节动作",
+    "question": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+    "queueId": "xhs-daily-2026-07-20-9be9c46a6376",
+    "featureId": "daily-2026-07-20-9be9c46a6376",
+    "postId": "embodied-20260725-52ad994e3ad9",
+    "title": "傅利叶智能VLA/机器人动作题目精讲",
+    "company": "傅利叶智能",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/37af3ac1986b438c81cd26ab90a792a8",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:09:26.673Z"
+  },
+  {
     "key": "general:visiontransformervit和cnn在图像特征提取上的优劣对比",
     "question": "Vision Transformer (ViT) 和 CNN 在图像特征提取上的优劣对比？",
     "queueId": "xhs-daily-2026-06-24-d35dfb9b8113",
@@ -821,6 +1016,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
     "status": "published",
     "updatedAt": "2026-06-21T16:18:25.635Z"
+  },
+  {
+    "key": "general:vla模型的输入和输出分别是什么为什么动作空间设计会直接影响模型能否落地",
+    "question": "VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+    "queueId": "xhs-daily-2026-07-20-8edf5b9470f5",
+    "featureId": "daily-2026-07-20-8edf5b9470f5",
+    "postId": "embodied-20260725-d4ffcd147679",
+    "title": "中国移动VLA/机器人动作题目精讲",
+    "company": "中国移动",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:07:45.037Z"
   },
   {
     "key": "inference:199ee39da818",
@@ -911,6 +1121,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-07-12T14:40:21.676Z"
+  },
+  {
+    "key": "inference:85e3a115abed",
+    "question": "移动机器人在动态环境中执行视觉导航时，如何处理定位漂移、动态障碍和控制延迟？",
+    "queueId": "xhs-daily-2026-07-16-a97a9b46cbcd",
+    "featureId": "daily-2026-07-16-a97a9b46cbcd",
+    "postId": "embodied-20260719-ce4cfdbe5766",
+    "title": "宇树科技VLA/机器人动作题目精讲",
+    "company": "宇树科技",
+    "direction": "具身智能 / 机器人控制",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/search?query=%E5%AE%87%E6%A0%91%20%E6%9C%BA%E5%99%A8%E4%BA%BA%20%E9%9D%A2%E7%BB%8F&type=post",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T11:58:36.840Z"
   },
   {
     "key": "inference:98d03fc54828",
@@ -1018,6 +1243,36 @@
     "updatedAt": "2026-06-25T14:02:27.386Z"
   },
   {
+    "key": "rl:840b7465ce09",
+    "question": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "queueId": "xhs-daily-2026-07-21-550cc9edf135",
+    "featureId": "daily-2026-07-21-550cc9edf135",
+    "postId": "embodied-20260725-b8cbe00d9e5a",
+    "title": "综合模仿学习和强化学习在具身任…题目精讲",
+    "company": "综合",
+    "direction": "具身智能 / 强化学习",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:06:44.751Z"
+  },
+  {
+    "key": "rl:852e21164052",
+    "question": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "queueId": "xhs-daily-2026-07-22-7b307c6a78fb",
+    "featureId": "daily-2026-07-22-7b307c6a78fb",
+    "postId": "embodied-20260725-be34566fca43",
+    "title": "综合机械臂连续控制任务中，为什…题目精讲",
+    "company": "综合",
+    "direction": "机器人控制 / 强化学习",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/discuss/866386013608763392",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:06:18.099Z"
+  },
+  {
     "key": "rl:94ea640decd7",
     "question": "GRPO 相比 PPO 为什么可以省去价值模型，适合哪些大模型推理训练场景？",
     "queueId": "xhs-daily-2026-06-23-76634ddfdcff",
@@ -1078,6 +1333,21 @@
     "updatedAt": "2026-06-27T01:30:26.643Z"
   },
   {
+    "key": "robot_data:5a1149880901",
+    "question": "机器人世界模型训练中，仿真数据、合成视频和真实遥操作数据应该如何配比和校准？",
+    "queueId": "xhs-daily-2026-07-18-a5ceaf08b87f",
+    "featureId": "daily-2026-07-18-a5ceaf08b87f",
+    "postId": "embodied-20260719-a5ceaf08b87f",
+    "title": "NVIDIAVLA/机器人动作题目精讲",
+    "company": "NVIDIA",
+    "direction": "世界模型 / 具身智能",
+    "sourcePlatform": "GitHub",
+    "sourceUrl": "https://github.com/search?q=NVIDIA+robotics+world+model+interview+questions&type=repositories",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T12:04:55.132Z"
+  },
+  {
     "key": "robot_data:5c6e23bce94e",
     "question": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
     "queueId": "xhs-daily-2026-06-13-eeee8e7e0263",
@@ -1091,6 +1361,21 @@
     "updatedAt": "2026-06-21T16:18:25.635Z"
   },
   {
+    "key": "robot_data:c580917ca6a3",
+    "question": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "queueId": "xhs-daily-2026-07-25-688cb4a42943",
+    "featureId": "daily-2026-07-25-688cb4a42943",
+    "postId": "embodied-20260725-996026786fd0",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 机器人数据",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/7b8f541c9bef4733a0f738d0628b1f65",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:03:38.018Z"
+  },
+  {
     "key": "vla_action:7a635fa24952",
     "question": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
     "queueId": "xhs-daily-2026-06-13-eeee8e7e0263",
@@ -1102,6 +1387,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?from=automation&target=image",
     "status": "published",
     "updatedAt": "2026-06-21T16:18:25.635Z"
+  },
+  {
+    "key": "vla_action:d95cdaba2a7b",
+    "question": "VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什么场景？",
+    "queueId": "xhs-daily-2026-07-22-3e253e13cd84",
+    "featureId": "daily-2026-07-22-3e253e13cd84",
+    "postId": "embodied-20260725-659bb29762ef",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 动作生成",
+    "sourcePlatform": "与非网",
+    "sourceUrl": "https://www.eefocus.com/article/2015453.html",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:05:51.441Z"
   },
   {
     "key": "vlm_connector:6c4810711873",
@@ -1132,6 +1432,21 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "vlm_eval:8773948eb512",
+    "question": "VLA 如何把语言中的对象、部位和空间关系 grounding 到 3D 场景，并生成可执行动作？",
+    "queueId": "xhs-daily-2026-07-19-d0c23227adf2",
+    "featureId": "daily-2026-07-19-d0c23227adf2",
+    "postId": "embodied-20260719-d0c23227adf2",
+    "title": "智元机器人VLA/机器人动作题目精讲",
+    "company": "智元机器人",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "GitHub",
+    "sourceUrl": "https://github.com/search?q=%E6%99%BA%E5%85%83+%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD+VLA+%E9%9D%A2%E7%BB%8F&type=repositories",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T12:04:28.505Z"
+  },
+  {
     "key": "vlm_eval:87ff9a3b4964",
     "question": "VLM 产生视觉幻觉的常见原因有哪些，数据、模型和解码侧分别怎么缓解？",
     "queueId": "xhs-daily-2026-06-12-362a59bc5046",
@@ -1160,6 +1475,36 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "world_model:0743ac1158b7",
+    "question": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "queueId": "xhs-daily-2026-07-25-f5ee2b152c5f",
+    "featureId": "daily-2026-07-25-f5ee2b152c5f",
+    "postId": "embodied-20260725-03caf36a2d08",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "company": "综合",
+    "direction": "世界模型 / 具身智能",
+    "sourcePlatform": "GitHub",
+    "sourceUrl": "https://github.com/WinstonJQ/embodied-interview-qa",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-25T02:03:11.230Z"
+  },
+  {
+    "key": "world_model:0bb3a2eb5f13",
+    "question": "自动驾驶世界模型如何让 occupancy、轨迹预测和规划动作形成可闭环评估的统一表示？",
+    "queueId": "xhs-daily-2026-07-19-7a37255bc43f",
+    "featureId": "daily-2026-07-19-7a37255bc43f",
+    "postId": "embodied-20260719-7a37255bc43f",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "company": "综合",
+    "direction": "世界模型 / 自动驾驶",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://so.csdn.net/so/search?q=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%20%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B%20%E9%9D%A2%E8%AF%95%E9%A2%98&t=all",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-19T12:04:01.747Z"
+  },
+  {
     "key": "world_model:0ec912cf2480",
     "question": "驾驶数据闭环如何做场景挖掘、长尾样本回流、自动标注和仿真评测？",
     "queueId": "xhs-daily-2026-06-13-a866a4919061",
@@ -1186,6 +1531,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
+  },
+  {
+    "key": "world_model:b11a66ea3418",
+    "question": "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+    "queueId": "xhs-daily-2026-07-27-5e0257ae126c",
+    "featureId": "daily-2026-07-27-5e0257ae126c",
+    "postId": "auto-20260701-e98d6a62d6a7",
+    "title": "小鹏VLA/机器人动作题目精讲",
+    "company": "小鹏",
+    "direction": "自动驾驶 / 世界模型",
+    "sourcePlatform": "小红书",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_token=ABV8_JlWYTYT2lNY7GRKJgMO9KA0iOJ7U_-CzlBjdkqws%3D&xsec_source=pc_search",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-07-27T13:16:35.904Z"
   },
   {
     "key": "world_model:ba26d04ed19c",

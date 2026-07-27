@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜世界模型 / 具身智能",
+    "body": "公司：综合\n方向：世界模型 / 具身智能\n题目：具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-f5ee2b152c5f\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-f5ee2b152c5f\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "body": "长程具身任务里，一步预测误差低不代表策略可用，因为小误差会在多步交互中累积，而且机器人动作会改变未来状态。世界模型要服务决策，就必须评估在不同动作条件下环境如何演化。反事实仿真的价值在于：同一初始状态下，比较不同候选动作会导致什么后果，例如绕左侧是否碰撞、提前闭合夹爪是否滑落、换抓取点是否更稳。训练上可以用真实轨迹学习状态转移，用仿真扩展危险和稀有场景，用失败回流修正模型盲区。评估应从 open-loop 和 closed-loop 两层做：open-loop 看视觉重建、occupancy、物体位姿和接触状态预测；",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-f5ee2b152c5f\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "body": "closed-loop 看任务成功率、碰撞率、恢复率、规划收益和长尾场景通过率。还要输出不确定性，告诉规划器哪些预测不可靠。面试回答的关键是：世界模型不是视频生成器，而是能被策略查询、比较和验证的环境动态模型。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-25-f5ee2b152c5f\\04-answer.png"
+  }
+]

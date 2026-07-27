@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "傅利叶智能｜VLA / 具身智能",
+    "body": "公司：傅利叶智能\n方向：VLA / 具身智能\n题目：UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-20-9be9c46a6376\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-20-9be9c46a6376\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM…",
+    "body": "这题的核心是把语义理解和低层连续控制解耦。VLM 擅长理解图像、语言和任务语义，但直接输出高频关节动作会遇到动作维度高、控制频率不匹配、训练噪声大和安全边界难约束的问题。late action model 的思路是先让前面的视觉语言主干形成任务相关表征，再在后端接一个动作专家或潜在动作解码器，把语义状态转成可执行的末端位姿、关节增量或 action chunk。潜在动作模型可以用 VQ、VAE、diffusion/flow matching 或 transformer decoder 学习动作分布，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-20-9be9c46a6376\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM…",
+    "body": "优点是能表达多峰动作，比如同一个抓取任务可以从不同方向接近。训练上通常先对齐视觉语言表征，再用遥操作轨迹做行为克隆或生成式动作学习，最后用真机失败样本微调。工程上还要让低层控制器做轨迹跟踪、碰撞检测、速度/力限制和急停。回答时强调：VLA 不是让大模型替代伺服控制，而是让大模型给出具备语义条件的动作意图，低层系统保证实时性和安全性。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-20-9be9c46a6376\\04-answer.png"
+  }
+]

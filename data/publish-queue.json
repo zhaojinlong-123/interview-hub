@@ -1,5 +1,831 @@
 [
   {
+    "id": "xhs-daily-2026-07-27-ec4199c5c68c",
+    "title": "快手量化压缩/微调部署题目精讲",
+    "coverTitle": "快手面试题精讲",
+    "coverSubtitle": "训练框架 高频题",
+    "company": "快手",
+    "direction": "训练框架",
+    "primaryQuestion": "多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+    "topic": "量化压缩 / 微调部署",
+    "body": "每日精选：快手 训练框架题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#快手 #LoRA #全参微调 #多模态 #训练成本 #训练框架 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-27-ec4199c5c68c.md",
+    "featureId": "daily-2026-07-27-ec4199c5c68c",
+    "postId": "supplement-20260708-50a7ea6bac8a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-27-ec4199c5c68c/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "快手｜训练框架",
+        "body": "公司：快手\n方向：训练框架\n题目：多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+        "body": "选择微调方式要看业务数据规模、领域差异和需要改变的能力位置。LoRA 适合数据中等、目标是语言风格或任务格式适配的场景，成本低、可维护多个 adapter，但容量有限。视觉侧微调适合图像分布和预训练差异较大，例如短视频、电商图、工业缺陷、医学或遥感；只调 LLM 可能无法修正视觉特征不足。全参微调容量最大，适合领域差异很大、数据足够且要重塑模型能力的场景，但显存、训练稳定性和通用能力退化风险最高。多模态项目常见做法是先冻结视觉 encoder 训练 projector/LoRA，确认收益后再小学习率解冻部分视觉层或",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "多模态业务微调时，LoRA、视觉侧微调和全参微调应该如何选择？",
+        "body": "LLM 高层。评估必须包含通用能力回归和目标业务 hard case。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-27T13:17:15.928Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-ec4199c5c68c/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-ec4199c5c68c/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-ec4199c5c68c/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-ec4199c5c68c/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-27T13:17:43.985Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-27-5e0257ae126c",
+    "title": "小鹏VLA/机器人动作题目精讲",
+    "coverTitle": "小鹏面试题精讲",
+    "coverSubtitle": "自动驾驶 / 世界模型 高频题",
+    "company": "小鹏",
+    "direction": "自动驾驶 / 世界模型",
+    "primaryQuestion": "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：小鹏 自动驾驶 / 世界模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：小红书，2026-07-01\n原文链接：https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_token=ABV8_JlWYTYT2lNY7GRKJgMO9KA0iOJ7U_-CzlBjdkqws%3D&xsec_source=pc_search\n完整回答已拆成图卡，建议按顺序复习。\n#小红书 #小鹏 #面经 #自动驾驶世界模型 #大模型面试 #AI学习",
+    "sourcePlatform": "小红书",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://www.xiaohongshu.com/explore/6a4486d500000000170285f1?xsec_token=ABV8_JlWYTYT2lNY7GRKJgMO9KA0iOJ7U_-CzlBjdkqws%3D&xsec_source=pc_search",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-27-5e0257ae126c.md",
+    "featureId": "daily-2026-07-27-5e0257ae126c",
+    "postId": "auto-20260701-e98d6a62d6a7",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-27-5e0257ae126c/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "小鹏｜自动驾驶 / 世界模型",
+        "body": "公司：小鹏\n方向：自动驾驶 / 世界模型\n题目：小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+        "body": "自动驾驶里的原始图像、点云和 BEV 特征不能直接丢给语言模型，需要先转成结构化或半结构化场景 token。常见做法是先用感知模型得到车道线、交通灯、动态目标、occupancy、可行驶区域、轨迹候选和自车状态，再通过 projector、query token 或序列化模板把这些信息编码成 LLM 可消费的 token。关键是保留时空关系：目标相对自车的位置、速度、意图，车道拓扑和交通规则约束，不能只给静态类别标签。对于 VLA，还要把候选动作或规划轨迹作为条件，让模型理解“如果我这样开，未来会发生什么”。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "小鹏 VLM/VLA 场景中，自动驾驶感知输出如何转成可被语言模型使用的场景 token？",
+        "body": "面试里可以强调两条路线：端到端视觉 token 路线表达力强但解释性弱；结构化场景 token 路线更可控、更适合安全审计，实际系统往往混合使用。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-27T13:16:08.086Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-5e0257ae126c/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-5e0257ae126c/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-5e0257ae126c/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-27-5e0257ae126c/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-27T13:16:35.904Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-25-f5ee2b152c5f",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "coverTitle": "世界模型具身智能面试题精讲",
+    "coverSubtitle": "世界模型 / 具身智能 高频题",
+    "company": "综合",
+    "direction": "世界模型 / 具身智能",
+    "primaryQuestion": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+    "topic": "世界模型 / 自动驾驶",
+    "body": "每日精选：综合 世界模型 / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：GitHub，2026-07-25\n原文链接：https://github.com/WinstonJQ/embodied-interview-qa\n完整回答已拆成图卡，建议按顺序复习。\n#世界模型 #反事实仿真 #长程任务 #闭环评估 #具身智能 #综合 #世界模型具身智能 #大模型面试",
+    "sourcePlatform": "GitHub",
+    "sourceDate": "2026-07-25",
+    "sourceUrl": "https://github.com/WinstonJQ/embodied-interview-qa",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-25-5085c2198d4d.md",
+    "featureId": "daily-2026-07-25-f5ee2b152c5f",
+    "postId": "embodied-20260725-03caf36a2d08",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-25-f5ee2b152c5f/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜世界模型 / 具身智能",
+        "body": "公司：综合\n方向：世界模型 / 具身智能\n题目：具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+        "body": "长程具身任务里，一步预测误差低不代表策略可用，因为小误差会在多步交互中累积，而且机器人动作会改变未来状态。世界模型要服务决策，就必须评估在不同动作条件下环境如何演化。反事实仿真的价值在于：同一初始状态下，比较不同候选动作会导致什么后果，例如绕左侧是否碰撞、提前闭合夹爪是否滑落、换抓取点是否更稳。训练上可以用真实轨迹学习状态转移，用仿真扩展危险和稀有场景，用失败回流修正模型盲区。评估应从 open-loop 和 closed-loop 两层做：open-loop 看视觉重建、occupancy、物体位姿和接触状态预测；",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "具身世界模型如何评估长程任务，为什么需要反事实仿真而不是只看一步预测误差？",
+        "body": "closed-loop 看任务成功率、碰撞率、恢复率、规划收益和长尾场景通过率。还要输出不确定性，告诉规划器哪些预测不可靠。面试回答的关键是：世界模型不是视频生成器，而是能被策略查询、比较和验证的环境动态模型。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:02:49.406Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-f5ee2b152c5f/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-f5ee2b152c5f/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-f5ee2b152c5f/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-f5ee2b152c5f/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:03:11.230Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-25-688cb4a42943",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA机器人数据面试题精讲",
+    "coverSubtitle": "VLA / 机器人数据 高频题",
+    "company": "综合",
+    "direction": "VLA / 机器人数据",
+    "primaryQuestion": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 机器人数据题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-25\n原文链接：https://www.nowcoder.com/feed/main/detail/7b8f541c9bef4733a0f738d0628b1f65\n完整回答已拆成图卡，建议按顺序复习。\n#遥操作 #机器人数据 #VLA #数据质检 #具身智能 #综合 #VLA机器人数据 #大模型面试",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-25",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/7b8f541c9bef4733a0f738d0628b1f65",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-25-420c78ab869e.md",
+    "featureId": "daily-2026-07-25-688cb4a42943",
+    "postId": "embodied-20260725-996026786fd0",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-25-688cb4a42943/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 机器人数据",
+        "body": "公司：综合\n方向：VLA / 机器人数据\n题目：VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+        "body": "遥操作数据不能采完就直接训练。首先要做完整性检查：图像、深度、本体状态、动作、语言指令、时间戳和成功标记是否齐全。其次做时间对齐和轨迹切分，把连续日志切成 episode，并标注成功、失败、中断、人工接管和环境异常。质量控制要筛掉明显坏样本，比如相机遮挡、外参错误、夹爪空抓、动作抖动、延迟过大、任务描述和实际动作不一致。异常样本不能全部删除，失败样本如果标注清楚原因，反而可以用于失败预测、恢复策略和偏好学习。训练集构造要平衡任务、物体、场景、视角和成功/失败比例，避免模型只记住某个背景或操作员习惯。还要保留",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 遥操作数据采集后，如何做质量控制、异常样本筛选和训练集构造？",
+        "body": "hard cases，如遮挡、反光、软物体、狭窄空间和多物体干扰。评估时看数据覆盖率、标注一致性、训练后真机成功率、失败恢复率和跨场景泛化。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:03:16.372Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-688cb4a42943/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-688cb4a42943/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-688cb4a42943/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-25-688cb4a42943/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:03:38.018Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-24-373838adaf6b",
+    "title": "优必选VLA/机器人动作题目精讲",
+    "coverTitle": "优必选面试题精讲",
+    "coverSubtitle": "机器人导航 / 运动规划 高频题",
+    "company": "优必选",
+    "direction": "机器人导航 / 运动规划",
+    "primaryQuestion": "A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：优必选 机器人导航 / 运动规划题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-24\n原文链接：https://www.nowcoder.com/enterprise/679/interview\n完整回答已拆成图卡，建议按顺序复习。\n#A* #DWA #TEB #MPC #机器人导航 #优必选 #机器人导航运动规划 #大模型面试",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-24",
+    "sourceUrl": "https://www.nowcoder.com/enterprise/679/interview",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-24-cd74e9026768.md",
+    "featureId": "daily-2026-07-24-373838adaf6b",
+    "postId": "embodied-20260725-9b3c91f4225b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-24-373838adaf6b/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "优必选｜机器人导航 / 运动规划",
+        "body": "公司：优必选\n方向：机器人导航 / 运动规划\n题目：A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+        "body": "A* 通常用于全局路径规划，在栅格地图上搜索从起点到终点的可行路径，优点是可解释、稳定，缺点是只考虑地图代价，不直接处理机器人动力学。DWA 是局部规划方法，在速度空间采样，选择短时间内不碰撞且更接近目标的速度命令，实时性好，但容易受局部极小值影响。TEB 把轨迹表示成带时间间隔的弹性带，同时优化路径形状、时间、障碍距离和运动学约束，适合差速/全向底盘局部避障。MPC 则显式考虑动力学模型和约束，在预测窗口里优化控制序列，适合高速、强约束或需要平滑控制的场景，但计算成本和建模要求更高。实际系统常用 A* 做全局路径，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "A*、DWA、TEB 和 MPC 在机器人导航中分别解决什么问题，如何组合使用？",
+        "body": "DWA/TEB/MPC 做局部规划和避障，再由底层控制器跟踪速度或轨迹。评估看路径长度、到达率、碰撞率、重规划频率、控制平滑度和动态障碍场景表现。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:03:43.156Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-373838adaf6b/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-373838adaf6b/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-373838adaf6b/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-373838adaf6b/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:04:04.716Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-24-18f45d1f339d",
+    "title": "优必选VLA/机器人动作题目精讲",
+    "coverTitle": "优必选面试题精讲",
+    "coverSubtitle": "机器人导航 / 具身智能 高频题",
+    "company": "优必选",
+    "direction": "机器人导航 / 具身智能",
+    "primaryQuestion": "机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：优必选 机器人导航 / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-24\n原文链接：https://www.nowcoder.com/enterprise/679/interview\n完整回答已拆成图卡，建议按顺序复习。\n#优必选 #ROS #导航 #时间同步 #路径规划 #机器人导航具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-24",
+    "sourceUrl": "https://www.nowcoder.com/enterprise/679/interview",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-24-388edf234482.md",
+    "featureId": "daily-2026-07-24-18f45d1f339d",
+    "postId": "embodied-20260725-b5d0a22d654b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-24-18f45d1f339d/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "优必选｜机器人导航 / 具身智能",
+        "body": "公司：优必选\n方向：机器人导航 / 具身智能\n题目：机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+        "body": "ROS 时间戳对齐是多传感器融合的基础。相机、激光雷达、IMU、轮速计和里程计如果时间不同步，同一个物体会被投影到错误位置，导致建图重影、定位漂移、障碍物位置错误和控制滞后。软件上可以用 message_filters 做 approximate time 或 exact time 同步，用 tf2 根据时间戳查询对应坐标变换；硬件上更可靠的是 PTP、触发线或统一时钟源。对于运动机器人，还要做时间补偿：激光雷达一帧扫描期间机器人在移动，需要 deskew；相机曝光和 IMU 高频数据也要插值对齐。工程排查时看各",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "机器人导航中，ROS 时间戳如何对齐，相机/激光雷达/里程计不同步会带来什么问题？",
+        "body": "topic 的 header.stamp、系统时间、延迟分布、tf buffer 是否过期，以及外参是否和时间同步一起校准。评估指标包括重投影误差、点云地图重影程度、定位漂移、路径跟踪误差和动态障碍误检率。面试里要强调：空间外参和时间同步必须一起看，只校外参不校时间会留下隐性误差。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:04:09.859Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-18f45d1f339d/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-18f45d1f339d/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-18f45d1f339d/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-24-18f45d1f339d/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:04:31.359Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-23-c73650b10afa",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA人形机器人面试题精讲",
+    "coverSubtitle": "VLA / 人形机器人 高频题",
+    "company": "综合",
+    "direction": "VLA / 人形机器人",
+    "primaryQuestion": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 人形机器人题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-17\n原文链接：https://blog.csdn.net/limengshi138392/article/details/161154768\n完整回答已拆成图卡，建议按顺序复习。\n#VLA #动作表征 #人形机器人 #动作优化 #具身智能 #综合 #VLA人形机器人 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-17",
+    "sourceUrl": "https://blog.csdn.net/limengshi138392/article/details/161154768",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-23-788ad74fbbf2.md",
+    "featureId": "daily-2026-07-23-c73650b10afa",
+    "postId": "embodied-20260725-4bc37d51cea5",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-23-c73650b10afa/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 人形机器人",
+        "body": "公司：综合\n方向：VLA / 人形机器人\n题目：人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+        "body": "人形机器人的动作表征不能只追求模型容易输出，还必须满足物理可行和安全约束。首先要明确动作层级：高层可以是语言子目标或技能 token，中层可以是末端位姿、足端轨迹、抓取点和目标姿态，低层才是关节角、速度或力矩。其次要考虑全身动力学，人形机器人有平衡、接触、摩擦锥、关节限位和自碰撞约束，不能让 VLA 直接生成无约束关节序列。第三是动作时间尺度，长程任务适合输出 action chunk 或技能片段，短时接触控制需要更高频反馈。第四是可解释性和可干预性，最好保留目标物体、目标位姿、接触点、步态阶段等中间量，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+        "body": "便于安全过滤和失败诊断。训练上要用遥操作、仿真、真机失败和人工接管数据覆盖多种状态。评估看任务成功率、跌倒率、碰撞率、能耗、动作平滑度和恢复能力。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:05:03.152Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-c73650b10afa/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-c73650b10afa/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-c73650b10afa/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-c73650b10afa/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:05:24.707Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-23-bf4f66590061",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA机器人基础模型面试题精讲",
+    "coverSubtitle": "VLA / 机器人基础模型 高频题",
+    "company": "综合",
+    "direction": "VLA / 机器人基础模型",
+    "primaryQuestion": "面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基础模型？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 机器人基础模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：古月居，2026-07-21\n原文链接：https://www.guyuehome.com/wap/detail?id=2051193990079868929\n完整回答已拆成图卡，建议按顺序复习。\n#RT-2 #OpenVLA #π0 #GR00T #VLA #综合 #VLA机器人基础模型 #大模型面试",
+    "sourcePlatform": "古月居",
+    "sourceDate": "2026-07-21",
+    "sourceUrl": "https://www.guyuehome.com/wap/detail?id=2051193990079868929",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-23-a89a171cacff.md",
+    "featureId": "daily-2026-07-23-bf4f66590061",
+    "postId": "embodied-20260725-1ae0b1f04524",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-23-bf4f66590061/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 机器人基础模型",
+        "body": "公司：综合\n方向：VLA / 机器人基础模型\n题目：面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基础模型？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基础模型？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基…",
+        "body": "比较 VLA 模型不要只背论文名，要按统一维度拆。第一看输入输出：是否使用图像、语言、本体状态，输出是离散 token、连续动作还是 action chunk。第二看主干结构：RT-2 更强调把 web-scale VLM 知识迁移到机器人动作，OpenVLA 强调开放数据和通用 VLA，π0 更强调连续动作专家和 flow matching，GR00T 更偏人形机器人通用基础模型，SmolVLA 则关注轻量化部署。第三看数据来源：互联网视觉语言数据、机器人遥操作数据、仿真数据和多机器人数据占比不同，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "面试中如何系统比较 RT-2、OpenVLA、π0、GR00T 和 SmolVLA 这类 VLA/机器人基…",
+        "body": "会影响泛化和控制能力。第四看动作表示和实时性：离散 token 接 LLM 方便但精度有限，连续动作适合控制但训练难，轻量模型更适合边缘部署。第五看评估：仿真 benchmark、真机任务成功率、跨场景泛化、延迟和安全失败。回答时最好补一句：模型能力最终要落到数据闭环和真机稳定性，而不是参数规模。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:04:36.486Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-bf4f66590061/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-bf4f66590061/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-bf4f66590061/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-23-bf4f66590061/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:04:58.031Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-22-7b307c6a78fb",
+    "title": "综合机械臂连续控制任务中，为什…题目精讲",
+    "coverTitle": "机器人控制强化学习面试题精讲",
+    "coverSubtitle": "机器人控制 / 强化学习 高频题",
+    "company": "综合",
+    "direction": "机器人控制 / 强化学习",
+    "primaryQuestion": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "topic": "机械臂连续控制任务中，为什…",
+    "body": "每日精选：综合 机器人控制 / 强化学习题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-24\n原文链接：https://www.nowcoder.com/discuss/866386013608763392\n完整回答已拆成图卡，建议按顺序复习。\n#SAC #PPO #DDPG #机械臂抓取 #强化学习 #综合 #机器人控制强化学习 #大模型面试",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-24",
+    "sourceUrl": "https://www.nowcoder.com/discuss/866386013608763392",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-22-5f13058bfaaa.md",
+    "featureId": "daily-2026-07-22-7b307c6a78fb",
+    "postId": "embodied-20260725-be34566fca43",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-22-7b307c6a78fb/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜机器人控制 / 强化学习",
+        "body": "公司：综合\n方向：机器人控制 / 强化学习\n题目：机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+        "body": "SAC 适合机械臂连续控制，主要因为它是 off-policy 最大熵强化学习，样本效率高且探索更充分。机械臂抓取的动作空间通常是连续的末端位姿、关节速度或力控制，确定性策略如 DDPG 容易探索不足、对超参和噪声敏感，训练时容易陷入局部最优。PPO 稳定但 on-policy 样本效率低，在真实机器人或高保真仿真中采样成本高。SAC 通过最大化奖励和策略熵，让策略在高回报动作附近保持一定随机性，有利于发现不同抓取姿态和绕障路径。工程上 SAC 常用于仿真训练或离线数据增强，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+        "body": "真机部署前要加动作平滑、碰撞约束和安全边界。回答时还要讲限制：SAC 需要合理奖励函数，稀疏奖励下仍然困难；仿真训练策略迁移到真机需要域随机化和真实数据校准。指标包括成功率、样本效率、训练稳定性、动作平滑度、碰撞率和 sim-to-real gap。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:05:56.570Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-7b307c6a78fb/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-7b307c6a78fb/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-7b307c6a78fb/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-7b307c6a78fb/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:06:18.099Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-22-3e253e13cd84",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA动作生成面试题精讲",
+    "coverSubtitle": "VLA / 动作生成 高频题",
+    "company": "综合",
+    "direction": "VLA / 动作生成",
+    "primaryQuestion": "VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什么场景？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 动作生成题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：与非网，2026-07-20\n原文链接：https://www.eefocus.com/article/2015453.html\n完整回答已拆成图卡，建议按顺序复习。\n#CVAE #DiffusionPolicy #FlowMatching #动作生成 #VLA #综合 #VLA动作生成 #大模型面试",
+    "sourcePlatform": "与非网",
+    "sourceDate": "2026-07-20",
+    "sourceUrl": "https://www.eefocus.com/article/2015453.html",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-22-d233787883db.md",
+    "featureId": "daily-2026-07-22-3e253e13cd84",
+    "postId": "embodied-20260725-659bb29762ef",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-22-3e253e13cd84/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 动作生成",
+        "body": "公司：综合\n方向：VLA / 动作生成\n题目：VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什么场景？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什么场景？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什…",
+        "body": "三者都在解决动作多峰分布问题，但侧重点不同。CVAE 通过潜变量建模多种可行动作，训练和采样相对简单，适合 ACT 这类 action chunk 模型；缺点是潜变量表达能力有限，复杂接触任务里可能生成平均化动作。Diffusion Policy 通过逐步去噪生成动作序列，能表达复杂多峰轨迹，适合绕障、抓取、插入等存在多种可行解的任务；缺点是采样步数多，部署时要考虑延迟，可用 DDIM、蒸馏或短步数采样优化。Flow Matching 学习从简单分布到动作分布的连续变换，推理可更高效，也适合和大规模",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 动作生成中，CVAE、Diffusion Policy 和 Flow Matching 分别适合什…",
+        "body": "transformer 动作专家结合。实际选择要看任务复杂度、控制频率、延迟预算和数据规模。面试回答要落到工程指标：轨迹成功率、动作平滑度、推理耗时、对多峰动作的覆盖、真机稳定性和失败恢复能力。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:05:29.837Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-3e253e13cd84/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-3e253e13cd84/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-3e253e13cd84/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-22-3e253e13cd84/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:05:51.441Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-21-eabe08ff9112",
+    "title": "综合如何解决Sim-to-R…题目精讲",
+    "coverTitle": "具身智能Sim-to-Real面试题精讲",
+    "coverSubtitle": "具身智能 / Sim-to-Real 高频题",
+    "company": "综合",
+    "direction": "具身智能 / Sim-to-Real",
+    "primaryQuestion": "如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+    "topic": "如何解决 Sim-to-R…",
+    "body": "每日精选：综合｜具身智能 / Sim-to-Real 题目精讲 面试题目 1. 如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？ 一句话答案 Sim-to-Real 的本质是仿真分布和真实世界分布不一致，差异来自视觉外观、传感器噪声、摩擦、质量、接触、延迟和控制器响应。视觉随机化解决的是外观域偏移，比如纹理、光照、背景、相机视角和噪声，让模型不要过拟合仿真画面。动力学随机化解决物理参数不准的问题，比如摩擦系数、质量、阻尼、关节延迟和接触弹性，让策略对真实硬件误差更鲁棒。系统辨识是反过来测真实机器人和环境参数，再把仿真调得更像真实世界。真实数据微调负责最后一公里，把真实遥操作、真机失败和人工接管样... 引用来源：CSDN 2026-07-23 原文链接：https://blog.csdn.net/\n引用来源：CSDN，2026-07-23\n原文链接：https://blog.csdn.net/ZHHHHH15/article/details/160808758\n完整回答已拆成图卡，建议按顺序复习。\n#Sim-to-Real #域随机化 #系统辨识 #仿真 #具身智能 #综合 #具身智能Sim-to-Real #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-23",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-21-6e683da4ec18.md",
+    "featureId": "daily-2026-07-21-eabe08ff9112",
+    "postId": "embodied-20260725-0ff752fe469a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-21-eabe08ff9112/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜具身智能 / Sim-to-Real",
+        "body": "公司：综合\n方向：具身智能 / Sim-to-Real\n题目：如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+        "body": "Sim-to-Real 的本质是仿真分布和真实世界分布不一致，差异来自视觉外观、传感器噪声、摩擦、质量、接触、延迟和控制器响应。视觉随机化解决的是外观域偏移，比如纹理、光照、背景、相机视角和噪声，让模型不要过拟合仿真画面。动力学随机化解决物理参数不准的问题，比如摩擦系数、质量、阻尼、关节延迟和接触弹性，让策略对真实硬件误差更鲁棒。系统辨识是反过来测真实机器人和环境参数，再把仿真调得更像真实世界。真实数据微调负责最后一公里，把真实遥操作、真机失败和人工接管样本回流到模型。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "如何解决 Sim-to-Real 鸿沟，视觉随机化、动力学随机化、系统辨识和真实数据微调分别解决什么问题？",
+        "body": "工程上常见流程是仿真大规模预训练、真实少量对齐、真机闭环评估、失败样本回流。指标要看仿真成功率、真机成功率、gap 大小、碰撞率、恢复成功率和跨物体/跨场景泛化。面试里要强调：只靠域随机化不够，必须把真实数据闭环接进去。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:06:49.903Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-eabe08ff9112/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-eabe08ff9112/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-eabe08ff9112/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-eabe08ff9112/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:07:11.414Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-21-550cc9edf135",
+    "title": "综合模仿学习和强化学习在具身任…题目精讲",
+    "coverTitle": "具身智能强化学习面试题精讲",
+    "coverSubtitle": "具身智能 / 强化学习 高频题",
+    "company": "综合",
+    "direction": "具身智能 / 强化学习",
+    "primaryQuestion": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "topic": "模仿学习和强化学习在具身任…",
+    "body": "每日精选：综合｜具身智能 / 强化学习 题目精讲 面试题目 1. 模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？ 一句话答案 模仿学习把专家轨迹当监督信号，优点是样本效率高、训练稳定、适合真实机器人数据昂贵的场景；缺点是容易协变量偏移，测试时一旦偏离专家分布，误差会逐步累积，而且上限受专家策略限制。强化学习通过试错最大化奖励，优点是能优化长期回报和发现更优策略，适合底层控制、恢复策略和仿真中可大量采样的任务；缺点是奖励设计难、探索成本高、真机安全风险大。实际系统通常先用遥操作数据做行为克隆或 diffusion policy 预训练，让策略获得基本能力；再在仿真或安全约束环境中用... 引用来源：CSDN 2026-07-23 原文链接：https://blog.csdn.net/\n引用来源：CSDN，2026-07-23\n原文链接：https://blog.csdn.net/ZHHHHH15/article/details/160808758\n完整回答已拆成图卡，建议按顺序复习。\n#模仿学习 #强化学习 #离线RL #安全探索 #具身智能 #综合 #具身智能强化学习 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-23",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-21-b13e2c2b79c2.md",
+    "featureId": "daily-2026-07-21-550cc9edf135",
+    "postId": "embodied-20260725-b8cbe00d9e5a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-21-550cc9edf135/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜具身智能 / 强化学习",
+        "body": "公司：综合\n方向：具身智能 / 强化学习\n题目：模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+        "body": "模仿学习把专家轨迹当监督信号，优点是样本效率高、训练稳定、适合真实机器人数据昂贵的场景；缺点是容易协变量偏移，测试时一旦偏离专家分布，误差会逐步累积，而且上限受专家策略限制。强化学习通过试错最大化奖励，优点是能优化长期回报和发现更优策略，适合底层控制、恢复策略和仿真中可大量采样的任务；缺点是奖励设计难、探索成本高、真机安全风险大。实际系统通常先用遥操作数据做行为克隆或 diffusion policy 预训练，让策略获得基本能力；再在仿真或安全约束环境中用 RL 微调，提高鲁棒性和恢复能力；最后用真机失败样本做离线",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+        "body": "RL、偏好学习或小步在线更新。关键是不要在真实机器人上无约束探索，要加入安全过滤器、动作边界、碰撞检测和人工接管。评估要看成功率、恢复率、探索成本、硬件损伤风险和长尾场景表现。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:06:23.223Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-550cc9edf135/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-550cc9edf135/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-550cc9edf135/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-21-550cc9edf135/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:06:44.751Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-20-9be9c46a6376",
+    "title": "傅利叶智能VLA/机器人动作题目精讲",
+    "coverTitle": "傅利叶智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "傅利叶智能",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：傅利叶智能 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-22\n原文链接：https://www.nowcoder.com/feed/main/detail/37af3ac1986b438c81cd26ab90a792a8\n完整回答已拆成图卡，建议按顺序复习。\n#傅利叶智能 #UniVLA #VLA #latentaction #具身智能 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-22",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/37af3ac1986b438c81cd26ab90a792a8",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-20-ac801b5deb65.md",
+    "featureId": "daily-2026-07-20-9be9c46a6376",
+    "postId": "embodied-20260725-52ad994e3ad9",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-20-9be9c46a6376/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "傅利叶智能｜VLA / 具身智能",
+        "body": "公司：傅利叶智能\n方向：VLA / 具身智能\n题目：UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM 输出关节动作？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM…",
+        "body": "这题的核心是把语义理解和低层连续控制解耦。VLM 擅长理解图像、语言和任务语义，但直接输出高频关节动作会遇到动作维度高、控制频率不匹配、训练噪声大和安全边界难约束的问题。late action model 的思路是先让前面的视觉语言主干形成任务相关表征，再在后端接一个动作专家或潜在动作解码器，把语义状态转成可执行的末端位姿、关节增量或 action chunk。潜在动作模型可以用 VQ、VAE、diffusion/flow matching 或 transformer decoder 学习动作分布，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "UniVLA 中 late action model / 潜在动作模型通常怎么搭建，为什么不直接让 VLM…",
+        "body": "优点是能表达多峰动作，比如同一个抓取任务可以从不同方向接近。训练上通常先对齐视觉语言表征，再用遥操作轨迹做行为克隆或生成式动作学习，最后用真机失败样本微调。工程上还要让低层控制器做轨迹跟踪、碰撞检测、速度/力限制和急停。回答时强调：VLA 不是让大模型替代伺服控制，而是让大模型给出具备语义条件的动作意图，低层系统保证实时性和安全性。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:09:05.137Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-9be9c46a6376/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-9be9c46a6376/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-9be9c46a6376/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-9be9c46a6376/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:09:26.673Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-20-8edf5b9470f5",
+    "title": "中国移动VLA/机器人动作题目精讲",
+    "coverTitle": "中国移动面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "中国移动",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：中国移动｜VLA / 具身智能 题目精讲 面试题目 1. VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？ 一句话答案 VLA 的输入通常包括视觉观测、语言指令、机器人本体状态和历史动作。视觉可以是 RGB、深度、点云或多相机图像；语言描述任务目标；本体状态包括关节角、末端位姿、夹爪状态、速度和力矩；历史动作帮助模型理解当前执行阶段。输出可以是离散 action token、末端位姿增量、关节增量、轨迹关键点或未来 K 步 action chunk。动作空间决定模型输出是否容易学习、是否能被低层控制器稳定执行。离散 token 方便接入自回归 LLM，但精度受离散化影响；连... 引用来源：CSDN 2026-07-23 原文链接：https://blog.csdn.net/\n引用来源：CSDN，2026-07-23\n原文链接：https://blog.csdn.net/ZHHHHH15/article/details/160808758\n完整回答已拆成图卡，建议按顺序复习。\n#中国移动 #VLA #预训练 #动作空间 #具身智能 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-23",
+    "sourceUrl": "https://blog.csdn.net/ZHHHHH15/article/details/160808758",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-20-a6d3eac0f05d.md",
+    "featureId": "daily-2026-07-20-8edf5b9470f5",
+    "postId": "embodied-20260725-d4ffcd147679",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-20-8edf5b9470f5/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "中国移动｜VLA / 具身智能",
+        "body": "公司：中国移动\n方向：VLA / 具身智能\n题目：VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+        "body": "VLA 的输入通常包括视觉观测、语言指令、机器人本体状态和历史动作。视觉可以是 RGB、深度、点云或多相机图像；语言描述任务目标；本体状态包括关节角、末端位姿、夹爪状态、速度和力矩；历史动作帮助模型理解当前执行阶段。输出可以是离散 action token、末端位姿增量、关节增量、轨迹关键点或未来 K 步 action chunk。动作空间决定模型输出是否容易学习、是否能被低层控制器稳定执行。离散 token 方便接入自回归 LLM，但精度受离散化影响；连续动作适合精细控制，但对数据质量和稳定性要求高；action",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
+        "body": "chunk 能降低推理频率，但过长会降低闭环反应速度。落地时要根据机器人平台、控制频率、任务粒度和安全要求选择动作表示。评估不能只看离线 loss，要看真机成功率、动作平滑度、碰撞率、急停次数和跨场景泛化。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-07-25T02:07:16.534Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-8edf5b9470f5/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-8edf5b9470f5/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-8edf5b9470f5/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-20-8edf5b9470f5/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-07-25T02:07:45.037Z"
+  },
+  {
     "id": "xhs-daily-2026-07-19-d0c23227adf2",
     "title": "智元机器人VLA/机器人动作题目精讲",
     "coverTitle": "智元机器人面试题精讲",

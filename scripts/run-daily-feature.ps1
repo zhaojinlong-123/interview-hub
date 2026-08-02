@@ -43,6 +43,47 @@ function Invoke-LoggedCommand {
   return $exitCode
 }
 
+function Invoke-LoggedJsonCommand {
+  param(
+    [string]$FilePath,
+    [string[]]$Arguments,
+    [string]$LogFile
+  )
+  $tempLog = Join-Path $logDir ("native-" + [Guid]::NewGuid().ToString("N") + ".log")
+  $previousErrorAction = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = "Continue"
+    & $FilePath @Arguments *> $tempLog
+    $exitCode = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousErrorAction
+  }
+
+  $content = ""
+  if (Test-Path $tempLog) {
+    $content = Get-Content -Path $tempLog -Raw -Encoding UTF8 -ErrorAction SilentlyContinue
+    $content | Out-File -FilePath $LogFile -Encoding utf8 -Append
+    Remove-Item -Path $tempLog -Force -ErrorAction SilentlyContinue
+  }
+
+  $featureId = ""
+  $jsonStart = $content.IndexOf("{")
+  $jsonEnd = $content.LastIndexOf("}")
+  if ($jsonStart -ge 0 -and $jsonEnd -gt $jsonStart) {
+    try {
+      $json = $content.Substring($jsonStart, $jsonEnd - $jsonStart + 1) | ConvertFrom-Json
+      $featureId = [string]$json.featureId
+    } catch {
+      $featureId = ""
+    }
+  }
+
+  return [PSCustomObject]@{
+    ExitCode = $exitCode
+    FeatureId = $featureId
+  }
+}
+
 function Invoke-CandidateRefresh {
   param([string]$LogFile)
 
@@ -94,10 +135,11 @@ function Invoke-FallbackDailyFeature {
     $fallbackArgs += "--publish-time=$PublishTime"
   }
 
-  $fallbackExit = Invoke-LoggedCommand -FilePath "node" -Arguments $fallbackArgs -LogFile $LogFile
-  if ($fallbackExit -ne 0) {
-    throw "fallback candidate generation exited with code $fallbackExit"
+  $fallbackResult = Invoke-LoggedJsonCommand -FilePath "node" -Arguments $fallbackArgs -LogFile $LogFile
+  if ($fallbackResult.ExitCode -ne 0) {
+    throw "fallback candidate generation exited with code $($fallbackResult.ExitCode)"
   }
+  return $fallbackResult.FeatureId
 }
 
 try {
@@ -116,16 +158,27 @@ try {
   }
 
   $dailyLog = "$logDir\daily-feature-last.log"
-  $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
-  if ($generateExit -ne 0) {
+  $featureId = ""
+  $generateResult = Invoke-LoggedJsonCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
+  if ($generateResult.ExitCode -eq 0) {
+    $featureId = $generateResult.FeatureId
+  } else {
     Invoke-CandidateRefresh -LogFile $dailyLog | Out-Null
-    $generateExit = Invoke-LoggedCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
-    if ($generateExit -ne 0) {
-      Invoke-FallbackDailyFeature -LogFile $dailyLog -Slot $Slot -PublishTime $PublishTime
+    $generateResult = Invoke-LoggedJsonCommand -FilePath "node" -Arguments $generateArgs -LogFile $dailyLog
+    if ($generateResult.ExitCode -eq 0) {
+      $featureId = $generateResult.FeatureId
+    } else {
+      $featureId = Invoke-FallbackDailyFeature -LogFile $dailyLog -Slot $Slot -PublishTime $PublishTime
     }
   }
 
-  $publishExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\publish-xiaohongshu.mjs") -LogFile "$logDir\daily-feature-last.log"
+  if (-not $featureId) {
+    throw "daily feature generation did not return a featureId"
+  }
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  "[$stamp] Publishing featureId=$featureId" | Out-File -FilePath "$logDir\daily-feature-last.log" -Encoding utf8 -Append
+
+  $publishExit = Invoke-LoggedCommand -FilePath "node" -Arguments @("scripts\publish-xiaohongshu.mjs", "--id=$featureId") -LogFile "$logDir\daily-feature-last.log"
   if ($publishExit -ne 0) {
     throw "publish-xiaohongshu exited with code $publishExit"
   }

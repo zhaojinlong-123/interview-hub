@@ -30,6 +30,21 @@
     "updatedAt": "2026-07-27T13:17:43.985Z"
   },
   {
+    "key": "compression:d5ff7cba463e",
+    "question": "推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+    "queueId": "xhs-daily-2026-07-31-1613183a85e6",
+    "featureId": "daily-2026-07-31-1613183a85e6",
+    "postId": "reserve-20260703-deepseek-reasoning-distill",
+    "title": "DeepSeek量化压缩/微调部署题目精",
+    "company": "DeepSeek",
+    "direction": "训练框架 / 推理优化",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1974870853121508975",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:13:58.257Z"
+  },
+  {
     "key": "data:271a1e3ca023",
     "question": "VLM 从图文预训练到指令微调再到偏好对齐，各阶段分别解决什么问题？",
     "queueId": "xhs-daily-2026-07-11-1f0f8ba06b7b",
@@ -58,6 +73,21 @@
     "updatedAt": "2026-06-14T16:25:26.597Z"
   },
   {
+    "key": "distributed_training:3b09cd16c0db",
+    "question": "DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+    "queueId": "xhs-daily-2026-07-29-eee035207ad8",
+    "featureId": "daily-2026-07-29-eee035207ad8",
+    "postId": "supplement-20260708-47e697516043",
+    "title": "字节训练框架/显存优化题目精讲",
+    "company": "字节",
+    "direction": "训练框架",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:12:24.191Z"
+  },
+  {
     "key": "distributed_training:4c0c4c13e759",
     "question": "DeepSpeed ZeRO、Megatron 张量并行、流水并行和数据并行分别解决什么瓶颈？",
     "queueId": "xhs-daily-2026-06-14-8ded06a9a5b9",
@@ -71,6 +101,36 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "distributed_training:92f0e10d3b22",
+    "question": "字节多模态大模型训练中，DeepSpeed",
+    "queueId": "xhs-daily-2026-08-01-f467901b18fe",
+    "featureId": "daily-2026-08-01-f467901b18fe",
+    "postId": "auto-20260618-b58a3fe4898c",
+    "title": "字节训练框架/显存优化题目精讲",
+    "company": "字节",
+    "direction": "训练框架 / 对齐训练",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=e1fdf9a1dc62ad0e6db37c5329488736&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:09:33.811Z"
+  },
+  {
+    "key": "distributed_training:a0e46883797b",
+    "question": "字节多模态训练中，DeepSpeed",
+    "queueId": "xhs-daily-2026-07-28-dc3307abf4e3",
+    "featureId": "daily-2026-07-28-dc3307abf4e3",
+    "postId": "auto-20260701-0dff93d2c054",
+    "title": "字节训练框架/显存优化题目精讲",
+    "company": "字节",
+    "direction": "训练框架 / 推理优化",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:08:56.078Z"
   },
   {
     "key": "embodied_episode:0bde71b89500",
@@ -1018,6 +1078,21 @@
     "updatedAt": "2026-06-21T16:18:25.635Z"
   },
   {
+    "key": "general:vla框架中视觉语言和动作三部分的接口应该如何设计才能支持跨机器人泛化",
+    "question": "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+    "queueId": "xhs-daily-2026-08-02-2be8be6decda",
+    "featureId": "daily-2026-08-02-2be8be6decda",
+    "postId": "auto-20260701-c48382f27e86",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=&request_id=&biz_id=102",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:10:33.985Z"
+  },
+  {
     "key": "general:vla模型的输入和输出分别是什么为什么动作空间设计会直接影响模型能否落地",
     "question": "VLA 模型的输入和输出分别是什么，为什么动作空间设计会直接影响模型能否落地？",
     "queueId": "xhs-daily-2026-07-20-8edf5b9470f5",
@@ -1031,6 +1106,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-07-25T02:07:45.037Z"
+  },
+  {
+    "key": "general:vla预训练数据应该包含哪些字段为什么只保存图像和动作不够",
+    "question": "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+    "queueId": "xhs-daily-2026-07-29-5d8b69ac8d7a",
+    "featureId": "daily-2026-07-29-5d8b69ac8d7a",
+    "postId": "auto-20260701-abcc070cf71c",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:12:02.369Z"
   },
   {
     "key": "inference:199ee39da818",
@@ -1376,6 +1466,36 @@
     "updatedAt": "2026-07-25T02:03:38.018Z"
   },
   {
+    "key": "vla_action:0609988d241d",
+    "question": "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？",
+    "queueId": "xhs-daily-2026-07-28-c2f4197a2bf9",
+    "featureId": "daily-2026-07-28-c2f4197a2bf9",
+    "postId": "auto-20260701-5282521e72b6",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=&request_id=&biz_id=102",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:11:40.553Z"
+  },
+  {
+    "key": "vla_action:7485012a6b6c",
+    "question": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控制场景？",
+    "queueId": "xhs-daily-2026-07-30-ae819c7705de",
+    "featureId": "daily-2026-07-30-ae819c7705de",
+    "postId": "auto-20260617-5b7dc90c91e3",
+    "title": "综合VLA/机器人动作题目精讲",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=elastic_search_misc&request_id=c08cdbce3b7a41e30c78842ca62a9315&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:12:52.861Z"
+  },
+  {
     "key": "vla_action:7a635fa24952",
     "question": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
     "queueId": "xhs-daily-2026-06-13-eeee8e7e0263",
@@ -1462,6 +1582,36 @@
     "updatedAt": "2026-06-16T13:01:49.953Z"
   },
   {
+    "key": "vlm_eval:9480001587f8",
+    "question": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "queueId": "xhs-daily-2026-07-30-c1f45444aa64",
+    "featureId": "daily-2026-07-30-c1f45444aa64",
+    "postId": "supplement-20260708-1fb814c2b64b",
+    "title": "快手多模态理解题目精讲",
+    "company": "快手",
+    "direction": "视频理解",
+    "sourcePlatform": "牛客",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/b8573c3fe8e14f63aab2ff63c5359924",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:13:14.675Z"
+  },
+  {
+    "key": "vlm_eval:f5334e46bdf5",
+    "question": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "queueId": "xhs-daily-2026-07-31-cf3074c26da8",
+    "featureId": "daily-2026-07-31-cf3074c26da8",
+    "postId": "supplement-20260708-4954a1e13211",
+    "title": "高德世界模型/自动驾驶题目精讲",
+    "company": "高德",
+    "direction": "多模态大模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/159165484?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=0",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:13:36.454Z"
+  },
+  {
     "key": "vlm_eval:f6c1765e0520",
     "question": "多模态模型如何评估 grounding、OCR、空间关系、幻觉和多轮视觉对话能力？",
     "queueId": "xhs-daily-2026-06-13-c026b29d4659",
@@ -1473,6 +1623,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-14T16:25:26.597Z"
+  },
+  {
+    "key": "vlm_eval:fb1ada1bcfa3",
+    "question": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "queueId": "xhs-daily-2026-08-02-b2681ae381aa",
+    "featureId": "daily-2026-08-02-b2681ae381aa",
+    "postId": "supplement-20260708-268155a4bd62",
+    "title": "字节多模态理解题目精讲",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "sourcePlatform": "知乎",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:14:20.055Z"
   },
   {
     "key": "world_model:0743ac1158b7",
@@ -1531,6 +1696,21 @@
     "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
     "status": "published",
     "updatedAt": "2026-06-16T13:01:49.953Z"
+  },
+  {
+    "key": "world_model:51ba89923d77",
+    "question": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+    "queueId": "xhs-daily-2026-08-01-c603f0fbe7c3",
+    "featureId": "daily-2026-08-01-c603f0fbe7c3",
+    "postId": "supplement-20260708-535b8149bdbd",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "company": "综合",
+    "direction": "自动驾驶数据 / 世界模型",
+    "sourcePlatform": "CSDN",
+    "sourceUrl": "https://blog.csdn.net/kaka0722ww/article/details/160022527?ops_request_misc=&request_id=&biz_id=102",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "status": "published",
+    "updatedAt": "2026-08-02T02:10:05.237Z"
   },
   {
     "key": "world_model:b11a66ea3418",

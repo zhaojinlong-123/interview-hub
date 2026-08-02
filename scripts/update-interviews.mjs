@@ -12,6 +12,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9222";
 const SHOULD_PUSH = process.argv.includes("--push");
 const SEARCHES_PER_PLATFORM = Number(process.env.SEARCHES_PER_PLATFORM || 6);
+const CDP_TIMEOUT_MS = Number(process.env.CDP_TIMEOUT_MS || 180000);
 const maxNewArg = process.argv.find((arg) => arg.startsWith("--max-new="));
 const MAX_NEW_POSTS = Number(maxNewArg?.split("=")[1] || process.env.MAX_NEW_POSTS || 40);
 
@@ -320,13 +321,24 @@ async function getJson(url) {
   return response.json();
 }
 
-function wsRequest(wsUrl, messages, timeout = 30000) {
+async function putJson(url) {
+  const response = await fetch(url, { method: "PUT" });
+  if (!response.ok) throw new Error(`${url} ${response.status}`);
+  return response.json();
+}
+
+function wsRequest(wsUrl, messages, timeout = CDP_TIMEOUT_MS) {
   return new Promise((resolve, reject) => {
     const ws = new WebSocket(wsUrl);
     let nextId = 1;
     const pending = new Map();
     const results = [];
-    const timer = setTimeout(() => reject(new Error("CDP timeout")), timeout);
+    const timer = setTimeout(() => {
+      try {
+        ws.close();
+      } catch {}
+      reject(new Error(`CDP timeout after ${timeout}ms`));
+    }, timeout);
     ws.onopen = () => {
       for (const msg of messages) {
         const id = nextId++;
@@ -359,19 +371,15 @@ async function listTabs() {
 }
 
 async function createTab(browserWs, url) {
-  const created = await wsRequest(browserWs, [{ method: "Target.createTarget", params: { url: "about:blank" } }]);
-  const targetId = created[0].data.result.targetId;
-  let tabs = await listTabs();
-  let tab = tabs.find((item) => item.id === targetId);
-  await wsRequest(tab.webSocketDebuggerUrl, [{ method: "Page.navigate", params: { url } }]);
+  const tab = await putJson(`${CDP}/json/new?${encodeURIComponent(url)}`);
+  const targetId = tab.id;
   await new Promise((resolve) => setTimeout(resolve, 5500));
-  tabs = await listTabs();
-  tab = tabs.find((item) => item.id === targetId) || tab;
-  return { targetId, tab };
+  const tabs = await listTabs();
+  return { targetId, tab: tabs.find((item) => item.id === targetId) || tab };
 }
 
 async function closeTab(browserWs, targetId) {
-  await wsRequest(browserWs, [{ method: "Target.closeTarget", params: { targetId } }], 10000).catch(() => {});
+  await fetch(`${CDP}/json/close/${targetId}`).catch(() => {});
 }
 
 async function extractFromTab(tab, platform) {

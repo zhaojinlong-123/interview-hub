@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜多模态大模型",
+    "body": "公司：字节\n方向：多模态大模型\n题目：动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-02-b2681ae381aa\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-02-b2681ae381aa\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "body": "动态分辨率的核心是按任务和图像内容决定视觉 token 预算，而不是所有图片统一 resize 到固定尺寸。对普通场景理解，低分辨率全图 token 足够保留主体和布局；对 OCR、表格、小目标、遥感或界面截图，需要局部高分辨率 tile 保留细节。常见做法是全局低分辨率图提供上下文，再对高信息密度区域切 tile，并给 tile 加位置编码，避免模型不知道局部来自哪里。成本上，tile 数越多，LLM prefill 越长，显存和首 token 延迟都会上升，所以要限制最大 tile 数、合并低价值 patch，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-02-b2681ae381aa\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "body": "或用 resampler 压缩。训练时要混合不同分辨率和任务，防止模型只适应某种 token 布局。评估时不能只看通用 VQA，要单独看 OCR 准确率、局部属性、空间关系和延迟曲线。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-02-b2681ae381aa\\04-answer.png"
+  }
+]

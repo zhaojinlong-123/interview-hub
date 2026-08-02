@@ -1,5 +1,713 @@
 [
   {
+    "id": "xhs-daily-2026-08-02-b2681ae381aa",
+    "title": "字节多模态理解题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "字节",
+    "direction": "多模态大模型",
+    "primaryQuestion": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "topic": "多模态理解",
+    "body": "每日精选：字节 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-07\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n完整回答已拆成图卡，建议按顺序复习。\n#字节 #动态分辨率 #tile #VLM #OCR #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-02-b2681ae381aa.md",
+    "featureId": "daily-2026-08-02-b2681ae381aa",
+    "postId": "supplement-20260708-268155a4bd62",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-02-b2681ae381aa/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "字节｜多模态大模型",
+        "body": "公司：字节\n方向：多模态大模型\n题目：动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+        "body": "动态分辨率的核心是按任务和图像内容决定视觉 token 预算，而不是所有图片统一 resize 到固定尺寸。对普通场景理解，低分辨率全图 token 足够保留主体和布局；对 OCR、表格、小目标、遥感或界面截图，需要局部高分辨率 tile 保留细节。常见做法是全局低分辨率图提供上下文，再对高信息密度区域切 tile，并给 tile 加位置编码，避免模型不知道局部来自哪里。成本上，tile 数越多，LLM prefill 越长，显存和首 token 延迟都会上升，所以要限制最大 tile 数、合并低价值 patch，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+        "body": "或用 resampler 压缩。训练时要混合不同分辨率和任务，防止模型只适应某种 token 布局。评估时不能只看通用 VQA，要单独看 OCR 准确率、局部属性、空间关系和延迟曲线。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:13:58.405Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-b2681ae381aa/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-b2681ae381aa/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-b2681ae381aa/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-b2681ae381aa/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:14:20.055Z"
+  },
+  {
+    "id": "xhs-daily-2026-08-02-2be8be6decda",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-01\n原文链接：https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=&request_id=&biz_id=102\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #VLA #面经 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160694260?ops_request_misc=&request_id=&biz_id=102",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-02-2be8be6decda.md",
+    "featureId": "daily-2026-08-02-2be8be6decda",
+    "postId": "auto-20260701-c48382f27e86",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-02-2be8be6decda/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+        "body": "跨机器人泛化的关键是把任务语义、环境观测和具体控制接口解耦。视觉侧输出对象、空间关系、状态变化或视觉 token；语言侧提供目标、约束和阶段性指令；动作侧不能只绑定某个机械臂的关节维度，而应尽量使用末端位姿、技能 token、归一化动作或机器人无关的 action chunk。不同机器人再通过低层控制器或 embodiment adapter 映射到具体关节。训练数据中要显式记录相机外参、机器人本体状态、控制频率和动作坐标系，否则模型会把平台差异误当成任务规律。回答时可以强调分层：高层 VLA 学任务和语义动作，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 框架中，视觉、语言和动作三部分的接口应该如何设计，才能支持跨机器人泛化？",
+        "body": "低层控制器处理动力学和安全约束。这样既利于跨平台迁移，也方便在真实机器人上做限幅、碰撞检查和急停。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:10:12.356Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-2be8be6decda/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-2be8be6decda/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-2be8be6decda/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-02-2be8be6decda/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:10:33.985Z"
+  },
+  {
+    "id": "xhs-daily-2026-08-01-f467901b18fe",
+    "title": "字节训练框架/显存优化题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "训练框架 / 对齐训练 高频题",
+    "company": "字节",
+    "direction": "训练框架 / 对齐训练",
+    "primaryQuestion": "字节多模态大模型训练中，DeepSpeed",
+    "topic": "训练框架 / 显存优化",
+    "body": "每日精选：字节｜训练框架 / 对齐训练 题目精讲 面试题目 1. 字节多模态大模型训练中，DeepSpeed\n引用来源：CSDN，2026-06-18\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=e1fdf9a1dc62ad0e6db37c5329488736&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #字节 #大模型 #多模态 #面经 #DeepSpeed #训练框架对齐训练 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-18",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=e1fdf9a1dc62ad0e6db37c5329488736&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-01-f467901b18fe.md",
+    "featureId": "daily-2026-08-01-f467901b18fe",
+    "postId": "auto-20260618-b58a3fe4898c",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-01-f467901b18fe/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "字节｜训练框架 / 对齐训练",
+        "body": "公司：字节\n方向：训练框架 / 对齐训练\n题目：字节多模态大模型训练中，DeepSpeed",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 字节多模态大模型训练中，DeepSpeed",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "字节多模态大模型训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，如何取舍？",
+        "body": "这题要把训练链路拆开讲。DeepSpeed ZeRO 解决的是大模型训练时参数、梯度和优化器状态的显存压力，适合全参训练或大规模继续预训练；LoRA 解决的是低成本任务适配，通过低秩增量参数减少训练显存和存储成本，适合垂直任务微调和多租户部署；RLHF 解决的是模型输出偏好与人类期望不一致的问题，通常放在 SFT 之后，用偏好数据、reward model 或 DPO/GRPO 类方法做对齐。取舍上，如果目标是扩展模型能力，优先考虑全参训练和 ZeRO；如果目标是快速适配业务，优先 LoRA；",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "字节多模态大模型训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，如何取舍？",
+        "body": "如果基础能力已经够但回答风格、安全性、指令遵循不稳定，再做 RLHF 或偏好优化。面试里还要补一句：三者不是互斥关系，真实大厂训练常常是 ZeRO 支撑训练底座，LoRA 做快速实验，RLHF/DPO 做最后对齐。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:09:12.212Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-f467901b18fe/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-f467901b18fe/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-f467901b18fe/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-f467901b18fe/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:09:33.811Z"
+  },
+  {
+    "id": "xhs-daily-2026-08-01-c603f0fbe7c3",
+    "title": "综合世界模型/自动驾驶题目精讲",
+    "coverTitle": "自动驾驶数据世界模型面试题精讲",
+    "coverSubtitle": "自动驾驶数据 / 世界模型 高频题",
+    "company": "综合",
+    "direction": "自动驾驶数据 / 世界模型",
+    "primaryQuestion": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+    "topic": "世界模型 / 自动驾驶",
+    "body": "每日精选：综合 自动驾驶数据 / 世界模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/kaka0722ww/article/details/160022527?ops_request_misc=&request_id=&biz_id=102\n完整回答已拆成图卡，建议按顺序复习。\n#自动驾驶 #世界模型 #BEV #occupancy #闭环仿真 #综合 #自动驾驶数据世界模型 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/kaka0722ww/article/details/160022527?ops_request_misc=&request_id=&biz_id=102",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-01-c603f0fbe7c3.md",
+    "featureId": "daily-2026-08-01-c603f0fbe7c3",
+    "postId": "supplement-20260708-535b8149bdbd",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-01-c603f0fbe7c3/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜自动驾驶数据 / 世界模型",
+        "body": "公司：综合\n方向：自动驾驶数据 / 世界模型\n题目：自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+        "body": "自动驾驶世界模型的目标不是只做感知，而是学习“当前状态加候选动作会导致什么未来”。BEV 提供统一鸟瞰坐标，把相机、雷达、地图和历史轨迹对齐到可规划空间；occupancy 描述静态和动态空间占用，尤其适合表达可见和不可见区域；轨迹预测建模其他交通参与者未来运动；闭环仿真则把自车规划动作放回环境中，评估交互结果。训练时可以联合未来 occupancy、轨迹、碰撞风险、交通规则和规划代价，让模型理解动态演化。难点在于闭环误差会累积，仿真参与者反应要合理，长尾场景要覆盖。评估不能只看离线 mAP 或 ADE/FDE，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真连接起来？",
+        "body": "还要看闭环碰撞率、接管率、规则违反、舒适性和场景覆盖。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:09:43.631Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-c603f0fbe7c3/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-c603f0fbe7c3/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-c603f0fbe7c3/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-01-c603f0fbe7c3/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:10:05.237Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-31-cf3074c26da8",
+    "title": "高德世界模型/自动驾驶题目精讲",
+    "coverTitle": "高德面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "高德",
+    "direction": "多模态大模型",
+    "primaryQuestion": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "topic": "世界模型 / 自动驾驶",
+    "body": "每日精选：高德 多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/zhhhhh15/article/details/159165484?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#高德 #地图 #多模态 #空间关系 #POI #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/159165484?ops_request_misc=elastic_search_misc&request_id=39fc56fafca06eb78803620f58d7bbcf&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-31-cf3074c26da8.md",
+    "featureId": "daily-2026-07-31-cf3074c26da8",
+    "postId": "supplement-20260708-4954a1e13211",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-31-cf3074c26da8/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "高德｜多模态大模型",
+        "body": "公司：高德\n方向：多模态大模型\n题目：地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+        "body": "地图场景的多模态建模不能只看单张图片，还要把地理位置和拓扑关系纳入表示。道路图像提供车道线、路牌、建筑和环境线索；POI 文本提供名称、品类和营业信息；轨迹反映真实通行模式；路网拓扑提供连接关系、转向限制和距离。模型可以把视觉特征、文本特征和地理网格或道路节点 embedding 对齐到统一空间，再通过图神经网络或 cross-attention 融合邻近区域信息。训练任务包括 POI 匹配、路牌识别、地点问答、轨迹目的地预测和异常道路发现。评估时要按城市、道路等级、昼夜天气和新开道路分桶，重点检查空间关系和时效性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+        "body": "隐私上要避免暴露个人轨迹，通常使用聚合特征和脱敏采样。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:13:14.838Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-cf3074c26da8/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-cf3074c26da8/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-cf3074c26da8/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-cf3074c26da8/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:13:36.454Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-31-1613183a85e6",
+    "title": "DeepSeek量化压缩/微调部署题目精",
+    "coverTitle": "DeepSeek面试题精讲",
+    "coverSubtitle": "训练框架 / 推理优化 高频题",
+    "company": "DeepSeek",
+    "direction": "训练框架 / 推理优化",
+    "primaryQuestion": "推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+    "topic": "量化压缩 / 微调部署",
+    "body": "每日精选：DeepSeek 训练框架 / 推理优化题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-03\n原文链接：https://zhuanlan.zhihu.com/p/1974870853121508975\n完整回答已拆成图卡，建议按顺序复习。\n#DeepSeek #训练框架推理优化 #面经 #大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-03",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1974870853121508975",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-31-1613183a85e6.md",
+    "featureId": "daily-2026-07-31-1613183a85e6",
+    "postId": "reserve-20260703-deepseek-reasoning-distill",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-31-1613183a85e6/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "DeepSeek｜训练框架 / 推理优化",
+        "body": "公司：DeepSeek\n方向：训练框架 / 推理优化\n题目：推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+        "body": "只蒸馏最终答案成本低，但学生模型学不到中间分解方式，遇到新题容易泛化差。蒸馏推理过程能教模型如何拆题、验证和回溯，适合数学、代码和复杂问答，但要过滤错误或冗长推理链。蒸馏偏好排序关注哪个回答更好，可用于训练选择能力或偏好模型，但不直接提供完整解题路径。实践中常把三者组合：用高质量过程样本做监督，用最终答案保证简洁正确，再用偏好数据约束风格和可靠性。评估要分别看正确率、推理长度、鲁棒性和错误自检能力。 如果面试官继续追问，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "推理模型蒸馏时，应该蒸馏最终答案、推理过程还是偏好排序，三者有什么差异？",
+        "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:13:36.597Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-1613183a85e6/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-1613183a85e6/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-1613183a85e6/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-31-1613183a85e6/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:13:58.257Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-30-c1f45444aa64",
+    "title": "快手多模态理解题目精讲",
+    "coverTitle": "快手面试题精讲",
+    "coverSubtitle": "视频理解 高频题",
+    "company": "快手",
+    "direction": "视频理解",
+    "primaryQuestion": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "topic": "多模态理解",
+    "body": "每日精选：快手 视频理解题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：牛客，2026-07-07\n原文链接：https://www.nowcoder.com/feed/main/detail/b8573c3fe8e14f63aab2ff63c5359924\n完整回答已拆成图卡，建议按顺序复习。\n#快手 #短视频 #视频理解 #ASR #OCR #大模型面试 #AI学习",
+    "sourcePlatform": "牛客",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://www.nowcoder.com/feed/main/detail/b8573c3fe8e14f63aab2ff63c5359924",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-30-c1f45444aa64.md",
+    "featureId": "daily-2026-07-30-c1f45444aa64",
+    "postId": "supplement-20260708-1fb814c2b64b",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-30-c1f45444aa64/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "快手｜视频理解",
+        "body": "公司：快手\n方向：视频理解\n题目：短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+        "body": "短视频样本要同时保留内容证据和行为反馈。封面提供静态主题，视频帧提供动作和场景变化，OCR 捕捉画面文字，ASR/字幕提供语音语义，用户点击、完播、点赞、评论和负反馈提供偏好监督。构造时先按镜头或时间窗口抽帧，并把 OCR/ASR 对齐到时间段；再生成视频级摘要、事件标签、实体标签和风险标签。用户行为不能直接当内容标签，因为受曝光位置和人群偏好影响，需要做去偏采样或作为排序目标而非纯语义目标。训练上可以先做内容理解预训练，再做多任务学习：分类、检索、问答、审核和推荐预估。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+        "body": "评估要分内容准确性、时序理解、冷启动视频、长尾类目和线上指标，避免模型只学热门模板。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:12:53.007Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-c1f45444aa64/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-c1f45444aa64/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-c1f45444aa64/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-c1f45444aa64/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:13:14.675Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-30-ae819c7705de",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控制场景？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-06-17\n原文链接：https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=elastic_search_misc&request_id=c08cdbce3b7a41e30c78842ca62a9315&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #VLA #面经 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-06-17",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=elastic_search_misc&request_id=c08cdbce3b7a41e30c78842ca62a9315&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-30-ae819c7705de.md",
+    "featureId": "daily-2026-07-30-ae819c7705de",
+    "postId": "auto-20260617-5b7dc90c91e3",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-30-ae819c7705de/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控制场景？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控制场景？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控…",
+        "body": "Action token 把动作离散成词表，便于复用语言模型的自回归建模和长程规划，适合技能选择、粗粒度控制与跨机器人统一表示，但存在量化误差。连续动作回归直接输出关节、末端位姿或速度，延迟低，适合高频闭环和精细操作，但容易对多解动作取平均。Diffusion Policy 生成整段 action chunk，能表达多峰轨迹并保持平滑，适合抓取、装配等示范分布复杂的任务，代价是多步采样较慢。工程上常采用高层 token 规划、低层连续控制或 diffusion chunk 滚动执行。 如果面试官继续追问，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 模型中 action token、连续动作回归和 diffusion policy 分别适合什么控…",
+        "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:12:24.346Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-ae819c7705de/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-ae819c7705de/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-ae819c7705de/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-30-ae819c7705de/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:12:52.861Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-29-eee035207ad8",
+    "title": "字节训练框架/显存优化题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "训练框架 高频题",
+    "company": "字节",
+    "direction": "训练框架",
+    "primaryQuestion": "DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+    "topic": "训练框架 / 显存优化",
+    "body": "每日精选：字节｜训练框架 题目精讲 面试题目 1. DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？ 一句话答案 DeepSpeed 是训练系统层工具，主要解决大模型训练的显存、并行和吞吐问题，例如\n引用来源：CSDN，2026-07-07\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#字节 #DeepSpeed #LoRA #RLHF #训练框架 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-07",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=ff52808e4efd88c878d62081f2bac53b&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-29-eee035207ad8.md",
+    "featureId": "daily-2026-07-29-eee035207ad8",
+    "postId": "supplement-20260708-47e697516043",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-29-eee035207ad8/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "字节｜训练框架",
+        "body": "公司：字节\n方向：训练框架\n题目：DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+        "body": "DeepSpeed 是训练系统层工具，主要解决大模型训练的显存、并行和吞吐问题，例如 ZeRO 切分优化器状态、梯度和参数，配合数据并行、流水并行和 offload。LoRA 是参数高效微调方法，解决下游适配成本高的问题，通过训练低秩增量矩阵减少显存和存储，同时便于多任务维护 adapter。RLHF 是对齐训练流程，解决模型输出是否符合人类偏好、安全和任务目标的问题，通常包含偏好数据、奖励模型和策略优化。三者不在同一层面：DeepSpeed 管“怎么训得动”，LoRA 管“用多少参数适配”，RLHF",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "DeepSpeed、LoRA 和 RLHF 分别解决训练流程中的什么问题，为什么不能放在同一层面比较？",
+        "body": "管“优化什么行为”。实际项目可以组合使用，例如用 DeepSpeed/FSDP 训练基座，用 LoRA 做业务微调，再用 DPO/GRPO/RLHF 做偏好对齐。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:12:02.520Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-eee035207ad8/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-eee035207ad8/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-eee035207ad8/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-eee035207ad8/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:12:24.191Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-29-5d8b69ac8d7a",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-01\n原文链接：https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #VLA #面试 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/zhhhhh15/article/details/160808758?ops_request_misc=elastic_search_misc&request_id=9d51249dd25ea095d44bcb7b67a89b88&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-29-5d8b69ac8d7a.md",
+    "featureId": "daily-2026-07-29-5d8b69ac8d7a",
+    "postId": "auto-20260701-abcc070cf71c",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-29-5d8b69ac8d7a/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+        "body": "VLA 预训练样本至少要包含多视角图像或视频、语言指令、机器人本体状态、末端位姿、动作命令、时间戳、相机外参、任务阶段、成功/失败标签和必要的力觉或触觉信息。只保存图像和动作会丢掉意图、坐标系和状态上下文，模型不知道这个动作是为了完成什么目标，也难以区分同一视觉状态下的不同任务。时间戳用于同步多相机和控制信号，外参用于空间对齐，本体状态用于判断可达性，成功失败标签用于学习恢复和风险。对于真实机器人数据，还要记录人工接管、异常、碰撞、超时和重试。一个成熟的数据 schema 能支持 imitation",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "VLA 预训练数据应该包含哪些字段，为什么只保存图像和动作不够？",
+        "body": "learning、失败样本挖掘、离线 RL 和仿真回放，而不是只能做简单行为克隆。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:11:40.702Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-5d8b69ac8d7a/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-5d8b69ac8d7a/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-5d8b69ac8d7a/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-29-5d8b69ac8d7a/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:12:02.369Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-28-dc3307abf4e3",
+    "title": "字节训练框架/显存优化题目精讲",
+    "coverTitle": "字节面试题精讲",
+    "coverSubtitle": "训练框架 / 推理优化 高频题",
+    "company": "字节",
+    "direction": "训练框架 / 推理优化",
+    "primaryQuestion": "字节多模态训练中，DeepSpeed",
+    "topic": "训练框架 / 显存优化",
+    "body": "每日精选：字节｜训练框架 / 推理优化 题目精讲 面试题目 1. 字节多模态训练中，DeepSpeed\n引用来源：CSDN，2026-07-01\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #字节 #大模型 #多模态 #面经 #DeepSpeed #训练框架推理优化 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-28-dc3307abf4e3.md",
+    "featureId": "daily-2026-07-28-dc3307abf4e3",
+    "postId": "auto-20260701-0dff93d2c054",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-28-dc3307abf4e3/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "字节｜训练框架 / 推理优化",
+        "body": "公司：字节\n方向：训练框架 / 推理优化\n题目：字节多模态训练中，DeepSpeed",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 字节多模态训练中，DeepSpeed",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶…",
+        "body": "可以先把问题拆成参数放置、单层计算和训练成本三层。ZeRO-3/FSDP 负责把参数、梯度和优化器状态分片，解决单卡显存装不下完整模型的问题；张量并行切分 attention 或 FFN 的矩阵计算，解决单层太宽、单卡算不动的问题；LoRA 则只训练低秩增量，减少可训练参数、优化器状态和通信量。多模态场景里，常见做法是冻结或半冻结视觉编码器，语言模型主体用 ZeRO/FSDP 管理，projector、adapter 或部分 LLM 层用 LoRA 训练。如果模型很大且单层矩阵也放不下，再叠加张量并行。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶…",
+        "body": "面试里要强调组合顺序：先估算权重、梯度、优化器状态和激活值，再决定是否需要 ZeRO-3；再看单层矩阵和 batch token 是否需要张量并行；最后用 LoRA 控制微调成本和灾难性遗忘。风险是并行策略叠太多会让通信、checkpoint、恢复和性能调优复杂化。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:08:27.752Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-dc3307abf4e3/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-dc3307abf4e3/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-dc3307abf4e3/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-dc3307abf4e3/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:08:56.078Z"
+  },
+  {
+    "id": "xhs-daily-2026-07-28-c2f4197a2bf9",
+    "title": "综合VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：综合 VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-01\n原文链接：https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=&request_id=&biz_id=102\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #VLA #面经 #具身 #综合 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/lovely_yoshino/article/details/160722050?ops_request_misc=&request_id=&biz_id=102",
+    "articlePath": "content/xiaohongshu-drafts/2026-07-28-c2f4197a2bf9.md",
+    "featureId": "daily-2026-07-28-c2f4197a2bf9",
+    "postId": "auto-20260701-5282521e72b6",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-07-28-c2f4197a2bf9/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "综合｜VLA / 具身智能",
+        "body": "公司：综合\n方向：VLA / 具身智能\n题目：经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成范式有什么差异？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成…",
+        "body": "RT-1 更偏机器人多任务策略学习，把视觉和语言条件映射到离散化动作 token，适合统一多个任务但受动作量化影响。RT-2 把互联网视觉语言知识迁移到机器人动作，把动作也表示成语言模型可生成的 token，优势是语义泛化更强。OpenVLA 延续视觉语言动作统一建模思路，强调开源数据和跨任务泛化。Diffusion Policy 则不是自回归 token 生成，而是对一段连续动作轨迹做去噪生成，能表达多峰、平滑的 action chunk，适合抓取、装配等连续控制任务，但推理步数和延迟更高。面试里要把“离散",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "经典 VLA 模型里，RT-1/RT-2、OpenVLA 和 Diffusion Policy 的动作生成…",
+        "body": "token 便于复用 LLM”和“连续扩散轨迹更适合精细控制”讲清楚，并说明实际系统常用高层 token 规划加低层连续控制。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-02T02:11:18.861Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-c2f4197a2bf9/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-c2f4197a2bf9/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-c2f4197a2bf9/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-07-28-c2f4197a2bf9/04-answer.png"
+    ],
+    "status": "published",
+    "reason": "已提交小红书发布，可能进入平台审核",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-02T02:11:40.553Z"
+  },
+  {
     "id": "xhs-daily-2026-07-27-ec4199c5c68c",
     "title": "快手量化压缩/微调部署题目精讲",
     "coverTitle": "快手面试题精讲",

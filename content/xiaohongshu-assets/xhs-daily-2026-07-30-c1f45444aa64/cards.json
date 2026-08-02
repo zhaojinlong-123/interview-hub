@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "快手｜视频理解",
+    "body": "公司：快手\n方向：视频理解\n题目：短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-30-c1f45444aa64\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-30-c1f45444aa64\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "body": "短视频样本要同时保留内容证据和行为反馈。封面提供静态主题，视频帧提供动作和场景变化，OCR 捕捉画面文字，ASR/字幕提供语音语义，用户点击、完播、点赞、评论和负反馈提供偏好监督。构造时先按镜头或时间窗口抽帧，并把 OCR/ASR 对齐到时间段；再生成视频级摘要、事件标签、实体标签和风险标签。用户行为不能直接当内容标签，因为受曝光位置和人群偏好影响，需要做去偏采样或作为排序目标而非纯语义目标。训练上可以先做内容理解预训练，再做多任务学习：分类、检索、问答、审核和推荐预估。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-30-c1f45444aa64\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "短视频理解模型如何把封面、视频帧、OCR、ASR 和用户反馈构造成训练样本？",
+    "body": "评估要分内容准确性、时序理解、冷启动视频、长尾类目和线上指标，避免模型只学热门模板。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-30-c1f45444aa64\\04-answer.png"
+  }
+]

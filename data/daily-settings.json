@@ -58,6 +58,9 @@
     "preferSpecificCompanyQuestions": true,
     "searchCandidateBonus": 10,
     "dailyFeatureBonus": 18,
-    "note": "Prefer interview questions with concrete company or institution source. Generic company values such as comprehensive, unknown, or unspecified do not receive this priority."
-  }
+    "note": "Company may be inaccurate. Do not display company names in Xiaohongshu posts; use only as internal source metadata if needed.",
+    "publishDisplayEnabled": false
+  },
+  "xiaohongshuDisplayCompany": false,
+  "xiaohongshuCompanyPolicy": "Do not include company names in Xiaohongshu post titles, cover cards, first image, body intro, or tags. Keep company only as internal metadata/source context."
 }

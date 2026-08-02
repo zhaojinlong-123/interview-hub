@@ -2,8 +2,8 @@
   {
     "kind": "cover",
     "kicker": "本篇速览",
-    "title": "字节｜多模态大模型",
-    "body": "公司：字节\n方向：多模态大模型\n题目：动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
+    "title": "多模态大模型",
+    "body": "方向：多模态大模型\n题目：动态分辨率 VLM 如何在 OCR、细粒度识别和推理成本之间分配视觉 token？",
     "footer": "Interview Hub · 面试题精讲",
     "index": 1,
     "total": 4,

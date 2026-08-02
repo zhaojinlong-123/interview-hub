@@ -68,15 +68,26 @@ function questionsFromMarkdown(markdown, limit = 4) {
 
 function titleForXhs(feature, post) {
   const direction = post?.direction || feature.direction || "大模型";
-  const company = post?.company || feature.company || "今日";
-  const subject = `${company}${direction}`;
-  return `${subject}题目精讲`.replace(/\s+/g, "").replace(/[|/｜]/g, "").slice(0, 20);
+  return `${direction}题目精讲`.replace(/\s+/g, "").replace(/[|/｜]/g, "").slice(0, 20);
 }
 
 function subjectForCover(feature, post) {
   const direction = post?.direction || feature.direction || "大模型";
-  const company = post?.company || feature.company || "";
-  return company && company !== "综合" ? company : direction.replace(/\s+/g, "").replace(/[|/｜]/g, "");
+  return direction.replace(/\s+/g, "").replace(/[|/｜]/g, "");
+}
+
+const COMPANY_TAG_BLOCKLIST = new Set([
+  "字节", "字节跳动", "火山引擎", "腾讯", "阿里", "阿里云", "百度", "美团", "快手",
+  "华为", "小鹏", "蔚来", "高德", "优必选", "宇树科技", "智元", "智元机器人",
+  "傅利叶智能", "NVIDIA", "Google", "DeepSeek", "Qwen", "Seed", "OpenAI",
+  "综合", "未知", "未明确", "其他",
+]);
+
+function filterPublishTags(tags) {
+  return tags
+    .map((tag) => String(tag || "").trim())
+    .filter(Boolean)
+    .filter((tag) => ![...COMPANY_TAG_BLOCKLIST].some((company) => tag.includes(company)));
 }
 
 function sourceHost(url) {
@@ -174,7 +185,7 @@ function buildRequiredXhsBody({ intro, xhsDraft, sourcePlatform, sourceDate, sou
   const requiredText = required.join("\n");
   const maxLength = 980;
   const available = Math.max(120, maxLength - requiredText.length - 4);
-  const lead = cleanLine(xhsDraft || intro);
+  const lead = cleanLine(intro);
   const trimmedLead = lead.length > available ? `${lead.slice(0, available - 1)}…` : lead;
   return [trimmedLead, "", requiredText].filter(Boolean).join("\n");
 }
@@ -228,14 +239,13 @@ function topicFromQuestion(question) {
 
 function buildImageCards(payload, questions, qaBlocks) {
   const primaryQuestion = payload.primaryQuestion || questions[0] || "本篇核心面试题";
-  const company = payload.company || "综合";
   const direction = payload.direction || "AI 面试";
   const cards = [
     {
       kind: "cover",
       kicker: "本篇速览",
-      title: `${company}｜${direction}`,
-      body: `公司：${company}\n方向：${direction}\n题目：${primaryQuestion}`,
+      title: `${direction}`,
+      body: `方向：${direction}\n题目：${primaryQuestion}`,
       footer: "Interview Hub · 面试题精讲",
     },
     {
@@ -275,22 +285,21 @@ function buildXhsPayload(feature, post, markdown) {
   const sourceDate = feature.sourceDate || post?.sourceDate || feature.date || "";
   const sourceUrl = feature.sourceUrl || post?.sourceUrl || "";
   const host = sourceHost(sourceUrl);
-  const tags = [...new Set([
+  const tags = filterPublishTags([...new Set([
     ...(post?.tags || []),
-    feature.company,
     feature.direction,
     "大模型面试",
     "AI学习",
-  ])].filter(Boolean).slice(0, 8);
+  ])]).slice(0, 8);
   const xhsDraft = rawSection(markdown, "小红书发布文案");
   const qaBlocks = extractQuestionAnswers(markdown, questions);
-  const company = feature.company || post?.company || "综合";
+  const company = "";
   const direction = feature.direction || post?.direction || "AI 面试";
   const primaryQuestion = questions[0] || "本篇核心面试题";
   const topic = topicFromQuestion(primaryQuestion);
 
   const body = buildRequiredXhsBody({
-    intro: `每日精选：${feature.company || post?.company || ""} ${feature.direction || post?.direction || "大模型"}题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。`,
+    intro: `每日精选：${feature.direction || post?.direction || "大模型"}题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。`,
     xhsDraft: xhsDraft ? xhsDraft.replace(/\n{3,}/g, "\n\n").trim() : "",
     sourcePlatform,
     sourceDate,
@@ -300,10 +309,10 @@ function buildXhsPayload(feature, post, markdown) {
 
   return {
     id: `xhs-${feature.id || hash(feature.articlePath || feature.title)}`,
-    title: `${company}${topic}题目精讲`.replace(/\s+/g, "").slice(0, 20),
+    title: `${topic}题目精讲`.replace(/\s+/g, "").slice(0, 20),
     coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
     coverSubtitle: `${direction} 高频题`,
-    company,
+    company: "",
     direction,
     primaryQuestion,
     topic,
@@ -318,7 +327,7 @@ function buildXhsPayload(feature, post, markdown) {
     imageCards: buildImageCards({
       coverTitle: `${subjectForCover(feature, post)}面试题精讲`,
       coverSubtitle: `${direction} 高频题`,
-      company,
+      company: "",
       direction,
       primaryQuestion,
       sourcePlatform,

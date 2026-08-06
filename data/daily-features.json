@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-06-30a72a8b8c37",
+    "date": "2026-08-06",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260802-6e79da4ff58a",
+    "title": "CSDN：【26届校招】字节多模态大模型面经：一文掌握DeepSpeed、LoRA、RLHF等核心技术！",
+    "company": "字节",
+    "direction": "训练框架 / 推理优化",
+    "score": 25.8,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=00f5d500b455bbc5604b86137036b09d&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-08-02",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-06-30a72a8b8c37.md",
+    "target": "xiaohongshu",
+    "publishStatus": "skipped_duplicate",
+    "autoPublish": true,
+    "publishFailureReason": "疑似重复：已存在 字节训练框架/显存优化题目精讲",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true"
+  },
+  {
     "id": "daily-2026-08-06-f22c5bcea0d7",
     "date": "2026-08-06",
     "slot": "morning",

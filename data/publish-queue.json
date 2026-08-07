@@ -53,6 +53,59 @@
     "updatedAt": "2026-08-07T01:35:49.527Z"
   },
   {
+    "id": "xhs-daily-2026-08-07-44dbaeb8fcbf",
+    "title": "训练框架/显存优化题目精讲",
+    "coverTitle": "训练框架推理优化面试题精讲",
+    "coverSubtitle": "训练框架 / 推理优化 高频题",
+    "company": "",
+    "direction": "训练框架 / 推理优化",
+    "primaryQuestion": "字节多模态训练中，DeepSpeed",
+    "topic": "训练框架 / 显存优化",
+    "body": "每日精选：训练框架 / 推理优化题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-08-02\n原文链接：https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=00f5d500b455bbc5604b86137036b09d&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #大模型 #多模态 #面经 #DeepSpeed #训练框架 #LoRA #RLHF",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-08-02",
+    "sourceUrl": "https://blog.csdn.net/libaiup/article/details/152087779?ops_request_misc=elastic_search_misc&request_id=00f5d500b455bbc5604b86137036b09d&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-07-44dbaeb8fcbf.md",
+    "featureId": "daily-2026-08-07-44dbaeb8fcbf",
+    "postId": "auto-20260802-6e79da4ff58a",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-07-44dbaeb8fcbf-cover-v2.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "训练框架 / 推理优化",
+        "body": "方向：训练框架 / 推理优化\n题目：字节多模态训练中，DeepSpeed",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 字节多模态训练中，DeepSpeed",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "字节多模态训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，为什么不能放在同…",
+        "body": "DeepSpeed ZeRO、LoRA 和 RLHF 属于训练链路的不同层。ZeRO 解决的是大模型训练的系统资源瓶颈，把优化器状态、梯度、参数切分到多卡，核心指标是显存占用、吞吐、通信开销和可训练模型规模。LoRA 解决的是参数高效微调问题，用低秩增量更新少量参数，适合多业务快速适配、降低显存和保存多个 adapter，但它不直接解决分布式训练通信，也不保证偏好对齐。RLHF 解决的是模型行为对齐问题，通常包括 SFT、奖励模型和策略优化，让输出更符合人类偏好、安全规范或任务目标。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "字节多模态训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，为什么不能放在同…",
+        "body": "面试中不要把它们简单说成三种训练方法，而要讲清：ZeRO 是训练基础设施，LoRA 是微调参数化方式，RLHF 是对齐目标和优化流程。实际项目里三者可以组合，比如 ZeRO 承载大规模训练，LoRA 做业务适配，再用 DPO/RLHF 做偏好对齐。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-07T07:35:47.420Z",
+    "status": "skipped_duplicate",
+    "reason": "疑似重复：已存在 字节训练框架/显存优化题目精讲",
+    "publishUrl": "https://creator.xiaohongshu.com/publish/publish?source=&published=true",
+    "updatedAt": "2026-08-07T07:35:47.431Z"
+  },
+  {
     "id": "xhs-daily-2026-08-06-f22c5bcea0d7",
     "title": "训练框架/显存优化题目精讲",
     "coverTitle": "训练框架推理优化面试题精讲",

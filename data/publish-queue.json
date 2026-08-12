@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-12-04889e2da6db",
+    "title": "训练框架/显存优化题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "",
+    "direction": "多模态大模型",
+    "primaryQuestion": "移动端多模态大模型如何在视觉理解效果、端侧延迟和显存/内存占用之间取舍？",
+    "topic": "训练框架 / 显存优化",
+    "body": "每日精选：多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-08-02\n原文链接：https://juejin.cn/post/7319663384097275942?searchId=2026080210263645A8DA51B0C3C30E43AB\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #大模型 #LLM #多模态 #MobileVLM #端侧部署 #多模态大模型 #量化",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-08-02",
+    "sourceUrl": "https://juejin.cn/post/7319663384097275942?searchId=2026080210263645A8DA51B0C3C30E43AB",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-12-04889e2da6db.md",
+    "featureId": "daily-2026-08-12-04889e2da6db",
+    "postId": "auto-20260802-9598bc5ea676",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-12-04889e2da6db/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "多模态大模型",
+        "body": "方向：多模态大模型\n题目：移动端多模态大模型如何在视觉理解效果、端侧延迟和显存/内存占用之间取舍？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 移动端多模态大模型如何在视觉理解效果、端侧延迟和显存/内存占用之间取舍？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "移动端多模态大模型如何在视觉理解效果、端侧延迟和显存/内存占用之间取舍？",
+        "body": "移动端多模态模型的核心约束是算力、内存、功耗和实时性。视觉侧通常要选择轻量 vision encoder，减少输入分辨率、patch 数和视觉 token；连接层可用 MLP projector 或 resampler 压缩视觉特征；语言侧使用小参数 LLM，并配合 INT8/INT4 量化、KV cache 管理和算子融合。效果和成本的主要矛盾在于：高分辨率有利于 OCR、小目标和细粒度识别，但会显著增加视觉 token 和首 token 延迟；更强 LLM 推理好，但内存和功耗更高。工程上常做动态分辨率、局部",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "移动端多模态大模型如何在视觉理解效果、端侧延迟和显存/内存占用之间取舍？",
+        "body": "tile、视觉特征缓存、端云协同和任务分级。评估要同时报告准确率、TTFT、TPOT、峰值内存、功耗、发热和弱网场景下的可用性。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-12T01:30:06.161Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-12-04889e2da6db/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-12-04889e2da6db/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-12-04889e2da6db/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-12-04889e2da6db/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-12T01:30:07.313Z"
+  },
+  {
     "id": "xhs-daily-2026-08-11-bca950cc1fdb",
     "title": "训练框架/显存优化题目精讲",
     "coverTitle": "训练框架推理优化面试题精讲",

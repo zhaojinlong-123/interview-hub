@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-13-551309b3dcb6",
+    "date": "2026-08-13",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260802-6107f5bba475",
+    "title": "掘金：机器之心 2年前 资讯 谷歌具身智能新研究：比RT",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 23.45,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://juejin.cn/post/7344970197130674215?searchId=2026080210264765EE587D3AB74FEE5CA0",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-08-02",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-13-551309b3dcb6.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-12-e146e7467cdd",
     "date": "2026-08-12",
     "slot": "afternoon",

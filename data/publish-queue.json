@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-13-551309b3dcb6",
+    "title": "VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "Google RT 系列具身智能工作给 VLA 面试带来哪些核心考点？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：掘金，2026-08-02\n原文链接：https://juejin.cn/post/7344970197130674215?searchId=2026080210264765EE587D3AB74FEE5CA0\n完整回答已拆成图卡，建议按顺序复习。\n#掘金 #VLA #具身 #机器人 #RT-1 #RT-2 #具身智能 #VLA具身智能",
+    "sourcePlatform": "掘金",
+    "sourceDate": "2026-08-02",
+    "sourceUrl": "https://juejin.cn/post/7344970197130674215?searchId=2026080210264765EE587D3AB74FEE5CA0",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-13-551309b3dcb6.md",
+    "featureId": "daily-2026-08-13-551309b3dcb6",
+    "postId": "auto-20260802-6107f5bba475",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-13-551309b3dcb6/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "VLA / 具身智能",
+        "body": "方向：VLA / 具身智能\n题目：Google RT 系列具身智能工作给 VLA 面试带来哪些核心考点？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. Google RT 系列具身智能工作给 VLA 面试带来哪些核心考点？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "Google RT 系列具身智能工作给 VLA 面试带来哪些核心考点？",
+        "body": "RT 系列的核心考点是如何把互联网级视觉语言知识迁移到机器人控制。RT-1 证明了多任务机器人数据可以用 Transformer 建模，把图像、语言指令和动作统一成序列；RT-2 进一步把 VLM 的语义知识转成动作 token，让模型能理解未见过的语义概念并做简单操作。面试中常问数据规模、动作 token 化、跨任务泛化、语言指令理解、真实机器人评估和失败模式。要指出 RT 类模型的优势是语义泛化和统一建模，局限是高频精细控制、接触任务、长程规划和安全约束仍需要低层控制与系统兜底。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "Google RT 系列具身智能工作给 VLA 面试带来哪些核心考点？",
+        "body": "工程落地时通常会结合技能库、规划器、视觉 grounding、动作过滤和人工接管，而不是让大模型单独控制全部动作。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-13T07:30:04.453Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-13-551309b3dcb6/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-13-551309b3dcb6/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-13-551309b3dcb6/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-13-551309b3dcb6/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-13T07:30:05.401Z"
+  },
+  {
     "id": "xhs-daily-2026-08-12-e146e7467cdd",
     "title": "大模型进入具身智能后，和纯…题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",

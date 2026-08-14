@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-14-b8815bf34458",
+    "title": "多模态理解题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "",
+    "direction": "多模态大模型",
+    "primaryQuestion": "阿里多模态大模型面试中，视觉编码器到 LLM 的连接层如何选型，MLP projector、Q-Former 和 cross-attention adapter 各有什么取舍？",
+    "topic": "多模态理解",
+    "body": "每日精选：多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-08-02\n原文链接：https://www.bilibili.com/video/BV1r83t61EiT/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #大模型 #多模态 #面试 #多模态大模型 #VLM #Projector #模型结构",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-08-02",
+    "sourceUrl": "https://www.bilibili.com/video/BV1r83t61EiT/",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-14-b8815bf34458.md",
+    "featureId": "daily-2026-08-14-b8815bf34458",
+    "postId": "auto-20260802-868c0a293981",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-14-b8815bf34458/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "多模态大模型",
+        "body": "方向：多模态大模型\n题目：阿里多模态大模型面试中，视觉编码器到 LLM 的连接层如何选型，MLP projector、Q-Former 和 cross-attention adapter 各有什么取舍？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 阿里多模态大模型面试中，视觉编码器到 LLM 的连接层如何选型，MLP projector、Q-Former 和 cross-attention adapter 各有什么取舍？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "阿里多模态大模型面试中，视觉编码器到 LLM 的连接层如何选型，MLP projector、Q-Forme…",
+        "body": "这题核心是视觉 token 如何变成语言模型可消费的语义表示。MLP projector 最简单，把 vision encoder 输出线性或非线性映射到 LLM hidden size，延迟低、实现稳，适合 LLaVA 类图文问答和通用多模态 SFT，但它对视觉 token 的筛选能力弱，高分辨率和细粒度任务会把上下文撑得很大。Q-Former 用一组可学习 query 从视觉特征中抽取固定数量的语义 token，能显著压缩视觉输入，适合成本敏感的服务化模型，但容易丢 OCR、小目标和空间细节。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "阿里多模态大模型面试中，视觉编码器到 LLM 的连接层如何选型，MLP projector、Q-Forme…",
+        "body": "Cross-attention adapter 在语言层多次读取视觉特征，交互能力最强，适合复杂推理、grounding 和视频理解，但改造深、推理成本高、训练稳定性要求更高。工程回答要补一句：选型取决于任务粒度、视觉 token 预算、是否冻结 LLM、延迟约束和评测集是否包含 OCR/grounding/空间关系 hard case。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-14T07:30:04.092Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-14-b8815bf34458/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-14-b8815bf34458/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-14-b8815bf34458/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-14-b8815bf34458/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-14T07:30:05.162Z"
+  },
+  {
     "id": "xhs-daily-2026-08-14-731c356e2590",
     "title": "从零做具身智能项目时，最小…题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",

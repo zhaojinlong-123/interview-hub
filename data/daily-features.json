@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-15-d2d6bfbdc1ab",
+    "date": "2026-08-15",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "auto-20260802-f307ca701234",
+    "title": "CSDN：【26届校招】快手大模型算法岗面经：从多模态模型到LoRA技术，面试官常问问题详解！",
+    "company": "快手",
+    "direction": "多模态大模型",
+    "score": 17.35,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=00f5d500b455bbc5604b86137036b09d&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-08-02",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-15-d2d6bfbdc1ab.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-15-9c5a26eb4746",
     "date": "2026-08-15",
     "slot": "morning",

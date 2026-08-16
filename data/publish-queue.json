@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-16-88bb7147462b",
+    "title": "复杂图文任务中，如何把文字…题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "",
+    "direction": "多模态大模型",
+    "primaryQuestion": "复杂图文任务中，如何把文字识别、空间关系、计数和推理能力拆开评估？",
+    "topic": "复杂图文任务中，如何把文字…",
+    "body": "每日精选：多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-07-03\n原文链接：https://zhuanlan.zhihu.com/p/1947724271746024823\n完整回答已拆成图卡，建议按顺序复习。\n#多模态大模型 #面经 #大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-03",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1947724271746024823",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-16-88bb7147462b.md",
+    "featureId": "daily-2026-08-16-88bb7147462b",
+    "postId": "reserve-20260703-aliyun-multimodal-eval",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-16-88bb7147462b/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "多模态大模型",
+        "body": "方向：多模态大模型\n题目：复杂图文任务中，如何把文字识别、空间关系、计数和推理能力拆开评估？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 复杂图文任务中，如何把文字识别、空间关系、计数和推理能力拆开评估？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "复杂图文任务中，如何把文字识别、空间关系、计数和推理能力拆开评估？",
+        "body": "复杂图文评估要按能力拆开，而不是只给一个总分。文字识别看字符级准确率、表格字段抽取和长文本阅读；空间关系看左右、包含、遮挡、相对位置和区域指代；计数要覆盖密集小目标、遮挡目标和相似目标；推理能力则要让答案依赖多个视觉证据，而不是只靠常识。数据集设计上应加入反事实样本，例如改动数量、位置或文字，让模型不能靠语言先验猜。上线前还要看错误类型分布，区分是看不清、定位错、读错字，还是推理链断了。 如果面试官继续追问，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "复杂图文任务中，如何把文字识别、空间关系、计数和推理能力拆开评估？",
+        "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-16T01:30:05.179Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-16-88bb7147462b/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-16-88bb7147462b/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-16-88bb7147462b/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-16-88bb7147462b/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-16T01:30:06.133Z"
+  },
+  {
     "id": "xhs-daily-2026-08-15-d2d6bfbdc1ab",
     "title": "多模态理解题目精讲",
     "coverTitle": "多模态大模型面试题精讲",

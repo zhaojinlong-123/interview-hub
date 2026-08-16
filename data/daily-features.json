@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-16-88bb7147462b",
+    "date": "2026-08-16",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "reserve-20260703-aliyun-multimodal-eval",
+    "title": "阿里云多模态面经：复杂图文评估体系",
+    "company": "阿里云",
+    "direction": "多模态大模型",
+    "score": 15.8,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/1947724271746024823",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-07-03",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-16-88bb7147462b.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-15-d2d6bfbdc1ab",
     "date": "2026-08-15",
     "slot": "afternoon",

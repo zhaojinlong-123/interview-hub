@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-17-0cbc585d2071",
+    "date": "2026-08-17",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "auto-20260701-c6d314c9cad9",
+    "title": "CSDN：字节面试题：多模态大模型的模态对齐",
+    "company": "字节",
+    "direction": "强化学习 / 对齐训练",
+    "score": 15.65,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://blog.csdn.net/qq_54708219/article/details/154648350?ops_request_misc=elastic_search_misc&request_id=235b72b7f1534198fd0a80f0e9134562&biz_id=0",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-17-0cbc585d2071.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-16-88bb7147462b",
     "date": "2026-08-16",
     "slot": "morning",

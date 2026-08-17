@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "多模态大模型",
+    "body": "方向：多模态大模型\n题目：快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-9ed6bce9afe0\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-9ed6bce9afe0\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+    "body": "短视频样本要同时包含内容侧和用户反馈侧。内容侧先抽封面、关键帧或 clip，提取 OCR 字幕、ASR 文本、背景音乐、标题、话题和作者信息；用户侧记录曝光、点击、完播、停留、点赞、收藏、评论、转发和负反馈。构造时用统一 video id 和时间戳对齐多模态信息，并区分强弱监督：完播、长停留和收藏通常比点击更强，负反馈和快速划走可作为负样本。难点是曝光偏置和热门偏置，所以要做位置校正、负采样、时间切分和去重，避免模型只学到流量分布。训练上可以把内容理解任务和推荐排序任务结合，既做 caption/OCR/VQA",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-9ed6bce9afe0\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+    "body": "辅助目标，也做 CTR、完播率或互动率预测。评估要看离线 AUC/NDCG、线上 A/B、冷启动、长尾覆盖和内容安全。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-9ed6bce9afe0\\04-answer.png"
+  }
+]

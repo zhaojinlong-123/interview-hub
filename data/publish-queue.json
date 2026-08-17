@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-17-9ed6bce9afe0",
+    "title": "多模态理解题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "",
+    "direction": "多模态大模型",
+    "primaryQuestion": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+    "topic": "多模态理解",
+    "body": "每日精选：多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-07-01\n原文链接：https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0\n完整回答已拆成图卡，建议按顺序复习。\n#CSDN #大模型 #多模态 #面经 #面试 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-07-01",
+    "sourceUrl": "https://blog.csdn.net/trb701012/article/details/152117850?ops_request_misc=elastic_search_misc&request_id=df81c69f5bb971a08e7dfac6ff98cf75&biz_id=0",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-17-9ed6bce9afe0.md",
+    "featureId": "daily-2026-08-17-9ed6bce9afe0",
+    "postId": "auto-20260701-e5fd56c26393",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-17-9ed6bce9afe0/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "多模态大模型",
+        "body": "方向：多模态大模型\n题目：快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+        "body": "短视频样本要同时包含内容侧和用户反馈侧。内容侧先抽封面、关键帧或 clip，提取 OCR 字幕、ASR 文本、背景音乐、标题、话题和作者信息；用户侧记录曝光、点击、完播、停留、点赞、收藏、评论、转发和负反馈。构造时用统一 video id 和时间戳对齐多模态信息，并区分强弱监督：完播、长停留和收藏通常比点击更强，负反馈和快速划走可作为负样本。难点是曝光偏置和热门偏置，所以要做位置校正、负采样、时间切分和去重，避免模型只学到流量分布。训练上可以把内容理解任务和推荐排序任务结合，既做 caption/OCR/VQA",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "快手短视频多模态理解中，如何把封面、视频帧、字幕、ASR 和互动行为构造成训练样本？",
+        "body": "辅助目标，也做 CTR、完播率或互动率预测。评估要看离线 AUC/NDCG、线上 A/B、冷启动、长尾覆盖和内容安全。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-17T07:30:03.714Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-17-9ed6bce9afe0/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-17-9ed6bce9afe0/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-17-9ed6bce9afe0/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-17-9ed6bce9afe0/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-17T07:30:04.707Z"
+  },
+  {
     "id": "xhs-daily-2026-08-17-0cbc585d2071",
     "title": "多模态理解题目精讲",
     "coverTitle": "强化学习对齐训练面试题精讲",

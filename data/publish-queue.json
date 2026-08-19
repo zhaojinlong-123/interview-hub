@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-19-1394a548b20f",
+    "title": "多模态理解题目精讲",
+    "coverTitle": "训练框架推理优化面试题精讲",
+    "coverSubtitle": "训练框架 / 推理优化 高频题",
+    "company": "",
+    "direction": "训练框架 / 推理优化",
+    "primaryQuestion": "多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+    "topic": "多模态理解",
+    "body": "每日精选：训练框架 / 推理优化题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：B站，2026-08-02\n原文链接：https://www.bilibili.com/video/BV11JoLYeEH3/\n完整回答已拆成图卡，建议按顺序复习。\n#B站 #多模态 #多模态推理 #CoT #视觉推理 #VLM #证据定位 #训练框架推理优化",
+    "sourcePlatform": "B站",
+    "sourceDate": "2026-08-02",
+    "sourceUrl": "https://www.bilibili.com/video/BV11JoLYeEH3/",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-19-1394a548b20f.md",
+    "featureId": "daily-2026-08-19-1394a548b20f",
+    "postId": "auto-20260802-2dac6c3cb8d4",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-19-1394a548b20f/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "训练框架 / 推理优化",
+        "body": "方向：训练框架 / 推理优化\n题目：多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+        "body": "多模态 CoT 的价值是把视觉证据、空间关系和语言推理显式串起来，适合图表理解、数学题、空间推理、视频事件因果和医学影像等任务。但它不能简单照搬纯文本 CoT，因为视觉证据可能不完整、区域定位可能错误，模型容易编造看似合理的中间步骤。更可靠的做法是让推理链绑定可验证证据，例如引用图像区域、OCR 片段、检测框或关键帧；对于视频任务还要绑定时间戳。训练数据要区分“视觉观察”“中间推理”和“最终答案”，防止语言先验覆盖视觉输入。评估不能只看最终答案，还要看证据定位准确率、推理步骤一致性、幻觉率和反事实扰动下的鲁棒性。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+        "body": "如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-19T01:30:05.215Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-19-1394a548b20f/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-19-1394a548b20f/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-19-1394a548b20f/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-19-1394a548b20f/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-19T01:30:06.269Z"
+  },
+  {
     "id": "xhs-daily-2026-08-18-9385d3bf8154",
     "title": "多模态理解题目精讲",
     "coverTitle": "训练框架推理优化面试题精讲",

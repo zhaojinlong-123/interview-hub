@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "训练框架 / 推理优化",
+    "body": "方向：训练框架 / 推理优化\n题目：多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-19-1394a548b20f\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-19-1394a548b20f\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+    "body": "多模态 CoT 的价值是把视觉证据、空间关系和语言推理显式串起来，适合图表理解、数学题、空间推理、视频事件因果和医学影像等任务。但它不能简单照搬纯文本 CoT，因为视觉证据可能不完整、区域定位可能错误，模型容易编造看似合理的中间步骤。更可靠的做法是让推理链绑定可验证证据，例如引用图像区域、OCR 片段、检测框或关键帧；对于视频任务还要绑定时间戳。训练数据要区分“视觉观察”“中间推理”和“最终答案”，防止语言先验覆盖视觉输入。评估不能只看最终答案，还要看证据定位准确率、推理步骤一致性、幻觉率和反事实扰动下的鲁棒性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-19-1394a548b20f\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "多模态 CoT 在视觉推理中有什么价值，为什么不能简单照搬纯文本 CoT？",
+    "body": "如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-19-1394a548b20f\\04-answer.png"
+  }
+]

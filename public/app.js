@@ -47,6 +47,9 @@ const latestUpdateDate = document.querySelector("#latestUpdateDate");
 const latestUpdateCount = document.querySelector("#latestUpdateCount");
 const latestUpdateFocus = document.querySelector("#latestUpdateFocus");
 const answerCoverage = document.querySelector("#answerCoverage");
+const latestUpdateButton = document.querySelector("#latestUpdateButton");
+const latestFocusButton = document.querySelector("#latestFocusButton");
+const answeredOnlyButton = document.querySelector("#answeredOnlyButton");
 
 const collectionKey = "interview-hub-collections";
 const statusKey = "interview-hub-statuses";
@@ -58,6 +61,8 @@ let meta = {};
 let searchPlatforms = [];
 let dailyFeatures = [];
 let currentPage = 1;
+let currentLatestDate = "";
+let currentLatestFocus = "";
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
@@ -310,6 +315,8 @@ function updateStats(posts) {
   const latestPosts = latestDate ? catalogPosts.filter((post) => post.sourceDate === latestDate) : [];
   const latestQuestions = latestPosts.reduce((sum, post) => sum + (post.questions || []).length, 0);
   const latestCategories = topEntries(countBy(latestPosts, (post) => post.category), 2).map(([label]) => label).join(" / ");
+  currentLatestDate = latestDate;
+  currentLatestFocus = topEntries(countBy(latestPosts, (post) => post.category), 1)[0]?.[0] || "";
   totalCount.textContent = posts.length;
   questionCount.textContent = totalQuestions;
   experienceCount.textContent = posts.filter((post) => post.type === "experience" || post.type === "video").length;
@@ -322,6 +329,39 @@ function updateStats(posts) {
   if (latestUpdateCount) latestUpdateCount.textContent = latestDate ? `${latestPosts.length} 条资料 / ${latestQuestions} 个题目` : "暂无更新";
   if (latestUpdateFocus) latestUpdateFocus.textContent = latestCategories || "-";
   if (answerCoverage) answerCoverage.textContent = totalQuestions ? `${Math.round((answeredQuestions / totalQuestions) * 100)}%` : "-";
+}
+
+function scrollToBrowse() {
+  document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function filterLatestUpdate() {
+  if (!currentLatestDate) return;
+  filters.startDate.value = currentLatestDate;
+  filters.endDate.value = currentLatestDate;
+  filters.sort.value = "date-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
+}
+
+function filterLatestFocus() {
+  if (!currentLatestFocus) return;
+  filters.category.value = currentLatestFocus;
+  filters.startDate.value = currentLatestDate || filters.startDate.value;
+  filters.endDate.value = currentLatestDate || filters.endDate.value;
+  filters.sort.value = "question-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
+}
+
+function filterAnsweredQuestions() {
+  filters.questionOnly.checked = true;
+  filters.sort.value = "question-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
 }
 
 function renderRankList(root, entries) {
@@ -1199,6 +1239,10 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
   resetPage();
   loadPosts();
 });
+
+latestUpdateButton?.addEventListener("click", filterLatestUpdate);
+latestFocusButton?.addEventListener("click", filterLatestFocus);
+answeredOnlyButton?.addEventListener("click", filterAnsweredQuestions);
 
 ensureDefaultCollection();
 Promise.all([loadMeta(), loadCatalog(), loadPlatforms(), loadDaily()]).then(loadPosts);

@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "Qwen｜大模型面经",
+    "body": "公司：Qwen\n方向：大模型面经\n题目：一、先搞懂：Qwen2.5-VL到底是什么？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-8b52dd563dcf\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 一、先搞懂：Qwen2.5-VL到底是什么？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-8b52dd563dcf\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "一、先搞懂：Qwen2.5-VL到底是什么？",
+    "body": "Qwen2.5-VL 是面向图像和视频理解的视觉语言模型：视觉侧把图片或视频编码成视觉 token，经过连接/投影模块与文本 token 一起送入语言模型，从而完成问答、OCR、图表理解、目标定位、视频时序理解和工具调用。理解它时要关注三个层面：动态分辨率或视觉 token 压缩如何控制高分辨率成本；视觉 token 如何与语言空间对齐；训练数据如何从图文预训练过渡到多模态指令微调和偏好对齐。它不是单纯“给 Qwen 加图片输入”，而是一套视觉编码、时空建模、对齐训练和评测体系。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-8b52dd563dcf\\03-answer.png"
+  }
+]

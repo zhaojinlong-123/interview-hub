@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 人形机器人",
+    "body": "公司：综合\n方向：VLA / 人形机器人\n题目：人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-23-c73650b10afa\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-23-c73650b10afa\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "body": "人形机器人的动作表征不能只追求模型容易输出，还必须满足物理可行和安全约束。首先要明确动作层级：高层可以是语言子目标或技能 token，中层可以是末端位姿、足端轨迹、抓取点和目标姿态，低层才是关节角、速度或力矩。其次要考虑全身动力学，人形机器人有平衡、接触、摩擦锥、关节限位和自碰撞约束，不能让 VLA 直接生成无约束关节序列。第三是动作时间尺度，长程任务适合输出 action chunk 或技能片段，短时接触控制需要更高频反馈。第四是可解释性和可干预性，最好保留目标物体、目标位姿、接触点、步态阶段等中间量，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-23-c73650b10afa\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "人形机器人 VLA 动作表征应该关注哪些关键点，如何兼顾语义可控、物理可行和安全约束？",
+    "body": "便于安全过滤和失败诊断。训练上要用遥操作、仿真、真机失败和人工接管数据覆盖多种状态。评估看任务成功率、跌倒率、碰撞率、能耗、动作平滑度和恢复能力。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-23-c73650b10afa\\04-answer.png"
+  }
+]

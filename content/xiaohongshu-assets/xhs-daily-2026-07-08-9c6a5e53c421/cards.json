@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "美团｜多模态大模型",
+    "body": "公司：美团\n方向：多模态大模型\n题目：端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-9c6a5e53c421\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-9c6a5e53c421\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "body": "端侧 MobileVLM 的关键是把视觉和语言两部分都做轻量化。视觉侧可以使用更小的 encoder、低分辨率输入、局部重要区域裁剪和 token 压缩，避免把大量 patch token 送进 LLM。语言侧需要选择小参数模型，并配合 INT8/INT4 量化、KV cache 管理、算子融合和推理引擎优化。为了不明显损失效果，训练时通常用大模型蒸馏小模型，把大 VLM 的答案、推理过程或中间视觉语义迁移到端侧模型；同时保留 OCR、小目标等 hard case 的高质量样本。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-9c6a5e53c421\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "端侧 MobileVLM 如何在低算力设备上兼顾视觉理解效果、内存占用和响应延迟？",
+    "body": "部署时要分阶段测量图像预处理、vision encoder、prefill、decode 的延迟，不能只看总耗时。实际产品还会设置任务分级：简单识别本地完成，复杂推理转云端或降级处理。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-08-9c6a5e53c421\\04-answer.png"
+  }
+]

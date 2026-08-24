@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜训练框架 / 推理优化",
+    "body": "公司：字节\n方向：训练框架 / 推理优化\n题目：字节多模态训练中，DeepSpeed",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-28-dc3307abf4e3\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 字节多模态训练中，DeepSpeed",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-28-dc3307abf4e3\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶…",
+    "body": "可以先把问题拆成参数放置、单层计算和训练成本三层。ZeRO-3/FSDP 负责把参数、梯度和优化器状态分片，解决单卡显存装不下完整模型的问题；张量并行切分 attention 或 FFN 的矩阵计算，解决单层太宽、单卡算不动的问题；LoRA 则只训练低秩增量，减少可训练参数、优化器状态和通信量。多模态场景里，常见做法是冻结或半冻结视觉编码器，语言模型主体用 ZeRO/FSDP 管理，projector、adapter 或部分 LLM 层用 LoRA 训练。如果模型很大且单层矩阵也放不下，再叠加张量并行。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-28-dc3307abf4e3\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "字节多模态训练中，DeepSpeed ZeRO-3、张量并行和 LoRA 微调应该如何组合，分别解决什么瓶…",
+    "body": "面试里要强调组合顺序：先估算权重、梯度、优化器状态和激活值，再决定是否需要 ZeRO-3；再看单层矩阵和 batch token 是否需要张量并行；最后用 LoRA 控制微调成本和灾难性遗忘。风险是并行策略叠太多会让通信、checkpoint、恢复和性能调优复杂化。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-28-dc3307abf4e3\\04-answer.png"
+  }
+]

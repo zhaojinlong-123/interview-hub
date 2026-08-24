@@ -1,12 +1,12 @@
 [
   {
     "kind": "cover",
-    "kicker": "每日精选",
-    "title": "VLA具身智能面试题精讲",
-    "body": "VLA / 具身智能 高频题\n面试题目 / 详细解答 / 追问方向",
-    "footer": "Interview Hub",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？",
+    "footer": "Interview Hub · 面试题精讲",
     "index": 1,
-    "total": 5,
+    "total": 6,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\01-cover.png"
   },
   {
@@ -16,37 +16,47 @@
     "body": "1. VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场景？\n\n2. 机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
     "footer": "先能 30 秒讲清楚，再展开细节",
     "index": 2,
-    "total": 5,
+    "total": 6,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\02-questions.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 1",
+    "kicker": "详细解答 1-1",
     "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
-    "body": "视觉 encoder 先把图像或视频转成视觉 token，连接层再把这些 token 映射到 LLM 语义空间。Linear projector 简单高效但表达能力有限；Q-Former 用少量可学习 query 抽取视觉信息，适合压缩 token；cross-attention 交互更充分但成本更高。回答时要补充训练目标和评估方式，比如图文对齐、指令微调、grounding 与幻觉评估。 面试展开时，可以画出 VLM 数据流：ima…",
+    "body": "这题要先区分动作表示层级。action token 是把动作离散成 token，让 VLA 像生成语言一样生成技能或离散动作，适合高层规划、技能选择、可离散化控制和跨任务统一动作词表；连续动作回归直接输出关节角、末端位姿、速度或夹爪开合，适合低层实时控制、抓取对齐、插孔等精细操作；diffusion policy 生成一段连续动作轨迹，适合多解、轨迹平滑、模仿学习数据分布复杂的操作任务。核心取舍是：token 更利于统一建模和长程推理，回归更直接更实时，diffusion 更能表达多峰动作但推理成本更高。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 3,
-    "total": 5,
+    "total": 6,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\03-answer.png"
   },
   {
     "kind": "answer",
-    "kicker": "详细解答 2",
-    "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
-    "body": "数据构造要先覆盖任务类型，再控制质量。图文/视频指令数据通常来自 caption、VQA、OCR、检测框、人工标注和合成指令，但要去重、过滤模板化答案、隔离评测集，并加入困难负样本。OCR 泄漏、标注偏见和低质量 caption 会让模型看似会答题，实际泛化很差。 面试展开时，重点讲数据闭环：来源、清洗、标注、去重、质量打分、负样本、评测隔离和线上 badcase 回流。多模态数据尤其要防止 OCR 答案泄漏、caption 套话、图…",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 中 action token、连续动作回归和 diffusion policy 各自适合什么控制场…",
+    "body": "面试展开时，建议用“高层规划到低层控制”的链路回答：语言和视觉先决定目标或技能，动作表示再落到具体控制。可以补充一个例子：打开抽屉时，action token 适合表示 grasp / pull 这类技能，连续回归适合输出每一帧末端位姿，diffusion policy 适合生成一段平滑拉抽屉轨迹。最后讲部署约束：控制频率高、延迟敏感时优先回归；任务多解、演示数据多样时 diffusion 更稳；需要和 LLM 统一建模时 action token 更自然。",
     "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 4,
-    "total": 5,
+    "total": 6,
     "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\04-answer.png"
   },
   {
-    "kind": "source",
-    "kicker": "引用来源",
-    "title": "小红书",
-    "body": "原帖日期：2026-06-13\n\n原文链接：https://www.xiaohongshu.com/search_result/6a14fa57000000003502e14a?xsec_token=ABaMPscG_PJ9EpIxj8SwoSkONdDMAIQBy2gcwiFLKRqHA%3D&xsec_source=pc_search\n\n本文为公开面经学习整理，用于复习与知识归纳。",
-    "footer": "保存后按图卡顺序复习",
+    "kind": "answer",
+    "kicker": "详细解答 2-1",
+    "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+    "body": "机器人遥操作数据要按采集、同步、切分、标注、质检来组织。采集侧要保存多视角 RGB/RGB-D、腕部相机、本体状态、末端位姿、夹爪状态、控制输入和语言指令；同步侧用统一时钟或高精度 timestamp，把相机、关节状态和动作指令对齐到同一时间轴；轨迹切分通常按任务开始结束、抓取/放置等关键事件、人工标记或状态机阶段切成 episode；失败样本要标注失败类型、发生时间、是否接管、是否可恢复和失败原因。失败样本不能简单丢掉，它能训练恢复策略、失败检测、reward/critic 和 hard negative。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
     "index": 5,
-    "total": 5,
-    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\05-source.png"
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\05-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2-2",
+    "title": "机器人数据如何做遥操作采集、时间同步、轨迹切分和失败样本标注？",
+    "body": "面试展开时，可以按 episode 数据结构讲清楚：每条样本包含初始观察、语言指令、观测序列、动作序列、终止状态和成功/失败标签。相机 30Hz、机械臂状态 200Hz 时，常以图像帧为主时间轴，取最近状态或插值对齐动作。切分时要把失败、重试、人工接管分开标注，不能把失败后重试成功的长轨迹混成一条成功样本。最后强调质检：时间戳错乱、丢帧、相机动作错位、遥操作抖动和重复空操作都要过滤。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 6,
+    "total": 6,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-13-acef07a226aa\\06-answer.png"
   }
 ]

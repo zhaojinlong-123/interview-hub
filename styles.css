@@ -212,6 +212,59 @@ h3 { margin: 8px 0 6px; font-size: 21px; line-height: 1.3; }
 .hero-stats strong { color: var(--cyan); font-size: 28px; }
 .hero-stats span { color: var(--muted); font-size: 13px; }
 
+.update-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 6px 0 24px;
+}
+
+.update-strip button {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  min-height: 108px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(102, 228, 255, 0.08), rgba(114, 255, 198, 0.03)),
+    rgba(13, 25, 37, 0.74);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.update-strip button:hover,
+.update-strip button:focus-visible {
+  border-color: rgba(114, 255, 198, 0.42);
+  background:
+    linear-gradient(135deg, rgba(102, 228, 255, 0.13), rgba(114, 255, 198, 0.06)),
+    rgba(13, 25, 37, 0.88);
+  transform: translateY(-1px);
+}
+
+.update-strip span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.update-strip strong {
+  display: block;
+  color: var(--green);
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.15;
+}
+
+.update-strip p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .browse-grid {
   display: grid;
   grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
@@ -294,7 +347,18 @@ input:focus, select:focus, textarea:focus {
   font-size: 13px;
   text-align: right;
 }
-.post-card { padding: 20px; }
+.post-card {
+  padding: 20px;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.post-card:hover {
+  border-color: rgba(114, 255, 198, 0.34);
+  background:
+    linear-gradient(135deg, rgba(102, 228, 255, 0.05), transparent 40%),
+    var(--panel);
+  transform: translateY(-1px);
+}
 .post-meta, .tags, .card-actions, .chip-row {
   display: flex;
   flex-wrap: wrap;
@@ -419,6 +483,27 @@ input:focus, select:focus, textarea:focus {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.answer-detail {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(114, 255, 198, 0.14);
+  border-radius: 6px;
+  background: rgba(4, 12, 18, 0.42);
+}
+
+.answer-detail summary {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.answer-detail p {
+  margin-top: 8px;
+  color: var(--text);
+  line-height: 1.75;
 }
 .question-block {
   margin: 14px 0;
@@ -1026,7 +1111,7 @@ button, .primary-button {
 
 @media (max-width: 900px) {
   .topbar { align-items: flex-start; flex-direction: column; }
-  .hero-stats, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid, .platform-form, .platform-row, .daily-feature-root { grid-template-columns: 1fr; }
+  .hero-stats, .update-strip, .form-grid, .browse-grid, .collections-grid, .focus-band, .focus-grid, .dashboard-grid, .insight-grid, .platform-form, .platform-row, .daily-feature-root { grid-template-columns: 1fr; }
   .daily-readable { grid-template-columns: 1fr; }
   .filters { position: static; }
   .date-grid { grid-template-columns: 1fr; }

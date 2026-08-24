@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜大模型训练",
+    "body": "公司：综合\n方向：大模型训练\n题目：大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-e6147d4c454e\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-e6147d4c454e\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "body": "Dropout 的主要作用是通过随机屏蔽神经元减少过拟合，但现代 LLM 通常数据规模巨大、训练 token 很多，过拟合压力相对小，反而更关注训练稳定性和吞吐。Dropout 会引入随机噪声，可能影响大规模分布式训练的收敛效率，也会让预训练和推理行为存在额外差异。Transformer 里残差连接、RMSNorm/LayerNorm、权重衰减、数据去重、学习率调度和大规模混合数据本身已经提供了一部分正则化效果。并不是所有场景都不能用 Dropout，小数据微调、分类头训练或特定任务仍可能使用；只是主流 LLM",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-e6147d4c454e\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "大模型训练中为什么很多 LLM 不再依赖 Dropout，它和数据规模、归一化、残差结构有什么关系？",
+    "body": "预训练更倾向于减少不必要随机性，把稳定性和规模效率放在前面。面试回答要避免说“Dropout 没用”，更准确是“大规模预训练阶段收益通常小于工程和收敛成本”。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-19-e6147d4c454e\\04-answer.png"
+  }
+]

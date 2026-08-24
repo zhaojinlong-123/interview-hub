@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜多模态大模型",
+    "body": "公司：字节\n方向：多模态大模型\n题目：电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-13-57902de794b4\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-13-57902de794b4\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "body": "电商多模态建模通常分两层：先用图片、标题、类目、属性、OCR 和详情文本学习商品表征，再把点击、收藏、加购、成交、停留时长等用户行为作为监督信号用于召回或排序。为了避免热门偏置，训练时不能只把点击当正样本，因为曝光越多的商品天然点击多；需要加入曝光日志做反事实校正，按位置、流量入口、价格段和类目分桶采样。图片侧要保留款式、颜色、材质、logo、场景等细粒度属性，文本侧要清洗营销噪声和属性缺失。负样本应包含同类相似商品、相同标题不同图片、相同图片不同属性等 hard negative。评估要分整体指标和长尾指标，看",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-13-57902de794b4\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "电商多模态模型如何同时建模商品图片、标题、属性和用户行为，避免只学到热门偏置？",
+    "body": "NDCG、Recall、属性一致性、跨模态检索准确率，以及新品和低曝光商品的泛化效果。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-13-57902de794b4\\04-answer.png"
+  }
+]

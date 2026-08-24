@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜大模型面经",
+    "body": "公司：综合\n方向：大模型面经\n题目：二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-01-6fdff1f7f031\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-01-6fdff1f7f031\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "二、如何通过vllm的采样参数（如temperature、top_p）控制生成文本的多样性？",
+    "body": "`temperature` 通过缩放 logits 控制概率分布尖锐程度：低温让高概率 token 更占优势，输出更稳定；高温增加随机性，但也提高事实错误和格式漂移风险。`top_p` 只保留累计概率达到阈值的最小 token 集，再从中采样，因此会随上下文动态改变候选数量。生产中通常先按任务确定温度，再用 top_p 限制长尾：代码、抽取和结构化输出使用低温；创作和头脑风暴可适当提高。还应配合 top_k、重复惩罚、最大长度和固定随机种子做离线评测。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-01-6fdff1f7f031\\03-answer.png"
+  }
+]

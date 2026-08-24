@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "智元｜VLA / 具身智能",
+    "body": "公司：智元\n方向：VLA / 具身智能\n题目：机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-300226a4c406\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-300226a4c406\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
+    "body": "机器人长程任务要把“想做什么”和“怎么动”分开建模。高层语言模块负责把指令拆成可验证的子目标，例如找到杯子、移动到可抓取位置、抓起、放到指定区域；视觉状态模块负责判断每个子目标是否已经满足，例如目标是否可见、手爪是否接触、物体是否稳定；低层控制器负责执行短时动作，并处理限幅、碰撞、速度和力控约束。为了避免一步错导致全局崩溃，每个子目标执行后都要重新感知和校验，而不是默认动作成功；如果状态不符合预期，要触发重试、重新规划或人工接管。训练数据也要包含失败、恢复和中断样本，让模型学会从偏离状态回到任务轨道。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-300226a4c406\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "机器人长程任务中如何把语言子目标、视觉状态和低层控制连接起来，避免一步错全局崩？",
+    "body": "面试里可以用一句话概括：高层做任务分解和状态机，低层做连续控制和安全兜底，中间用可验证状态连接；真正可靠的系统依赖频繁闭环，而不是一次性生成完整动作序列。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-03-300226a4c406\\04-answer.png"
+  }
+]

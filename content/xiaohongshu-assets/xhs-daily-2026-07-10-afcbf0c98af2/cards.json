@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "Qwen｜多模态大模型",
+    "body": "公司：Qwen\n方向：多模态大模型\n题目：Qwen-VL 类模型把图像接入 LLM 时，为什么需要控制视觉 token 数量和位置编码？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-afcbf0c98af2\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. Qwen-VL 类模型把图像接入 LLM 时，为什么需要控制视觉 token 数量和位置编码？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-afcbf0c98af2\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "Qwen-VL 类模型把图像接入 LLM 时，为什么需要控制视觉 token 数量和位置编码？",
+    "body": "图像经过视觉 encoder 后会产生大量 patch token，如果直接全部送入 LLM，prefill 成本、显存和注意力计算都会快速上升。因此 Qwen-VL 类模型需要通过 resize、动态分辨率、tile、pooling、resampler 或 projector 控制视觉 token 数量。位置编码同样重要，因为模型不仅要知道“有什么”，还要知道“在哪里”；高分辨率切图后更要保留 tile 的全局位置，否则局部 token 会失去空间参照。token 太少会损失 OCR、小目标和空间关系，token",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-afcbf0c98af2\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "Qwen-VL 类模型把图像接入 LLM 时，为什么需要控制视觉 token 数量和位置编码？",
+    "body": "太多会拖慢推理并挤占文本上下文。工程上通常使用全局图加局部 tile、多尺度位置编码和任务相关压缩。训练时要让模型见过不同分辨率、不同 tile 数和不同图文排列，否则部署时动态输入会造成分布偏移。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-afcbf0c98af2\\04-answer.png"
+  }
+]

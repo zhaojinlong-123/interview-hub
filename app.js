@@ -43,6 +43,13 @@ const resultSummary = document.querySelector("#resultSummary");
 const sourceBreakdown = document.querySelector("#sourceBreakdown");
 const categoryBreakdown = document.querySelector("#categoryBreakdown");
 const hotTags = document.querySelector("#hotTags");
+const latestUpdateDate = document.querySelector("#latestUpdateDate");
+const latestUpdateCount = document.querySelector("#latestUpdateCount");
+const latestUpdateFocus = document.querySelector("#latestUpdateFocus");
+const answerCoverage = document.querySelector("#answerCoverage");
+const latestUpdateButton = document.querySelector("#latestUpdateButton");
+const latestFocusButton = document.querySelector("#latestFocusButton");
+const answeredOnlyButton = document.querySelector("#answeredOnlyButton");
 
 const collectionKey = "interview-hub-collections";
 const statusKey = "interview-hub-statuses";
@@ -54,10 +61,12 @@ let meta = {};
 let searchPlatforms = [];
 let dailyFeatures = [];
 let currentPage = 1;
+let currentLatestDate = "";
+let currentLatestFocus = "";
 const pageSize = 10;
 
 const staticDataPrefix = location.pathname.includes("/public/") ? ".." : ".";
-const staticAssetVersion = "20260606-question-bank";
+const staticAssetVersion = "20260824-latest-bank";
 
 function isStaticHost() {
   return location.hostname.endsWith("github.io") || location.protocol === "file:";
@@ -297,15 +306,62 @@ function applyClientFilters(posts) {
 function updateStats(posts) {
   const collections = readCollections();
   const statuses = readStatuses();
+  const totalQuestions = posts.reduce((sum, post) => sum + (post.questions || []).length, 0);
+  const answeredQuestions = posts.reduce((sum, post) => {
+    const answers = Array.isArray(post.questionAnswers) ? post.questionAnswers : [];
+    return sum + (post.questions || []).filter((question) => answerForQuestion(post, question, answers)).length;
+  }, 0);
+  const latestDate = catalogPosts.reduce((latest, post) => (post.sourceDate || "") > latest ? post.sourceDate : latest, "");
+  const latestPosts = latestDate ? catalogPosts.filter((post) => post.sourceDate === latestDate) : [];
+  const latestQuestions = latestPosts.reduce((sum, post) => sum + (post.questions || []).length, 0);
+  const latestCategories = topEntries(countBy(latestPosts, (post) => post.category), 2).map(([label]) => label).join(" / ");
+  currentLatestDate = latestDate;
+  currentLatestFocus = topEntries(countBy(latestPosts, (post) => post.category), 1)[0]?.[0] || "";
   totalCount.textContent = posts.length;
-  questionCount.textContent = posts.filter((post) => post.type === "question" || post.type === "collection").length;
+  questionCount.textContent = totalQuestions;
   experienceCount.textContent = posts.filter((post) => post.type === "experience" || post.type === "video").length;
   collectionCount.textContent = Object.keys(collections).length;
   focusCount.textContent = Object.values(statuses).filter((status) => status === "focus").length;
   reviewCount.textContent = Object.values(statuses).filter((status) => status === "review").length;
   sourceCount.textContent = new Set(catalogPosts.map((post) => post.sourcePlatform).filter(Boolean)).size;
-  const totalQuestions = posts.reduce((sum, post) => sum + (post.questions || []).length, 0);
   avgQuestionCount.textContent = posts.length ? (totalQuestions / posts.length).toFixed(1) : "0";
+  if (latestUpdateDate) latestUpdateDate.textContent = latestDate || "-";
+  if (latestUpdateCount) latestUpdateCount.textContent = latestDate ? `${latestPosts.length} 条资料 / ${latestQuestions} 个题目` : "暂无更新";
+  if (latestUpdateFocus) latestUpdateFocus.textContent = latestCategories || "-";
+  if (answerCoverage) answerCoverage.textContent = totalQuestions ? `${Math.round((answeredQuestions / totalQuestions) * 100)}%` : "-";
+}
+
+function scrollToBrowse() {
+  document.querySelector("#browse")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function filterLatestUpdate() {
+  if (!currentLatestDate) return;
+  filters.startDate.value = currentLatestDate;
+  filters.endDate.value = currentLatestDate;
+  filters.sort.value = "date-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
+}
+
+function filterLatestFocus() {
+  if (!currentLatestFocus) return;
+  filters.category.value = currentLatestFocus;
+  filters.startDate.value = currentLatestDate || filters.startDate.value;
+  filters.endDate.value = currentLatestDate || filters.endDate.value;
+  filters.sort.value = "question-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
+}
+
+function filterAnsweredQuestions() {
+  filters.questionOnly.checked = true;
+  filters.sort.value = "question-desc";
+  resetPage();
+  loadPosts();
+  scrollToBrowse();
 }
 
 function renderRankList(root, entries) {
@@ -717,6 +773,10 @@ function setStatus(postId, status) {
 
 function buildReviewCard(post) {
   const questions = (post.questions || []).map((question) => `- ${question}`).join("\n");
+  const answerLines = (post.questions || []).map((question, index) => {
+    const answer = answerForQuestion(post, question)?.answer || answerHint(question);
+    return `### ${index + 1}. ${question}\n${answer}`;
+  }).join("\n\n");
   return [
     `# ${post.company} - ${post.title}`,
     `方向：${post.direction || "未标注"} / ${post.domain || "未标注"}`,
@@ -730,6 +790,9 @@ function buildReviewCard(post) {
     "",
     "## 高频问题",
     questions || "暂无",
+    "",
+    "## 模型回答",
+    answerLines || "暂无",
     "",
     "## 准备建议",
     post.prepTips || "暂无",
@@ -777,6 +840,30 @@ function answerHint(question) {
     [/仿真评测|场景真实性|覆盖率/i, "仿真评测要关注场景分布、交互真实性、长尾覆盖、指标可解释性和 sim-real gap，不能只看单一通过率。"],
   ];
   return rules.find(([pattern]) => pattern.test(question))?.[1] || "先回答核心机制，再补关键取舍、常见失败模式和可量化评估指标。";
+}
+
+function normalizeAnswerQuestion(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[，。！？、；：“”‘’（）()[\]{}<>《》|/\\\-—_:：,.!?;\s]/g, "")
+    .replace(/visionlanguageaction/g, "vla")
+    .replace(/keyvaluecache/g, "kvcache")
+    .trim();
+}
+
+function answerForQuestion(post, question, providedAnswers) {
+  const answers = providedAnswers || (Array.isArray(post.questionAnswers) ? post.questionAnswers : []);
+  const exact = answers.find((item) => item.question === question);
+  if (exact?.answer) return exact;
+  const key = normalizeAnswerQuestion(question);
+  return answers.find((item) => normalizeAnswerQuestion(item.question) === key && item.answer);
+}
+
+function answerExcerpt(text, maxLength = 190) {
+  const value = String(text || "").replace(/\s+/g, " ").trim();
+  if (value.length <= maxLength) return value;
+  const cut = Math.max(value.lastIndexOf("。", maxLength), value.lastIndexOf("；", maxLength), value.lastIndexOf("，", maxLength));
+  return `${value.slice(0, cut > 80 ? cut + 1 : maxLength).trim()}...`;
 }
 
 async function copyReviewCard(post) {
@@ -839,16 +926,29 @@ function renderPosts(posts) {
       questionSummary.appendChild(focus);
       questionSummary.appendChild(list);
       const answerTitle = document.createElement("strong");
-      answerTitle.textContent = "简答提示";
+      answerTitle.textContent = "模型回答摘要";
       const answerList = document.createElement("ul");
+      const answers = Array.isArray(post.questionAnswers) ? post.questionAnswers : [];
       questions.slice(0, 4).forEach((question) => {
         const item = document.createElement("li");
         const questionText = document.createElement("span");
         questionText.className = "answer-question";
         questionText.textContent = question;
         const answerText = document.createElement("p");
-        answerText.textContent = answerHint(question);
+        const matchedAnswer = answerForQuestion(post, question, answers);
+        const answer = matchedAnswer?.answer || answerHint(question);
+        answerText.textContent = answerExcerpt(answer);
         item.append(questionText, answerText);
+        if (matchedAnswer?.answer && matchedAnswer.answer.length > 220) {
+          const details = document.createElement("details");
+          details.className = "answer-detail";
+          const summary = document.createElement("summary");
+          summary.textContent = "展开完整回答";
+          const full = document.createElement("p");
+          full.textContent = matchedAnswer.answer;
+          details.append(summary, full);
+          item.appendChild(details);
+        }
         answerList.appendChild(item);
       });
       answerHints.append(answerTitle, answerList);
@@ -1139,6 +1239,10 @@ document.querySelector("#clearFilters").addEventListener("click", () => {
   resetPage();
   loadPosts();
 });
+
+latestUpdateButton?.addEventListener("click", filterLatestUpdate);
+latestFocusButton?.addEventListener("click", filterLatestFocus);
+answeredOnlyButton?.addEventListener("click", filterAnsweredQuestions);
 
 ensureDefaultCollection();
 Promise.all([loadMeta(), loadCatalog(), loadPlatforms(), loadDaily()]).then(loadPosts);

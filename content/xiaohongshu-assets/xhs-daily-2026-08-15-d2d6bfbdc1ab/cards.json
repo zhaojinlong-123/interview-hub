@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "多模态大模型",
+    "body": "方向：多模态大模型\n题目：快手短视频多模态理解中，如何把视频帧、ASR、OCR、封面和用户反馈构造成训练样本？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-15-d2d6bfbdc1ab\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 快手短视频多模态理解中，如何把视频帧、ASR、OCR、封面和用户反馈构造成训练样本？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-15-d2d6bfbdc1ab\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "快手短视频多模态理解中，如何把视频帧、ASR、OCR、封面和用户反馈构造成训练样本？",
+    "body": "短视频样本构造要先把不同模态按时间对齐。视频侧抽关键帧或短 clip，保留时间戳、镜头边界和运动强度；ASR 按句子或词级时间戳切分；OCR 记录文字框、出现时间和置信度；封面作为强视觉摘要但要注意它可能是诱导图；用户反馈包括点击、完播、点赞、评论、负反馈和搜索转化。训练样本可以分成内容理解、标签预测、视频问答、检索排序和安全审核几类。关键是避免把用户反馈直接当真值，因为反馈受推荐位置、标题党和人群偏差影响，需要去偏、分桶和延迟窗口处理。多模态融合时可用视频 encoder 表示画面，文本 encoder 表示",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-15-d2d6bfbdc1ab\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "快手短视频多模态理解中，如何把视频帧、ASR、OCR、封面和用户反馈构造成训练样本？",
+    "body": "ASR/OCR/标题，再用 cross-attention 或 late fusion 融合。评估不能只看离线 AUC，还要看长尾类别、冷启动、误杀率、线上指标和人工质检一致性。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-15-d2d6bfbdc1ab\\04-answer.png"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜具身智能 / 强化学习",
+    "body": "公司：综合\n方向：具身智能 / 强化学习\n题目：模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-21-550cc9edf135\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-21-550cc9edf135\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "body": "模仿学习把专家轨迹当监督信号，优点是样本效率高、训练稳定、适合真实机器人数据昂贵的场景；缺点是容易协变量偏移，测试时一旦偏离专家分布，误差会逐步累积，而且上限受专家策略限制。强化学习通过试错最大化奖励，优点是能优化长期回报和发现更优策略，适合底层控制、恢复策略和仿真中可大量采样的任务；缺点是奖励设计难、探索成本高、真机安全风险大。实际系统通常先用遥操作数据做行为克隆或 diffusion policy 预训练，让策略获得基本能力；再在仿真或安全约束环境中用 RL 微调，提高鲁棒性和恢复能力；最后用真机失败样本做离线",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-21-550cc9edf135\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "模仿学习和强化学习在具身任务中各有什么优劣，实际系统里如何组合使用？",
+    "body": "RL、偏好学习或小步在线更新。关键是不要在真实机器人上无约束探索，要加入安全过滤器、动作边界、碰撞检测和人工接管。评估要看成功率、恢复率、探索成本、硬件损伤风险和长尾场景表现。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-21-550cc9edf135\\04-answer.png"
+  }
+]

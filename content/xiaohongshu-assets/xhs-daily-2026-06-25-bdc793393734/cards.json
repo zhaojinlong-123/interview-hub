@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "阿里｜大模型面经",
+    "body": "公司：阿里\n方向：大模型面经\n题目：对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-bdc793393734\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-bdc793393734\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "body": "DPO 和“奖励模型 + GRPO”没有绝对优劣，取决于数据和目标。DPO 直接用偏好对优化策略，不需要在线采样和单独 reward model，训练稳定、成本低，适合已有高质量 chosen/rejected 数据的场景；奖励模型 + GRPO 可以对同一 prompt 在线采样多条回答，用可验证奖励或学习型奖励持续探索，适合数学、代码和复杂推理，但工程复杂、采样昂贵，并存在 reward hacking。实践中可先用 DPO 获得稳定起点，再用 GRPO 做小步强化；评估要同时看任务通过率、KL",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-bdc793393734\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "对比DPO和GRPO两种微调方案，核心区别是什么？离线训练和在线采样的优劣分别是什么？",
+    "body": "偏移、回答长度、奖励泛化和安全性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-bdc793393734\\04-answer.png"
+  }
+]

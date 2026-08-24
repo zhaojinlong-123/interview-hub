@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "高德｜多模态大模型",
+    "body": "公司：高德\n方向：多模态大模型\n题目：地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-31-cf3074c26da8\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-31-cf3074c26da8\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "body": "地图场景的多模态建模不能只看单张图片，还要把地理位置和拓扑关系纳入表示。道路图像提供车道线、路牌、建筑和环境线索；POI 文本提供名称、品类和营业信息；轨迹反映真实通行模式；路网拓扑提供连接关系、转向限制和距离。模型可以把视觉特征、文本特征和地理网格或道路节点 embedding 对齐到统一空间，再通过图神经网络或 cross-attention 融合邻近区域信息。训练任务包括 POI 匹配、路牌识别、地点问答、轨迹目的地预测和异常道路发现。评估时要按城市、道路等级、昼夜天气和新开道路分桶，重点检查空间关系和时效性。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-31-cf3074c26da8\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "地图类多模态模型如何融合道路图像、POI 文本、轨迹和地理空间关系？",
+    "body": "隐私上要避免暴露个人轨迹，通常使用聚合特征和脱敏采样。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-31-cf3074c26da8\\04-answer.png"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "优必选｜具身智能 / 灵巧操作",
+    "body": "公司：优必选\n方向：具身智能 / 灵巧操作\n题目：灵巧手抓取透明、柔软或易滑物体时，如何融合视觉和触觉判断接触状态？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-15-28fbc4812c63\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 灵巧手抓取透明、柔软或易滑物体时，如何融合视觉和触觉判断接触状态？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-15-28fbc4812c63\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "灵巧手抓取透明、柔软或易滑物体时，如何融合视觉和触觉判断接触状态？",
+    "body": "透明、柔软和易滑物体会让单纯视觉很不可靠：透明物体边界弱，柔软物体形变大，易滑物体抓住后也可能缓慢滑移。因此接触状态估计要融合视觉、触觉、力矩、电流和末端位姿。视觉负责提供初始物体位置、形状和候选抓取点；触觉或力觉负责判断是否接触、接触面积是否足够、压力分布是否均匀；关节电流和末端位姿变化可以辅助判断夹爪是否空抓或物体是否移动。模型上可以做多模态时序分类，输出未接触、稳定接触、滑移、挤压过大、抓取失败等状态。控制上发现滑移时可以增大法向力、调整手指姿态或重新抓取；发现过度挤压时要减小夹持力，避免损坏物体。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-15-28fbc4812c63\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "灵巧手抓取透明、柔软或易滑物体时，如何融合视觉和触觉判断接触状态？",
+    "body": "数据采集要覆盖不同材质、光照、速度和抓取角度，并标注接触事件和失败原因。评估指标除了抓取成功率，还要看滑移检测延迟、误报率、物体损伤率和跨材质泛化。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-15-28fbc4812c63\\04-answer.png"
+  }
+]

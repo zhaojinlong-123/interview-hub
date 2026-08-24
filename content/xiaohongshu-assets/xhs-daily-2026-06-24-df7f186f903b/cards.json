@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "腾讯｜VLA / 具身智能",
+    "body": "公司：腾讯\n方向：VLA / 具身智能\n题目：扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-df7f186f903b\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组织已经发生了非线性位移，你的系统怎么做闭环修正？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-df7f186f903b\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "扩散模型生成的是Action Chunk，但在手术中，组织形变是实时的。如果你的 Chunk 还没跑完，组…",
+    "body": "Action Chunk 不能作为开环轨迹一次执行到底。更稳妥的做法是采用滚动时域控制：策略每次预测一段动作，但控制器只执行前几个动作，随后重新采集视觉、力觉和机器人本体状态，再用最新观测重规划剩余轨迹。对组织形变这类强非刚性场景，还应加入目标跟踪与形变估计、动作置信度或不确定性检测、力/速度安全约束以及异常触发的快速停止。训练时可通过扰动轨迹、失败恢复数据和延迟随机化，让策略学会在状态偏离时回到可恢复区域。核心是“短执行、频重规划、低层安全控制兜底”，而不是追求一次生成很长的动作序列。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-24-df7f186f903b\\03-answer.png"
+  }
+]

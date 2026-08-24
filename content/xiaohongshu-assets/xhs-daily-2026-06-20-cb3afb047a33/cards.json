@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "美团｜多模态大模型",
+    "body": "公司：美团\n方向：多模态大模型\n题目：端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-cb3afb047a33\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-cb3afb047a33\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "body": "端侧 MobileVLM 的核心矛盾是视觉 token 多、语言模型重，而移动设备的算力、内存和功耗都有限。常见优化路线是视觉侧用轻量 encoder 或降低输入分辨率，连接层压缩视觉 token，语言侧选择小参数模型并配合 INT8/INT4 量化、算子融合和 KV cache 管理。训练时要用蒸馏把大模型的视觉问答、OCR 和推理能力迁移到小模型，同时用端侧真实场景数据做微调，避免只在公开数据集上好看。部署评估要同时看首 token 延迟、端到端响应时间、峰值内存、功耗、温升和离线准确率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-cb3afb047a33\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "端侧 MobileVLM 如何在算力受限设备上兼顾视觉理解能力、延迟和内存占用？",
+    "body": "面试里可以强调端侧模型不是简单缩小参数，而是模型结构、数据蒸馏、推理引擎和业务场景共同取舍。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-cb3afb047a33\\04-answer.png"
+  }
+]

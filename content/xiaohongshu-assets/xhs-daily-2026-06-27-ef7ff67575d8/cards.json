@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：1 如何处理模型推理延迟问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-ef7ff67575d8\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 1 如何处理模型推理延迟问题？\n\n2. 2 如何设计高效的机器人动作队列？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-ef7ff67575d8\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "1 如何处理模型推理延迟问题？",
+    "body": "降低模型推理延迟要先拆分视觉编码、prefill、decode/动作生成、通信和控制等待。可采用视觉特征缓存、低分辨率快速路径、模型蒸馏、INT8/FP8、FlashAttention、CUDA Graph、批处理与异步流水线；机器人控制还可让低层控制器在模型计算期间继续执行短 action chunk。必须设置超时和旧结果丢弃机制，避免迟到动作污染闭环。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-ef7ff67575d8\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "2 如何设计高效的机器人动作队列？",
+    "body": "高效动作队列需要支持时间戳、优先级、可取消和状态反馈。VLA 低频地产生 action chunk，控制线程按固定周期消费；当新观测触发重规划、碰撞风险或人工接管时，应原子地废弃未执行动作并切换到安全动作。队列还应限制最大前瞻时长，记录每个动作的计划时间与实际执行时间，用于监控延迟、丢帧和控制漂移。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-27-ef7ff67575d8\\04-answer.png"
+  }
+]

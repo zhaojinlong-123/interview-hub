@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "强化学习 / 对齐训练",
+    "body": "方向：强化学习 / 对齐训练\n题目：多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-0cbc585d2071\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-0cbc585d2071\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+    "body": "图文对比学习主要把整图和整句拉到同一语义空间，适合检索和粗粒度语义对齐，但它不能保证模型会按指令回答、能定位局部区域、能处理多轮上下文，也不能解决视觉幻觉。指令微调阶段要进一步对齐三类东西：第一是任务格式对齐，让模型知道问答、OCR、grounding、图表理解、视频问答等任务分别怎么输出；第二是粒度对齐，让局部对象、属性、数量、空间关系和文字区域能对应到语言描述；第三是行为对齐，让模型在看不清、证据不足或输入冲突时能表达不确定性，而不是编造。工程上通常混合 caption、VQA、OCR、region-level",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-0cbc585d2071\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "多模态大模型的模态对齐为什么不能只靠图文对比学习，指令微调阶段还需要对齐什么？",
+    "body": "grounding、多图比较和拒答样本，并用负样本降低幻觉。面试里可以总结为：对比学习解决“看见什么大概像什么”，指令微调解决“按任务要求可靠地说什么”。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-17-0cbc585d2071\\04-answer.png"
+  }
+]

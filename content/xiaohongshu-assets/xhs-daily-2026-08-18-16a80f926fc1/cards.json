@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "多模态大模型",
+    "body": "方向：多模态大模型\n题目：快手大模型算法面试中，多模态模型微调为什么常用 LoRA，它和全参微调的效果、成本和风险有什么差异？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-18-16a80f926fc1\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 快手大模型算法面试中，多模态模型微调为什么常用 LoRA，它和全参微调的效果、成本和风险有什么差异？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-18-16a80f926fc1\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "快手大模型算法面试中，多模态模型微调为什么常用 LoRA，它和全参微调的效果、成本和风险有什么差异？",
+    "body": "LoRA 的核心价值是用少量低秩增量参数适配大模型，避免更新全部权重。对多模态模型来说，全参微调效果上限更高，尤其适合大规模领域继续训练，但显存、训练成本、回滚成本都高，也更容易破坏原有通用能力。LoRA 成本低、实验快、可同时维护多个业务 adapter，适合短视频理解、内容审核、搜索推荐等垂直任务快速迭代。风险是容量有限，遇到需要重塑视觉语义空间或复杂推理能力的任务时可能不够；同时如果训练数据分布窄，LoRA 也会学到业务模板和偏见。面试回答最好落到工程指标：显存占用、训练吞吐、上线包体、adapter",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-18-16a80f926fc1\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "快手大模型算法面试中，多模态模型微调为什么常用 LoRA，它和全参微调的效果、成本和风险有什么差异？",
+    "body": "切换延迟、主模型共享能力、离线评测和线上 badcase 回流。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-18-16a80f926fc1\\04-answer.png"
+  }
+]

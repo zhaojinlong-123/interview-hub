@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "小鹏｜VLA / 具身智能",
+    "body": "公司：小鹏\n方向：VLA / 具身智能\n题目：VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-14571d046e15\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-14571d046e15\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "body": "模仿学习主要从专家轨迹里学习动作分布，优点是稳定、样本效率高，但容易受限于专家数据覆盖范围，遇到偏离轨迹的状态时会累积误差。VLA 引入强化学习，是为了让模型在环境反馈下优化长期任务成功率，而不是只拟合单步动作。强化学习可以处理稀疏奖励、失败恢复、探索更优策略和安全接管策略，但代价是训练不稳定、样本成本高，并且真实机器人上试错风险大。实际工程通常不会直接端到端在线 RL，而是先用遥操作或视频数据做预训练和 imitation learning，再在仿真或受控真实环境里做 RL 微调，并通过 reward",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-14571d046e15\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 模型为什么需要强化学习，和单纯模仿学习相比能解决哪些问题？",
+    "body": "shaping、离线 RL、success predictor 和安全约束降低风险。面试里要把 reward 设计、sim-to-real、失败样本回流和安全边界讲清楚。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-20-14571d046e15\\04-answer.png"
+  }
+]

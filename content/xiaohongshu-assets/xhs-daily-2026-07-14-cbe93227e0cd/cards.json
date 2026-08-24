@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "百度｜多模态大模型",
+    "body": "公司：百度\n方向：多模态大模型\n题目：图文对齐训练后检索效果提升但视觉问答仍出错，应该如何从数据、连接层和评估集定位问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-14-cbe93227e0cd\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 图文对齐训练后检索效果提升但视觉问答仍出错，应该如何从数据、连接层和评估集定位问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-14-cbe93227e0cd\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "图文对齐训练后检索效果提升但视觉问答仍出错，应该如何从数据、连接层和评估集定位问题？",
+    "body": "这类问题要先区分“全局语义对齐好”和“局部视觉证据可用”不是一回事。图文对比学习通常让整图和整句靠近，能提升检索，但未必学会计数、空间关系、OCR 和局部属性。数据侧先检查图文是否弱相关、caption 是否只描述主体而忽略细节、负样本是否太简单；可以加入 hard negative，例如同类物体、相似颜色、相似布局但答案不同的样本。连接层侧看视觉 token 是否被过度压缩，projector 或 Q-Former 是否丢掉小目标和文本区域，必要时保留高分辨率 tile 或区域 token。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-14-cbe93227e0cd\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "图文对齐训练后检索效果提升但视觉问答仍出错，应该如何从数据、连接层和评估集定位问题？",
+    "body": "评估侧要拆成检索、VQA、OCR、grounding、计数、空间关系几套集，避免只用检索指标掩盖问答短板。工程上还应抽样可视化 attention 或证据区域，确认模型回答时真的看到了相关区域，而不是靠语言先验猜答案。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-14-cbe93227e0cd\\04-answer.png"
+  }
+]

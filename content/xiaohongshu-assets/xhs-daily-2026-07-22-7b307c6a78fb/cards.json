@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜机器人控制 / 强化学习",
+    "body": "公司：综合\n方向：机器人控制 / 强化学习\n题目：机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-22-7b307c6a78fb\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-22-7b307c6a78fb\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "body": "SAC 适合机械臂连续控制，主要因为它是 off-policy 最大熵强化学习，样本效率高且探索更充分。机械臂抓取的动作空间通常是连续的末端位姿、关节速度或力控制，确定性策略如 DDPG 容易探索不足、对超参和噪声敏感，训练时容易陷入局部最优。PPO 稳定但 on-policy 样本效率低，在真实机器人或高保真仿真中采样成本高。SAC 通过最大化奖励和策略熵，让策略在高回报动作附近保持一定随机性，有利于发现不同抓取姿态和绕障路径。工程上 SAC 常用于仿真训练或离线数据增强，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-22-7b307c6a78fb\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "机械臂连续控制任务中，为什么很多抓取项目会选择 SAC，而不是 DDPG 或 PPO？",
+    "body": "真机部署前要加动作平滑、碰撞约束和安全边界。回答时还要讲限制：SAC 需要合理奖励函数，稀疏奖励下仍然困难；仿真训练策略迁移到真机需要域随机化和真实数据校准。指标包括成功率、样本效率、训练稳定性、动作平滑度、碰撞率和 sim-to-real gap。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-22-7b307c6a78fb\\04-answer.png"
+  }
+]

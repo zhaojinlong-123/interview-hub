@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-56b49d1f1909\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？\n\n2. 模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-56b49d1f1909\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "如何解决Sim-to-Real（仿真到真实）鸿沟？具体有哪些技术手段？",
+    "body": "Sim-to-Real 的差距主要来自视觉外观、动力学参数、传感器噪声、控制延迟和接触模型不一致。常用手段包括视觉与动力学域随机化、系统辨识、噪声/延迟注入、仿真图像风格迁移、鲁棒策略训练，以及少量真实数据微调。评估不能只看平均成功率，还要看不同物体、光照、摩擦、载荷和相机位姿下的最差性能与恢复率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-56b49d1f1909\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 2",
+    "title": "模仿学习（IL）和强化学习（RL）在具身任务中各有什么优劣？如何结合使用？",
+    "body": "模仿学习直接拟合专家演示，训练稳定、样本利用率高，适合快速获得可用策略，但容易受到分布偏移和复合误差影响；强化学习能基于长期奖励探索超越演示的策略，但真实机器人采样昂贵且有安全风险。常见组合是先用行为克隆/SFT 初始化，再用离线 RL、仿真 RL 或受约束在线 RL 优化成功率和恢复能力，同时保留专家数据做正则，防止策略漂移。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-26-56b49d1f1909\\04-answer.png"
+  }
+]

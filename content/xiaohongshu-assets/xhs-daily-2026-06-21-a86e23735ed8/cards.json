@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-a86e23735ed8\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-a86e23735ed8\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "body": "VLA 的动作置信度通常表示模型对当前动作 token、连续控制量或轨迹片段的预测把握，但任务成功率取决于长时间闭环执行结果，两者不是一回事。模型可能对单步抓取动作很自信，但因为物体滑动、遮挡、相机延迟、接触动力学误差或后续路径规划失败，最终任务仍然失败。校准时要把单步概率和 episode 级结果关联起来：记录每个时刻的观测、动作、置信度、接触状态、人工接管和最终成功/失败标签；再用 reliability diagram、ECE、Brier score 等指标看置信度是否真的对应成功概率。工程上可以训练一个独立",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-a86e23735ed8\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "VLA 动作置信度为什么不能等同于任务成功率，机器人控制里应如何做校准？",
+    "body": "success predictor 或 value head，把视觉状态、动作序列和历史反馈一起输入，输出可执行性评分。上线时不要用置信度直接替代安全判断，而要结合阈值拒答、低置信度接管、失败回放和主动探索数据回流。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-21-a86e23735ed8\\04-answer.png"
+  }
+]

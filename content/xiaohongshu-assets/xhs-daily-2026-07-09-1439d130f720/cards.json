@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "美团｜多模态大模型",
+    "body": "公司：美团\n方向：多模态大模型\n题目：多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-09-1439d130f720\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-09-1439d130f720\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+    "body": "离线评测要先按业务任务拆能力，例如图文检索、OCR、商品属性、视频分类、风险识别、问答正确率和幻觉率。每个能力都要有代表性测试集，并按场景、类目、长尾、低质图片和高风险样本分桶。业务指标则可能是点击率、转化率、审核召回、误杀率、客服解决率或用户停留。关联二者的方式是建立任务链路：模型能力提升应该影响哪个中间指标，再影响哪个业务结果。例如 OCR 提升可能先提升商品属性覆盖率，再提升搜索相关性。上线前做 shadow test、人工抽检和 A/B 实验，记录失败样本回流。不能只用一个综合分，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-09-1439d130f720\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "多模态模型上线前，如何把离线能力评测和业务指标关联起来？",
+    "body": "因为综合分可能掩盖某个关键业务场景下降；也不能只看线上指标，否则难以定位模型具体能力短板。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-09-1439d130f720\\04-answer.png"
+  }
+]

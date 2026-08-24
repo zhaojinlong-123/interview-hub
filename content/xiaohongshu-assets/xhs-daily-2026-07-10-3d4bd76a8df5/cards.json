@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜训练框架",
+    "body": "公司：综合\n方向：训练框架\n题目：大模型训练中出现 loss spike 时，如何区分数据异常、数值不稳定和并行通信问题？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-3d4bd76a8df5\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 大模型训练中出现 loss spike 时，如何区分数据异常、数值不稳定和并行通信问题？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-3d4bd76a8df5\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "大模型训练中出现 loss spike 时，如何区分数据异常、数值不稳定和并行通信问题？",
+    "body": "定位 loss spike 要先保留触发 step 的 batch、随机种子、学习率、梯度范数、loss scale、激活统计和通信日志。数据异常通常表现为特定样本或数据源重复触发，可能有乱码、超长文本、错误标签、异常图像或污染样本；复现同一 batch 可以验证。数值不稳定常伴随梯度范数暴涨、NaN/Inf、loss scale 频繁下降，和学习率过高、FP16 溢出、归一化异常或初始化有关；可用 BF16、梯度裁剪、warmup、降低 LR 排查。并行通信问题可能表现为某些 rank loss",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-3d4bd76a8df5\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "大模型训练中出现 loss spike 时，如何区分数据异常、数值不稳定和并行通信问题？",
+    "body": "不一致、梯度同步异常、hang 或参数漂移，需要检查 all-reduce、ZeRO/FSDP 状态、数据切分和 checkpoint 恢复。稳妥流程是先单卡/小并行复现，再扩大到原并行配置，逐层排除。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-10-3d4bd76a8df5\\04-answer.png"
+  }
+]

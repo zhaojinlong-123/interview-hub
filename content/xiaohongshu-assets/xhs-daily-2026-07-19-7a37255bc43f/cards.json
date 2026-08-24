@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜世界模型 / 自动驾驶",
+    "body": "公司：综合\n方向：世界模型 / 自动驾驶\n题目：自动驾驶世界模型如何让 occupancy、轨迹预测和规划动作形成可闭环评估的统一表示？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-7a37255bc43f\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 自动驾驶世界模型如何让 occupancy、轨迹预测和规划动作形成可闭环评估的统一表示？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-7a37255bc43f\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "自动驾驶世界模型如何让 occupancy、轨迹预测和规划动作形成可闭环评估的统一表示？",
+    "body": "世界模型如果只分别预测 occupancy 或他车轨迹，很容易变成离线感知模型；要服务规划，必须把自车动作、环境状态和未来演化统一起来。一个常见设计是在 BEV 或 latent space 中表示静态地图、动态障碍、可行驶区域和交通规则，再让模型条件化自车候选动作，预测未来 occupancy、参与者轨迹和风险代价。这样规划器可以比较不同动作造成的环境演化，而不是只看单一路径预测。关键训练信号包括真实日志的未来状态、交互场景、规则违反、碰撞/near miss 和人类接管片段。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-7a37255bc43f\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "自动驾驶世界模型如何让 occupancy、轨迹预测和规划动作形成可闭环评估的统一表示？",
+    "body": "评估也要闭环：同一个世界模型接到规划器里，观察碰撞率、舒适性、通行效率、接管率和长尾场景通过率，而不是只看 ADE、FDE 或 IoU。工程风险是模型可能学到相关性而非因果，例如默认他车总会让行；所以需要反事实数据、仿真扰动和不确定性输出，让规划器知道哪些预测不可靠。 面试里不要停在概念层。更好的回答方式是把这道题和真实机器人系统挂钩：数据从哪里来，模型在链路里输出什么，低层控制如何兜底，失败样本如何回流，最终用什么指标判断是否真的可落地。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-19-7a37255bc43f\\04-answer.png"
+  }
+]

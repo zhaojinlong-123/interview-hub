@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 具身智能",
+    "body": "公司：综合\n方向：VLA / 具身智能\n题目：机器人执行失败后，系统如何识别失败原因并选择重试、重规划或人工接管？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-06be44ea7253\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 机器人执行失败后，系统如何识别失败原因并选择重试、重规划或人工接管？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-06be44ea7253\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "机器人执行失败后，系统如何识别失败原因并选择重试、重规划或人工接管？",
+    "body": "失败处理要先做状态诊断，而不是盲目重试。系统可以根据视觉状态、力觉异常、目标是否移动、轨迹偏差、碰撞检测和超时信息判断失败类型：感知失败、规划失败、控制失败、环境变化或安全风险。轻微偏差可以低层控制重试；目标位置变化需要重新感知和规划；连续失败或安全风险升高时应人工接管。训练数据中要保留失败前后的完整片段和接管原因，用于学习恢复策略。评估时除了成功率，还要看失败检测准确率、恢复成功率、平均重试次数和危险动作拦截率。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-06-06be44ea7253\\03-answer.png"
+  }
+]

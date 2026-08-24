@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "字节｜训练框架 / 对齐训练",
+    "body": "公司：字节\n方向：训练框架 / 对齐训练\n题目：字节多模态大模型训练中，DeepSpeed",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-01-f467901b18fe\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 字节多模态大模型训练中，DeepSpeed",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-01-f467901b18fe\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "字节多模态大模型训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，如何取舍？",
+    "body": "这题要把训练链路拆开讲。DeepSpeed ZeRO 解决的是大模型训练时参数、梯度和优化器状态的显存压力，适合全参训练或大规模继续预训练；LoRA 解决的是低成本任务适配，通过低秩增量参数减少训练显存和存储成本，适合垂直任务微调和多租户部署；RLHF 解决的是模型输出偏好与人类期望不一致的问题，通常放在 SFT 之后，用偏好数据、reward model 或 DPO/GRPO 类方法做对齐。取舍上，如果目标是扩展模型能力，优先考虑全参训练和 ZeRO；如果目标是快速适配业务，优先 LoRA；",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-01-f467901b18fe\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "字节多模态大模型训练中，DeepSpeed ZeRO、LoRA 和 RLHF 分别解决什么问题，如何取舍？",
+    "body": "如果基础能力已经够但回答风格、安全性、指令遵循不稳定，再做 RLHF 或偏好优化。面试里还要补一句：三者不是互斥关系，真实大厂训练常常是 ZeRO 支撑训练底座，LoRA 做快速实验，RLHF/DPO 做最后对齐。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-01-f467901b18fe\\04-answer.png"
+  }
+]

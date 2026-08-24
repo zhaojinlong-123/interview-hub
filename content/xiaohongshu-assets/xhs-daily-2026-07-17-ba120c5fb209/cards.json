@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "综合｜VLA / 机器人数据闭环",
+    "body": "公司：综合\n方向：VLA / 机器人数据闭环\n题目：机器人执行失败后，如何把失败原因诊断、恢复策略选择和数据回流做成闭环？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-ba120c5fb209\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 机器人执行失败后，如何把失败原因诊断、恢复策略选择和数据回流做成闭环？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-ba120c5fb209\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "机器人执行失败后，如何把失败原因诊断、恢复策略选择和数据回流做成闭环？",
+    "body": "机器人失败不能只记录“失败”，要拆成可学习的原因。常见失败包括感知定位错误、抓取点不可达、夹爪打滑、碰撞风险、动作超时、目标状态变化和语言理解错误。系统上可以在每个子目标后做状态校验：目标是否出现、位姿是否正确、接触力是否稳定、动作是否越界。如果失败，先做诊断分类，再选择恢复策略：重新感知、换抓取点、调整力控、退回安全位姿、重新规划路径或人工接管。数据回流要保存失败前后的多模态观测、动作、控制信号、诊断标签和人工修正轨迹，形成 hard negative 和纠错样本。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-ba120c5fb209\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "机器人执行失败后，如何把失败原因诊断、恢复策略选择和数据回流做成闭环？",
+    "body": "训练时可以用这些样本做失败预测、策略修正和偏好学习，让模型学会什么时候不该继续执行。评估指标包括失败诊断准确率、自动恢复成功率、二次失败率、人工接管率和回流样本带来的成功率提升。面试回答要强调闭环：发现失败、解释失败、恢复失败、学习失败。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-17-ba120c5fb209\\04-answer.png"
+  }
+]

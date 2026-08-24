@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "宇树科技｜具身智能 / 机器人控制",
+    "body": "公司：宇树科技\n方向：具身智能 / 机器人控制\n题目：移动机器人在动态环境中执行视觉导航时，如何处理定位漂移、动态障碍和控制延迟？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-a97a9b46cbcd\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 移动机器人在动态环境中执行视觉导航时，如何处理定位漂移、动态障碍和控制延迟？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-a97a9b46cbcd\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "移动机器人在动态环境中执行视觉导航时，如何处理定位漂移、动态障碍和控制延迟？",
+    "body": "动态环境视觉导航要把定位、感知、规划和控制放在闭环里看。定位漂移通常来自纹理不足、光照变化、快速运动和动态物体干扰，需要用视觉里程计、IMU、轮速/腿部里程计和回环检测融合，必要时剔除动态特征点。动态障碍不能只在静态地图里规划，要做实时检测、轨迹预测和局部避障；对行人、车辆、宠物这类非静态目标，需要估计速度和意图。控制延迟会让规划轨迹和真实状态错位，因此要做时间戳同步、状态预测和控制补偿，例如用当前速度外推机器人位姿，再把轨迹下发给低层控制。工程上常用全局规划保证可达性，局部规划或 MPC 保证实时避障和动力学约束。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-a97a9b46cbcd\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "移动机器人在动态环境中执行视觉导航时，如何处理定位漂移、动态障碍和控制延迟？",
+    "body": "评估时不能只看路径长度，要看定位误差、碰撞率、急停次数、重规划频率、目标到达率、平均速度和在人群中的舒适性。核心答案是：先让状态估计可信，再让规划考虑动态，再让控制补偿延迟。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-07-16-a97a9b46cbcd\\04-answer.png"
+  }
+]

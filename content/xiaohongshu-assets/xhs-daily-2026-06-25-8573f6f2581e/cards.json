@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "快手｜多模态大模型",
+    "body": "公司：快手\n方向：多模态大模型\n题目：题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-8573f6f2581e\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-8573f6f2581e\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1",
+    "title": "题1：请讲讲CLIP的核心原理，它是怎么做图文对齐的？正样本冲突怎么处理？",
+    "body": "CLIP 使用图像编码器和文本编码器把配对图文映射到同一向量空间，在一个 batch 内把真实图文对作为正样本，其余组合视为负样本，双向计算图到文和文到图的对比损失。InfoNCE 本质上让正样本相似度相对所有候选更高，温度参数控制分布尖锐程度。CLIP 的优势是大规模弱监督和零样本迁移，局限是依赖 batch 内负样本、偏向全局语义，对计数、空间关系和细粒度局部属性不够敏感。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 3,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-06-25-8573f6f2581e\\03-answer.png"
+  }
+]

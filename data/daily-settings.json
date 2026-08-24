@@ -1,24 +1,50 @@
 {
   "publishTime": "09:30",
+  "publishTimes": [
+    {
+      "time": "09:30",
+      "slot": "morning",
+      "directionPolicy": "excludeSameDayDirections"
+    },
+    {
+      "time": "15:30",
+      "slot": "afternoon",
+      "directionPolicy": "excludeSameDayDirections"
+    }
+  ],
   "timezone": "Asia/Shanghai",
+  "weeklySearch": {
+    "enabled": true,
+    "dayOfWeek": "Friday",
+    "time": "10:30",
+    "minNewQuestions": 20,
+    "dedupeQuestions": true
+  },
   "focusDirections": [
+    "多模态大模型",
     "VLA",
     "具身智能",
-    "多模态大模型",
+    "视频理解",
+    "视觉理解",
     "训练框架",
+    "推理部署",
     "推理优化",
     "自动驾驶数据",
     "世界模型"
   ],
   "publishTarget": "xiaohongshu",
   "autoPublish": true,
-  "notes": "????????????????????????????????????????????? data/publish-queue.json???????????",
+  "notes": "每日小红书发布使用每日精选内容；每周检索会补充至少20条不重复专业面经题目，并执行题目去重。",
   "searchQueries": [
     "多模态大模型 面经",
+    "多模态大模型 面试题",
     "VLA 具身智能 面经",
+    "VLA 机器人 面试题",
     "视频理解 面试题",
+    "视觉理解 大模型 面经",
     "训练框架 DeepSpeed Megatron 面经",
     "推理部署 KV cache 量化 面经",
+    "推理优化 vLLM PagedAttention 面试题",
     "自动驾驶 数据闭环 世界模型 面经",
     "世界模型 面经",
     "世界模型 面试题",
@@ -26,5 +52,15 @@
     "World Model 自动驾驶 面经",
     "世界模型 VLA 具身智能 面试题",
     "视频生成 世界模型 面经"
-  ]
+  ],
+  "companyPriority": {
+    "enabled": true,
+    "preferSpecificCompanyQuestions": true,
+    "searchCandidateBonus": 10,
+    "dailyFeatureBonus": 18,
+    "note": "Company may be inaccurate. Do not display company names in Xiaohongshu posts; use only as internal source metadata if needed.",
+    "publishDisplayEnabled": false
+  },
+  "xiaohongshuDisplayCompany": false,
+  "xiaohongshuCompanyPolicy": "Do not include company names in Xiaohongshu post titles, cover cards, first image, body intro, or tags. Keep company only as internal metadata/source context."
 }

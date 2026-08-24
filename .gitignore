@@ -4,3 +4,4 @@ __pycache__/
 .env
 local_cache/
 logs/
+tmp/

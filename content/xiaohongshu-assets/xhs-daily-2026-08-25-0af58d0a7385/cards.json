@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "VLA / 具身智能",
+    "body": "方向：VLA / 具身智能\n题目：从零搭建一个具身智能项目，为什么要同时考虑感知、策略、控制、仿真和数据飞轮？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-25-0af58d0a7385\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 从零搭建一个具身智能项目，为什么要同时考虑感知、策略、控制、仿真和数据飞轮？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-25-0af58d0a7385\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "从零搭建一个具身智能项目，为什么要同时考虑感知、策略、控制、仿真和数据飞轮？",
+    "body": "具身智能不是单一模型问题。感知负责识别物体、空间、状态和 affordance；策略负责把语言目标转成子目标和动作意图；控制负责把高层动作变成稳定、安全、实时的机器人执行；仿真用于低成本覆盖长尾、验证安全和预训练；数据飞轮负责从真实失败中持续改进。只做大模型会卡在真实控制和安全边界，只做控制又缺少开放任务泛化。面试里可以用闭环链路回答：数据采集、标注、训练、仿真评估、真机部署、失败回流，每一环都有指标和质量门槛。 如果面试官继续追问，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-25-0af58d0a7385\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "从零搭建一个具身智能项目，为什么要同时考虑感知、策略、控制、仿真和数据飞轮？",
+    "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-25-0af58d0a7385\\04-answer.png"
+  }
+]

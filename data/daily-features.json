@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-26-40deafcff159",
+    "date": "2026-08-26",
+    "slot": "afternoon",
+    "publishTime": "15:30",
+    "postId": "curated-20260824-1ded79aeb5cb",
+    "title": "自动驾驶世界模型面经：BEV、Occupancy、轨迹预测与闭环仿真",
+    "company": "综合",
+    "direction": "自动驾驶数据 / 世界模型",
+    "score": 15.9,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://www.cnblogs.com/clnchanpin/p/19502504",
+    "sourcePlatform": "博客园",
+    "sourceDate": "2026-08-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-26-40deafcff159.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-26-7b855ed79b76",
     "date": "2026-08-26",
     "slot": "morning",

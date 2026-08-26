@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "自动驾驶数据 / 世界模型",
+    "body": "方向：自动驾驶数据 / 世界模型\n题目：自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真统一到规划可用的环境动态建模中？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-40deafcff159\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真统一到规划可用的环境动态建模中？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-40deafcff159\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真统一到规划可用的环境动态建模中？",
+    "body": "BEV 提供统一鸟瞰空间坐标，方便融合多相机、激光雷达和地图；occupancy 表示空间占用和可通行区域，能描述静态/动态障碍；轨迹预测建模其他交通参与者未来行为；闭环仿真则把自车动作对环境反馈的影响纳入评估。世界模型的目标是学习状态转移：当前感知、历史动作、交通上下文输入后，预测未来场景和风险，让规划器能比较候选动作的后果。面试要强调规划可用性：预测不只是生成好看的 BEV，而是要服务碰撞风险、舒适性、法规约束、可解释性和长尾场景覆盖。 如果面试官继续追问，",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-40deafcff159\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "自动驾驶世界模型如何把 BEV、occupancy、轨迹预测和闭环仿真统一到规划可用的环境动态建模中？",
+    "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-40deafcff159\\04-answer.png"
+  }
+]

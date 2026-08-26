@@ -1,5 +1,31 @@
 [
   {
+    "id": "daily-2026-08-26-7b855ed79b76",
+    "date": "2026-08-26",
+    "slot": "morning",
+    "publishTime": "09:30",
+    "postId": "curated-20260824-e0f345cd3735",
+    "title": "机器人数据采集路线面经：本体遥操作、VR、视频学习与仿真数据",
+    "company": "综合",
+    "direction": "VLA / 具身智能",
+    "score": 23.9,
+    "reasons": [
+      "现有题库候选",
+      "未发布题目",
+      "已有模型详细回答",
+      "来源链接通过基础校验"
+    ],
+    "sourceUrl": "https://www.aibangbots.com/a/11605",
+    "sourcePlatform": "公开资料",
+    "sourceDate": "2026-08-24",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-26-7b855ed79b76.md",
+    "target": "xiaohongshu",
+    "publishStatus": "manual_required",
+    "autoPublish": true,
+    "publishFailureReason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": ""
+  },
+  {
     "id": "daily-2026-08-25-2b3f718cc340",
     "date": "2026-08-25",
     "slot": "afternoon",

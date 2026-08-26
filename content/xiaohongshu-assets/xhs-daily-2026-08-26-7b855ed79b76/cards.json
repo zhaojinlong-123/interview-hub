@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "cover",
+    "kicker": "本篇速览",
+    "title": "VLA / 具身智能",
+    "body": "方向：VLA / 具身智能\n题目：本体遥操作、VR 遥操作、互联网视频学习和仿真数据各自适合补充机器人数据的哪一部分？",
+    "footer": "Interview Hub · 面试题精讲",
+    "index": 1,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-7b855ed79b76\\01-cover.png"
+  },
+  {
+    "kind": "questions",
+    "kicker": "面试题目",
+    "title": "今天重点看这几题",
+    "body": "1. 本体遥操作、VR 遥操作、互联网视频学习和仿真数据各自适合补充机器人数据的哪一部分？",
+    "footer": "先能 30 秒讲清楚，再展开细节",
+    "index": 2,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-7b855ed79b76\\02-questions.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-1",
+    "title": "本体遥操作、VR 遥操作、互联网视频学习和仿真数据各自适合补充机器人数据的哪一部分？",
+    "body": "本体遥操作数据质量最高，动作、传感器和真实动力学一致，适合精细操作和接触任务，但成本高、规模有限。VR 遥操作能降低采集门槛、提升速度，适合大规模示范，但存在控制映射和人体动作到机器人 embodiment 的差异。互联网视频覆盖物体和场景丰富，适合学习视觉先验、任务语义和 affordance，但缺少精确动作和机器人状态。仿真数据便宜、可控、可生成长尾场景，适合预训练、失败恢复和安全测试，但有 sim-to-real gap。面试回答要强调组合：真实遥操作做高质量锚点，视频和仿真扩覆盖，最终用真机闭环评估校正。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 3,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-7b855ed79b76\\03-answer.png"
+  },
+  {
+    "kind": "answer",
+    "kicker": "详细解答 1-2",
+    "title": "本体遥操作、VR 遥操作、互联网视频学习和仿真数据各自适合补充机器人数据的哪一部分？",
+    "body": "如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+    "footer": "机制 -> 取舍 -> 坑 -> 指标",
+    "index": 4,
+    "total": 4,
+    "file": "E:\\workshop\\interview-hub\\content\\xiaohongshu-assets\\xhs-daily-2026-08-26-7b855ed79b76\\04-answer.png"
+  }
+]

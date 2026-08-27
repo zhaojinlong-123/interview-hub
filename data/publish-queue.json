@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-27-ba9996a4867b",
+    "title": "VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "机器人遥操作数据采集时，多相机、关节状态、力控信号和夹爪状态如何做时间同步？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：Robotics Center，2026-08-24\n原文链接：https://www.roboticscenter.ai/zh/blog/robot-data-annotation-challenges\n完整回答已拆成图卡，建议按顺序复习。\n#机器人数据 #遥操作 #时间同步 #轨迹标注 #失败样本 #VLA具身智能 #大模型面试 #AI学习",
+    "sourcePlatform": "Robotics Center",
+    "sourceDate": "2026-08-24",
+    "sourceUrl": "https://www.roboticscenter.ai/zh/blog/robot-data-annotation-challenges",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-27-ba9996a4867b.md",
+    "featureId": "daily-2026-08-27-ba9996a4867b",
+    "postId": "curated-20260824-23f0b34dc484",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-27-ba9996a4867b/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "VLA / 具身智能",
+        "body": "方向：VLA / 具身智能\n题目：机器人遥操作数据采集时，多相机、关节状态、力控信号和夹爪状态如何做时间同步？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. 机器人遥操作数据采集时，多相机、关节状态、力控信号和夹爪状态如何做时间同步？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "机器人遥操作数据采集时，多相机、关节状态、力控信号和夹爪状态如何做时间同步？",
+        "body": "最理想方案是硬件同步：用主时钟或触发脉冲同时驱动相机帧、关节状态采样和力/扭矩传感器记录，所有数据写入统一时间基准。若只能软件同步，要记录每路数据的原始时间戳、采样频率和系统时钟漂移，训练前按控制周期重采样，并对相机帧、关节状态、夹爪开合、F/T 信号做插值或最近邻对齐。接触敏感任务不能容忍几十毫秒偏差，因为视觉接触点和力峰值错位会让模型学到错误因果。工程上还应保留同步质量指标，例如最大时间偏移、丢帧率、时钟漂移和接触事件对齐误差，用于过滤低质量 episode。 如果面试官继续追问，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "机器人遥操作数据采集时，多相机、关节状态、力控信号和夹爪状态如何做时间同步？",
+        "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-27T01:30:05.377Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-27-ba9996a4867b/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-27-ba9996a4867b/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-27-ba9996a4867b/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-27-ba9996a4867b/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-27T01:30:06.809Z"
+  },
+  {
     "id": "xhs-daily-2026-08-26-7b855ed79b76",
     "title": "VLA/机器人动作题目精讲",
     "coverTitle": "VLA具身智能面试题精讲",

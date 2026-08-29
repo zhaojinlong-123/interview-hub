@@ -1,5 +1,64 @@
 [
   {
+    "id": "xhs-daily-2026-08-29-2c35ebcadc69",
+    "title": "VLA/机器人动作题目精讲",
+    "coverTitle": "VLA具身智能面试题精讲",
+    "coverSubtitle": "VLA / 具身智能 高频题",
+    "company": "",
+    "direction": "VLA / 具身智能",
+    "primaryQuestion": "RT-2、OpenVLA、ACT 和 Diffusion Policy 在动作表示、推理延迟和适用任务上有什么核心差异？",
+    "topic": "VLA / 机器人动作",
+    "body": "每日精选：VLA / 具身智能题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：CSDN，2026-08-24\n原文链接：https://xingyun3d.csdn.net/69fb0c350a2f6a37c5a812f8.html\n完整回答已拆成图卡，建议按顺序复习。\n#VLA #具身智能 #actiontoken #DiffusionPolicy #OpenVLA #ACT #VLA具身智能 #大模型面试",
+    "sourcePlatform": "CSDN",
+    "sourceDate": "2026-08-24",
+    "sourceUrl": "https://xingyun3d.csdn.net/69fb0c350a2f6a37c5a812f8.html",
+    "articlePath": "content/xiaohongshu-drafts/2026-08-29-2c35ebcadc69.md",
+    "featureId": "daily-2026-08-29-2c35ebcadc69",
+    "postId": "curated-20260824-e2d717b46c88",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-08-29-2c35ebcadc69/01-cover.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "VLA / 具身智能",
+        "body": "方向：VLA / 具身智能\n题目：RT-2、OpenVLA、ACT 和 Diffusion Policy 在动作表示、推理延迟和适用任务上有什么核心差异？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. RT-2、OpenVLA、ACT 和 Diffusion Policy 在动作表示、推理延迟和适用任务上有什么核心差异？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "RT-2、OpenVLA、ACT 和 Diffusion Policy 在动作表示、推理延迟和适用任务上有…",
+        "body": "RT-2 和 OpenVLA 更接近把动作离散化成 token，优势是能复用 VLM/LLM 的语言-视觉知识和自回归建模框架，适合语言条件、多任务和开放词汇泛化，但离散化会带来量化误差，且大模型自回归推理延迟较高。ACT 通常用 CVAE 和 action chunk，一次预测一段连续动作，工程闭环快、小数据友好，适合固定任务或少量任务的模仿学习，但语言泛化弱。Diffusion Policy 把动作序列看成从噪声逐步去噪的生成过程，能表达多峰轨迹和复杂接触操作，代价是采样步数、部署延迟和稳定性调参更重。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "RT-2、OpenVLA、ACT 和 Diffusion Policy 在动作表示、推理延迟和适用任务上有…",
+        "body": "面试回答要落到任务：语言泛化选 VLA 路线，低延迟固定操作可先用 ACT，复杂多峰操作可考虑 Diffusion Policy。 如果面试官继续追问，可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-08-29T01:30:05.117Z",
+    "imageCardFiles": [
+      "content/xiaohongshu-assets/xhs-daily-2026-08-29-2c35ebcadc69/01-cover.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-29-2c35ebcadc69/02-questions.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-29-2c35ebcadc69/03-answer.png",
+      "content/xiaohongshu-assets/xhs-daily-2026-08-29-2c35ebcadc69/04-answer.png"
+    ],
+    "status": "manual_required",
+    "reason": "Chrome DevTools 端口不可用：请先启动带 --remote-debugging-port=9222 的已登录 Chrome",
+    "publishUrl": "",
+    "updatedAt": "2026-08-29T01:30:06.317Z"
+  },
+  {
     "id": "xhs-daily-2026-08-28-23ef210bfdaf",
     "title": "多模态理解题目精讲",
     "coverTitle": "多模态大模型面试题精讲",

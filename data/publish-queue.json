@@ -1,5 +1,58 @@
 [
   {
+    "id": "xhs-daily-2026-09-05-78baf14ea5eb",
+    "title": "多模态理解题目精讲",
+    "coverTitle": "多模态大模型面试题精讲",
+    "coverSubtitle": "多模态大模型 高频题",
+    "company": "",
+    "direction": "多模态大模型",
+    "primaryQuestion": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+    "topic": "多模态理解",
+    "body": "每日精选：多模态大模型题目精讲。今天把面试题目、完整解答、追问方向整理成图卡。\n引用来源：知乎，2026-06-14\n原文链接：https://zhuanlan.zhihu.com/p/2014314780802967473\n完整回答已拆成图卡，建议按顺序复习。\n#知乎 #大模型 #多模态 #面试 #多模态大模型 #大模型面试 #AI学习",
+    "sourcePlatform": "知乎",
+    "sourceDate": "2026-06-14",
+    "sourceUrl": "https://zhuanlan.zhihu.com/p/2014314780802967473",
+    "articlePath": "content/xiaohongshu-drafts/2026-09-05-78baf14ea5eb.md",
+    "featureId": "daily-2026-09-05-78baf14ea5eb",
+    "postId": "auto-20260614-f0cf1eef4a48",
+    "coverImage": "content/xiaohongshu-assets/xhs-daily-2026-09-05-78baf14ea5eb-cover-v2.png",
+    "imageCards": [
+      {
+        "kind": "cover",
+        "kicker": "本篇速览",
+        "title": "多模态大模型",
+        "body": "方向：多模态大模型\n题目：Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+        "footer": "Interview Hub · 面试题精讲"
+      },
+      {
+        "kind": "questions",
+        "kicker": "面试题目",
+        "title": "今天重点看这几题",
+        "body": "1. Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、Q-Former、cross-attention adapter 的差异是什么？",
+        "footer": "先能 30 秒讲清楚，再展开细节"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-1",
+        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
+        "body": "视觉 encoder 输出是连续视觉 token，需要映射到 LLM 的隐藏维和语义空间。Linear/MLP projector 参数少、延迟低，适合保留较多视觉 token，但压缩和交互能力有限；Q-Former 用可学习 query 从视觉特征中抽取固定数量语义 token，节省上下文但可能丢局部细节；cross-attention adapter 让语言层在多层读取视觉特征，交互更强但计算和改造成本高。选择取决于分辨率、细粒度任务、token 预算和是否冻结基座。 如果面试官继续追问，",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      },
+      {
+        "kind": "answer",
+        "kicker": "详细解答 1-2",
+        "title": "Vision encoder 输出如何与 LLM token 空间对齐？Linear projector、…",
+        "body": "可以把答案落到真实项目：数据从哪里来、如何标注、模型输出什么、低层控制怎么兜底、失败样本如何回流、最终指标如何证明有效。",
+        "footer": "机制 -> 取舍 -> 坑 -> 指标"
+      }
+    ],
+    "createdAt": "2026-09-05T07:30:05.193Z",
+    "status": "skipped_duplicate",
+    "reason": "疑似重复：已存在 published question registry",
+    "publishUrl": "",
+    "updatedAt": "2026-09-05T07:30:05.209Z"
+  },
+  {
     "id": "xhs-daily-2026-09-05-6b93d654606d",
     "title": "多模态理解题目精讲",
     "coverTitle": "多模态大模型面试题精讲",
